@@ -1,19 +1,19 @@
-//src/Components/MessagesHistoric/MessagesHistoric.js
+//src/Components/MessagesReceived/MessagesReceived.js
 //main screen for messages history
 
 import React from 'react'
 import { View, Text } from 'react-native'
 
-class MessagesHistoric extends React.Component {
+class MessagesReceived extends React.Component {
     render() {
         return (
             <View>
                 <Text>
-                    MessagesHistoric
+                    MessagesReceived
                 </Text>
             </View>
         )
     }
 }
 
-export default MessagesHistoric
+export default MessagesReceived

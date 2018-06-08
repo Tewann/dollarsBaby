@@ -1,16 +1,37 @@
 //Navigation/Navigation.js
 
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation'
 import ContactsScreen from '../Components/ContactsScreen/ContactsScreen'
-import MessageHistoric from '../Components/MessagesHistoric/MessageHistoric'
+import MessagesReceived from '../Components/MessagesReceived/MessagesReceived';
 
-const SearchStackNavigator = createStackNavigator({
-    ContactsScreen: {
-        screen: ContactsScreen,
-        navigationOption: {
-            title: 'EZy'
-        }
-    }
+const MainStackNavigator = createStackNavigator({
+    Mainscreen: {
+        screen: createMaterialTopTabNavigator({
+            ContactsScreen: {
+                screen: ContactsScreen,
+                navigationOptions: {
+                    title: 'Contacts'
+                },
+            },
+            MessagesReceived: {
+                screen: MessagesReceived,
+                navigationOptions: {
+                    title: 'Historique'
+                },
+            },
+        }),
+        navigationOptions: {
+            title: 'EZy',
+            headerTitleStyle: {
+                marginLeft: 30,
+            },
+            headerStyle: {
+                backgroundColor: '#6f8cb7',
+            },
+            headerTintColor: '#f0e5dc',
+        },
+
+    },
 })
 
-export default SearchStackNavigator
+export default MainStackNavigator
