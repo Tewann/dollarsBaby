@@ -1,10 +1,10 @@
 import React from 'react';
-import ContactsScreen from './src/Components/ContactsScreen/ContactsScreen.js'
+import Navigation from './src/Navigation/Navigation'
 
 export default class App extends React.Component {
   render() {
     return (
-      <ContactsScreen />
+      <Navigation />
     );
   }
 }
