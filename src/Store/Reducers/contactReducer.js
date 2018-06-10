@@ -1,4 +1,6 @@
-export default data = [
+//Store/Reducers/contactReducer.js
+
+const initialState = { contactList: [
     {
         id: 1,
         nom: 'John'
@@ -25,4 +27,16 @@ export default data = [
         id: 8,
         nom: 'Mike'
     },
-]
+] }
+
+function contactManagment(state = initialState, action) {
+    let nextState
+    switch (action.type) {
+        case 'ADD_CONTACT':
+            return nextState || state
+    default:
+        return state
+    }
+}
+
+export default contactManagment
