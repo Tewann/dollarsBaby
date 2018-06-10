@@ -6,32 +6,39 @@ import MessagesReceived from '../Components/MessagesReceived/MessagesReceived';
 
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
-        screen: createMaterialTopTabNavigator({
-            ContactsScreen: {
-                screen: ContactsScreen,
-                navigationOptions: {
-                    title: 'Contacts'
+        screen: createMaterialTopTabNavigator(
+            {
+                ContactsScreen: {
+                    screen: ContactsScreen,
+                    navigationOptions: {
+                        title: 'Contacts',
+                    },
+                },
+                MessagesReceived: {
+                    screen: MessagesReceived,
+                    navigationOptions: {
+                        title: 'Historique'
+                    },
                 },
             },
-            MessagesReceived: {
-                screen: MessagesReceived,
-                navigationOptions: {
-                    title: 'Historique'
+            {
+                tabBarOptions: {
+                    style: { backgroundColor: '#9e9b98' },
+                    indicatorStyle: {backgroundColor: '#a0b7c8'}
+                    
                 },
-            },
-        }),
+            }),
         navigationOptions: {
             title: 'EZy',
             headerTitleStyle: {
                 marginLeft: 30,
             },
             headerStyle: {
-                backgroundColor: '#6f8cb7',
+                backgroundColor: '#a0b7c8',
             },
             headerTintColor: '#f0e5dc',
         },
-
     },
-})
+});
 
 export default MainStackNavigator
