@@ -2,7 +2,8 @@
 //Component: display each contact
 
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { View, Text } from 'react-native'
+import styles from './styles'
 
 class ContactItem extends React.Component {
     render() {
@@ -17,13 +18,6 @@ class ContactItem extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
-    main_container: {
-        height: 200
-    },
-    contact_text: {
-        height: 50
-    }
-})
+
 
 export default ContactItem

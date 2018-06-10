@@ -5,6 +5,7 @@ import React from 'react'
 import { StyleSheet, View, FlatList, Text, Button } from 'react-native'
 import ContactItem from '../ContactItem/ContactItem'
 import { connect } from 'react-redux'
+import styles from './styles'
 
 class ContactsScreen extends React.Component {
     constructor(props) {
@@ -18,18 +19,12 @@ class ContactsScreen extends React.Component {
                 <FlatList
                     data={this.props.contactList}
                     keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => <ContactItem contact={item}/>}
+                    renderItem={({ item }) => <ContactItem contact={item} />}
                 />
             </View>
         )
     }
-}
-
-const styles = StyleSheet.create({
-    main_container: {
-        flex: 1,
-    },
-})
+};
 
 const mapStateToProps = (state) => {
     return {
