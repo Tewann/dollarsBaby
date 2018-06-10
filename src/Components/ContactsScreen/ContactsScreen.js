@@ -7,6 +7,7 @@ import ContactItem from '../ContactItem/ContactItem'
 import { connect } from 'react-redux'
 import styles from './styles'
 
+
 class ContactsScreen extends React.Component {
     constructor(props) {
         super(props)
@@ -18,6 +19,8 @@ class ContactsScreen extends React.Component {
             <View style={styles.main_container}>
                 <FlatList
                     data={this.props.contactList}
+                    numColumns={3}
+                    columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5}}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <ContactItem contact={item} />}
                 />
