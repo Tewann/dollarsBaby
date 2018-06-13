@@ -14,9 +14,11 @@ class ContactItem extends React.Component {
 
         return (
             <View style={styles.main_container}>
+                <View style={styles.sub_container}>
                 <Text style={styles.contact_text}>
                     {contact.nom}
                 </Text>
+                </View>
             </View>
         )
     }

@@ -14,19 +14,13 @@ const styles = StyleSheet.create({
         height: 75,
         minWidth: itemWidth,
         maxWidth: itemWidth,
-
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    sub_container: {
         backgroundColor: '#CBCBCB',
-        height: 75,
-        width: 75,
-        borderRadius: 75/2,
+        borderRadius: itemWidth/2,
         justifyContent: 'center',
         alignItems: 'center'
     },
     contact_text: {
+
 
     }
 })

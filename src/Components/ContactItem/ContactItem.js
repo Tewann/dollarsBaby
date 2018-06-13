@@ -1,25 +1,27 @@
 //Components/ContactItem/ContactItem.js
-//Component: display each contact
+//Component: display each iteration of contact list
 
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
 
 
 class ContactItem extends React.Component {
     render() {
-        const contact = this.props.contact
-
-
+        const { contact, showMessages, positionItem } = this.props
         return (
-            <View style={styles.main_container}>
-                <View style={styles.sub_container}>
+
+            <TouchableOpacity
+                onPressIn={(e) => positionItem(e)}
+                onPress={() => showMessages()}
+                style={styles.main_container}>
                 <Text style={styles.contact_text}>
                     {contact.nom}
                 </Text>
-                </View>
-            </View>
+
+            </TouchableOpacity >
+
         )
     }
 }
