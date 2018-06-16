@@ -14,14 +14,16 @@ const styles = StyleSheet.create({
         height: 75,
         minWidth: itemWidth,
         maxWidth: itemWidth,
-        backgroundColor: '#CBCBCB',
+// BEAU BLUE        backgroundColor: '#94a9bc',
+        backgroundColor: '#889eb0',
         borderRadius: itemWidth/2,
         justifyContent: 'center',
-        alignItems: 'center'
-    },
+        alignItems: 'center',
+        //borderColor: '#3a485c',
+        //borderWidth: 2,
+      },
     contact_text: {
-
-
+        color: 'white',
     }
 })
 

@@ -23,18 +23,19 @@ const MainStackNavigator = createStackNavigator({
             },
             {
                 tabBarOptions: {
-                    style: { backgroundColor: '#9e9b98' },
-                    indicatorStyle: {backgroundColor: '#a0b7c8'}
+                    style: { backgroundColor: '#3a485c' },
+                    indicatorStyle: {backgroundColor: '#f0e5dc'}
                     
                 },
             }),
         navigationOptions: {
-            title: 'EZy',
+            title: 'eBlink',
             headerTitleStyle: {
                 marginLeft: 30,
             },
             headerStyle: {
-                backgroundColor: '#a0b7c8',
+                backgroundColor: '#3a485c',
+                //backgroundColor: '#5675D3',
             },
             headerTintColor: '#f0e5dc',
         },

@@ -1,13 +1,15 @@
 //src/Components/ContactsScreen/ContactsScreen.js
-//Componenet: main View for contact screen
+//Component: main View for contact screen
 
 import React from 'react'
-import { StyleSheet, View, FlatList, Text, Button } from 'react-native'
+import { View, FlatList, Text, Button } from 'react-native'
 import ContactItem from '../ContactItem/ContactItem'
 import MessageItem from '../MessageItem/MessageItem'
 import { connect } from 'react-redux'
 import styles from './styles'
 import Modal from 'react-native-modal'
+import HeaderContactList from '../HeaderContactList/HeaderContactList'
+
 
 class ContactsScreen extends React.Component {
     constructor(props) {
@@ -20,6 +22,10 @@ class ContactsScreen extends React.Component {
 
     _showMessages = () => {
         this.setState({ modalVisible: true });
+    }
+
+    renderHeader = () => {
+        return <HeaderContactList />
     }
 
 
@@ -46,6 +52,7 @@ class ContactsScreen extends React.Component {
                 <FlatList
                     data={this.props.contactList}
                     numColumns={3}
+                    ListHeaderComponent={() => this.renderHeader()}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <ContactItem contact={item}
