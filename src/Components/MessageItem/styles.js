@@ -4,13 +4,20 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     main_container: {
-//      flex: 1,
+        flex: 1,
         margin: 5,
-        height: 50,
-        backgroundColor: 'red',
+        minHeight: 75,
+        minWidth: 150,
+        backgroundColor: '#090909',
         justifyContent: 'center',
         alignItems: 'center',
-        maxWidth: 100,
+        opacity: 0.75,
+        borderRadius: 75/1.2,
+        
+    },
+    text: {
+        color: 'white',
+        textAlign: 'center'
     }
 })
 

@@ -2,12 +2,12 @@
 //Componenet: main View for contact screen
 
 import React from 'react'
-import { StyleSheet, View, FlatList, Text, Button, Modal, TouchableWithoutFeedback } from 'react-native'
+import { StyleSheet, View, FlatList, Text, Button } from 'react-native'
 import ContactItem from '../ContactItem/ContactItem'
 import MessageItem from '../MessageItem/MessageItem'
 import { connect } from 'react-redux'
 import styles from './styles'
-
+import Modal from 'react-native-modal'
 
 class ContactsScreen extends React.Component {
     constructor(props) {
@@ -17,15 +17,9 @@ class ContactsScreen extends React.Component {
         }
     }
 
+
     _showMessages = () => {
         this.setState({ modalVisible: true });
-        console.log(test)
-     }
-
-    getEventPosition(e) {
-        global.pushLocationContactItemX = e.nativeEvent.locationX
-        global.pushLocationContactItemY = e.nativeEvent.locationY
-       
     }
 
 
@@ -35,6 +29,7 @@ class ContactsScreen extends React.Component {
                 <Modal
                     visible={this.state.modalVisible}
                     onRequestClose={() => { this.setState({ modalVisible: false }) }}
+                    onBackdropPress={() => { this.setState({ modalVisible: false }) }}
                     transparent={true}
                     animationType='fade'
                 >
@@ -45,6 +40,7 @@ class ContactsScreen extends React.Component {
                             renderItem={({ item }) => <MessageItem message={item} />}
                         />
                     </View>
+
                 </Modal>
 
                 <FlatList
@@ -53,8 +49,8 @@ class ContactsScreen extends React.Component {
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <ContactItem contact={item}
-                    showMessages={this._showMessages}
-                     positionItem={this.getEventPosition}  />}
+                        showMessages={this._showMessages}
+                    />}
                 />
             </View>
         )
@@ -64,7 +60,8 @@ class ContactsScreen extends React.Component {
 const mapStateToProps = (state) => {
     return {
         contactList: state.contactManagment.contactList,
-        messagesList: state.displayMessagesList.messagesList
+        messagesList: state.displayMessagesList.messagesList,
+        messageListPosition: state.displayMessagesList.messageListPosition
     }
 }
 

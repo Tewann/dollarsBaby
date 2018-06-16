@@ -2,18 +2,20 @@
 //Component: display each iteration of contact list
 
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
+import { connect } from 'react-redux'
+
 
 
 
 class ContactItem extends React.Component {
+
     render() {
-        const { contact, showMessages, positionItem } = this.props
+        const { contact, showMessages } = this.props
         return (
 
             <TouchableOpacity
-                onPressIn={(e) => positionItem(e)}
                 onPress={() => showMessages()}
                 style={styles.main_container}>
                 <Text style={styles.contact_text}>
@@ -27,5 +29,9 @@ class ContactItem extends React.Component {
 }
 
 
-
-export default ContactItem
+const mapStateToProps = (state) => {
+    return {
+        
+    }
+}
+export default connect(mapStateToProps)(ContactItem)
