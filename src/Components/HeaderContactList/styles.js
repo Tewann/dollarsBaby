@@ -15,22 +15,6 @@ const styles = StyleSheet.create({
         paddingRight: buttonposition,
 
     },
-    modal_container: {
-        flex: 1,
-
-    },
-    modal_composent: {
-        height: 100,
-        width: 100,
-        backgroundColor: 'black',
-        justifyContent: 'center',
-        alignItems: 'center',
-
-    },
-    modal_text: {
-        color: 'black'
-
-    },
     cross: {
         flex: 1,
         alignItems: 'center',

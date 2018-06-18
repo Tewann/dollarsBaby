@@ -14,9 +14,10 @@ const styles = StyleSheet.create({
         paddingTop: 0,
         backgroundColor: 'white'
     },
-    modal_container: {
-        alignItems: 'center',
+    addContact_container: {
+        flex: 1
     }
+
 })
 
 export default styles
