@@ -1,5 +1,5 @@
-//Components/DisplayMessage/DisplayMessage.js
-//Component : display each iteration of messages received
+// src/Components/MessageReceivedComponents/DisplayMessage/DisplayMessage.js
+// Component : display each iteration of messages received
 
 import React from 'react'
 import { View, Text } from 'react-native'

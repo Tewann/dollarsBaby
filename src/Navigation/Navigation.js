@@ -1,8 +1,8 @@
 //Navigation/Navigation.js
 
 import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation'
-import ContactsScreen from '../Components/ContactsScreen/ContactsScreen'
-import MessagesReceivedScreen from '../Components/MessagesReceivedScreen/MessagesReceivedScreen';
+import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen/ContactsScreen'
+import MessagesReceivedScreen from '../Components/MessageReceivedComponents/MessagesReceivedScreen/MessagesReceivedScreen';
 
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {

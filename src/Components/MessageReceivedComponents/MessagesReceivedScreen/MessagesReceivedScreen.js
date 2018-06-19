@@ -1,5 +1,5 @@
-//src/Components/MessagesReceivedScreen/MessagesReceivedScreen.js
-//main screen for messages history
+// src/Components/MessageReceivedComponentsMessagesReceivedScreen/MessagesReceivedScreen.js
+// main screen for messages history
 
 import React from 'react'
 import { View, FlatList } from 'react-native'

@@ -1,4 +1,4 @@
-//src/Components/ContactsScreen/ContactsScreen.js
+//src/Components/ContactScreenComponents/ContactsScreen/ContactsScreen.js
 //Component: main View for contact screen
 
 import React from 'react'

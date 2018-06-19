@@ -1,4 +1,4 @@
-// //src/Components/ContactsScreen/HeaderContactList.js
+// src/Components/ContactScreenComponents/ContactsScreen/HeaderContactList.js
 // Component on top of flatlist from ContactScreen
 
 import React from 'react'

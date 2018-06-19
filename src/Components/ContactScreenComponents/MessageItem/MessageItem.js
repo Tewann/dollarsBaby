@@ -1,5 +1,5 @@
-//Components/MessageItem/MessageItem.js
-//Component: display each iteration of message list
+// src/Components/ContactScreenComponents/MessageItem/MessageItem.js
+// Component: display each iteration of message list
 
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'

@@ -1,4 +1,4 @@
-//Components/AddContact/AddContact.js
+//src/Components/ContactScreenComponents/AddContact/AddContact.js
 //Modal Component for contact adding
 
 import React from 'react'

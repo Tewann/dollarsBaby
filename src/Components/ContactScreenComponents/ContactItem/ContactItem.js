@@ -1,4 +1,4 @@
-//Components/ContactItem/ContactItem.js
+//src/Components/ContactScreenComponents/ContactScreenComponents/ContactItem/ContactItem.js
 //Component: display each iteration of contact list
 
 import React from 'react'

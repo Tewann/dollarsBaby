@@ -30,7 +30,7 @@ const initialState = {
     messagesReceived: [
         {
             id: 1,
-            message: 'bonjour cava'
+            message: 'Message Test'
         }
     ]
 }
