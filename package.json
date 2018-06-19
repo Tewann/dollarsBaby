@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "jest-expo": "~27.0.0",
+    "jest-expo": "~28.0.0",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
   },
@@ -20,11 +20,11 @@
   },
   "dependencies": {
     "create-react-native-app": "^1.0.0",
-    "expo": "^27.0.1",
+    "expo": "^28.0.0",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz",
     "react-native-modal": "^6.1.0",
-    "react-navigation": "^2.2.5",
+    "react-navigation": "~2.3.1",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0"
   }

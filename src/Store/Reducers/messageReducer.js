@@ -27,12 +27,24 @@ const initialState = {
             title: 'message 6 tes'
         },
     ],
+    messagesReceived: [
+        {
+            id: 1,
+            message: 'bonjour cava'
+        }
+    ]
 }
 
 function displayMessagesList(state = initialState, action) {
     let nextState
     switch (action.type) {
-        case 'ADD_MESSAGE':
+        case 'SEND_MESSAGE':
+            const newId = state.messagesReceived[state.messagesReceived.length - 1].id + 1
+            const newMessage = { id: newId, message: action.value}
+            nextState = {
+                ...state,
+                messagesReceived: [...state.messagesReceived, newMessage]
+            }
             return nextState || state
          default:
             return state

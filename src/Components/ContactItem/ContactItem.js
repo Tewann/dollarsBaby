@@ -16,7 +16,7 @@ class ContactItem extends React.Component {
         return (
 
             <TouchableOpacity
-                onPress={() => showMessages()}
+                onPress={() => showMessages(contact.id)}
                 style={styles.main_container}>
                 <Text style={styles.contact_text}>
                     {contact.nom}

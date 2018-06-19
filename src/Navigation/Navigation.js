@@ -2,7 +2,7 @@
 
 import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation'
 import ContactsScreen from '../Components/ContactsScreen/ContactsScreen'
-import MessagesReceived from '../Components/MessagesReceived/MessagesReceived';
+import MessagesReceivedScreen from '../Components/MessagesReceivedScreen/MessagesReceivedScreen';
 
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
@@ -15,7 +15,7 @@ const MainStackNavigator = createStackNavigator({
                     },
                 },
                 MessagesReceived: {
-                    screen: MessagesReceived,
+                    screen: MessagesReceivedScreen,
                     navigationOptions: {
                         title: 'Historique'
                     },

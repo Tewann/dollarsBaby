@@ -15,6 +15,7 @@ import AddContact from '../AddContact/AddContact'
 class ContactsScreen extends React.Component {
     constructor(props) {
         super(props)
+        contactId = -1,
         this.state = {
             modalMessageListVisible: false,
             modalAddContactVisible: false,
@@ -22,8 +23,10 @@ class ContactsScreen extends React.Component {
     }
 
     //Displaying Message List Modal
-    _showMessages = () => {
+    //Getting contact ID
+    _showMessages = (contactId) => {
         this.setState({ modalMessageListVisible: true });
+        this.contactId = contactId
     }
 
     //Displaying Add Contact Modal
@@ -39,6 +42,8 @@ class ContactsScreen extends React.Component {
     renderHeader = () => {
         return <HeaderContactList addContact={this._displayAddContactModal} />
     }
+
+
 
 
     render() {
@@ -57,7 +62,8 @@ class ContactsScreen extends React.Component {
                         <FlatList
                             data={this.props.messagesList}
                             keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) => <MessageItem message={item} />}
+                            renderItem={({ item }) => <MessageItem message={item} 
+                            />}
                         />
                     </View>
 
