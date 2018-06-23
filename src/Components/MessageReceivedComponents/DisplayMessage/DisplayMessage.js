@@ -5,13 +5,19 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import styles from './styles'
 
-class DisplayMessage extends React.Component{
+class DisplayMessage extends React.Component {
     render() {
         const { message } = this.props
         return (
-            <View>
-                <Text>
-                    {message.message}
+            <View style={styles.main_container}>
+                <Text style={styles.contact_name}>
+                    Dieu
+                </Text>
+                <Text style={styles.predefined_message}>
+                    {message.predefined_message}
+                </Text>
+                <Text style={styles.additionnal_message}>
+                    {message.additionnal_message}
                 </Text>
             </View>
         )
@@ -19,3 +25,4 @@ class DisplayMessage extends React.Component{
 }
 
 export default DisplayMessage
+

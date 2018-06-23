@@ -6,20 +6,28 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-        paddingTop: 0,
         backgroundColor: 'white'
     },
-    addContact_container: {
+    messagelist_main_container: {
         flex: 1,
     },
-    message_list_modal_container:  {
+    back_to_contacts: {
+        marginTop: 10,
+    },
+    flatlist: {
+        marginTop: 10,
         flex: 1,
-        marginTop: 20,
-        marginBottom: 20,
-        backgroundColor: 'white',
-        borderWidth: 1
-    }
-
+    },
+    text_input: {
+        marginLeft: 7,
+        marginRight: 7,
+        borderBottomWidth: 1,
+        paddingLeft: 5,
+        marginTop: 10,
+        marginBottom: 10,
+        height: 40
+    },
 })
+
 
 export default styles

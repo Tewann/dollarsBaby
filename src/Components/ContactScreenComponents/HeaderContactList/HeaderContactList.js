@@ -42,7 +42,7 @@ class HeaderContactList extends React.Component {
                     placeholder='Rechercher / Ajouter un contact'
                     onChangeText={(text) => this._contactNameInputChanged(text)}
                     onSubmitEditing={() => this._addContact()}
-                    autoFocus={true}
+                    autoFocus={false}
                     style={styles.text_input}
                     underlineColorAndroid={'white'}
                     autoCorrect={false}

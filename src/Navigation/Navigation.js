@@ -5,7 +5,6 @@ import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen
 import MessagesReceivedScreen from '../Components/MessageReceivedComponents/MessagesReceivedScreen/MessagesReceivedScreen';
 import MessageListScreen from '../Components/ContactScreenComponents/MessageListScreen/MessageListScreen'
 
-
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
         screen: createMaterialTopTabNavigator(
@@ -14,12 +13,13 @@ const MainStackNavigator = createStackNavigator({
                     screen: ContactsScreen,
                     navigationOptions: {
                         title: 'Contacts',
+                        tabBarOnPress: null
                     },
                 },
                 MessagesReceived: {
                     screen: MessagesReceivedScreen,
                     navigationOptions: {
-                        title: 'Historique'
+                        title: 'Messages reçus'
                     },
                 },
             },
@@ -41,10 +41,11 @@ const MainStackNavigator = createStackNavigator({
             headerTintColor: '#f0e5dc',
         },
     },
+
     MessageListScreen: {
         screen: MessageListScreen,
         navigationOptions: {
-            title: 'eBlink',
+            title: 'Messages',
             headerTitleStyle: {
                 marginLeft: 30,
             },
@@ -53,9 +54,9 @@ const MainStackNavigator = createStackNavigator({
             },
             headerTintColor: '#f0e5dc',
         },
-        
+
     },
 });
 
 
-    export default MainStackNavigator
+export default MainStackNavigator

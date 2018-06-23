@@ -2,7 +2,7 @@
 //Component: main View for contact screen
 
 import React from 'react'
-import { View, FlatList, Text, Button } from 'react-native'
+import { View, FlatList, TextInput, TouchableOpacity, Text, BackHandler } from 'react-native'
 import ContactItem from '../ContactItem/ContactItem'
 import MessageItem from '../MessageItem/MessageItem'
 import { connect } from 'react-redux'
@@ -14,52 +14,52 @@ import HeaderContactList from '../HeaderContactList/HeaderContactList'
 class ContactsScreen extends React.Component {
     constructor(props) {
         super(props)
-        contactId = -1,
-            this.state = {
-                modalMessageListVisible: false,
-            }
+        this.state = {
+            modalMessageListVisible: false,
+            displayMessagesList: false,
+            displayContactList: true
+        }
     }
 
-    //Displaying Message List Modal
-    //Getting contact ID
-    _showMessages = (contactId) => {
-        //this.setState({ modalMessageListVisible: true });
-        //this.contactId = contactId
-        console.log(this.props)
-        this.props.navigation.navigate('MessageListScreen')
+    // Updating redux state in order to send addionnel text with predefined messages
+    _messageToSendChanged(text) {
+        const action = { type: 'MESSAGE_TO_SEND', value: text }
+        this.props.dispatch(action)
     }
 
+    //Closing contact screen list + displaying message list screen
+    _showMessagesList = () => {
+        this.setState({ displayContactList: false });
+        this.setState({ displayMessagesList: true });
+
+        // listener on android, when back button press
+        BackHandler.addEventListener('hardwareBackPress', this._backHandler)
+    }
+
+    // on android function to return to contact screen list
+    _backHandler = () => {
+        this._returnToContactScreen()
+        return true
+    }
+
+    //Closing Message list screen + displaying contact screen list
+    _returnToContactScreen = () => {
+        this.setState({ displayMessagesList: false })
+        this.setState({ displayContactList: true })
+
+        // closing listener on android, when back button press
+        BackHandler.removeEventListener('hardwareBackPress', this._backHandler)
+    }
 
     // Rendering FlatList Header (for now AddContactButton)
     renderHeader = () => {
-        return <HeaderContactList/>
+        return <HeaderContactList />
     }
 
-    render() {
-        return (
-            <View style={styles.main_container}>
-
-                {/*Message list modal*/}
-                <Modal
-                    visible={this.state.modalMessageListVisible}
-                    onRequestClose={() => { this.setState({ modalMessageListVisible: false }) }}
-                    onBackdropPress={() => { this.setState({ modalMessageListVisible: false }) }}
-                    transparent={true}
-                    animationType='fade'
-                >
-                    <View style={styles.message_list_modal_container}>
-                        <FlatList
-                            data={this.props.messagesList}
-                            numColumns={2}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) => <MessageItem message={item}
-                            />}
-                        />
-                    </View>
-
-                </Modal>
- 
-                {/*Contact list*/}
+    // Render for contact list screen
+    _displayContactList() {
+        if (this.state.displayContactList) {
+            return (
                 <FlatList
                     data={this.props.contactList}
                     numColumns={3}
@@ -67,9 +67,49 @@ class ContactsScreen extends React.Component {
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <ContactItem contact={item}
-                        showMessages={this._showMessages}
+                        showMessages={this._showMessagesList}
                     />}
                 />
+            )
+        }
+    }
+
+    // Render for message list screen
+    _displayMessageList() {
+        if (this.state.displayMessagesList) {
+            return (
+                <View style={styles.messagelist_main_container}>
+                    <TouchableOpacity
+                        style={styles.back_to_contacts}
+                        onPress={this._returnToContactScreen}>
+                        <Text>Revenir à l'écran des contacts</Text>
+                    </TouchableOpacity>
+                    <TextInput
+                        placeholder='Message 100 caractères maximum'
+                        onChangeText={(text) => this._messageToSendChanged(text)}
+                        //onSubmitEditing={() => {}}
+                        style={styles.text_input}
+                        underlineColorAndroid={'white'}
+                        autoCorrect={false}
+                        ref={component => this.messageInput = component}
+                    />
+                    <FlatList
+                        data={this.props.predefinedMessagesList}
+                        numColumns={2}
+                        columnWrapperStyle={styles.flatlist}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) => <MessageItem message={item}
+                            returnToContactScreen={() => this._returnToContactScreen()} />}
+                    />
+                </View>
+            )
+        }
+    }
+    render() {
+        return (
+            <View style={styles.main_container}>
+                {this._displayContactList()}
+                {this._displayMessageList()}
             </View>
         )
     }
@@ -79,7 +119,7 @@ const mapStateToProps = (state) => {
     return {
         contactList: state.contactManagment.contactList,
         messagesList: state.displayMessagesList.messagesList,
-        messageListPosition: state.displayMessagesList.messageListPosition
+        predefinedMessagesList: state.displayMessagesList.predefinedMessagesList,
     }
 }
 

@@ -4,9 +4,7 @@ import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window');
-//const itemWidth = (width / 2);
-const buttonposition = (width / 3) - (((width / 3) / 2) + 10);
-const itemWidth = (width - 35)
+const itemWidth = (width - 35);
 
 const styles = StyleSheet.create({
     main_view: {
@@ -25,14 +23,8 @@ const styles = StyleSheet.create({
         width: itemWidth
     },
     cross: {
-        //flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        //minWidth: itemWidth,
-        //maxWidth: itemWidth,
-        //backgroundColor: '#3a485c',
-        //borderRadius: itemWidth / 2,
-
         marginBottom: 1,
         marginRight: 5,
         height: 22,
