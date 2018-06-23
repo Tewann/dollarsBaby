@@ -10,7 +10,14 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     addContact_container: {
-        flex: 1
+        flex: 1,
+    },
+    message_list_modal_container:  {
+        flex: 1,
+        marginTop: 20,
+        marginBottom: 20,
+        backgroundColor: 'white',
+        borderWidth: 1
     }
 
 })

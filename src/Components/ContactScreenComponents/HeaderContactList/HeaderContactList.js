@@ -2,17 +2,54 @@
 // Component on top of flatlist from ContactScreen
 
 import React from 'react'
-import { TouchableOpacity, Text, View, Modal } from 'react-native'
+import { TouchableOpacity, TextInput, View, Alert } from 'react-native'
 import styles from './styles'
-
+import { connect } from 'react-redux'
 
 class HeaderContactList extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            contactName: "",
+        }
+    }
+
+
+    _contactNameInputChanged(text) {
+        this.setState({ contactName: text })
+    }
+
+    _addContact() {
+        if (this.state.contactName.length > 0) {
+            const action = { type: 'ADD_CONTACT', value: this.state.contactName }
+            this.props.dispatch(action)
+        } else {
+            Alert.alert(
+                'Erreur',
+                "Le nom du contact doit avoir plus d'un caractère",
+                [
+                    { text: 'Fermer' }
+                ]
+            )
+        }
+        this.messageInput.clear()
+    }
+
     render() {
-        const { addContact } = this.props
         return (
             <View style={styles.main_view}>
+                <TextInput
+                    placeholder='Rechercher / Ajouter un contact'
+                    onChangeText={(text) => this._contactNameInputChanged(text)}
+                    onSubmitEditing={() => this._addContact()}
+                    autoFocus={true}
+                    style={styles.text_input}
+                    underlineColorAndroid={'white'}
+                    autoCorrect={false}
+                    ref={component => this.messageInput = component}
+                />
                 <TouchableOpacity
-                    onPress={() => addContact()}
+                    onPress={() => this._addContact()}
                     style={styles.cross}>
                     <View style={styles.crossUp} />
                     <View style={styles.crossFlat} />
@@ -22,4 +59,4 @@ class HeaderContactList extends React.Component {
     }
 }
 
-export default HeaderContactList
+export default connect()(HeaderContactList)
