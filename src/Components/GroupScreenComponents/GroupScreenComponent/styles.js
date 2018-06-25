@@ -1,4 +1,4 @@
-//Style for HeaderContactList
+// Style for GroupScreenComponent
 
 import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
@@ -7,8 +7,10 @@ const { height, width } = Dimensions.get('window');
 const itemWidth = (width - 35);
 
 const styles = StyleSheet.create({
-    main_view: {
+    main_container: {
         flex: 1,
+    },
+    top_container: {
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 10,
@@ -45,8 +47,6 @@ const styles = StyleSheet.create({
         left: 3,
         top: 10
     }
-
-
 })
 
 export default styles

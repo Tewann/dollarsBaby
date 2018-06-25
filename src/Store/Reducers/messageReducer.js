@@ -1,4 +1,4 @@
-//Store/Reducers/messageReducer.js
+// Store/Reducers/messageReducer.js
 
 const initialState = {
     predefinedMessagesList: [

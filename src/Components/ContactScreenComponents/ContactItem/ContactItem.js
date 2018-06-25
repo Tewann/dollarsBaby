@@ -1,13 +1,9 @@
-//src/Components/ContactScreenComponents/ContactScreenComponents/ContactItem/ContactItem.js
-//Component: display each iteration of contact list
+// src/Components/ContactScreenComponents/ContactScreenComponents/ContactItem/ContactItem.js
+// Component: display each iteration of contact list
 
 import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles'
-import { connect } from 'react-redux'
-
-
-
 
 class ContactItem extends React.Component {
 
@@ -28,10 +24,4 @@ class ContactItem extends React.Component {
     }
 }
 
-
-const mapStateToProps = (state) => {
-    return {
-        
-    }
-}
-export default connect(mapStateToProps)(ContactItem)
+export default ContactItem

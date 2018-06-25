@@ -1,4 +1,4 @@
-// Style for ContactItem
+// Style for GroupItem
 
 import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
@@ -12,11 +12,8 @@ const styles = StyleSheet.create({
     main_container: {
         flex: 1,
         margin: 5,
-        //height: 75,
         minWidth: itemWidth,
         maxWidth: itemWidth,
-        //backgroundColor: '#889eb0',
-        //borderRadius: itemWidth/2,
         justifyContent: 'center',
         alignItems: 'center',
     },

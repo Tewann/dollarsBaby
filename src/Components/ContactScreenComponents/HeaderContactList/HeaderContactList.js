@@ -44,7 +44,7 @@ class HeaderContactList extends React.Component {
                     onSubmitEditing={() => this._addContact()}
                     autoFocus={false}
                     style={styles.text_input}
-                    underlineColorAndroid={'white'}
+                    underlineColorAndroid={'transparent'}
                     autoCorrect={false}
                     ref={component => this.messageInput = component}
                 />

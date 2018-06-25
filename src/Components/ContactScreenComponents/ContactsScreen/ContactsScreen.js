@@ -21,7 +21,7 @@ class ContactsScreen extends React.Component {
         }
     }
 
-    // Updating redux state in order to send addionnel text with predefined messages
+    // Updating redux state in order to send addionnal text with predefined messages
     _messageToSendChanged(text) {
         const action = { type: 'MESSAGE_TO_SEND', value: text }
         this.props.dispatch(action)
@@ -75,7 +75,7 @@ class ContactsScreen extends React.Component {
         }
     }
 
-    // Render for message list screen
+    // Render for predefined message list screen
     _displayMessageList() {
         if (this.state.displayMessagesList) {
             return (
@@ -83,7 +83,7 @@ class ContactsScreen extends React.Component {
                     <TouchableOpacity
                         style={styles.back_to_contacts}
                         onPressIn={this._returnToContactScreen}>
-                        <Icon name='chevron-left' />
+                        <Icon name='chevron-left' color='#889eb0' />
                         <Text style={styles.retour}>Retour</Text>
                     </TouchableOpacity>
                     <TextInput
