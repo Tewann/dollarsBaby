@@ -3,11 +3,11 @@
 
 import React from 'react'
 import { View, FlatList, TextInput, TouchableOpacity, Text, BackHandler } from 'react-native'
+import { Icon } from 'react-native-elements'
 import ContactItem from '../ContactItem/ContactItem'
 import MessageItem from '../MessageItem/MessageItem'
 import { connect } from 'react-redux'
 import styles from './styles'
-import Modal from 'react-native-modal'
 import HeaderContactList from '../HeaderContactList/HeaderContactList'
 
 
@@ -64,6 +64,7 @@ class ContactsScreen extends React.Component {
                     data={this.props.contactList}
                     numColumns={3}
                     ListHeaderComponent={() => this.renderHeader()}
+                    keyboardShouldPersistTaps={'always'}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <ContactItem contact={item}
@@ -81,8 +82,9 @@ class ContactsScreen extends React.Component {
                 <View style={styles.messagelist_main_container}>
                     <TouchableOpacity
                         style={styles.back_to_contacts}
-                        onPress={this._returnToContactScreen}>
-                        <Text>Revenir à l'écran des contacts</Text>
+                        onPressIn={this._returnToContactScreen}>
+                        <Icon name='chevron-left' />
+                        <Text style={styles.retour}>Retour</Text>
                     </TouchableOpacity>
                     <TextInput
                         placeholder='Message 100 caractères maximum'
@@ -97,11 +99,13 @@ class ContactsScreen extends React.Component {
                         data={this.props.predefinedMessagesList}
                         numColumns={2}
                         columnWrapperStyle={styles.flatlist}
+                        keyboardShouldPersistTaps={'always'}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => <MessageItem message={item}
                             returnToContactScreen={() => this._returnToContactScreen()} />}
                     />
                 </View>
+
             )
         }
     }

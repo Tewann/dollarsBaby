@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     contact_name: {
         fontWeight: 'bold',
         textShadowRadius: 5,
-        textShadowColor: 'red',
+        textShadowColor: 'grey',
         textShadowOffset: { width: -1, height: 1 },
     },
     predefined_message: {

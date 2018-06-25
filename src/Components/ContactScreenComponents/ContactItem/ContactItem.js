@@ -2,7 +2,7 @@
 //Component: display each iteration of contact list
 
 import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 
@@ -18,10 +18,10 @@ class ContactItem extends React.Component {
             <TouchableOpacity
                 onPress={() => showMessages(contact.id)}
                 style={styles.main_container}>
+                <View style={styles.rounds}/>
                 <Text style={styles.contact_text}>
                     {contact.nom}
                 </Text>
-
             </TouchableOpacity >
 
         )

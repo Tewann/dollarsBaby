@@ -4,27 +4,27 @@ const initialState = {
     predefinedMessagesList: [
         {
             id: 1,
-            title: 'Appel moi'
+            title: 'Blink'
         },
         {
             id: 2,
-            title: 'Ok'
+            title: "T'es où ?"
         },
         {
             id: 3,
-            title: "J'arrive"
+            title: "Urgent"
         },
         {
             id: 4,
-            title: 'message 4 test'
+            title: "Appel moi"
         },
         {
             id: 5,
-            title: 'message 5 test'
+            title: "J'arrive"
         },
         {
             id: 6,
-            title: 'message 6 tes'
+            title: "C'est fait"
         },
     ],
     messagesReceived: [

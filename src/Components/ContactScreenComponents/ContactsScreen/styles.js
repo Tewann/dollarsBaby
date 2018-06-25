@@ -13,6 +13,11 @@ const styles = StyleSheet.create({
     },
     back_to_contacts: {
         marginTop: 10,
+        marginLeft: 10,
+        flexDirection: 'row'
+    },
+    retour: {
+        marginLeft: 20
     },
     flatlist: {
         marginTop: 10,
