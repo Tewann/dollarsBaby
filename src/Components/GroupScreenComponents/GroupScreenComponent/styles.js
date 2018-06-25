@@ -46,6 +46,20 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 3,
         top: 10
+    },
+    modal: {
+        width: 125
+    },
+    touchable_container: {
+        margin: 2,
+        borderWidth: 1,
+        padding: 4,
+        backgroundColor: '#889eb0', 
+    },
+    text: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: 'white'
     }
 })
 
