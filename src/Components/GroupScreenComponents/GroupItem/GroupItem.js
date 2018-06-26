@@ -8,9 +8,10 @@ import styles from './styles'
 class GroupItem extends React.Component {
     render() {
         const group = this.props.group
+        const switchScreen = this.props.switchScreen
         return (
             <TouchableOpacity
-            onPress={() => showMessages(contact.id)}
+            onPress={() => switchScreen()}
             style={styles.main_container}>
             <View style={styles.rounds}/>
             <Text style={styles.contact_text}>

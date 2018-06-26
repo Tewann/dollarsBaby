@@ -1,13 +1,9 @@
-//Style for ContactsScreen
+//Style for Group Options Component
 
 import { StyleSheet } from 'react-native'
 
 
 const styles = StyleSheet.create({
-    main_container: {
-        flex: 1,
-        backgroundColor: 'white'
-    },
     messagelist_main_container: {
         flex: 1,
     },

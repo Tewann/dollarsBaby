@@ -83,7 +83,7 @@ class ContactsScreen extends React.Component {
                     <TouchableOpacity
                         style={styles.back_to_contacts}
                         onPressIn={this._returnToContactScreen}>
-                        <Icon name='chevron-left' color='#889eb0' />
+                        <Icon name='chevron-left' color='#889eb0'/>
                         <Text style={styles.retour}>Retour</Text>
                     </TouchableOpacity>
                     <TextInput
