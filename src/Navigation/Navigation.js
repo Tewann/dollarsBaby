@@ -9,13 +9,13 @@ const MainStackNavigator = createStackNavigator({
     Mainscreen: {
         screen: createMaterialTopTabNavigator(
             {
-                /*ContactsScreen: {
+                ContactsScreen: {
                     screen: ContactsScreen,
                     navigationOptions: {
                         title: 'Contacts',
                         tabBarOnPress: null
                     },
-                },*/
+                },
                 GroupScreen: {
                     screen: GroupScreen,
                     navigationOptions: {

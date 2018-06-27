@@ -14,15 +14,18 @@ class GroupScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            displayGroupList: false,
-            displayGroupOptions: true,
+            displayGroupList: true,
+            displayGroupOptions: false,
+            groupName: "",
+            groupContacts: []
         }
     }
 
     // Change state to display group option screen
-    _goToGroupOptionsScreen = () => {
+    _goToGroupOptionsScreen = (groupName, groupContacts) => {
         this.setState({ displayGroupList: false })
         this.setState({ displayGroupOptions: true })
+        this.setState({ groupName: groupName, groupContacts: groupContacts })
     }
 
     _goToGroupListScreen = () => {
@@ -34,16 +37,20 @@ class GroupScreen extends React.Component {
     _displayGroupList() {
         if (this.state.displayGroupList) {
             return (
-                <GroupList switchScreen={this._goToGroupOptionsScreen}/>
+                <GroupList switchScreen={this._goToGroupOptionsScreen} />
             )
         }
     }
 
-    // function getting GroupOptions componenet and displaying it
+    // function getting GroupOptions component and displaying it
     _displayGroupOptions() {
         if (this.state.displayGroupOptions) {
             return (
-                <GroupOptions switchScreen={this._goToGroupListScreen}/>
+                <GroupOptions 
+                switchScreen={this._goToGroupListScreen}
+                groupName={this.state.groupName}
+                groupId={this.state.group}
+                groupContacts={this.state.groupContacts} />
             )
         }
     }

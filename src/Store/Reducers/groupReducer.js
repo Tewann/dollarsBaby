@@ -5,7 +5,17 @@ const initialState = {
     groupList: [
         {
             id: 1,
-            nom: 'USA'
+            nom: 'USA',
+            contacts: [
+                {
+                    id: 1,
+                    nom: 'John'
+                },
+                {
+                    id: 2,
+                    nom: 'Macron'
+                },
+            ]
         },
         {
             id: 2,
@@ -44,6 +54,10 @@ function groupManagment(state = initialState, action) {
                 }
             }
             return nextState || state
+
+        case 'ADD_CONTACT_TO_GROUP':
+            return state
+
         default:
             return state
     }

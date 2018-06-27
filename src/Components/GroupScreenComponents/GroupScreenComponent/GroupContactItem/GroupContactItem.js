@@ -1,18 +1,17 @@
-// src/Components/ContactScreenComponents/ContactScreenComponents/ContactItem/ContactItem.js
-// Component: display each iteration of contact list
+// src/Components/GroupScreenComponents/GroupScreenComponent/GroupContactItem.js
+// Component: display each iteration of contact list in group list
 
 import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles'
 
-class ContactItem extends React.Component {
+class GroupContactItem extends React.Component {
 
     render() {
-        const { contact, showMessages } = this.props
+        const contact = this.props.contact
         return (
 
             <TouchableOpacity
-                onPress={() => showMessages()}
                 style={styles.main_container}>
                 <View style={styles.rounds}/>
                 <Text style={styles.contact_text}>
@@ -24,4 +23,4 @@ class ContactItem extends React.Component {
     }
 }
 
-export default ContactItem
+export default GroupContactItem

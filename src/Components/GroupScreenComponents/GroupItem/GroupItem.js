@@ -11,7 +11,7 @@ class GroupItem extends React.Component {
         const switchScreen = this.props.switchScreen
         return (
             <TouchableOpacity
-            onPress={() => switchScreen()}
+            onPress={() => switchScreen(group.nom, group.contacts)}
             style={styles.main_container}>
             <View style={styles.rounds}/>
             <Text style={styles.contact_text}>

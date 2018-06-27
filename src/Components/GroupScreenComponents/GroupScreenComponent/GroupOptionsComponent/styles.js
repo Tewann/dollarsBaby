@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     messagelist_main_container: {
-        flex: 1,
+        //flex: 1,
     },
     back_to_contacts: {
         marginTop: 10,
@@ -17,7 +17,20 @@ const styles = StyleSheet.create({
         marginLeft: 0,
         color: '#889eb0'
     },
-    flatlist: {
+    group_name: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: '#889eb0',
+        backgroundColor: '#E0F4FB',
+        paddingTop: 5
+    },
+    contacts_flatlist:{
+        paddingTop: 10,
+        marginBottom: 10,
+        backgroundColor: '#E0F4FB'
+    },
+    message_flatlist: {
         marginTop: 10,
         flex: 1,
     },
@@ -26,7 +39,7 @@ const styles = StyleSheet.create({
         marginRight: 7,
         borderBottomWidth: 1,
         paddingLeft: 5,
-        marginTop: 10,
+        marginTop: 0,
         marginBottom: 10,
         height: 40
     },
