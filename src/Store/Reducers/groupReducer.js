@@ -56,7 +56,34 @@ function groupManagment(state = initialState, action) {
             return nextState || state
 
         case 'ADD_CONTACT_TO_GROUP':
-            return state
+
+            // Contact is or is not in the contact group list
+            const contactNameIndex = state.groupList[action.value.groupId - 1].contacts.findIndex(item => item.id ===
+                action.value.contactId)
+
+            // Contact already in group contact list
+            if (contactNameIndex !== -1) {
+                const errorMessage = state.groupList[action.value.groupId - 1].contacts[contactNameIndex].nom +
+                    ' est déjà dans ce groupe'
+                Alert.alert(
+                    'Erreur',
+                    errorMessage,
+                    [
+                        { text: 'Fermer' }
+                    ]
+                )
+
+                // Contact is not in group
+                // Contact is added
+            } else {
+                const newContact = { id: action.value.contactId, nom: action.value.contactName }
+                nextState = {
+                    ...state,
+                    groupList: [...state.groupList],
+                }
+                nextState.groupList[action.value.groupId - 1].contacts = [...nextState.groupList[action.value.groupId - 1].contacts, newContact]
+            }
+            return nextState || state
 
         default:
             return state

@@ -16,7 +16,7 @@ class ContactItem extends React.Component {
                 style={styles.main_container}>
                 <View style={styles.rounds}/>
                 <Text style={styles.contact_text}>
-                    {contact.nom}
+                    {contact.name}
                 </Text>
             </TouchableOpacity >
 

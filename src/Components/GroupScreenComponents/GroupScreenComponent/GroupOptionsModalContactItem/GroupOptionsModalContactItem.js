@@ -13,11 +13,11 @@ class GroupOptionsModalContactItem extends React.Component {
         return (
 
             <TouchableOpacity
-                onPress={() => hideModalandAddContactToGroup(contact.id)}
+                onPress={() => hideModalandAddContactToGroup(contact.id, contact.name)}
                 style={styles.main_container}>
                 <View style={styles.rounds}/>
                 <Text style={styles.contact_text}>
-                    {contact.nom}
+                    {contact.name}
                 </Text>
             </TouchableOpacity >
 

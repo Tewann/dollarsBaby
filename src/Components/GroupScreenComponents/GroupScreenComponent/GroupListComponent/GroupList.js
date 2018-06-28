@@ -96,7 +96,7 @@ class GroupList extends React.Component {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <GroupItem
                         group={item}
-                        switchScreen={(groupName, groupContacts) => switchScreen(groupName, groupContacts)} />}
+                        switchScreen={(groupName, groupContacts, groupId) => switchScreen(groupName, groupContacts, groupId)} />}
                 />
             </View>
         )

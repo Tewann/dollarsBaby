@@ -16,10 +16,9 @@ class GroupOptions extends React.Component {
         this.state = {
 
         },
-            switchScreen = this.props.switchScreen
+        switchScreen = this.props.switchScreen
         groupName = this.props.groupName
         groupId = this.props.groupId
-        groupContacts = this.props.groupContacts
     }
 
     // Updating redux state in order to send addionnal text with predefined messages
@@ -28,16 +27,16 @@ class GroupOptions extends React.Component {
         this.props.dispatch(action)
     }
 
-    _addContactToGroup = (contact) => {
-        console.log('jsuisla' + contact)
-        const contact_group = { contactId: contact, groupId: groupId}
-        const action = { type: 'ADD_CONTACT_TO_GROUP', value: contact_group}
+    _addContactToGroup = (contactId, contactName) => {
+        const contact_and_group = { contactId: contactId, contactName: contactName, groupId: groupId }
+        const action = { type: 'ADD_CONTACT_TO_GROUP', value: contact_and_group }
+        this.props.dispatch(action)
     }
 
     // Rendering group contact list header
     _renderHeader = () => {
-        return <HeaderGroupContactList 
-            addContactToGroup={this._addContactToGroup}/>
+        return <HeaderGroupContactList
+            addContactToGroup={this._addContactToGroup} />
     }
 
     render() {
@@ -53,7 +52,7 @@ class GroupOptions extends React.Component {
                 <Text style={styles.group_name}>{groupName}</Text>
                 <View style={styles.contacts_flatlist}>
                     <FlatList
-                        data={groupContacts}
+                        data={this.props.groupList[groupId - 1].contacts}
                         ListHeaderComponent={() => this._renderHeader()}
                         keyboardShouldPersistTaps={'always'}
                         horizontal={true}
@@ -87,6 +86,7 @@ class GroupOptions extends React.Component {
 const mapStateToProps = (state) => {
     return {
         predefinedMessagesList: state.displayMessagesList.predefinedMessagesList,
+        groupList: state.groupManagment.groupList
     }
 }
 export default connect(mapStateToProps)(GroupOptions)

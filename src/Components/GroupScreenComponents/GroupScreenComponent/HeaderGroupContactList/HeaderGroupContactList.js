@@ -22,9 +22,9 @@ class HeaderGroupContactList extends React.Component {
         this.setState({ isVisible: true })
     }
 
-    _hideModalandAddContactToGroup = (contact) => {
+    _hideModalandAddContactToGroup = (contactId, contactName) => {
         this.setState({ isVisible: false })
-        addContactToGroup(contact)
+        addContactToGroup(contactId, contactName)
     }
     render() {
         return (
@@ -50,7 +50,7 @@ class HeaderGroupContactList extends React.Component {
                                 keyExtractor={(item) => item.id.toString()}
                                 renderItem={({ item }) => <GroupOptionsModalContactItem 
                                 contact={item}
-                                hideModalandAddContactToGroup={(contact) => this._hideModalandAddContactToGroup(contact)} />}
+                                hideModalandAddContactToGroup={(contactId, contactName) => this._hideModalandAddContactToGroup(contactId, contactName)} />}
                             />
                         </View>
                     </Modal>

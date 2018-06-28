@@ -6,31 +6,31 @@ const initialState = {
     contactList: [
         {
             id: 1,
-            nom: 'John'
+            name: 'John'
         },
         {
             id: 2,
-            nom: 'Macron'
+            name: 'Macron'
         }, 
         {
             id: 3,
-            nom: 'Angela'
+            name: 'Angela'
         }, 
         {
             id: 4,
-            nom: 'Donald'
+            name: 'Donald'
         }, 
         {
             id: 5,
-            nom: 'Barack'
+            name: 'Barack'
         }, 
         {
             id: 6,
-            nom: 'Kim'
+            name: 'Kim'
         }, 
         {
             id: 7,
-            nom: 'Vlad'
+            name: 'Vlad'
         } 
     ]
 }
@@ -40,7 +40,7 @@ function contactManagment(state = initialState, action) {
     switch (action.type) {
         case 'ADD_CONTACT':
             // Contact is or is not in the contact list
-            const contactNameIndex = state.contactList.findIndex(item => item.nom ===
+            const contactNameIndex = state.contactList.findIndex(item => item.name ===
                 action.value)
             
                 // Contact is already in the contact list
@@ -58,7 +58,7 @@ function contactManagment(state = initialState, action) {
                 // Contact is added
                 } else {
                     const newId = state.contactList[state.contactList.length - 1].id + 1
-                    const newContact = { id: newId, nom: action.value}
+                    const newContact = { id: newId, name: action.value}
                     nextState = {
                         ...state,
                         contactList: [...state.contactList, newContact]
