@@ -4,7 +4,7 @@
 import React from 'react'
 import { Text, TouchableOpacity, View, TextInput, FlatList, Alert } from 'react-native'
 import styles from './styles'
-import GroupItem from '../../GroupItem/GroupItem'
+import GroupItem from '../GroupItem/GroupItem'
 import Modal from 'react-native-modal'
 import { connect } from 'react-redux'
 
