@@ -1,9 +1,11 @@
 //Navigation/Navigation.js
 
-import { createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation'
+import { createStackNavigator, createMaterialTopTabNavigator, SwitchNavigator } from 'react-navigation'
 import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen/ContactsScreen'
 import MessagesReceivedScreen from '../Components/MessageReceivedComponents/MessagesReceivedScreen/MessagesReceivedScreen';
 import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent/GroupScreenComponent'
+import Loading from '../Components/LoadingScreenComponent/Loading'
+
 
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
@@ -49,5 +51,14 @@ const MainStackNavigator = createStackNavigator({
     },
 });
 
+const MainSwitchNavigator = SwitchNavigator(
+    {
+        Loading,
+        MainStackNavigator
+    },
+    {
+        initialRouteName: 'Loading'
+    }
+)
 
-export default MainStackNavigator
+export default MainSwitchNavigator
