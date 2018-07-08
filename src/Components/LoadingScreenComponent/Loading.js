@@ -10,14 +10,14 @@ class Loading extends React.Component {
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
-            this.props.navigation.navigate(user ? 'MainStackNavigator' : 'SignUp')
+           this.props.navigation.navigate(user ? 'MainStackNavigator' : 'Login')
         })
     }
-    
+
     render() {
         return (
             <View style={styles.container}>
-                <Text>Loading</Text>
+                <Text style={styles.title}>eBlink</Text>
                 <ActivityIndicator size="large" />
             </View>
         )

@@ -1,11 +1,13 @@
 //Navigation/Navigation.js
 
-import { createStackNavigator, createMaterialTopTabNavigator, SwitchNavigator } from 'react-navigation'
+import { createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator } from 'react-navigation'
 import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen/ContactsScreen'
 import MessagesReceivedScreen from '../Components/MessageReceivedComponents/MessagesReceivedScreen/MessagesReceivedScreen';
 import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent/GroupScreenComponent'
 import Loading from '../Components/LoadingScreenComponent/Loading'
-
+import SignUp from '../Components/SignUpScreenComponents/SignUp'
+import Login from '../Components/LoginScreenComponent/Login'
+import ForgottenPsswrd from '../Components/LoginScreenComponent/ForgottenPsswrd/ForgottenPsswrd'
 
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
@@ -51,10 +53,13 @@ const MainStackNavigator = createStackNavigator({
     },
 });
 
-const MainSwitchNavigator = SwitchNavigator(
+const MainSwitchNavigator = createSwitchNavigator(
     {
         Loading,
-        MainStackNavigator
+        MainStackNavigator,
+        SignUp,
+        Login,
+        ForgottenPsswrd
     },
     {
         initialRouteName: 'Loading'
