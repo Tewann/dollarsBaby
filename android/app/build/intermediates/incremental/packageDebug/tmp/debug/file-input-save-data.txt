@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Jul 04 20:29:56 CEST 2018
+#Sun Jul 08 16:57:00 CEST 2018
 17.baseType=DIRECTORY
 4.path=lib/x86/libglog.so
 25.base=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
