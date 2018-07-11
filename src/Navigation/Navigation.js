@@ -1,6 +1,7 @@
 //Navigation/Navigation.js
 
-import { DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
+import { DrawerItems, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
+
 import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen/ContactsScreen'
 import MessagesReceivedScreen from '../Components/MessageReceivedComponents/MessagesReceivedScreen/MessagesReceivedScreen';
 import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent/GroupScreenComponent'
@@ -8,10 +9,82 @@ import Loading from '../Components/LoadingScreenComponent/Loading'
 import SignUp from '../Components/SignUpScreenComponents/SignUp'
 import Login from '../Components/LoginScreenComponent/Login'
 import ForgottenPsswrd from '../Components/LoginScreenComponent/ForgottenPsswrd/ForgottenPsswrd'
-//import { Button } from 'react-native-elements';
-import { Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import ProfilScreen from '../Components/ProfilScreenComponents/ProfilScreen'
 
+import React from 'react'
+import { Icon } from 'react-native-elements'
+import EvilIcons from 'react-native-vector-icons/EvilIcons'
+// name='account-off'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+//
+import Octicons from 'react-native-vector-icons/Octicons'
+import { View, Text, TouchableOpacity } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
+
+import firebase from 'react-native-firebase'
+
+import styles from './styles'
+
+//
+// Custom components for navigation
+//
+
+const DrawerButton = ({ navigation }) => {
+    return (
+        <View style={{ marginLeft: 15, paddingTop: 1 }}>
+            <Icon
+                name='menu'
+                onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+                color='white'
+            />
+        </View>
+
+    );
+};
+
+const CustomDrawerContentComponent = (props) => {
+    return (
+    <LinearGradient
+        colors={[ '#3a485c', '#3a485c', '#88b097' ]}
+        style={{ flex: 1 }} 
+    >
+        <Text style={styles.CustomDrawerTitle}>eBlink</Text>
+        <TouchableOpacity 
+            onPress={() => props.navigation.navigate('ProfilScreen')}
+            style={styles.CustomDrawerItemContainer}
+        >
+            <EvilIcons 
+                name='user'
+                type='EvilIcons'
+                size={30}
+                color='white'
+                style={styles.CustomDrawerIcon}
+            />
+            <Text style={styles.CustomDrawerText}>Profil</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+            onPress={() => firebase.auth().signOut().catch(error => {
+                console.log(error)
+            })}
+            style={styles.CustomDrawerItemContainer}
+        >
+            <Octicons 
+                name='sign-out'
+                type='Octicons'
+                size={25}
+                color='white'
+                style={{ marginLeft: 10 }}
+            />
+            <Text style={[styles.CustomDrawerText, {paddingTop: 1}]}>Se déconnecter</Text>
+        </TouchableOpacity>
+    </LinearGradient>
+    )
+}
+
+
+//
+// Navigators
+//
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
     {
@@ -46,13 +119,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
 
 
 
-const DrawerButton = ({ navigation }) => {
-    return (
-        <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.openDrawer())}>
-            <Text>Menu</Text>
-        </TouchableOpacity>
-    );
-};
+
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
         screen: topTabBarNavigation,
@@ -62,7 +129,7 @@ const MainStackNavigator = createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             title: 'eBlink',
             headerTitleStyle: {
-                marginLeft: 30,
+                marginLeft: 0,
             },
             headerStyle: {
                 backgroundColor: '#3a485c',
@@ -75,13 +142,16 @@ const MainStackNavigator = createStackNavigator({
 
 const DrawerStack = createDrawerNavigator(
     {
-        screen1: { screen: MainStackNavigator },
-        screen2: { screen: Login },
-        screen3: { screen: ForgottenPsswrd },
-        topTabBarNavigation: { screen: topTabBarNavigation }
+        ProfilScreen: { screen: ProfilScreen },
+        MainStackNavigator: { screen: MainStackNavigator }
     },
     {
-        drawerWidth: 200,
+        initialRouteName: 'MainStackNavigator',
+        contentComponent: CustomDrawerContentComponent,
+        drawerOpenRoute: 'DrawerOpen',
+        drawerCloseRoute: 'DrawerClose',
+        drawerToggleRoute: 'DrawerToggle',
+        drawerWidth: 175,
     }
 )
 
