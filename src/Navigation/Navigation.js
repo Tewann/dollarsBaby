@@ -146,7 +146,7 @@ const DrawerStack = createDrawerNavigator(
         MainStackNavigator: { screen: MainStackNavigator }
     },
     {
-        initialRouteName: 'MainStackNavigator',
+        initialRouteName: 'ProfilScreen',
         contentComponent: CustomDrawerContentComponent,
         drawerOpenRoute: 'DrawerOpen',
         drawerCloseRoute: 'DrawerClose',
