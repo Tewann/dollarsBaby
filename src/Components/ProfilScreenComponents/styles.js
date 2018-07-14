@@ -1,6 +1,10 @@
 // Style for Profil Screen
 
 import { StyleSheet } from 'react-native'
+import Dimensions from 'Dimensions'
+
+const { height, width } = Dimensions.get('window');
+const itemWidth = (width - 35);
 
 const styles = StyleSheet.create({
     header_container: {
@@ -15,7 +19,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         fontWeight: 'bold'
     },
-    avatar_container:{
+    avatar_container: {
         alignItems: 'center',
         paddingTop: 30,
     },
@@ -34,13 +38,19 @@ const styles = StyleSheet.create({
         marginTop: 40
     },
     profil_item: {
-        flexDirection: 'row',
         borderTopWidth: 1,
         borderTopColor: '#cecfcf',
         paddingTop: 15,
         paddingBottom: 15,
         marginLeft: 15,
         marginRight: 15,
+    },
+    text_input: {
+        width: itemWidth,
+        borderWidth: 1,
+        borderColor: '#cecfcf',
+        borderRadius: 5
+
     },
 })
 
