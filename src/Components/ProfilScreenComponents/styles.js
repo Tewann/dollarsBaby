@@ -45,13 +45,6 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginRight: 15,
     },
-    text_input: {
-        width: itemWidth,
-        borderWidth: 1,
-        borderColor: '#cecfcf',
-        borderRadius: 5
-
-    },
 })
 
 export default styles
