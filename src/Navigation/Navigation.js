@@ -45,7 +45,7 @@ const DrawerButton = ({ navigation }) => {
 const CustomDrawerContentComponent = (props) => {
     return (
     <LinearGradient
-        colors={[ '#3a485c', '#3a485c', '#88b097' ]}
+        colors={[ '#3a485c', '#88b097', 'white' ]}
         style={{ flex: 1 }} 
     >
         <Text style={styles.CustomDrawerTitle}>eBlink</Text>
