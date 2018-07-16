@@ -6,9 +6,10 @@ import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, S
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
-import ImagePicker from 'react-native-image-picker'
 import MailAdressBlock from './MailAdressBlockComponent/MailAdressBlock'
 import PasswordBlock from './PasswordBlockComponent/PasswordBlock'
+import ChangeProfilImageBlock from './ChangeProfilImageBlockComponent/ChangeProfilImageBlock.js'
+import DeleteAccountBlock from './DeleteAccountBlockComponent/DeleteAccountBlock'
 import firebase from 'react-native-firebase'
 
 class ProfilScreen extends React.Component {
@@ -16,37 +17,21 @@ class ProfilScreen extends React.Component {
         super(props)
         this.state = {
             avatar: require('../../../images/ic_tag_faces.png'),
-            errorMessage: null,
             email: firebase.auth().currentUser.email
-        }
-        options = {
-            title: 'Modifer mon image',
-            takePhotoButtonTitle: 'Prendre une photo',
-            chooseFromLibraryButtonTitle: 'Choisir une photo dans la galerie'
         }
     }
 
-    _modifyAvatarImage = () => {
-        ImagePicker.showImagePicker(options, (response) => {
-            if (response.didCancel) {
-                console.log("L'utilisateur a annulé")
-            }
-            else if (response.error) {
-                this.setState({ errorMessage: response.error })
-            }
-            else {
-                console.log('Photo : ', response.uri)
-                let requireSource = { uri: response.uri }
-                this.setState({
-                    avatar: requireSource
-                })
-            }
+    // function passed to image picker block
+    // get avatar.uri and modify profil state
+    _updateAvatar = (requireSource) => {
+        this.setState({
+            avatar: requireSource
         })
     }
 
     _updateMail = () => {
         const email = firebase.auth().currentUser.email
-        this.setState({ email: email})
+        this.setState({ email: email })
     }
 
     render() {
@@ -82,25 +67,12 @@ class ProfilScreen extends React.Component {
                             />
                             <Text style={styles.username}>Nom d'utilisateur</Text>
                             <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.state.email}</Text>
-                            {this.state.errorMessage &&
-                                <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10 }}>
-                                    Erreur : {this.state.errorMessage}
-                                </Text>}
                         </View>
                         <View style={styles.profil_item_containers}>
-                            <MailAdressBlock updateMail={() => this._updateMail()}/>
+                            <MailAdressBlock updateMail={() => this._updateMail()} />
                             <PasswordBlock />
-                            <TouchableOpacity
-                                style={styles.profil_item}
-                                onPress={this._modifyAvatarImage}
-                            >
-                                <Text>Charger une photo de profil</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                style={styles.profil_item}
-                            >
-                                <Text>Supprimer mon compte</Text>
-                            </TouchableOpacity>
+                            <ChangeProfilImageBlock updateAvatar={(requireSource) => this._updateAvatar(requireSource)} />
+                            <DeleteAccountBlock />
                         </View>
                     </KeyboardAvoidingView>
                 </ScrollView>
