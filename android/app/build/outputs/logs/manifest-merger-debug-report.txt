@@ -8,6 +8,7 @@ MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBl
 MERGED from [:react-native-vector-icons] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:multidex:1.0.3] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\a0b6374751ac2350ce6ee64e9c37b4ff\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\064ba7709d3ea9b25d6237fda53c72c8\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-auth:15.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.1.0.aar\84ba59aca5b61bbedc25af17c19dea72\AndroidManifest.xml:17:1-38:12
@@ -20,10 +21,12 @@ MERGED from [com.google.firebase:firebase-analytics-impl:15.0.2] C:\Users\Tewann
 MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.1.0.aar\ba0080628f98c582b4787f19d0ab05ad\AndroidManifest.xml:17:1-65:12
 MERGED from [com.google.firebase:firebase-iid-interop:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-15.0.0.aar\bfcc6d9b0f0537017bc3b522f0785283\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0bd1e890fb0ca0f423e8bbc8ffb44a12\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:2:1-15:12
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-database-collection:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-15.0.1.aar\ba4f0423b6ab52772f9bea6de7aab63e\AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\494775cf45c1feaefdd07c72a3578ea9\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-15.0.0.aar\54e5638666f3432d5539f5f4ef8435ce\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\a80ad980ffc79c74036fda1cbd0a9be5\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:2:1-16:12
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\487b4a7cae9fad0854a5fdb5fc607c0b\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:17:1-31:12
@@ -37,12 +40,13 @@ MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradl
 MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\62184021537020fc3f18f06063c40cbe\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\8e13e861675c7f1bbaba9f0f4293795f\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\9e91916facbcf997281070d2fa4ea934\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\13273a464ce3527754cf525aa34dafa8\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\63c6397c4e100ffd656a276271397aa8\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\1764b966af13273252be9af455be7099\AndroidManifest.xml:17:1-24:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:17:1-30:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-29:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-29:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-29:12
@@ -114,14 +118,16 @@ MERGED from [com.google.firebase:firebase-iid-interop:15.0.0] C:\Users\Tewann\.g
 MERGED from [com.google.firebase:firebase-iid-interop:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-15.0.0.aar\bfcc6d9b0f0537017bc3b522f0785283\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0bd1e890fb0ca0f423e8bbc8ffb44a12\AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0bd1e890fb0ca0f423e8bbc8ffb44a12\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:7:5-13:19
-MERGED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:10:5-16:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:10:5-16:19
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\494775cf45c1feaefdd07c72a3578ea9\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\494775cf45c1feaefdd07c72a3578ea9\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-measurement-connector:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-15.0.0.aar\54e5638666f3432d5539f5f4ef8435ce\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.firebase:firebase-measurement-connector:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-15.0.0.aar\54e5638666f3432d5539f5f4ef8435ce\AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\a80ad980ffc79c74036fda1cbd0a9be5\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\a80ad980ffc79c74036fda1cbd0a9be5\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:8:5-14:19
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:8:5-14:19
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\487b4a7cae9fad0854a5fdb5fc607c0b\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\487b4a7cae9fad0854a5fdb5fc607c0b\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:22:5-26:19
@@ -142,10 +148,10 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:25:5-29:19
-MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\1764b966af13273252be9af455be7099\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\1764b966af13273252be9af455be7099\AndroidManifest.xml:22:5-20
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\1764b966af13273252be9af455be7099\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\1764b966af13273252be9af455be7099\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:12:7-39
 	android:icon
@@ -192,6 +198,8 @@ MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\
 MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:multidex:1.0.3] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\a0b6374751ac2350ce6ee64e9c37b4ff\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.3] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\a0b6374751ac2350ce6ee64e9c37b4ff\AndroidManifest.xml:20:5-43
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\064ba7709d3ea9b25d6237fda53c72c8\AndroidManifest.xml:20:5-43
@@ -216,14 +224,18 @@ MERGED from [com.google.firebase:firebase-iid-interop:15.0.0] C:\Users\Tewann\.g
 MERGED from [com.google.firebase:firebase-iid-interop:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-15.0.0.aar\bfcc6d9b0f0537017bc3b522f0785283\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0bd1e890fb0ca0f423e8bbc8ffb44a12\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0bd1e890fb0ca0f423e8bbc8ffb44a12\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-database-collection:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-15.0.1.aar\ba4f0423b6ab52772f9bea6de7aab63e\AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database-collection:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-15.0.1.aar\ba4f0423b6ab52772f9bea6de7aab63e\AndroidManifest.xml:6:5-44
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\494775cf45c1feaefdd07c72a3578ea9\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\494775cf45c1feaefdd07c72a3578ea9\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-15.0.0.aar\54e5638666f3432d5539f5f4ef8435ce\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-15.0.0.aar\54e5638666f3432d5539f5f4ef8435ce\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\a80ad980ffc79c74036fda1cbd0a9be5\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\a80ad980ffc79c74036fda1cbd0a9be5\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:5:5-6:37
+MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:5:5-6:37
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\487b4a7cae9fad0854a5fdb5fc607c0b\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\487b4a7cae9fad0854a5fdb5fc607c0b\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:20:5-44
@@ -248,6 +260,10 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\62184021537020fc3f18f06063c40cbe\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\62184021537020fc3f18f06063c40cbe\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\8e13e861675c7f1bbaba9f0f4293795f\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\8e13e861675c7f1bbaba9f0f4293795f\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\9e91916facbcf997281070d2fa4ea934\AndroidManifest.xml:5:5-7:41
@@ -258,8 +274,6 @@ MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Tewann\.gradle\caches\tr
 MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\63c6397c4e100ffd656a276271397aa8\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\1764b966af13273252be9af455be7099\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.2.aar\1764b966af13273252be9af455be7099\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:20:5-22:41
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
@@ -308,6 +322,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector-impl:15.0.0] C:\
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-15.0.0.aar\d82a0b60f8ea7b50a76df6c7c3c87894\AndroidManifest.xml:27:9-31:19
 MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.1.0.aar\ba0080628f98c582b4787f19d0ab05ad\AndroidManifest.xml:35:9-39:19
 MERGED from [com.google.firebase:firebase-iid:15.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-iid-15.1.0.aar\ba0080628f98c582b4787f19d0ab05ad\AndroidManifest.xml:35:9-39:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:11:9-15:19
+MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:11:9-15:19
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:15.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-15.1.0.aar\84ba59aca5b61bbedc25af17c19dea72\AndroidManifest.xml:31:18-89
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
@@ -470,16 +486,22 @@ ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.g
 		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0bd1e890fb0ca0f423e8bbc8ffb44a12\AndroidManifest.xml:26:13-72
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\0bd1e890fb0ca0f423e8bbc8ffb44a12\AndroidManifest.xml:24:13-79
-provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:8:9-12:39
-	android:authorities
-		ADDED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:10:13-72
-	android:exported
-		ADDED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:11:13-37
-	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:12:13-36
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:14:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-common:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-15.0.1.aar\be02c46c532d1a1ed29e672e868cd0a6\AndroidManifest.xml:9:13-77
+		ADDED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\90769b23218d9371383c3069bbef2f87\AndroidManifest.xml:13:17-111
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:9:9-13:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:11:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:12:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:13:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:10:13-77
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:23:9-25:69
 	android:value

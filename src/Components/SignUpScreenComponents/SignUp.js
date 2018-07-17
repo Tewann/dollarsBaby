@@ -3,7 +3,7 @@ import { Text, View, TextInput, Button, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import LinearGradient from 'react-native-linear-gradient'
-
+import { createUserInCloudFirestore } from '../../Services/firebaseFunctions'
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -11,18 +11,35 @@ class SignUp extends React.Component {
         this.state = {
             email: '',
             password: '',
+            confirmPassword: '',
             errorMessage: null
         }
     }
 
+
     handleSignUp = () => {
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() => this.props.navigation.navigate('Main'))
-            .catch(error => this.setState({ errorMessage: error.message }))
+        if (this.state.email === '') {
+            this.setState({ errorMessage: 'Merci de renseigner une adresse mail' })
+        } else if (this.state.password !== this.state.confirmPassword) {
+            this.setState({ errorMessage: 'Les mots de passe ne correspondent pas' })
+        } else {
+            firebase
+                .auth()
+                .createUserWithEmailAndPassword(this.state.email, this.state.password)
+                .then(() => this.props.navigation.navigate('Main'))
+                .catch(error => this.setState({ errorMessage: error.message }))
+        }
     }
 
+    // get initial password from first psswrd text input
+    _getPassword = (text) => {
+        this.setState({ password: text })
+    }
+
+    // get confirmation password from second psswrd text input
+    _getConfirmationPassword = (text) => {
+        this.setState({ confirmPassword: text })
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -41,11 +58,18 @@ class SignUp extends React.Component {
                 />
                 <TextInput
                     secureTextEntry
-                    placeholder="******"
+                    placeholder="Mot de passe"
                     autoCapitalize="none"
                     style={styles.textInput}
-                    onChangeText={password => this.setState({ password })}
-                    value={this.state.password}
+                    onChangeText={(text) => this._getPassword(text)}
+                    underlineColorAndroid='transparent'
+                />
+                <TextInput
+                    secureTextEntry
+                    placeholder="Confirmer votre mot de passe"
+                    autoCapitalize="none"
+                    style={styles.textInput}
+                    onChangeText={(text) => this._getConfirmationPassword(text)}
                     underlineColorAndroid='transparent'
                 />
                 <TouchableOpacity onPress={this.handleSignUp}>
@@ -60,6 +84,10 @@ class SignUp extends React.Component {
                     onPress={() => this.props.navigation.navigate('Login')}
                 >
                     <Text style={styles.Text}>Se connecter</Text>
+                </TouchableOpacity><TouchableOpacity
+                    onPress={() => createUserInCloudFirestore()}
+                >
+                    <Text style={styles.Text}>Test</Text>
                 </TouchableOpacity>
             </View>
         )
