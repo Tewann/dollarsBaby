@@ -16,6 +16,9 @@ class SignUp extends React.Component {
         }
     }
 
+    componentDidMount() {
+        firebase.auth().signOut();
+    }
 
     handleSignUp = () => {
         if (this.state.email === '') {
