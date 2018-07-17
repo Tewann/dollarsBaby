@@ -146,7 +146,7 @@ const DrawerStack = createDrawerNavigator(
         MainStackNavigator: { screen: MainStackNavigator }
     },
     {
-        initialRouteName: 'ProfilScreen',
+        initialRouteName: 'MainStackNavigator',
         contentComponent: CustomDrawerContentComponent,
         drawerOpenRoute: 'DrawerOpen',
         drawerCloseRoute: 'DrawerClose',
@@ -164,7 +164,7 @@ const MainSwitchNavigator = createSwitchNavigator(
         ForgottenPsswrd
     },
     {
-        initialRouteName: 'Loading'
+        initialRouteName: 'SignUp'
     }
 )
 
