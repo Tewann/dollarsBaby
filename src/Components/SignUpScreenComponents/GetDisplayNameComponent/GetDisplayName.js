@@ -37,14 +37,16 @@ class GetDisplayName extends React.Component {
                     >
                         <View style={styles.profil_item}>
                             <Text style={styles.indications}>Avant de continuer, vous devez indiquer votre nom d'utilisateur</Text>
-                            <TextInput
-                                placeholder="Confirmer votre adresse mail"
+                                                        <TextInput
+                                placeholder="Nom d'utilisateur"
                                 onChangeText={(text) => this._confirmMailInputChanged(text)}
                                 autoFocus={false}
                                 style={styles.text_input}
                                 autoCorrect={false}
                                 autoCapitalize='none'
                             />
+                            <Text style={{ fontStyle: 'italic'}}>Ce nom sera celui visible par vos contacts</Text>
+                            <Text style={{ fontStyle: 'italic'}}>Ce nom ne pourra pas être changé</Text>
                             <TouchableOpacity
                                 style={{ alignItems: 'center' }}
                                 onPress={() => this._deleteAccount()}
