@@ -10,13 +10,14 @@ import SignUp from '../Components/SignUpScreenComponents/SignUp'
 import Login from '../Components/LoginScreenComponent/Login'
 import ForgottenPsswrd from '../Components/LoginScreenComponent/ForgottenPsswrd/ForgottenPsswrd'
 import ProfilScreen from '../Components/ProfilScreenComponents/ProfilScreen'
+import GetDisplayName from '../Components/SignUpScreenComponents/GetDisplayNameComponent/GetDisplayName'
 
 import React from 'react'
 import { Icon } from 'react-native-elements'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 // name='account-off'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-//
+
 import Octicons from 'react-native-vector-icons/Octicons'
 import { View, Text, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
@@ -161,10 +162,11 @@ const MainSwitchNavigator = createSwitchNavigator(
         DrawerStack,
         SignUp,
         Login,
-        ForgottenPsswrd
+        ForgottenPsswrd,
+        GetDisplayName
     },
     {
-        initialRouteName: 'SignUp'
+        initialRouteName: 'GetDisplayName'
     }
 )
 

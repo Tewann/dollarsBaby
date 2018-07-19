@@ -1,9 +1,12 @@
+// src/Components/SignUpScreenComponents/SignUpScreen.js
+// Sign up screen
+
 import React from 'react'
-import { Text, View, TextInput, Button, TouchableOpacity } from 'react-native'
+import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import LinearGradient from 'react-native-linear-gradient'
-import { createUserInCloudFirestore } from '../../Services/firebaseFunctions'
+import { signUpAndCreateUserInDatabase } from '../../Services/firebaseFunctions'
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -17,7 +20,7 @@ class SignUp extends React.Component {
     }
 
     componentDidMount() {
-        firebase.auth().signOut();
+        firebase.auth().signOut().catch();
     }
 
     handleSignUp = () => {
@@ -26,11 +29,11 @@ class SignUp extends React.Component {
         } else if (this.state.password !== this.state.confirmPassword) {
             this.setState({ errorMessage: 'Les mots de passe ne correspondent pas' })
         } else {
-            firebase
-                .auth()
-                .createUserWithEmailAndPassword(this.state.email, this.state.password)
-                .then(() => this.props.navigation.navigate('Main'))
-                .catch(error => this.setState({ errorMessage: error.message }))
+                signUpAndCreateUserInDatabase(this.state.email, this.state.password)
+                    .then(() => this.props.navigation.navigate('GetDisplayName'))
+                    .catch((error) => {
+                this.setState({ errorMessage: error })
+            })
         }
     }
 
@@ -87,10 +90,6 @@ class SignUp extends React.Component {
                     onPress={() => this.props.navigation.navigate('Login')}
                 >
                     <Text style={styles.Text}>Se connecter</Text>
-                </TouchableOpacity><TouchableOpacity
-                    onPress={() => createUserInCloudFirestore()}
-                >
-                    <Text style={styles.Text}>Test</Text>
                 </TouchableOpacity>
             </View>
         )
