@@ -1,0 +1,3 @@
+# Referenced at C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:28
+-keep class com.eblink.MainApplication { <init>(...); }
+
