@@ -66,6 +66,7 @@ const CustomDrawerContentComponent = (props) => {
         <TouchableOpacity 
             onPress={() => firebase.auth().signOut().catch(error => {
                 console.log(error)
+                this.props.navigation.navigate('Login')
             })}
             style={styles.CustomDrawerItemContainer}
         >

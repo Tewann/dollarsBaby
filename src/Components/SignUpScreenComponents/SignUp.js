@@ -6,7 +6,7 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import LinearGradient from 'react-native-linear-gradient'
-import { signUpAndCreateUserInDatabase } from '../../Services/firebaseFunctions'
+import { signUpToFirebase } from '../../Services/firebaseFunctions'
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -29,11 +29,11 @@ class SignUp extends React.Component {
         } else if (this.state.password !== this.state.confirmPassword) {
             this.setState({ errorMessage: 'Les mots de passe ne correspondent pas' })
         } else {
-                signUpAndCreateUserInDatabase(this.state.email, this.state.password)
-                    .then(() => this.props.navigation.navigate('GetDisplayName'))
-                    .catch((error) => {
-                this.setState({ errorMessage: error })
-            })
+            signUpToFirebase(this.state.email, this.state.password)
+                .then(() => this.props.navigation.navigate('GetDisplayName'))
+                .catch((error) => {
+                    this.setState({ errorMessage: error })
+                })
         }
     }
 
@@ -69,6 +69,7 @@ class SignUp extends React.Component {
                     style={styles.textInput}
                     onChangeText={(text) => this._getPassword(text)}
                     underlineColorAndroid='transparent'
+                    value={this.state.password}
                 />
                 <TextInput
                     secureTextEntry
@@ -77,6 +78,7 @@ class SignUp extends React.Component {
                     style={styles.textInput}
                     onChangeText={(text) => this._getConfirmationPassword(text)}
                     underlineColorAndroid='transparent'
+                    value={this.state.confirmPassword}
                 />
                 <TouchableOpacity onPress={this.handleSignUp}>
                     <LinearGradient
