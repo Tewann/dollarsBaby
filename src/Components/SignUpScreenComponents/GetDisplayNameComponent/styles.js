@@ -28,13 +28,17 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
+    tooltips: {
+        textAlign: 'center',
+        fontStyle: 'italic',
+        marginTop: 10,
+    },
     profil_item_containers: {
         marginTop: 40
     },
     profil_item: {
         borderTopWidth: 1,
         borderTopColor: '#cecfcf',
-        paddingTop: 15,
         paddingBottom: 15,
         marginLeft: 15,
         marginRight: 15,

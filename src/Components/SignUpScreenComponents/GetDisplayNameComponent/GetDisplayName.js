@@ -2,9 +2,11 @@
 // Get display name screen
 
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
+import AccountNameComponent from './AccountNameComponent/AccountName'
+import ProfilPhotoComponent from './ProfilPhotoComponent/ProfilPhoto'
 
 import { Icon } from 'react-native-elements'
 
@@ -13,8 +15,30 @@ class GetDisplayName extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            errorMessage: null
+            errorMessage: null,
+            display: 'AccountName'
         }
+    }
+
+    _goToProfilPictureComponent = () => {
+        this.setState({ display: 'ProfilPhoto' })
+    }
+    _goToLoginScreen = () => {
+        this.props.navigation.navigate('Login')
+    }
+
+    AccountNameAndProfilPhotoDisplay() {
+        if (this.state.display === 'AccountName') {
+            return (
+                <AccountNameComponent 
+                    goToLogin={this._goToLoginScreen} 
+                    goToProfilPicture={this._goToProfilPictureComponent}
+                />
+            )
+        } else if (this.state.display === 'ProfilPhoto')
+            return (
+                <ProfilPhotoComponent />
+            )
     }
 
     render() {
@@ -33,83 +57,12 @@ class GetDisplayName extends React.Component {
                 >
                     <KeyboardAvoidingView
                         behavior='position'
-                        keyboardVerticalOffset={-96}
+                        keyboardVerticalOffset={-64}
                     >
-                        <View style={styles.profil_item}>
-                            <Text style={styles.indications}>Avant de continuer, vous devez indiquer votre nom d'utilisateur</Text>
-                                                        <TextInput
-                                placeholder="Nom d'utilisateur"
-                                onChangeText={(text) => this._confirmMailInputChanged(text)}
-                                autoFocus={false}
-                                style={styles.text_input}
-                                autoCorrect={false}
-                                autoCapitalize='none'
-                            />
-                            <Text style={{ fontStyle: 'italic'}}>Ce nom sera celui visible par vos contacts</Text>
-                            <Text style={{ fontStyle: 'italic'}}>Ce nom ne pourra pas être changé</Text>
-                            <TouchableOpacity
-                                style={{ alignItems: 'center' }}
-                                onPress={() => this._deleteAccount()}
-                            >
-                                <LinearGradient
-                                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                                    colors={['#88b097', '#889eb0']}
-                                    style={styles.button}
-                                >
-                                    <Icon
-                                        name='delete-forever'
-                                        color='white'
-                                    />
-                                    <Text style={styles.button_text}>Enregistrer</Text>
-                                </LinearGradient>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.profil_item}>
-                            <Text style={styles.indications}>Vous pouvez ajouter une photo</Text>
-                            <TextInput
-                                placeholder="Confirmer votre adresse mail"
-                                onChangeText={(text) => this._confirmMailInputChanged(text)}
-                                autoFocus={false}
-                                style={styles.text_input}
-                                autoCorrect={false}
-                                autoCapitalize='none'
-                            />
-                            <TouchableOpacity
-                                style={{ alignItems: 'center' }}
-                                onPress={() => this._deleteAccount()}
-                            >
-                                <LinearGradient
-                                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                                    colors={['#88b097', '#889eb0']}
-                                    style={styles.button}
-                                >
-                                    <Icon
-                                        name='delete-forever'
-                                        color='white'
-                                    />
-                                    <Text style={styles.button_text}>Charger une photo de profil</Text>
-                                </LinearGradient>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.profil_item_containers}>
-                        <TouchableOpacity
-                                style={{ alignItems: 'center' }}
-                                onPress={() => this._deleteAccount()}
-                            >
-                                <LinearGradient
-                                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                                    colors={['#88b097', '#889eb0']}
-                                    style={styles.button}
-                                >
-                                    <Icon
-                                        name='delete-forever'
-                                        color='white'
-                                    />
-                                    <Text style={styles.button_text}>Continuer</Text>
-                                </LinearGradient>
-                            </TouchableOpacity>
-                            
-                        </View>
+
+                        {this.AccountNameAndProfilPhotoDisplay()}
+
+
                     </KeyboardAvoidingView>
                 </ScrollView>
             </View>
