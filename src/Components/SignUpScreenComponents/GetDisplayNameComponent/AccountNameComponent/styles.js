@@ -1,4 +1,4 @@
-// Style for Profil Screen
+// Style for account name component
 
 import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
@@ -12,7 +12,7 @@ title: {
         fontSize: 15,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 20,
+        marginBottom: 35,
     },
     tooltips: {
         textAlign: 'center',
@@ -37,7 +37,7 @@ title: {
         alignItems: 'center',
         flexDirection: 'row',
         padding: 10,
-        marginTop: 20,
+        marginTop: 35,
         borderRadius: 75
     },
     button_text: {

@@ -17,7 +17,7 @@ class AccountName extends React.Component {
             confirmNameInput: "",
             errorMessage: null,
             button: 'submit',
-            placeholder1: "Nom d'utilisateur",
+            placeholder1: "Votre nom d'utilisateur",
             placeholder2: "Confirmez votre nom d'utilisateur",
             secureTextEntry: false
         }
@@ -79,7 +79,7 @@ class AccountName extends React.Component {
                 this.setState({
                     errorMessage: null,
                     button: 'submit',
-                    placeholder1: "Nom d'utilisateur",
+                    placeholder1: "Votre nom d'utilisateur",
                     placeholder2: "Confirmez votre nom d'utilisateur",
                     secureTextEntry: false,
                     nameInput: "",
@@ -161,11 +161,9 @@ class AccountName extends React.Component {
         return (
             <View>
                 <View style={styles.profil_item}>
-                    <Text style={styles.title}>Avant de continuer, vous devez indiquer votre nom d'utilisateur</Text>
-                    <Text style={styles.tooltips}>Ce nom sera visible par vos contacts</Text>
-                    <Text style={[styles.tooltips, { marginBottom: 20 }]}>Ce nom ne pourra pas être changé</Text>
+                    <Text style={styles.title}>Nom d'utilisateur</Text>
                     {this.state.errorMessage &&
-                        <Text style={{ color: 'red' }}>
+                        <Text style={{ color: 'red',  fontStyle: 'italic', }}>
                             {this.state.errorMessage}
                         </Text>}
                     <TextInput

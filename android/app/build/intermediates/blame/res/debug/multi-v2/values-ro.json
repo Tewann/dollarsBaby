@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ro\\values-ro.xml",
+            "outputFile": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ro\\values-ro.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\fb0c1d9a0ee53f25e287bac0e6589a4a\\res\\values-ro\\values-ro.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "280,401,509,632,736,849,937,1049,1170,1253,1365,1478,1578,1692,1797,1903,2024,2127",
-                        "endColumns": "120,107,122,103,112,87,111,120,82,111,112,99,113,104,105,120,102,100",
-                        "endOffsets": "396,504,627,731,844,932,1044,1165,1248,1360,1473,1573,1687,1792,1898,2019,2122,2223"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,226,334,457,561,674,762,874,995,1078,1190,1303,1403,1517,1622,1728,1849,4701",
-                        "endColumns": "120,107,122,103,112,87,111,120,82,111,112,99,113,104,105,120,102,100",
-                        "endOffsets": "221,329,452,556,669,757,869,990,1073,1185,1298,1398,1512,1617,1723,1844,1947,4797"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\cfdfe02e79679383442ca65d3d5e2f3f\\res\\values-ro\\values.xml",
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\6299d29c74c7273e50750b62b3898d34\\res\\values-ro\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\55e1f0ee8cbe8140f6b3db56a1e3f3d5\\res\\values-ro\\values.xml",
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\064ba7709d3ea9b25d6237fda53c72c8\\res\\values-ro\\values-ro.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "280,401,509,632,736,849,937,1049,1170,1253,1365,1478,1578,1692,1797,1903,2024,2127",
+                        "endColumns": "120,107,122,103,112,87,111,120,82,111,112,99,113,104,105,120,102,100",
+                        "endOffsets": "396,504,627,731,844,932,1044,1165,1248,1360,1473,1573,1687,1792,1898,2019,2122,2223"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,226,334,457,561,674,762,874,995,1078,1190,1303,1403,1517,1622,1728,1849,4701",
+                        "endColumns": "120,107,122,103,112,87,111,120,82,111,112,99,113,104,105,120,102,100",
+                        "endOffsets": "221,329,452,556,669,757,869,990,1073,1185,1298,1398,1512,1617,1723,1844,1947,4797"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bd1e890fb0ca0f423e8bbc8ffb44a12\\res\\values-ro\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

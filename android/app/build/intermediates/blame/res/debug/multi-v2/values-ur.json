@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ur\\values-ur.xml",
+            "outputFile": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ur\\values-ur.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\cfdfe02e79679383442ca65d3d5e2f3f\\res\\values-ur\\values.xml",
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\6299d29c74c7273e50750b62b3898d34\\res\\values-ur\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\55e1f0ee8cbe8140f6b3db56a1e3f3d5\\res\\values-ur\\values.xml",
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bd1e890fb0ca0f423e8bbc8ffb44a12\\res\\values-ur\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\0b6f0dc3734e6908e22cac9561a82780\\res\\values-ur\\values-ur.xml",
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5913cfb553359405769e0bed5ed4a085\\res\\values-ur\\values-ur.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
