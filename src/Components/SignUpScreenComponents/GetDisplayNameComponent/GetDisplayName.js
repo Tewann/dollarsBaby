@@ -16,7 +16,7 @@ class GetDisplayName extends React.Component {
         super(props)
         this.state = {
             errorMessage: null,
-            display: 'AccountName'
+            display: 'ProfilPhoto'
         }
     }
 
