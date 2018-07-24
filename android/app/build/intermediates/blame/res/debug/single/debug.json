@@ -765,7 +765,7 @@
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
-        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\node_modules\\react-native-image-picker\\android\\build\\intermediates\\packaged_res\\debug\\xml\\provider_paths.xml"
+        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\node_modules\\rn-fetch-blob\\android\\build\\intermediates\\packaged_res\\debug\\xml\\provider_paths.xml"
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",

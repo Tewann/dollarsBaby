@@ -9,6 +9,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import ImagePicker from 'react-native-image-picker'
 import LinearGradient from 'react-native-linear-gradient'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import { uploadImage } from '../../../../Services/firebaseFunctions'
 
 // variable to avoid "Can't find variable: options" when trying to open image picker or camera
 var options = {};
@@ -33,10 +34,11 @@ class ProfilPhoto extends React.Component {
             }
             else {
                 let requireSource = { uri: response.uri }
-                this.setState({ 
+                this.setState({
                     avatar: requireSource,
                     button: 'save'
-                 })
+                }),
+                    uploadImage(requireSource)
             }
         });
     }
@@ -51,10 +53,10 @@ class ProfilPhoto extends React.Component {
             }
             else {
                 let requireSource = { uri: response.uri }
-                this.setState({ 
+                this.setState({
                     avatar: requireSource,
                     button: 'save'
-                 })
+                })
             }
         });
     }
@@ -100,7 +102,7 @@ class ProfilPhoto extends React.Component {
                             type='entypo'
                             color='white'
                         />
-                        <Text style={[styles.button_text, { paddingRight: 5}]}>Continuer</Text>
+                        <Text style={[styles.button_text, { paddingRight: 5 }]}>Continuer</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             )
@@ -109,7 +111,7 @@ class ProfilPhoto extends React.Component {
 
     _uploadPictureToFirebase = () => {
         console.log('upload picture to firebase')
-        this.setState({ button: 'nextscreen'})
+        this.setState({ button: 'nextscreen' })
     }
 
     _goToNextScreen = () => {
@@ -151,10 +153,10 @@ class ProfilPhoto extends React.Component {
                         <Text style={{ paddingLeft: 5 }}>Photo</Text>
                     </TouchableOpacity>
                 </View>
-                
+
                 {this.SaveOrNextscreenButton()}
-                
-                
+
+
                 <TouchableOpacity
                     onPress={() => this._goToNextScreen()}
                 >

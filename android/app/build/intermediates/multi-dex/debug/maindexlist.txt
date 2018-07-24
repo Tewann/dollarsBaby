@@ -123,6 +123,7 @@ android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
 com/BV/LinearGradient/LinearGradientPackage.class
+com/RNFetchBlob/RNFetchBlobPackage.class
 com/eblink/BuildConfig.class
 com/eblink/MainApplication$1.class
 com/eblink/MainApplication.class
