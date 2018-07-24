@@ -1,4 +1,5 @@
 import firebase from 'react-native-firebase'
+import RNFetchBlob from 'react-native-fetch-blob'
 
 // get UserUid/Email from currently signed in user
 export const getUserUidAndEmail = async () =>
@@ -84,6 +85,15 @@ export const loginToFirebase = (email, password) =>
             })
     })
 
+// upload image
+export const uploadImage = (uri, mime = 'aplication/octet-stream') => {
+    const Blob = RNFetchBlob.polyfill.Blob
+    const fs = RNFetchBlob.fs
+    window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest
+    window.Blob = Blob
+    console.log('test')
+    console.log(Blob)
+}
 
 // --------------------
 // --------------------
