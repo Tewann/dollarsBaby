@@ -19,7 +19,8 @@ class AccountName extends React.Component {
             button: 'submit',
             placeholder1: "Votre nom d'utilisateur",
             placeholder2: "Confirmez votre nom d'utilisateur",
-            secureTextEntry: false
+            secureTextEntry: false,
+            autoCapitalize: 'sentences'
         }
     }
 
@@ -59,6 +60,7 @@ class AccountName extends React.Component {
                             secureTextEntry: true,
                             nameInput: "",
                             confirmNameInput: "",
+                            autoCapitalize: 'none'
                         })
                     // if a user name is already set up for this mail adresse
                     // => redirect to next screen
@@ -84,6 +86,7 @@ class AccountName extends React.Component {
                     secureTextEntry: false,
                     nameInput: "",
                     confirmNameInput: "",
+                    autoCapitalize: 'sentences'
                 })
             )
             .catch((error) => {
@@ -171,7 +174,7 @@ class AccountName extends React.Component {
                         onChangeText={(text) => this._nameInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
-                        autoCapitalize='none'
+                        autoCapitalize={this.state.autoCapitalize}
                         value={this.state.nameInput}
                     />
                     <TextInput
@@ -179,7 +182,7 @@ class AccountName extends React.Component {
                         onChangeText={(text) => this._verifyNameInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
-                        autoCapitalize='none'
+                        autoCapitalize={this.state.autoCapitalize}
                         secureTextEntry={this.state.secureTextEntry}
                         value={this.state.confirmNameInput}
                     />
