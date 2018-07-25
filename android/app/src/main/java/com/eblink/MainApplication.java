@@ -8,6 +8,7 @@ import com.imagepicker.ImagePickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.storage.RNFirebaseStoragePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
 import com.facebook.react.ReactNativeHost;
@@ -36,7 +37,8 @@ public class MainApplication extends Application implements ReactApplication {
             new LinearGradientPackage(),
             new RNFirebasePackage(),
             new RNFirebaseAuthPackage(),
-            new RNFirebaseFirestorePackage()
+            new RNFirebaseFirestorePackage(),
+            new RNFirebaseStoragePackage()
       );
     }
 

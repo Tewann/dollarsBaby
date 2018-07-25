@@ -37,8 +37,7 @@ class ProfilPhoto extends React.Component {
                 this.setState({
                     avatar: requireSource,
                     button: 'save'
-                }),
-                    uploadImage(requireSource)
+                })
             }
         });
     }
@@ -110,8 +109,8 @@ class ProfilPhoto extends React.Component {
     }
 
     _uploadPictureToFirebase = () => {
-        console.log('upload picture to firebase')
         this.setState({ button: 'nextscreen' })
+        uploadImage(this.state.avatar)
     }
 
     _goToNextScreen = () => {
