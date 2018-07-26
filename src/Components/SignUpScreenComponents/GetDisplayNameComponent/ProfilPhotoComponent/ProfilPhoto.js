@@ -108,9 +108,16 @@ class ProfilPhoto extends React.Component {
         }
     }
 
+    // function for button
+    // upload photo to firebase
     _uploadPictureToFirebase = () => {
+        if (this.state.avatar === require('../../../../../images/ic_tag_faces.png')) {
+            this.setState({errorMessage: "Vous n'avez pas selectionné de photo, voulez-vous continuer?"})
+        } else {
+            this.setState({ errorMessage: null})
+            uploadImage(this.state.avatar).catch(error => this.setState({ errorMessage: error}))
+        }
         this.setState({ button: 'nextscreen' })
-        uploadImage(this.state.avatar)
     }
 
     _goToNextScreen = () => {
