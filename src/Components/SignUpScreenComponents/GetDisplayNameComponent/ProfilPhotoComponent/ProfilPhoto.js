@@ -121,7 +121,7 @@ class ProfilPhoto extends React.Component {
     }
 
     _goToNextScreen = () => {
-        console.log('going to next screen')
+        this.props.goToAdMessage()
     }
 
     render() {
