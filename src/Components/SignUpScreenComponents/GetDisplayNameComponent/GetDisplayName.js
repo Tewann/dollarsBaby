@@ -7,6 +7,7 @@ import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import AccountNameComponent from './AccountNameComponent/AccountName'
 import ProfilPhotoComponent from './ProfilPhotoComponent/ProfilPhoto'
+import AdMessageComponent from './AdMessageComponent/AdMessage'
 
 import { Icon } from 'react-native-elements'
 
@@ -16,7 +17,7 @@ class GetDisplayName extends React.Component {
         super(props)
         this.state = {
             errorMessage: null,
-            display: 'ProfilPhoto'
+            display: 'AdMessage'
         }
     }
 
@@ -26,6 +27,13 @@ class GetDisplayName extends React.Component {
     _goToLoginScreen = () => {
         this.props.navigation.navigate('Login')
     }
+    _goToAdMessageComponent = () => {
+        this.setState({ display: 'AdMessage'})
+    }
+    _goToMainScreen = () => {
+        this.props.navigation.navigate('DrawerStack')
+    }
+
 
     AccountNameAndProfilPhotoDisplay() {
         if (this.state.display === 'AccountName') {
@@ -35,10 +43,17 @@ class GetDisplayName extends React.Component {
                     goToProfilPicture={this._goToProfilPictureComponent}
                 />
             )
-        } else if (this.state.display === 'ProfilPhoto')
+        } else if (this.state.display === 'ProfilPhoto') {
             return (
-                <ProfilPhotoComponent />
+                <ProfilPhotoComponent 
+                    goToAdMessage={this._goToAdMessageComponent}
+                />
             )
+        } else if (this.state.display === 'AdMessage') {
+            return (
+                <AdMessageComponent goToMainScreen={this._goToMainScreen}/>
+            )
+        }
     }
 
     render() {

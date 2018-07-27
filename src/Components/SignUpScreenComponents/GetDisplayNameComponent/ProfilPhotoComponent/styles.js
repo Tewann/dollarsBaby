@@ -1,7 +1,6 @@
 // Style for Profil photo component
 
 import { StyleSheet } from 'react-native'
-import Dimensions from 'Dimensions'
 
 
 const styles = StyleSheet.create({
