@@ -2,7 +2,7 @@
 // Profil screen view
 
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { View, Text, Image, KeyboardAvoidingView, ScrollView } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
@@ -11,22 +11,22 @@ import PasswordBlock from './PasswordBlockComponent/PasswordBlock'
 import ChangeProfilImageBlock from './ChangeProfilImageBlockComponent/ChangeProfilImageBlock.js'
 import DeleteAccountBlock from './DeleteAccountBlockComponent/DeleteAccountBlock'
 import firebase from 'react-native-firebase'
+import { getUserDataForProfilScreen } from '../../Services/firebaseFunctions'
+import { connect } from 'react-redux'
 
 class ProfilScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            avatar: require('../../../images/ic_tag_faces.png'),
-            email: firebase.auth().currentUser.email
+            email: '',
+            userName: "Nom d'utilisateur"
         }
     }
 
-    // function passed to image picker block
-    // get avatar.uri and modify profil state
-    _updateAvatar = (requireSource) => {
-        this.setState({
-            avatar: requireSource
-        })
+    componentDidMount = async () => {
+        const userInformations = await getUserDataForProfilScreen()
+        this.setState({ email: userInformations.userEmail })
+        this.setState({ userName: userInformations.userName })
     }
 
     _updateMail = () => {
@@ -61,17 +61,17 @@ class ProfilScreen extends React.Component {
                         keyboardVerticalOffset={-96}
                     >
                         <View style={styles.avatar_container}>
-                            <Image
-                                style={styles.avatar_image}
-                                source={this.state.avatar}
-                            />
-                            <Text style={styles.username}>Nom d'utilisateur</Text>
+                                <Image
+                                    style={styles.avatar_image}
+                                    source={this.props.currentUser.userProfilPicture}
+                                />
+                            <Text style={styles.username}>{this.state.userName}</Text>
                             <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.state.email}</Text>
                         </View>
                         <View style={styles.profil_item_containers}>
                             <MailAdressBlock updateMail={() => this._updateMail()} />
                             <PasswordBlock />
-                            <ChangeProfilImageBlock updateAvatar={(requireSource) => this._updateAvatar(requireSource)} />
+                            <ChangeProfilImageBlock />
                             <DeleteAccountBlock />
                         </View>
                     </KeyboardAvoidingView>
@@ -81,4 +81,10 @@ class ProfilScreen extends React.Component {
     }
 }
 
-export default ProfilScreen
+const mapStateToProps = (state) => {
+    return {
+        currentUser: state.getCurrentUserInformations,
+    }
+}
+
+export default connect(mapStateToProps)(ProfilScreen)

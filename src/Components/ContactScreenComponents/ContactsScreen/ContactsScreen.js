@@ -66,7 +66,7 @@ class ContactsScreen extends React.Component {
                     ListHeaderComponent={() => this.renderHeader()}
                     keyboardShouldPersistTaps={'always'}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
-                    keyExtractor={(item) => item.id.toString()}
+                    keyExtractor={(item) => item.id}
                     renderItem={({ item }) => <ContactItem contact={item}
                         showMessages={this._showMessagesList}
                     />}

@@ -1,13 +1,24 @@
 //Store/configureStore.js
 
-import { createStore, combineReducers } from 'redux'
-import contactManagment from './Reducers/contactReducer'
+import { createStore, applyMiddleware } from 'redux'
+import { contactManagment } from './Reducers/contactReducer'
 import displayMessagesList from './Reducers/messageReducer'
 import groupManagment from './Reducers/groupReducer'
+import getCurrentUserInformations from './Reducers/currentUserReducer'
+import thunk from 'redux-thunk';
+import { persistCombineReducers} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
+const rootPersistConfig = {
+    key: 'root',
+    storage: storage
+}
 
-export default createStore(combineReducers({
+export default createStore(persistCombineReducers(rootPersistConfig, {
     contactManagment,
     displayMessagesList,
-    groupManagment
-}))
+    groupManagment,
+    getCurrentUserInformations
+}),
+    applyMiddleware(thunk)
+)
