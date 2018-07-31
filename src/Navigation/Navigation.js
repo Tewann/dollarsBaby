@@ -167,7 +167,7 @@ const MainSwitchNavigator = createSwitchNavigator(
         GetDisplayName
     },
     {
-        initialRouteName: 'GetDisplayName'
+        initialRouteName: 'Loading'
     }
 )
 

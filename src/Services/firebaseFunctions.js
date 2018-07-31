@@ -1,7 +1,8 @@
 import firebase from 'react-native-firebase'
 import { Platform } from 'react-native'
+import RNFetchBlob from 'rn-fetch-blob'
 
-// get UserUid/Email from currently signed in user
+// get User informations from currently signed in user
 export const getUserData = async () =>
     new Promise((resolve, reject) => {
         const user = firebase.auth().onAuthStateChanged(user => {
@@ -84,7 +85,7 @@ export const loginToFirebase = async (email, password) =>
     new Promise((resolve, reject) => {
         firebase
             .auth()
-            .signInWithEmailAndPassword(email, password)
+            .signInWithEmailAndPassword('as@gmail.com', 'aaaaaa')
             .then(resolve())
             .catch(error => {
                 reject(error)
@@ -98,7 +99,6 @@ export const loginToFirebase = async (email, password) =>
 
 // upload image to firebase storage
 export const uploadImageToFirebase = (uri, userName) => {
-
     return new Promise((resolve, reject) => {
         let imgUri = uri.uri;
         const uploadUri = Platform.OS === 'ios' ? imgUri.replace('file://', '') : imgUri;
@@ -121,7 +121,7 @@ export const uploadImageToFirebase = (uri, userName) => {
                         .delete()
                         .then()
                         .catch(error => console.log('erreur lors suppression', error))
-                } 
+                }
             })
         // upload new image to firebase storage    
         firebase
@@ -162,7 +162,7 @@ export const setDlLinkToCloudFirestore = (downloadURL, username, imageName) =>
             .collection('Users')
             .doc(username)
             .set({
-                photoURL: downloadURL,
+                photoUrl: downloadURL,
                 photoName: imageName
             }, { merge: true })
             .then(resolve())
@@ -193,7 +193,6 @@ export const signUpToFirebase = (email, password) =>
             })
     })
 
-
 // function exported to Account Name screen
 // set display name to firebase account
 // create dedicated document in Cloud Firestore
@@ -205,11 +204,51 @@ export const createUserInDatabase = async (username) => {
 }
 
 // function exported to ProfilPhoto component (after sign up screen)
+// function exported to ProfilScreen
 // upload image to firebase storage
 export const uploadImage = async (uri) => {
-    const signIn = await loginToFirebase('as@gmail.com', 'aaaaaa');
+    const signIn = await loginToFirebase();
     const { userUid, userEmail, userName } = await getUserData();
     const { downloadURL, imageName } = await uploadImageToFirebase(uri, userName);
     const setDlLinkToProfil = await setImgDlLinkToFirebaseAccount(downloadURL);
     const setDlLinkToCloud = await setDlLinkToCloudFirestore(downloadURL, userName, imageName)
+}
+
+
+// function exported to profil screen
+// grab user data
+export const getUserDataForProfilScreen = async () => {
+    const signIn = await loginToFirebase();
+    const userInformations = await getUserData();
+    return (userInformations)
+}
+
+
+
+// --------------------
+// --------------------
+//  FIREBASE THUNKS
+// --------------------
+// --------------------
+
+
+export const fetchContacts = (userName) => {
+    return function (dispatch) {
+        const userPath = userName.toString()
+        firebase.firestore()
+            .collection('Users')
+            .doc(userPath)
+            .collection('contactList')
+            .onSnapshot((snapshot) => {
+                snapshot.forEach(doc => {
+                    firebase.firestore()
+                        .collection('Users')
+                        .doc(doc.get('name'))
+                        .onSnapshot((doc) => {
+                            const action = { type: 'CONTACT_LIST_UPDATED', value: doc }
+                            dispatch(action)
+                        })
+                })
+            })
+    }
 }

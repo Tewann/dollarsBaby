@@ -22,8 +22,8 @@
     "create-react-native-app": "^1.0.0",
     "react": "16.3.1",
     "react-native": "^0.55.4",
+    "react-native-cached-image": "github:fungilation/react-native-cached-image",
     "react-native-elements": "^0.19.1",
-    "react-native-fetch-blob": "^0.10.8",
     "react-native-firebase": "^4.3.0",
     "react-native-image-picker": "^0.26.10",
     "react-native-linear-gradient": "^2.4.0",
@@ -32,6 +32,8 @@
     "react-navigation": "~2.3.1",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
     "rn-fetch-blob": "^0.10.12"
   }
 }
