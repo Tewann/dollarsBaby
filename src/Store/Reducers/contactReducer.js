@@ -100,7 +100,7 @@ export const contactManagment = (state = initialState, action) => {
             } else {
                 // if no contacts
                 if (state.contactList.length === 0) {
-                    const newId =  1
+                    const newId = 1
                     const newContact = {
                         id: newId,
                         name: databaseContactName,

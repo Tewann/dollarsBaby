@@ -10,30 +10,9 @@ import MailAdressBlock from './MailAdressBlockComponent/MailAdressBlock'
 import PasswordBlock from './PasswordBlockComponent/PasswordBlock'
 import ChangeProfilImageBlock from './ChangeProfilImageBlockComponent/ChangeProfilImageBlock.js'
 import DeleteAccountBlock from './DeleteAccountBlockComponent/DeleteAccountBlock'
-import firebase from 'react-native-firebase'
-import { getUserDataForProfilScreen } from '../../Services/firebaseFunctions'
 import { connect } from 'react-redux'
 
 class ProfilScreen extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            email: '',
-            userName: "Nom d'utilisateur"
-        }
-    }
-
-    componentDidMount = async () => {
-        const userInformations = await getUserDataForProfilScreen()
-        this.setState({ email: userInformations.userEmail })
-        this.setState({ userName: userInformations.userName })
-    }
-
-    _updateMail = () => {
-        const email = firebase.auth().currentUser.email
-        this.setState({ email: email })
-    }
-
     render() {
         return (
             <View
@@ -65,11 +44,13 @@ class ProfilScreen extends React.Component {
                                     style={styles.avatar_image}
                                     source={this.props.currentUser.userProfilPicture}
                                 />
-                            <Text style={styles.username}>{this.state.userName}</Text>
-                            <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.state.email}</Text>
+                            <Text style={styles.username}>
+                            {this.props.currentUser.name}
+                            </Text>
+                            <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.props.currentUser.email}</Text>
                         </View>
                         <View style={styles.profil_item_containers}>
-                            <MailAdressBlock updateMail={() => this._updateMail()} />
+                            <MailAdressBlock />
                             <PasswordBlock />
                             <ChangeProfilImageBlock />
                             <DeleteAccountBlock />

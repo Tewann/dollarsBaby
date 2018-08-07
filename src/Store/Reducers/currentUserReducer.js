@@ -1,21 +1,47 @@
 // Store/Reducers/currentUserReducer.js
 
 const initialState = {
-    userProfilPicture: require('../../../images/ic_tag_faces.png')
+    userProfilPicture: require('../../../images/ic_tag_faces.png'),
+    registrationToken: null,
+    name: null,
+    email: null,
 }
 
 function getCurrentUserInformations(state = initialState, action) {
     let nextState
     switch (action.type) {
 
-        //Action to send Predefined Messages 
-        case 'UPDATE_PROFIL_PICTURE':                   
+        case 'UPDATE_PROFIL_PICTURE':
             nextState = {
                 ...state,
                 userProfilPicture: action.value
             }
             return nextState || state
-       
+
+        case "TOKEN_MODIFICATION":
+            nextState = {
+                ...state,
+                registrationToken: action.value
+            }
+            return nextState || state
+
+        case "SET_CURRENT_USER_NAME":
+            nextState = {
+                ...state,
+                name: action.value
+            }
+            return nextState || state
+
+        case "SET_CURRENT_USER_EMAIL":
+            nextState = {
+                ...state,
+                email: action.value
+            }
+            return nextState || state
+
+        case "RESET_USER":
+            return initialState;
+
         default:
             return state
     }

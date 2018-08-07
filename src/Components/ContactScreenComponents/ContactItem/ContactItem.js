@@ -49,7 +49,7 @@ class ContactItem extends React.Component {
         const { contact, showMessages } = this.props
         return (
             <TouchableOpacity
-                onPress={() => showMessages()}
+                onPress={() => showMessages(contact.name)}
                 style={styles.main_container}>
                 {this._renderImage()}
                 <Text style={styles.contact_text}>

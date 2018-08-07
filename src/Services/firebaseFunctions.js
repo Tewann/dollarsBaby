@@ -171,6 +171,43 @@ export const setDlLinkToCloudFirestore = (downloadURL, username, imageName) =>
             })
     })
 
+// ----------------------
+// END : FUNCTIONS UPLOAD IMAGE
+// ----------------------
+
+
+// add Registration Token to current user cloud firestore document
+export const setUpRegistrationTokenToFirebase = async (fcmToken, username) => {
+    new Promise((resolve, reject) => {
+        firebase.firestore()
+            .collection('Users')
+            .doc(username)
+            .set({
+                fcmToken: fcmToken
+            }, { merge: true})
+            .then(resolve())
+            .catch(error => reject(error))
+        })
+}
+
+// send message to the contact's firestore message list
+// calls reducers
+export const sendMessageToFirestore = async(currentUser, contact, predefined_message, additionalMessage) => {
+    new Promise((resolve, reject) => {
+        firebase.firestore()
+            .collection('Users')
+            .doc(contact)
+            .collection('messagesReceived')
+            .add({
+                title: currentUser,
+                body: `${predefined_message} : ${additionalMessage}`,
+                sound: predefined_message
+            })
+            .then(resolve())
+            .catch(error => reject(error))
+    })
+}
+
 
 // --------------------
 // --------------------
@@ -217,10 +254,10 @@ export const uploadImage = async (uri) => {
 
 // function exported to profil screen
 // grab user data
-export const getUserDataForProfilScreen = async () => {
+export const getUserDataForLoginScreen = async () => {
     const signIn = await loginToFirebase();
-    const userInformations = await getUserData();
-    return (userInformations)
+    const { userUid, userEmail, userName } = await getUserData();
+    return ({userEmail, userName})
 }
 
 

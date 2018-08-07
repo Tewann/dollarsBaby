@@ -58,15 +58,15 @@ class MailAdressBlock extends React.Component {
         // if first text input empty
         if (this.state.newMail === "") {
             this.setState({ errorMessageMail: "Merci de préciser votre nouvelle adresse mail" })
-            
+
             // if second text input empty
         } else if (this.state.confirmMail === "") {
             this.setState({ errorMessageMail: "Merci de reconfirmer votre nouvelle adresse mail" })
-            
+
             // if first text input different from second text input
         } else if (this.state.newMail !== this.state.confirmMail) {
             this.setState({ errorMessageMail: "Les adresses mail ne correspondent pas" })
-            
+
             //if first text input matches second text input
         } else if (this.state.newMail === this.state.confirmMail) {
             this.setState({ errorMessageMail: null })
@@ -74,7 +74,8 @@ class MailAdressBlock extends React.Component {
             this.reauthenticate(this.state.currentPassword).then(() => {
                 var user = firebase.auth().currentUser;
                 user.updateEmail(this.state.newMail).then(() => {
-                    this.props.updateMail()
+                    const action = { type: "SET_CURRENT_USER_EMAIL", value: this.state.newMail }
+                    this.props.dispatch(action)
                     setTimeout(this._switchBetweenMailTextandInput, 1000, 'text');
                 }).catch((error) => {
                     this.setState({ errorMessageMail: error.message });

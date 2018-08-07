@@ -27,51 +27,33 @@ const initialState = {
             title: "C'est fait"
         },
     ],
-    messagesReceived: [
+    messagesHistory: [
         {
             id: 1,
             predefined_message: 'Message Test',
             additionnal_message: ""
         }
-    ],
-    messageToSend: ""
-
-
+    ]
 }
 
 function displayMessagesList(state = initialState, action) {
     let nextState
     switch (action.type) {
 
-        //Action to send Predefined Messages 
-        case 'SEND_MESSAGE':
-            const newId = state.messagesReceived[state.messagesReceived.length - 1].id + 1
-            let newMessage = {}
-            // Checking if and addionnal message has to be send
-            // if no
-            if (state.messageToSend == "") {
-                newMessage = { id: newId, predefined_message: action.value }
-
-            // if yes, getting it directly from redux state
-            } else {
-                newMessage = {
-                    id: newId,
-                    predefined_message: action.value,
-                    additionnal_message: state.messageToSend
-                }
+        //  When a message has been send by current user
+        // message is added to messages history list 
+        case 'MESSAGE_SENDED':
+            const newId = state.messagesHistory[state.messagesHistory.length - 1].id + 1
+            const newMessage = {
+                id: newId,
+                type: 'send',
+                sendTo: action.value.contact,
+                predefined_message: action.value.predefined_message,
+                additionnal_message: action.value.additionnal_message
             }
             nextState = {
                 ...state,
-                messagesReceived: [...state.messagesReceived, newMessage]
-            }
-            return nextState || state
-
-
-        // Action : getting the additionnal text to send with one of predefined messages   
-        case 'MESSAGE_TO_SEND':
-            nextState = {
-                ...state,
-                messageToSend: message = action.value
+                messagesHistory: [...state.messagesHistory, newMessage]
             }
             return nextState || state
 
