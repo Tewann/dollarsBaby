@@ -4,6 +4,23 @@
             "outputFile": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr-rCA\\values-fr-rCA.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.1.0.aar\\cd819e4a3f180fae8401204443a498e4\\res\\values-fr-rCA\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "209",
+                        "endColumns": "100",
+                        "endOffsets": "309"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4869",
+                        "endColumns": "104",
+                        "endOffsets": "4969"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bd1e890fb0ca0f423e8bbc8ffb44a12\\res\\values-fr-rCA\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -30,11 +47,11 @@
                         "endOffsets": "390,498,621,736,847,934,1050,1180,1276,1386,1498,1601,1712,1819,1921,2043,2142,2243"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,38",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,216,324,447,562,673,760,876,1006,1102,1212,1324,1427,1538,1645,1747,1869,4869",
+                        "startOffsets": "105,216,324,447,562,673,760,876,1006,1102,1212,1324,1427,1538,1645,1747,1869,4974",
                         "endColumns": "110,107,122,114,110,86,115,129,95,109,111,102,110,106,101,121,98,100",
-                        "endOffsets": "211,319,442,557,668,755,871,1001,1097,1207,1319,1422,1533,1640,1742,1864,1963,4965"
+                        "endOffsets": "211,319,442,557,668,755,871,1001,1097,1207,1319,1422,1533,1640,1742,1864,1963,5070"
                     }
                 },
                 {

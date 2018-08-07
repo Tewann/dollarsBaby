@@ -3,34 +3,31 @@
 
 import React from 'react'
 import { View, FlatList, TextInput, TouchableOpacity, Text, BackHandler } from 'react-native'
-import { Icon } from 'react-native-elements'
+//import { Icon } from 'react-native-elements'
 import ContactItem from '../ContactItem/ContactItem'
-import MessageItem from '../MessageItem/MessageItem'
+//import MessageItem from '../MessageItem/MessageItem'
 import { connect } from 'react-redux'
 import styles from './styles'
 import HeaderContactList from '../HeaderContactList/HeaderContactList'
-
+import MessagesListScreen from '../MessagesListScreen/MessagesListScreen';
 
 class ContactsScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            modalMessageListVisible: false,
             displayMessagesList: false,
-            displayContactList: true
+            displayContactList: true,
+            contact: null
         }
     }
 
-    // Updating redux state in order to send addionnal text with predefined messages
-    _messageToSendChanged(text) {
-        const action = { type: 'MESSAGE_TO_SEND', value: text }
-        this.props.dispatch(action)
-    }
+
 
     //Closing contact screen list + displaying message list screen
-    _showMessagesList = () => {
+    _showMessagesList = (contact) => {
         this.setState({ displayContactList: false });
         this.setState({ displayMessagesList: true });
+        this.setState({ contact: contact})
 
         // listener on android, when back button press
         BackHandler.addEventListener('hardwareBackPress', this._backHandler)
@@ -68,7 +65,7 @@ class ContactsScreen extends React.Component {
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => <ContactItem contact={item}
-                        showMessages={this._showMessagesList}
+                        showMessages={(contact) => this._showMessagesList(contact)}
                     />}
                 />
             )
@@ -79,33 +76,10 @@ class ContactsScreen extends React.Component {
     _displayMessageList() {
         if (this.state.displayMessagesList) {
             return (
-                <View style={styles.messagelist_main_container}>
-                    <TouchableOpacity
-                        style={styles.back_to_contacts}
-                        onPressIn={this._returnToContactScreen}>
-                        <Icon name='chevron-left' color='#889eb0'/>
-                        <Text style={styles.retour}>Retour</Text>
-                    </TouchableOpacity>
-                    <TextInput
-                        placeholder='Message 100 caractères maximum'
-                        onChangeText={(text) => this._messageToSendChanged(text)}
-                        //onSubmitEditing={() => {}}
-                        style={styles.text_input}
-                        underlineColorAndroid={'white'}
-                        autoCorrect={false}
-                        ref={component => this.messageInput = component}
-                    />
-                    <FlatList
-                        data={this.props.predefinedMessagesList}
-                        numColumns={2}
-                        columnWrapperStyle={styles.flatlist}
-                        keyboardShouldPersistTaps={'always'}
-                        keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) => <MessageItem message={item}
-                            returnToContactScreen={() => this._returnToContactScreen()} />}
-                    />
-                </View>
-
+                <MessagesListScreen 
+                    contact={this.state.contact}
+                    returnToContactScreen={() => this._returnToContactScreen()}
+                />
             )
         }
     }
@@ -122,8 +96,6 @@ class ContactsScreen extends React.Component {
 const mapStateToProps = (state) => {
     return {
         contactList: state.contactManagment.contactList,
-        messagesList: state.displayMessagesList.messagesList,
-        predefinedMessagesList: state.displayMessagesList.predefinedMessagesList,
     }
 }
 

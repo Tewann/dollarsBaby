@@ -12,7 +12,7 @@ class MessagesReceivedScreen extends React.Component {
         return (
             <View style={styles.main_container}>
                 <FlatList
-                    data={this.props.messagesReceived}
+                    data={this.props.messagesHistory}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <DisplayMessage message={item}/>}
                 />
@@ -23,7 +23,7 @@ class MessagesReceivedScreen extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        messagesReceived: state.displayMessagesList.messagesReceived
+        messagesHistory: state.displayMessagesList.messagesHistory
     }
 }
 
