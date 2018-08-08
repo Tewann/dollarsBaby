@@ -184,15 +184,15 @@ export const setUpRegistrationTokenToFirebase = async (fcmToken, username) => {
             .doc(username)
             .set({
                 fcmToken: fcmToken
-            }, { merge: true})
+            }, { merge: true })
             .then(resolve())
             .catch(error => reject(error))
-        })
+    })
 }
 
 // send message to the contact's firestore message list
 // calls reducers
-export const sendMessageToFirestore = async(currentUser, contact, predefined_message, additionalMessage) => {
+export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp) => {
     new Promise((resolve, reject) => {
         firebase.firestore()
             .collection('Users')
@@ -201,7 +201,9 @@ export const sendMessageToFirestore = async(currentUser, contact, predefined_mes
             .add({
                 title: currentUser,
                 body: `${predefined_message} : ${additionalMessage}`,
-                sound: predefined_message
+                sound: predefined_message,
+                timeStamp: timeStamp,
+                id: `${currentUser}_${timeStamp}`
             })
             .then(resolve())
             .catch(error => reject(error))
@@ -257,7 +259,7 @@ export const uploadImage = async (uri) => {
 export const getUserDataForLoginScreen = async () => {
     const signIn = await loginToFirebase();
     const { userUid, userEmail, userName } = await getUserData();
-    return ({userEmail, userName})
+    return ({ userEmail, userName })
 }
 
 
@@ -268,7 +270,7 @@ export const getUserDataForLoginScreen = async () => {
 // --------------------
 // --------------------
 
-
+// fetch contacts
 export const fetchContacts = (userName) => {
     return function (dispatch) {
         const userPath = userName.toString()
@@ -285,6 +287,23 @@ export const fetchContacts = (userName) => {
                             const action = { type: 'CONTACT_LIST_UPDATED', value: doc }
                             dispatch(action)
                         })
+                })
+            })
+    }
+}
+
+// fetch messages
+export const fetchMessages = (userName) => {
+    return function (dispatch) {
+        const userPath = userName.toString()
+        firebase.firestore()
+            .collection('Users')
+            .doc(userPath)
+            .collection('messagesReceived')
+            .onSnapshot((snapshot) => {
+                snapshot.forEach(doc => {
+                    const action = { type: 'MESSAGE_RECEIVED', value: doc }
+                    dispatch(action)
                 })
             })
     }

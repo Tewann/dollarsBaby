@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Aug 07 18:19:36 CEST 2018
+#Wed Aug 08 18:42:17 CEST 2018
 5.base=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 22.path=lib/x86/libreactnativejni.so
 32.set=DEX
