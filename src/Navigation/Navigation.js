@@ -45,41 +45,41 @@ const DrawerButton = ({ navigation }) => {
 
 const CustomDrawerContentComponent = (props) => {
     return (
-    <LinearGradient
-        colors={[ '#3a485c', '#88b097', 'white' ]}
-        style={{ flex: 1 }} 
-    >
-        <Text style={styles.CustomDrawerTitle}>eBlink</Text>
-        <TouchableOpacity 
-            onPress={() => props.navigation.navigate('ProfilScreen')}
-            style={styles.CustomDrawerItemContainer}
+        <LinearGradient
+            colors={['#3a485c', '#88b097', 'white']}
+            style={{ flex: 1 }}
         >
-            <EvilIcons 
-                name='user'
-                type='EvilIcons'
-                size={30}
-                color='white'
-                style={styles.CustomDrawerIcon}
-            />
-            <Text style={styles.CustomDrawerText}>Profil</Text>
-        </TouchableOpacity>
-        <TouchableOpacity 
-            onPress={() => firebase.auth().signOut().catch(error => {
-                console.log(error)
-                this.props.navigation.navigate('Login')
-            })}
-            style={styles.CustomDrawerItemContainer}
-        >
-            <Octicons 
-                name='sign-out'
-                type='Octicons'
-                size={25}
-                color='white'
-                style={{ marginLeft: 10 }}
-            />
-            <Text style={[styles.CustomDrawerText, {paddingTop: 1}]}>Se déconnecter</Text>
-        </TouchableOpacity>
-    </LinearGradient>
+            <Text style={styles.CustomDrawerTitle}>eBlink</Text>
+            <TouchableOpacity
+                onPress={() => props.navigation.navigate('ProfilScreen')}
+                style={styles.CustomDrawerItemContainer}
+            >
+                <EvilIcons
+                    name='user'
+                    type='EvilIcons'
+                    size={30}
+                    color='white'
+                    style={styles.CustomDrawerIcon}
+                />
+                <Text style={styles.CustomDrawerText}>Profil</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => firebase.auth().signOut().catch(error => {
+                    console.log(error)
+                    this.props.navigation.navigate('Login')
+                })}
+                style={styles.CustomDrawerItemContainer}
+            >
+                <Octicons
+                    name='sign-out'
+                    type='Octicons'
+                    size={25}
+                    color='white'
+                    style={{ marginLeft: 10 }}
+                />
+                <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>Se déconnecter</Text>
+            </TouchableOpacity>
+        </LinearGradient>
     )
 }
 
@@ -90,12 +90,6 @@ const CustomDrawerContentComponent = (props) => {
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
     {
-        MessageHistory: {
-            screen: MessageHistory,
-            navigationOptions: {
-                title: 'Messages reçus'
-            },
-        },
         ContactsScreen: {
             screen: ContactsScreen,
             navigationOptions: {
@@ -109,7 +103,13 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                 title: 'Groupes'
             }
         },
-        
+        MessageHistory: {
+            screen: MessageHistory,
+            navigationOptions: {
+                title: 'Messages reçus'
+            },
+        },
+
     },
     {
         tabBarOptions: {
