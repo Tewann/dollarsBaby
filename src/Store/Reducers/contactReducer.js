@@ -128,7 +128,7 @@ export const contactManagment = (state = initialState, action) => {
             }
             return nextState || state
 
-        case "RESET":
+        case "RESET_CONTACT":
             return initialState;
 
         default:

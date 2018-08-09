@@ -39,79 +39,72 @@ function displayMessagesList(state = initialState, action) {
         //  When a message has been send by current user
         // message is added to messages history list 
         case 'MESSAGE_SENDED':
+            let newIdSend = null
             // if there is no messages
             if (state.messagesHistory.length === 0) {
-                const newId = 1
-                const newMessage = {
-                    id: newId,
-                    type: 'send',
-                    contact: action.value.contact,
-                    predefined_message: action.value.predefined_message,
-                    additionnal_message: action.value.additionnal_message,
-                    timeStamp: action.value.timeStamp
-                }
-                nextState = {
-                    ...state,
-                    messagesHistory: [newMessage, ...state.messagesHistory]
-                }
-
+                newIdSend = 1
                 // if there is messages
             } else {
-                const newId = state.messagesHistory[state.messagesHistory.length - 1].id + 1
-                const newMessage = {
-                    id: newId,
-                    type: 'send',
-                    contact: action.value.contact,
-                    predefined_message: action.value.predefined_message,
-                    additionnal_message: action.value.additionnal_message,
-                    timeStamp: action.value.timeStamp
-                }
-                nextState = {
-                    ...state,
-                    messagesHistory: [newMessage, ...state.messagesHistory]
-                }
+                newIdSend = state.messagesHistory[0].id + 1
+            }
+
+            const newMessageSend = {
+                id: newIdSend,
+                type: 'send',
+                contact: action.value.contact,
+                predefined_message: action.value.predefined_message,
+                additionnal_message: action.value.additionnal_message,
+                timeStamp: action.value.timeStamp,
+            }
+            nextState = {
+                ...state,
+                messagesHistory: [newMessageSend, ...state.messagesHistory]
             }
             return nextState || state
 
         case 'MESSAGE_RECEIVED':
-            console.log('message received')
-            console.log(action.value)
-            const contact = action.value.get('title')
-            
-            /*
-            // if there is no messages
-            if (state.messagesHistory.length === 0) {
-                const newId = 1
-                const newMessage = {
-                    id: newId,
-                    type: 'send',
-                    sendTo: action.value.contact,
-                    predefined_message: action.value.predefined_message,
-                    additionnal_message: action.value.additionnal_message,
-                    timeStamp: action.value.timeStamp
+            // check if message is already in message history
+            const messageReceivedId = action.value.get('messageId')
+            const messageIndex = state.messagesHistory
+                .findIndex(item => item.messageReceivedId === messageReceivedId)
+            let newMessage = null
+
+            // if message is not in history
+            // add message
+            if (messageIndex === -1) {
+                // get message values from firestore doc
+                const contact = action.value.get('title')
+                const predefined_message = action.value.get('predefined_message')
+                const additionnal_message = action.value.get('additional_message')
+                const timeStamp = action.value.get('timeStamp')
+                const type = action.value.get('type')
+                let newId = null
+
+                // sets newId
+                // if there is no messages in history
+                if (state.messagesHistory.length === 0) {
+                    newId = 1
+                    // if there is messages
+                } else {
+                    newId = state.messagesHistory[0].id + 1
+
                 }
-                nextState = {
-                    ...state,
-                    messagesHistory: [newMessage, ...state.messagesHistory]
+                // create new message
+                newMessage = {
+                    id: newId,
+                    type: type,
+                    contact: contact,
+                    predefined_message: predefined_message,
+                    additionnal_message: additionnal_message,
+                    timeStamp: timeStamp,
+                    messageReceivedId: messageReceivedId
                 }
 
-                // if there is messages
-            } else {
-                const newId = state.messagesHistory[state.messagesHistory.length - 1].id + 1
-                const newMessage = {
-                    id: newId,
-                    type: 'send',
-                    sendTo: action.value.contact,
-                    predefined_message: action.value.predefined_message,
-                    additionnal_message: action.value.additionnal_message,
-                    timeStamp: action.value.timeStamp
-                }
                 nextState = {
                     ...state,
                     messagesHistory: [newMessage, ...state.messagesHistory]
                 }
             }
-            */
             return nextState || state
 
         case "RESET_MESSAGE_HISTORY":

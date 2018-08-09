@@ -1,6 +1,10 @@
 import firebase from 'react-native-firebase'
 import { Platform } from 'react-native'
-import RNFetchBlob from 'rn-fetch-blob'
+
+
+// --------------------------------
+// ---------USER Functions---------
+// --------------------------------
 
 // get User informations from currently signed in user
 export const getUserData = async () =>
@@ -91,6 +95,11 @@ export const loginToFirebase = async (email, password) =>
                 reject(error)
             })
     })
+
+// --------------------------------
+// ---------END USER Functions-----
+// --------------------------------
+
 
 
 // ----------------------
@@ -191,8 +200,7 @@ export const setUpRegistrationTokenToFirebase = async (fcmToken, username) => {
 }
 
 // send message to the contact's firestore message list
-// calls reducers
-export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp) => {
+export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id) => {
     new Promise((resolve, reject) => {
         firebase.firestore()
             .collection('Users')
@@ -203,12 +211,33 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
                 body: `${predefined_message} : ${additionalMessage}`,
                 sound: predefined_message,
                 timeStamp: timeStamp,
-                id: `${currentUser}_${timeStamp}`
+                messageId: id,
+                predefined_message: predefined_message,
+                additional_message: additionalMessage,
+                type: 'received'
             })
             .then(resolve())
             .catch(error => reject(error))
     })
 }
+
+
+// Send Contact request
+export const doesContactExists = async (contact) => {
+    return new Promise((resolve, reject) => {
+        firebase.firestore().collection('Users').doc(contact).get()
+            .then(doc => {
+                //if user name available create user's doc
+                if (doc.exists) {
+                    resolve()
+                } else {
+                    reject("Cet utilisateur n'existe pas")
+                }
+            })
+            .catch(err => reject(err))
+        })
+}
+
 
 
 // --------------------

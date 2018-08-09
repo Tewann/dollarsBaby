@@ -7,7 +7,7 @@ const { height, width } = Dimensions.get('window');
 const itemWidth = (width - 35);
 
 const styles = StyleSheet.create({
-    main_view: {
+    add_contact_container: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',

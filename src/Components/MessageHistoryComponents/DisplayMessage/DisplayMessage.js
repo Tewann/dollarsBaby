@@ -55,11 +55,12 @@ class DisplayMessage extends React.Component {
             )
         } else {
             return (
-                <Icon
-                    name='arrow-down-right'
-                    type='feather'
-                    color='orange'
+                <MaterialCommunityIcons
+                    name='message-text'
+                    type='MaterialCommunityIcons'
                     size={15}
+                    color='green'
+                    style={{ paddingTop: 2 }}
                 />
             )
         }
@@ -82,7 +83,9 @@ class DisplayMessage extends React.Component {
         if (day === actualDay) {
             // if day of displaying is day of timestamp message
             // display hour:min
-            displayDate = `${hour}:${minute}`
+            displayHour = hour < 10 ? `0${hour}` : hour
+            displayMinute = minute < 10 ? `0${minute}` : minute
+            displayDate = `${displayHour}:${displayMinute}`
         } else {
             // if day of displaying is not day of timestamp message
             // display day:month
