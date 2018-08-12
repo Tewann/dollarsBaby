@@ -90,12 +90,18 @@ const CustomDrawerContentComponent = (props) => {
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
     {
+        MessageHistory: {
+            screen: MessageHistory,
+            navigationOptions: {
+                title: 'Messages reçus'
+            },
+        },
         ContactsScreen: {
             screen: ContactsScreen,
             navigationOptions: {
                 title: 'Contacts',
-                tabBarOnPress: null
-            },
+                tabBarOnPress: null,
+            }
         },
         GroupScreen: {
             screen: GroupScreen,
@@ -103,23 +109,16 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                 title: 'Groupes'
             }
         },
-        MessageHistory: {
-            screen: MessageHistory,
-            navigationOptions: {
-                title: 'Messages reçus'
-            },
-        },
+        
 
     },
     {
         tabBarOptions: {
-            style: { backgroundColor: '#3a485c' },
+            //style: { backgroundColor: '#3a485c' },
+            style: { backgroundColor: '#88b097'},
             indicatorStyle: { backgroundColor: '#f0e5dc' },
-        },
+        },      
     })
-
-
-
 
 
 
@@ -134,9 +133,17 @@ const MainStackNavigator = createStackNavigator({
             headerTitleStyle: {
                 marginLeft: 0,
             },
-            headerStyle: {
+            /*headerStyle: {
                 backgroundColor: '#3a485c',
-            },
+                //backgroundColor: '#0066ff'
+            }, */
+            headerBackground: (
+                <LinearGradient
+                    colors={['#3a485c', '#3a485c']}
+                    style={{ flex: 1 }}
+
+                />
+            ),
             headerTintColor: '#f0e5dc',
             headerLeft: <DrawerButton navigation={navigation} />
         })

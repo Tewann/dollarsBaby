@@ -12,6 +12,21 @@ import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScr
 class Loading extends React.Component {
 
     componentDidMount = async () => {
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (user) {
+                // user is authentificated
+                const username = user.displayName
+                const checkingPermission = await this.checkingNotificationsPermissions(user)
+                const checkingCurrentToken = await this.checkingCurrentRegistrationToken(username)
+                this.goToMainScreen(user)
+            } else {
+                // there no user connected
+                // going to login screen
+                this.props.navigation.navigate('Login')
+            }
+        })
+
+
         if (this.props.currentUser.name === null) {
             const userInformations = await getUserDataForLoginScreen()
             const action = { type: "SET_CURRENT_USER_NAME", value: userInformations.userName }
@@ -35,21 +50,6 @@ class Loading extends React.Component {
             notif.android.setAutoCancel(true);
             firebase.notifications().displayNotification(notif)
         });
-
-
-        firebase.auth().onAuthStateChanged(async (user) => {
-            if (user) {
-                // user is authentificated
-                const username = user.displayName
-                const checkingPermission = await this.checkingNotificationsPermissions(user)
-                const checkingCurrentToken = await this.checkingCurrentRegistrationToken(username)
-                this.goToMainScreen(user)
-            } else {
-                // there no user connected
-                // going to login screen
-                this.props.navigation.navigate('Login')
-            }
-        })
     }
 
     goToMainScreen(user) {

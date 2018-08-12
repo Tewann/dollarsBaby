@@ -8,6 +8,8 @@ import { Icon } from 'react-native-elements'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import { connect } from 'react-redux'
+import AcceptOrDecline from './AcceptOrDeclineComponent/AcceptOrDecline'
+
 
 class DisplayMessage extends React.Component {
     constructor(props) {
@@ -21,7 +23,10 @@ class DisplayMessage extends React.Component {
             item.name === this.props.message.contact)
         let uri = this.props.contactList[contactNameIndex].photoUrl
         const backUpUri = '../../../../images/ic_tag_faces.png'
-        if (uri === null) {
+        if (this.props.message.type === 'send_contact_request' || this.props.message.type === 'contact_request' || uri === null) {
+            // if message is type contact request (send or received)
+            // or if contact does not have an image uploaded to storage
+            // return default picture
             return (
                 <Image
                     source={this.state.defaultPicture}
@@ -29,6 +34,7 @@ class DisplayMessage extends React.Component {
                 />
             )
         } else {
+            // else return contact image
             return (
                 <ImageCacheProvider
                     ImageCacheManagerOptions={{ ttl: 100 }}>
@@ -43,7 +49,8 @@ class DisplayMessage extends React.Component {
 
     // display different icons if message is send or received
     _renderIcon() {
-        if (this.props.message.type === 'send') {
+        if (this.props.message.type === 'send' || this.props.message.type === 'send_contact_request') {
+            // orange icon if message or contact request have been send
             return (
                 <MaterialCommunityIcons
                     name='message-text'
@@ -54,6 +61,7 @@ class DisplayMessage extends React.Component {
                 />
             )
         } else {
+            // green icon if message or contact request received
             return (
                 <MaterialCommunityIcons
                     name='message-text'
@@ -62,6 +70,41 @@ class DisplayMessage extends React.Component {
                     color='green'
                     style={{ paddingTop: 2 }}
                 />
+            )
+        }
+    }
+
+    _renderPredefinedMessage() {
+        if (this.props.message.type === 'contact_request') {
+            // if message is contact request received displays customize predefined message
+            return (
+                <Text style={styles.predefined_message}>
+                    {this.props.message.contact} vous a envoyé une demande de contact
+                </Text>
+            )
+        } else {
+            return (
+                <View style={{ flexDirection: 'row'}}>
+                <Text style={styles.predefined_message}>
+                    {this.props.message.predefined_message}
+                </Text>
+                <Text style={styles.additionnal_message}>
+                    {this.props.message.additionnal_message}
+                </Text>
+                </View>
+            )
+        }
+    }
+
+    // buttons to accept or decline contact request invite
+    _renderResponseToContactRequest() {
+        // if message is type contact request and
+        // request' status is pendant
+        // displays accept or decline buttons
+        // else returns nothing
+        if (this.props.message.type === 'contact_request' && this.props.message.status !== 'accepted') {
+            return (
+                <AcceptOrDecline />
             )
         }
     }
@@ -108,20 +151,18 @@ class DisplayMessage extends React.Component {
                 <View style={styles.function_container}>
                     <View>
                         {this._renderImage()}
-                        <Text style={styles.contact_name}>
-                            {message.contact}
-                        </Text>
                     </View>
                     <View style={styles.messages_container}>
                         <View style={styles.predefined_message_and_arrow_container}>
                             {this._renderIcon()}
-                            <Text style={styles.predefined_message}>
-                                {message.predefined_message}
+                            <Text style={styles.contact_name}>
+                                {message.contact}
                             </Text>
+
                         </View>
-                        <Text style={styles.additionnal_message}>
-                            {message.additionnal_message}
-                        </Text>
+                        {this._renderPredefinedMessage()}
+                        {this._renderResponseToContactRequest()}
+
                     </View>
                     {this._renderTime()}
                 </View>
