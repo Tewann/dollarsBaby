@@ -38,10 +38,12 @@ class MessagesListScreen extends React.Component {
             const contact = this.props.contact
             const additionnal_message = this.state.addtionnalMessage
             const id = `${currentUser}_${timeStamp}`
-            const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id)
+            const type = 'received'
+            const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type)
                 .then(() => {
                     // if firebase function worked, update redux store
-                    const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id } }
+                    const type = 'send'
+                    const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
                     this.props.dispatch(action)
                     setTimeout(() => this.props.returnToContactScreen(), 500)
                 })

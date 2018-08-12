@@ -200,7 +200,7 @@ export const setUpRegistrationTokenToFirebase = async (fcmToken, username) => {
 }
 
 // send message to the contact's firestore message list
-export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id) => {
+export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type) => {
     new Promise((resolve, reject) => {
         firebase.firestore()
             .collection('Users')
@@ -214,7 +214,7 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
                 messageId: id,
                 predefined_message: predefined_message,
                 additional_message: additionalMessage,
-                type: 'received'
+                type: type
             })
             .then(resolve())
             .catch(error => reject(error))

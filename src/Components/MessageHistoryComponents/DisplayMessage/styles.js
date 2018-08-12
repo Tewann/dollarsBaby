@@ -6,18 +6,17 @@ import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window');
 const itemWidth = (width / 3) - 10;
-const roundWidth = itemWidth / 3;
+const roundWidth = itemWidth / 2.75;
 
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-        borderBottomWidth: 1,
         marginLeft: 10,
         paddingLeft: 5,
         marginRight: 10,
         paddingBottom: 1,
         marginTop: 5,
-        borderColor: 'lightgrey',       
+
     },
     function_container: {
         flexDirection: 'row'
@@ -26,7 +25,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         marginLeft: 10,
-        flex: 2
+        flex: 2,
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
     },
     predefined_message_and_arrow_container: {
         flexDirection: 'row'
@@ -36,7 +37,8 @@ const styles = StyleSheet.create({
         textShadowRadius: 5,
         textShadowColor: 'lightgrey',
         textShadowOffset: { width: -1, height: 1 },
-        textAlign: 'center'
+        textAlign: 'center', 
+        marginLeft: 5
     },
     rounds: {
         width: roundWidth,
@@ -46,15 +48,16 @@ const styles = StyleSheet.create({
     },
     predefined_message: {
         paddingLeft: 5,
-        fontWeight: 'bold'
+        //fontWeight: 'bold'
     },
     additionnal_message: {
         fontStyle: 'italic',
         paddingLeft: 5
     },
     time: {
-
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
     }
-   })
+})
 
 export default styles

@@ -16,7 +16,7 @@ const initialState = {
         },
         {
             id: 4,
-            title: "Appel moi"
+            title: "Appelle moi"
         },
         {
             id: 5,
@@ -50,7 +50,7 @@ function displayMessagesList(state = initialState, action) {
 
             const newMessageSend = {
                 id: newIdSend,
-                type: 'send',
+                type: action.value.type,
                 contact: action.value.contact,
                 predefined_message: action.value.predefined_message,
                 additionnal_message: action.value.additionnal_message,

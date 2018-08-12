@@ -27,7 +27,7 @@ class HeaderContactList extends React.Component {
             // call firebase function
             // checks if user exists
             var contactRequest = await doesContactExists(this.state.contactName)
-                .then(() => {
+                .then(async () => {
                     // if user exists, calls firebase function
                     // send message
                     const timeStamp = new Date().getTime();
@@ -35,8 +35,18 @@ class HeaderContactList extends React.Component {
                     const contact = this.state.contactName
                     const id = `${currentUser}_${timeStamp}`
                     const predefined_message = `Demande de contact`
-                    const additional_message = null
-                    sendMessageToFirestore(currentUser, contact, predefined_message, additional_message, timeStamp, id )
+                    const additional_message = ""
+                    const type = 'contact_request'
+                    const sendingRequest = await sendMessageToFirestore(currentUser, contact, predefined_message, additional_message, timeStamp, id, type)
+                        .then(() => {
+                            // if firebase function worked, update redux store
+                            const type = 'send_contact_request'
+                            const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additional_message, timeStamp, id, type } }
+                            this.props.dispatch(action)
+                            this.setState({ errorMessage: 'Demande de contact envoyée'})
+                            setTimeout(() => this.setState({errorMessage: null}), 4000)
+                        })
+                        .catch(err => this.setState({ errorMessage: err }))
                 })
                 .catch(err => {
                     // user doesn't exist
