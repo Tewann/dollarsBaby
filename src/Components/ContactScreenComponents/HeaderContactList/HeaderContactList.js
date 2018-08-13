@@ -21,6 +21,26 @@ class HeaderContactList extends React.Component {
         this.setState({ contactName: text, errorMessage: null })
     }
 
+    // check if contact is already in contact list
+    // then calls add contact function
+    _checkIfContactAlreadyInUserContactListThenAddContact = async () => {
+        const contactNameIndex = this.props.contactList.findIndex(item =>
+            item.name === this.state.contactName)
+            if (contactNameIndex !== -1) {
+                Alert.alert(
+                    'Erreur',
+                    'Ce contact est déjà dans votre liste de contact',
+                    [
+                        { text: 'Fermer' }
+                    ]
+                )
+            } else {
+                const addContact = await this._addContact()
+            }
+            //this.messageInput.clear()
+            //this.setState({ contactName: "" })
+    }
+
     _addContact = async () => {
         if (this.state.contactName.length > 0) {
             // if contactname is not empty
@@ -43,8 +63,8 @@ class HeaderContactList extends React.Component {
                             const type = 'send_contact_request'
                             const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additional_message, timeStamp, id, type } }
                             this.props.dispatch(action)
-                            this.setState({ errorMessage: 'Demande de contact envoyée'})
-                            setTimeout(() => this.setState({errorMessage: null}), 4000)
+                            this.setState({ errorMessage: 'Demande de contact envoyée' })
+                            setTimeout(() => this.setState({ errorMessage: null }), 4000)
                         })
                         .catch(err => this.setState({ errorMessage: err }))
                 })
@@ -68,8 +88,6 @@ class HeaderContactList extends React.Component {
                 ]
             )
         }
-        this.messageInput.clear()
-        this.setState({ contactName: "" })
     }
 
     render() {
@@ -84,7 +102,7 @@ class HeaderContactList extends React.Component {
                     <TextInput
                         placeholder='Rechercher / Ajouter un contact'
                         onChangeText={(text) => this._contactNameInputChanged(text)}
-                        onSubmitEditing={() => this._addContact()}
+                        onSubmitEditing={() => this._checkIfContactAlreadyInUserContactListThenAddContact()}
                         autoFocus={false}
                         style={styles.text_input}
                         underlineColorAndroid={'transparent'}
@@ -92,7 +110,7 @@ class HeaderContactList extends React.Component {
                         ref={component => this.messageInput = component}
                     />
                     <TouchableOpacity
-                        onPress={() => this._addContact()}
+                        onPress={() => this._checkIfContactAlreadyInUserContactListThenAddContact()}
                         style={styles.cross}>
                         <View style={styles.crossUp} />
                         <View style={styles.crossFlat} />
@@ -106,6 +124,7 @@ class HeaderContactList extends React.Component {
 const mapStateToProps = (state) => {
     return {
         currentUser: state.getCurrentUserInformations,
+        contactList: state.contactManagment.contactList,
     }
 }
 
