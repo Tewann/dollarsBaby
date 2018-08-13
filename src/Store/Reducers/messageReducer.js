@@ -107,6 +107,62 @@ function displayMessagesList(state = initialState, action) {
             }
             return nextState || state
 
+        case 'CONTACT_REQUEST_ACCEPTED':
+            // called when contact request has been accepted
+            // create new message with status accepted
+            // uses same id for the message
+            const contactRequestAcceptedMessage = {
+                id: action.value.id,
+                type: action.value.type,
+                contact: action.value.contact,
+                predefined_message: action.value.predefined_message,
+                additionnal_message: action.value.additionnal_message,
+                timeStamp: action.value.timeStamp,
+                messageReceivedId: action.value.messageReceivedId,
+                status: 'accepted'
+            }
+            
+            const updatedMessageHistoryWhenAccepted = state.messagesHistory.map(item => {
+                if(item.id === action.value.id) {
+                    return contactRequestAcceptedMessage
+                }
+                return item
+            })
+            
+            nextState = {
+                ...state,
+                messagesHistory: updatedMessageHistoryWhenAccepted
+            }
+            return nextState || state
+
+        case 'CONTACT_REQUEST_DECLINED':
+            // called when contact request has been declined
+            // create new message with status declined
+            // uses same id for the message 
+            const contactRequestDeclinedMessage = {
+                id: action.value.id,
+                type: action.value.type,
+                contact: action.value.contact,
+                predefined_message: action.value.predefined_message,
+                additionnal_message: action.value.additionnal_message,
+                timeStamp: action.value.timeStamp,
+                messageReceivedId: action.value.messageReceivedId,
+                status: 'declined'
+            }
+
+            const updatedMessageHistoryWhenDeclined = state.messagesHistory.map(item => {
+                if(item.id === action.value.id) {
+                    return contactRequestDeclinedMessage
+                }
+                return item
+            })
+
+            nextState = {
+                ...state,
+                messagesHistory: updatedMessageHistoryWhenDeclined
+            }
+            return nextState || state
+
         case "RESET_MESSAGE_HISTORY":
             return initialState;
 
