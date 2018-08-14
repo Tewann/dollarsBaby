@@ -7,11 +7,12 @@ export const sendPushNotificationsForNewMessages =
         .document(`Users/{user}/messagesReceived/{message}`)
         .onCreate(async (snapshot, context) => {
             const data = snapshot.data()
+            const sound = data.sound.toLowerCase() + '.waw'
             const payload = {
                 notification: {
                     title: data.title,
                     body: data.body,
-                    sound: data.sound,
+                    sound: sound,
                 },
                 /*android: {
                     notification: {
@@ -26,7 +27,6 @@ export const sendPushNotificationsForNewMessages =
                     }
                 }*/
             }
-
             // get ref to the user document
             const parent = snapshot.ref.parent.parent
             // grabs token for cloud messaging
@@ -39,11 +39,3 @@ export const sendPushNotificationsForNewMessages =
             return admin.messaging().sendToDevice(fcmToken, payload)
         })
 
-
-
-
-
-/*export const helloWorld = functions.https.onRequest((request, response) => {
-    console.log('hello world')
-    response.send("Hello from Firebase!");
-});*/
