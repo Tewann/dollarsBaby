@@ -45,7 +45,7 @@ class Loading extends React.Component {
                 .setNotificationId(notification.notificationId)
                 .setTitle(notification.title)
                 .setBody(notification.body)
-                .setSound('default')
+                .setSound(notification.sound)
             notif.android.setChannelId(channel)
             notif.android.setAutoCancel(true);
             firebase.notifications().displayNotification(notif)

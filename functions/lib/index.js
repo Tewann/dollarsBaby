@@ -15,11 +15,12 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     .document(`Users/{user}/messagesReceived/{message}`)
     .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {
     const data = snapshot.data();
+    const sound = data.sound.toLowerCase() + '.waw';
     const payload = {
         notification: {
             title: data.title,
             body: data.body,
-            sound: data.sound,
+            sound: sound,
         },
     };
     // get ref to the user document
@@ -32,8 +33,4 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     // sends notification to user's phone
     return admin.messaging().sendToDevice(fcmToken, payload);
 }));
-/*export const helloWorld = functions.https.onRequest((request, response) => {
-    console.log('hello world')
-    response.send("Hello from Firebase!");
-});*/
 //# sourceMappingURL=index.js.map
