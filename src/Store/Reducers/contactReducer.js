@@ -3,38 +3,7 @@ import { Alert } from 'react-native'
 
 
 const initialState = {
-    contactList: [
-        /*{
-            id: 1,
-            name: 'John',
-            photoName: null,
-            photoUrl: null,
-        },
-        /*{
-            id: 2,
-            name: 'Macron'
-        },
-        /*{
-            id: 3,
-            name: 'Angela'
-        },
-        {
-            id: 4,
-            name: 'Donald'
-        },
-        {
-            id: 5,
-            name: 'Barack'
-        },
-        {
-            id: 6,
-            name: 'Kim'
-        },
-        {
-            id: 7,
-            name: 'Vlad'
-        }*/
-    ]
+    contactList: []
 }
 
 export const contactManagment = (state = initialState, action) => {

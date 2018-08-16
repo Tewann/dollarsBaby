@@ -6,19 +6,24 @@ import { Text, TouchableOpacity, View } from 'react-native'
 import styles from './styles'
 
 class GroupItem extends React.Component {
-    
+
     render() {
         const group = this.props.group
         const switchScreen = this.props.switchScreen
         return (
             <TouchableOpacity
-            onPress={() => switchScreen(group.nom, group.contacts, group.id)}
-            style={styles.main_container}>
-            <View style={styles.rounds}/>
-            <Text style={styles.contact_text}>
-                {group.nom}
-            </Text>
-        </TouchableOpacity >
+                onPress={() => switchScreen(group.nom, group.contacts, group.id)}
+                style={styles.main_container}>
+                <View style={styles.rounds} />
+                <View style={styles.text_container}>
+                    <Text style={styles.contact_text}>
+                        {group.nom}
+                    </Text>
+                    <Text style={styles.type_text}>
+                        ({group.type})
+                    </Text>
+                </View>
+            </TouchableOpacity>
         )
     }
 }

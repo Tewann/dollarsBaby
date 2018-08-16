@@ -27,6 +27,16 @@ const initialState = {
 function groupManagment(state = initialState, action) {
     let nextState
     switch (action.type) {
+        case 'CREATE_PUBLIC_GROUP':
+            const newId = state.groupList[state.groupList.length - 1].id + 1
+            const newPublicGroup = { id: newId, nom: action.value, type: 'public' }
+            nextState = {
+                ...state,
+                groupList: [...state.groupList, newPublicGroup]
+            }
+        
+        return nextState || state
+
         case 'CREATE_PRIVATE_GROUP':
             // Group name already exist or not in group list
             const groupNameIndex = state.groupList.findIndex(item => item.nom ===

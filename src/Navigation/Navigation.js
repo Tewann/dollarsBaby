@@ -4,7 +4,7 @@ import { DrawerItems, DrawerActions, createStackNavigator, createMaterialTopTabN
 
 import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen/ContactsScreen'
 import MessageHistory from '../Components/MessageHistoryComponents/MessageHistoryScreen';
-import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent/GroupScreenComponent'
+import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent'
 import Loading from '../Components/LoadingScreenComponent/Loading'
 import SignUp from '../Components/SignUpScreenComponents/SignUp'
 import Login from '../Components/LoginScreenComponent/Login'
@@ -90,6 +90,12 @@ const CustomDrawerContentComponent = (props) => {
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
     {
+        GroupScreen: {
+            screen: GroupScreen,
+            navigationOptions: {
+                title: 'Groupes'
+            }
+        },
         ContactsScreen: {
             screen: ContactsScreen,
             navigationOptions: {
@@ -97,12 +103,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                 tabBarOnPress: null,
             }
         },
-        GroupScreen: {
-            screen: GroupScreen,
-            navigationOptions: {
-                title: 'Groupes'
-            }
-        },
+
         MessageHistory: {
             screen: MessageHistory,
             navigationOptions: {

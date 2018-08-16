@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         marginLeft: 2,
     },
+    button_container: {
+        margin: 10,
+        paddingTop: 5,
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey'
+    },
     text_input: {
         marginLeft: 5,
         marginRight: 5,
@@ -49,9 +55,12 @@ const styles = StyleSheet.create({
     },
     touchable_container: {
         margin: 2,
-        borderWidth: 1,
+        borderRadius: 75,
+        paddingLeft: 5,
+        paddingRight: 5,
+        marginBottom: 5,
         padding: 4,
-        backgroundColor: '#889eb0', 
+        backgroundColor: 'lightgrey', 
     },
     text: {
         textAlign: 'center',
