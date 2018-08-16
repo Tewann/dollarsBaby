@@ -5,8 +5,8 @@ import React from 'react'
 import { View } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
-import GroupList from '../GroupListComponent/GroupList'
-import GroupOptions from '../GroupOptionsComponent/GroupOptions'
+import GroupList from './GroupListComponent/GroupList'
+import GroupOptions from './GroupOptionsComponent/GroupOptions'
 
 
 

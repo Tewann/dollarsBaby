@@ -17,9 +17,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    text_container: {
+        flexDirection: 'column'
+    },
+    type_text: {
+        color: 'black',
+        fontStyle: 'italic',
+        textAlign: 'center'
+    },
     contact_text: {
         color: 'black',
         fontWeight: 'bold',
+        textAlign: 'center'
     },
     rounds: {
         width: roundWidth,
