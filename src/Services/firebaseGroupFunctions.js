@@ -31,7 +31,32 @@ export const createPublicGroupInFirestore = (groupName, username) =>
             })
     })
 
-export const joinPublicGroupInFirestore = () => 
+export const joinPublicGroupInFirestore = (groupName, username, token) =>
     new Promise((resolve, reject) => {
-        
+        const ref = firebase.firestore().collection('Public_Groups')
+        // joining group
+        const joinGroup = ref.doc(groupName).collection('Members').where('name', '==', username).get()
+            .then(results => {
+                // if user already in group, 
+                // reject error
+                if (!results.empty) {
+                    reject('User already in group')
+                } else {
+                    // if user not in group
+                    // add user
+                    ref.doc(groupName).collection('Members').add({
+                        name: username,
+                        token: token
+                    })
+                        .then(() => {
+                            // grab group Photo Url and returns it
+                            ref.doc(groupName).get()
+                                .then(res => resolve(res.data().photoURL)
+                                    .catch(err => reject(err))
+                                )
+                                .catch((err) => reject(err))
+                        })
+                }
+            })
+            .catch(err => reject(err))
     })
