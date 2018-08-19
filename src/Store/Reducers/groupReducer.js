@@ -2,40 +2,66 @@
 import { Alert } from 'react-native'
 
 const initialState = {
-    groupList: [
-        {
-            id: 1,
-            nom: 'USA',
-            contacts: [
-                {
-                    id: 1,
-                    nom: 'John'
-                },
-                {
-                    id: 2,
-                    nom: 'Macron'
-                },
-            ]
-        },
-        {
-            id: 2,
-            nom: 'EU'
-        }
-    ]
+    currentDisplayedGroup: ['GroupList'],
+    groupList: []
 }
 
 function groupManagment(state = initialState, action) {
     let nextState
     switch (action.type) {
+        case 'SWITCH_GROUP_SCREEN':
+            nextState = {
+                ...state,
+                currentDisplayedGroup: [action.value]
+            }
+            return nextState || state
+
         case 'CREATE_PUBLIC_GROUP':
-            const newId = state.groupList[state.groupList.length - 1].id + 1
-            const newPublicGroup = { id: newId, nom: action.value, type: 'public' }
+            // sets newId
+            // if there is no group
+            if (state.groupList.length === 0) {
+                newId = 1
+                // if there is groups
+            } else {
+                newId = state.groupList[0].id + 1
+            }
+            // create new group    
+            const newPublicGroup = {
+                id: newId,
+                name: action.value,
+                photoURL: null,
+                type: 'public',
+                status: 'created'
+            }
             nextState = {
                 ...state,
                 groupList: [...state.groupList, newPublicGroup]
             }
-        
-        return nextState || state
+
+            return nextState || state
+
+        case 'JOIN_PUBLIC_GROUP':
+            // sets newId
+            // if there is no group
+            if (state.groupList.length === 0) {
+                newId1 = 1
+                // if there is groups
+            } else {
+                newId1 = state.groupList[0].id + 1
+            }
+            // create new group   
+            const newJoinedPublicGroup = {
+                id: newId1,
+                name: action.value[0],
+                photoURL: action.value[1],
+                type: 'public',
+                status: 'joined'
+            }
+            nextState = {
+                ...state,
+                groupList: [...state.groupList, newJoinedPublicGroup]
+            }
+            return nextState || state
 
         case 'CREATE_PRIVATE_GROUP':
             // Group name already exist or not in group list
@@ -94,6 +120,9 @@ function groupManagment(state = initialState, action) {
                 nextState.groupList[action.value.groupId - 1].contacts = [...nextState.groupList[action.value.groupId - 1].contacts, newContact]
             }
             return nextState || state
+
+        case "RESET_GROUP_LIST":
+            return initialState;
 
         default:
             return state

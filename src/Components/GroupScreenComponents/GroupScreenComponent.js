@@ -11,52 +11,29 @@ import GroupOptions from './GroupOptionsComponent/GroupOptions'
 
 
 class GroupScreen extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            displayGroupList: true,
-            displayGroupOptions: false,
-            groupName: "",
-            groupId: 0,
-            groupContacts: []
-        }
-    }
 
-    // Change state to display group option screen
-    _goToGroupOptionsScreen = (groupName, groupContacts, groupId) => {
-        this.setState({ displayGroupList: false })
-        this.setState({ displayGroupOptions: true })
-        this.setState({ groupName: groupName, groupContacts: groupContacts, groupId: groupId })
-    }
-
-    _goToGroupListScreen = () => {
-        this.setState({ displayGroupOptions: false })
-        this.setState({ displayGroupList: true })
-    }
-
-    // function getting GroupList component and displaying it
+    // checks redux store
+    // if sets to Group List displays group list component
     _displayGroupList() {
-        if (this.state.displayGroupList) {
+        if (this.props.display === 'GroupList') {
             return (
-                <GroupList switchScreen={this._goToGroupOptionsScreen} />
+                <GroupList />
             )
         }
     }
 
-    // function getting GroupOptions component and displaying it
+    // checks redux store
+    // if redux store is not set to Group List, display the group option component
     _displayGroupOptions() {
-        if (this.state.displayGroupOptions) {
+        if (this.props.display !== 'GroupList') {
             return (
-                <GroupOptions 
-                switchScreen={this._goToGroupListScreen}
-                groupName={this.state.groupName}
-                groupId={this.state.groupId}
-                groupContacts={this.state.groupContacts} />
+                <GroupOptions />
             )
         }
-    }
+    }   
 
     render() {
+        console.log(this.props.display)
         return (
             <View style={styles.main_container}>
                 {this._displayGroupList()}
@@ -68,7 +45,8 @@ class GroupScreen extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        groupList: state.groupManagment.groupList
+        groupList: state.groupManagment.groupList,
+        display: state.groupManagment.currentDisplayedGroup[0]
     }
 }
 

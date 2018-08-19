@@ -6,7 +6,7 @@ import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window');
 const itemWidth = (width / 3) - 10;
-const roundWidth = itemWidth / 1.60;
+const roundWidth = (itemWidth / 1.60);
 
 const styles = StyleSheet.create({
     main_container: {
@@ -34,8 +34,6 @@ const styles = StyleSheet.create({
         width: roundWidth,
         height: roundWidth,
         borderRadius: roundWidth / 2,
-        backgroundColor: '#889eb0',
-        marginBottom: 5,
     }
 })
 

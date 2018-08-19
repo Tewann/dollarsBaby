@@ -6,7 +6,7 @@ import { TouchableOpacity, View, FlatList } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import Modal from 'react-native-modal';
-import GroupOptionsModalContactItem from '../GroupOptionsModalContactItem/GroupOptionsModalContactItem'
+import GroupOptionsModalContactItem from './GroupOptionsModalContactItem/GroupOptionsModalContactItem'
 
 class HeaderGroupContactList extends React.Component {
     constructor(props) {

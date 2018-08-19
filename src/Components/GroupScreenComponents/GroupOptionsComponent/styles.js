@@ -17,13 +17,14 @@ const styles = StyleSheet.create({
         marginLeft: 0,
         color: '#889eb0'
     },
+    avatar_container: {
+        alignItems: 'center',
+        paddingTop: 30,
+    },
     group_name: {
-        textAlign: 'center',
-        fontWeight: 'bold',
+        marginTop: 15,
         fontSize: 20,
-        color: '#889eb0',
-        backgroundColor: '#E0F4FB',
-        paddingTop: 5
+        fontWeight: 'bold',
     },
     contacts_flatlist:{
         paddingTop: 10,

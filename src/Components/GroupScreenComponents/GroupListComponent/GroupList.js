@@ -4,10 +4,10 @@
 import React from 'react'
 import { Text, TouchableOpacity, View, TextInput, FlatList, Alert } from 'react-native'
 import styles from './styles'
-import GroupItem from '../GroupItem/GroupItem'
+import GroupItem from './GroupItem/GroupItem'
 import Modal from 'react-native-modal'
 import { connect } from 'react-redux'
-import { createPublicGroupInFirestore } from '../../../Services/firebaseGroupFunctions'
+import { createPublicGroupInFirestore, joinPublicGroupInFirestore } from '../../../Services/firebaseGroupFunctions'
 import { Icon } from '../../../../node_modules/react-native-elements';
 
 class GroupList extends React.Component {
@@ -18,6 +18,7 @@ class GroupList extends React.Component {
             textInput: true,
             groupButtons: false,
             publicGroupButtons: false,
+            errorMessage: null
         },
             switchScreen = this.props.switchScreen
     }
@@ -26,6 +27,7 @@ class GroupList extends React.Component {
         this.setState({ group: text })
     }
 
+    // displaying buttons : chosing public/private group
     _displayButtons() {
         this.setState({ textInput: false, groupButtons: true })
     }
@@ -49,11 +51,10 @@ class GroupList extends React.Component {
             // if firebase function excuted calls reducer
             const createPublicGroup = await createPublicGroupInFirestore(this.state.group, this.props.currentUser.name)
                 .then(() => {
-                    console.log('group created')
                     const action = { type: 'CREATE_PUBLIC_GROUP', value: this.state.group }
                     this.props.dispatch(action)
-                    this.setState({ textInput: true, groupButtons: false  })
-                    switchScreen()
+                    this.setState({ textInput: true, groupButtons: false })
+
                 })
                 .catch((error) => {
                     console.log(error)
@@ -84,8 +85,14 @@ class GroupList extends React.Component {
     }
 
     _joinPublicGroup = async () => {
-        console.log('join public group')
-        this.setState({ textInput: true, groupButtons: false, group: "" })
+        const joinPublicGroupFirestore = await joinPublicGroupInFirestore(this.state.group, this.props.currentUser.name, this.props.currentUser.registrationToken)
+            .then((res) => {
+                const value = [groupName = this.state.group, photoURL = res]
+                const action = { type: 'JOIN_PUBLIC_GROUP', value: value }
+                this.props.dispatch(action)
+            })
+            .catch(err => this.setState({ errorMessage: err }))
+        this._displayTextInput()
         this.messageInput.clear()
     }
 
@@ -110,6 +117,11 @@ class GroupList extends React.Component {
     render() {
         return (
             <View>
+                {this.state.errorMessage &&
+                    <Text style={{ color: 'red', textAlign: 'center' }}>
+                        {this.state.errorMessage}
+                    </Text>
+                }
                 {this.state.textInput &&
                     <View style={styles.top_container}>
                         <TextInput
@@ -135,18 +147,18 @@ class GroupList extends React.Component {
                         <TouchableOpacity
                             style={styles.touchable_container}
                             onPress={() => this._createPrivateGroup()}
-                            >
+                        >
                             <Text style={styles.text}>Groupe privé</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.touchable_container}
                             onPress={() => this._createPublicGroup()}
-                            >
+                        >
                             <Text style={styles.text}>Groupe publique</Text>
                         </TouchableOpacity>
-                        <Icon 
+                        <Icon
                             name='keyboard-backspace'
-                            onPress={() => this._displayTextInput()}                         
+                            onPress={() => this._displayTextInput()}
 
                         />
                     </View>
@@ -154,20 +166,20 @@ class GroupList extends React.Component {
                 {this.state.publicGroupButtons &&
                     <View style={styles.button_container}>
                         <Text
-                        style={{ textAlign: 'center', fontWeight: 'bold'}}
+                            style={{ textAlign: 'center', fontWeight: 'bold' }}
                         >
-                        Groupe existant
+                            Groupe existant
                         </Text>
                         <TouchableOpacity
                             style={styles.touchable_container}
                             onPress={() => this._joinPublicGroup()}
-                            >
+                        >
                             <Text style={styles.text}>Le rejoindre</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             style={styles.touchable_container}
                             onPress={() => this._displayTextInput()}
-                            >
+                        >
                             <Text style={styles.text}>Annuler</Text>
                         </TouchableOpacity>
                     </View>
@@ -176,12 +188,13 @@ class GroupList extends React.Component {
                 <FlatList
                     data={this.props.groupList}
                     numColumns={3}
+                    style={{ marginBottom: 80 }}
                     keyboardShouldPersistTaps={'always'}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <GroupItem
                         group={item}
-                        switchScreen={(groupName, groupContacts, groupId) => switchScreen(groupName, groupContacts, groupId)} />}
+                    />}
                 />
             </View>
         )
