@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
     },
+    group_name_creator: {
+        fontStyle: 'italic'
+    },
     contacts_flatlist:{
         paddingTop: 10,
         marginBottom: 10,

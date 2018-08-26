@@ -27,9 +27,8 @@ const initialState = {
             title: "C'est fait"
         },
     ],
-    messagesHistory: [
 
-    ]
+    messagesHistory: []
 }
 
 function displayMessagesList(state = initialState, action) {

@@ -3,6 +3,32 @@ import { Alert } from 'react-native'
 
 const initialState = {
     currentDisplayedGroup: ['GroupList'],
+    predefinedGroupMessagesList: [
+        {
+            id: 1,
+            title: 'Blink'
+        },
+        {
+            id: 2,
+            title: "Test"
+        },
+        {
+            id: 3,
+            title: "Urgent"
+        },
+        {
+            id: 4,
+            title: "Appelle moi"
+        },
+        {
+            id: 5,
+            title: "J'arrive"
+        },
+        {
+            id: 6,
+            title: "C'est fait"
+        },
+    ],
     groupList: []
 }
 
@@ -28,10 +54,10 @@ function groupManagment(state = initialState, action) {
             // create new group    
             const newPublicGroup = {
                 id: newId,
-                name: action.value,
+                name: action.value[0],
                 photoURL: null,
                 type: 'public',
-                status: 'created'
+                creator: action.value[1]
             }
             nextState = {
                 ...state,
@@ -55,7 +81,7 @@ function groupManagment(state = initialState, action) {
                 name: action.value[0],
                 photoURL: action.value[1],
                 type: 'public',
-                status: 'joined'
+                creator: action.value[2]
             }
             nextState = {
                 ...state,

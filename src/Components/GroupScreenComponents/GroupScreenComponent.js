@@ -33,7 +33,6 @@ class GroupScreen extends React.Component {
     }   
 
     render() {
-        console.log(this.props.display)
         return (
             <View style={styles.main_container}>
                 {this._displayGroupList()}

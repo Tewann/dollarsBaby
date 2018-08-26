@@ -1,37 +1,30 @@
 // src/Components/GroupScreenComponents/MessageItem/MessageItem.js
-// Component: display each iteration of message list
+//*
+// Component - Message item for groups
+// Displays each iteration of predefined message list
+// Props : 
+//  - message item (predefined message)
+//  - sendMessage()
+//* 
 
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
-import { connect } from 'react-redux'
-
-
 
 class MessageItem extends React.Component {
-
-    // Sending messages
-    // Reducer is dealing with getting additionnal message
-    _sendMessage(predefined_message) {
-        const action = { type: 'SEND_MESSAGE', value: predefined_message }
-        this.props.dispatch(action)
-        this.props.returnToGroupListScreen()   
-    }
-
     render() {
-        const message = this.props.message
+        const message = this.props.message.title
         return (
             <TouchableOpacity
                 style={styles.main_container}
-                onPress={() => this._sendMessage(message.title)}
+                onPress={() => this.props.sendMessage(message)}
             >
                 <Text style={styles.text}>
-                    {message.title}
+                    {message}
                 </Text>
             </TouchableOpacity>
         )
     }
 }
 
-
-export default connect()(MessageItem)
+export default MessageItem

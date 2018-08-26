@@ -298,6 +298,7 @@ io/grpc/internal/WithLogId.class
 io/invertase/firebase/RNFirebasePackage.class
 io/invertase/firebase/auth/RNFirebaseAuthPackage.class
 io/invertase/firebase/firestore/RNFirebaseFirestorePackage.class
+io/invertase/firebase/functions/RNFirebaseFunctionsPackage.class
 io/invertase/firebase/messaging/RNFirebaseMessagingPackage.class
 io/invertase/firebase/notifications/RNFirebaseNotificationsPackage.class
 io/invertase/firebase/storage/RNFirebaseStoragePackage.class

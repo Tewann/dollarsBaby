@@ -15,19 +15,25 @@ class MessagesListScreen extends React.Component {
         super(props)
         this.state = {
             defaultPicture: require('../../../../images/ic_tag_faces.png'),
-            addtionnalMessage: "",
+            additionnalMessage: "",
             errorMessage: null
         }
     }
 
+    //*
+    // Update state when text input for additionnal message is modified
+    //*
     _additionnalMessageChanged(text) {
-        this.setState({ addtionnalMessage: text })
+        this.setState({ additionnalMessage: text })
     }
 
-    // Checks if additionnal message is under 100 caracters
-    // Calls firebase function
+    //*
+    // Send message by calling firebase function
+    // Checks if additionnal message length is under 100 caracters
+    // Then calls firebase function
+    //*
     _sendMessage = async (predefined_message) => {
-        if (this.state.addtionnalMessage.length <= 100) {
+        if (this.state.additionnalMessage.length <= 100) {
             // if additional message length doesn't exceed 100
             // reset error message
             this.setState({ errorMessage: null })
@@ -36,7 +42,7 @@ class MessagesListScreen extends React.Component {
             const timeStamp = new Date().getTime();
             const currentUser = this.props.currentUser.name
             const contact = this.props.contact
-            const additionnal_message = this.state.addtionnalMessage
+            const additionnal_message = this.state.additionnalMessage
             const id = `${currentUser}_${timeStamp}`
             const type = 'received'
             const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type)
@@ -56,9 +62,11 @@ class MessagesListScreen extends React.Component {
 
     }
 
-    // display length of additionnal message
+    //*
+    // Displays - Length of additionnal message
+    //*
     _displayAdditionnalMessageLenght = () => {
-        let length = this.state.addtionnalMessage.length
+        let length = this.state.additionnalMessage.length
         if (length <= 100) {
             return (
                 <Text style={styles.additionnal_message_length}>{length}</Text>

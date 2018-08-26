@@ -23,7 +23,7 @@ export const createPublicGroupInFirestore = (groupName, username) =>
                         })
                     // if user name already taken return error
                 } else {
-                    reject("Group name taken")
+                    reject("Group name taken")  
                 }
             })
             .catch(error => {
@@ -49,14 +49,17 @@ export const joinPublicGroupInFirestore = (groupName, username, token) =>
                         token: token
                     })
                         .then(() => {
-                            // grab group Photo Url and returns it
+                            // grab group Creator and Photo Url and returns it
                             ref.doc(groupName).get()
-                                .then(res => resolve(res.data().photoURL)
-                                    .catch(err => reject(err))
-                                )
-                                .catch((err) => reject(err))
+                                .then(res => {
+                                    creator = res.data().creator
+                                    photoURL = res.data().photoURL
+
+                                    resolve(creator, photoURL)
+                                })
+                                .catch(err => reject(err))
                         })
-                }
-            })
-            .catch(err => reject(err))
+                        .catch((err) => reject(err))
+                }})
+            .catch (err => reject(err))
     })

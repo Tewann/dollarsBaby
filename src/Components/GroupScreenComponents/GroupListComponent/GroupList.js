@@ -32,6 +32,7 @@ class GroupList extends React.Component {
         this.setState({ textInput: false, groupButtons: true })
     }
 
+    // displays default buttons (only text input for joining or creating groups)
     _displayTextInput() {
         this.setState({ textInput: true, groupButtons: false, publicGroupButtons: false, group: "" })
     }
@@ -51,13 +52,12 @@ class GroupList extends React.Component {
             // if firebase function excuted calls reducer
             const createPublicGroup = await createPublicGroupInFirestore(this.state.group, this.props.currentUser.name)
                 .then(() => {
-                    const action = { type: 'CREATE_PUBLIC_GROUP', value: this.state.group }
+                    const action = { type: 'CREATE_PUBLIC_GROUP', value: [this.state.group, this.props.currentUser.name] }
                     this.props.dispatch(action)
                     this.setState({ textInput: true, groupButtons: false })
 
                 })
                 .catch((error) => {
-                    console.log(error)
                     if (error => 'Group name taken') {
                         // if group already exists
                         // displays public group buttons (cancel and join group buttons)
@@ -87,7 +87,9 @@ class GroupList extends React.Component {
     _joinPublicGroup = async () => {
         const joinPublicGroupFirestore = await joinPublicGroupInFirestore(this.state.group, this.props.currentUser.name, this.props.currentUser.registrationToken)
             .then((res) => {
-                const value = [groupName = this.state.group, photoURL = res]
+                // function returns photo url and creator
+                // grabs it and send action to the store
+                const value = [groupName = this.state.group, photoURL = res.photoURL, creator = res.creator]
                 const action = { type: 'JOIN_PUBLIC_GROUP', value: value }
                 this.props.dispatch(action)
             })
