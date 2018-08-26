@@ -11,6 +11,60 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 admin.initializeApp();
+//*
+// Push message to firestore
+// Send message to all group members
+//*
+exports.messageSendToGroup = functions.https.onCall(data => {
+    return admin.firestore()
+        .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
+        .doc(data.groupName)
+        .collection('Messages')
+        .add({
+        groupName: data.groupName,
+        sendBy: data.sendBy,
+        body: `${data.predefined_message} : ${data.additionalMessage}`,
+        timeStamp: data.timeStamp,
+        messageId: data.id,
+        predefined_message: data.predefined_message,
+        additional_message: data.additionalMessage,
+        sound: data.predefined_message
+    })
+        .then(() => {
+        return { message: 'success' };
+    })
+        .catch(err => {
+        console.log(err);
+        return err;
+    });
+});
+exports.sendPushNotificationsForNewGroupMessages = functions.firestore
+    .document(`Public_Groups/{groups}/Messages/{messages}`)
+    .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {
+    const data = snapshot.data();
+    const sound = data.sound.toLowerCase() + '.waw';
+    const payload = {
+        notification: {
+            title: data.groupName,
+            body: data.body,
+            sound: sound
+        },
+    };
+    const parent = snapshot
+        .ref
+        .parent
+        .parent
+        .collection('Members');
+    const fcmTokens = yield parent.get().then(snapshotMembers => {
+        const tokens = [];
+        snapshotMembers.forEach(doc => {
+            const token = doc.data().token;
+            tokens.push(token);
+        });
+        return tokens;
+    });
+    return admin.messaging().sendToDevice(fcmTokens, payload);
+}));
 exports.sendPushNotificationsForNewMessages = functions.firestore
     .document(`Users/{user}/messagesReceived/{message}`)
     .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {

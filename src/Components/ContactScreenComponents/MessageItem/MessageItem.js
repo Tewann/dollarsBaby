@@ -1,13 +1,15 @@
 // src/Components/ContactScreenComponents/MessageItem/MessageItem.js
-// Component: display each iteration of message list
+//*
+// Component - Message item for contacts
+// Displays each iteration of predefined message list
+// Props : 
+//  - message item (predefined message)
+//  - sendMessage()
+//* 
 
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
-import { connect } from 'react-redux'
-
-
-
 
 class MessageItem extends React.Component {
     render() {
@@ -25,5 +27,4 @@ class MessageItem extends React.Component {
     }
 }
 
-
-export default connect()(MessageItem)
+export default MessageItem

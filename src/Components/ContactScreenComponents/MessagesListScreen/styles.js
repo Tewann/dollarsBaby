@@ -1,4 +1,4 @@
-// style for messageslistscreen
+// Style - MessageListScreen
 
 import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'

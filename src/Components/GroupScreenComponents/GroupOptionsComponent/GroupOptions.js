@@ -1,5 +1,10 @@
 // src/Components/GroupScreenComponents/GroupScreenComponent/GroupOptionsComponent/GroupOptions
-// Component Group Options on Group Screen
+//*
+// Group Option Component
+// Called by group screen
+// Displays group name, photo and messages to send (if user has created group)
+//*
+
 
 import React from 'react'
 import { View, TouchableOpacity, TextInput, Text, FlatList, Image } from 'react-native'
@@ -20,18 +25,16 @@ class GroupOptions extends React.Component {
             defaultPicture: require('../../../../images/ic_tag_faces.png')
         }
     }
-    // grabs group name, then call redux function
-    // modify redux store
+
+    //*
+    // Switch GroupScreen screen 
+    // Calls reducer / dispatch action
+    //*
     displayGroup = () => {
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
     }
 
-    // Updating redux state in order to send addionnal text with predefined messages
-    _messageToSendChanged(text) {
-        const action = { type: 'MESSAGE_TO_SEND', value: text }
-        this.props.dispatch(action)
-    }
 
     _addContactToGroup = (contactId, contactName) => {
         const contact_and_group = { contactId: contactId, contactName: contactName, groupId: groupId }
@@ -45,12 +48,18 @@ class GroupOptions extends React.Component {
             addContactToGroup={this._addContactToGroup} />
     }
 
-    // when group is public and user has created group
-    // displays predefined message list and change group image
-    renderPublicGroupCreator = () => {
+    //*
+    // Public group
+    //*
+    renderPublicGroup = () => {
         const groupNameIndex = this.props.groupList.findIndex(item =>
             item.name === this.props.currentGroup)
-        if (this.props.groupList[groupNameIndex].status === 'created') {
+
+        if (this.props.groupList[groupNameIndex].creator === this.props.currentUser.name) {
+            // Public group - Created by user
+            // (if group creator matches current user name)
+            // Displays predefined messages list
+            // Allows user to change group image
             return (
                 <PublicGroupOptionsCreator />
             )
@@ -81,6 +90,15 @@ class GroupOptions extends React.Component {
         }
     }
 
+    _renderGroupNameCreator = () => {
+        const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.currentGroup)
+        const groupNameCreator = this.props.groupList[groupNameIndex].creator
+        return (
+            <Text style={styles.group_name_creator}>created by {groupNameCreator}</Text>
+        )
+    }
+
     // if private group
     renderContactList = () => {
         /*<View style={styles.contacts_flatlist}>
@@ -98,19 +116,24 @@ class GroupOptions extends React.Component {
     render() {
         return (
             <View style={styles.messagelist_main_container}>
+                {/* ------  Header (back button) ------*/}
                 <TouchableOpacity
                     style={styles.back_to_contacts}
                     onPressIn={() => this.displayGroup()}>
                     <Icon name='chevron-left' color='#889eb0' />
                     <Text style={styles.retour}>Retour</Text>
                 </TouchableOpacity>
+
+                {/* ------  Body ------*/}
+                {/* ------  Group Image, name and creator name ------*/}
                 <View style={styles.avatar_container}>
                     {this._renderImage()}
                     <Text style={styles.group_name}>{this.props.currentGroup}</Text>
+                    {this._renderGroupNameCreator()}
                 </View>
 
-
-                {this.renderPublicGroupCreator()}
+                {/* ------  PublicGroup ------*/}
+                {this.renderPublicGroup()}
             </View>
         )
     }
@@ -120,7 +143,8 @@ const mapStateToProps = (state) => {
     return {
         predefinedMessagesList: state.displayMessagesList.predefinedMessagesList,
         groupList: state.groupManagment.groupList,
-        currentGroup: state.groupManagment.currentDisplayedGroup[0]
+        currentGroup: state.groupManagment.currentDisplayedGroup[0],
+        currentUser: state.getCurrentUserInformations,
     }
 }
 

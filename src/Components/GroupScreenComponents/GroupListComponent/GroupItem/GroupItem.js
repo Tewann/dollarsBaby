@@ -1,5 +1,6 @@
 // src/Components/GroupScreenComponents/GroupItem/GroupItem.js
 // Component: display each iteration of group list
+// displays group name, photo group and public or private
 
 import React from 'react'
 import { Text, TouchableOpacity, View, Image } from 'react-native'
