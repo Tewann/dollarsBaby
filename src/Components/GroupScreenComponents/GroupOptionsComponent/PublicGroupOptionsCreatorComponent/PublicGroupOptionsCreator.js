@@ -84,18 +84,7 @@ class PublicGroupOptionsCreator extends React.Component {
                     this.props.dispatch(action)
 
                 })
-                .catch(httpsError => console.log(httpsError))
-            /*
-            const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type)
-                .then(() => {
-                    // if firebase function worked, update redux store
-                    const type = 'send'
-                    const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
-                    this.props.dispatch(action)
-                    setTimeout(() => this.props.returnToContactScreen(), 500)
-                })
-                .catch(err => this.setState({ errorMessage: err }))
-                */
+                .catch(httpsError => console.log(httpsError))            
         } else {
             // if additionnal message length exceed 100
             this.setState({ errorMessage: 'Le message a trop de caractères (100 maximum)' })

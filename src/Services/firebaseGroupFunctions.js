@@ -1,5 +1,5 @@
 import firebase from 'react-native-firebase'
-import { Alert } from 'react-native'
+import { Platform } from 'react-native'
 
 // create public group in Firestore
 export const createPublicGroupInFirestore = (groupName, username) =>
@@ -23,7 +23,7 @@ export const createPublicGroupInFirestore = (groupName, username) =>
                         })
                     // if user name already taken return error
                 } else {
-                    reject("Group name taken")  
+                    reject("Group name taken")
                 }
             })
             .catch(error => {
@@ -60,6 +60,77 @@ export const joinPublicGroupInFirestore = (groupName, username, token) =>
                                 .catch(err => reject(err))
                         })
                         .catch((err) => reject(err))
-                }})
-            .catch (err => reject(err))
+                }
+            })
+            .catch(err => reject(err))
+    })
+
+//*
+// Function exported to group option
+// Upload image to Firebase storage
+// Sets up DL link to group's doc
+//*
+export const uploadGroupImage = async (uri, groupName) => {
+    const { downloadURL, imageName } = await uploadImageToFirebase(uri, groupName);
+    const setGroupDlLinkToCloud = await setGroupDlLinkToFirestoreGroup(downloadURL, groupName, imageName)
+    return { downloadURL, imageName }
+}
+
+// upload image to firebase storage
+export const uploadImageToFirebase = (uri, groupName) => {
+    return new Promise((resolve, reject) => {
+        let imgUri = uri.uri;
+        const uploadUri = Platform.OS === 'ios' ? imgUri.replace('file://', '') : imgUri;
+        const sessionId = new Date().getTime()
+        const imageName = `Groups Pictures/${groupName}_${sessionId}.jpg`
+        // grab photo name from CloudFirebase group
+        firebase
+            .firestore()
+            .collection('Public_Groups')
+            .doc(groupName)
+            .get()
+            .then((doc) => {
+                previousPhotoName = doc.get('photoName')
+                // if there is a photo name already set
+                // delete the previous photo in firebase storage
+                if (previousPhotoName !== null) {
+                    firebase
+                        .storage()
+                        .ref(previousPhotoName)
+                        .delete()
+                        .then()
+                        .catch(error => console.log('erreur lors suppression', error))
+                }
+            })
+        // upload new image to firebase storage    
+        firebase
+            .storage()
+            .ref(imageName)
+            //.child(imageName)
+            .putFile(uploadUri)
+            .then((result) => {
+                const downloadURL = result.downloadURL
+                const toResolve = { downloadURL, imageName }
+                resolve(toResolve)
+            })
+            .catch(error => reject(error))
+    })
+}
+
+//*
+// Sets up dl link to group's document
+//*
+export const setGroupDlLinkToFirestoreGroup = (downloadURL, groupName, imageName) =>
+    new Promise((resolve, reject) => {
+        const ref = firebase.firestore()
+            .collection('Public_Groups')
+            .doc(groupName)
+            .set({
+                photoURL: downloadURL,
+                photoName: imageName
+            }, { merge: true })
+            .then(resolve())
+            .catch((error) => {
+                reject(error)
+            })
     })

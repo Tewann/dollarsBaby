@@ -12,7 +12,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { uploadImage } from '../../../../Services/firebaseFunctions'
 
 // variable to avoid "Can't find variable: options" when trying to open image picker or camera
-var options = {};
+var options = {quality: 0.1};
 
 class ProfilPhoto extends React.Component {
     constructor(props) {

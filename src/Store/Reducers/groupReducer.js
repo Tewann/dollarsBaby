@@ -89,6 +89,21 @@ function groupManagment(state = initialState, action) {
             }
             return nextState || state
 
+        case 'GROUP_PHOTO_UPDATED':
+            // value: {currentGroup, dlURL, PhotoName}
+            const groupNameIndexForPhoto = state.groupList.findIndex(item =>
+                item.name === action.value.groupName)
+            nextState = {
+                ...state,
+                groupList: state.groupList.map((content, i) => i === groupNameIndexForPhoto ? {
+                    ...content,
+                    photoName: action.value.PhotoName,
+                    photoURL: action.value.dlURL,
+                } :
+                    content)
+            }
+            return nextState || state
+
         case 'CREATE_PRIVATE_GROUP':
             // Group name already exist or not in group list
             const groupNameIndex = state.groupList.findIndex(item => item.nom ===

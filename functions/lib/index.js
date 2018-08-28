@@ -12,8 +12,7 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 admin.initializeApp();
 //*
-// Push message to firestore
-// Send message to all group members
+// Push message to firestore group collection
 //*
 exports.messageSendToGroup = functions.https.onCall(data => {
     return admin.firestore()
@@ -38,6 +37,10 @@ exports.messageSendToGroup = functions.https.onCall(data => {
         return err;
     });
 });
+//*
+// When a group messages onCreate 
+// Send notification to all group contacts
+//*
 exports.sendPushNotificationsForNewGroupMessages = functions.firestore
     .document(`Public_Groups/{groups}/Messages/{messages}`)
     .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {
@@ -64,6 +67,44 @@ exports.sendPushNotificationsForNewGroupMessages = functions.firestore
         return tokens;
     });
     return admin.messaging().sendToDevice(fcmTokens, payload);
+}));
+//*
+// When a group PhotoUrl has been updated 
+// Send data to all contacts
+//*
+exports.sendPushDataMessageForGroupPhotoURLUpdated = functions.firestore
+    .document(`Public_Groups/{groups}`)
+    .onUpdate((change, context) => __awaiter(this, void 0, void 0, function* () {
+    const newValue = change.after.data();
+    const newURL = newValue.photoURL;
+    const newPhotoName = newValue.photoName;
+    const groupName = newValue.GroupName;
+    const message = {
+        data: {
+            type: 'GROUP_PHOTO_UPDATED',
+            groupName: groupName,
+            URL: newURL,
+            PhotoName: newPhotoName,
+        },
+    };
+    const options = {
+        priority: 'high',
+        timeToLive: 60 * 60 * 24,
+        'content-available': true
+    };
+    const Members = yield admin.firestore()
+        .collection('Public_Groups')
+        .doc(groupName)
+        .collection('Members');
+    const fcmTokens = yield Members.get().then(snapshotMembers => {
+        const tokens = [];
+        snapshotMembers.forEach(doc => {
+            const token = doc.data().token;
+            tokens.push(token);
+        });
+        return tokens;
+    });
+    return admin.messaging().sendToDevice(fcmTokens, message, options);
 }));
 exports.sendPushNotificationsForNewMessages = functions.firestore
     .document(`Users/{user}/messagesReceived/{message}`)
