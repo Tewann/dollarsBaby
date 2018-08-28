@@ -1,5 +1,5 @@
-// src/Components/GroupScreenComponents/GroupScreenComponent/GroupOptionsComponent/GroupOptions
 //*
+// src/Components/GroupScreenComponents/GroupScreenComponent/GroupOptionsComponent/GroupOptions
 // Group Option Component
 // Called by group screen
 // Displays group name, photo and messages to send (if user has created group)
@@ -16,13 +16,18 @@ import GroupContactItem from './GroupContactItem/GroupContactItem'
 import HeaderGroupContactList from './HeaderGroupContactList/HeaderGroupContactList'
 import PublicGroupOptionsCreator from './PublicGroupOptionsCreatorComponent/PublicGroupOptionsCreator'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
+import ImagePicker from 'react-native-image-picker'
+import { uploadGroupImage } from '../../../Services/firebaseGroupFunctions'
 
+// variable to avoid "Can't find variable: options" when trying to open image picker or camera
+var options = { quality: 0.1 };
 
 class GroupOptions extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            defaultPicture: require('../../../../images/ic_tag_faces.png')
+            defaultPicture: require('../../../../images/ic_tag_faces.png'),
+            errorMessage: null,
         }
     }
 
@@ -66,25 +71,70 @@ class GroupOptions extends React.Component {
         }
     }
 
+    _openImagePicker = async () => {
+        const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.currentGroup)
+
+        if (this.props.groupList[groupNameIndex].creator === this.props.currentUser.name) {
+            ImagePicker.showImagePicker(options, (response) => {
+                if (response.didCancel) {
+                    return
+                }
+                else if (response.error) {
+                    this.setState({ errorMessage: response.error })
+                }
+                else {
+                    let requireSource = { uri: response.uri }
+                    uploadGroupImage(requireSource, this.props.currentGroup)
+                        .then((dlLink, PhotoName) => {
+                            console.log('phtoo updated from app')
+                            const groupName = this.props.currentGroup
+                            const dlURL = dlLink.downloadURL
+                            // update redux store, image is changed on profil screen component
+                            const action = {
+                                type: 'GROUP_PHOTO_UPDATED',
+                                value: {groupName, dlURL, PhotoName}
+                            }
+                            this.props.dispatch(action)
+                        })
+                        .catch(error => this.setState({ errorMessage: error }))
+                }
+            });
+        } else {
+            this.setState({ errorMessage: "Vous n'êtes pas le créateur du groupe" })
+            setTimeout(() => { this.setState({ errorMessage: null }) }, 2000)
+        }
+    }
+
     _renderImage = () => {
         const groupNameIndex = this.props.groupList.findIndex(item =>
             item.name === this.props.currentGroup)
         let uri = this.props.groupList[groupNameIndex].photoURL
         if (uri === null) {
             return (
-                <Image
-                    source={this.state.defaultPicture}
+                <TouchableOpacity
                     style={styles.rounds}
-                />
+                    onPress={() => this._openImagePicker()}
+                >
+                    <Image
+                        source={this.state.defaultPicture}
+                    />
+                </TouchableOpacity>
             )
         } else {
             return (
                 <ImageCacheProvider
-                    ImageCacheManagerOptions={{ ttl: 100 }}>
-                    <CachedImage
-                        source={{ uri: uri }}
+                    ImageCacheManagerOptions={{ ttl: 100 }}
+                >
+                    <TouchableOpacity
                         style={styles.rounds}
-                    />
+                        onPress={() => this._openImagePicker()}
+                    >
+                        <CachedImage
+                            source={{ uri: uri }}
+                            style={styles.rounds}
+                        />
+                    </TouchableOpacity>
                 </ImageCacheProvider>
             )
         }
@@ -130,6 +180,10 @@ class GroupOptions extends React.Component {
                     {this._renderImage()}
                     <Text style={styles.group_name}>{this.props.currentGroup}</Text>
                     {this._renderGroupNameCreator()}
+                    {this.state.errorMessage &&
+                        <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10, textAlign: 'center' }}>
+                            Erreur : {this.state.errorMessage}
+                        </Text>}
                 </View>
 
                 {/* ------  PublicGroup ------*/}

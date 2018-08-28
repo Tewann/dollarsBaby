@@ -106,6 +106,55 @@ function displayMessagesList(state = initialState, action) {
             }
             return nextState || state
 
+            //*
+            // For now, two message received needed
+            // Group messages are  received by fcm messaging
+            //*
+            case 'MESSAGE_RECEIVED_FROM_FCM':
+            // check if message is already in message history
+            const messageId = action.value.messageId
+            const FCMDataMessageIndex = state.messagesHistory
+                .findIndex(item => item.messageReceivedId === messageId)
+            let newFCMDataMessage = null
+
+            // if message is not in history
+            // add message
+            if (FCMDataMessageIndex === -1) {
+                // get message values from firestore doc
+                const contact = action.value.contact
+                const predefined_message = action.value.predefined_message
+                const additional_message = action.value.additional_message
+                const timeStamp = action.value.timeStamp
+                const type = action.value.messageStatus
+                let newId = null
+
+                // sets newId
+                // if there is no messages in history
+                if (state.messagesHistory.length === 0) {
+                    newId = 1
+                    // if there is messages
+                } else {
+                    newId = state.messagesHistory[0].id + 1
+
+                }
+                // create new message
+                newFCMDataMessage = {
+                    id: newId,
+                    type: type,
+                    contact: contact,
+                    predefined_message: predefined_message,
+                    additionnal_message: additional_message,
+                    timeStamp: timeStamp,
+                    messageReceivedId: messageId
+                }
+
+                nextState = {
+                    ...state,
+                    messagesHistory: [newFCMDataMessage, ...state.messagesHistory]
+                }
+            }
+            return nextState || state
+
         case 'CONTACT_REQUEST_ACCEPTED':
             // called when contact request has been accepted
             // create new message with status accepted

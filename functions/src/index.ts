@@ -5,8 +5,7 @@ import * as admin from 'firebase-admin';
 admin.initializeApp()
 
 //*
-// Push message to firestore
-// Send message to all group members
+// Push message to firestore group collection
 //*
 export const messageSendToGroup = functions.https.onCall(data => {
     return admin.firestore()
@@ -24,7 +23,7 @@ export const messageSendToGroup = functions.https.onCall(data => {
             sound: data.predefined_message
         })
         .then(() => {
-            return {message: 'success'}
+            return { message: 'success' }
         })
         .catch(err => {
             console.log(err)
@@ -32,6 +31,10 @@ export const messageSendToGroup = functions.https.onCall(data => {
         })
 })
 
+//*
+// When a group messages onCreate 
+// Send notification to all group contacts
+//*
 export const sendPushNotificationsForNewGroupMessages =
     functions.firestore
         .document(`Public_Groups/{groups}/Messages/{messages}`)
@@ -61,6 +64,50 @@ export const sendPushNotificationsForNewGroupMessages =
             })
             return admin.messaging().sendToDevice(fcmTokens, payload)
         })
+
+
+//*
+// When a group PhotoUrl has been updated 
+// Send data to all contacts
+//*
+export const sendPushDataMessageForGroupPhotoURLUpdated =
+    functions.firestore
+        .document(`Public_Groups/{groups}`)
+        .onUpdate(async (change, context) => {
+
+            const newValue = change.after.data()
+            const newURL = newValue.photoURL
+            const newPhotoName = newValue.photoName
+            const groupName = newValue.GroupName
+
+            const message = {
+                data: {
+                    type: 'GROUP_PHOTO_UPDATED',
+                    groupName: groupName,
+                    URL: newURL,
+                    PhotoName: newPhotoName,
+                },
+            }
+            const options = {
+                priority: 'high',
+                timeToLive: 60 * 60 * 24,
+                'content-available': true
+            }
+            const Members = await admin.firestore()
+                .collection('Public_Groups')
+                .doc(groupName)
+                .collection('Members')
+            const fcmTokens = await Members.get().then(snapshotMembers => {
+                const tokens = []
+                snapshotMembers.forEach(doc => {
+                    const token = doc.data().token
+                    tokens.push(token)
+                })
+                return tokens
+            })
+            return admin.messaging().sendToDevice(fcmTokens, message, options)
+        })
+
 
 export const sendPushNotificationsForNewMessages =
     functions.firestore

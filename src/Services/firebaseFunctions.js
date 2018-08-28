@@ -180,6 +180,7 @@ export const setDlLinkToCloudFirestore = (downloadURL, username, imageName) =>
             })
     })
 
+
 // ----------------------
 // END : FUNCTIONS UPLOAD IMAGE
 // ----------------------
@@ -234,7 +235,7 @@ export const doesContactExists = async (contact) => {
                 }
             })
             .catch(err => reject(err))
-        })
+    })
 }
 
 
@@ -293,7 +294,7 @@ export const getUserDataForLoginScreen = async () => {
 //function exported to AcceptOrDecline 
 // (component for message history)
 export const addContactToFirestore = async (currentUser, contactToAdd) => {
-  
+
     // add contact to current user contact list in database
     new Promise((resolve, reject) => {
         console.log(contactToAdd)
@@ -308,8 +309,8 @@ export const addContactToFirestore = async (currentUser, contactToAdd) => {
             .catch(error => reject(error))
     })
 
-       // add contact current user in the new contact contactList
-       new Promise((resolve, reject) => {
+    // add contact current user in the new contact contactList
+    new Promise((resolve, reject) => {
         firebase.firestore()
             .collection('Users')
             .doc(contactToAdd)

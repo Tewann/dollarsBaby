@@ -1,6 +1,12 @@
 //Style for Group Options Component
 
 import { StyleSheet } from 'react-native'
+import Dimensions from 'Dimensions'
+
+
+const { height, width } = Dimensions.get('window');
+const itemWidth = (width / 3) - 10;
+const roundWidth = (itemWidth / 1.60);
 
 
 const styles = StyleSheet.create({
@@ -46,6 +52,11 @@ const styles = StyleSheet.create({
         marginTop: 0,
         marginBottom: 10,
         height: 40
+    },
+    rounds: {
+        width: roundWidth,
+        height: roundWidth,
+        borderRadius: roundWidth / 2,
     },
 })
 
