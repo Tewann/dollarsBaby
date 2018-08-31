@@ -105,31 +105,29 @@ function groupManagment(state = initialState, action) {
             return nextState || state
 
         case 'CREATE_PRIVATE_GROUP':
-            // Group name already exist or not in group list
-            const groupNameIndex = state.groupList.findIndex(item => item.nom ===
-                action.value)
-
-            //  Group name already exists in group list
-            if (groupNameIndex !== -1) {
-                const errorMessage = 'Vous avez déjà un groupe qui a le nom : ' + action.value
-                Alert.alert(
-                    'Erreur',
-                    errorMessage,
-                    [
-                        { text: 'Fermer' }
-                    ]
-                )
-
-                // Group name doesn't exist in group list
-                // Group created
+        console.log('called')
+            // sets newId
+            // if there is no group
+            if (state.groupList.length === 0) {
+                newId = 1
+                // if there is groups
             } else {
-                const newId = state.groupList[state.groupList.length - 1].id + 1
-                const newPrivateGroup = { id: newId, nom: action.value }
-                nextState = {
-                    ...state,
-                    groupList: [...state.groupList, newPrivateGroup]
-                }
+                newId = state.groupList[0].id + 1
             }
+            // create new group    
+            const newPrivateGroup = {
+                id: newId,
+                name: action.value[0],
+                photoURL: null,
+                type: 'private',
+                creator: action.value[1]
+            }
+
+            nextState = {
+                ...state,
+                groupList: [...state.groupList, newPrivateGroup]
+            }
+            console.log(nextState)
             return nextState || state
 
         case 'ADD_CONTACT_TO_GROUP':

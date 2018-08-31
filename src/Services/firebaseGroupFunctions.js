@@ -66,6 +66,58 @@ export const joinPublicGroupInFirestore = (groupName, username, token) =>
     })
 
 //*
+// Create a private group in firestore
+//*
+export const createPrivateGroupInFirestore = (groupName, username) =>
+    new Promise((resolve, reject) => {
+        const ref = firebase.firestore().collection('Private_Groups')
+        // create group
+        const createGroup = ref.doc(groupName).get()
+            .then(doc => {
+                //if group name available create group's doc
+                if (!doc.exists) {
+                    ref.doc(groupName).set({
+                        GroupName: groupName,
+                        type: 'private',
+                        creator: username,
+                        photoURL: null,
+                        photoName: null,
+                    })
+                        .then(resolve())
+                        .catch((error) => {
+                            reject(error)
+                        })
+                    // if user name already taken return error
+                } else {
+                    reject("Group name taken")
+                }
+            })
+            .catch(error => {
+                reject(error)
+            })
+    })
+
+//*
+// Add contact to private group
+// A cloud function add token informations
+//*
+export const addContactToPrivateGroup = (groupName, username) => 
+    new Promise((resolve, reject) => {
+        const ref = firebase.firestore().collection('Private_Groups')
+        // add contact
+        const addContact = ref.doc(groupName).collection('Members').add({
+            name: username,
+        })
+        .then(resolve())
+        .catch(error => {reject(error)})
+    })
+
+
+// -----------------------------------------
+//              UPLOAD GROUP IMAGES
+// -----------------------------------------
+
+//*
 // Function exported to group option
 // Upload image to Firebase storage
 // Sets up DL link to group's doc
@@ -118,7 +170,7 @@ export const uploadImageToFirebase = (uri, groupName) => {
 }
 
 //*
-// Sets up dl link to group's document
+// Sets up photo url dl link to group's document
 //*
 export const setGroupDlLinkToFirestoreGroup = (downloadURL, groupName, imageName) =>
     new Promise((resolve, reject) => {
