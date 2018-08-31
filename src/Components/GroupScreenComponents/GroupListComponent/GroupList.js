@@ -7,7 +7,8 @@ import styles from './styles'
 import GroupItem from './GroupItem/GroupItem'
 import Modal from 'react-native-modal'
 import { connect } from 'react-redux'
-import { createPublicGroupInFirestore, joinPublicGroupInFirestore } from '../../../Services/firebaseGroupFunctions'
+import { createPublicGroupInFirestore, joinPublicGroupInFirestore, 
+        createPrivateGroupInFirestore, addContactToPrivateGroup } from '../../../Services/firebaseGroupFunctions'
 import { Icon } from '../../../../node_modules/react-native-elements';
 
 class GroupList extends React.Component {
@@ -98,14 +99,40 @@ class GroupList extends React.Component {
         this.messageInput.clear()
     }
 
-    _createPrivateGroup() {
+    _createPrivateGroup = async () => {
         if (this.state.group.length > 0) {
-            const action = { type: 'CREATE_PRIVATE_GROUP', value: this.state.group }
-            this.props.dispatch(action)
-            this.setState({ textInput: true, groupButtons: false })
-            switchScreen()
+            // if input lenght is > 0
+            // calls firebase function (checks if name avaible then create group)
+            // if firebase function excuted calls reducer
+            const createPrivateGroup = await createPrivateGroupInFirestore(this.state.group, this.props.currentUser.name)
+                .then(async () => {
+                    // if private group successfully created
+                    // add creator to contact group list in firebase
+                    const addContactToGroup = await addContactToPrivateGroup(this.state.group, this.props.currentUser.name)
+                        .catch(err => {this.setState({errorMessage: err})})
+                    const action = { type: 'CREATE_PRIVATE_GROUP', value: [this.state.group, this.props.currentUser.name] }
+                    this.props.dispatch(action)
+                    this._displayTextInput()
+
+                })
+                .catch((error) => {
+                    if (error => 'Group name taken') {
+                        // if group already exists
+                        // displays public group buttons (cancel and join group buttons)
+                        this.setState({ errorMessage: 'Ce nom de groupe est déjà pris'})
+                        this._displayTextInput()
+                    } else {
+                        Alert.alert(
+                            'Erreur',
+                            error
+                            [
+                            { text: 'Fermer' }
+                            ]
+                        )
+                    }
+                })
         } else {
-            this.setState({ textInput: true, groupButtons: false })
+            this.setState({ isVisible: false })
             Alert.alert(
                 'Erreur',
                 "Vous n'avez pas saisi de valeur"
@@ -115,6 +142,7 @@ class GroupList extends React.Component {
             )
         }
     }
+
 
     render() {
         return (
