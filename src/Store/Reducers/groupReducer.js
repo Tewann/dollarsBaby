@@ -49,7 +49,7 @@ function groupManagment(state = initialState, action) {
                 newId = 1
                 // if there is groups
             } else {
-                newId = state.groupList[0].id + 1
+                newId = state.groupList[state.groupList.length - 1].id + 1
             }
             // create new group    
             const newPublicGroup = {
@@ -73,7 +73,7 @@ function groupManagment(state = initialState, action) {
                 newId1 = 1
                 // if there is groups
             } else {
-                newId1 = state.groupList[0].id + 1
+                newId1 = state.groupList[state.groupList.length - 1].id + 1
             }
             // create new group   
             const newJoinedPublicGroup = {
@@ -105,14 +105,13 @@ function groupManagment(state = initialState, action) {
             return nextState || state
 
         case 'CREATE_PRIVATE_GROUP':
-        console.log('called')
             // sets newId
             // if there is no group
             if (state.groupList.length === 0) {
                 newId = 1
                 // if there is groups
             } else {
-                newId = state.groupList[0].id + 1
+                newId = state.groupList[state.groupList.length - 1].id + 1
             }
             // create new group    
             const newPrivateGroup = {
@@ -120,43 +119,42 @@ function groupManagment(state = initialState, action) {
                 name: action.value[0],
                 photoURL: null,
                 type: 'private',
-                creator: action.value[1]
+                creator: action.value[1],
+                contacts: []
             }
 
             nextState = {
                 ...state,
                 groupList: [...state.groupList, newPrivateGroup]
             }
-            console.log(nextState)
             return nextState || state
 
-        case 'ADD_CONTACT_TO_GROUP':
-
+        case 'NEW_PRIVATE_GROUP_CONTACT':
+            const groupIndex = state.groupList.findIndex(item =>
+                (item.name === action.value.groupName) && (item.type === 'private'))
             // Contact is or is not in the contact group list
-            const contactNameIndex = state.groupList[action.value.groupId - 1].contacts.findIndex(item => item.id ===
-                action.value.contactId)
+            const contactNameIndex = state.groupList[groupIndex].contacts.findIndex(item => item.name ===
+                action.value.contactName)
 
             // Contact already in group contact list
             if (contactNameIndex !== -1) {
-                const errorMessage = state.groupList[action.value.groupId - 1].contacts[contactNameIndex].nom +
-                    ' est déjà dans ce groupe'
-                Alert.alert(
-                    'Erreur',
-                    errorMessage,
-                    [
-                        { text: 'Fermer' }
-                    ]
-                )
-
+               return
                 // Contact is not in group
                 // Contact is added
             } else {
-                const newContact = { id: action.value.contactId, nom: action.value.contactName }
+                if (state.groupList[groupIndex].contacts.length === 0) {
+                    // if no contacts
+                    const newId = 1
+                } else {
+                    const newId = state.groupList[groupIndex].contacts[state.groupList[groupIndex].contacts.length - 1].id + 1
+                }
+                const newContact = { name: action.value.contactName, id: newId }
                 nextState = {
                     ...state,
                     groupList: [...state.groupList],
                 }
-                nextState.groupList[action.value.groupId - 1].contacts = [...nextState.groupList[action.value.groupId - 1].contacts, newContact]
+                nextState.groupList[groupIndex].contacts = [...nextState.groupList[groupIndex].contacts, newContact]
+
             }
             return nextState || state
 

@@ -13,7 +13,7 @@ class Loading extends React.Component {
 
     componentDidMount = async () => {
         // reset which screen to show for group screnn (set group list)
-        const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
+        const action = { type: 'SWITCH_GROUP_SCREEN', value: '8tx9ycy9yc8yc' }
         this.props.dispatch(action)
 
 
@@ -68,14 +68,22 @@ class Loading extends React.Component {
             // If FCM data.type is group photo updated
             // Calls GROUP_PHOTO_UPDATED reducer
             if (message.data.type === 'GROUP_PHOTO_UPDATED') {
-                const groupName = message.groupName
-                const dlURL = message.URL
-                const PhotoName = message.PhotoName
+                const groupName = message.data.groupName
+                const dlURL = message.data.URL
+                const PhotoName = message.data.PhotoName
                 const group_photo_updated = {
                     type: 'GROUP_PHOTO_UPDATED',
-                    value: {groupName, dlURL, PhotoName}
+                    value: { groupName, dlURL, PhotoName }
                 }
                 this.props.dispatch(group_photo_updated)
+            } else if (message.data.type === 'NEW_PRIVATE_GROUP_CONTACT') {
+                const contactName = message.data.contactName
+                const groupName = message.data.groupName
+                const action = {
+                    type: 'NEW_PRIVATE_GROUP_CONTACT',
+                    value: { contactName, groupName }
+                }
+                this.props.dispatch(action)
             } else {
                 const messageId = message.data.messageId
                 const contact = message.data.contact
