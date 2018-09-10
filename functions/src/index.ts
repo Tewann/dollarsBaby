@@ -196,7 +196,7 @@ export const sendPushDataMessageForPrivateGroupPhotoURLUpdated =
                 'content-available': true
             }
             const Members = await admin.firestore()
-                .collection('Public_Groups')
+                .collection('Private_Groups')
                 .doc(groupName)
                 .collection('Members')
             const fcmTokens = await Members.get().then(snapshotMembers => {
@@ -211,8 +211,40 @@ export const sendPushDataMessageForPrivateGroupPhotoURLUpdated =
         })
 
 //*
+// Contact added to Group
+// Send data notification to group users with contact information
+//*
+export const sendPushDataMessage_ContactAdded = (async (name, members, GroupName) => {
+    const message = {
+        data: {
+            type: 'NEW_PRIVATE_GROUP_CONTACT',
+            contactName: name,
+            groupName: GroupName
+        },
+    }
+
+    const options = {
+        priority: 'high',
+        timeToLive: 60 * 60 * 24,
+        'content-available': true
+    }
+
+    const fcmTokens = await members.get().then(snapshotMembers => {
+        const tokens = []
+        snapshotMembers.forEach(doc => {
+            const token = doc.data().token
+            tokens.push(token)
+        })
+        return tokens
+    })
+
+    return admin.messaging().sendToDevice(fcmTokens, message, options)
+})
+
+
+//*
 // When a contact has been added to a private group
-// Grabs token informations and push it to the private group
+// Grabs FCM Token from the 'Users' collection and push it to the private group
 //*
 export const addTokenInformationsWhenNewContact =
     functions.firestore
@@ -220,7 +252,7 @@ export const addTokenInformationsWhenNewContact =
         .onCreate(async (snapshot, context) => {
             const data = snapshot.data()
             const name = data.name
-            
+
             // Getting token
             const getToken = await admin.firestore().collection('Users').doc(name).get()
                 .then((doc) => {
@@ -243,6 +275,26 @@ export const addTokenInformationsWhenNewContact =
                 token: getToken
             }, { merge: true })
                 .catch(err => { return err })
+
+            // Sends data notification to group users
+            const members = snapshot
+                .ref
+                .parent
+                .parent
+                .collection('Members')
+            const GroupName = await snapshot
+                .ref
+                .parent
+                .parent
+                .get()
+                .then(doc => {
+                    const groupName = doc.data().GroupName
+                    return groupName
+                })
+                .catch(err => console.log(err))
+
+            const sendData = await sendPushDataMessage_ContactAdded(name, members, GroupName)
+                .catch(err => console.log(err))
             return
         })
 

@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
         width: roundWidth,
         height: roundWidth,
         borderRadius: roundWidth / 2,
-        backgroundColor: '#889eb0',
         marginBottom: 5,
     }
 })

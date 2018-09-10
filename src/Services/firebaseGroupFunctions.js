@@ -118,27 +118,29 @@ export const addContactToPrivateGroup = (groupName, username) =>
 // -----------------------------------------
 
 //*
-// Function exported to group option
+// Function exported to group options
 // Upload image to Firebase storage
 // Sets up DL link to group's doc
 //*
-export const uploadGroupImage = async (uri, groupName) => {
-    const { downloadURL, imageName } = await uploadImageToFirebase(uri, groupName);
-    const setGroupDlLinkToCloud = await setGroupDlLinkToFirestoreGroup(downloadURL, groupName, imageName)
+export const uploadGroupImage = async (uri, groupName, groupType) => {
+    const { downloadURL, imageName } = await uploadImageToFirebase(uri, groupName, groupType);
+    const setGroupDlLinkToCloud = await setGroupDlLinkToFirestoreGroup(downloadURL, groupName, imageName, groupType)
     return { downloadURL, imageName }
 }
 
 // upload image to firebase storage
-export const uploadImageToFirebase = (uri, groupName) => {
+export const uploadImageToFirebase = (uri, groupName, groupType) => {
     return new Promise((resolve, reject) => {
         let imgUri = uri.uri;
         const uploadUri = Platform.OS === 'ios' ? imgUri.replace('file://', '') : imgUri;
         const sessionId = new Date().getTime()
         const imageName = `Groups Pictures/${groupName}_${sessionId}.jpg`
+        const collectionType = groupType === 'public' ? 'Public_Groups' : 'Private_Groups'
+
         // grab photo name from CloudFirebase group
         firebase
             .firestore()
-            .collection('Public_Groups')
+            .collection(collectionType)
             .doc(groupName)
             .get()
             .then((doc) => {
@@ -174,8 +176,9 @@ export const uploadImageToFirebase = (uri, groupName) => {
 //*
 export const setGroupDlLinkToFirestoreGroup = (downloadURL, groupName, imageName) =>
     new Promise((resolve, reject) => {
+        const collectionType = groupType === 'public' ? 'Public_Groups' : 'Private_Groups'
         const ref = firebase.firestore()
-            .collection('Public_Groups')
+            .collection(collectionType)
             .doc(groupName)
             .set({
                 photoURL: downloadURL,

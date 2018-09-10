@@ -10,8 +10,8 @@ const roundWidth = (itemWidth / 1.60);
 
 
 const styles = StyleSheet.create({
-    messagelist_main_container: {
-        //flex: 1,
+    main_container: {
+        flex: 1,
     },
     back_to_contacts: {
         marginTop: 10,
@@ -35,10 +35,15 @@ const styles = StyleSheet.create({
     group_name_creator: {
         fontStyle: 'italic'
     },
-    contacts_flatlist:{
+    contacts_flatlist: {
         paddingTop: 10,
-        marginBottom: 10,
-        backgroundColor: '#E0F4FB'
+        marginBottom: 5,
+        borderTopWidth: 1,
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
+        marginTop: 5,
+        marginLeft: 5,
+        marginRight: 5
     },
     message_flatlist: {
         marginTop: 10,

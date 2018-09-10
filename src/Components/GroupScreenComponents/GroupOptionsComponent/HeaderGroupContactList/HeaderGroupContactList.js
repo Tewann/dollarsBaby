@@ -5,6 +5,7 @@ import React from 'react'
 import { TouchableOpacity, View, FlatList } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
+import { Icon } from 'react-native-elements'
 import Modal from 'react-native-modal';
 import GroupOptionsModalContactItem from './GroupOptionsModalContactItem/GroupOptionsModalContactItem'
 
@@ -30,20 +31,23 @@ class HeaderGroupContactList extends React.Component {
         return (
             <TouchableOpacity style={styles.main_container}
                 onPress={() => this._displayModal()}>
-                <View
-                    style={styles.cross}>
-                    <View style={styles.crossUp} />
-                    <View style={styles.crossFlat} />
-                </View>
-                <View >
+                <Icon
+                    name='plus-circle'
+                    type='feather'
+                    size={25}
+                    color='grey'
+                    
+                />
+                
+                <View>
                     <Modal
                         visible={this.state.isVisible}
                         onRequestClose={() => { this.setState({ isVisible: false }) }}
                         onBackdropPress={() => { this.setState({ isVisible: false }) }}
                         animationType='slide'
-                        style={styles.modal_container}
+                        style={styles.modal_container}                                               
                     >
-                        <View style={styles.flatlist_container}>
+                        <View style={styles.flatlist_container} elevation={10}>
                             <FlatList
                                 data={this.props.contactList}
                                 numColumns={2}

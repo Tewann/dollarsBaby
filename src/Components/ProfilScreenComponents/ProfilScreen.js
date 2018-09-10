@@ -25,8 +25,8 @@ class ProfilScreen extends React.Component {
                     <Icon
                         name='chevron-left'
                         color='white'
-                        size={25}
-                        style={{ paddingBottom: 20 }}
+                        size={35}
+                        style={{ padding: 20 }}
                         onPress={() => this.props.navigation.navigate('MainStackNavigator')}
                     />
                     <Text style={styles.title}>PROFIL     </Text>

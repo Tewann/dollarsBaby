@@ -5,14 +5,22 @@ export default async (message) => {
     // If FCM data.type is group photo updated
     // Calls GROUP_PHOTO_UPDATED reducer
     if (message.data.type === 'GROUP_PHOTO_UPDATED') {
-        const groupName = message.groupName
-        const dlURL = message.URL
-        const PhotoName = message.PhotoName
-        const group_photo_updated = {
+        const groupName = message.data.groupName
+        const dlURL = message.data.URL
+        const PhotoName = message.data.PhotoName
+        const action = {
             type: 'GROUP_PHOTO_UPDATED',
             value: { groupName, dlURL, PhotoName }
         }
-        Store.props.dispatch(group_photo_updated)
+        Store.props.dispatch(action)
+    } else if (message.data.type === 'NEW_PRIVATE_GROUP_CONTACT') {
+        const contactName = message.data.contactName
+        const groupName = message.data.groupName
+        const action = {
+            type: 'NEW_PRIVATE_GROUP_CONTACT',
+            value: { contactName, groupName }
+        }
+        Store.props.dispatch(action)
     } else {
         const messageId = message.data.messageId
         const contact = message.data.contact

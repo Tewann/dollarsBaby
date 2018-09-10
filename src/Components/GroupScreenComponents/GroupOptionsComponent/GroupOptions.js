@@ -7,14 +7,14 @@
 
 
 import React from 'react'
-import { View, TouchableOpacity, TextInput, Text, FlatList, Image } from 'react-native'
+import { View, TouchableOpacity, ScrollView, Text, FlatList, Image } from 'react-native'
 import styles from './styles'
 import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
 import MessageItem from './MessageItem/MessageItem'
 import GroupContactItem from './GroupContactItem/GroupContactItem'
 import HeaderGroupContactList from './HeaderGroupContactList/HeaderGroupContactList'
-import PublicGroupOptionsCreator from './PublicGroupOptionsCreatorComponent/PublicGroupOptionsCreator'
+import MessagesList from './MessagesListComponent/MessagesList'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import ImagePicker from 'react-native-image-picker'
 import { uploadGroupImage } from '../../../Services/firebaseGroupFunctions'
@@ -47,29 +47,26 @@ class GroupOptions extends React.Component {
         this.props.dispatch(action)
     }
 
-    // Rendering group contact list header
-    _renderHeader = () => {
-        return <HeaderGroupContactList
-            addContactToGroup={this._addContactToGroup} />
-    }
 
     //*
-    // Public group
+    // Public group creator or Private Group
     //*
-    renderPublicGroup = () => {
+    displayMessageList = () => {
         const groupNameIndex = this.props.groupList.findIndex(item =>
             item.name === this.props.currentGroup)
 
-        if (this.props.groupList[groupNameIndex].creator === this.props.currentUser.name) {
-            // Public group - Created by user
-            // (if group creator matches current user name)
+        const groupType = this.props.groupList[groupNameIndex].type
+
+        if (this.props.groupList[groupNameIndex].creator === this.props.currentUser.name || this.props.groupList[groupNameIndex].type === 'private') {
+            // Public group - Created by user (if group creator matches current user name)
+            // Private Group
             // Displays predefined messages list
-            // Allows user to change group image
             return (
-                <PublicGroupOptionsCreator />
+                <MessagesList type={groupType} />
             )
         }
     }
+
 
     _openImagePicker = async () => {
         const groupNameIndex = this.props.groupList.findIndex(item =>
@@ -85,15 +82,17 @@ class GroupOptions extends React.Component {
                 }
                 else {
                     let requireSource = { uri: response.uri }
-                    uploadGroupImage(requireSource, this.props.currentGroup)
+                    const groupNameIndex = this.props.groupList.findIndex(item =>
+                        item.name === this.props.currentGroup)
+                    groupType = this.props.groupList[groupNameIndex].type
+                    uploadGroupImage(requireSource, this.props.currentGroup, groupType)
                         .then((dlLink, PhotoName) => {
-                            console.log('phtoo updated from app')
                             const groupName = this.props.currentGroup
                             const dlURL = dlLink.downloadURL
                             // update redux store, image is changed on profil screen component
                             const action = {
                                 type: 'GROUP_PHOTO_UPDATED',
-                                value: {groupName, dlURL, PhotoName}
+                                value: { groupName, dlURL, PhotoName }
                             }
                             this.props.dispatch(action)
                         })
@@ -149,23 +148,49 @@ class GroupOptions extends React.Component {
         )
     }
 
-    // if private group
+    //*
+    // Private Groups
+    // Displays contact list
+    // Header = Add contact buttons
+    //*
     renderContactList = () => {
-        /*<View style={styles.contacts_flatlist}>
-            <FlatList
-                data={this.props.groupList[groupNameIndex].contacts}
-                ListHeaderComponent={() => this._renderHeader()}
-                keyboardShouldPersistTaps={'always'}
-                horizontal={true}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => <GroupContactItem contact={item} />}
-            />
-        </View>*/
+        const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.currentGroup)
+        if (this.props.groupList[groupNameIndex].type === 'private') {
+            return (
+                <View elevation={1} style={styles.contacts_flatlist}>
+                    <FlatList
+                        data={this.props.groupList[groupNameIndex].contacts}
+                        ListHeaderComponent={() => this._renderHeader()}
+                        keyboardShouldPersistTaps={'always'}
+                        horizontal={true}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) => <GroupContactItem contact={item} />}
+                    />
+                </View>
+            )
+        }
+    }
+
+    //*
+    // Private Groups
+    // Header for contact list
+    // Button : Add contact
+    //*
+    _renderHeader = () => {
+        const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.currentGroup)
+        if (this.props.groupList[groupNameIndex].creator === this.props.currentUser.name) {
+            return <HeaderGroupContactList
+                addContactToGroup={this._addContactToGroup} />
+        } else {
+            return
+        }
     }
 
     render() {
         return (
-            <View style={styles.messagelist_main_container}>
+            <View style={styles.main_container}>
                 {/* ------  Header (back button) ------*/}
                 <TouchableOpacity
                     style={styles.back_to_contacts}
@@ -173,21 +198,23 @@ class GroupOptions extends React.Component {
                     <Icon name='chevron-left' color='#889eb0' />
                     <Text style={styles.retour}>Retour</Text>
                 </TouchableOpacity>
-
-                {/* ------  Body ------*/}
-                {/* ------  Group Image, name and creator name ------*/}
-                <View style={styles.avatar_container}>
-                    {this._renderImage()}
-                    <Text style={styles.group_name}>{this.props.currentGroup}</Text>
-                    {this._renderGroupNameCreator()}
-                    {this.state.errorMessage &&
-                        <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10, textAlign: 'center' }}>
-                            Erreur : {this.state.errorMessage}
-                        </Text>}
-                </View>
-
-                {/* ------  PublicGroup ------*/}
-                {this.renderPublicGroup()}
+                <ScrollView >
+                    {/* ------  Body ------*/}
+                    {/* ------  Group Image, name and creator name ------*/}
+                    <View style={styles.avatar_container}>
+                        {this._renderImage()}
+                        <Text style={styles.group_name}>{this.props.currentGroup}</Text>
+                        {this._renderGroupNameCreator()}
+                        {this.state.errorMessage &&
+                            <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10, textAlign: 'center' }}>
+                                Erreur : {this.state.errorMessage}
+                            </Text>}
+                    </View>
+                    {/* ------  Private groups - Contact list ------*/}
+                    {this.renderContactList()}
+                    {/* ------  Displays message list for creators and private groups ------*/}
+                    {this.displayMessageList()}
+                </ScrollView>
             </View>
         )
     }

@@ -176,7 +176,7 @@ exports.sendPushDataMessageForPrivateGroupPhotoURLUpdated = functions.firestore
         'content-available': true
     };
     const Members = yield admin.firestore()
-        .collection('Public_Groups')
+        .collection('Private_Groups')
         .doc(groupName)
         .collection('Members');
     const fcmTokens = yield Members.get().then(snapshotMembers => {
@@ -190,8 +190,35 @@ exports.sendPushDataMessageForPrivateGroupPhotoURLUpdated = functions.firestore
     return admin.messaging().sendToDevice(fcmTokens, message, options);
 }));
 //*
+// Contact added to Group
+// Send data notification to group users with contact information
+//*
+exports.sendPushDataMessage_ContactAdded = ((name, members, GroupName) => __awaiter(this, void 0, void 0, function* () {
+    const message = {
+        data: {
+            type: 'NEW_PRIVATE_GROUP_CONTACT',
+            contactName: name,
+            groupName: GroupName
+        },
+    };
+    const options = {
+        priority: 'high',
+        timeToLive: 60 * 60 * 24,
+        'content-available': true
+    };
+    const fcmTokens = yield members.get().then(snapshotMembers => {
+        const tokens = [];
+        snapshotMembers.forEach(doc => {
+            const token = doc.data().token;
+            tokens.push(token);
+        });
+        return tokens;
+    });
+    return admin.messaging().sendToDevice(fcmTokens, message, options);
+}));
+//*
 // When a contact has been added to a private group
-// Grabs token informations and push it to the private group
+// Grabs FCM Token from the 'Users' collection and push it to the private group
 //*
 exports.addTokenInformationsWhenNewContact = functions.firestore
     .document(`Private_Groups/{groups}/Members/{members}`)
@@ -218,6 +245,24 @@ exports.addTokenInformationsWhenNewContact = functions.firestore
         token: getToken
     }, { merge: true })
         .catch(err => { return err; });
+    // Sends data notification to group users
+    const members = snapshot
+        .ref
+        .parent
+        .parent
+        .collection('Members');
+    const GroupName = yield snapshot
+        .ref
+        .parent
+        .parent
+        .get()
+        .then(doc => {
+        const groupName = doc.data().GroupName;
+        return groupName;
+    })
+        .catch(err => console.log(err));
+    const sendData = yield exports.sendPushDataMessage_ContactAdded(name, members, GroupName)
+        .catch(err => console.log(err));
     return;
 }));
 // -------------------------------
