@@ -36,5 +36,12 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"Ingia katika akaunti"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Ingia katika akaunti ukitumia Google"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Zinginezo"</string>
+    <string msgid="368094699078615544" name="s1">"Hifadhi picha"</string>
+    <string msgid="4550830452390689489" name="s2">"Ungependa kuruhusu tangazo lihifadhi picha katika matunzio ya Picha?"</string>
+    <string msgid="2435407834265420668" name="s3">"Kubali"</string>
+    <string msgid="9167523597401839819" name="s4">"Kataa"</string>
+    <string msgid="1566682516266724847" name="s5">"Unda tukio la kalenda"</string>
+    <string msgid="5996672174517137271" name="s6">"Ungependa kuruhusu tangazo liunde tukio la kalenda?"</string>
+    <string msgid="7163549807207034258" name="s7">"Tangazo la Jaribio"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

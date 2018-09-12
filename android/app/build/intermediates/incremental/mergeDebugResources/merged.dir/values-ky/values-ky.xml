@@ -19,5 +19,12 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"Кирүү"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Google менен кирүү"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Аралаш"</string>
+    <string msgid="368094699078615544" name="s1">"Сүрөттү сактоо"</string>
+    <string msgid="4550830452390689489" name="s2">"Жарнамадан Сүрөт галереясына сүрөт сакталсынбы?"</string>
+    <string msgid="2435407834265420668" name="s3">"Кабыл алуу"</string>
+    <string msgid="9167523597401839819" name="s4">"Баш тартуу"</string>
+    <string msgid="1566682516266724847" name="s5">"Жылнаама окуясын түзүү"</string>
+    <string msgid="5996672174517137271" name="s6">"Жарнамада жылнаама окуясы түзүлсүнбү?"</string>
+    <string msgid="7163549807207034258" name="s7">"Жарнаманы сынап көрүңүз"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

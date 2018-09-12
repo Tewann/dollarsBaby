@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\f3e518dc97f3b945db0db1d6a60ccd15\\res\\values-hy\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "197,267,374,440,504,590,697",
+                        "endColumns": "69,106,65,63,85,106,74",
+                        "endOffsets": "266,373,439,503,589,696,771"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "3015,3089,3200,3270,3338,3428,3539",
+                        "endColumns": "73,110,69,67,89,110,78",
+                        "endOffsets": "3084,3195,3265,3333,3423,3534,3613"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5913cfb553359405769e0bed5ed4a085\\res\\values-hy\\values-hy.xml",
                     "from": {
                         "startLines": "2",
@@ -47,11 +64,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "21",
+                        "startLines": "28",
                         "startColumns": "4",
-                        "startOffsets": "3015",
+                        "startOffsets": "3618",
                         "endColumns": "100",
-                        "endOffsets": "3111"
+                        "endOffsets": "3714"
                     }
                 },
                 {

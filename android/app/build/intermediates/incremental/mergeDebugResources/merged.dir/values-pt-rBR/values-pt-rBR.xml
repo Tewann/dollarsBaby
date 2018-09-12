@@ -19,5 +19,12 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"Fazer login"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Fazer login com o Google"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Diversos"</string>
+    <string msgid="368094699078615544" name="s1">"Salvar imagem"</string>
+    <string msgid="4550830452390689489" name="s2">"Permitir que os anúncios armazenem imagens na galeria de imagens?"</string>
+    <string msgid="2435407834265420668" name="s3">"Aceitar"</string>
+    <string msgid="9167523597401839819" name="s4">"Recusar"</string>
+    <string msgid="1566682516266724847" name="s5">"Criar evento na agenda"</string>
+    <string msgid="5996672174517137271" name="s6">"Permitir que os anúncios criem um evento na agenda?"</string>
+    <string msgid="7163549807207034258" name="s7">"Anúncio de teste"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>
