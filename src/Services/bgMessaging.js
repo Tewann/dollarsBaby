@@ -14,13 +14,62 @@ export default async (message) => {
         }
         Store.props.dispatch(action)
     } else if (message.data.type === 'NEW_PRIVATE_GROUP_CONTACT') {
+        // data from message
         const contactName = message.data.contactName
         const groupName = message.data.groupName
-        const action = {
-            type: 'NEW_PRIVATE_GROUP_CONTACT',
-            value: { contactName, groupName }
+
+        // checking if group already exists in Store
+        const currentStore = Store.getState()
+        const groupList = currentStore.groupManagment.groupList
+        const groupNameIndex = groupList.findIndex(item =>
+            item.name === groupName)
+
+        // if group does exists
+        // Reducer - Adding contact
+        if (groupNameIndex !== -1) {
+            const action = {
+                type: 'NEW_PRIVATE_GROUP_CONTACT',
+                value: { contactName, groupName }
+            }
+            Store.props.dispatch(action)
+            // group does not exists
+        } else {
+            // grabs group information from firestore
+            // add group and existings contacts
+            firebase
+            .firestore()
+            .collection('Private_Groups')
+            .doc(groupName)
+            .get()
+            .then(doc => {
+                // Group informations
+                creator = doc.get('creator')
+                photoURL = doc.get('photoURL')
+                // Contact list
+                let contacts = []
+                let newId = 1
+                firebase
+                    .firestore()
+                    .collection('Private_Groups')
+                    .doc(groupName)
+                    .collection('Members')
+                    .get()
+                    .then(members => {
+                        members.forEach(doc => {
+                            const member = doc.data().name
+                            let contactId = newId
+                            const contact = { name: member, id: contactId }
+                            contacts.push(contact)
+                            newId++
+                        })
+                        const action = {
+                            type: 'ADD_PRIVATE_GROUP',
+                            value: { creator, photoURL, groupName, contacts }
+                        }
+                        Store.dispatch(action)
+                    })
+            })
         }
-        Store.props.dispatch(action)
     } else {
         const messageId = message.data.messageId
         const contact = message.data.contact

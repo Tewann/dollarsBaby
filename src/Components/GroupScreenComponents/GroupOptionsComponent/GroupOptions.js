@@ -17,7 +17,7 @@ import HeaderGroupContactList from './HeaderGroupContactList/HeaderGroupContactL
 import MessagesList from './MessagesListComponent/MessagesList'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import ImagePicker from 'react-native-image-picker'
-import { uploadGroupImage } from '../../../Services/firebaseGroupFunctions'
+import { uploadGroupImage, addContactToPrivateGroup } from '../../../Services/firebaseGroupFunctions'
 
 // variable to avoid "Can't find variable: options" when trying to open image picker or camera
 var options = { quality: 0.1 };
@@ -40,11 +40,13 @@ class GroupOptions extends React.Component {
         this.props.dispatch(action)
     }
 
-
-    _addContactToGroup = (contactId, contactName) => {
-        const contact_and_group = { contactId: contactId, contactName: contactName, groupId: groupId }
-        const action = { type: 'ADD_CONTACT_TO_GROUP', value: contact_and_group }
-        this.props.dispatch(action)
+    //*
+    // Add contact to private group
+    //*
+    _addContactToGroup = async (contactId, contactName) => {
+        // Adding contact to firebase
+        const addContactToGroup = await addContactToPrivateGroup(this.props.currentGroup, contactName)
+            .catch(err => { this.setState({ errorMessage: err }) })
     }
 
 
