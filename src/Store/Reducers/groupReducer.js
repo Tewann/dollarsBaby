@@ -129,6 +129,31 @@ function groupManagment(state = initialState, action) {
             }
             return nextState || state
 
+        case 'ADD_PRIVATE_GROUP':
+            // sets newId
+            // if there is no group
+            if (state.groupList.length === 0) {
+                newId = 1
+                // if there is groups
+            } else {
+                newId = state.groupList[state.groupList.length - 1].id + 1
+            }
+            // add new group    
+            const newAddedPrivateGroup = {
+                id: newId,
+                name: action.value.groupName,
+                photoURL: action.value.photoURL,
+                type: 'private',
+                creator: action.value.creator,
+                contacts: action.value.contacts
+            }
+
+            nextState = {
+                ...state,
+                groupList: [...state.groupList, newAddedPrivateGroup]
+            }          
+            return nextState || state
+
         case 'NEW_PRIVATE_GROUP_CONTACT':
             const groupIndex = state.groupList.findIndex(item =>
                 (item.name === action.value.groupName) && (item.type === 'private'))
@@ -138,17 +163,18 @@ function groupManagment(state = initialState, action) {
 
             // Contact already in group contact list
             if (contactNameIndex !== -1) {
-               return
+                return state
                 // Contact is not in group
                 // Contact is added
             } else {
+                let newContactId = null
                 if (state.groupList[groupIndex].contacts.length === 0) {
                     // if no contacts
-                    const newId = 1
+                    newContactId = 1
                 } else {
-                    const newId = state.groupList[groupIndex].contacts[state.groupList[groupIndex].contacts.length - 1].id + 1
+                    newContactId = state.groupList[groupIndex].contacts[state.groupList[groupIndex].contacts.length - 1].id + 1
                 }
-                const newContact = { name: action.value.contactName, id: newId }
+                const newContact = { name: action.value.contactName, id: newContactId }
                 nextState = {
                     ...state,
                     groupList: [...state.groupList],
