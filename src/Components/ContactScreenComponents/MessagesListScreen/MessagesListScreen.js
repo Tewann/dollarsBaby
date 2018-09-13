@@ -34,7 +34,11 @@ class MessagesListScreen extends React.Component {
     // Checks if additionnal message length is under 100 caracters
     // Then calls firebase function
     //*
+<<<<<<< HEAD
     _sendMessage = async (predefined_message, sound) => {
+=======
+    _sendMessage = async (predefined_message) => {
+>>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
         if (this.state.additionnalMessage.length <= 100) {
             // if additional message length doesn't exceed 100
             // reset error message

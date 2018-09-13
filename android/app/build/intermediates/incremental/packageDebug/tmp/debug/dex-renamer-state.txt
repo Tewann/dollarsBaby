@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 #Thu Sep 13 22:49:39 CEST 2018
+=======
+#Thu Sep 13 11:56:18 CEST 2018
+>>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=C\:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-base.1=C\:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-base.0=C\:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+base.2=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+base.1=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+base.0=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
