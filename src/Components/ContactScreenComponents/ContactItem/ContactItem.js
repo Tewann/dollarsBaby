@@ -5,12 +5,9 @@ import React from 'react'
 import { Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
-import Dimensions from 'Dimensions'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 
-const { height, width } = Dimensions.get('window');
-const itemWidth = (width / 3) - 10;
-const roundWidth = itemWidth / 1.60;
+
 
 class ContactItem extends React.Component {
     constructor(props) {

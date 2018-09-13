@@ -9,25 +9,33 @@ import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import { sendMessageToFirestore } from '../../../Services/firebaseFunctions'
+import { strings } from '../../../i18n'
+
 
 class MessagesListScreen extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             defaultPicture: require('../../../../images/ic_tag_faces.png'),
-            addtionnalMessage: "",
+            additionnalMessage: "",
             errorMessage: null
         }
     }
 
+    //*
+    // Update state when text input for additionnal message is modified
+    //*
     _additionnalMessageChanged(text) {
-        this.setState({ addtionnalMessage: text })
+        this.setState({ additionnalMessage: text })
     }
 
-    // Checks if additionnal message is under 100 caracters
-    // Calls firebase function
-    _sendMessage = async (predefined_message) => {
-        if (this.state.addtionnalMessage.length <= 100) {
+    //*
+    // Send message by calling firebase function
+    // Checks if additionnal message length is under 100 caracters
+    // Then calls firebase function
+    //*
+    _sendMessage = async (predefined_message, sound) => {
+        if (this.state.additionnalMessage.length <= 100) {
             // if additional message length doesn't exceed 100
             // reset error message
             this.setState({ errorMessage: null })
@@ -36,10 +44,10 @@ class MessagesListScreen extends React.Component {
             const timeStamp = new Date().getTime();
             const currentUser = this.props.currentUser.name
             const contact = this.props.contact
-            const additionnal_message = this.state.addtionnalMessage
+            const additionnal_message = this.state.additionnalMessage
             const id = `${currentUser}_${timeStamp}`
             const type = 'received'
-            const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type)
+            const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound)
                 .then(() => {
                     // if firebase function worked, update redux store
                     const type = 'send'
@@ -51,14 +59,16 @@ class MessagesListScreen extends React.Component {
 
         } else {
             // if additionnal message length exceed 100
-            this.setState({ errorMessage: 'Le message a trop de caractères (100 maximum)' })
+            this.setState({ errorMessage: strings('contacts_screen.messages_list_screen.close_button') })
         }
 
     }
 
-    // display length of additionnal message
+    //*
+    // Displays - Length of additionnal message
+    //*
     _displayAdditionnalMessageLenght = () => {
-        let length = this.state.addtionnalMessage.length
+        let length = this.state.additionnalMessage.length
         if (length <= 100) {
             return (
                 <Text style={styles.additionnal_message_length}>{length}</Text>
@@ -102,7 +112,7 @@ class MessagesListScreen extends React.Component {
                     style={styles.back_to_contacts}
                     onPressIn={() => this.props.returnToContactScreen()}>
                     <Icon name='chevron-left' color='#889eb0' />
-                    <Text style={styles.retour}>Retour</Text>
+                    <Text style={styles.retour}>{strings('contacts_screen.messages_list_screen.back')}</Text>
                 </TouchableOpacity>
                 <ScrollView
                     keyboardShouldPersistTaps='always'
@@ -139,7 +149,7 @@ class MessagesListScreen extends React.Component {
                             keyboardShouldPersistTaps={'always'}
                             keyExtractor={(item) => item.id.toString()}
                             renderItem={({ item }) => <MessageItem message={item}
-                                sendMessage={(predefined_message) => this._sendMessage(predefined_message)}
+                                sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
                                 contact={this.props.contact}
                             />}
                         />

@@ -180,6 +180,7 @@ export const setDlLinkToCloudFirestore = (downloadURL, username, imageName) =>
             })
     })
 
+
 // ----------------------
 // END : FUNCTIONS UPLOAD IMAGE
 // ----------------------
@@ -200,7 +201,7 @@ export const setUpRegistrationTokenToFirebase = async (fcmToken, username) => {
 }
 
 // send message to the contact's firestore message list
-export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type) => {
+export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type, sound) => {
     new Promise((resolve, reject) => {
         firebase.firestore()
             .collection('Users')
@@ -209,7 +210,7 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
             .add({
                 title: currentUser,
                 body: `${predefined_message} : ${additionalMessage}`,
-                sound: predefined_message,
+                sound: sound,
                 timeStamp: timeStamp,
                 messageId: id,
                 predefined_message: predefined_message,
@@ -222,12 +223,11 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
 }
 
 
-// Send Contact request
+// Checks if contact exists in firestore
 export const doesContactExists = async (contact) => {
     return new Promise((resolve, reject) => {
         firebase.firestore().collection('Users').doc(contact).get()
             .then(doc => {
-                //if user name available create user's doc
                 if (doc.exists) {
                     resolve()
                 } else {
@@ -235,7 +235,7 @@ export const doesContactExists = async (contact) => {
                 }
             })
             .catch(err => reject(err))
-        })
+    })
 }
 
 
@@ -291,7 +291,37 @@ export const getUserDataForLoginScreen = async () => {
     return ({ userEmail, userName })
 }
 
+//function exported to AcceptOrDecline 
+// (component for message history)
+export const addContactToFirestore = async (currentUser, contactToAdd) => {
 
+    // add contact to current user contact list in database
+    new Promise((resolve, reject) => {
+        console.log(contactToAdd)
+        firebase.firestore()
+            .collection('Users')
+            .doc(currentUser)
+            .collection('contactList')
+            .add({
+                name: contactToAdd
+            })
+            .then(resolve())
+            .catch(error => reject(error))
+    })
+
+    // add contact current user in the new contact contactList
+    new Promise((resolve, reject) => {
+        firebase.firestore()
+            .collection('Users')
+            .doc(contactToAdd)
+            .collection('contactList')
+            .add({
+                name: currentUser
+            })
+            .then(resolve())
+            .catch(error => reject(error))
+    })
+}
 
 // --------------------
 // --------------------

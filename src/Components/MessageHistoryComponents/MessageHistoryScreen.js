@@ -10,7 +10,7 @@ import { fetchMessages } from '../../Services/firebaseFunctions'
 
 class MessageHistory extends React.Component {
     componentDidMount() {
-        this.props.dispatch(fetchMessages(this.props.currentUser.name))
+        //this.props.dispatch(fetchMessages(this.props.currentUser.name))
     }
 
     render() {

@@ -25,6 +25,7 @@
     "react-native-cached-image": "github:fungilation/react-native-cached-image",
     "react-native-elements": "^0.19.1",
     "react-native-firebase": "^4.3.0",
+    "react-native-i18n": "^2.0.15",
     "react-native-image-picker": "^0.26.10",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-modal": "^6.1.0",
