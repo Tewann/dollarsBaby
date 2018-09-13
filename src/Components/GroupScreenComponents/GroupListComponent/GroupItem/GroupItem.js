@@ -7,7 +7,10 @@ import { Text, TouchableOpacity, View, Image } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
+<<<<<<< HEAD
 import { strings } from '../../../../i18n'
+=======
+>>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 
 class GroupItem extends React.Component {
     constructor(props) {
@@ -60,10 +63,14 @@ class GroupItem extends React.Component {
                         {group.name}
                     </Text>
                     <Text style={styles.type_text}>
+<<<<<<< HEAD
                         ({group.type === 'public' ? 
                             strings(groups_screen.group_list.group_item.public) :
                             strings(groups_screen.group_list.group_item.private)
                             })
+=======
+                        ({group.type})
+>>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     </Text>
                 </View>
             </TouchableOpacity>

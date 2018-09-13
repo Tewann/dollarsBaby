@@ -15,6 +15,7 @@
             "error_title": "Erreur",
             "error_message": "Ce contact est déjà dans votre liste de contacts",
             "close_button": "Fermer",
+<<<<<<< HEAD
             "predefined_message_contact_request": "Demande de contact",
             "contact_request_send": "Demande de contact envoyée",
             "error_message2": "Vous n'avez pas saisi de nom de contact",
@@ -50,5 +51,9 @@
         }
         
 
+=======
+            "predefined_message_contact_request": "Demande de contact"
+        }
+>>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
     }
 }
