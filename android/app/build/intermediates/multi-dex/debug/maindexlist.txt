@@ -123,6 +123,7 @@ android/support/v7/app/ActionBar$NavigationMode.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
+com/AlexanderZaytsev/RNI18n/RNI18nPackage.class
 com/BV/LinearGradient/LinearGradientPackage.class
 com/RNFetchBlob/RNFetchBlobPackage.class
 com/eblink/BuildConfig.class

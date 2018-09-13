@@ -15,7 +15,7 @@ class Loading extends React.Component {
     componentDidMount = async () => {
 
         // reset which screen to show for group screen (set group list)
-        const action = { type: 'SWITCH_GROUP_SCREEN', value: '8tx9ycy9yc8yc' }
+        const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
 
 
