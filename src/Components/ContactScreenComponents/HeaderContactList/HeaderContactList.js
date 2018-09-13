@@ -6,6 +6,7 @@ import { TouchableOpacity, TextInput, View, Text, Alert } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { doesContactExists, sendMessageToFirestore } from '../../../Services/firebaseFunctions'
+import { strings } from '../../../i18n'
 
 class HeaderContactList extends React.Component {
     constructor(props) {
@@ -28,10 +29,10 @@ class HeaderContactList extends React.Component {
             item.name === this.state.contactName)
             if (contactNameIndex !== -1) {
                 Alert.alert(
-                    'Erreur',
-                    'Ce contact est déjà dans votre liste de contact',
+                    strings(contacts_screen.header_contact_list.error_title),
+                    strings(contacts_screen.header_contact_list.error_message),
                     [
-                        { text: 'Fermer' }
+                        { text: strings(contacts_screen.header_contact_list.close_button) }
                     ]
                 )
             } else {
@@ -54,7 +55,7 @@ class HeaderContactList extends React.Component {
                     const currentUser = this.props.currentUser.name
                     const contact = this.state.contactName
                     const id = `${currentUser}_${timeStamp}`
-                    const predefined_message = `Demande de contact`
+                    const predefined_message = strings(contacts_screen.header_contact_list.predefined_message_contact_request)
                     const additional_message = ""
                     const type = 'contact_request'
                     const sendingRequest = await sendMessageToFirestore(currentUser, contact, predefined_message, additional_message, timeStamp, id, type)

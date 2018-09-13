@@ -1,0 +1,21 @@
+{
+    "navigation": {
+        "contacts_screen": "Contacts",
+        "group_screen": "Groupes",
+        "message_history": "Messages"
+    },
+    "contacts_screen": {
+        "contact_item": {
+
+        },
+        "contacts_screen": {
+
+        },
+        "header_contact_list": {
+            "error_title": "Erreur",
+            "error_message": "Ce contact est déjà dans votre liste de contacts",
+            "close_button": "Fermer",
+            "predefined_message_contact_request": "Demande de contact"
+        }
+    }
+}

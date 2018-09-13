@@ -26,6 +26,8 @@ import firebase from 'react-native-firebase'
 
 import styles from './styles'
 
+import { strings } from '../i18n'
+
 //
 // Custom components for navigation
 //
@@ -90,24 +92,23 @@ const CustomDrawerContentComponent = (props) => {
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
     {
-        GroupScreen: {
-            screen: GroupScreen,
-            navigationOptions: {
-                title: 'Groupes'
-            }
-        },
         ContactsScreen: {
             screen: ContactsScreen,
             navigationOptions: {
-                title: 'Contacts',
+                title: strings('navigation.contacts_screen'),
                 tabBarOnPress: null,
             }
         },
-
+        GroupScreen: {
+            screen: GroupScreen,
+            navigationOptions: {
+                title: strings('navigation.group_screen')
+            }
+        },
         MessageHistory: {
             screen: MessageHistory,
             navigationOptions: {
-                title: 'Messages reçus'
+                title: strings('navigation.message_history')
             },
         },
     },
