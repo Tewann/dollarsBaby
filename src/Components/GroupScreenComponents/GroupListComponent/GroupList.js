@@ -4,16 +4,24 @@
 import React from 'react'
 import { Text, TouchableOpacity, View, TextInput, FlatList, Alert } from 'react-native'
 import styles from './styles'
-import GroupItem from '../GroupItem/GroupItem'
+import GroupItem from './GroupItem/GroupItem'
 import Modal from 'react-native-modal'
 import { connect } from 'react-redux'
+import { createPublicGroupInFirestore, joinPublicGroupInFirestore, 
+        createPrivateGroupInFirestore, addContactToPrivateGroup } from '../../../Services/firebaseGroupFunctions'
+import { Icon } from '../../../../node_modules/react-native-elements';
+import { strings } from '../../../i18n'
+
 
 class GroupList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             group: "",
-            isVisible: false,
+            textInput: true,
+            groupButtons: false,
+            publicGroupButtons: false,
+            errorMessage: null
         },
             switchScreen = this.props.switchScreen
     }
@@ -22,81 +30,204 @@ class GroupList extends React.Component {
         this.setState({ group: text })
     }
 
-    _displayModal() {
-        this.setState({ isVisible: true })
+    // displaying buttons : chosing public/private group
+    _displayButtons() {
+        this.setState({ textInput: false, groupButtons: true })
     }
 
-    _createPrivateGroup() {
+    // displays default buttons (only text input for joining or creating groups)
+    _displayTextInput() {
+        this.setState({ textInput: true, groupButtons: false, publicGroupButtons: false, group: "" })
+    }
+
+    _displayPublicGroupButtons() {
+        this.setState({ groupButtons: false, publicGroupButtons: true })
+    }
+
+    // create public group
+    // called when created public group pressed
+    // if group name already exist
+    // displays (publicgroupbuttons) button to join public group
+    _createPublicGroup = async () => {
         if (this.state.group.length > 0) {
-            const action = { type: 'CREATE_PRIVATE_GROUP', value: this.state.group }
-            this.props.dispatch(action)
-            this.setState({ isVisible: false })
-            switchScreen()
+            // if input lenght is > 0
+            // calls firebase function (checks if name avaible then create group)
+            // if firebase function excuted calls reducer
+            const createPublicGroup = await createPublicGroupInFirestore(this.state.group, this.props.currentUser.name)
+                .then(() => {
+                    const action = { type: 'CREATE_PUBLIC_GROUP', value: [this.state.group, this.props.currentUser.name] }
+                    this.props.dispatch(action)
+                    this.setState({ textInput: true, groupButtons: false })
+
+                })
+                .catch((error) => {
+                    if (error => 'Group name taken') {
+                        // if group already exists
+                        // displays public group buttons (cancel and join group buttons)
+                        this._displayPublicGroupButtons()
+                    } else {
+                        Alert.alert(
+                            strings('groups_screen.group_list.error_title'),
+                            error
+                            [
+                            { text: strings('groups_screen.group_list.close_button') }
+                            ]
+                        )
+                    }
+                })
         } else {
             this.setState({ isVisible: false })
             Alert.alert(
-                'Erreur',
-                "Vous n'avez pas saisi de valeur"
+                strings('groups_screen.group_list.error_title'),
+                strings('groups_screen.group_list.error_message')
                 [
-                { text: 'Fermer' }
+                { text: strings('groups_screen.group_list.close_button') }
                 ]
             )
         }
     }
 
+    _joinPublicGroup = async () => {
+        const joinPublicGroupFirestore = await joinPublicGroupInFirestore(this.state.group, this.props.currentUser.name, this.props.currentUser.registrationToken)
+            .then((res) => {
+                // function returns photo url and creator
+                // grabs it and send action to the store
+                const value = [groupName = this.state.group, photoURL = res.photoURL, creator = res.creator]
+                const action = { type: 'JOIN_PUBLIC_GROUP', value: value }
+                this.props.dispatch(action)
+            })
+            .catch(err => this.setState({ errorMessage: err }))
+        this._displayTextInput()
+        this.messageInput.clear()
+    }
+
+    _createPrivateGroup = async () => {
+        if (this.state.group.length > 0) {
+            // if input lenght is > 0
+            // calls firebase function (checks if name avaible then create group)
+            // if firebase function excuted calls reducer
+            const createPrivateGroup = await createPrivateGroupInFirestore(this.state.group, this.props.currentUser.name)
+                .then(async () => {
+                    // if private group successfully created
+                    // add creator to contact group list in firebase
+                    const addContactToGroup = await addContactToPrivateGroup(this.state.group, this.props.currentUser.name)
+                        .catch(err => {this.setState({errorMessage: err})})
+                    const action = { type: 'CREATE_PRIVATE_GROUP', value: [this.state.group, this.props.currentUser.name] }
+                    this.props.dispatch(action)
+                    this._displayTextInput()
+
+                })
+                .catch((error) => {
+                    if (error => 'Group name taken') {
+                        // if group already exists
+                        // displays public group buttons (cancel and join group buttons)
+                        this.setState({ errorMessage: strings('groups_screen.group_list.error_message2')})
+                        this._displayTextInput()
+                    } else {
+                        Alert.alert(
+                            strings('groups_screen.group_list.error_title'),
+                            error
+                            [
+                            { text: strings('groups_screen.group_list.close_button') }
+                            ]
+                        )
+                    }
+                })
+        } else {
+            this.setState({ isVisible: false })
+            Alert.alert(
+                strings('groups_screen.group_list.error_title'),
+                strings('groups_screen.group_list.error_message')
+                [
+                { text: strings('groups_screen.group_list.close_button') }
+                ]
+            )
+        }
+    }
+
+
     render() {
         return (
             <View>
-                <Modal
-                    visible={this.state.isVisible}
-                    onRequestClose={() => { this.setState({ isVisible: false }) }}
-                    onBackdropPress={() => { this.setState({ isVisible: false }) }}
-                    animationType='fade'
-                    transparent={true}
-                >
-                    <View style={styles.modal}>
+                {this.state.errorMessage &&
+                    <Text style={{ color: 'red', textAlign: 'center' }}>
+                        {this.state.errorMessage}
+                    </Text>
+                }
+                {this.state.textInput &&
+                    <View style={styles.top_container}>
+                        <TextInput
+                            placeholder={strings('groups_screen.group_list.placeholder')}
+                            placeholderTextColor={'lightgrey'}
+                            onChangeText={(text) => this._groupInputChanged(text)}
+                            onSubmitEditing={() => this._displayButtons()}
+                            autoFocus={false}
+                            style={styles.text_input}
+                            underlineColorAndroid={'transparent'}
+                            autoCorrect={false}
+                            ref={component => this.messageInput = component}
+                        />
+                        <TouchableOpacity
+                            onPress={() => this._displayButtons()}
+                            style={styles.cross}>
+                            <View style={styles.crossUp} />
+                            <View style={styles.crossFlat} />
+                        </TouchableOpacity>
+                    </View>}
+
+                {this.state.groupButtons &&
+                    <View style={styles.button_container}>
                         <TouchableOpacity
                             style={styles.touchable_container}
-                            onPress={() => this._createPrivateGroup()}>
-                            <Text style={styles.text}>
-                                Groupe privé
-                            </Text>
+                            onPress={() => this._createPrivateGroup()}
+                        >
+                            <Text style={styles.text}>{strings('groups_screen.group_list.private_group')}</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.touchable_container}>
-                            <Text style={styles.text}>
-                                Groupe public
-                            </Text>
+                        <TouchableOpacity
+                            style={styles.touchable_container}
+                            onPress={() => this._createPublicGroup()}
+                        >
+                            <Text style={styles.text}>{strings('groups_screen.group_list.public_group')}</Text>
+                        </TouchableOpacity>
+                        <Icon
+                            name='keyboard-backspace'
+                            onPress={() => this._displayTextInput()}
+
+                        />
+                    </View>
+                }
+                {this.state.publicGroupButtons &&
+                    <View style={styles.button_container}>
+                        <Text
+                            style={{ textAlign: 'center', fontWeight: 'bold' }}
+                        >
+                            {strings('groups_screen.group_list.existing_group')}
+                        </Text>
+                        <TouchableOpacity
+                            style={styles.touchable_container}
+                            onPress={() => this._joinPublicGroup()}
+                        >
+                            <Text style={styles.text}>{strings('groups_screen.group_list.join_group')}</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.touchable_container}
+                            onPress={() => this._displayTextInput()}
+                        >
+                            <Text style={styles.text}>{strings('groups_screen.group_list.cancel')}</Text>
                         </TouchableOpacity>
                     </View>
-                </Modal>
+                }
 
-                <View style={styles.top_container}>
-                    <TextInput
-                        placeholder='Ajouter un groupe'
-                        onChangeText={(text) => this._groupInputChanged(text)}
-                        onSubmitEditing={() => this._displayModal()}
-                        autoFocus={false}
-                        style={styles.text_input}
-                        underlineColorAndroid={'transparent'}
-                        autoCorrect={false}
-                        ref={component => this.messageInput = component}
-                    />
-                    <TouchableOpacity
-                        onPress={() => this._displayModal()}
-                        style={styles.cross}>
-                        <View style={styles.crossUp} />
-                        <View style={styles.crossFlat} />
-                    </TouchableOpacity>
-                </View>
                 <FlatList
                     data={this.props.groupList}
                     numColumns={3}
+                    style={{ marginBottom: 80 }}
                     keyboardShouldPersistTaps={'always'}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <GroupItem
                         group={item}
-                        switchScreen={(groupName, groupContacts, groupId) => switchScreen(groupName, groupContacts, groupId)} />}
+                    />}
                 />
             </View>
         )
@@ -105,7 +236,8 @@ class GroupList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        groupList: state.groupManagment.groupList
+        groupList: state.groupManagment.groupList,
+        currentUser: state.getCurrentUserInformations,
     }
 }
 

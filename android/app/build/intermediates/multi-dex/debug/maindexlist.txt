@@ -51,6 +51,7 @@ android/support/annotation/UiThread.class
 android/support/annotation/VisibleForTesting.class
 android/support/annotation/WorkerThread.class
 android/support/annotation/XmlRes.class
+android/support/customtabs/CustomTabsService$Result.class
 android/support/multidex/MultiDex$V14$ElementConstructor.class
 android/support/multidex/MultiDex$V14$ICSElementConstructor.class
 android/support/multidex/MultiDex$V14$JBMR11ElementConstructor.class
@@ -122,6 +123,7 @@ android/support/v7/app/ActionBar$NavigationMode.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
+com/AlexanderZaytsev/RNI18n/RNI18nPackage.class
 com/BV/LinearGradient/LinearGradientPackage.class
 com/RNFetchBlob/RNFetchBlobPackage.class
 com/eblink/BuildConfig.class
@@ -188,6 +190,8 @@ com/facebook/react/uimanager/annotations/ReactPropGroup.class
 com/facebook/react/uimanager/annotations/ReactPropertyHolder.class
 com/facebook/soloader/SoLoader.class
 com/facebook/widget/text/span/BetterImageSpan$BetterImageSpanAlignment.class
+com/google/ads/mediation/MediationServerParameters$Parameter.class
+com/google/android/gms/ads/formats/NativeAdOptions$AdChoicesPlacement.class
 com/google/android/gms/auth/api/signin/GoogleSignInOptionsExtension$TypeId.class
 com/google/android/gms/common/GoogleCertificates.class
 com/google/android/gms/common/GoogleSignatureVerifier.class
@@ -211,6 +215,7 @@ com/google/android/gms/common/util/RetainForClient.class
 com/google/android/gms/common/util/VisibleForTesting.class
 com/google/android/gms/common/zzg.class
 com/google/android/gms/flags/FlagSource.class
+com/google/android/gms/internal/ads/zzadh.class
 com/google/android/gms/stats/CodePackage.class
 com/google/android/gms/stats/GCoreWakefulBroadcastReceiver.class
 com/google/android/gms/stats/WakeLock.class
@@ -296,8 +301,10 @@ io/grpc/internal/ServiceConfigInterceptor.class
 io/grpc/internal/Stream.class
 io/grpc/internal/WithLogId.class
 io/invertase/firebase/RNFirebasePackage.class
+io/invertase/firebase/admob/RNFirebaseAdMobPackage.class
 io/invertase/firebase/auth/RNFirebaseAuthPackage.class
 io/invertase/firebase/firestore/RNFirebaseFirestorePackage.class
+io/invertase/firebase/functions/RNFirebaseFunctionsPackage.class
 io/invertase/firebase/messaging/RNFirebaseMessagingPackage.class
 io/invertase/firebase/notifications/RNFirebaseNotificationsPackage.class
 io/invertase/firebase/storage/RNFirebaseStoragePackage.class

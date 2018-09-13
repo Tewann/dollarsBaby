@@ -21,8 +21,7 @@ class DisplayMessage extends React.Component {
     _renderImage = () => {
         const contactNameIndex = this.props.contactList.findIndex(item =>
             item.name === this.props.message.contact)
-        let uri = this.props.contactList[contactNameIndex].photoUrl
-        const backUpUri = '../../../../images/ic_tag_faces.png'
+        let uri = (contactNameIndex !== -1) ? this.props.contactList[contactNameIndex].photoUrl : null
         if (this.props.message.type === 'send_contact_request' || this.props.message.type === 'contact_request' || uri === null) {
             // if message is type contact request (send or received)
             // or if contact does not have an image uploaded to storage
@@ -75,22 +74,23 @@ class DisplayMessage extends React.Component {
     }
 
     _renderPredefinedMessage() {
-        if (this.props.message.type === 'contact_request') {
+        if (this.props.message.type === 'contact_request' &&
+            this.props.message.status !== 'accepted' && this.props.message.status !== 'declined') {
             // if message is contact request received displays customize predefined message
             return (
                 <Text style={styles.predefined_message}>
                     {this.props.message.contact} vous a envoyé une demande de contact
                 </Text>
             )
-        } else {
+        } else if (this.props.message.type !== 'contact_request') {
             return (
-                <View style={{ flexDirection: 'row'}}>
-                <Text style={styles.predefined_message}>
-                    {this.props.message.predefined_message}
-                </Text>
-                <Text style={styles.additionnal_message}>
-                    {this.props.message.additionnal_message}
-                </Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.predefined_message}>
+                        {this.props.message.predefined_message}
+                    </Text>
+                    <Text style={styles.additionnal_message}>
+                        {this.props.message.additionnal_message}
+                    </Text>
                 </View>
             )
         }
@@ -102,13 +102,21 @@ class DisplayMessage extends React.Component {
         // request' status is pendant
         // displays accept or decline buttons
         // else returns nothing
-        if (this.props.message.type === 'contact_request' && this.props.message.status !== 'accepted') {
+        if (this.props.message.type === 'contact_request' &&
+            this.props.message.status !== 'accepted' && this.props.message.status !== 'declined') {
             return (
-                <AcceptOrDecline />
+                <AcceptOrDecline message={this.props.message} />
+            )
+        } else if (this.props.message.status === 'accepted') {
+            return (
+                <Text>{this.props.message.contact} a été ajouté à vos contacts</Text>
+            )
+        } else if (this.props.message.status === 'declined') {
+            return (
+                <Text>{this.props.message.contact} n'a pas été ajouté à vos contacts</Text>
             )
         }
     }
-
     // display time
     _renderTime() {
         let displayDate = ''
@@ -146,7 +154,7 @@ class DisplayMessage extends React.Component {
 
     render() {
         const { message } = this.props
-        return (
+         return (
             <View style={styles.main_container}>
                 <View style={styles.function_container}>
                     <View>

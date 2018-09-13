@@ -4,6 +4,23 @@
             "outputFile": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\68d15cde9ec8c53513b4a656d8137b63\\res\\values-uk\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "197,273,382,448,515,597,701",
+                        "endColumns": "75,108,65,66,81,103,75",
+                        "endOffsets": "272,381,447,514,596,700,776"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "4723,4803,4916,4986,5057,5143,5251",
+                        "endColumns": "79,112,69,70,85,107,79",
+                        "endOffsets": "4798,4911,4981,5052,5138,5246,5326"
+                    }
+                },
+                {
                     "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\cfdfe02e79679383442ca65d3d5e2f3f\\res\\values-uk\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -30,11 +47,11 @@
                         "endOffsets": "385,493,616,718,824,910,1018,1136,1217,1323,1430,1528,1636,1742,1851,1975,2075,2176"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,38",
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,45",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,323,446,548,654,740,848,966,1047,1153,1260,1358,1466,1572,1681,1805,4723",
+                        "startOffsets": "105,215,323,446,548,654,740,848,966,1047,1153,1260,1358,1466,1572,1681,1805,5331",
                         "endColumns": "109,107,122,101,105,85,107,117,80,105,106,97,107,105,108,123,99,100",
-                        "endOffsets": "210,318,441,543,649,735,843,961,1042,1148,1255,1353,1461,1567,1676,1800,1900,4819"
+                        "endOffsets": "210,318,441,543,649,735,843,961,1042,1148,1255,1353,1461,1567,1676,1800,1900,5427"
                     }
                 },
                 {

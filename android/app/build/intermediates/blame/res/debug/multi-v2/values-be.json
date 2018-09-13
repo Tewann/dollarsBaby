@@ -30,11 +30,11 @@
                         "endOffsets": "159"
                     },
                     "to": {
-                        "startLines": "21",
+                        "startLines": "28",
                         "startColumns": "4",
-                        "startOffsets": "2931",
+                        "startOffsets": "3536",
                         "endColumns": "108",
-                        "endOffsets": "3035"
+                        "endOffsets": "3640"
                     }
                 },
                 {
@@ -69,6 +69,23 @@
                         "startOffsets": "1267",
                         "endColumns": "204",
                         "endOffsets": "1467"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\68d15cde9ec8c53513b4a656d8137b63\\res\\values-be\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "197,270,384,449,515,598,700",
+                        "endColumns": "72,113,64,65,82,101,73",
+                        "endOffsets": "269,383,448,514,597,699,773"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "2931,3008,3126,3195,3265,3352,3458",
+                        "endColumns": "76,117,68,69,86,105,77",
+                        "endOffsets": "3003,3121,3190,3260,3347,3453,3531"
                     }
                 }
             ]

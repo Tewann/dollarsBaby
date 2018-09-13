@@ -3,6 +3,7 @@ package com.eblink;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
@@ -15,6 +16,8 @@ import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
+import io.invertase.firebase.functions.RNFirebaseFunctionsPackage;
+import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -35,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNI18nPackage(),
             new RNFetchBlobPackage(),
             new ImagePickerPackage(),
             new VectorIconsPackage(),
@@ -44,7 +48,9 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFirebaseFirestorePackage(),
             new RNFirebaseStoragePackage(),
             new RNFirebaseMessagingPackage(),
-            new RNFirebaseNotificationsPackage()
+            new RNFirebaseNotificationsPackage(),
+            new RNFirebaseFunctionsPackage(),
+            new RNFirebaseAdMobPackage()
       );
     }
 

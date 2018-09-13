@@ -36,5 +36,12 @@
     <string msgid="3441753203274453993" name="common_signin_button_text">"Mag-sign in"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Mag-sign in sa Google"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Iba Pa"</string>
+    <string msgid="368094699078615544" name="s1">"I-save ang larawan"</string>
+    <string msgid="4550830452390689489" name="s2">"Pahintulutan ang Ad na iimbak ang larawan sa Gallery ng larawan?"</string>
+    <string msgid="2435407834265420668" name="s3">"Tanggapin"</string>
+    <string msgid="9167523597401839819" name="s4">"Tanggihan"</string>
+    <string msgid="1566682516266724847" name="s5">"Gumawa ng event sa kalendaryo"</string>
+    <string msgid="5996672174517137271" name="s6">"Pahintulutan ang Ad na gumawa ng event sa kalendaryo?"</string>
+    <string msgid="7163549807207034258" name="s7">"Pansubok na Ad"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

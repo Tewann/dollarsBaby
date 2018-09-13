@@ -4,32 +4,37 @@ const initialState = {
     predefinedMessagesList: [
         {
             id: 1,
-            title: 'Blink'
+            title: 'Blink',
+            sound: '1 - Blink'
         },
         {
             id: 2,
-            title: "T'es où ?"
+            title: "T'es où ?",
+            sound: "2 - T'es où"
         },
         {
             id: 3,
-            title: "Urgent"
+            title: "Urgent",
+            sound: "3 - Urgent"
         },
         {
             id: 4,
-            title: "Appelle moi"
+            title: "Appelle moi",
+            sound: "4 - Appelle moi"
         },
         {
             id: 5,
-            title: "J'arrive"
+            title: "J'arrive",
+            sound: "5 - J'arrive"
         },
         {
             id: 6,
-            title: "C'est fait"
+            title: "C'est fait",
+            sound: "6 - C'est fait"
         },
     ],
-    messagesHistory: [
 
-    ]
+    messagesHistory: []
 }
 
 function displayMessagesList(state = initialState, action) {
@@ -104,6 +109,111 @@ function displayMessagesList(state = initialState, action) {
                     ...state,
                     messagesHistory: [newMessage, ...state.messagesHistory]
                 }
+            }
+            return nextState || state
+
+            //*
+            // For now, two message received needed
+            // Group messages are  received by fcm messaging
+            //*
+            case 'MESSAGE_RECEIVED_FROM_FCM':
+            // check if message is already in message history
+            const messageId = action.value.messageId
+            const FCMDataMessageIndex = state.messagesHistory
+                .findIndex(item => item.messageReceivedId === messageId)
+            let newFCMDataMessage = null
+
+            // if message is not in history
+            // add message
+            if (FCMDataMessageIndex === -1) {
+                // get message values from firestore doc
+                const contact = action.value.contact
+                const predefined_message = action.value.predefined_message
+                const additional_message = action.value.additional_message
+                const timeStamp = action.value.timeStamp
+                const type = action.value.messageStatus
+                let newId = null
+
+                // sets newId
+                // if there is no messages in history
+                if (state.messagesHistory.length === 0) {
+                    newId = 1
+                    // if there is messages
+                } else {
+                    newId = state.messagesHistory[0].id + 1
+
+                }
+                // create new message
+                newFCMDataMessage = {
+                    id: newId,
+                    type: type,
+                    contact: contact,
+                    predefined_message: predefined_message,
+                    additionnal_message: additional_message,
+                    timeStamp: timeStamp,
+                    messageReceivedId: messageId
+                }
+
+                nextState = {
+                    ...state,
+                    messagesHistory: [newFCMDataMessage, ...state.messagesHistory]
+                }
+            }
+            return nextState || state
+
+        case 'CONTACT_REQUEST_ACCEPTED':
+            // called when contact request has been accepted
+            // create new message with status accepted
+            // uses same id for the message
+            const contactRequestAcceptedMessage = {
+                id: action.value.id,
+                type: action.value.type,
+                contact: action.value.contact,
+                predefined_message: action.value.predefined_message,
+                additionnal_message: action.value.additionnal_message,
+                timeStamp: action.value.timeStamp,
+                messageReceivedId: action.value.messageReceivedId,
+                status: 'accepted'
+            }
+            
+            const updatedMessageHistoryWhenAccepted = state.messagesHistory.map(item => {
+                if(item.id === action.value.id) {
+                    return contactRequestAcceptedMessage
+                }
+                return item
+            })
+            
+            nextState = {
+                ...state,
+                messagesHistory: updatedMessageHistoryWhenAccepted
+            }
+            return nextState || state
+
+        case 'CONTACT_REQUEST_DECLINED':
+            // called when contact request has been declined
+            // create new message with status declined
+            // uses same id for the message 
+            const contactRequestDeclinedMessage = {
+                id: action.value.id,
+                type: action.value.type,
+                contact: action.value.contact,
+                predefined_message: action.value.predefined_message,
+                additionnal_message: action.value.additionnal_message,
+                timeStamp: action.value.timeStamp,
+                messageReceivedId: action.value.messageReceivedId,
+                status: 'declined'
+            }
+
+            const updatedMessageHistoryWhenDeclined = state.messagesHistory.map(item => {
+                if(item.id === action.value.id) {
+                    return contactRequestDeclinedMessage
+                }
+                return item
+            })
+
+            nextState = {
+                ...state,
+                messagesHistory: updatedMessageHistoryWhenDeclined
             }
             return nextState || state
 

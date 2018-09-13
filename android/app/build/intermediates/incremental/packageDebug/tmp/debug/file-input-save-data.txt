@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Aug 12 13:09:09 CEST 2018
+#Thu Sep 13 22:49:48 CEST 2018
 5.base=C\:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 22.path=lib/armeabi-v7a/libyoga.so
 32.set=DEX

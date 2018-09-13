@@ -4,7 +4,7 @@ import { DrawerItems, DrawerActions, createStackNavigator, createMaterialTopTabN
 
 import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen/ContactsScreen'
 import MessageHistory from '../Components/MessageHistoryComponents/MessageHistoryScreen';
-import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent/GroupScreenComponent'
+import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent'
 import Loading from '../Components/LoadingScreenComponent/Loading'
 import SignUp from '../Components/SignUpScreenComponents/SignUp'
 import Login from '../Components/LoginScreenComponent/Login'
@@ -15,7 +15,9 @@ import GetDisplayName from '../Components/SignUpScreenComponents/GetDisplayNameC
 import React from 'react'
 import { Icon } from 'react-native-elements'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
-// name='account-off'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import Octicons from 'react-native-vector-icons/Octicons'
@@ -25,6 +27,8 @@ import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
 
 import styles from './styles'
+
+import { strings } from '../i18n'
 
 //
 // Custom components for navigation
@@ -37,6 +41,7 @@ const DrawerButton = ({ navigation }) => {
                 name='menu'
                 onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                 color='white'
+                underlayColor='transparent'
             />
         </View>
 
@@ -90,34 +95,55 @@ const CustomDrawerContentComponent = (props) => {
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
     {
-        MessageHistory: {
-            screen: MessageHistory,
-            navigationOptions: {
-                title: 'Messages reçus'
-            },
-        },
         ContactsScreen: {
             screen: ContactsScreen,
             navigationOptions: {
-                title: 'Contacts',
+                title: strings('navigation.contacts_screen'),
                 tabBarOnPress: null,
+                tabBarIcon: <Icon
+                    name='user'
+                    type='feather'
+                    size={25}
+                    color='#3a485c'
+                />
             }
         },
         GroupScreen: {
             screen: GroupScreen,
             navigationOptions: {
-                title: 'Groupes'
+                title: strings('navigation.group_screen'),
+                tabBarIcon: <Icon
+                    name='users'
+                    type='feather'
+                    size={25}
+                    color='#3a485c'
+                />
             }
         },
-        
-
+        MessageHistory: {
+            screen: MessageHistory,
+            navigationOptions: {
+                title: strings('navigation.message_history'),
+                tabBarIcon: <Octicons
+                name='comment-discussion'
+                type='Octicons'
+                size={25}
+                color='#3a485c'
+            />
+            },
+        },
     },
     {
         tabBarOptions: {
             //style: { backgroundColor: '#3a485c' },
-            style: { backgroundColor: '#88b097'},
-            indicatorStyle: { backgroundColor: '#f0e5dc' },
-        },      
+            style: { backgroundColor: 'lightgrey' },
+            indicatorStyle: { backgroundColor: 'white' },
+            activeTintColor: '#3a485c',
+            inactiveTintColor: '#3a485c',
+            showIcon: true,
+            showLabel: false
+
+        },
     })
 
 
@@ -166,6 +192,8 @@ const DrawerStack = createDrawerNavigator(
 )
 
 const MainSwitchNavigator = createSwitchNavigator(
+    // quand remise de loading en main screen
+    // réactiver fetch message dans messagehistoryscreen.js
     {
         Loading,
         DrawerStack,
@@ -175,7 +203,7 @@ const MainSwitchNavigator = createSwitchNavigator(
         GetDisplayName
     },
     {
-        initialRouteName: 'Loading'
+        initialRouteName: 'DrawerStack'
     }
 )
 

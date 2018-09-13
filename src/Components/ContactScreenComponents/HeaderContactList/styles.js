@@ -18,9 +18,12 @@ const styles = StyleSheet.create({
     text_input: {
         marginLeft: 5,
         marginRight: 5,
-        borderBottomWidth: 1,
         paddingLeft: 5,
         width: itemWidth,
+        backgroundColor: '#f2f2f2',
+        color: 'white',
+        borderRadius: 10,
+
     },
     cross: {
         alignItems: 'center',
@@ -30,7 +33,7 @@ const styles = StyleSheet.create({
         height: 22,
         width: 22,
         borderRadius: 22 / 2,
-        backgroundColor: '#889eb0'
+        backgroundColor: 'lightgrey'
     },
     crossUp: {
         backgroundColor: 'white',

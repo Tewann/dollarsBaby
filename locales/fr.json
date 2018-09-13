@@ -1,0 +1,54 @@
+{
+    "navigation": {
+        "contacts_screen": "Contacts",
+        "group_screen": "Groupes",
+        "message_history": "Messages"
+    },
+    "contacts_screen": {
+        "contact_item": {
+
+        },
+        "contacts_screen": {
+
+        },
+        "header_contact_list": {
+            "error_title": "Erreur",
+            "error_message": "Ce contact est déjà dans votre liste de contacts",
+            "close_button": "Fermer",
+            "predefined_message_contact_request": "Demande de contact",
+            "contact_request_send": "Demande de contact envoyée",
+            "error_message2": "Vous n'avez pas saisi de nom de contact",
+            "placeholder": "Rechercher / Ajouter un contact"
+        },
+        "message_item": {
+
+        },
+        "messages_list_screen": {
+            "lenght_exceeded": "Le message a trop de caractères (100 maximum)",
+            "back": "Retour"
+        }
+
+    },
+    "groups_screen": {
+        "group_contact_item": {},
+        "group_item": {},
+        "group_list": {
+            "error_title": "Erreur",
+            "error_message": "Vous n'avez pas saisi de valeur",
+            "error_message2": "Ce nom de groupe est déjà pris",
+            "close_button": "Fermer",
+            "placeholder": "Ajouter un groupe",
+            "private_group": "Groupe privé",
+            "public_group": "Groupe publique",
+            "existing_group": "Groupe existant",
+            "join_group": "Le rejoindre",
+            "cancel": "Annuler",
+            "group_item": {
+                "public": "publique",
+                "private": "privé"
+            }
+        }
+        
+
+    }
+}
