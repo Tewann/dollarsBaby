@@ -1,32 +1,39 @@
 // Store/Reducers/groupReducer.js
 import { Alert } from 'react-native'
+import { strings } from '../../i18n'
 
 const initialState = {
     currentDisplayedGroup: ['GroupList'],
     predefinedGroupMessagesList: [
         {
             id: 1,
-            title: 'Blink'
+            title: 'Blink',
+            sound: '1 - Blink'
         },
         {
             id: 2,
-            title: "Test"
+            title: strings('reducers.where'),
+            sound: "2 - T'es où"
         },
         {
             id: 3,
-            title: "Urgent"
+            title: strings('reducers.urgent'),
+            sound: "3 - Urgent"
         },
         {
             id: 4,
-            title: "Appelle moi"
+            title: strings('reducers.call'),
+            sound: "4 - Appelle moi"
         },
         {
             id: 5,
-            title: "J'arrive"
+            title: strings('reducers.coming'),
+            sound: "5 - J'arrive"
         },
         {
             id: 6,
-            title: "C'est fait"
+            title: strings('reducers.done'),
+            sound: "6 - C'est fait"
         },
     ],
     groupList: []

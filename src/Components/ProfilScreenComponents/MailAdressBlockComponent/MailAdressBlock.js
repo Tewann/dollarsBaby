@@ -7,7 +7,7 @@ import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
 import firebase from 'react-native-firebase'
-
+import { strings } from '../../../i18n'
 
 class MailAdressBlock extends React.Component {
     constructor(props) {
@@ -57,15 +57,15 @@ class MailAdressBlock extends React.Component {
     _changeMailAdress = () => {
         // if first text input empty
         if (this.state.newMail === "") {
-            this.setState({ errorMessageMail: "Merci de préciser votre nouvelle adresse mail" })
+            this.setState({ errorMessageMail: strings('profil_screen.mail_adress.error_new_mail') })
 
             // if second text input empty
         } else if (this.state.confirmMail === "") {
-            this.setState({ errorMessageMail: "Merci de reconfirmer votre nouvelle adresse mail" })
+            this.setState({ errorMessageMail: strings('profil_screen.mail_adress.error_confirm_mail') })
 
             // if first text input different from second text input
         } else if (this.state.newMail !== this.state.confirmMail) {
-            this.setState({ errorMessageMail: "Les adresses mail ne correspondent pas" })
+            this.setState({ errorMessageMail: strings('profil_screen.mail_adress.error_no_match') })
 
             //if first text input matches second text input
         } else if (this.state.newMail === this.state.confirmMail) {
@@ -93,7 +93,7 @@ class MailAdressBlock extends React.Component {
                     style={styles.profil_item}
                     onPress={() => this._switchBetweenMailTextandInput('input')}
                 >
-                    <Text>Modifier mon adresse mail</Text>
+                    <Text>{strings('profil_screen.mail_adress.modify_mail')}</Text>
                 </TouchableOpacity>
             )
         }
@@ -105,7 +105,7 @@ class MailAdressBlock extends React.Component {
                             Erreur : {this.state.errorMessageMail}
                         </Text>}
                     <TextInput
-                        placeholder='Nouvelle adresse mail'
+                        placeholder={strings('profil_screen.mail_adress.placeholder_1')}
                         onChangeText={(text) => this._newMailInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
@@ -113,7 +113,7 @@ class MailAdressBlock extends React.Component {
                         autoCapitalize='none'
                     />
                     <TextInput
-                        placeholder="Confirmer l'adresse mail"
+                        placeholder={strings('profil_screen.mail_adress.placeholder_2')}
                         onChangeText={(text) => this._confirmMailInputChanged(text)}
                         autoFocus={false}
                         style={[styles.text_input, { marginTop: 5 }]}
@@ -121,7 +121,7 @@ class MailAdressBlock extends React.Component {
                         autoCapitalize='none'
                     />
                     <TextInput
-                        placeholder="Mot de passe"
+                        placeholder={strings('profil_screen.mail_adress.placeholder_3')}
                         onChangeText={(text) => this._passwordChanged(text)}
                         autoFocus={false}
                         style={[styles.text_input, { marginTop: 5 }]}
@@ -142,7 +142,7 @@ class MailAdressBlock extends React.Component {
                                 name='cached'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Modifier l'adresse mail</Text>
+                            <Text style={styles.button_text}>{strings('profil_screen.mail_adress.modify_mail')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -158,7 +158,7 @@ class MailAdressBlock extends React.Component {
                                 name='arrow-back'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Annuler</Text>
+                            <Text style={styles.button_text}>{strings('profil_screen.mail_adress.cancel')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>

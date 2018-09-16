@@ -66,7 +66,7 @@ const CustomDrawerContentComponent = (props) => {
                     color='white'
                     style={styles.CustomDrawerIcon}
                 />
-                <Text style={styles.CustomDrawerText}>Profil</Text>
+                <Text style={styles.CustomDrawerText}>{strings('navigation.profil')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => firebase.auth().signOut().catch(error => {
@@ -82,7 +82,7 @@ const CustomDrawerContentComponent = (props) => {
                     color='white'
                     style={{ marginLeft: 10 }}
                 />
-                <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>Se déconnecter</Text>
+                <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>{strings('navigation.disconnect')}</Text>
             </TouchableOpacity>
         </LinearGradient>
     )
@@ -111,7 +111,6 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
         GroupScreen: {
             screen: GroupScreen,
             navigationOptions: {
-<<<<<<< HEAD
                 title: strings('navigation.group_screen'),
                 tabBarIcon: <Icon
                     name='users'
@@ -119,15 +118,11 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     size={25}
                     color='#3a485c'
                 />
-=======
-                title: strings('navigation.group_screen')
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
             }
         },
         MessageHistory: {
             screen: MessageHistory,
             navigationOptions: {
-<<<<<<< HEAD
                 title: strings('navigation.message_history'),
                 tabBarIcon: <Octicons
                 name='comment-discussion'
@@ -135,16 +130,12 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                 size={25}
                 color='#3a485c'
             />
-=======
-                title: strings('navigation.message_history')
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
             },
         },
     },
     {
         tabBarOptions: {
             //style: { backgroundColor: '#3a485c' },
-<<<<<<< HEAD
             style: { backgroundColor: 'lightgrey' },
             indicatorStyle: { backgroundColor: 'white' },
             activeTintColor: '#3a485c',
@@ -152,10 +143,6 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             showIcon: true,
             showLabel: false
 
-=======
-            style: { backgroundColor: '#88b097' },
-            indicatorStyle: { backgroundColor: '#f0e5dc' },
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
         },
     })
 
@@ -216,7 +203,7 @@ const MainSwitchNavigator = createSwitchNavigator(
         GetDisplayName
     },
     {
-        initialRouteName: 'DrawerStack'
+        initialRouteName: 'Loading'
     }
 )
 

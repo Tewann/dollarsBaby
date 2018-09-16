@@ -10,6 +10,7 @@ import ImagePicker from 'react-native-image-picker'
 import LinearGradient from 'react-native-linear-gradient'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { uploadImage } from '../../../../Services/firebaseFunctions'
+import { strings } from '../../../../i18n'
 
 // variable to avoid "Can't find variable: options" when trying to open image picker or camera
 var options = {quality: 0.1};
@@ -78,7 +79,7 @@ class ProfilPhoto extends React.Component {
                             name='send'
                             color='white'
                         />
-                        <Text style={styles.button_text}>Enregistrer</Text>
+                        <Text style={styles.button_text}>{strings('sign_up_screen.get_display_name.profil_photo.save')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             )
@@ -101,7 +102,7 @@ class ProfilPhoto extends React.Component {
                             type='entypo'
                             color='white'
                         />
-                        <Text style={[styles.button_text, { paddingRight: 5 }]}>Continuer</Text>
+                        <Text style={[styles.button_text, { paddingRight: 5 }]}>{strings('sign_up_screen.get_display_name.profil_photo.continue')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             )
@@ -127,7 +128,7 @@ class ProfilPhoto extends React.Component {
     render() {
         return (
             <View style={styles.profil_item}>
-                <Text style={styles.title}>Photo de profil</Text>
+                <Text style={styles.title}>{strings('sign_up_screen.get_display_name.profil_photo.profil_photo')}</Text>
                 <View style={styles.avatar_container}>
                     <Image
                         style={styles.avatar_image}
@@ -147,7 +148,7 @@ class ProfilPhoto extends React.Component {
                             name='ios-images'
                             size={64}
                         />
-                        <Text style={{ paddingLeft: 5 }}>Galerie</Text>
+                        <Text style={{ paddingLeft: 5 }}>{strings('sign_up_screen.get_display_name.profil_photo.library')}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => this._openCamera()}
@@ -156,7 +157,7 @@ class ProfilPhoto extends React.Component {
                             name='ios-camera'
                             size={64}
                         />
-                        <Text style={{ paddingLeft: 5 }}>Photo</Text>
+                        <Text style={{ paddingLeft: 5 }}>{strings('sign_up_screen.get_display_name.profil_photo.photo')}</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -166,7 +167,7 @@ class ProfilPhoto extends React.Component {
                 <TouchableOpacity
                     onPress={() => this._goToNextScreen()}
                 >
-                    <Text style={styles.default_button}>Continuer sans photo de profil</Text>
+                    <Text style={styles.default_button}>{strings('sign_up_screen.get_display_name.profil_photo.continue_without')}</Text>
                 </TouchableOpacity>
             </View>
         )

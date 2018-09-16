@@ -7,7 +7,7 @@ import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
 import firebase from 'react-native-firebase'
-
+import { strings } from '../../../i18n'
 
 class DeleteAccountBlock extends React.Component {
     constructor(props) {
@@ -53,11 +53,11 @@ class DeleteAccountBlock extends React.Component {
     _deleteAccount = () => {
         // if first text input empty
         if (this.state.currentMail === null) {
-            this.setState({ errorMessage: "Merci d'indiquer votre adresse mail" })
+            this.setState({ errorMessage: strings('profil_screen.delete_account.mail') })
 
             // if password text input empty
         } else if (this.state.currentPassword === null) {
-            this.setState({ errorMessage: "Merci d'indiquer votre mot de passe" })
+            this.setState({ errorMessage: strings('profil_screen.delete_account.psswd') })
 
             // delete account
         }  else {
@@ -66,7 +66,7 @@ class DeleteAccountBlock extends React.Component {
             this.reauthenticate(this.state.currentPassword).then(() => {
                 firebase.auth().currentUser.delete().then(() => {
                     Alert.alert(
-                        'Votre compte a été supprimé'
+                        strings('profil_screen.delete_account.account_deleted')
                     )
                     
                 }).catch((error) => {
@@ -85,7 +85,7 @@ class DeleteAccountBlock extends React.Component {
                     style={styles.profil_item}
                     onPress={() => this._switchBetweenDeleteAccountTextandInput('input')}
                 >
-                    <Text>Supprimer mon compte</Text>
+                    <Text>{strings('profil_screen.delete_account.delete_account')}</Text>
                 </TouchableOpacity>
             )
         }
@@ -94,14 +94,14 @@ class DeleteAccountBlock extends React.Component {
                 <View style={styles.profil_item}>
                     {this.state.errorMessage &&
                         <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 5 }}>
-                            Erreur : {this.state.errorMessage}
+                            {strings('profil_screen.delete_account.error')} : {this.state.errorMessage}
                         </Text>}
                     {this.state.messageSuccess &&
                         <Text style={{ color: 'green', fontStyle: 'italic', marginTop: 10 }}>
                             {this.state.messageSuccess}
                         </Text>}
                     <TextInput
-                        placeholder="Confirmer votre adresse mail"
+                        placeholder={strings('profil_screen.delete_account.placeholder_1')}
                         onChangeText={(text) => this._confirmMailInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
@@ -109,7 +109,7 @@ class DeleteAccountBlock extends React.Component {
                         autoCapitalize='none'
                     />
                     <TextInput
-                        placeholder="Mot de passe actuel"
+                        placeholder={strings('profil_screen.delete_account.placeholder_2')}
                         onChangeText={(text) => this._currentPasswordChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
@@ -130,7 +130,7 @@ class DeleteAccountBlock extends React.Component {
                                 name='delete-forever'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Supprimer mon compte</Text>
+                            <Text style={styles.button_text}>{strings('profil_screen.delete_account.delete_account')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -146,7 +146,7 @@ class DeleteAccountBlock extends React.Component {
                                 name='arrow-back'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Annuler</Text>
+                            <Text style={styles.button_text}>{strings('profil_screen.delete_account.cancel')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>

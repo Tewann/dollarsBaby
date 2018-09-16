@@ -18,6 +18,7 @@ import MessagesList from './MessagesListComponent/MessagesList'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import ImagePicker from 'react-native-image-picker'
 import { uploadGroupImage, addContactToPrivateGroup } from '../../../Services/firebaseGroupFunctions'
+import { strings} from '../../../i18n'
 
 // variable to avoid "Can't find variable: options" when trying to open image picker or camera
 var options = { quality: 0.1 };
@@ -102,7 +103,7 @@ class GroupOptions extends React.Component {
                 }
             });
         } else {
-            this.setState({ errorMessage: "Vous n'êtes pas le créateur du groupe" })
+            this.setState({ errorMessage: strings('groups_screen.group_options.not_creator') })
             setTimeout(() => { this.setState({ errorMessage: null }) }, 2000)
         }
     }
@@ -146,7 +147,7 @@ class GroupOptions extends React.Component {
             item.name === this.props.currentGroup)
         const groupNameCreator = this.props.groupList[groupNameIndex].creator
         return (
-            <Text style={styles.group_name_creator}>created by {groupNameCreator}</Text>
+            <Text style={styles.group_name_creator}>{strings('groups_screen.group_options.created_by')} {groupNameCreator}</Text>
         )
     }
 
@@ -198,7 +199,7 @@ class GroupOptions extends React.Component {
                     style={styles.back_to_contacts}
                     onPressIn={() => this.displayGroup()}>
                     <Icon name='chevron-left' color='#889eb0' />
-                    <Text style={styles.retour}>Retour</Text>
+                    <Text style={styles.retour}>{strings('groups_screen.group_options.back')}</Text>
                 </TouchableOpacity>
                 <ScrollView >
                     {/* ------  Body ------*/}
@@ -209,7 +210,7 @@ class GroupOptions extends React.Component {
                         {this._renderGroupNameCreator()}
                         {this.state.errorMessage &&
                             <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10, textAlign: 'center' }}>
-                                Erreur : {this.state.errorMessage}
+                                {strings('groups_screen.group_options.error_title')} : {this.state.errorMessage}
                             </Text>}
                     </View>
                     {/* ------  Private groups - Contact list ------*/}

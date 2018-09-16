@@ -10,7 +10,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import ImagePicker from 'react-native-image-picker'
 import { connect } from 'react-redux'
 import { uploadImage } from '../../../Services/firebaseFunctions'
-
+import { strings } from '../../../i18n'
 
 // variable to avoid "Can't find variable: options" when trying to open image picker or camera
 var options = {quality: 0.1};
@@ -109,7 +109,7 @@ class ChangeProfilImageBlock extends React.Component {
                             name='arrow-back'
                             color='white'
                         />
-                        <Text style={styles.button_text}>Enregistrer</Text>
+                        <Text style={styles.button_text}>{strings('profil_screen.change_profil_image.save')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             )
@@ -128,7 +128,7 @@ class ChangeProfilImageBlock extends React.Component {
                             name='arrow-back'
                             color='white'
                         />
-                        <Text style={styles.button_text}>Annuler</Text>
+                        <Text style={styles.button_text}>{strings('profil_screen.change_profil_image.cancel')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             )
@@ -142,7 +142,7 @@ class ChangeProfilImageBlock extends React.Component {
                     style={styles.profil_item}
                     onPress={() => this._switchBetweenImagePickerTextandInput('input')}
                 >
-                    <Text>Charger une photo de profil</Text>
+                    <Text>{strings('profil_screen.change_profil_image.load_image')}</Text>
                 </TouchableOpacity>
             )
         }
@@ -151,11 +151,11 @@ class ChangeProfilImageBlock extends React.Component {
                 <View style={styles.profil_item}>
                     {this.state.errorMessage &&
                         <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10 }}>
-                            Erreur : {this.state.errorMessage}
+                            {strings('profil_screen.change_profil_image.error')} : {this.state.errorMessage}
                         </Text>}
                     {this.state.imageUploaded &&
                         <Text style={{ color: 'green', fontStyle: 'italic', marginTop: 10, textAlign: 'center' }}>
-                            L'image a été partagée
+                            {strings('profil_screen.change_profil_image.image_shared')}
                         </Text>}
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                         <TouchableOpacity
@@ -165,7 +165,7 @@ class ChangeProfilImageBlock extends React.Component {
                                 name='ios-images'
                                 size={64}
                             />
-                            <Text style={{ paddingLeft: 5 }}>Galerie</Text>
+                            <Text style={{ paddingLeft: 5 }}>{strings('profil_screen.change_profil_image.library')}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => this._openCamera()}
@@ -174,7 +174,7 @@ class ChangeProfilImageBlock extends React.Component {
                                 name='ios-camera'
                                 size={64}
                             />
-                            <Text style={{ paddingLeft: 5 }}>Photo</Text>
+                            <Text style={{ paddingLeft: 5 }}>{strings('profil_screen.change_profil_image.photo')}</Text>
                         </TouchableOpacity>
                     </View>
 

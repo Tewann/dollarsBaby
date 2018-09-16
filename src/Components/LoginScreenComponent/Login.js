@@ -6,6 +6,7 @@ import { Text, TextInput, View, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
+import { strings } from '../../i18n'
 
 class Login extends React.Component {
     constructor(props) {
@@ -61,18 +62,18 @@ class Login extends React.Component {
                         start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                         style={styles.LoginButton}
                         colors={['#88b097', '#889eb0']}>
-                        <Text style={styles.loginText}>Se connecter</Text>
+                        <Text style={styles.loginText}>{strings('login_screen.connect_button')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('SignUp')}
                 >
-                    <Text style={styles.noAccount}>Créer un compte</Text>
+                    <Text style={styles.noAccount}>{strings('login_screen.create_account')}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('ForgottenPsswrd')}
                 >
-                    <Text style={styles.noAccount}>Mot de passe oublié</Text>
+                    <Text style={styles.noAccount}>{strings('login_screen.forgotten_psswd')}</Text>
                 </TouchableOpacity>
             </View>
         )

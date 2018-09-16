@@ -9,7 +9,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import { connect } from 'react-redux'
 import AcceptOrDecline from './AcceptOrDeclineComponent/AcceptOrDecline'
-
+import { strings } from '../../../i18n'
 
 class DisplayMessage extends React.Component {
     constructor(props) {
@@ -79,7 +79,7 @@ class DisplayMessage extends React.Component {
             // if message is contact request received displays customize predefined message
             return (
                 <Text style={styles.predefined_message}>
-                    {this.props.message.contact} vous a envoyé une demande de contact
+                    {this.props.message.contact} {strings('message_history_screen.display_message.contact_request')}
                 </Text>
             )
         } else if (this.props.message.type !== 'contact_request') {
@@ -109,11 +109,11 @@ class DisplayMessage extends React.Component {
             )
         } else if (this.props.message.status === 'accepted') {
             return (
-                <Text>{this.props.message.contact} a été ajouté à vos contacts</Text>
+                <Text>{this.props.message.contact} {strings('message_history_screen.display_message.contact_added')}</Text>
             )
         } else if (this.props.message.status === 'declined') {
             return (
-                <Text>{this.props.message.contact} n'a pas été ajouté à vos contacts</Text>
+                <Text>{this.props.message.contact} {strings('message_history_screen.display_message.contact_denied.')}</Text>
             )
         }
     }

@@ -6,6 +6,7 @@ import { View, TouchableOpacity, Text } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { addContactToFirestore, sendMessageToFirestore } from '../../../../Services/firebaseFunctions'
+import { strings } from '../../../../i18n'
 
 class AcceptOrDecline extends React.Component {
 
@@ -22,7 +23,7 @@ class AcceptOrDecline extends React.Component {
         const timeStamp = new Date().getTime();
         const currentUser = this.props.currentUser.name
         const contact = this.props.message.contact
-        const predefined_message = `${currentUser} a accepté votre demande de contact`
+        const predefined_message = `${currentUser}` + strings('message_history_screen.display_message.accept_or_decline.accepted') 
         const additionnal_message = ""
         const id = `${currentUser}_${timeStamp}`
         const type = 'received'
@@ -41,7 +42,7 @@ class AcceptOrDecline extends React.Component {
                     onPress={() => this._acceptContactRequest()}
                 >
                     <Text>
-                        Accepter
+                    {strings('message_history_screen.display_message.accept_or_decline.accept')} 
                     </Text>
                 </TouchableOpacity>
                 <View style={styles.middle_bar} />
@@ -49,7 +50,7 @@ class AcceptOrDecline extends React.Component {
                     onPress={() => this._declineContactRequest()}
                 >
                     <Text>
-                        Refuser
+                        {strings('message_history_screen.display_message.accept_or_decline.refuse') }
                     </Text>
                 </TouchableOpacity>
             </View>

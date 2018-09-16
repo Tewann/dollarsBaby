@@ -7,6 +7,7 @@ import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
 import firebase from 'react-native-firebase'
+import { strings } from '../../../i18n'
 
 
 class PasswordBlock extends React.Component {
@@ -58,15 +59,15 @@ class PasswordBlock extends React.Component {
     _changePassword = () => {
         // if first text input empty
         if (this.state.newPassword === "") {
-            this.setState({ errorMessagePassword: "Merci de préciser votre nouveau mot de passe" })
+            this.setState({ errorMessagePassword: strings('profil_screen.password.new_psswd') })
             
             // if second text input empty
         } else if (this.state.confirmPassword === "") {
-            this.setState({ errorMessagePassword: "Merci de reconfirmer votre nouveau mot de passe" })
+            this.setState({ errorMessagePassword: strings('profil_screen.password.new_psswd_2') })
             
             // if first text input different from second text input
         } else if (this.state.newPassword !== this.state.confirmPassword) {
-            this.setState({ errorMessagePassword: "Les mots de passe ne correspondent pas" })
+            this.setState({ errorMessagePassword: strings('profil_screen.password.psswd_not_matching') })
             
             //if first text input matches second text input
         } else if (this.state.newPassword === this.state.confirmPassword) {
@@ -75,7 +76,7 @@ class PasswordBlock extends React.Component {
             this.reauthenticate(this.state.currentPassword).then(() => {
                 var user = firebase.auth().currentUser;
                 user.updatePassword(this.state.newPassword).then(() => {
-                    this.setState({ messagePasswordUpdated: 'Mot de passe modifié' });
+                    this.setState({ messagePasswordUpdated: strings('profil_screen.password.psswd_modified') });
                     setTimeout(this._switchBetweenPasswordTextandInput, 1000, 'text');
                 }).catch((error) => {
                     this.setState({ errorMessagePassword: error.message });
@@ -93,7 +94,7 @@ class PasswordBlock extends React.Component {
                     style={styles.profil_item}
                     onPress={() => this._switchBetweenPasswordTextandInput('input')}
                 >
-                    <Text>Modifier mon mot de passe</Text>
+                    <Text>{strings('profil_screen.password.change_psswd')}</Text>
                 </TouchableOpacity>
             )
         }
@@ -102,14 +103,14 @@ class PasswordBlock extends React.Component {
                 <View style={styles.profil_item}>
                     {this.state.errorMessagePassword &&
                         <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10 }}>
-                            Erreur : {this.state.errorMessagePassword}
+                            {strings('profil_screen.password.error')} : {this.state.errorMessagePassword}
                         </Text>}
                     {this.state.messagePasswordUpdated &&
                         <Text style={{ color: 'green', fontStyle: 'italic', marginTop: 10 }}>
                             {this.state.messagePasswordUpdated}
                         </Text>}
                     <TextInput
-                        placeholder="Mot de passe actuel"
+                        placeholder={strings('profil_screen.password.placeholder_1')}
                         onChangeText={(text) => this._currentPasswordChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
@@ -118,7 +119,7 @@ class PasswordBlock extends React.Component {
                         autoCapitalize='none'
                     />
                     <TextInput
-                        placeholder='Nouveau mot de passe'
+                        placeholder={strings('profil_screen.password.placeholder_2')}
                         onChangeText={(text) => this._newPasswordInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
@@ -127,7 +128,7 @@ class PasswordBlock extends React.Component {
                         autoCapitalize='none'
                     />
                     <TextInput
-                        placeholder="Confirmer votre nouveau mot de passe"
+                        placeholder={strings('profil_screen.password.placeholder_3')}
                         onChangeText={(text) => this._confirmPasswordInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
@@ -149,7 +150,7 @@ class PasswordBlock extends React.Component {
                                 name='cached'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Modifier le mot de passe</Text>
+                            <Text style={styles.button_text}>{strings('profil_screen.password.change_psswd')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -165,7 +166,7 @@ class PasswordBlock extends React.Component {
                                 name='arrow-back'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Annuler</Text>
+                            <Text style={styles.button_text}>{strings('profil_screen.password.cancel')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>

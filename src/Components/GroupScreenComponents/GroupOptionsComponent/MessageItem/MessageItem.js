@@ -14,10 +14,11 @@ import styles from './styles'
 class MessageItem extends React.Component {
     render() {
         const message = this.props.message.title
+        const sound = this.props.message.sound
         return (
             <TouchableOpacity
                 style={styles.main_container}
-                onPress={() => this.props.sendMessage(message)}
+                onPress={() => this.props.sendMessage(message, sound)}
             >
                 <Text style={styles.text}>
                     {message}

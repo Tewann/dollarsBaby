@@ -9,6 +9,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import { createUserInDatabase, loginToFirebase } from '../../../../Services/firebaseFunctions'
 import firebase from 'react-native-firebase';
 
+import { strings } from '../../../../i18n'
+
 class AccountName extends React.Component {
     constructor(props) {
         super(props)
@@ -17,8 +19,8 @@ class AccountName extends React.Component {
             confirmNameInput: "",
             errorMessage: null,
             button: 'submit',
-            placeholder1: "Votre nom d'utilisateur",
-            placeholder2: "Confirmez votre nom d'utilisateur",
+            placeholder1: strings('sign_up_screen.get_display_name.account_name.placeholder_1'),
+            placeholder2: strings('sign_up_screen.get_display_name.account_name.placeholder_2'),
             secureTextEntry: false,
             autoCapitalize: 'sentences'
         }
@@ -37,9 +39,9 @@ class AccountName extends React.Component {
     // else call firebase function and create user in database
     _defineAccountName = () => {
         if (this.state.nameInput === "") {
-            this.setState({ errorMessage: "Merci de renseigner un nom d'utilisateur" })
+            this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_missing') })
         } else if (this.state.nameInput !== this.state.confirmNameInput) {
-            this.setState({ errorMessage: "Les noms ne correspondent pas" })
+            this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_matching') })
         } else {
             createUserInDatabase(this.state.nameInput)
                 .then(() => {
@@ -53,10 +55,10 @@ class AccountName extends React.Component {
                     // placeholders for text input changed to grab mail/psswrd
                     if (error === 'No user currently signed in') {
                         this.setState({
-                            errorMessage: "Veuillez-vous reconnecter",
+                            errorMessage: strings('sign_up_screen.get_display_name.account_name.error_reconnect'),
                             button: 'reconnect',
-                            placeholder1: 'Adresse mail',
-                            placeholder2: 'Mot de passe',
+                            placeholder1: strings('sign_up_screen.get_display_name.account_name.placeholder_1bis'),
+                            placeholder2: strings('sign_up_screen.get_display_name.account_name.placeholder_2bis'),
                             secureTextEntry: true,
                             nameInput: "",
                             confirmNameInput: "",
@@ -65,7 +67,7 @@ class AccountName extends React.Component {
                     // if a user name is already set up for this mail adresse
                     // => redirect to next screen
                     } else if (error === "Already a user name for this mail adress") {
-                        this.setState({ errorMessage: "Vous avez déjà un nom d'utilisateur"})
+                        this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_already')})
                         setTimeout(() => { this.props.goToProfilPicture()}, 2000)
 
                     }else {
@@ -81,8 +83,8 @@ class AccountName extends React.Component {
                 this.setState({
                     errorMessage: null,
                     button: 'submit',
-                    placeholder1: "Votre nom d'utilisateur",
-                    placeholder2: "Confirmez votre nom d'utilisateur",
+                    placeholder1: strings('sign_up_screen.get_display_name.account_name.placeholder_1'),
+                    placeholder2: strings('sign_up_screen.get_display_name.account_name.placeholder_2'),
                     secureTextEntry: false,
                     nameInput: "",
                     confirmNameInput: "",
@@ -114,7 +116,7 @@ class AccountName extends React.Component {
                             name='send'
                             color='white'
                         />
-                        <Text style={styles.button_text}>Enregistrer</Text>
+                        <Text style={styles.button_text}>{strings('sign_up_screen.get_display_name.account_name.save')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             )
@@ -137,7 +139,7 @@ class AccountName extends React.Component {
                                 name='send'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Se reconnecter</Text>
+                            <Text style={styles.button_text}>{strings('sign_up_screen.get_display_name.account_name.reconnect')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -153,7 +155,7 @@ class AccountName extends React.Component {
                                 name='send'
                                 color='white'
                             />
-                            <Text style={styles.button_text}>Revenir à l'écran d'accueil</Text>
+                            <Text style={styles.button_text}>{strings('sign_up_screen.get_display_name.account_name.back_to_main_screen')}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>
@@ -164,7 +166,7 @@ class AccountName extends React.Component {
         return (
             <View>
                 <View style={styles.profil_item}>
-                    <Text style={styles.title}>Nom d'utilisateur</Text>
+                    <Text style={styles.title}>{strings('sign_up_screen.get_display_name.account_name.username')}</Text>
                     {this.state.errorMessage &&
                         <Text style={{ color: 'red',  fontStyle: 'italic', }}>
                             {this.state.errorMessage}
