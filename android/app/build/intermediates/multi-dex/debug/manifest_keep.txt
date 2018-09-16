@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Referenced at C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:53
-=======
 # Referenced at C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:53
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 -keep class com.eblink.MainApplication { <init>(...); }
 

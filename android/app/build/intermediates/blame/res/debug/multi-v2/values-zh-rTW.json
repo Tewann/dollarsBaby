@@ -4,45 +4,7 @@
             "outputFile": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
             "map": [
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\68d15cde9ec8c53513b4a656d8137b63\\res\\values-zh-rTW\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "201,262,337,397,457,521,592",
-                        "endColumns": "60,74,59,59,63,70,61",
-                        "endOffsets": "261,336,396,456,520,591,653"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "4183,4248,4327,4391,4455,4523,4598",
-                        "endColumns": "64,78,63,63,67,74,65",
-                        "endOffsets": "4243,4322,4386,4450,4518,4593,4659"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.1.0.aar\\6fa926ae9b022d9da5a7abf8266a89e1\\res\\values-zh-rTW\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "209",
-                        "endColumns": "96",
-                        "endOffsets": "305"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "4082",
-                        "endColumns": "100",
-                        "endOffsets": "4178"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\55e1f0ee8cbe8140f6b3db56a1e3f3d5\\res\\values-zh-rTW\\values.xml",
-=======
                     "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bd1e890fb0ca0f423e8bbc8ffb44a12\\res\\values-zh-rTW\\values.xml",
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -68,19 +30,11 @@
                         "endOffsets": "261,336,396,456,520,591,653"
                     },
                     "to": {
-<<<<<<< HEAD
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,45",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,200,307,430,523,623,705,802,910,988,1084,1180,1275,1372,1467,1567,1680,4664",
-                        "endColumns": "94,106,122,92,99,81,96,107,77,95,95,94,96,94,99,112,93,100",
-                        "endOffsets": "195,302,425,518,618,700,797,905,983,1079,1175,1270,1367,1462,1562,1675,1769,4760"
-=======
                         "startLines": "38,39,40,41,42,43,44",
                         "startColumns": "4,4,4,4,4,4,4",
                         "startOffsets": "4183,4248,4327,4391,4455,4523,4598",
                         "endColumns": "64,78,63,63,67,74,65",
                         "endOffsets": "4243,4322,4386,4450,4518,4593,4659"
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     }
                 },
                 {

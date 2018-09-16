@@ -8,6 +8,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import AccountNameComponent from './AccountNameComponent/AccountName'
 import ProfilPhotoComponent from './ProfilPhotoComponent/ProfilPhoto'
 import AdMessageComponent from './AdMessageComponent/AdMessage'
+import { strings } from '../../../i18n'
 
 import { Icon } from 'react-native-elements'
 
@@ -28,7 +29,7 @@ class GetDisplayName extends React.Component {
         this.props.navigation.navigate('Login')
     }
     _goToAdMessageComponent = () => {
-        this.setState({ display: 'AdMessage'})
+        this.setState({ display: 'AdMessage' })
     }
     _goToMainScreen = () => {
         this.props.navigation.navigate('DrawerStack')
@@ -38,20 +39,20 @@ class GetDisplayName extends React.Component {
     AccountNameAndProfilPhotoDisplay() {
         if (this.state.display === 'AccountName') {
             return (
-                <AccountNameComponent 
-                    goToLogin={this._goToLoginScreen} 
+                <AccountNameComponent
+                    goToLogin={this._goToLoginScreen}
                     goToProfilPicture={this._goToProfilPictureComponent}
                 />
             )
         } else if (this.state.display === 'ProfilPhoto') {
             return (
-                <ProfilPhotoComponent 
+                <ProfilPhotoComponent
                     goToAdMessage={this._goToAdMessageComponent}
                 />
             )
         } else if (this.state.display === 'AdMessage') {
             return (
-                <AdMessageComponent goToMainScreen={this._goToMainScreen}/>
+                <AdMessageComponent goToMainScreen={this._goToMainScreen} />
             )
         }
     }
@@ -65,7 +66,7 @@ class GetDisplayName extends React.Component {
                     style={styles.header_container}
                     start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                     colors={['#88b097', '#3a485c', '#3a485c',]}>
-                    <Text style={styles.title}>BIENVENUE</Text>
+                    <Text style={styles.title}>{strings('sign_up_screen.get_display_name.welcome')}</Text>
                 </LinearGradient>
                 <ScrollView
                     keyboardShouldPersistTaps='always'

@@ -21,28 +21,7 @@
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\68d15cde9ec8c53513b4a656d8137b63\\res\\values-zh-rCN\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "201,262,335,395,455,519,589",
-                        "endColumns": "60,72,59,59,63,69,61",
-                        "endOffsets": "261,334,394,454,518,588,650"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "4176,4241,4318,4382,4446,4514,4588",
-                        "endColumns": "64,76,63,63,67,73,65",
-                        "endOffsets": "4236,4313,4377,4441,4509,4583,4649"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\55e1f0ee8cbe8140f6b3db56a1e3f3d5\\res\\values-zh-rCN\\values.xml",
-=======
                     "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\f3e518dc97f3b945db0db1d6a60ccd15\\res\\values-zh-rCN\\values.xml",
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "0,0,0,0,0,0,0",
@@ -90,8 +69,6 @@
                         "startOffsets": "105,201,308,431,526,626,708,805,911,989,1085,1181,1276,1373,1468,1566,1678,4654",
                         "endColumns": "95,106,122,94,99,81,96,105,77,95,95,94,96,94,97,111,93,100",
                         "endOffsets": "196,303,426,521,621,703,800,906,984,1080,1176,1271,1368,1463,1561,1673,1767,4750"
-<<<<<<< HEAD
-=======
                     }
                 },
                 {
@@ -109,7 +86,6 @@
                         "startOffsets": "1772,1875,2036,2153,2257,2421,2539,2671,2950,3117,3220,3381,3498,3661,3799,3885,3972",
                         "endColumns": "102,160,116,103,163,117,131,120,166,102,160,116,162,137,85,86,102",
                         "endOffsets": "1870,2031,2148,2252,2416,2534,2666,2787,3112,3215,3376,3493,3656,3794,3880,3967,4070"
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     }
                 }
             ]

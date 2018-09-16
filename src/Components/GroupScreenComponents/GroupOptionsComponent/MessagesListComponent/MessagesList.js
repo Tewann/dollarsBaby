@@ -12,6 +12,7 @@ import styles from './styles'
 import MessageItem from '../MessageItem/MessageItem'
 import { connect } from 'react-redux'
 import firebase from 'react-native-firebase';
+import { strings } from '../../../../i18n'
 
 class MessagesList extends React.Component {
     constructor(props) {
@@ -50,7 +51,7 @@ class MessagesList extends React.Component {
     // Checks if additionnal message length is under 100 caracters
     // Then calls firebase function
     //*
-    _sendMessage = async (predefined_message, groupType) => {
+    _sendMessage = async (predefined_message, sound, groupType) => {
         if (this.state.additionnalMessage.length <= 100) {
             // Additional message length doesn't exceed 100
             // Reset error message
@@ -74,6 +75,7 @@ class MessagesList extends React.Component {
                 additionalMessage: this.state.additionnalMessage,
                 timeStamp: timeStamp,
                 id: id,
+                sound: sound
             })
                 .then((res) => {
                     console.log(res)
@@ -88,7 +90,7 @@ class MessagesList extends React.Component {
                 .catch(httpsError => console.log(httpsError))            
         } else {
             // if additionnal message length exceed 100
-            this.setState({ errorMessage: 'Le message a trop de caractères (100 maximum)' })
+            this.setState({ errorMessage: strings('groups_screen.group_options.messages_list.lenght_exceeded') })
         }
 
     }
@@ -106,7 +108,7 @@ class MessagesList extends React.Component {
                 <View style={styles.TextInput_container}>
                     {this._displayAdditionnalMessageLenght()}
                     <TextInput
-                        placeholder='Message 100 caractères maximum'
+                        placeholder={strings('groups_screen.group_options.messages_list.placeholder')}
                         onChangeText={(text) => this._additionnalMessageChanged(text)}
                         style={styles.text_input}
                         underlineColorAndroid={'white'}
@@ -124,7 +126,7 @@ class MessagesList extends React.Component {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <MessageItem
                         message={item}
-                        sendMessage={(predefined_message) => this._sendMessage(predefined_message, this.props.type)}
+                        sendMessage={(predefined_message, sound, groupType) => this._sendMessage(predefined_message, sound, this.props.type)}
                     />}
                 />
 

@@ -29,17 +29,10 @@ class HeaderContactList extends React.Component {
             item.name === this.state.contactName)
             if (contactNameIndex !== -1) {
                 Alert.alert(
-<<<<<<< HEAD
                     strings('contacts_screen.header_contact_list.error_title'),
                     strings('contacts_screen.header_contact_list.error_message'),
                     [
                         { text: strings('contacts_screen.header_contact_list.close_button') }
-=======
-                    strings(contacts_screen.header_contact_list.error_title),
-                    strings(contacts_screen.header_contact_list.error_message),
-                    [
-                        { text: strings(contacts_screen.header_contact_list.close_button) }
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     ]
                 )
             } else {
@@ -62,11 +55,7 @@ class HeaderContactList extends React.Component {
                     const currentUser = this.props.currentUser.name
                     const contact = this.state.contactName
                     const id = `${currentUser}_${timeStamp}`
-<<<<<<< HEAD
                     const predefined_message = strings('contacts_screen.header_contact_list.predefined_message_contact_request')
-=======
-                    const predefined_message = strings(contacts_screen.header_contact_list.predefined_message_contact_request)
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     const additional_message = ""
                     const type = 'contact_request'
                     const sound = '1 - Blink'
@@ -76,11 +65,7 @@ class HeaderContactList extends React.Component {
                             const type = 'send_contact_request'
                             const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additional_message, timeStamp, id, type } }
                             this.props.dispatch(action)
-<<<<<<< HEAD
                             this.setState({ errorMessage: strings('contacts_screen.header_contact_list.contact_request_send') })
-=======
-                            this.setState({ errorMessage: 'Demande de contact envoyée' })
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                             setTimeout(() => this.setState({ errorMessage: null }), 4000)
                         })
                         .catch(err => this.setState({ errorMessage: err }))

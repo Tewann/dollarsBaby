@@ -4,28 +4,7 @@
             "outputFile": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
             "map": [
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\68d15cde9ec8c53513b4a656d8137b63\\res\\values-da\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "197,265,377,443,506,588,705",
-                        "endColumns": "67,111,65,62,81,116,68",
-                        "endOffsets": "264,376,442,505,587,704,773"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "4665,4737,4853,4923,4990,5076,5197",
-                        "endColumns": "71,115,69,66,85,120,72",
-                        "endOffsets": "4732,4848,4918,4985,5071,5192,5265"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\cfdfe02e79679383442ca65d3d5e2f3f\\res\\values-da\\values.xml",
-=======
                     "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\6299d29c74c7273e50750b62b3898d34\\res\\values-da\\values.xml",
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -68,19 +47,11 @@
                         "endOffsets": "264,376,442,505,587,704,773"
                     },
                     "to": {
-<<<<<<< HEAD
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,45",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,316,439,538,650,733,833,946,1025,1134,1242,1338,1452,1554,1655,1771,5270",
-                        "endColumns": "102,107,122,98,111,82,99,112,78,108,107,95,113,101,100,115,96,100",
-                        "endOffsets": "203,311,434,533,645,728,828,941,1020,1129,1237,1333,1447,1549,1650,1766,1863,5366"
-=======
                         "startLines": "38,39,40,41,42,43,44",
                         "startColumns": "4,4,4,4,4,4,4",
                         "startOffsets": "4665,4737,4853,4923,4990,5076,5197",
                         "endColumns": "71,115,69,66,85,120,72",
                         "endOffsets": "4732,4848,4918,4985,5071,5192,5265"
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
                     }
                 },
                 {

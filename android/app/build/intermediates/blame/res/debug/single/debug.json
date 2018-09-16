@@ -96,17 +96,8 @@
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\0bd1e890fb0ca0f423e8bbc8ffb44a12\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_urgent.wav.flat",
-        "source": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\urgent.wav"
-    },
-    {
-        "merged": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-=======
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_content_include.xml.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\064ba7709d3ea9b25d6237fda53c72c8\\res\\layout\\abc_screen_content_include.xml"
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -301,17 +292,8 @@
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\064ba7709d3ea9b25d6237fda53c72c8\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\fb0c1d9a0ee53f25e287bac0e6589a4a\\res\\drawable-mdpi\\abc_ic_menu_paste_mtrl_am_alpha.png"
-=======
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_colored_material.xml.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\064ba7709d3ea9b25d6237fda53c72c8\\res\\drawable\\abc_btn_colored_material.xml"
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
@@ -642,17 +624,8 @@
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\064ba7709d3ea9b25d6237fda53c72c8\\res\\drawable-xhdpi\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_blink.wav.flat",
-        "source": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\blink.wav"
-    },
-    {
-        "merged": "C:\\Users\\erwann\\Desktop\\theWay\\eBlink\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23_abc_control_background_material.xml.flat",
-        "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\fb0c1d9a0ee53f25e287bac0e6589a4a\\res\\drawable-v23\\abc_control_background_material.xml"
-=======
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.0.1.aar\\064ba7709d3ea9b25d6237fda53c72c8\\res\\drawable-mdpi\\abc_switch_track_mtrl_alpha.9.png"
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_btn_switch_to_on_mtrl_00001.9.png.flat",

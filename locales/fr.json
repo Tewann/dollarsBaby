@@ -2,37 +2,30 @@
     "navigation": {
         "contacts_screen": "Contacts",
         "group_screen": "Groupes",
-        "message_history": "Messages"
+        "message_history": "Messages",
+        "profil": "Profil",
+        "disconnect": "Se déconnecter"
     },
     "contacts_screen": {
-        "contact_item": {
-
-        },
-        "contacts_screen": {
-
-        },
+        "contact_item": {},
+        "contacts_screen": {},
         "header_contact_list": {
             "error_title": "Erreur",
             "error_message": "Ce contact est déjà dans votre liste de contacts",
             "close_button": "Fermer",
-<<<<<<< HEAD
             "predefined_message_contact_request": "Demande de contact",
             "contact_request_send": "Demande de contact envoyée",
             "error_message2": "Vous n'avez pas saisi de nom de contact",
-            "placeholder": "Rechercher / Ajouter un contact"
+            "placeholder": "Ajouter un contact"
         },
-        "message_item": {
-
-        },
+        "message_item": {},
         "messages_list_screen": {
             "lenght_exceeded": "Le message a trop de caractères (100 maximum)",
-            "back": "Retour"
+            "back": "Retour",
+            "placeholder": "Message 100 caractères maximum"
         }
-
     },
     "groups_screen": {
-        "group_contact_item": {},
-        "group_item": {},
         "group_list": {
             "error_title": "Erreur",
             "error_message": "Vous n'avez pas saisi de valeur",
@@ -48,12 +41,147 @@
                 "public": "publique",
                 "private": "privé"
             }
+        },
+        "group_options": {
+            "group_contact_item": {},
+            "header_group_contact_list": {
+                "group_options_modal_contact_item": {}
+            },
+            "message_item": {},
+            "messages_list": {
+                "lenght_exceeded": "Le message a trop de caractères (100 maximum)",
+                "placeholder": "Message 100 caractères maximum"
+            },
+            "not_creator": "Vous n'êtes pas le créateur du groupe",
+            "created_by": "créé par",
+            "back": "Retour",
+            "error_title": "Erreur"
         }
-        
+    },
+    "loading": {
+        "error_title": "Permissions refusées",
+        "error_message": "Pour profiter pleinement de l'application, nous vous recommandons d'accepter les notifications",
+        "close_button_1": "Autoriser les notifications",
+        "close_button_2": "Continuer sans notifications"
+    },
+    "login_screen": {
+        "connect_button": "Se connecter",
+        "create_account": "Créer un compte",
+        "forgotten_psswd": "Mot de passe oublié",
+        "forgotten_password": {
+            "reset_psswd_mail": "Un mail vous a été envoyé",
+            "psswd_forgot": "Mot de passe oublié",
+            "send_psswd": "Envoyer le mot de passe",
+            "connect": "Se connecter"
+        }
+    },
+    "message_history_screen": {
+        "display_message": {
+            "contact_request": "vous a envoyé une demande de contact",
+            "contact_added": "a été ajouté à vos contacts",
+            "contact_denied": "n 'a pas été ajouté à vos contacts",
+            "accept_or_decline": {
+                "accepted": " a accepté votre demande de contact",
+                "accept": "Accepter",
+                "refuse": "Refuser"
+            }
+        }
+    },
+    "profil_screen": {
+        "profil": "PROFIL     ",
+        "change_profil_image": {
+            "save": "Enregistrer",
+            "cancel": "Annuler",
+            "load_image": "Charger une photo de profil",
+            "error": "Erreur",
+            "image_shared": "L'image a été partagée",
+            "library": "Galerie",
+            "photo": "Photo"
+        },
+        "delete_account": {
+            "mail": "Merci d'indiquer votre adresse mail",
+            "psswd": "Merci d'indiquer votre mot de passe",
+            "account_deleted": "Votre compte a été supprimé",
+            "delete_account": "Supprimer mon compte",
+            "error": "Erreur",
+            "placeholder_1": "Confirmer votre adresse mail",
+            "placeholder_2": "Mot de passe actuel",
+            "cancel": "Annuler"
+        },
+        "mail_adress": {
+            "error_new_mail": "Merci de préciser votre nouvelle adresse mail",
+            "error_confirm_mail": "Merci de reconfirmer votre nouvelle adresse mail",
+            "error_no_match": "Les adresses mail ne correspondent pas",
+            "modify_mail": "Modifier mon adresse mail",
+            "placeholder_1": "Nouvelle adresse mail",
+            "placeholder_2": "Confirmer l'adresse mail",
+            "placeholder_3": "Mot de passe",
+            "cancel": "Annuler"
+        },
+        "password": {
+            "new_psswd": "Merci de préciser votre nouveau mot de passe",
+            "new_psswd_2": "Merci de reconfirmer votre nouveau mot de passe",
+            "psswd_not_matching": "Les mots de passe ne correspondent pas",
+            "psswd_modified": "Mot de passe modifié",
+            "change_psswd": "Modifier mon mot de passe",
+            "error": "Erreur",
+            "placeholder_1": "Mot de passe actuel",
+            "placeholder_2": "Nouveau mot de passe",
+            "placeholder_3": "Confirmer votre nouveau mot de passe",
+            "cancel": "Annuler"
+        }
+    },
+    "sign_up_screen": {
+        "sign_up": {
+            "mail_not_filled": "Merci de renseigner une adresse mail",
+            "psswd_not_filled": "Les mots de passe ne correspondent pas",
+            "create_account": "Créer un compte",
+            "placeholder_1": "Email",
+            "placeholder_2": "Mot de passe",
+            "placeholder_3": "Confirmer votre mot de passe",
+            "sign_up": "S'inscrire",
+            "connect": "Se connecter"
+        },
+        "get_display_name": {
+            "welcome": "BIENVENUE",
+            "account_name": {
+                "placeholder_1": "Votre nom d'utilisateur",
+                "placeholder_2": "Confirmez votre nom d'utilisateur",
+                "error_missing": "Merci de renseigner un nom d'utilisateur",
+                "error_matching": "Les noms ne correspondent pas",
+                "error_reconnect": "Veuillez-vous reconnecter",
+                "placeholder_1bis": "Adresse mail",
+                "placeholder_2bis": "Mot de passe",
+                "error_already": "Vous avez déjà un nom d'utilisateur",
+                "save": "Enregistrer",
+                "reconnect": "Se reconnecter",
+                "back_to_main_screen": "Revenir à l'écran d'accueil",
+                "username": "Nom d'utilisateur"
+            },
+            "ad_message": {
+                "publicity": "Publicités",
+                "publicity_message_1": "Les publicités nous permettent de financer les coûts liés à la maintenance de l'application.",
+                "publicity_message_2": "Elles nous permettent également de vous proposer l'application gratuitement.",
+                "publicity_message_3": "Nous faisons tous nous efforts pour qu'elles ne gênent pas votre utilisation.",
+                "publicity_message_4": "Nous vous remercions par avance pour votre  compréhension.",
+                "continue": "Continuer"
+            },
+            "profil_photo": {
+                "save": "Enregistrer",
+                "continue": "Continuer",
+                "profil_photo": "Photo de profil",
+                "library": "Galerie",
+                "photo": "Photo",
+                "continue_without": "Continuer sans photo de profil"
+            }
+        }
+    },
+    "reducers": {
+        "where": "T'es où ?",
+        "urgent": "Urgent",
+        "call": "Appelle moi",
+        "coming": "J'arrive",
+        "done": "C'est fait"
 
-=======
-            "predefined_message_contact_request": "Demande de contact"
-        }
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
     }
 }

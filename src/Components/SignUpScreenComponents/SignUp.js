@@ -7,6 +7,7 @@ import styles from './styles'
 import firebase from 'react-native-firebase'
 import LinearGradient from 'react-native-linear-gradient'
 import { signUpToFirebase } from '../../Services/firebaseFunctions'
+import { strings } from '../../i18n'
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -25,9 +26,9 @@ class SignUp extends React.Component {
 
     handleSignUp = () => {
         if (this.state.email === '') {
-            this.setState({ errorMessage: 'Merci de renseigner une adresse mail' })
+            this.setState({ errorMessage: strings('sign_up_screen.sign_up.mail_not_filled') })
         } else if (this.state.password !== this.state.confirmPassword) {
-            this.setState({ errorMessage: 'Les mots de passe ne correspondent pas' })
+            this.setState({ errorMessage: strings('sign_up_screen.sign_up.psswd_not_filled') })
         } else {
             signUpToFirebase(this.state.email, this.state.password)
                 .then(() => this.props.navigation.navigate('GetDisplayName'))
@@ -49,13 +50,13 @@ class SignUp extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>Créer un compte</Text>
+                <Text style={styles.title}>{strings('sign_up_screen.sign_up.create_account')}</Text>
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red' }}>
                         {this.state.errorMessage}
                     </Text>}
                 <TextInput
-                    placeholder="Email"
+                    placeholder={strings('sign_up_screen.sign_up.placeholder_1')}
                     autoCapitalize="none"
                     style={styles.textInput}
                     onChangeText={email => this.setState({ email })}
@@ -64,7 +65,7 @@ class SignUp extends React.Component {
                 />
                 <TextInput
                     secureTextEntry
-                    placeholder="Mot de passe"
+                    placeholder={strings('sign_up_screen.sign_up.placeholder_2')}
                     autoCapitalize="none"
                     style={styles.textInput}
                     onChangeText={(text) => this._getPassword(text)}
@@ -73,7 +74,7 @@ class SignUp extends React.Component {
                 />
                 <TextInput
                     secureTextEntry
-                    placeholder="Confirmer votre mot de passe"
+                    placeholder={strings('sign_up_screen.sign_up.placeholder_3')}
                     autoCapitalize="none"
                     style={styles.textInput}
                     onChangeText={(text) => this._getConfirmationPassword(text)}
@@ -85,13 +86,13 @@ class SignUp extends React.Component {
                         start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                         style={styles.SignUpButton}
                         colors={['#88b097', '#889eb0']}>
-                        <Text style={styles.Text}>S'inscrire</Text>
+                        <Text style={styles.Text}>{strings('sign_up_screen.sign_up.sign_up')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Login')}
                 >
-                    <Text style={styles.Text}>Se connecter</Text>
+                    <Text style={styles.Text}>{strings('sign_up_screen.sign_up.connect')}</Text>
                 </TouchableOpacity>
             </View>
         )

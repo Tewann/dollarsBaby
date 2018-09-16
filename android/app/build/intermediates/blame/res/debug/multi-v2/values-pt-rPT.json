@@ -87,23 +87,6 @@
                         "endColumns": "203",
                         "endOffsets": "3322"
                     }
-                },
-                {
-                    "source": "C:\\Users\\erwann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-15.0.1.aar\\68d15cde9ec8c53513b4a656d8137b63\\res\\values-pt-rPT\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "201,272,402,467,532,616,733",
-                        "endColumns": "70,129,64,64,83,116,73",
-                        "endOffsets": "271,401,466,531,615,732,806"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "4864,4939,5073,5142,5211,5299,5420",
-                        "endColumns": "74,133,68,68,87,120,77",
-                        "endOffsets": "4934,5068,5137,5206,5294,5415,5493"
-                    }
                 }
             ]
         }

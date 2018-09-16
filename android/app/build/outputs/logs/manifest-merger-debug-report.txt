@@ -1,70 +1,5 @@
 -- Merging decision tree log ---
 manifest
-<<<<<<< HEAD
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-MERGED from [:react-native-i18n] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-image-picker] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-23:12
-MERGED from [:react-native-vector-icons] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-linear-gradient] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-firebase] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:multidex:1.0.3] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\caf97d2241d282814cbb6b6264e3e60a\AndroidManifest.xml:17:1-22:12
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-47:12
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\1e3911bafd6dcea4ebd8072f3ce6dd39\AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fb0c1d9a0ee53f25e287bac0e6589a4a\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\101e4d42e524f9b6579d8cf017624c7f\AndroidManifest.xml:17:1-38:12
-MERGED from [com.google.firebase:firebase-functions:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-functions-16.0.1.aar\652eb52d03b6497890379dda9ff229bc\AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-flags:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-flags-15.0.1.aar\63bfb119d86acb76015812dadb3e01b4\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.0.aar\0cef62e50c12598b627fe4ef7821fcb6\AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.1.0.aar\6fa926ae9b022d9da5a7abf8266a89e1\AndroidManifest.xml:17:1-37:12
-MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\05a23303b58e8a914d58c9085ef0a5f4\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:17:1-34:12
-MERGED from [com.google.firebase:firebase-storage:15.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-storage-15.0.2.aar\c821a447d6b03fea021c78fc8bdfba88\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-ads-15.0.1.aar\dbf0c62941b6d58afbb11b9e169119d8\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:17:1-55:12
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:17:1-40:12
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:17:1-65:12
-MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\309b644d875ffb4d9d0be68a97e6f814\AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\55e1f0ee8cbe8140f6b3db56a1e3f3d5\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\92b58e3db4aa51d216ce3e64a174d7f5\AndroidManifest.xml:2:1-18:12
-MERGED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\a45dd173806cade1cd121e7ebf70448d\AndroidManifest.xml:2:1-52:12
-MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\dcedfd74063ca24f087ba5fa8c86af94\AndroidManifest.xml:2:1-16:12
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\c0e17ebf03a36be7924a78131084358b\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-database-collection:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-15.0.1.aar\d502af76eaf431267fbe5dff9b06a52e\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-storage-common:15.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-15.0.2.aar\5f1db790893dbebcb055a03ae0194a07\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\a36886b55068976163c07402c92b52f8\AndroidManifest.xml:17:1-25:12
-MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-15.0.1.aar\68d15cde9ec8c53513b4a656d8137b63\AndroidManifest.xml:17:1-25:12
-MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\dc85b1af5953889e34edce25a9bcb1f5\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:17:1-36:12
-MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-gass-15.0.1.aar\c85e739e8858613de8313de762ef39cc\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\0937a8bd9a81f56b7633d3e6c860b06c\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cfdfe02e79679383442ca65d3d5e2f3f\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f1f75abd4d163f75d73edf9d0975efc1\AndroidManifest.xml:17:1-31:12
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\ac3a373666078b24174ecdf955c63fde\AndroidManifest.xml:10:1-18:12
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\7bde073cd2a5bee2a2736f8de29458ae\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\1348e49557253ce2274603f57441e4d4\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\e5e51bf9070e973c8dcfd41be85d788c\AndroidManifest.xml:1:1-4:12
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\c56af303efc7c93889b3e05605ce072b\AndroidManifest.xml:1:1-3:12
-MERGED from [com.android.support:customtabs:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\ed877203a9960bccc18a7535d5d5a2a6\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\03de35e88ec493ff9f098b99d28e1934\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b1345ee2f9f0bde6254b3513682e93ee\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3fb0dcf03e3c65baae27670299b47eb4\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\10625690b3eeee37a7154eec252fa1c4\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\0b6f0dc3734e6908e22cac9561a82780\AndroidManifest.xml:17:1-31:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\313c47f49c4515ea40544b348c8fe2d8\AndroidManifest.xml:17:1-30:12
-MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\d1de57d115aefea3826698d350d445d5\AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\a61ae44a50492b3653e25c50e57ac0eb\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\5e47c9dca58aecaab355890ec037e94a\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\557d4cd03676c981ca2683efed20ada6\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\32d023356d31121f75b09cad22c3c18d\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\d57aca5326eb119c9eb7231986fe7055\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\0e9ff18754e4c977320c2cdf2aac6dad\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-=======
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
@@ -128,21 +63,11 @@ MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\Tewa
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 	package
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:70-90
 		INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 	android:versionName
-<<<<<<< HEAD
-		INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-		INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-	android:versionCode
-		INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12
-		INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-=======
 		INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 		INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
@@ -150,29 +75,9 @@ INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\An
 		INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 		INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 	xmlns:android
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-<<<<<<< HEAD
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:3:3-65
-MERGED from [:react-native-firebase] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
-MERGED from [:react-native-firebase] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:15:5-67
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:15:5-67
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:23:5-67
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:23:5-67
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:3:20-62
-=======
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:3:3-65
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
@@ -190,7 +95,6 @@ MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewa
 MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\6c54b382dc21d0e30a11dbcb572b9e28\AndroidManifest.xml:23:5-67
 	android:name
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:3:20-62
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:4:3-79
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:33:5-81
@@ -198,281 +102,6 @@ MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_mod
 	android:name
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:4:20-76
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-<<<<<<< HEAD
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:5:3-75
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\1e3911bafd6dcea4ebd8072f3ce6dd39\AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\1e3911bafd6dcea4ebd8072f3ce6dd39\AndroidManifest.xml:11:5-78
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:5:20-73
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:6:3-63
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:6:20-60
-uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:7:3-79
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:7:20-76
-uses-permission#android.permission.VIBRATE
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:8:3-64
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:8:20-61
-application
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:10:3-36:17
-MERGED from [:react-native-image-picker] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-21:19
-MERGED from [:react-native-image-picker] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-21:19
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:35:5-45:19
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:35:5-45:19
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\1e3911bafd6dcea4ebd8072f3ce6dd39\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\1e3911bafd6dcea4ebd8072f3ce6dd39\AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fb0c1d9a0ee53f25e287bac0e6589a4a\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fb0c1d9a0ee53f25e287bac0e6589a4a\AndroidManifest.xml:22:5-20
-MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\101e4d42e524f9b6579d8cf017624c7f\AndroidManifest.xml:22:5-36:19
-MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\101e4d42e524f9b6579d8cf017624c7f\AndroidManifest.xml:22:5-36:19
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.0.aar\0cef62e50c12598b627fe4ef7821fcb6\AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.0.aar\0cef62e50c12598b627fe4ef7821fcb6\AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.1.0.aar\6fa926ae9b022d9da5a7abf8266a89e1\AndroidManifest.xml:22:5-35:19
-MERGED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.1.0.aar\6fa926ae9b022d9da5a7abf8266a89e1\AndroidManifest.xml:22:5-35:19
-MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\05a23303b58e8a914d58c9085ef0a5f4\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\05a23303b58e8a914d58c9085ef0a5f4\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:26:5-32:19
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:26:5-32:19
-MERGED from [com.google.firebase:firebase-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-ads-15.0.1.aar\dbf0c62941b6d58afbb11b9e169119d8\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-ads-15.0.1.aar\dbf0c62941b6d58afbb11b9e169119d8\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:28:5-53:19
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:28:5-53:19
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:28:5-38:19
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:28:5-38:19
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:34:5-63:19
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:34:5-63:19
-MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\309b644d875ffb4d9d0be68a97e6f814\AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\309b644d875ffb4d9d0be68a97e6f814\AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\55e1f0ee8cbe8140f6b3db56a1e3f3d5\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\55e1f0ee8cbe8140f6b3db56a1e3f3d5\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\92b58e3db4aa51d216ce3e64a174d7f5\AndroidManifest.xml:10:5-16:19
-MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\92b58e3db4aa51d216ce3e64a174d7f5\AndroidManifest.xml:10:5-16:19
-MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\dcedfd74063ca24f087ba5fa8c86af94\AndroidManifest.xml:8:5-14:19
-MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\dcedfd74063ca24f087ba5fa8c86af94\AndroidManifest.xml:8:5-14:19
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\c0e17ebf03a36be7924a78131084358b\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\c0e17ebf03a36be7924a78131084358b\AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\a36886b55068976163c07402c92b52f8\AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\a36886b55068976163c07402c92b52f8\AndroidManifest.xml:22:5-23:19
-MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\dc85b1af5953889e34edce25a9bcb1f5\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\dc85b1af5953889e34edce25a9bcb1f5\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:26:5-34:19
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:26:5-34:19
-MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-gass-15.0.1.aar\c85e739e8858613de8313de762ef39cc\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-gass-15.0.1.aar\c85e739e8858613de8313de762ef39cc\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\0937a8bd9a81f56b7633d3e6c860b06c\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\0937a8bd9a81f56b7633d3e6c860b06c\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cfdfe02e79679383442ca65d3d5e2f3f\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cfdfe02e79679383442ca65d3d5e2f3f\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f1f75abd4d163f75d73edf9d0975efc1\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f1f75abd4d163f75d73edf9d0975efc1\AndroidManifest.xml:25:5-29:19
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\e5e51bf9070e973c8dcfd41be85d788c\AndroidManifest.xml:3:3-17
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\e5e51bf9070e973c8dcfd41be85d788c\AndroidManifest.xml:3:3-17
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\c56af303efc7c93889b3e05605ce072b\AndroidManifest.xml:2:3-17
-MERGED from [org.webkit:android-jsc:r174650] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\c56af303efc7c93889b3e05605ce072b\AndroidManifest.xml:2:3-17
-MERGED from [com.android.support:customtabs:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\ed877203a9960bccc18a7535d5d5a2a6\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:customtabs:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\ed877203a9960bccc18a7535d5d5a2a6\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\03de35e88ec493ff9f098b99d28e1934\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\03de35e88ec493ff9f098b99d28e1934\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b1345ee2f9f0bde6254b3513682e93ee\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b1345ee2f9f0bde6254b3513682e93ee\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3fb0dcf03e3c65baae27670299b47eb4\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3fb0dcf03e3c65baae27670299b47eb4\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\10625690b3eeee37a7154eec252fa1c4\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\10625690b3eeee37a7154eec252fa1c4\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\0b6f0dc3734e6908e22cac9561a82780\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\0b6f0dc3734e6908e22cac9561a82780\AndroidManifest.xml:25:5-29:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\313c47f49c4515ea40544b348c8fe2d8\AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\313c47f49c4515ea40544b348c8fe2d8\AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\d57aca5326eb119c9eb7231986fe7055\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\d57aca5326eb119c9eb7231986fe7055\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\0e9ff18754e4c977320c2cdf2aac6dad\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\0e9ff18754e4c977320c2cdf2aac6dad\AndroidManifest.xml:22:5-20
-	android:label
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:10:48-80
-	android:icon
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:10:81-115
-	android:allowBackup
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:10:116-143
-	android:theme
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:10:144-175
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:10:16-47
-activity#com.eblink.MainActivity
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:11:5-18:16
-	android:label
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:11:44-76
-	android:launchMode
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:11:191-221
-	android:windowSoftInputMode
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:11:148-190
-	android:configChanges
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:11:77-147
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:11:15-43
-intent-filter#action:name:android.intent.action.DOWNLOAD_COMPLETE+action:name:android.intent.action.DOWNLOAD_COMPLETE+action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:12:7-17:23
-action#android.intent.action.MAIN
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:13:9-61
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:13:17-58
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:14:9-69
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:14:19-66
-action#android.intent.action.DOWNLOAD_COMPLETE
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:15:9-73
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:15:17-71
-activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:19:5-82
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:19:15-79
-service#io.invertase.firebase.messaging.RNFirebaseMessagingService
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:20:5-24:15
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:20:14-87
-intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:21:7-23:23
-action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:22:9-70
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:22:17-67
-service#io.invertase.firebase.messaging.RNFirebaseInstanceIdService
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:25:5-29:15
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:25:14-88
-intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:26:7-28:23
-action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:27:9-71
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:27:17-69
-service#io.invertase.firebase.messaging.RNFirebaseBackgroundMessagingService
-ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:30:5-100
-	android:name
-		ADDED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:30:14-97
-uses-sdk
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-MERGED from [:react-native-i18n] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-i18n] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-image-picker] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-image-picker] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-vector-icons] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-vector-icons] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-linear-gradient] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-linear-gradient] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-firebase] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-firebase] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:multidex:1.0.3] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\caf97d2241d282814cbb6b6264e3e60a\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.3] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\caf97d2241d282814cbb6b6264e3e60a\AndroidManifest.xml:20:5-43
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\1e3911bafd6dcea4ebd8072f3ce6dd39\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\1e3911bafd6dcea4ebd8072f3ce6dd39\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fb0c1d9a0ee53f25e287bac0e6589a4a\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\fb0c1d9a0ee53f25e287bac0e6589a4a\AndroidManifest.xml:20:5-43
-MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\101e4d42e524f9b6579d8cf017624c7f\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\101e4d42e524f9b6579d8cf017624c7f\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-functions:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-functions-16.0.1.aar\652eb52d03b6497890379dda9ff229bc\AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.firebase:firebase-functions:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-functions-16.0.1.aar\652eb52d03b6497890379dda9ff229bc\AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.android.gms:play-services-flags:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-flags-15.0.1.aar\63bfb119d86acb76015812dadb3e01b4\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-flags:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-flags-15.0.1.aar\63bfb119d86acb76015812dadb3e01b4\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.0.aar\0cef62e50c12598b627fe4ef7821fcb6\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.0.aar\0cef62e50c12598b627fe4ef7821fcb6\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.1.0.aar\6fa926ae9b022d9da5a7abf8266a89e1\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-messaging:17.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.1.0.aar\6fa926ae9b022d9da5a7abf8266a89e1\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\05a23303b58e8a914d58c9085ef0a5f4\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\05a23303b58e8a914d58c9085ef0a5f4\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-storage:15.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-storage-15.0.2.aar\c821a447d6b03fea021c78fc8bdfba88\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-storage:15.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-storage-15.0.2.aar\c821a447d6b03fea021c78fc8bdfba88\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-ads-15.0.1.aar\dbf0c62941b6d58afbb11b9e169119d8\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-ads-15.0.1.aar\dbf0c62941b6d58afbb11b9e169119d8\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\309b644d875ffb4d9d0be68a97e6f814\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-iid-interop:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-interop-16.0.0.aar\309b644d875ffb4d9d0be68a97e6f814\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\55e1f0ee8cbe8140f6b3db56a1e3f3d5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\55e1f0ee8cbe8140f6b3db56a1e3f3d5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\92b58e3db4aa51d216ce3e64a174d7f5\AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.firebase:firebase-firestore:17.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-firestore-17.0.2.aar\92b58e3db4aa51d216ce3e64a174d7f5\AndroidManifest.xml:6:5-8:41
-MERGED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\a45dd173806cade1cd121e7ebf70448d\AndroidManifest.xml:7:5-9:41
-MERGED from [me.leolin:ShortcutBadger:1.1.21] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.21.aar\a45dd173806cade1cd121e7ebf70448d\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\dcedfd74063ca24f087ba5fa8c86af94\AndroidManifest.xml:5:5-6:37
-MERGED from [com.google.firebase:firebase-common:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\dcedfd74063ca24f087ba5fa8c86af94\AndroidManifest.xml:5:5-6:37
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\c0e17ebf03a36be7924a78131084358b\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\c0e17ebf03a36be7924a78131084358b\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-database-collection:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-15.0.1.aar\d502af76eaf431267fbe5dff9b06a52e\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-database-collection:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-15.0.1.aar\d502af76eaf431267fbe5dff9b06a52e\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-storage-common:15.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-15.0.2.aar\5f1db790893dbebcb055a03ae0194a07\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-storage-common:15.0.2] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-15.0.2.aar\5f1db790893dbebcb055a03ae0194a07\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\a36886b55068976163c07402c92b52f8\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-16.0.0.aar\a36886b55068976163c07402c92b52f8\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-15.0.1.aar\68d15cde9ec8c53513b4a656d8137b63\AndroidManifest.xml:21:5-23:62
-MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-15.0.1.aar\68d15cde9ec8c53513b4a656d8137b63\AndroidManifest.xml:21:5-23:62
-MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\dc85b1af5953889e34edce25a9bcb1f5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-15.0.1.aar\dc85b1af5953889e34edce25a9bcb1f5\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-gass-15.0.1.aar\c85e739e8858613de8313de762ef39cc\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-gass-15.0.1.aar\c85e739e8858613de8313de762ef39cc\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\0937a8bd9a81f56b7633d3e6c860b06c\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\0937a8bd9a81f56b7633d3e6c860b06c\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cfdfe02e79679383442ca65d3d5e2f3f\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\cfdfe02e79679383442ca65d3d5e2f3f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f1f75abd4d163f75d73edf9d0975efc1\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f1f75abd4d163f75d73edf9d0975efc1\AndroidManifest.xml:21:5-23:54
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\ac3a373666078b24174ecdf955c63fde\AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\ac3a373666078b24174ecdf955c63fde\AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\7bde073cd2a5bee2a2736f8de29458ae\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\7bde073cd2a5bee2a2736f8de29458ae\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\1348e49557253ce2274603f57441e4d4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\1348e49557253ce2274603f57441e4d4\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\e5e51bf9070e973c8dcfd41be85d788c\AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\e5e51bf9070e973c8dcfd41be85d788c\AndroidManifest.xml:2:3-70
-MERGED from [com.android.support:customtabs:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\ed877203a9960bccc18a7535d5d5a2a6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customtabs:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\ed877203a9960bccc18a7535d5d5a2a6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\03de35e88ec493ff9f098b99d28e1934\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\03de35e88ec493ff9f098b99d28e1934\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b1345ee2f9f0bde6254b3513682e93ee\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b1345ee2f9f0bde6254b3513682e93ee\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3fb0dcf03e3c65baae27670299b47eb4\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3fb0dcf03e3c65baae27670299b47eb4\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\10625690b3eeee37a7154eec252fa1c4\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\10625690b3eeee37a7154eec252fa1c4\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\0b6f0dc3734e6908e22cac9561a82780\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\0b6f0dc3734e6908e22cac9561a82780\AndroidManifest.xml:21:5-23:58
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\313c47f49c4515ea40544b348c8fe2d8\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\313c47f49c4515ea40544b348c8fe2d8\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\d1de57d115aefea3826698d350d445d5\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\d1de57d115aefea3826698d350d445d5\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\a61ae44a50492b3653e25c50e57ac0eb\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\a61ae44a50492b3653e25c50e57ac0eb\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\5e47c9dca58aecaab355890ec037e94a\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\5e47c9dca58aecaab355890ec037e94a\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\557d4cd03676c981ca2683efed20ada6\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\557d4cd03676c981ca2683efed20ada6\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\32d023356d31121f75b09cad22c3c18d\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\32d023356d31121f75b09cad22c3c18d\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\d57aca5326eb119c9eb7231986fe7055\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\d57aca5326eb119c9eb7231986fe7055\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\0e9ff18754e4c977320c2cdf2aac6dad\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\0e9ff18754e4c977320c2cdf2aac6dad\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-15.0.1.aar\68d15cde9ec8c53513b4a656d8137b63\AndroidManifest.xml:23:9-59
-=======
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:5:3-75
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:11:5-78
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:11:5-78
@@ -746,7 +375,6 @@ INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\An
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-15.0.1.aar\f3e518dc97f3b945db0db1d6a60ccd15\AndroidManifest.xml:23:9-59
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 	android:targetSdkVersion
 		INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
@@ -786,23 +414,6 @@ MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\Tewann\.gradle\ca
 	android:name
 		ADDED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:12:22-65
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-<<<<<<< HEAD
-ADDED from [:react-native-firebase] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-79
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:5-79
-MERGED from [:rn-fetch-blob] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:5-79
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.1.aar\dfb1538a335bae911c203538875dc22b\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.1.aar\636a306d02eca5927ed0684359bc0d8e\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.1.1.aar\a14e4c2d55b3dceda646b6797c03329a\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:16.2.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.2.0.aar\1444a49e1c905d7326dab716e00e4b92\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:24:5-79
-	android:name
-		ADDED from [:react-native-firebase] C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:22-76
-=======
 ADDED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-79
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:5-79
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:27:5-79
@@ -818,7 +429,6 @@ MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewa
 MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\6c54b382dc21d0e30a11dbcb572b9e28\AndroidManifest.xml:24:5-79
 	android:name
 		ADDED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:22-76
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 uses-permission#com.android.vending.CHECK_LICENSE
 ADDED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:12:5-73
 	android:name
@@ -1076,19 +686,6 @@ ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\
 	android:initOrder
 		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:13:13-36
 	android:name
-<<<<<<< HEAD
-		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\dcedfd74063ca24f087ba5fa8c86af94\AndroidManifest.xml:10:13-77
-activity#com.google.android.gms.ads.AdActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:29:9-33:64
-	android:exported
-		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:32:13-37
-	android:configChanges
-		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:31:13-122
-	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:33:13-61
-	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\7d9b48f39b8a850263b9265797dc80b6\AndroidManifest.xml:30:13-65
-=======
 		ADDED from [com.google.firebase:firebase-common:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-common-16.0.0.aar\52b31e3fdcd967f9dfb91fbe908c3c9f\AndroidManifest.xml:10:13-77
 activity#com.google.android.gms.ads.AdActivity
 ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\6c54b382dc21d0e30a11dbcb572b9e28\AndroidManifest.xml:29:9-33:64
@@ -1100,7 +697,6 @@ ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewan
 		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\6c54b382dc21d0e30a11dbcb572b9e28\AndroidManifest.xml:33:13-61
 	android:name
 		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-15.0.1.aar\6c54b382dc21d0e30a11dbcb572b9e28\AndroidManifest.xml:30:13-65
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:23:9-25:69
 	android:value
@@ -1108,21 +704,6 @@ ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewan
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:24:13-58
 meta-data#android.support.VERSION
-<<<<<<< HEAD
-ADDED from [com.android.support:support-v4:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f1f75abd4d163f75d73edf9d0975efc1\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:customtabs:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\ed877203a9960bccc18a7535d5d5a2a6\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:customtabs:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\ed877203a9960bccc18a7535d5d5a2a6\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\03de35e88ec493ff9f098b99d28e1934\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\03de35e88ec493ff9f098b99d28e1934\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b1345ee2f9f0bde6254b3513682e93ee\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\b1345ee2f9f0bde6254b3513682e93ee\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3fb0dcf03e3c65baae27670299b47eb4\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\3fb0dcf03e3c65baae27670299b47eb4\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\10625690b3eeee37a7154eec252fa1c4\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\10625690b3eeee37a7154eec252fa1c4\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\0b6f0dc3734e6908e22cac9561a82780\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\erwann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\0b6f0dc3734e6908e22cac9561a82780\AndroidManifest.xml:26:9-28:38
-=======
 ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:23:9-25:38
@@ -1136,21 +717,14 @@ MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle
 MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:26:9-28:38
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 	android:value
 		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:28:13-35
 	android:name
 		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:27:13-51
 uses-permission#android.permission.READ_PHONE_STATE
-<<<<<<< HEAD
-IMPLIED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from C:\Users\erwann\Desktop\theWay\eBlink\dollarsBaby\android\app\src\main\AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
-=======
 IMPLIED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 IMPLIED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
->>>>>>> 4208c610f9f0e5f4728f6e817e6f7a9fc8c42810
 meta-data#android.arch.lifecycle.VERSION
 ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:25:9-27:47
 	android:value

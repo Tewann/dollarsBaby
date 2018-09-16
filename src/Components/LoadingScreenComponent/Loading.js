@@ -9,6 +9,7 @@ import { Notification } from 'react-native-firebase'
 import { connect } from 'react-redux'
 import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
 import Store from '../../Store/configureStore'
+import { strings} from '../../i18n'
 
 class Loading extends React.Component {
 
@@ -188,14 +189,14 @@ class Loading extends React.Component {
             // user has rejected permissions
             // display Alert
             Alert.alert(
-                'Permissions refusées',
-                "Pour profiter pleinement de l'application, nous vous recommandons d'accepter les notifications"
+                strings('loading.error_title'),
+                strings('loading.error_message')
                 [
                 {
-                    text: 'Autoriser les notifications', onPress: () => this.requestingPermission()
+                    text: strings('loading.close_button_1'), onPress: () => this.requestingPermission()
                 },
                 {
-                    text: 'Continuer sans notifications', onPress: () => this.goToMainScreen(user)
+                    text: strings('loading.close_button_2'), onPress: () => this.goToMainScreen(user)
                 }
                 ]
             )

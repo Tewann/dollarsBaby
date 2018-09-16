@@ -11,6 +11,7 @@ import PasswordBlock from './PasswordBlockComponent/PasswordBlock'
 import ChangeProfilImageBlock from './ChangeProfilImageBlockComponent/ChangeProfilImageBlock.js'
 import DeleteAccountBlock from './DeleteAccountBlockComponent/DeleteAccountBlock'
 import { connect } from 'react-redux'
+import { strings } from '../../i18n'
 
 class ProfilScreen extends React.Component {
     render() {
@@ -29,7 +30,7 @@ class ProfilScreen extends React.Component {
                         style={{ padding: 20 }}
                         onPress={() => this.props.navigation.navigate('MainStackNavigator')}
                     />
-                    <Text style={styles.title}>PROFIL     </Text>
+                    <Text style={styles.title}>{strings('profil_screen.profil')}</Text>
                     <View></View>
                 </LinearGradient>
                 <ScrollView
