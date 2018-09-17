@@ -28,6 +28,7 @@ class ProfilScreen extends React.Component {
                         color='white'
                         size={35}
                         style={{ padding: 20 }}
+                        underlayColor='transparent'
                         onPress={() => this.props.navigation.navigate('MainStackNavigator')}
                     />
                     <Text style={styles.title}>{strings('profil_screen.profil')}</Text>

@@ -113,7 +113,7 @@ class DisplayMessage extends React.Component {
             )
         } else if (this.props.message.status === 'declined') {
             return (
-                <Text>{this.props.message.contact} {strings('message_history_screen.display_message.contact_denied.')}</Text>
+                <Text>{this.props.message.contact} {strings('message_history_screen.display_message.contact_denied')}</Text>
             )
         }
     }
