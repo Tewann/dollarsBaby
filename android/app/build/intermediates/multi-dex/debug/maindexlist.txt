@@ -277,6 +277,7 @@ com/google/gson/annotations/Since.class
 com/google/gson/annotations/Until.class
 com/google/protobuf/ExperimentalApi.class
 com/imagepicker/ImagePickerPackage.class
+com/microsoft/codepush/react/CodePush.class
 com/oblador/vectoricons/VectorIconsPackage.class
 io/grpc/ClientInterceptor.class
 io/grpc/ExperimentalApi.class
@@ -346,3 +347,9 @@ javax/inject/Named.class
 javax/inject/Qualifier.class
 javax/inject/Scope.class
 javax/inject/Singleton.class
+net/jcip/annotations/GuardedBy.class
+net/jcip/annotations/Immutable.class
+net/jcip/annotations/NotThreadSafe.class
+net/jcip/annotations/ThreadSafe.class
+net/minidev/json/annotate/JsonIgnore.class
+net/minidev/json/annotate/JsonSmartAnnotation.class

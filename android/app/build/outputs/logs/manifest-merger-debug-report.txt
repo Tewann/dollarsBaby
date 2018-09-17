@@ -4,6 +4,7 @@ ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\Andro
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:react-native-i18n] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [:react-native-vector-icons] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
@@ -79,6 +80,8 @@ INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\An
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:3:3-65
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-67
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:15:5-67
@@ -121,6 +124,8 @@ ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\Andro
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:8:20-61
 application
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:10:3-36:17
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-15:19
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-15:19
 MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:35:5-45:19
@@ -231,6 +236,8 @@ ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\Andro
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:15:17-71
 activity#com.facebook.react.devsupport.DevSettingsActivity
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:19:5-82
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:14:9-86
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:14:9-86
 	android:name
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:19:15-79
 service#io.invertase.firebase.messaging.RNFirebaseMessagingService
@@ -261,6 +268,8 @@ uses-sdk
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-i18n] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-i18n] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41

@@ -151,9 +151,6 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
         screen: topTabBarNavigation,
-
-
-
         navigationOptions: ({ navigation }) => ({
             title: 'eBlink',
             headerTitleStyle: {
