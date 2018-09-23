@@ -2,8 +2,8 @@ dependencies: \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/eBlink/AppDelegate.m \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/eBlink/AppDelegate.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Firebase/CoreOnly/Sources/module.modulemap \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/CodePush/CodePush.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
@@ -11,6 +11,8 @@ dependencies: \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBundleURLProvider.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h \
   /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h \
