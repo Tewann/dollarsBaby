@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseCore/Firebase/Core/FIRVersion.m
+  /Users/rolandinho/Desktop/dollarsBaby/ios/Pods/FirebaseCore/Firebase/Core/FIRVersion.m

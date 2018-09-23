@@ -1,15 +1,15 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native-firebase/ios/RNFirebase/RNFirebase.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native-firebase/ios/RNFirebase/RNFirebase.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.h \
+  /Users/rolandinho/Desktop/dollarsBaby/node_modules/react-native-firebase/ios/RNFirebase/RNFirebase.m \
+  /Users/rolandinho/Desktop/dollarsBaby/node_modules/react-native-firebase/ios/RNFirebase/RNFirebase.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/rolandinho/Desktop/dollarsBaby/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.h \
   ../../../ios/Pods/Headers/Public/Firebase/Firebase.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FirebaseCore.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FIRAnalyticsConfiguration.h \
@@ -26,5 +26,5 @@ dependencies: \
   ../../../ios/Pods/Headers/Public/FirebaseAnalytics/FirebaseAnalytics/FIRAnalyticsSwiftNameSupport.h \
   ../../../ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FirebaseInstanceID.h \
   ../../../ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FIRInstanceID.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/rolandinho/Desktop/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h

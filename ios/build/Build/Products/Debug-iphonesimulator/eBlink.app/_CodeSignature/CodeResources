@@ -6,36 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		/xzQ1AUCNVVO/FzgV+VAAHvjLQY=
-		</data>
-		<key>Frameworks/XCTest.framework/Info.plist</key>
-		<data>
-		SdjOzThclNXu4KLO5h40hBctROA=
-		</data>
-		<key>Frameworks/XCTest.framework/XCTest</key>
-		<data>
-		xMkt3jnDeDc78TRXd0+2Z35KQLI=
-		</data>
-		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
-		<data>
-		PWtqWHkq/t3jE+e2ENvRUxmH79A=
-		</data>
-		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TuBj57ZP6zBqcL9HttO2Rucaw9E=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Frameworks/XCTest.framework/version.plist</key>
-		<data>
-		5cRzPtVUKIvxWWkMzFSgiTN1GL4=
-		</data>
-		<key>Frameworks/libXCTestBundleInject.dylib</key>
-		<data>
-		kh3DL7UnDxrEpeLfSkD0a5DyoqA=
+		gOHNbczlSQvhTzADA1fkPHpcaoI=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -49,30 +20,6 @@
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
-		<key>PlugIns/eBlinkTests.xctest.dSYM/Contents/Info.plist</key>
-		<data>
-		QjZsqX+r8Gpb89dNbl+zO0/aXuI=
-		</data>
-		<key>PlugIns/eBlinkTests.xctest.dSYM/Contents/Resources/DWARF/eBlinkTests</key>
-		<data>
-		uGWPR69GDKVMJnFJns93gG1msp0=
-		</data>
-		<key>PlugIns/eBlinkTests.xctest/GoogleService-Info.plist</key>
-		<data>
-		T7ajTinqGrBzo3u22ApMxOa3KNo=
-		</data>
-		<key>PlugIns/eBlinkTests.xctest/Info.plist</key>
-		<data>
-		X9LDL2k0I9Oz80LSioSqusWQ+xg=
-		</data>
-		<key>PlugIns/eBlinkTests.xctest/_CodeSignature/CodeResources</key>
-		<data>
-		jTWrxtxcN62+93lFuS174JiUnbE=
-		</data>
-		<key>PlugIns/eBlinkTests.xctest/eBlinkTests</key>
-		<data>
-		CKOTIEdZztRz/up14Hs/E1HAZ8U=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -80,79 +27,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/xzQ1AUCNVVO/FzgV+VAAHvjLQY=
+			gOHNbczlSQvhTzADA1fkPHpcaoI=
 			</data>
 			<key>hash2</key>
 			<data>
-			o1t162E5tVfCr9O7u23WmZDspKwW1N7GPohrThC50+M=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			SdjOzThclNXu4KLO5h40hBctROA=
-			</data>
-			<key>hash2</key>
-			<data>
-			2/iVpBjFB5Eb15yfj958wukO7l5pj6EewJRCoeXdZ+Q=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/XCTest</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xMkt3jnDeDc78TRXd0+2Z35KQLI=
-			</data>
-			<key>hash2</key>
-			<data>
-			PbtcN1sDyKXVhsFpxcKSZjD2kcyQaK1dyQLcNorCDHY=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PWtqWHkq/t3jE+e2ENvRUxmH79A=
-			</data>
-			<key>hash2</key>
-			<data>
-			6uvXQHQXgm9gxM9mblxuWfx3k/K7uR1puBprmwDR7V4=
-			</data>
-		</dict>
-		<key>Frameworks/XCTest.framework/en.lproj/InfoPlist.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TuBj57ZP6zBqcL9HttO2Rucaw9E=
-			</data>
-			<key>hash2</key>
-			<data>
-			89RGkjZaKuewYnjpzwhIswhqfrU8+pcEXqM/DHVrUmo=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Frameworks/XCTest.framework/version.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5cRzPtVUKIvxWWkMzFSgiTN1GL4=
-			</data>
-			<key>hash2</key>
-			<data>
-			ygI1wWTyE9+SYWsvtxZwy/ZZDORcDcIarh3Yo7p2JWY=
-			</data>
-		</dict>
-		<key>Frameworks/libXCTestBundleInject.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			kh3DL7UnDxrEpeLfSkD0a5DyoqA=
-			</data>
-			<key>hash2</key>
-			<data>
-			fpOt7HUuqY2ezAoc4Q2s/uCD+QmTqmstpUSS9I8nCoE=
+			8zyp/hrbTy9n9UWUI0/PAeTaE8DZYAghQUygSWdL5dw=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -164,72 +43,6 @@
 			<key>hash2</key>
 			<data>
 			I0/gYFB5hJ/vDNMadG8mh4t8JJ16Bea+ewg5QMs4qVc=
-			</data>
-		</dict>
-		<key>PlugIns/eBlinkTests.xctest.dSYM/Contents/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			QjZsqX+r8Gpb89dNbl+zO0/aXuI=
-			</data>
-			<key>hash2</key>
-			<data>
-			tLCGAz4DQZbpdI4qIcSohAZXv9GeSitrl9cOQIY1Vxs=
-			</data>
-		</dict>
-		<key>PlugIns/eBlinkTests.xctest.dSYM/Contents/Resources/DWARF/eBlinkTests</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			uGWPR69GDKVMJnFJns93gG1msp0=
-			</data>
-			<key>hash2</key>
-			<data>
-			r/Ba9cIGuJNGKpyCzR7uCFV+TouHUcCRr7fTHw7Zo+E=
-			</data>
-		</dict>
-		<key>PlugIns/eBlinkTests.xctest/GoogleService-Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			T7ajTinqGrBzo3u22ApMxOa3KNo=
-			</data>
-			<key>hash2</key>
-			<data>
-			I0/gYFB5hJ/vDNMadG8mh4t8JJ16Bea+ewg5QMs4qVc=
-			</data>
-		</dict>
-		<key>PlugIns/eBlinkTests.xctest/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			X9LDL2k0I9Oz80LSioSqusWQ+xg=
-			</data>
-			<key>hash2</key>
-			<data>
-			CBdDZCO6ymAbSWfNIejCNa/JA4nL5qcrf8wN8RuirEI=
-			</data>
-		</dict>
-		<key>PlugIns/eBlinkTests.xctest/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jTWrxtxcN62+93lFuS174JiUnbE=
-			</data>
-			<key>hash2</key>
-			<data>
-			7HbjWcBsyrC8BqM6bB4ZH9+u89JzmUO197LwfDlVTfg=
-			</data>
-		</dict>
-		<key>PlugIns/eBlinkTests.xctest/eBlinkTests</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			CKOTIEdZztRz/up14Hs/E1HAZ8U=
-			</data>
-			<key>hash2</key>
-			<data>
-			G9QlUpkCP26BIj5vkH2Svg2VeoOMuLBioLw0+MsFjwE=
 			</data>
 		</dict>
 	</dict>

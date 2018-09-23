@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>4FE01CEB-6493-4302-AF30-90D18253D56B</key>
+		<key>6E621352-9DA6-4742-AC9B-8F44F1AC9905</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>4FE01CEB-6493-4302-AF30-90D18253D56B.xcactivitylog</string>
+			<string>6E621352-9DA6-4742-AC9B-8F44F1AC9905.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>W</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,42 +27,13 @@
 			<key>signature</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>559405260.39975595</real>
+			<real>559418089.89366901</real>
 			<key>timeStoppedRecording</key>
-			<real>559405278.33769405</real>
+			<real>559418143.847206</real>
 			<key>title</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>4FE01CEB-6493-4302-AF30-90D18253D56B</string>
-		</dict>
-		<key>8F76F525-7423-4BF6-846F-3B3AF5AF79B0</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>8F76F525-7423-4BF6-846F-3B3AF5AF79B0.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>E</string>
-			<key>schemeIdentifier-containerName</key>
-			<string>eBlink project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>eBlink</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>559404818.17192996</real>
-			<key>timeStoppedRecording</key>
-			<real>559404822.65478802</real>
-			<key>title</key>
-			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>8F76F525-7423-4BF6-846F-3B3AF5AF79B0</string>
+			<string>6E621352-9DA6-4742-AC9B-8F44F1AC9905</string>
 		</dict>
 	</dict>
 </dict>
