@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/rolandinho/Desktop/dollarsBaby/ios/Pods/Target\ Support\ Files/FirebaseCore/FirebaseCore-dummy.m
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Target\ Support\ Files/FirebaseCore/FirebaseCore-dummy.m

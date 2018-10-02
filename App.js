@@ -16,7 +16,6 @@ const request = new AdRequest();
 
 export default class App extends React.Component {
   render() {
-    console.log(adSize)
     let persistor = persistStore(Store)
     return (
       <Provider store={Store}>

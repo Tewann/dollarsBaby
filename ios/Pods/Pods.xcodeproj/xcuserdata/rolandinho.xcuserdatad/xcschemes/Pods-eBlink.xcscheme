@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "322685BD3158F0B7B8136283616DDB63"
+               BlueprintIdentifier = "C6C1359A023981DCF7215EB39BCCE863"
                BlueprintName = "Pods-eBlink"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-eBlink.a">

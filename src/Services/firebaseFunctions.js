@@ -89,7 +89,7 @@ export const loginToFirebase = async (email, password) =>
     new Promise((resolve, reject) => {
         firebase
             .auth()
-            .signInWithEmailAndPassword('as@gmail.com', 'aaaaaa')
+            .signInWithEmailAndPassword(email, password)
             .then(resolve())
             .catch(error => {
                 reject(error)

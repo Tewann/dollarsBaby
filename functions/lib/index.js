@@ -35,7 +35,7 @@ exports.messageSendToGroup = functions.https.onCall(data => {
         messageId: data.id,
         predefined_message: data.predefined_message,
         additional_message: data.additionalMessage,
-        sound: data.predefined_message
+        sound: data.sound
     })
         .then(() => {
         return { message: 'success' };

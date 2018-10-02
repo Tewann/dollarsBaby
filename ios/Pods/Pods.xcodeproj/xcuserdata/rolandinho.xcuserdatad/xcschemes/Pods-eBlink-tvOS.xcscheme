@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FA8156A3CD80C19EED00C4FC19129004"
+               BlueprintIdentifier = "6A8C8739E3605CC163D8CD7FF5C0472D"
                BlueprintName = "Pods-eBlink-tvOS"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-eBlink-tvOS.a">

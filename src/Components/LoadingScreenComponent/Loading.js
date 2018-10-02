@@ -20,7 +20,6 @@ class Loading extends React.Component {
         this.props.dispatch(action)
 
 
-
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
                 // user is authentificated
@@ -236,6 +235,7 @@ class Loading extends React.Component {
     }
 
     render() {
+        console.log('TEST TEST TEST TEST')
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>eBlink</Text>

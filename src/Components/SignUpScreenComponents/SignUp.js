@@ -6,8 +6,9 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import LinearGradient from 'react-native-linear-gradient'
-import { signUpToFirebase } from '../../Services/firebaseFunctions'
+import { signUpToFirebase, fetchContacts } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
+
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -31,7 +32,10 @@ class SignUp extends React.Component {
             this.setState({ errorMessage: strings('sign_up_screen.sign_up.psswd_not_filled') })
         } else {
             signUpToFirebase(this.state.email, this.state.password)
-                .then(() => this.props.navigation.navigate('GetDisplayName'))
+                .then(() => {
+                    this.props.dispatch(fetchContacts(user.displayName))
+                    this.props.navigation.navigate('GetDisplayName')
+                })
                 .catch((error) => {
                     this.setState({ errorMessage: error })
                 })
