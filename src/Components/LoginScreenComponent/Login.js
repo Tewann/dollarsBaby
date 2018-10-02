@@ -7,6 +7,8 @@ import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
 import { strings } from '../../i18n'
+import { fetchContacts } from '../../Services/firebaseFunctions'
+
 
 class Login extends React.Component {
     constructor(props) {
@@ -22,7 +24,10 @@ class Login extends React.Component {
         firebase
             .auth()
             .signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() => this.props.navigation.navigate('MainStackNavigator'))
+            .then(() => {
+                this.props.dispatch(fetchContacts(user.displayName))
+                this.props.navigation.navigate('MainStackNavigator')
+            })
             .catch(error => {
                 this.setState({ errorMessage: error.message })           
             })
