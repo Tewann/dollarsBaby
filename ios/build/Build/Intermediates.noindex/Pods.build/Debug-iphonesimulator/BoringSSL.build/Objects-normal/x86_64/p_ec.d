@@ -1,0 +1,31 @@
+dependencies: \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/evp/p_ec.c \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Target\ Support\ Files/BoringSSL/BoringSSL-prefix.pch \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/evp.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/base.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/is_boringssl.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/opensslconf.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/thread.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/aead.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/base64.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/cipher.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/digest.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/nid.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/bn.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/buf.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/ec.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/ec_key.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/engine.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/ex_data.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/stack.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/type_check.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/ecdh.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/ecdsa.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/err.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/mem.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/evp/internal.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/rsa.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/evp/../fipsmodule/ec/internal.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/evp/../fipsmodule/ec/../bn/internal.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/evp/../fipsmodule/ec/../bn/../../internal.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/evp/../internal.h

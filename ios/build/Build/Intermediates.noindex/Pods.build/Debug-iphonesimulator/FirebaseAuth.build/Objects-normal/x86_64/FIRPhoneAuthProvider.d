@@ -1,0 +1,36 @@
+dependencies: \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/Phone/FIRPhoneAuthProvider.m \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthProvider.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/FirebaseCore/FIRLogger.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/FirebaseCore/FIRLoggerLevel.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/Phone/FIRPhoneAuthCredential_Internal.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthCredential.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthCredential.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/FirebaseCore/FIRApp.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAPNSToken.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthAPNSTokenType.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAPNSTokenManager.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAppCredential.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthAppCredentialManager.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthGlobalWorkQueue.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuth_Internal.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuth.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthErrors.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthURLPresenter.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthNotificationManager.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthErrorUtils.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthBackend.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthSettings.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthWebUtils.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FirebaseAuthVersion.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/FirebaseCore/FIROptions.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetProjectConfigRequest.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRIdentityToolkitRequest.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRequestConfiguration.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCRequest.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetProjectConfigResponse.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCResponse.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSendVerificationCodeRequest.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSendVerificationCodeResponse.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyClientRequest.h \
+  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyClientResponse.h

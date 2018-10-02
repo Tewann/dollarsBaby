@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>3529DD9A-1A90-42BB-8AE4-1B6DD1C628AF</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>3529DD9A-1A90-42BB-8AE4-1B6DD1C628AF.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>eBlink project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>eBlink</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>559765430.86534095</real>
+			<key>timeStoppedRecording</key>
+			<real>559765433.94935203</real>
+			<key>title</key>
+			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>3529DD9A-1A90-42BB-8AE4-1B6DD1C628AF</string>
+		</dict>
+		<key>F08529CA-71D2-4953-9994-AE5796A35F1C</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>F08529CA-71D2-4953-9994-AE5796A35F1C.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>eBlink project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>eBlink</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>559765236.60307705</real>
+			<key>timeStoppedRecording</key>
+			<real>559765250.82518697</real>
+			<key>title</key>
+			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>F08529CA-71D2-4953-9994-AE5796A35F1C</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
