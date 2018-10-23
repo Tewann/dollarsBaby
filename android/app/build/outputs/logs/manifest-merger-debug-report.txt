@@ -4,16 +4,16 @@ ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\Andro
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
+MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:react-native-i18n] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [:react-native-vector-icons] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\a0b6374751ac2350ce6ee64e9c37b4ff\AndroidManifest.xml:17:1-22:12
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-47:12
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\064ba7709d3ea9b25d6237fda53c72c8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.react:react-native:0.57.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.57.0.aar\606763e7e9e7397bfe69324ded4220fa\AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\58352e03797d59d70bbaecbc07d59256\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\09b33bcdcbc484a065066245641a1f38\AndroidManifest.xml:17:1-38:12
 MERGED from [com.google.firebase:firebase-functions:16.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-functions-16.0.1.aar\1150d9972bd1f484c9192804f5f48fc5\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-flags:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-flags-15.0.1.aar\4dbee89e14859f8a24c08e0ad788a30b\AndroidManifest.xml:17:1-22:12
@@ -42,25 +42,29 @@ MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\Tewann\.
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-stats-15.0.1.aar\494775cf45c1feaefdd07c72a3578ea9\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:17:1-31:12
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\f403ce140b2df63561b66d3f210b1bcd\AndroidManifest.xml:10:1-18:12
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\fb14c1d8f6d11c2a483b4b032db1d1d1\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\498f54ed5630de964c6d011e64e4933f\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\cf37b390b3f41d1cd85fee7d2b295c08\AndroidManifest.xml:1:1-4:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\d8a74ca32bf06b20812ca99b97c3740a\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\c062dc4a4e5c322cd7dcd77d491ee274\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\749b12f25adb9bc7ed3c81779917a923\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\eecbccb6f6169281a1a79b077308e439\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\49a4ac21d1a662a12357499e482081e5\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\baae3ecdbf3395dbbc003abd5e238de1\AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\69873b7c5a9add071495d0f7a949b470\AndroidManifest.xml:1:1-3:12
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\8b10d22a1b8f4cb3125a3e0e69e8d4b9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\345ab92e4cb86033d948dc9e1d22e1b1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\384ee7fe083bd279d0a57d3aa42bec20\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\617572849c2adc3db3b4984cc8fe2c43\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:17:1-31:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:17:1-30:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2062198a21e5fce371b8122151878d76\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\abdbc7a778001e5f75c5b32839dae035\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7d6d948e8d217f0bca91b3a01b0d637\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\99bec9b11d27db344c5071cc457867c7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a0afcb57e5c3d9817f667567cde3a7d7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\62184021537020fc3f18f06063c40cbe\AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\8e13e861675c7f1bbaba9f0f4293795f\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\9e91916facbcf997281070d2fa4ea934\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\13273a464ce3527754cf525aa34dafa8\AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\63c6397c4e100ffd656a276271397aa8\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\8f71346514a601a98403c210a1cc4aaa\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\42bbfe77ff1244251f34b0e316d2bbe1\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\7cdf4d659f18aa6c1b2e7c17f58d10e9\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\564c04d7f91dd90aeef94ec78441c0e9\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\5fde8f5da836772354b314bba7bbf9e5\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\f98cd98d8ba7054d9fc01423ae256442\AndroidManifest.xml:17:1-22:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12
@@ -106,8 +110,8 @@ MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_mod
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:4:20-76
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:5:3-75
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.57.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.57.0.aar\606763e7e9e7397bfe69324ded4220fa\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.57.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.57.0.aar\606763e7e9e7397bfe69324ded4220fa\AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:5:20-73
 uses-permission#android.permission.CAMERA
@@ -130,10 +134,8 @@ MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBl
 MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:35:5-45:19
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:35:5-45:19
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\064ba7709d3ea9b25d6237fda53c72c8\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\064ba7709d3ea9b25d6237fda53c72c8\AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.react:react-native:0.57.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.57.0.aar\606763e7e9e7397bfe69324ded4220fa\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.57.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.57.0.aar\606763e7e9e7397bfe69324ded4220fa\AndroidManifest.xml:13:5-20
 MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\09b33bcdcbc484a065066245641a1f38\AndroidManifest.xml:22:5-36:19
 MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\09b33bcdcbc484a065066245641a1f38\AndroidManifest.xml:22:5-36:19
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.0.aar\c6556e54828ad984b40773cbd94e9b5c\AndroidManifest.xml:7:5-8:19
@@ -176,24 +178,14 @@ MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewa
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:25:5-29:19
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\cf37b390b3f41d1cd85fee7d2b295c08\AndroidManifest.xml:3:3-17
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\cf37b390b3f41d1cd85fee7d2b295c08\AndroidManifest.xml:3:3-17
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\baae3ecdbf3395dbbc003abd5e238de1\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\baae3ecdbf3395dbbc003abd5e238de1\AndroidManifest.xml:11:5-20
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\69873b7c5a9add071495d0f7a949b470\AndroidManifest.xml:2:3-17
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\69873b7c5a9add071495d0f7a949b470\AndroidManifest.xml:2:3-17
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\384ee7fe083bd279d0a57d3aa42bec20\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\384ee7fe083bd279d0a57d3aa42bec20\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\617572849c2adc3db3b4984cc8fe2c43\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\617572849c2adc3db3b4984cc8fe2c43\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:25:5-29:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:24:5-28:19
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\42bbfe77ff1244251f34b0e316d2bbe1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\42bbfe77ff1244251f34b0e316d2bbe1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\5fde8f5da836772354b314bba7bbf9e5\AndroidManifest.xml:22:5-20
@@ -268,6 +260,8 @@ uses-sdk
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-code-push] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-code-push\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-i18n] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-i18n\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:5:5-7:41
@@ -276,18 +270,16 @@ MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBl
 MERGED from [:react-native-image-picker] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-image-picker\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-linear-gradient] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-linear-gradient\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-firebase] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\react-native-firebase\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\a0b6374751ac2350ce6ee64e9c37b4ff\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\a0b6374751ac2350ce6ee64e9c37b4ff\AndroidManifest.xml:20:5-43
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:rn-fetch-blob] C:\Users\Tewann\Desktop\Prog\theWay\eBlink\node_modules\rn-fetch-blob\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\5dba815a2fbd26276b7779e9fe66614e\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\064ba7709d3ea9b25d6237fda53c72c8\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.0.1.aar\064ba7709d3ea9b25d6237fda53c72c8\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.react:react-native:0.57.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.57.0.aar\606763e7e9e7397bfe69324ded4220fa\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.57.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\react-native-0.57.0.aar\606763e7e9e7397bfe69324ded4220fa\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\58352e03797d59d70bbaecbc07d59256\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\58352e03797d59d70bbaecbc07d59256\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\09b33bcdcbc484a065066245641a1f38\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth:16.0.2] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.2.aar\09b33bcdcbc484a065066245641a1f38\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-functions:16.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\firebase-functions-16.0.1.aar\1150d9972bd1f484c9192804f5f48fc5\AndroidManifest.xml:6:5-8:41
@@ -344,42 +336,50 @@ MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewa
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\6299d29c74c7273e50750b62b3898d34\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:21:5-23:54
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\f403ce140b2df63561b66d3f210b1bcd\AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\f403ce140b2df63561b66d3f210b1bcd\AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\fb14c1d8f6d11c2a483b4b032db1d1d1\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\fb14c1d8f6d11c2a483b4b032db1d1d1\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\498f54ed5630de964c6d011e64e4933f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\498f54ed5630de964c6d011e64e4933f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\cf37b390b3f41d1cd85fee7d2b295c08\AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\cf37b390b3f41d1cd85fee7d2b295c08\AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\d8a74ca32bf06b20812ca99b97c3740a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\d8a74ca32bf06b20812ca99b97c3740a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\c062dc4a4e5c322cd7dcd77d491ee274\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\c062dc4a4e5c322cd7dcd77d491ee274\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\749b12f25adb9bc7ed3c81779917a923\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\749b12f25adb9bc7ed3c81779917a923\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\eecbccb6f6169281a1a79b077308e439\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\eecbccb6f6169281a1a79b077308e439\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\49a4ac21d1a662a12357499e482081e5\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\49a4ac21d1a662a12357499e482081e5\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\baae3ecdbf3395dbbc003abd5e238de1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\baae3ecdbf3395dbbc003abd5e238de1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\8b10d22a1b8f4cb3125a3e0e69e8d4b9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\8b10d22a1b8f4cb3125a3e0e69e8d4b9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\345ab92e4cb86033d948dc9e1d22e1b1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\345ab92e4cb86033d948dc9e1d22e1b1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\384ee7fe083bd279d0a57d3aa42bec20\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\384ee7fe083bd279d0a57d3aa42bec20\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\617572849c2adc3db3b4984cc8fe2c43\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\617572849c2adc3db3b4984cc8fe2c43\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:21:5-23:58
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2062198a21e5fce371b8122151878d76\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\2062198a21e5fce371b8122151878d76\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\abdbc7a778001e5f75c5b32839dae035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\abdbc7a778001e5f75c5b32839dae035\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7d6d948e8d217f0bca91b3a01b0d637\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d7d6d948e8d217f0bca91b3a01b0d637\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\99bec9b11d27db344c5071cc457867c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\99bec9b11d27db344c5071cc457867c7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a0afcb57e5c3d9817f667567cde3a7d7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a0afcb57e5c3d9817f667567cde3a7d7\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\62184021537020fc3f18f06063c40cbe\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\62184021537020fc3f18f06063c40cbe\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\8e13e861675c7f1bbaba9f0f4293795f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\8e13e861675c7f1bbaba9f0f4293795f\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\9e91916facbcf997281070d2fa4ea934\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\9e91916facbcf997281070d2fa4ea934\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\13273a464ce3527754cf525aa34dafa8\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\13273a464ce3527754cf525aa34dafa8\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\63c6397c4e100ffd656a276271397aa8\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\63c6397c4e100ffd656a276271397aa8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\8f71346514a601a98403c210a1cc4aaa\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\8f71346514a601a98403c210a1cc4aaa\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\42bbfe77ff1244251f34b0e316d2bbe1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.0.aar\42bbfe77ff1244251f34b0e316d2bbe1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\7cdf4d659f18aa6c1b2e7c17f58d10e9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\7cdf4d659f18aa6c1b2e7c17f58d10e9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\564c04d7f91dd90aeef94ec78441c0e9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\564c04d7f91dd90aeef94ec78441c0e9\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\5fde8f5da836772354b314bba7bbf9e5\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\play-services-ads-base-15.0.1.aar\5fde8f5da836772354b314bba7bbf9e5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\f98cd98d8ba7054d9fc01423ae256442\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\f98cd98d8ba7054d9fc01423ae256442\AndroidManifest.xml:20:5-44
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
@@ -718,14 +718,6 @@ MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\cach
 MERGED from [com.android.support:customtabs:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\customtabs-26.1.0.aar\5ce16efdbcb452a798a78e35cac370c3\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\384ee7fe083bd279d0a57d3aa42bec20\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\384ee7fe083bd279d0a57d3aa42bec20\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\617572849c2adc3db3b4984cc8fe2c43\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\617572849c2adc3db3b4984cc8fe2c43\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\63af8fd21c9bab1bbf29d730ed09257e\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\0f7dc0c08eb042b2d7b4a3891c83bb74\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\5913cfb553359405769e0bed5ed4a085\AndroidManifest.xml:26:9-28:38
 	android:value
 		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a414f6b43489bb716621cc54740088b7\AndroidManifest.xml:28:13-35
 	android:name
@@ -734,9 +726,3 @@ uses-permission#android.permission.READ_PHONE_STATE
 IMPLIED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 IMPLIED from C:\Users\Tewann\Desktop\Prog\theWay\eBlink\android\app\src\main\AndroidManifest.xml:1:1-37:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
-meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:25:9-27:47
-	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:27:13-44
-	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Tewann\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\44f1724744402694e46df5c559190308\AndroidManifest.xml:26:13-58

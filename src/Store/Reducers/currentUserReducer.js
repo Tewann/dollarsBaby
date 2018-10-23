@@ -5,6 +5,7 @@ const initialState = {
     registrationToken: null,
     name: null,
     email: null,
+    termsOfServiceStatus: 'declined',
 }
 
 function getCurrentUserInformations(state = initialState, action) {
@@ -41,7 +42,21 @@ function getCurrentUserInformations(state = initialState, action) {
 
         case "RESET_USER":
             return initialState;
+        
+        case "TOS_ACCEPTED":
+            nextState = {
+                ...state,
+                termsOfServiceStatus: 'accepted'
+            }
+            return nextState || state
 
+        case "RESET_TOS":
+            nextState = {
+                ...state,
+                termsOfServiceStatus: 'declined'
+            }
+            return nextState || state
+            
         default:
             return state
     }

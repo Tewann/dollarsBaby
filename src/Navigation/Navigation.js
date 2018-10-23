@@ -11,6 +11,8 @@ import Login from '../Components/LoginScreenComponent/Login'
 import ForgottenPsswrd from '../Components/LoginScreenComponent/ForgottenPsswrd/ForgottenPsswrd'
 import ProfilScreen from '../Components/ProfilScreenComponents/ProfilScreen'
 import GetDisplayName from '../Components/SignUpScreenComponents/GetDisplayNameComponent/GetDisplayName'
+import TermsOfService from '../Components/TermsOfServiceScreen/TermsOfService'
+
 
 import React from 'react'
 import { Icon } from 'react-native-elements'
@@ -197,7 +199,8 @@ const MainSwitchNavigator = createSwitchNavigator(
         SignUp,
         Login,
         ForgottenPsswrd,
-        GetDisplayName
+        GetDisplayName,
+        TermsOfService
     },
     {
         initialRouteName: 'Loading'

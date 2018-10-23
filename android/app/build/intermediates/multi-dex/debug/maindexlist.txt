@@ -28,8 +28,10 @@ android/support/annotation/IntegerRes.class
 android/support/annotation/InterpolatorRes.class
 android/support/annotation/Keep.class
 android/support/annotation/LayoutRes.class
+android/support/annotation/LongDef.class
 android/support/annotation/MainThread.class
 android/support/annotation/MenuRes.class
+android/support/annotation/NavigationRes.class
 android/support/annotation/NonNull.class
 android/support/annotation/Nullable.class
 android/support/annotation/PluralsRes.class
@@ -52,6 +54,8 @@ android/support/annotation/VisibleForTesting.class
 android/support/annotation/WorkerThread.class
 android/support/annotation/XmlRes.class
 android/support/customtabs/CustomTabsService$Result.class
+android/support/design/widget/CoordinatorLayout$DefaultBehavior.class
+android/support/design/widget/CoordinatorLayout$DispatchChangeEvent.class
 android/support/multidex/MultiDex$V14$ElementConstructor.class
 android/support/multidex/MultiDex$V14$ICSElementConstructor.class
 android/support/multidex/MultiDex$V14$JBMR11ElementConstructor.class
@@ -70,7 +74,9 @@ android/support/v4/app/DialogFragment$DialogStyle.class
 android/support/v4/app/FragmentTransaction$Transit.class
 android/support/v4/app/FrameMetricsAggregator$MetricType.class
 android/support/v4/app/NotificationCompat$BadgeIconType.class
+android/support/v4/app/NotificationCompat$GroupAlertBehavior.class
 android/support/v4/app/NotificationCompat$NotificationVisibility.class
+android/support/v4/app/NotificationCompat$StreamType.class
 android/support/v4/app/ServiceCompat$StopForegroundFlags.class
 android/support/v4/content/PermissionChecker$PermissionResult.class
 android/support/v4/content/WakefulBroadcastReceiver.class
@@ -101,6 +107,7 @@ android/support/v4/provider/FontsContractCompat$FontFamilyResult$FontResultStatu
 android/support/v4/provider/FontsContractCompat$FontRequestCallback$FontRequestFailReason.class
 android/support/v4/text/util/LinkifyCompat$LinkifyMask.class
 android/support/v4/view/ViewCompat$AccessibilityLiveRegion.class
+android/support/v4/view/ViewCompat$AutofillImportance.class
 android/support/v4/view/ViewCompat$FocusDirection.class
 android/support/v4/view/ViewCompat$FocusRealDirection.class
 android/support/v4/view/ViewCompat$FocusRelativeDirection.class
@@ -120,7 +127,10 @@ android/support/v4/widget/DrawerLayout$State.class
 android/support/v4/widget/TextViewCompat$AutoSizeTextType.class
 android/support/v7/app/ActionBar$DisplayOptions.class
 android/support/v7/app/ActionBar$NavigationMode.class
+android/support/v7/app/AppCompatDelegate$ApplyableNightMode.class
+android/support/v7/app/AppCompatDelegate$NightMode.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable$ArrowDirection.class
+android/support/v7/view/menu/CascadingMenuPopup$HorizPosition.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
 com/AlexanderZaytsev/RNI18n/RNI18nPackage.class
@@ -129,14 +139,16 @@ com/RNFetchBlob/RNFetchBlobPackage.class
 com/eblink/BuildConfig.class
 com/eblink/MainApplication$1.class
 com/eblink/MainApplication.class
+com/facebook/cache/disk/DefaultDiskStorage$FileType.class
 com/facebook/common/internal/DoNotStrip.class
 com/facebook/common/internal/Objects.class
 com/facebook/common/internal/VisibleForTesting.class
 com/facebook/common/references/OOMSoftReference.class
-com/facebook/fbui/textlayoutbuilder/TextLayoutBuilder$MeasureMode.class
+com/facebook/drawee/backends/pipeline/info/ImageLoadStatus.class
+com/facebook/drawee/backends/pipeline/info/ImageOrigin.class
 com/facebook/imagepipeline/common/RotationOptions$RotationAngle.class
 com/facebook/imagepipeline/common/SourceUriType.class
-com/facebook/imagepipeline/request/MediaVariations$Source.class
+com/facebook/imagepipeline/producers/Consumer$Status.class
 com/facebook/infer/annotation/Assertions.class
 com/facebook/infer/annotation/Expensive.class
 com/facebook/infer/annotation/FalseOnNull.class
@@ -152,6 +164,7 @@ com/facebook/infer/annotation/PerformanceCritical.class
 com/facebook/infer/annotation/Present.class
 com/facebook/infer/annotation/PrivacySink.class
 com/facebook/infer/annotation/PrivacySource.class
+com/facebook/infer/annotation/PropagatesNullable.class
 com/facebook/infer/annotation/ReturnsOwnership.class
 com/facebook/infer/annotation/SuppressFieldNotInitialized.class
 com/facebook/infer/annotation/SuppressFieldNotNullable.class
@@ -161,6 +174,7 @@ com/facebook/infer/annotation/SuppressNullMethodCall.class
 com/facebook/infer/annotation/SuppressParameterNotNullable.class
 com/facebook/infer/annotation/SuppressReturnOverAnnotated.class
 com/facebook/infer/annotation/SuppressViewNullability.class
+com/facebook/infer/annotation/SynchronizedCollection.class
 com/facebook/infer/annotation/ThreadConfined.class
 com/facebook/infer/annotation/ThreadSafe.class
 com/facebook/infer/annotation/TrueOnNull.class
@@ -173,7 +187,7 @@ com/facebook/react/ReactInstanceManager.class
 com/facebook/react/ReactInstanceManagerBuilder.class
 com/facebook/react/ReactNativeHost.class
 com/facebook/react/ReactPackage.class
-com/facebook/react/bridge/JSIModulesProvider.class
+com/facebook/react/bridge/JSIModulePackage.class
 com/facebook/react/bridge/JavaScriptExecutorFactory.class
 com/facebook/react/bridge/ReactMarker.class
 com/facebook/react/bridge/ReactMarkerConstants.class
@@ -184,10 +198,11 @@ com/facebook/react/devsupport/RedBoxHandler.class
 com/facebook/react/module/annotations/ReactModule.class
 com/facebook/react/module/annotations/ReactModuleList.class
 com/facebook/react/shell/MainReactPackage.class
-com/facebook/react/uimanager/UIImplementationProvider.class
 com/facebook/react/uimanager/annotations/ReactProp.class
 com/facebook/react/uimanager/annotations/ReactPropGroup.class
 com/facebook/react/uimanager/annotations/ReactPropertyHolder.class
+com/facebook/react/uimanager/common/UIManagerType.class
+com/facebook/soloader/DoNotOptimize.class
 com/facebook/soloader/SoLoader.class
 com/facebook/widget/text/span/BetterImageSpan$BetterImageSpanAlignment.class
 com/google/ads/mediation/MediationServerParameters$Parameter.class
