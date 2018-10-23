@@ -9,13 +9,15 @@ import { Notification } from 'react-native-firebase'
 import { connect } from 'react-redux'
 import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
 import Store from '../../Store/configureStore'
-import { strings} from '../../i18n'
+import { strings } from '../../i18n'
 
 class Loading extends React.Component {
 
     componentDidMount = async () => {
-
-        // reset which screen to show for group screen (set group list)
+        //const resetTOS = { type: 'RESET_TOS'}
+        //this.props.dispatch(resetTOS)
+        
+        // reset screen to show for group screen (set group list)
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
 
@@ -82,13 +84,13 @@ class Loading extends React.Component {
                 // data from message
                 const contactName = message.data.contactName
                 const groupName = message.data.groupName
-        
+
                 // checking if group already exists in Store
                 const currentStore = Store.getState()
                 const groupList = currentStore.groupManagment.groupList
                 const groupNameIndex = groupList.findIndex(item =>
                     item.name === groupName)
-        
+
                 // if group does exists
                 // Reducer - Adding contact
                 if (groupNameIndex !== -1) {
@@ -102,38 +104,38 @@ class Loading extends React.Component {
                     // grabs group information from firestore
                     // add group and existings contacts
                     firebase
-                    .firestore()
-                    .collection('Private_Groups')
-                    .doc(groupName)
-                    .get()
-                    .then(doc => {
-                        // Group informations
-                        creator = doc.get('creator')
-                        photoURL = doc.get('photoURL')
-                        // Contact list
-                        let contacts = []
-                        let newId = 1
-                        firebase
-                            .firestore()
-                            .collection('Private_Groups')
-                            .doc(groupName)
-                            .collection('Members')
-                            .get()
-                            .then(members => {
-                                members.forEach(doc => {
-                                    const member = doc.data().name
-                                    let contactId = newId
-                                    const contact = { name: member, id: contactId }
-                                    contacts.push(contact)
-                                    newId++
+                        .firestore()
+                        .collection('Private_Groups')
+                        .doc(groupName)
+                        .get()
+                        .then(doc => {
+                            // Group informations
+                            creator = doc.get('creator')
+                            photoURL = doc.get('photoURL')
+                            // Contact list
+                            let contacts = []
+                            let newId = 1
+                            firebase
+                                .firestore()
+                                .collection('Private_Groups')
+                                .doc(groupName)
+                                .collection('Members')
+                                .get()
+                                .then(members => {
+                                    members.forEach(doc => {
+                                        const member = doc.data().name
+                                        let contactId = newId
+                                        const contact = { name: member, id: contactId }
+                                        contacts.push(contact)
+                                        newId++
+                                    })
+                                    const action = {
+                                        type: 'ADD_PRIVATE_GROUP',
+                                        value: { creator, photoURL, groupName, contacts }
+                                    }
+                                    this.props.dispatch(action)
                                 })
-                                const action = {
-                                    type: 'ADD_PRIVATE_GROUP',
-                                    value: { creator, photoURL, groupName, contacts }
-                                }
-                                this.props.dispatch(action)
-                            })
-                    })
+                        })
                 }
             } else {
                 const messageId = message.data.messageId
@@ -152,7 +154,11 @@ class Loading extends React.Component {
     }
 
     goToMainScreen(user) {
-        if (user.displayName === null) {
+        // Checks if Terms of service have been accepted
+        // If no : navigates to Screen
+        if (this.props.currentUser.termsOfServiceStatus === 'declined') {
+            this.props.navigation.navigate('TermsOfService')
+        } else if (user.displayName === null) {
             // deals with user is null error 
             // (example : app crashes when setting display name)
             this.props.navigation.navigate('GetDisplayName')
@@ -235,7 +241,6 @@ class Loading extends React.Component {
     }
 
     render() {
-        console.log('TEST TEST TEST TEST')
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>eBlink</Text>
