@@ -98,6 +98,7 @@
 		86C47CAE2156C2220092FA00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86C47C862156C2210092FA00 /* GoogleService-Info.plist */; };
 		86C47CAF2156C2220092FA00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86C47C862156C2210092FA00 /* GoogleService-Info.plist */; };
 		86C47CB02156C2220092FA00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86C47C862156C2210092FA00 /* GoogleService-Info.plist */; };
+		86CDEDC52185BD5F003B8FF7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CDED962185BD5F003B8FF7 /* UserNotifications.framework */; };
 		86EC4DDA21612BCB004E45F7 /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EC4DD721612BA4004E45F7 /* libRNI18n.a */; };
 		9023D510CCC54CCCB72FC230 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BBD62A3719F4A4F859FB50F /* FontAwesome.ttf */; };
 		9A3E4BBC6AF5466883CB0EAE /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5497F821BBE84CDEBC335E16 /* MaterialIcons.ttf */; };
@@ -491,6 +492,7 @@
 		862523872161304E0036B74F /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		862FE3D32157D839001590E3 /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
 		862FE4042157D8A6001590E3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		864F7E13216A0FF7005FB1BB /* eBlink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = eBlink.entitlements; path = eBlink/eBlink.entitlements; sourceTree = "<group>"; };
 		8658BACB21612DD90072DC73 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		865F5923215FDF83001B7173 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		866DD2032156B84F002AD440 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 		86A57D0321614C14003D010A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		86A57D0421614C14003D010A /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		86C47C862156C2210092FA00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "eBlink/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		86CDED962185BD5F003B8FF7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		86EC4DA621612BA3004E45F7 /* RNI18n.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/ios/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		931D8635C0E44B9157FA1EB6 /* libPods-eBlink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eBlink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5842B219B2C4C74E47CEE6 /* Pods-eBlink-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eBlink-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eBlink-tvOSTests/Pods-eBlink-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -536,6 +539,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86CDEDC52185BD5F003B8FF7 /* UserNotifications.framework in Frameworks */,
 				862523BA2161309A0036B74F /* libRNImagePicker.a in Frameworks */,
 				86EC4DDA21612BCB004E45F7 /* libRNI18n.a in Frameworks */,
 				862FE4052157D8A6001590E3 /* libz.tbd in Frameworks */,
@@ -670,6 +674,7 @@
 		13B07FAE1A68108700A75B9A /* eBlink */ = {
 			isa = PBXGroup;
 			children = (
+				864F7E13216A0FF7005FB1BB /* eBlink.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				86C47C862156C2210092FA00 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -708,6 +713,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86CDED962185BD5F003B8FF7 /* UserNotifications.framework */,
 				862FE4042157D8A6001590E3 /* libz.tbd */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				931D8635C0E44B9157FA1EB6 /* libPods-eBlink.a */,
@@ -1010,17 +1016,23 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = SK56CZ3L77;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = SK56CZ3L77;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = SK56CZ3L77;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
@@ -1753,6 +1765,7 @@
 			baseConfigurationReference = 51649115B03CDA0AF074A410 /* Pods-eBlinkTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = SK56CZ3L77;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1784,6 +1797,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = SK56CZ3L77;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
@@ -1810,8 +1824,10 @@
 			baseConfigurationReference = CEFA690443F548462E04E2D3 /* Pods-eBlink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = eBlink/eBlink.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = SK56CZ3L77;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
@@ -1838,7 +1854,9 @@
 			baseConfigurationReference = DB4B41D3794365343F81FE9C /* Pods-eBlink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = eBlink/eBlink.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SK56CZ3L77;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
@@ -1871,6 +1889,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SK56CZ3L77;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
@@ -1908,6 +1927,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SK56CZ3L77;
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

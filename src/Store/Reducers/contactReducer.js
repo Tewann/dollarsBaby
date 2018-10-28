@@ -11,7 +11,7 @@ export const contactManagment = (state = initialState, action) => {
     switch (action.type) {     
 
         case 'CONTACT_LIST_UPDATED':
-            const databaseContactName = action.value.get('name')
+            const databaseContactName = action.value.get('UserName')
             const databasephotoName = action.value.get('photoName')
             const databasephotoUrl = action.value.get('photoUrl')
             const contactNameIndex = state.contactList.findIndex(item => item.name === databaseContactName)

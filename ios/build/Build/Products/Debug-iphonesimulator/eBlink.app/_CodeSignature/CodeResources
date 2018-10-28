@@ -4,9 +4,57 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AppIcon20x20@2x.png</key>
+		<data>
+		tBPilRaTCKo1kvjnFwnCFObjYd0=
+		</data>
+		<key>AppIcon20x20@3x.png</key>
+		<data>
+		ZPAkTDv4Nzj37dVbGtX3xRyewVc=
+		</data>
+		<key>AppIcon29x29.png</key>
+		<data>
+		vf1uDSdVJXepwADsu8OGa3KNIu0=
+		</data>
+		<key>AppIcon29x29@2x.png</key>
+		<data>
+		+iUHfwtbkW27cLBnvomUM9h/b+8=
+		</data>
+		<key>AppIcon29x29@3x.png</key>
+		<data>
+		K0Ih+WCBdnvTCcYBUwFvUaSp61g=
+		</data>
+		<key>AppIcon40x40@2x.png</key>
+		<data>
+		qvb9ARegQCdNn2KfPUIl0s+fAl0=
+		</data>
+		<key>AppIcon40x40@3x.png</key>
+		<data>
+		T2OIyEginxb87rVefIDRrOHpQhc=
+		</data>
+		<key>AppIcon57x57.png</key>
+		<data>
+		YKAKo1DGevjwjEOz5zm1g3yYUwY=
+		</data>
+		<key>AppIcon57x57@2x.png</key>
+		<data>
+		JG9Tq23rC7aLW9nAulCWgWLScSk=
+		</data>
+		<key>AppIcon60x60@2x.png</key>
+		<data>
+		T2OIyEginxb87rVefIDRrOHpQhc=
+		</data>
+		<key>AppIcon60x60@3x.png</key>
+		<data>
+		FnqikBsK+X9hoSp9L6kzfLGUDy0=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		0v63lMN+xPVaa++SmLIFeEKR+nk=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		rT6C1oozpL+zasGPIN+z4FdzSmI=
+		2Cfv+xtBrYSRXnhI7uYnUCgg/Qg=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -63,7 +111,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7GteJluTPSiLgm/aiMcf7o3ov/E=
+		61/1feAkyH4t4yTqwGjuB8U2RV8=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -91,7 +139,7 @@
 		</data>
 		<key>PlugIns/eBlinkTests.xctest.dSYM/Contents/Resources/DWARF/eBlinkTests</key>
 		<data>
-		WE3RKNkmC3OV645nPh+QpOXJ0/M=
+		kktIZziazbFlim6gGEb92HhamAw=
 		</data>
 		<key>PlugIns/eBlinkTests.xctest/Entypo.ttf</key>
 		<data>
@@ -151,7 +199,7 @@
 		</data>
 		<key>PlugIns/eBlinkTests.xctest/eBlinkTests</key>
 		<data>
-		dJvwwZYQ2Q93Aa8NWEWy5HLh6Dc=
+		mOu7TnzdiywWdKDEKqSZQLxrIlM=
 		</data>
 		<key>SimpleLineIcons.ttf</key>
 		<data>
@@ -181,15 +229,147 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AppIcon20x20@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			tBPilRaTCKo1kvjnFwnCFObjYd0=
+			</data>
+			<key>hash2</key>
+			<data>
+			gGFz67VfBF0N0a1YmNJgKTIslU9M1Ck+bfX+fFmbq+g=
+			</data>
+		</dict>
+		<key>AppIcon20x20@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZPAkTDv4Nzj37dVbGtX3xRyewVc=
+			</data>
+			<key>hash2</key>
+			<data>
+			sNvwpVx+Rhc0JnSf4v0uSAoxTx1g/N8fQX1zzTq+G9U=
+			</data>
+		</dict>
+		<key>AppIcon29x29.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vf1uDSdVJXepwADsu8OGa3KNIu0=
+			</data>
+			<key>hash2</key>
+			<data>
+			ssVPwOgfw8W+RECQbyCNo/rF5aPGkrlNEngw/nlopb0=
+			</data>
+		</dict>
+		<key>AppIcon29x29@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+iUHfwtbkW27cLBnvomUM9h/b+8=
+			</data>
+			<key>hash2</key>
+			<data>
+			ERgk1ffQ5xYgjVuh84pa7wD3voH1JsNt655yGbYrUAA=
+			</data>
+		</dict>
+		<key>AppIcon29x29@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K0Ih+WCBdnvTCcYBUwFvUaSp61g=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ng2lixrNbMEdAjUy4XiU1GEEzzFMrQJ/NjNnBOOLWRQ=
+			</data>
+		</dict>
+		<key>AppIcon40x40@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qvb9ARegQCdNn2KfPUIl0s+fAl0=
+			</data>
+			<key>hash2</key>
+			<data>
+			AJH6KuK9L1nN+sPfr0Wqmrf4p364mqyZadC6msckXGE=
+			</data>
+		</dict>
+		<key>AppIcon40x40@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			T2OIyEginxb87rVefIDRrOHpQhc=
+			</data>
+			<key>hash2</key>
+			<data>
+			Jjjo8J6ecjIRun5qxPeaolDoPYdCLXBGx1jsCept9TU=
+			</data>
+		</dict>
+		<key>AppIcon57x57.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YKAKo1DGevjwjEOz5zm1g3yYUwY=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZC2ZT6KMDYKh1aGPFC/fMsw8skJOTsBu0LXWYWg8bYk=
+			</data>
+		</dict>
+		<key>AppIcon57x57@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JG9Tq23rC7aLW9nAulCWgWLScSk=
+			</data>
+			<key>hash2</key>
+			<data>
+			k7Zi/y8Z0Uz8tBY8EG7gSl6SQtKgcCHeF1GUItTG5Iw=
+			</data>
+		</dict>
+		<key>AppIcon60x60@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			T2OIyEginxb87rVefIDRrOHpQhc=
+			</data>
+			<key>hash2</key>
+			<data>
+			Jjjo8J6ecjIRun5qxPeaolDoPYdCLXBGx1jsCept9TU=
+			</data>
+		</dict>
+		<key>AppIcon60x60@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FnqikBsK+X9hoSp9L6kzfLGUDy0=
+			</data>
+			<key>hash2</key>
+			<data>
+			aDH41SRfygefIt9wZhTsvbIxd84EE7sL09QolNcq1iA=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0v63lMN+xPVaa++SmLIFeEKR+nk=
+			</data>
+			<key>hash2</key>
+			<data>
+			ei6YPguQMGuOvEvdgog2g1N29UvkHKCjB4DAj8Uw6jk=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rT6C1oozpL+zasGPIN+z4FdzSmI=
+			2Cfv+xtBrYSRXnhI7uYnUCgg/Qg=
 			</data>
 			<key>hash2</key>
 			<data>
-			vy8TdYBuozbVOnPECxDA8GtkZRFfj5FukqGPkacUkFE=
+			GH3SmFZCDfJEgtQzaNHi1EjBuIRmc8fhN+EA3mo4lUA=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -385,11 +565,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WE3RKNkmC3OV645nPh+QpOXJ0/M=
+			kktIZziazbFlim6gGEb92HhamAw=
 			</data>
 			<key>hash2</key>
 			<data>
-			yCiHabx3HKB2SrrJOCcRCqR/5ej65+c54Y2igrmKn5Y=
+			okvkBXJeDSaPxnsNaKAHIkNr1T+hgRa4eDTl/1blUns=
 			</data>
 		</dict>
 		<key>PlugIns/eBlinkTests.xctest/Entypo.ttf</key>
@@ -550,11 +730,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dJvwwZYQ2Q93Aa8NWEWy5HLh6Dc=
+			mOu7TnzdiywWdKDEKqSZQLxrIlM=
 			</data>
 			<key>hash2</key>
 			<data>
-			mjuzZzmMTlDwjTiXapzjwr+og7+S6/mJoKJgoFvvUfc=
+			gWPcz0lmAUyAHD6G1p5srg2n1XGLwE+oCglenL6aW20=
 			</data>
 		</dict>
 		<key>SimpleLineIcons.ttf</key>

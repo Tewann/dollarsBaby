@@ -11,6 +11,8 @@ import { strings } from '../../../../i18n'
 class AcceptOrDecline extends React.Component {
 
     _acceptContactRequest = async () => {
+        console.log('accept or decline')
+        console.log(this.props.message.contact)
         // adds contact to both users contact lists
         const addContactToDatabase = await addContactToFirestore(this.props.currentUser.name, this.props.message.contact)
 

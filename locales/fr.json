@@ -92,7 +92,7 @@
         "change_profil_image": {
             "save": "Enregistrer",
             "cancel": "Annuler",
-            "load_image": "Charger une photo de profil",
+            "load_image": "Ajouter une photo de profil",
             "error": "Erreur",
             "image_shared": "L'image a été partagée",
             "library": "Galerie",
@@ -162,7 +162,7 @@
                 "publicity": "Publicités",
                 "publicity_message_1": "Les publicités nous permettent de financer les coûts liés à la maintenance de l'application.",
                 "publicity_message_2": "Elles nous permettent également de vous proposer l'application gratuitement.",
-                "publicity_message_3": "Nous faisons tous nous efforts pour qu'elles ne gênent pas votre utilisation.",
+                "publicity_message_3": "Nous faisons nos meilleurs efforts pour qu'elles ne gênent pas votre utilisation.",
                 "publicity_message_4": "Nous vous remercions par avance pour votre  compréhension.",
                 "continue": "Continuer"
             },

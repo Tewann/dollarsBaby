@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>2A6FB147-BBC0-4512-BA0A-9842A29ABD65</key>
+		<key>3AB88A44-45A8-483F-BC4B-018BFE0BC375</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,9 +15,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>2A6FB147-BBC0-4512-BA0A-9842A29ABD65.xcactivitylog</string>
+			<string>3AB88A44-45A8-483F-BC4B-018BFE0BC375.xcactivitylog</string>
 			<key>highLevelStatus</key>
-			<string>W</string>
+			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
 			<string>eBlink project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -27,13 +27,13 @@
 			<key>signature</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>560027997.76195502</real>
+			<real>562412144.22249198</real>
 			<key>timeStoppedRecording</key>
-			<real>560028005.15190899</real>
+			<real>562412166.72273397</real>
 			<key>title</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>2A6FB147-BBC0-4512-BA0A-9842A29ABD65</string>
+			<string>3AB88A44-45A8-483F-BC4B-018BFE0BC375</string>
 		</dict>
 	</dict>
 </dict>

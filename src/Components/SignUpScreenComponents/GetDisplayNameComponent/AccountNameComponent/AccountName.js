@@ -6,8 +6,9 @@ import { View, TextInput, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import { createUserInDatabase, loginToFirebase } from '../../../../Services/firebaseFunctions'
+import { createUserInDatabase, loginToFirebase, setUpRegistrationTokenToFirebase } from '../../../../Services/firebaseFunctions'
 import firebase from 'react-native-firebase';
+import Store from '../../../../Store/configureStore'
 
 import { strings } from '../../../../i18n'
 
@@ -34,6 +35,21 @@ class AccountName extends React.Component {
         this.setState({ confirmNameInput: text })
     }
 
+    getToken = async(username) => {
+        console.log('token')
+        const fcmToken = await firebase.messaging().getToken()
+            if (fcmToken) {
+                // calls firebase service function
+                // store token in database
+                // store token in redux store
+                setUpRegistrationTokenToFirebase(fcmToken, username)
+                const action = { type: 'TOKEN_MODIFICATION', value: fcmToken }
+                Store.props.dispatch(action)
+            } else {
+                console.log('user doesnt have a token yet')
+            }
+    }
+
     // Check if empty text input
     // Check if text input matches
     // else call firebase function and create user in database
@@ -45,6 +61,7 @@ class AccountName extends React.Component {
         } else {
             createUserInDatabase(this.state.nameInput)
                 .then(() => {
+                    this.getToken(this.state.nameInput)
                     // getting props GetDisplayName Component
                     this.props.goToProfilPicture()
                 })

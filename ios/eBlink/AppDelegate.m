@@ -15,12 +15,14 @@
 #import "RNFirebaseNotifications.h"
 #import "RNFirebaseMessaging.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [FIRApp configure];
   [RNFirebaseNotifications configure];
+  
   NSURL *jsCodeLocation;
 
   
@@ -41,6 +43,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
   return YES;
 }
 

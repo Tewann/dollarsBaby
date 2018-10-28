@@ -16,7 +16,10 @@ class Loading extends React.Component {
     componentDidMount = async () => {
         //const resetTOS = { type: 'RESET_TOS'}
         //this.props.dispatch(resetTOS)
-        
+        //const resetContacts = { type: 'RESET_CONTACT'}
+        //this.props.dispatch(resetContacts)
+        //const resetCurrentUser = { type: 'RESET_USER'}
+        //this.props.dispatch(resetCurrentUser)
         // reset screen to show for group screen (set group list)
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
@@ -28,6 +31,13 @@ class Loading extends React.Component {
                 const username = user.displayName
                 const checkingPermission = await this.checkingNotificationsPermissions(user)
                 const checkingCurrentToken = await this.checkingCurrentRegistrationToken(username)
+                if (user.displayName != this.props.currentUser.name) {
+                    const userInformations = await getUserDataForLoginScreen()
+            const action = { type: "SET_CURRENT_USER_NAME", value: userInformations.userName }
+            this.props.dispatch(action)
+            const action2 = { type: "SET_CURRENT_USER_EMAIL", value: userInformations.userEmail }
+            this.props.dispatch(action2)
+                }
                 this.goToMainScreen(user)
             } else {
                 // there no user connected
@@ -54,6 +64,7 @@ class Loading extends React.Component {
         // When new notification received, displays it
         //*
         this.notificationListener = firebase.notifications().onNotification((notification) => {
+            console.log('loading - notification trigger')
             // Process your notification as required
             const notif = new firebase.notifications.Notification()
                 .setNotificationId(notification.notificationId)
@@ -69,6 +80,7 @@ class Loading extends React.Component {
         // Listener for data message only
         //*
         this.messageListener = firebase.messaging().onMessage((message) => {
+            console.log('loading - data message trigger')
             // If FCM data.type is group photo updated
             // Calls GROUP_PHOTO_UPDATED reducer
             if (message.data.type === 'GROUP_PHOTO_UPDATED') {
@@ -232,7 +244,6 @@ class Loading extends React.Component {
                 setUpRegistrationTokenToFirebase(fcmToken, username)
                 const action = { type: 'TOKEN_MODIFICATION', value: fcmToken }
                 this.props.dispatch(action)
-
             } else {
                 console.log('user doesnt have a token yet')
             }

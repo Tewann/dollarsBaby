@@ -10,6 +10,7 @@ import { signUpToFirebase, fetchContacts } from '../../Services/firebaseFunction
 import { strings } from '../../i18n'
 
 
+
 class SignUp extends React.Component {
     constructor(props) {
         super(props)
@@ -33,7 +34,6 @@ class SignUp extends React.Component {
         } else {
             signUpToFirebase(this.state.email, this.state.password)
                 .then(() => {
-                    this.props.dispatch(fetchContacts(user.displayName))
                     this.props.navigation.navigate('GetDisplayName')
                 })
                 .catch((error) => {
@@ -51,7 +51,8 @@ class SignUp extends React.Component {
     _getConfirmationPassword = (text) => {
         this.setState({ confirmPassword: text })
     }
-    render() {
+
+        render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>{strings('sign_up_screen.sign_up.create_account')}</Text>
