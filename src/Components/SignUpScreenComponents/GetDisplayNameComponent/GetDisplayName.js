@@ -32,7 +32,7 @@ class GetDisplayName extends React.Component {
         this.setState({ display: 'AdMessage' })
     }
     _goToMainScreen = () => {
-        this.props.navigation.navigate('DrawerStack')
+        this.props.navigation.navigate('Loading')
     }
 
 
