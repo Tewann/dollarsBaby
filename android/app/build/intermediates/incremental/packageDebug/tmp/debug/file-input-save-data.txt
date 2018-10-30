@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Oct 30 21:36:09 CET 2018
+#Tue Oct 30 21:49:51 CET 2018
 5.base=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\eBlink\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 22.path=fonts/SimpleLineIcons.ttf
 32.set=NATIVE_RESOURCE
