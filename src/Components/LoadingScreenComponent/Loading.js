@@ -20,6 +20,8 @@ class Loading extends React.Component {
         //this.props.dispatch(resetContacts)
         //const resetCurrentUser = { type: 'RESET_USER'}
         //this.props.dispatch(resetCurrentUser)
+        //const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY'}
+        //this.props.dispatch(resetMessageHistory)
         // reset screen to show for group screen (set group list)
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
