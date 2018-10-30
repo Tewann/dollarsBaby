@@ -275,7 +275,7 @@ export const createUserInDatabase = async (username) => {
 // function exported to ProfilScreen
 // upload image to firebase storage
 export const uploadImage = async (uri) => {
-    const signIn = await loginToFirebase();
+    //const signIn = await loginToFirebase();
     const { userUid, userEmail, userName } = await getUserData();
     const { downloadURL, imageName } = await uploadImageToFirebase(uri, userName);
     const setDlLinkToProfil = await setImgDlLinkToFirebaseAccount(downloadURL);
@@ -286,7 +286,7 @@ export const uploadImage = async (uri) => {
 // function exported to profil screen
 // grab user data
 export const getUserDataForLoginScreen = async () => {
-    const signIn = await loginToFirebase();
+    //const signIn = await loginToFirebase();
     const { userUid, userEmail, userName } = await getUserData();
     return ({ userEmail, userName })
 }

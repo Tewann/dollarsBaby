@@ -58,7 +58,7 @@ class HeaderContactList extends React.Component {
                     const predefined_message = strings('contacts_screen.header_contact_list.predefined_message_contact_request')
                     const additional_message = ""
                     const type = 'contact_request'
-                    const sound = '1 - Blink'
+                    const sound = 's1Blink'
                     const sendingRequest = await sendMessageToFirestore(currentUser, contact, predefined_message, additional_message, timeStamp, id, type, sound)
                         .then(() => {
                             // if firebase function worked, update redux store
