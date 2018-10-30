@@ -2987,7 +2987,7 @@ public final class R {
     public static final int ic_launcher=0x7f0a0000;
   }
   public static final class raw {
-    public static final int blink=0x7f0b0000;
+    public static final int s1blink=0x7f0b0000;
     public static final int urgent=0x7f0b0001;
   }
   public static final class string {

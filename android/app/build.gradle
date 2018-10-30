@@ -139,13 +139,13 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-linear-gradient')
-    compile project(':react-native-code-push')
-    compile project(':react-native-i18n')
+    implementation project(':react-native-linear-gradient')
+    implementation project(':react-native-code-push')
+    implementation project(':react-native-i18n')
     implementation project(':rn-fetch-blob')
-    compile project(':react-native-image-picker')
-    compile project(':react-native-vector-icons')
-    compile(project(':react-native-firebase')) {
+    implementation project(':react-native-image-picker')
+    implementation project(':react-native-vector-icons')
+    implementation(project(':react-native-firebase')) {
         transitive = false
     }
     implementation(project(':react-native-firebase')) {
@@ -155,7 +155,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:23.0.1"
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation "com.google.android.gms:play-services-base:15.0.1"
-    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation "com.google.firebase:firebase-auth:16.0.2"
     implementation "com.google.firebase:firebase-firestore:17.0.2"
     implementation "com.google.firebase:firebase-storage:15.0.2"
@@ -175,3 +175,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
 
 apply plugin: 'com.google.gms.google-services'
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+// error The library com.google.firebase:firebase-iid is being requested by various other libraries at [[16.2.0,16.2.0]], but resolves to 17.0.2. Disable the plugin and check your dependencies tree using ./gradlew :app:dependencies.
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

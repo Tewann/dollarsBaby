@@ -878,7 +878,7 @@ int layout select_dialog_multichoice_material 0x7f090031
 int layout select_dialog_singlechoice_material 0x7f090032
 int layout support_simple_spinner_dropdown_item 0x7f090033
 int mipmap ic_launcher 0x7f0a0000
-int raw blink 0x7f0b0000
+int raw s1blink 0x7f0b0000
 int raw urgent 0x7f0b0001
 int string CODE_PUSH_APK_BUILD_TIME 0x7f0c0000
 int string abc_action_bar_home_description 0x7f0c0001
