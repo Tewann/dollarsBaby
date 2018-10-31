@@ -18,7 +18,4 @@ yarn-error.log*
 
 # Firebase
 ios/eBlink/GoogleService-Info.plist
-<<<<<<< HEAD
 android/app/google-services.json
-=======
->>>>>>> 5039604f09aa94734bcea172ea3819a4f3065644
