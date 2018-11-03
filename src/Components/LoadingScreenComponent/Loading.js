@@ -2,7 +2,7 @@
 // Loading Screen
 
 import React from 'react'
-import { View, Text, ActivityIndicator, Alert } from 'react-native'
+import { View, Text, ActivityIndicator, Alert, Platform } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import { Notification } from 'react-native-firebase'
@@ -20,8 +20,8 @@ class Loading extends React.Component {
         //this.props.dispatch(resetContacts)
         //const resetCurrentUser = { type: 'RESET_USER'}
         //this.props.dispatch(resetCurrentUser)
-        //const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY'}
-        //this.props.dispatch(resetMessageHistory)
+        const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
+        this.props.dispatch(resetMessageHistory)
         // reset screen to show for group screen (set group list)
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
@@ -35,10 +35,10 @@ class Loading extends React.Component {
                 const checkingCurrentToken = await this.checkingCurrentRegistrationToken(username)
                 if (user.displayName != this.props.currentUser.name) {
                     const userInformations = await getUserDataForLoginScreen()
-            const action = { type: "SET_CURRENT_USER_NAME", value: userInformations.userName }
-            this.props.dispatch(action)
-            const action2 = { type: "SET_CURRENT_USER_EMAIL", value: userInformations.userEmail }
-            this.props.dispatch(action2)
+                    const action = { type: "SET_CURRENT_USER_NAME", value: userInformations.userName }
+                    this.props.dispatch(action)
+                    const action2 = { type: "SET_CURRENT_USER_EMAIL", value: userInformations.userEmail }
+                    this.props.dispatch(action2)
                 }
                 this.goToMainScreen(user)
             } else {
@@ -64,25 +64,72 @@ class Loading extends React.Component {
         //*
         // Listener for notifications when app is in foreground
         // When new notification received, displays it
+        // Deals with notification sound not correctly received
         //*
         this.notificationListener = firebase.notifications().onNotification((notification) => {
-            console.log('loading - notification trigger')
-            // Process your notification as required
-            const notif = new firebase.notifications.Notification()
-                .setNotificationId(notification.notificationId)
-                .setTitle(notification.title)
-                .setBody(notification.body)
-                .setSound(notification.sound)
-            notif.android.setChannelId(channel)
-            notif.android.setAutoCancel(true);
-            firebase.notifications().displayNotification(notif)
+            // if notification sound is null or undefined 
+            if (notification.sound === null || notification.sound === undefined) {
+                // if platform === iOS
+                if (Platform.OS === 'ios') {
+                    // grabs notification sound from reducer
+                    const predefinedMessageIndex = this.props.predefined_message_list.findIndex(item =>
+                        item.title === notification.data.predefined_message)
+                    // if notification.title is not in predefined message list : set 's1Blink' sound
+                    const sound = predefinedMessageIndex !== -1 ? this.props.predefined_message_list[predefinedMessageIndex].sound : 's1Blink'
+                    const iOSSound = sound + '.aiff'
+
+                    // Process notification
+                    const notif = new firebase.notifications.Notification()
+                        .setNotificationId(notification.notificationId)
+                        .setTitle(notification.title)
+                        .setBody(notification.body)
+                        .setSound(iOSSound)
+                    
+                    // display notification
+                    firebase.notifications().displayNotification(notif)
+
+                    // if platform === android
+                } else {
+                    const predefinedMessageIndex = this.props.predefined_message_list.findIndex(item =>
+                        item.title === notification.title)
+                    // if notification.title is not in predefined message list : set 's1Blink' sound
+                    const sound = predefinedMessageIndex !== -1 ? this.props.predefined_message_list[predefinedMessageIndex].sound : 's1Blink'
+                    const androidSound = sound + '.wav'
+
+                    // Process notification
+                    const notif = new firebase.notifications.Notification()
+                        .setNotificationId(notification.notificationId)
+                        .setTitle(notification.title)
+                        .setBody(notification.body)
+                        .setSound(androidSound)
+
+                    notif.android.setChannelId(channel)
+                    notif.android.setAutoCancel(true);
+
+                    // display notification
+                    firebase.notifications().displayNotification(notif)
+                }
+                // if notification sound is correctly received
+            } else {
+                // Process your notification as required
+                const notif = new firebase.notifications.Notification()
+                    .setNotificationId(notification.notificationId)
+                    .setTitle(notification.title)
+                    .setBody(notification.body)
+                    .setSound(notification.sound)
+
+                notif.android.setChannelId(channel)
+                notif.android.setAutoCancel(true);
+
+                // display notification
+                firebase.notifications().displayNotification(notif)
+            }
         });
 
         //*
         // Listener for data message only
         //*
         this.messageListener = firebase.messaging().onMessage((message) => {
-            console.log('loading - data message trigger')
             // If FCM data.type is group photo updated
             // Calls GROUP_PHOTO_UPDATED reducer
             if (message.data.type === 'GROUP_PHOTO_UPDATED') {
@@ -265,7 +312,8 @@ class Loading extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.getCurrentUserInformations
+        currentUser: state.getCurrentUserInformations,
+        predefined_message_list: state.displayMessagesList.predefinedMessagesList
     }
 }
 export default connect(mapStateToProps)(Loading)
