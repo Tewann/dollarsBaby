@@ -11,7 +11,7 @@ const initialState = {
         {
             id: 2,
             title: strings('reducers.where'),
-            sound: "s2T'es où"
+            sound: "s2Tesou"
         },
         {
             id: 3,
@@ -20,18 +20,18 @@ const initialState = {
         },
         {
             id: 4,
-            title: strings('reducers.call'),
-            sound: "s4Appelle moi"
+            title: strings('reducers.forget'),
+            sound: "s4Oubliepas"
         },
         {
             id: 5,
             title: strings('reducers.coming'),
-            sound: "s5J'arrive"
+            sound: "s5Jarrive"
         },
         {
             id: 6,
             title: strings('reducers.done'),
-            sound: "s6C'est fait"
+            sound: "s6Cestfait"
         },
     ],
 

@@ -19,3 +19,18 @@ yarn-error.log*
 # Firebase
 ios/eBlink/GoogleService-Info.plist
 android/app/google-services.json
+
+# Notification sounds
+ios/s1Blink.aiff
+ios/s2Tesou.aiff
+ios/s3Urgent.aiff
+ios/s4Oubliepas.aiff
+ios/s5Jarrive.aiff
+ios/s6Cestfait.aiff
+
+android/app/src/main/res/raw/s1Blink.wav
+android/app/src/main/res/raw/s2Tesou.wav
+android/app/src/main/res/raw/s3Urgent.wav
+android/app/src/main/res/raw/s4Oubliepas.wav
+android/app/src/main/res/raw/s5Jarrive.wav
+android/app/src/main/res/raw/s6Cestfait.wav

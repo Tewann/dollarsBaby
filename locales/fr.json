@@ -179,7 +179,7 @@
     "reducers": {
         "where": "T'es où ?",
         "urgent": "Urgent",
-        "call": "Appelle moi",
+        "forget": "Oublie pas",
         "coming": "J'arrive",
         "done": "C'est fait"
     },

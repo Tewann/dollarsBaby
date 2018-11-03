@@ -39,8 +39,6 @@ class MessagesListScreen extends React.Component {
             // if additional message length doesn't exceed 100
             // reset error message
             this.setState({ errorMessage: null })
-            console.log('contact')
-            console.log(this.props.contact)
             // calls firebase function
             const timeStamp = new Date().getTime();
             const currentUser = this.props.currentUser.name

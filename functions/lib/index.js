@@ -271,23 +271,45 @@ exports.addTokenInformationsWhenNewContact = functions.firestore
 exports.sendPushNotificationsForNewMessages = functions.firestore
     .document(`Users/{user}/messagesReceived/{message}`)
     .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {
-    const data = snapshot.data();
-    const sound = data.sound.toLowerCase() + '.waw';
-    const payload = {
-        notification: {
-            title: data.title,
-            body: data.body,
-            sound: sound,
-        },
-    };
-    // get ref to the user document
+    // grabs user reference
     const parent = snapshot.ref.parent.parent;
-    // grabs token for cloud messaging
+    // grabs user's token for cloud messaging
     const fcmToken = yield parent.get().then(doc => {
         const Token = doc.data().fcmToken;
         return Token;
     });
+    // building message
+    // data
+    const data = snapshot.data();
+    // sound
+    const androidSound = data.sound + '.wav';
+    const iOSSound = data.sound + '.aiff';
+    // sends predefined message as data if notification sound is not received
+    const predefined_message = data.predefined_message;
+    // message
+    const message = {
+        notification: {
+            title: data.title,
+            body: data.body,
+        },
+        data: {
+            predefined_message: predefined_message
+        },
+        apns: {
+            payload: {
+                aps: {
+                    sound: iOSSound
+                }
+            }
+        },
+        android: {
+            notification: {
+                sound: androidSound
+            }
+        },
+        token: fcmToken,
+    };
     // sends notification to user's phone
-    return admin.messaging().sendToDevice(fcmToken, payload);
+    return admin.messaging().send(message);
 }));
 //# sourceMappingURL=index.js.map
