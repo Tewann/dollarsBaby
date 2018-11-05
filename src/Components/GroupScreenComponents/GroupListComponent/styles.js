@@ -5,14 +5,18 @@ import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window');
 const itemWidth = (width - 35);
+const itemHeight = height / 20
+
+// need to test on android with 150%
 
 const styles = StyleSheet.create({
     top_container: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 8,
-        marginLeft: 2,
+        paddingTop: 5,
+        paddingBottom: 4,
+        paddingLeft: 2,
+        backgroundColor: 'lightgrey'
     },
     button_container: {
         margin: 10,
@@ -28,6 +32,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         color: 'lightgrey',
         borderRadius: 10,
+        height: itemHeight
     },
     cross: {
         alignItems: 'center',
@@ -40,12 +45,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightgrey'
     },
     crossUp: {
-        backgroundColor: 'white',
+        backgroundColor: '#f2f2f2',
         height: 16,
         width: 2
     },
     crossFlat: {
-        backgroundColor: 'white',
+        backgroundColor: '#f2f2f2',
         height: 2,
         width: 16,
         position: 'absolute',

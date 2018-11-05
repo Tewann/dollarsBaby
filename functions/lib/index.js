@@ -309,6 +309,8 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
         },
         token: fcmToken,
     };
+    console.log('notification');
+    console.log(message);
     // sends notification to user's phone
     return admin.messaging().send(message);
 }));
