@@ -35,6 +35,35 @@
 			<key>uniqueIdentifier</key>
 			<string>3AB88A44-45A8-483F-BC4B-018BFE0BC375</string>
 		</dict>
+		<key>5C6A42D7-6508-4558-BDAB-2897E382A709</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>5C6A42D7-6508-4558-BDAB-2897E382A709.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>eBlink project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>eBlink</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>563137321.70089602</real>
+			<key>timeStoppedRecording</key>
+			<real>563137364.83202398</real>
+			<key>title</key>
+			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>5C6A42D7-6508-4558-BDAB-2897E382A709</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

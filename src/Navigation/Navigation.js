@@ -32,6 +32,13 @@ import styles from './styles'
 
 import { strings } from '../i18n'
 
+import Dimensions from 'Dimensions'
+
+// same height as add contact bar on contact screen / group screen
+const { height, width } = Dimensions.get('window');
+const itemWidth = (width - 35);
+const itemHeight = height / 20 + 9
+
 //
 // Custom components for navigation
 //
@@ -107,6 +114,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
+                    iconStyle={{ paddingBottom: itemHeight }}
                 />
             }
         },
@@ -119,6 +127,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
+                    iconStyle={{ paddingBottom: itemHeight }}
                 />
             }
         },
@@ -126,19 +135,19 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             screen: MessageHistory,
             navigationOptions: {
                 title: strings('navigation.message_history'),
-                tabBarIcon: <Octicons
-                name='comment-discussion'
-                type='Octicons'
-                size={25}
-                color='#3a485c'
-            />
+                tabBarIcon: <Icon
+                    name='chat'
+                    type='entypo'
+                    size={25}
+                    color='#3a485c'
+                    iconStyle={{ paddingBottom: itemHeight, color: 'grey' }}
+                />
             },
         },
     },
     {
         tabBarOptions: {
-            //style: { backgroundColor: '#3a485c' },
-            style: { backgroundColor: 'lightgrey' },
+            style: { backgroundColor: 'lightgrey', height: itemHeight },
             indicatorStyle: { backgroundColor: 'white' },
             activeTintColor: '#3a485c',
             inactiveTintColor: '#3a485c',

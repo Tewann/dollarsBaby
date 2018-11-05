@@ -56,6 +56,30 @@
 		<data>
 		C9pZx7zT05J94EfgkYdaRCi/0as=
 		</data>
+		<key>s1Blink.aiff</key>
+		<data>
+		rbq4FLFoCX/6EJYB+O8c2uMfzHg=
+		</data>
+		<key>s2Tesou.aiff</key>
+		<data>
+		P4lMVbqwfX5nUY4gIXah5NBW9rk=
+		</data>
+		<key>s3Urgent.aiff</key>
+		<data>
+		MMU6O4wMSkgAH4ZccUXGZy7Zo70=
+		</data>
+		<key>s4Oubliepas.aiff</key>
+		<data>
+		NUFIc0FogShR+zr1gpdgmFS1PzQ=
+		</data>
+		<key>s5Jarrive.aiff</key>
+		<data>
+		CiA0j/aNAkXApaoGBTfvAHOd+MM=
+		</data>
+		<key>s6Cestfait.aiff</key>
+		<data>
+		ZB2zdCGYlwfu3gB/bjPLA2R/mGU=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -189,6 +213,72 @@
 			<key>hash2</key>
 			<data>
 			17EKHr4YMOWi8I9JA7moDiwZEsDdL3O5P88r+DIhZgI=
+			</data>
+		</dict>
+		<key>s1Blink.aiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rbq4FLFoCX/6EJYB+O8c2uMfzHg=
+			</data>
+			<key>hash2</key>
+			<data>
+			6tPkYcebZj4eSjEnaw+du94PmkJGK6s0Z42iLnU5xwQ=
+			</data>
+		</dict>
+		<key>s2Tesou.aiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			P4lMVbqwfX5nUY4gIXah5NBW9rk=
+			</data>
+			<key>hash2</key>
+			<data>
+			FTBUrbNSvx0jpSZ97oWd3E3XVgjLeHW9bEts2qHG3uo=
+			</data>
+		</dict>
+		<key>s3Urgent.aiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MMU6O4wMSkgAH4ZccUXGZy7Zo70=
+			</data>
+			<key>hash2</key>
+			<data>
+			a8UQd+F64g+0WSPTyCp4TQPdNT3y82eW2D1HVQn7zr8=
+			</data>
+		</dict>
+		<key>s4Oubliepas.aiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NUFIc0FogShR+zr1gpdgmFS1PzQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			UQmihDYIq+Zfazc6NNXIcWTU3wy60JPfp4ecRM5Vr8c=
+			</data>
+		</dict>
+		<key>s5Jarrive.aiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			CiA0j/aNAkXApaoGBTfvAHOd+MM=
+			</data>
+			<key>hash2</key>
+			<data>
+			HnpQ9m91jTurERdnN2C0RVvUETfr3xkkmzA54dldXJY=
+			</data>
+		</dict>
+		<key>s6Cestfait.aiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZB2zdCGYlwfu3gB/bjPLA2R/mGU=
+			</data>
+			<key>hash2</key>
+			<data>
+			b+/7wXMoI/xGgBf8DZU2jcgs03EsDgnumO/PErI5bB0=
 			</data>
 		</dict>
 	</dict>

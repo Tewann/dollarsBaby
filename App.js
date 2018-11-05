@@ -23,7 +23,7 @@ export default class App extends React.Component {
           <Navigation />
           <Banner
             unitId={"ca-app-pub-3940256099942544/6300978111"}
-            size={adSize}
+            //size={adSize}
             request={request.build()}
             onAdFailedToLoad={(e) => {
               console.log('Advert error : ' + e);
