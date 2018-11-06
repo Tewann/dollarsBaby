@@ -20,8 +20,8 @@ class Loading extends React.Component {
         //this.props.dispatch(resetContacts)
         //const resetCurrentUser = { type: 'RESET_USER'}
         //this.props.dispatch(resetCurrentUser)
-        const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
-        this.props.dispatch(resetMessageHistory)
+        //const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
+        //this.props.dispatch(resetMessageHistory)
         // reset screen to show for group screen (set group list)
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
@@ -74,8 +74,8 @@ class Loading extends React.Component {
                     // grabs notification sound from reducer
                     const predefinedMessageIndex = this.props.predefined_message_list.findIndex(item =>
                         item.title === notification.data.predefined_message)
-                    // if notification.title is not in predefined message list : set 's1Blink' sound
-                    const sound = predefinedMessageIndex !== -1 ? this.props.predefined_message_list[predefinedMessageIndex].sound : 's1Blink'
+                    // if notification.title is not in predefined message list : set 's1blink' sound
+                    const sound = predefinedMessageIndex !== -1 ? this.props.predefined_message_list[predefinedMessageIndex].sound : 's1blink'
                     const iOSSound = sound + '.aiff'
 
                     // Process notification
@@ -92,8 +92,8 @@ class Loading extends React.Component {
                 } else {
                     const predefinedMessageIndex = this.props.predefined_message_list.findIndex(item =>
                         item.title === notification.title)
-                    // if notification.title is not in predefined message list : set 's1Blink' sound
-                    const sound = predefinedMessageIndex !== -1 ? this.props.predefined_message_list[predefinedMessageIndex].sound : 's1Blink'
+                    // if notification.title is not in predefined message list : set 's1blink' sound
+                    const sound = predefinedMessageIndex !== -1 ? this.props.predefined_message_list[predefinedMessageIndex].sound : 's1blink'
                     const androidSound = sound + '.wav'
 
                     // Process notification
@@ -111,12 +111,13 @@ class Loading extends React.Component {
                 }
                 // if notification sound is correctly received
             } else {
+                const sound = Platform.OS === 'android' ? notification.sound + '.waw' : notification.sound + '.aiff'
                 // Process your notification as required
                 const notif = new firebase.notifications.Notification()
                     .setNotificationId(notification.notificationId)
                     .setTitle(notification.title)
                     .setBody(notification.body)
-                    .setSound(notification.sound)
+                    .setSound(sound)
 
                 notif.android.setChannelId(channel)
                 notif.android.setAutoCancel(true);
