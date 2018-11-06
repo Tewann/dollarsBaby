@@ -114,7 +114,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
-                    iconStyle={{ paddingBottom: itemHeight }}
+                    //iconStyle={{ paddingBottom: itemHeight }}
                 />
             }
         },
@@ -127,7 +127,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
-                    iconStyle={{ paddingBottom: itemHeight }}
+                    //iconStyle={{ paddingBottom: itemHeight }}
                 />
             }
         },
@@ -140,7 +140,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='entypo'
                     size={25}
                     color='#3a485c'
-                    iconStyle={{ paddingBottom: itemHeight, color: 'grey' }}
+                    iconStyle={{ /*paddingBottom: itemHeight,*/ color: 'grey' }}
                 />
             },
         },
