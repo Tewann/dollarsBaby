@@ -1,45 +1,44 @@
 {
     "navigation": {
         "contacts_screen": "Contacts",
-        "group_screen": "Groupes",
+        "group_screen": "Groups",
         "message_history": "Messages",
-        "profil": "Profil",
-        "disconnect": "Se déconnecter"
+        "profil": "Profile",
+        "disconnect": "Sign out"
     },
     "contacts_screen": {
         "contact_item": {},
         "contacts_screen": {},
         "header_contact_list": {
-            "error_title": "Erreur",
-            "error_message": "Ce contact est déjà dans votre liste de contacts",
-            "close_button": "Fermer",
-            "predefined_message_contact_request": "Demande de contact",
-            "contact_request_send": "Demande de contact envoyée",
-            "error_message2": "Vous n'avez pas saisi de nom de contact",
-            "placeholder": "Ajouter un contact"
+            "error_title": "Error",
+            "error_message": "Contact already in your contact list",
+            "close_button": "Close",
+            "predefined_message_contact_request": "Contact request",
+            "contact_request_send": "Contact request sent",
+            "error_message2": "You did not enter a contact name",
+            "placeholder": "Add contact"
         },
         "message_item": {},
         "messages_list_screen": {
-            "lenght_exceeded": "Le message a trop de caractères (100 maximum)",
-            "back": "Retour",
-            "placeholder": "Message 100 caractères maximum"
+            "back": "Back",
+            "placeholder": "Message"
         }
     },
     "groups_screen": {
         "group_list": {
-            "error_title": "Erreur",
-            "error_message": "Vous n'avez pas saisi de valeur",
-            "error_message2": "Ce nom de groupe est déjà pris",
-            "close_button": "Fermer",
-            "placeholder": "Ajouter un groupe",
-            "private_group": "Groupe privé",
-            "public_group": "Groupe publique",
-            "existing_group": "Groupe existant",
-            "join_group": "Le rejoindre",
-            "cancel": "Annuler",
+            "error_title": "Error",
+            "error_message": "You have not entered a value",
+            "error_message2": "Group name already taken",
+            "close_button": "Close",
+            "placeholder": "Add group",
+            "private_group": "Private group",
+            "public_group": "Public group",
+            "existing_group": "Existing group",
+            "join_group": "Join",
+            "cancel": "Cancel",
             "group_item": {
-                "public": "publique",
-                "private": "privé"
+                "public": "public",
+                "private": "private"
             }
         },
         "group_options": {
@@ -49,139 +48,145 @@
             },
             "message_item": {},
             "messages_list": {
-                "lenght_exceeded": "Le message a trop de caractères (100 maximum)",
-                "placeholder": "Message 100 caractères maximum"
+                "placeholder": "100 characters maximum"
             },
-            "not_creator": "Vous n'êtes pas le créateur du groupe",
-            "created_by": "créé par",
-            "back": "Retour",
-            "error_title": "Erreur"
+            "not_creator": "You are not the creator of the group",
+            "created_by": "created by",
+            "back": "Back",
+            "error_title": "Error"
         }
     },
     "loading": {
-        "error_title": "Permissions refusées",
-        "error_message": "Pour profiter pleinement de l'application, nous vous recommandons d'accepter les notifications",
-        "close_button_1": "Autoriser les notifications",
-        "close_button_2": "Continuer sans notifications"
+        "error_title": "Permissions denied",
+        "error_message": "To take full advantage of the application, we recommend that you accept notifications",
+        "close_button_1": "Allow notifications",
+        "close_button_2": "Continue without notifications"
     },
     "login_screen": {
-        "connect_button": "Se connecter",
-        "create_account": "Créer un compte",
-        "forgotten_psswd": "Mot de passe oublié",
+        "connect_button": "Log in",
+        "create_account": "Create an account",
+        "forgotten_psswd": "Forgot your password",
         "forgotten_password": {
-            "reset_psswd_mail": "Un mail vous a été envoyé",
-            "psswd_forgot": "Mot de passe oublié",
-            "send_psswd": "Envoyer le mot de passe",
-            "connect": "Se connecter"
+            "reset_psswd_mail": "An email has been sent to you",
+            "psswd_forgot": "Forgot your password",
+            "send_psswd": "Send password",
+            "connect": "Connect"
         }
     },
     "message_history_screen": {
         "display_message": {
-            "contact_request": "vous a envoyé une demande de contact",
-            "contact_added": "a été ajouté à vos contacts",
-            "contact_denied": "n 'a pas été ajouté à vos contacts",
+            "contact_request": "sent you a contact request",
+            "contact_added": "has been added to your contacts",
+            "contact_denied": "has not been added to your contacts",
             "accept_or_decline": {
-                "accepted": " a accepté votre demande de contact",
-                "accept": "Accepter",
-                "refuse": "Refuser"
+                "accepted": "accepted your contact request",
+                "accept": "Accept",
+                "refuse": "Decline"
             }
         }
     },
     "profil_screen": {
-        "profil": "PROFIL     ",
+        "profil": "PROFILE     ",
         "change_profil_image": {
-            "save": "Enregistrer",
-            "cancel": "Annuler",
-            "load_image": "Charger une photo de profil",
-            "error": "Erreur",
-            "image_shared": "L'image a été partagée",
-            "library": "Galerie",
+            "save": "Save",
+            "cancel": "Cancel",
+            "load_image": "Add a profile picture",
+            "error": "Error",
+            "image_shared": "Image has been shared",
+            "library": "Library",
             "photo": "Photo"
         },
         "delete_account": {
-            "mail": "Merci d'indiquer votre adresse mail",
-            "psswd": "Merci d'indiquer votre mot de passe",
-            "account_deleted": "Votre compte a été supprimé",
-            "delete_account": "Supprimer mon compte",
-            "error": "Erreur",
-            "placeholder_1": "Confirmer votre adresse mail",
-            "placeholder_2": "Mot de passe actuel",
-            "cancel": "Annuler"
+            "mail": "Please enter your email address",
+            "psswd": "Please enter your password",
+            "account_deleted": "Your account has been deleted",
+            "delete_account": "Delete my account",
+            "error": "Error",
+            "placeholder_1": "Confirm your e-mail address",
+            "placeholder_2": "Password",
+            "cancel": "Cancel"
         },
         "mail_adress": {
-            "error_new_mail": "Merci de préciser votre nouvelle adresse mail",
-            "error_confirm_mail": "Merci de reconfirmer votre nouvelle adresse mail",
-            "error_no_match": "Les adresses mail ne correspondent pas",
-            "modify_mail": "Modifier mon adresse mail",
-            "placeholder_1": "Nouvelle adresse mail",
-            "placeholder_2": "Confirmer l'adresse mail",
-            "placeholder_3": "Mot de passe",
-            "cancel": "Annuler"
+            "error_new_mail": "Please specify your new e-mail address",
+            "error_confirm_mail": "Please specify again your new e-mail address",
+            "error_no_match": "E-mail addresses do not match",
+            "modify_mail": "Change my e-mail address",
+            "placeholder_1": "New e-mail address",
+            "placeholder_2": "Confirm e-mail address",
+            "placeholder_3": "Password",
+            "cancel": "Cancel"
         },
         "password": {
-            "new_psswd": "Merci de préciser votre nouveau mot de passe",
-            "new_psswd_2": "Merci de reconfirmer votre nouveau mot de passe",
-            "psswd_not_matching": "Les mots de passe ne correspondent pas",
-            "psswd_modified": "Mot de passe modifié",
-            "change_psswd": "Modifier mon mot de passe",
-            "error": "Erreur",
-            "placeholder_1": "Mot de passe actuel",
-            "placeholder_2": "Nouveau mot de passe",
-            "placeholder_3": "Confirmer votre nouveau mot de passe",
-            "cancel": "Annuler"
+            "new_psswd": "Please specify your new password",
+            "new_psswd_2": "Please specify again your new password",
+            "psswd_not_matching": "Passwords do not match",
+            "psswd_modified": "Password changed",
+            "change_psswd": "Change my password",
+            "error": "Error",
+            "placeholder_1": "Current password",
+            "placeholder_2": "New password",
+            "placeholder_3": "Confirm new password",
+            "cancel": "Cancel"
         }
     },
     "sign_up_screen": {
         "sign_up": {
-            "mail_not_filled": "Merci de renseigner une adresse mail",
-            "psswd_not_filled": "Les mots de passe ne correspondent pas",
-            "create_account": "Créer un compte",
-            "placeholder_1": "Email",
-            "placeholder_2": "Mot de passe",
-            "placeholder_3": "Confirmer votre mot de passe",
-            "sign_up": "S'inscrire",
-            "connect": "Se connecter"
+            "mail_not_filled": "Please fill in an email address",
+            "psswd_not_filled": "Passwords do not match",
+            "create_account": "Create account",
+            "placeholder_1": "E-mail",
+            "placeholder_2": "Password",
+            "placeholder_3": "Confirm password",
+            "sign_up": "Join",
+            "connect": "Log in"
         },
         "get_display_name": {
-            "welcome": "BIENVENUE",
+            "welcome": "WELCOME",
             "account_name": {
-                "placeholder_1": "Votre nom d'utilisateur",
-                "placeholder_2": "Confirmez votre nom d'utilisateur",
-                "error_missing": "Merci de renseigner un nom d'utilisateur",
-                "error_matching": "Les noms ne correspondent pas",
-                "error_reconnect": "Veuillez-vous reconnecter",
-                "placeholder_1bis": "Adresse mail",
-                "placeholder_2bis": "Mot de passe",
-                "error_already": "Vous avez déjà un nom d'utilisateur",
-                "save": "Enregistrer",
-                "reconnect": "Se reconnecter",
-                "back_to_main_screen": "Revenir à l'écran d'accueil",
-                "username": "Nom d'utilisateur"
+                "placeholder_1": "Username",
+                "placeholder_2": "Confirm username",
+                "error_missing": "Please enter a username",
+                "error_matching": "Usernames do not match",
+                "error_reconnect": "Please reconnect",
+                "placeholder_1bis": "E-mail",
+                "placeholder_2bis": "Password",
+                "error_already": "You already have a user name",
+                "save": "Save",
+                "reconnect": "Reconnect",
+                "back_to_main_screen": "Return to home screen",
+                "username": "Username"
             },
             "ad_message": {
-                "publicity": "Publicités",
-                "publicity_message_1": "Les publicités nous permettent de financer les coûts liés à la maintenance de l'application.",
-                "publicity_message_2": "Elles nous permettent également de vous proposer l'application gratuitement.",
-                "publicity_message_3": "Nous faisons tous nous efforts pour qu'elles ne gênent pas votre utilisation.",
-                "publicity_message_4": "Nous vous remercions par avance pour votre  compréhension.",
-                "continue": "Continuer"
+                "publicity": "Advertisements",
+                "publicity_message_1": "Advertisements allow us to finance the costs related to the maintenance of the application.",
+                "publicity_message_2": "They also allow us to offer you the application for free.",
+                "publicity_message_3": "We make our best efforts so that they do not interfere with your use.",
+                "publicity_message_4": "We thank you in advance for your understanding. You are the best",
+                "continue": "Continue"
             },
             "profil_photo": {
-                "save": "Enregistrer",
-                "continue": "Continuer",
-                "profil_photo": "Photo de profil",
-                "library": "Galerie",
+                "save": "Save",
+                "continue": "Continue",
+                "profil_photo": "Profile picture",
+                "library": "Library",
                 "photo": "Photo",
-                "continue_without": "Continuer sans photo de profil"
+                "continue_without": "Continue without a profile picture"
             }
         }
     },
     "reducers": {
-        "where": "T'es où ?",
+        "where": "Where are you ?",
         "urgent": "Urgent",
-        "call": "Appelle moi",
-        "coming": "J'arrive",
-        "done": "C'est fait"
-
+        "forget": "Don't forget",
+        "coming": "I'm coming",
+        "done": "Done"
+    },
+    "terms_of_service": {
+        "title": "Terms of Service",
+        "accept": "Accept",
+        "decline": "Decline",
+        "decline_message": "If you do not accept the Terms of Service, you can not use the application. Please uninstall it.",
+        "checkbox": "I have read and agree to the terms of service and consent to the processing of my personal data in accordance with these terms.",
+        "TOS": "ENGLISH TRANSLATION COMING SOON - 1. INTRODUCTION Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») ont pour objet de définir les règles d’utilisation de l’Application eBlink (ci-après « l’Application » ou « eBlink »). L’Application et ses fonctionnalités sont accessibles uniquement aux Utilisateurs l’ayant téléchargée sur le Play Store ou l’App Store. L’Application est disponible uniquement sur Android et iOS. L’Utilisateur accepte automatiquement les CGU en installant ou en utilisant l’Application, ses services et ses fonctionnalités, logiciel ou site web. La version des CGU disponible sur l’Application est la seule opposable pendant toute la durée d’utilisation de l’Application. L’Editeur se réserve la faculté de modifier les présentes CGU, à tout moment et sans notification préalable. Le refus d’acceptation par l’Utilisateur des CGU met fin du droit d’utilisation de l’Application. Les CGU sont disponibles à tout moment sur l’Application. 2. DEFINITIONS Application : l’application eBlink téléchargeable sur le Play Store ou l’App Store et destinée à être exécutée sur Android ou iOS. Editeur : désigne E&E Cie dont les mentions légales figurent ci-après. Service(s) : l’Application et ses fonctionnalités Utilisateur(s) : toute personne physique accédant et utilisant l’Application. 3. ACCES A L’APPLICATION 3.1. La création d’un profil par l’Utilisateur permet l’accès à l’Application et à l’ensemble de ses fonctionnalités. 3.2. Les identifiants sont confidentiels. L’Utilisateur assume l’entière responsabilité de la préservation et de la confidentialité de ses identifiants. L’Editeur ne pourra être tenu responsable des conséquences dommageables qui pourraient découler de la perte ou du vol des identifiants. L’Utilisateur est responsable de la protection de son appareil et de son compte, et doit informer sans délai l’Editeur de toute utilisation non autorisée de son compte ou des Services, ou de toute infraction à la sécurité. 3.3. L’utilisation de l’Application se fait dans le respect des conditions prévues par l’Editeur. Toute utilisation à des fins frauduleuses, en relation avec une activité illégale ou qui d’une quelconque façon cause une interruption, un dommage ou une altération de l’Application, provoque des troubles, nuisances ou causes d’anxiétés, engage la responsabilité de l’Utilisateur. Les Utilisateurs doivent s'abstenir s'agissant des informations nominatives auxquelles ils auraient pu accéder, de toute collecte, captation, déformation ou utilisation à des fins détournées et d'une manière générale, de tout acte susceptible de porter atteinte à la vie privée ou à la réputation des personnes tierces. L’Utilisateur est le seul responsable de l’usage qu’il fera des informations contenues sur l’Application. Il appartient également à l’Utilisateur de l’Application, de prendre toutes les mesures appropriées pour protéger ses propres données et/ou logiciels de la contamination par des éventuels virus qui pourraient circuler à travers l’Application. Il appartient à l’Utilisateur de s’équiper de manière appropriée pour accéder et utiliser l’Application et ses fonctionnalités, notamment en matière informatique, de télécommunications, de sécurité et de maintenir cet équipement. 3.4. L’Editeur se réserve le droit de refuser l'accès, de fermer un compte, de retirer ou d'éditer du contenu en cas de violation des lois applicables, de ces CGU ou tout autre engagement contractuel que l’Editeur aurait contracté avec l’Utilisateur. L’Utilisateur peut à tout moment supprimer l’Application de son appareil. Dans ce cas, les données enregistrées par lui seront définitivement supprimées de la mémoire de l’appareil utilisé. L’Editeur recommande fortement à l’Utilisateur de supprimer l’Application de la mémoire de son téléphone en cas de vente ou de prêt par l’Utilisateur de son matériel à un tiers. 3.5. L’utilisation de l’Application est gratuite, cependant l’Utilisateur est informé que l’accès à l’Application nécessite une connexion internet dont les frais demeurent entièrement à la charge de l’Utilisateur. L’Utilisateur reconnait que les performances techniques liées à cette connexion peuvent engendrer des temps de traitement variables pour répondre, consulter, interroger ou transférer les informations via l’Application. 3.6. Pour utiliser l’Application, l’Utilisateur doit avoir au moins 16 ans ou l’âge minimum requis dans son pays pour s’inscrire et utiliser l’Application. 3.7. Pour pouvoir utiliser l’Application, l’Utilisateur s’engage à télécharger et installer manuellement ou automatiquement les mises à jour de l’Application. L’Utilisateur est informé et accepte des mises à jour automatiques seront installées par son téléphone. L’Utilisateur accepte également de recevoir des notifications par le biais de l’Application à tout moment. 4. CONTENU DE L’APPLICATION Les marques, photographies, textes, commentaires, illustrations, images animées ou non, séquences vidéo, sons et plus généralement tous les éléments reproduits ou utilisés par l’Application sur le site sont protégés par les lois en vigueur au titre de la propriété intellectuelle. Ils sont la propriété pleine et entière de l'Editeur ou de ses partenaires. Toute reproduction, représentation, utilisation ou adaptation, sous quelque forme que ce soit, de tout ou partie de ces éléments, y compris les applications informatiques, sans l'accord préalable et écrit de l'Editeur, sont strictement interdites. Le fait pour l'Editeur de ne pas engager de procédure dès la prise de connaissance de ces utilisations non autorisées ne vaut pas acceptation desdites utilisations et renonciation aux poursuites. Les marques de la société E&E Cie figurant sur l’Application sont des marques déposées. Toute reproduction, totale ou partielle de ces marques, sans autorisation préalable et écrite de l’Editeur est donc interdite. L’Editeur autorise l’Utilisateur à accéder et bénéficier des différents services associés à l’Application, dans le respect des CGU. L’Editeur conserve tous les droits non expressément autorisés. Ainsi, les Utilisateurs ne sont pas autorisés notamment : • à modifier, désassembler ou arranger l’Application ou les logiciels utilisés par cette dernière, • à enlever ou tenter d'enlever les mentions copyright et noms des personnes mentionnées sur l’Application. • à utiliser l’Application à des fins qui ne sont pas légales, autorisées ou acceptables. • utiliser ou aider d’autres personnes à utiliser l’Application d’une manière qui : (a) viole, détourne ou enfreint les droits de E&E Cie, des autres Utilisateurs ou d'autres personnes, y compris les droits à la vie privée, à l'image, de propriété intellectuelle ou autres droits exclusifs ; (b) est de nature illégale, obscène, diffamatoire, menaçante, intimidante, haineuse, racialement ou ethniquement offensante, est assimilée à du harcèlement ou incite ou encourage un comportement illégal ou déplacé pour d'autres raisons, y compris la promotion de crimes violents ; (c) usurpe l'identité de quelqu'un ; (d) implique l'envoi de communications illégales ou inacceptables, comme des messages envoyés en masse, des messages automatiques, des numérotations automatiques et autres pratiques similaires ; ou (e) implique toute utilisation non personnelle des Services, sauf autorisation contraire de la part de l’Editeur. • à directement, indirectement ou par des moyens automatisés ou autres, consulter, utiliser, copier, adapter, modifier, distribuer, concéder en licence, concéder en sous-licence, transférer, afficher, exécuter les Services, en créer des œuvres dérivées ou les exploiter d'une quelconque autre manière non autorisée ou inacceptable, qui porte préjudice, à l’Editeur ou aux Services, aux systèmes, aux autres Utilisateurs ou autres (ni aider d'autres personnes à agir de la sorte), • à directement ou par des moyens automatisés : (a) réaliser de l'ingénierie inverse, modifier, décompiler nos Services, en créer des œuvres dérivées ou en extraire le code ; (b) envoyer, stocker ou transmettre des virus ou tout autre code informatique dangereux par le biais des Services ou sur ces derniers ; (c) obtenir ou tenter d'obtenir un accès non autorisé aux Services ou systèmes ; (d) entraver ou perturber la sécurité ou la prestation des Services ; (e) créer des comptes pour les Services par des moyens automatisés ou non autorisés ; (f) collecter les coordonnées des Utilisateurs ou des informations à leur sujet de manière inadmissible ou non autorisée ; (g) vendre, revendre, louer ou facturer les Services d'une manière non autorisée ; (h) distribuer les Services ou les mettre à disposition sur un réseau permettant de les utiliser sur plusieurs appareils à la fois, sauf autorisation ; ou (i) créer des logiciels ou des API qui fonctionnent essentiellement de la même façon que nos Services et les proposer à des tiers d'une manière non autorisée. L’Utilisateur concède à l’Editeur : • une licence afin d’exploiter et proposer les Services, • une licence internationale, non exclusive, exempte de redevance, permettant l'octroi d'une sous-licence et cessible, nous autorisant à utiliser, reproduire, distribuer, afficher et exploiter les informations (y compris le contenu) que l’Utilisateur télécharge, soumet, stocke, envoie ou reçoit sur les Services ou par leur intermédiaire, ainsi qu'à en créer des œuvres dérivées. Les droits octroyés en vertu de cette licence sont destinés aux fins limitées qui sont d'exploiter et de fournir de les Services (par exemple, pour l’affichage de la photo de profil, la transmission des messages, le stockage des messages). Pour que l’Application fonctionne, l’Editeur conserve du contenu et des informations dans des centres de données et des systèmes dans le monde entier, y compris en dehors du pays de résidence de l’Utilisateur. Cette infrastructure peut être détenue ou exploitée par les prestataires de services ou sociétés affiliées de l’Editeur. Il existe des différences importantes entre les services et fonctionnalités de l’Application et ceux des services mobiles de l’Utilisateur. L’Application ne permet pas un accès aux services d'urgence, notamment la police, les pompiers ou les hôpitaux, ou toute autre connexion aux centres de réception des appels d'urgence. 5. GESTION DE L’APPLICATION L’Editeur fournit ses meilleurs efforts pour maintenir l’accès à l’Application. Cependant, pour des raisons de maintenance, juridiques, techniques, ou en cas de force majeure (telle que définie par l’article 1218 du Code civil français en vigueur), l'Editeur se réserve le droit d’interrompre, à tout moment, temporairement ou définitivement l’accès à l’Application ainsi qu’à ses services associés à une partie ou à l’ensemble des Utilisateurs. 6. RESPONSABILITE La responsabilité de l'Editeur ne peut être engagée en cas de défaillance, panne, difficulté ou interruption de fonctionnement, empêchant l'accès à l’Application ou à une de ses fonctionnalités. L'Editeur ne pourra être tenu responsable en cas de poursuites judiciaires à l’encontre de l’Utilisateur : - du fait de l'usage de l’Application ou de tout service accessible via Internet ; - du fait du non-respect des présentes CGU ou des lois en vigueur. Le matériel de connexion à l’Application de l’Utilisateur est sous son entière responsabilité. L’Utilisateur doit prendre toutes les mesures appropriées pour protéger son matériel et ses propres données. L'Editeur n'est pas responsable des dommages causés à l’Utilisateur, à des tiers et/ou à son équipement du fait de sa connexion ou de son utilisation de l’Application. L’Utilisateur renonce de ce fait à toute action contre l’Editeur. Si l’Editeur venait à faire l'objet d'une procédure amiable ou judiciaire à raison de l’utilisation par l’Utilisateur de l’Application, l’Editeur pourra se retourner contre l’Utilisateur pour obtenir indemnisation de tous les préjudices, sommes, condamnations et frais qui pourraient découler de cette procédure. L’Editeur ne saurait être tenu pour responsable : • des erreurs, omissions, altérations, et des délais de mise à jour des informations de l’Application, • de tout dommage direct ou indirect quelle que soit la cause, l’origine, la nature ou la conséquence, provoqué en raison de l’accès, de l’usage de l’Application, ou de l’impossibilité d’y accéder, • de tout dommage résultant d'une intrusion frauduleuse d'un tiers ayant entraîné une modification des informations mises à disposition sur cette Application, • de toute détérioration ou dysfonctionnement causé par l'intrusion d'un virus dans le système de l’Utilisateur, lors d'un téléchargement en provenance de l’Application, • en cas de perte de données ou bénéfices, quels qu’ils soient. Les services sont fournis ‘‘en l'état’’ sans aucune garantie expresse ou implicite, y compris, sans toutefois s'y limiter, toute garantie de qualité marchande, d'adéquation à un usage particulier, de titre de propriété, d'absence de contrefaçon et d'absence de virus informatique ou autre code nuisible. L’Editeur ne garantit pas que les Services seront opérationnels, exempts d'erreurs, sécurisés ou sans dangers, ni que nos services fonctionneront sans interruptions, retards ou imperfections. Il en est de même pour les fonctionnalités, services et interfaces fournis par les Services. L’Editeur n’est pas obligé de contrôler les actions ou informations (y compris le contenu) des personnes qui utilisent les Services ou d'autres tiers et n'en est pas responsable. Sauf législation du pays de résidence de l’Utilisateur, ce dernier dégage de toute responsabilité l’Editeur et ses filiales et sociétés affiliées, ainsi que leurs administrateurs, dirigeants, employés, partenaires et représentants respectifs en cas de réclamation, plainte, motif d'action ou contestation et de dommages, connus et inconnus, inhérents ou ayant trait de quelque manière que ce soit à toute réclamation que l’Utilisateur présente à l'encontre de tout tiers. 7. PROTECTION DES DONNEES PERSONNELLES Dans le cadre de la délivrance des Services, l’Editeur collecte automatiquement certaines informations relatives à l’utilisation, à la connexion, à l’appareil, aux données de connexion et à la localisation. Les informations sont utilisées pour exploiter, fournir, améliorer, comprendre, personnaliser, prendre en charge et commercialiser les Services. Les informations sont envoyées et partagées aux personnes que l’Utilisateur a choisies pour communiquer. Dans le cadre de la fourniture des Services, les informations de l’Utilisateur sont recueillies, utilisées et partagées comme indiqué ci-dessous : • dans la mesure nécessaire pour fournir, améliorer et personnaliser les Services; • selon le consentement de l’Utilisateur, qu’il peut retirer à tout moment ; • dans la mesure nécessaire pour remplir les obligations légales de l’Editeur ; • occasionnellement, pour protéger les intérêts vitaux des Utilisateurs ; • dans la mesure nécessaire dans l'intérêt du public ; • dans la mesure nécessaire pour les intérêts légitimes de l’Editeur (ou ceux des autres), notamment quant à la fourniture d'un service innovant, pertinent, sûr et rentable à l'attention des Utilisateurs et partenaires, sauf si ces intérêts sont supplantés par des intérêts ou des libertés et droits fondamentaux exigeant la protection des données personnelles ; • transférer, transmettre, stocker ou traiter vos données en dehors de l’EEE, notamment aux États-Unis et dans d’autres pays. En vertu du Règlement Général sur la Protection des Données n°2016/679 du 27 avril 2016 abrogeant la directive 95/46/EC ou de toute autre législation applicable en matière de protection des données personnelles, l’Utilisateur dispose du droit de consulter, de rectifier, de transférer et d'effacer ses informations, d’en limiter le traitement, de s’y opposer ou d’en demander la portabilité. L’Editeur cessera alors de traiter les informations de l’Utilisateur, à moins que le traitement repose sur des raisons impérieuses et légitimes ou qu'il soit justifié d'un point de vue légal. Les informations sont conservées jusqu'à ce qu'il ne soit plus nécessaire de fournir les Services ou jusqu'à ce que le compte soit supprimé. La durée de conservation des données personnelles dépendra notamment de la nature des informations, de la raison de leur collecte et de leur traitement et des contraintes réglementaires en termes de délais de conservation des données personnelles. Les informations de l’Utilisateur peuvent être partagées à l'international avec ses partenaires et les personnes avec qui vous communiquez dans le monde entier. Pour l’exercice de vos droits, vous pouvez contacter le Délégué à la protection des données : e3eblink@gmail.com. L’Utilisateur consent à la collecte et l’utilisation des informations mentionnées ci-avant. 8. HYPERLIENS Le contenu des liens hypertextes mis en place dans le cadre de l’Application en direction d'autres sites ou applications ne saurait engager la responsabilité de l’Editeur. Par ailleurs, la création de liens hypertextes renvoyant vers l’Application ne peut être faite qu’avec l’autorisation préalable et expresse de l’Editeur. L'Editeur est libre de refuser cette autorisation sans avoir à justifier de quelque manière que ce soit sa décision. Dans le cas où l'Editeur accorderait son autorisation, celle-ci n'est dans tous les cas que temporaire et pourra être retirée à tout moment, sans obligation de justification à la charge de l'Editeur. Dans ce cas, aucune indemnité financière ne pourrait être octroyée par l’Editeur. Dans tous les cas, tout lien devra être retiré sur simple demande de l'Editeur. L’Editeur décline toute responsabilité concernant le contenu des sites contenant ces liens hypertextes. Toute information accessible via un lien vers d'autres sites n'est pas sous le contrôle de l'Editeur qui décline toute responsabilité quant à leur contenu. 9. APPLICATION DE LA LOI FRANCAISE Les présentes CGU sont régies par la loi française et soumises à la compétence des tribunaux de Nantes, sous réserve d'une attribution de compétence spécifique découlant d'un texte de loi ou réglementaire particulier. Le non-respect des présentes dispositions expose le contrevenant à des poursuites et à des sanctions pénales. Si l'une des dispositions du présent texte s'avérait nulle, non valide ou sans effet juridique, toutes les autres dispositions demeureraient applicables. 10. INFORMATIONS LEGALES Editeur de l’Application : E&E Cie, Société par actions simplifiée, au capital de 1 000 €, Société en création, dont le siège social est situé 1 rue Jean Dedron, 44980 – SAINTE LUCE SUR LOIRE. Adresse de contact : e3eblink@gmail.com Pour toute question, information ou réclamation sur l’Application, ses services associés ou son fonctionnement, vous pouvez envoyer un mail à l’adresse suivante : e3eblink@gmail.com. Conditions générales d’utilisation eBlink – novembre 2018 "
     }
 }
