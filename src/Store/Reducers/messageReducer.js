@@ -6,32 +6,32 @@ const initialState = {
         {
             id: 1,
             title: 'Blink',
-            sound: 's1Blink'
+            sound: 's1blink'
         },
         {
             id: 2,
             title: strings('reducers.where'),
-            sound: "s2Tesou"
+            sound: "s2tesou"
         },
         {
             id: 3,
             title: strings('reducers.urgent'),
-            sound: "s3Urgent"
+            sound: "s3urgent"
         },
         {
             id: 4,
             title: strings('reducers.forget'),
-            sound: "s4Oubliepas"
+            sound: "s4oubliepas"
         },
         {
             id: 5,
             title: strings('reducers.coming'),
-            sound: "s5Jarrive"
+            sound: "s5jarrive"
         },
         {
             id: 6,
             title: strings('reducers.done'),
-            sound: "s6Cestfait"
+            sound: "s6cestfait"
         },
     ],
 
