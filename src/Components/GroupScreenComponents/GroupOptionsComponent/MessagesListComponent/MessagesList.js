@@ -51,12 +51,11 @@ class MessagesList extends React.Component {
     // Checks if additionnal message length is under 100 caracters
     // Then calls firebase function
     //*
-    _sendMessage = async (predefined_message, sound, groupType) => {
+    _sendMessage = async (predefined_message, sound) => {
         if (this.state.additionnalMessage.length <= 100) {
             // Additional message length doesn't exceed 100
             // Reset error message
             this.setState({ errorMessage: null })
-
             // Calls firebase function
             // prepares payload
             const timeStamp = new Date().getTime();
@@ -68,7 +67,7 @@ class MessagesList extends React.Component {
             // invok function
             const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
             httpsCallable({
-                groupType: groupType,
+                groupType: this.props.type,
                 groupName: this.props.currentGroup,
                 sendBy: this.props.currentUser.name,
                 predefined_message: predefined_message,
@@ -78,7 +77,6 @@ class MessagesList extends React.Component {
                 sound: sound
             })
                 .then((res) => {
-                    console.log(res)
                     // after function called
                     // updated redux store
                     const type = 'send'
@@ -87,7 +85,7 @@ class MessagesList extends React.Component {
                     this.props.dispatch(action)
 
                 })
-                .catch(httpsError => console.log(httpsError))            
+                .catch(httpsError => console.log('httpsCallable err' + httpsError))            
         } else {
             // if additionnal message length exceed 100
             this.setState({ errorMessage: strings('groups_screen.group_options.messages_list.lenght_exceeded') })
@@ -126,7 +124,7 @@ class MessagesList extends React.Component {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <MessageItem
                         message={item}
-                        sendMessage={(predefined_message, sound, groupType) => this._sendMessage(predefined_message, sound, this.props.type)}
+                        sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
                     />}
                 />
 
