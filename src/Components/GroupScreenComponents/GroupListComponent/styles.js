@@ -32,30 +32,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         color: 'lightgrey',
         borderRadius: 10,
-        height: itemHeight
+        height: itemHeight,
+        flex: 10
     },
     cross: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 1,
-        marginRight: 5,
-        height: 22,
-        width: 22,
-        borderRadius: 22 / 2,
-        backgroundColor: 'lightgrey'
-    },
-    crossUp: {
-        backgroundColor: '#f2f2f2',
-        height: 16,
-        width: 2
-    },
-    crossFlat: {
-        backgroundColor: '#f2f2f2',
-        height: 2,
-        width: 16,
-        position: 'absolute',
-        left: 3,
-        top: 10
+        flex: 1,
+        paddingRight: 5
     },
     modal: {
         width: 125

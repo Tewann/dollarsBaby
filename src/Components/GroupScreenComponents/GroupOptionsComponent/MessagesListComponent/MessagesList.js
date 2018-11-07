@@ -24,22 +24,6 @@ class MessagesList extends React.Component {
     }
 
     //*
-    // Displays - Length of additionnal message
-    //*
-    _displayAdditionnalMessageLenght = () => {
-        let length = this.state.additionnalMessage.length
-        if (length <= 100) {
-            return (
-                <Text style={styles.additionnal_message_length}>{length}</Text>
-            )
-        } else {
-            return (
-                <Text style={styles.additionnal_message_length}>X</Text>
-            )
-        }
-    }
-
-    //*
     // Update state when text input for additionnal message is modified
     //*
     _additionnalMessageChanged(text) {
@@ -52,46 +36,41 @@ class MessagesList extends React.Component {
     // Then calls firebase function
     //*
     _sendMessage = async (predefined_message, sound) => {
-        if (this.state.additionnalMessage.length <= 100) {
-            // Additional message length doesn't exceed 100
-            // Reset error message
-            this.setState({ errorMessage: null })
-            // Calls firebase function
-            // prepares payload
-            const timeStamp = new Date().getTime();
-            const currentUser = this.props.currentUser.name
-            const contact = this.props.currentGroup
-            const additionnal_message = this.state.additionnalMessage
-            const id = `${currentUser}_${timeStamp}`
-            const type = 'send'
-            // invok function
-            const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
-            httpsCallable({
-                groupType: this.props.type,
-                groupName: this.props.currentGroup,
-                sendBy: this.props.currentUser.name,
-                predefined_message: predefined_message,
-                additionalMessage: this.state.additionnalMessage,
-                timeStamp: timeStamp,
-                id: id,
-                sound: sound
+        // Reset error message
+        this.setState({ errorMessage: null })
+        // Calls firebase function
+        // prepares payload
+        const timeStamp = new Date().getTime();
+        const currentUser = this.props.currentUser.name
+        const contact = this.props.currentGroup
+        const additionnal_message = this.state.additionnalMessage
+        const id = `${currentUser}_${timeStamp}`
+        const type = 'send'
+        // invok function
+        const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
+        httpsCallable({
+            groupType: this.props.type,
+            groupName: this.props.currentGroup,
+            sendBy: this.props.currentUser.name,
+            predefined_message: predefined_message,
+            additionalMessage: this.state.additionnalMessage,
+            timeStamp: timeStamp,
+            id: id,
+            sound: sound
+        })
+            .then((res) => {
+                // after function called
+                // updated redux store
+                const type = 'send'
+                const contact = this.props.currentGroup
+                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
+                this.props.dispatch(action)
+
             })
-                .then((res) => {
-                    // after function called
-                    // updated redux store
-                    const type = 'send'
-                    const contact = this.props.currentGroup
-                    const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
-                    this.props.dispatch(action)
-
-                })
-                .catch(httpsError => console.log('httpsCallable err' + httpsError))            
-        } else {
-            // if additionnal message length exceed 100
-            this.setState({ errorMessage: strings('groups_screen.group_options.messages_list.lenght_exceeded') })
-        }
-
+            .catch(httpsError => console.log('httpsCallable err' + httpsError))
     }
+
+
 
     render() {
         return (
@@ -104,7 +83,6 @@ class MessagesList extends React.Component {
 
                 {/* ------ Text Input for additionnal message and counter ------*/}
                 <View style={styles.TextInput_container}>
-                    {this._displayAdditionnalMessageLenght()}
                     <TextInput
                         placeholder={strings('groups_screen.group_options.messages_list.placeholder')}
                         onChangeText={(text) => this._additionnalMessageChanged(text)}
