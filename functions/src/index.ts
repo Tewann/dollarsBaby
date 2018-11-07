@@ -40,7 +40,10 @@ export const messageSendToGroup = functions.https.onCall(data => {
             return { message: 'success' }
         })
         .catch(err => {
+            console.log('err')
             console.log(err)
+            console.log('data')
+            console.log(data)
             return err
         })
 })

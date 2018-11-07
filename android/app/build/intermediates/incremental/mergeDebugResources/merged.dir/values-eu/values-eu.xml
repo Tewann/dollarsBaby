@@ -34,7 +34,7 @@
     <string msgid="2804989272736383918" name="common_google_play_services_wear_update_text">"Google Play zerbitzuen bertsio berria behar da. Berehala eguneratuko da automatikoki."</string>
     <string msgid="5201977337835724196" name="common_open_on_phone">"Ireki telefonoan"</string>
     <string msgid="3441753203274453993" name="common_signin_button_text">"Hasi saioa"</string>
-    <string msgid="669893613918351210" name="common_signin_button_text_long">"Hasi saioa Google-n"</string>
+    <string msgid="669893613918351210" name="common_signin_button_text_long">"Hasi saioa Google kontuarekin"</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Askotarikoak"</string>
     <string msgid="368094699078615544" name="s1">"Gorde irudia"</string>
     <string msgid="4550830452390689489" name="s2">"Irudia irudien galerian gordetzea baimendu nahi diozu iragarkiari?"</string>
