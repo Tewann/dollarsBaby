@@ -7,6 +7,7 @@ import styles from './styles'
 import { connect } from 'react-redux'
 import { doesContactExists, sendMessageToFirestore } from '../../../Services/firebaseFunctions'
 import { strings } from '../../../i18n'
+import { Icon } from 'react-native-elements'
 
 class HeaderContactList extends React.Component {
     constructor(props) {
@@ -113,10 +114,15 @@ class HeaderContactList extends React.Component {
                         ref={component => this.messageInput = component}
                     />
                     <TouchableOpacity
-                        onPress={() => this._checkIfContactAlreadyInUserContactListThenAddContact()}
                         style={styles.cross}>
-                        <View style={styles.crossUp} />
-                        <View style={styles.crossFlat} />
+                        <Icon
+                            name='plus-circle'
+                            type='feather'
+                            size={30}
+                            color='white'
+                            underlayColor='transparent'
+                            onPress={() => this._checkIfContactAlreadyInUserContactListThenAddContact()}
+                        />
                     </TouchableOpacity>
                 </View>
             </View>

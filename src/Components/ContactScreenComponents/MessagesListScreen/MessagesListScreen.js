@@ -35,48 +35,24 @@ class MessagesListScreen extends React.Component {
     // Then calls firebase function
     //*
     _sendMessage = async (predefined_message, sound) => {
-        if (this.state.additionnalMessage.length <= 100) {
-            // if additional message length doesn't exceed 100
-            // reset error message
-            this.setState({ errorMessage: null })
-            // calls firebase function
-            const timeStamp = new Date().getTime();
-            const currentUser = this.props.currentUser.name
-            const contact = this.props.contact
-            const additionnal_message = this.state.additionnalMessage
-            const id = `${currentUser}_${timeStamp}`
-            const type = 'received'
-            const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound)
-                .then(() => {
-                    // if firebase function worked, update redux store
-                    const type = 'send'
-                    const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
-                    this.props.dispatch(action)
-                    setTimeout(() => this.props.returnToContactScreen(), 500)
-                })
-                .catch(err => this.setState({ errorMessage: err }))
-
-        } else {
-            // if additionnal message length exceed 100
-            this.setState({ errorMessage: strings('contacts_screen.messages_list_screen.close_button') })
-        }
-
-    }
-
-    //*
-    // Displays - Length of additionnal message
-    //*
-    _displayAdditionnalMessageLenght = () => {
-        let length = this.state.additionnalMessage.length
-        if (length <= 100) {
-            return (
-                <Text style={styles.additionnal_message_length}>{length}</Text>
-            )
-        } else {
-            return (
-                <Text style={styles.additionnal_message_length}>X</Text>
-            )
-        }
+        // reset error message
+        this.setState({ errorMessage: null })
+        // calls firebase function
+        const timeStamp = new Date().getTime();
+        const currentUser = this.props.currentUser.name
+        const contact = this.props.contact
+        const additionnal_message = this.state.additionnalMessage
+        const id = `${currentUser}_${timeStamp}`
+        const type = 'received'
+        const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound)
+            .then(() => {
+                // if firebase function worked, update redux store
+                const type = 'send'
+                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
+                this.props.dispatch(action)
+                setTimeout(() => this.props.returnToContactScreen(), 500)
+            })
+            .catch(err => this.setState({ errorMessage: err }))
     }
 
     _renderImage = () => {
@@ -130,7 +106,6 @@ class MessagesListScreen extends React.Component {
                                 {this.state.errorMessage}
                             </Text>}
                         <View style={styles.TextInput_container}>
-                            {this._displayAdditionnalMessageLenght()}
                             <TextInput
                                 placeholder={strings('contacts_screen.messages_list_screen.placeholder')}
                                 onChangeText={(text) => this._additionnalMessageChanged(text)}

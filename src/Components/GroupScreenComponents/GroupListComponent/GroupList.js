@@ -168,10 +168,15 @@ class GroupList extends React.Component {
                             ref={component => this.messageInput = component}
                         />
                         <TouchableOpacity
-                            onPress={() => this._displayButtons()}
                             style={styles.cross}>
-                            <View style={styles.crossUp} />
-                            <View style={styles.crossFlat} />
+                            <Icon
+                                name='plus-circle'
+                                type='feather'
+                                size={30}
+                                color='white'
+                                underlayColor='transparent'
+                                onPress={() => this._displayButtons()}
+                            />
                         </TouchableOpacity>
                     </View>}
 
