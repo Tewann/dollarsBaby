@@ -228,6 +228,12 @@ com/google/android/gms/common/zzc.class
 com/google/android/gms/common/zzm.class
 com/google/android/gms/flags/FlagSource.class
 com/google/android/gms/internal/ads/zzadh.class
+com/google/android/gms/internal/firebase_auth/zzt.class
+com/google/android/gms/internal/firebase_auth/zzu.class
+com/google/android/gms/internal/firebase_auth/zzv.class
+com/google/android/gms/internal/firebase_auth/zzw.class
+com/google/android/gms/internal/firebase_auth/zzy.class
+com/google/android/gms/internal/firebase_auth/zzz.class
 com/google/android/gms/stats/CodePackage.class
 com/google/common/annotations/Beta.class
 com/google/common/annotations/GwtCompatible.class
@@ -279,6 +285,7 @@ com/google/firebase/firestore/IgnoreExtraProperties.class
 com/google/firebase/firestore/PropertyName.class
 com/google/firebase/firestore/ServerTimestamp.class
 com/google/firebase/firestore/ThrowOnExtraProperties.class
+com/google/firebase/firestore/util/AsyncQueue.class
 com/google/firebase/messaging/RemoteMessage$MessagePriority.class
 com/google/firebase/storage/StorageException$ErrorCode.class
 com/google/gson/annotations/Expose.class

@@ -29,7 +29,7 @@ class Loading extends React.Component {
 
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
-                // user is authentificated
+                                // user is authentificated
                 const username = user.displayName
                 const checkingPermission = await this.checkingNotificationsPermissions(user)
                 const checkingCurrentToken = await this.checkingCurrentRegistrationToken(username)
