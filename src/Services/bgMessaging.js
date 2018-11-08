@@ -5,6 +5,7 @@ export default async (message) => {
     // If FCM data.type is group photo updated
     // Calls GROUP_PHOTO_UPDATED reducer
     if (message.data.type === 'GROUP_PHOTO_UPDATED') {
+        console.log('bgmessaging')
         const groupName = message.data.groupName
         const dlURL = message.data.URL
         const PhotoName = message.data.PhotoName
@@ -12,7 +13,15 @@ export default async (message) => {
             type: 'GROUP_PHOTO_UPDATED',
             value: { groupName, dlURL, PhotoName }
         }
-        Store.props.dispatch(action)
+        console.log(action)
+        console.log('Stire')
+        console.log(Store)
+        console.log('dispatch')
+        console.log(Store.dispatch())
+        console.log('getstate')
+        console.log(Store.getState())
+        Store.dispatch(action)
+
     } else if (message.data.type === 'NEW_PRIVATE_GROUP_CONTACT') {
         // data from message
         const contactName = message.data.contactName
@@ -31,7 +40,7 @@ export default async (message) => {
                 type: 'NEW_PRIVATE_GROUP_CONTACT',
                 value: { contactName, groupName }
             }
-            Store.props.dispatch(action)
+            Store.dispatch(action)
             // group does not exists
         } else {
             // grabs group information from firestore
@@ -83,5 +92,5 @@ export default async (message) => {
         }
         Store.dispatch(action_FCM_onMessage)
     }
-    return Promise.resolve
+    return Promise.resolve()
 }

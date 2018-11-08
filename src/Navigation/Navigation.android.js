@@ -118,7 +118,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                 />
             }
         },
-        GroupScreen: {
+        /*GroupScreen: {
             screen: GroupScreen,
             navigationOptions: {
                 title: strings('navigation.group_screen'),
@@ -130,7 +130,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     //iconStyle={{ paddingBottom: itemHeight }}
                 />
             }
-        },
+        },*/
         MessageHistory: {
             screen: MessageHistory,
             navigationOptions: {

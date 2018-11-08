@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Nov 08 19:13:26 CET 2018
+#Thu Nov 08 21:52:36 CET 2018
 5.base=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 22.path=lib/x86/libprivatedata.so
 32.set=NATIVE_RESOURCE

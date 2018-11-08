@@ -202,7 +202,6 @@ com/facebook/react/uimanager/annotations/ReactPropGroup.class
 com/facebook/react/uimanager/annotations/ReactPropertyHolder.class
 com/facebook/react/uimanager/common/UIManagerType.class
 com/facebook/soloader/DoNotOptimize.class
-com/facebook/soloader/SoLoader.class
 com/facebook/widget/text/span/BetterImageSpan$BetterImageSpanAlignment.class
 com/google/ads/mediation/MediationServerParameters$Parameter.class
 com/google/android/gms/ads/formats/NativeAdOptions$AdChoicesPlacement.class
