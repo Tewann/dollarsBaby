@@ -9,4 +9,4 @@ let codePushOptions = {
   }
 
 AppRegistry.registerComponent('eBlink', () => codePush(codePushOptions)(App));
-AppRegistry.registerHeadlessTask('RNFirebaseBackgroundMessage', () => bgMessaging)
+//AppRegistry.registerHeadlessTask('RNFirebaseBackgroundMessage', () => bgMessaging)
