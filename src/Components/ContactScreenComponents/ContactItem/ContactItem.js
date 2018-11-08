@@ -22,10 +22,7 @@ class ContactItem extends React.Component {
             item.name === this.props.contact.name)
         let uri = this.props.contactList[contactNameIndex].photoUrl
         const backUpUri = '../../../../images/ic_tag_faces.png'
-        console.log('contactitem')
-        console.log(uri)
-        console.log(this.props.contactList[contactNameIndex])
-        if (uri === null) {
+        if (uri === null || uri === undefined) {
             return (
                 <Image
                     source={this.state.defaultPicture}
