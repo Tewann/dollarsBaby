@@ -9,7 +9,8 @@ import ContactItem from '../ContactItem/ContactItem'
 import { connect } from 'react-redux'
 import styles from './styles'
 import HeaderContactList from '../HeaderContactList/HeaderContactList'
-import MessagesListScreen from '../MessagesListScreen/MessagesListScreen';
+import MessagesListScreen from '../MessagesListScreen/MessagesListScreen'
+
 
 class ContactsScreen extends React.Component {
     constructor(props) {

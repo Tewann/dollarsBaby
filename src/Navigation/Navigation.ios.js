@@ -32,6 +32,8 @@ import styles from './styles'
 
 import { strings } from '../i18n'
 
+import { SafeAreaView } from 'react-navigation'
+
 import Dimensions from 'Dimensions'
 
 // same height as add contact bar on contact screen / group screen
@@ -59,6 +61,7 @@ const DrawerButton = ({ navigation }) => {
 
 const CustomDrawerContentComponent = (props) => {
     return (
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c'}}>
         <LinearGradient
             colors={['#3a485c', '#88b097', 'white']}
             style={{ flex: 1 }}
@@ -94,6 +97,7 @@ const CustomDrawerContentComponent = (props) => {
                 <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>{strings('navigation.disconnect')}</Text>
             </TouchableOpacity>
         </LinearGradient>
+        </SafeAreaView>
     )
 }
 
@@ -114,7 +118,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
-                    iconStyle={{ paddingBottom: itemHeight }}
+                    //iconStyle={{ paddingBottom: itemHeight / 1.2 }}
                 />
             }
         },
@@ -127,7 +131,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
-                    iconStyle={{ paddingBottom: itemHeight / 2}}
+                    iconStyle={{ paddingBottom: itemHeight / 1.2}}
                 />
             }
         },*/
@@ -140,7 +144,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='entypo'
                     size={25}
                     color='#3a485c'
-                    iconStyle={{ paddingBottom: itemHeight, color: 'grey' }}
+                    iconStyle={{ /*paddingBottom: itemHeight ,*/ color: 'grey' }}
                 />
             },
         },
@@ -167,17 +171,16 @@ const MainStackNavigator = createStackNavigator({
             headerTitleStyle: {
                 marginLeft: 0,
             },
-            /*headerStyle: {
+            headerStyle: {
                 backgroundColor: '#3a485c',
-                //backgroundColor: '#0066ff'
-            }, */
-            headerBackground: (
+            }, 
+            /*headerBackground: (
                 <LinearGradient
                     colors={['#3a485c', '#3a485c']}
                     style={{ flex: 1 }}
 
                 />
-            ),
+            ),*/
             headerTintColor: '#f0e5dc',
             headerLeft: <DrawerButton navigation={navigation} />
         })
