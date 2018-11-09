@@ -35,11 +35,20 @@ import { strings } from '../i18n'
 import { SafeAreaView } from 'react-navigation'
 
 import Dimensions from 'Dimensions'
+import { isIphoneX } from '../Services/is-iphone-x'
 
 // same height as add contact bar on contact screen / group screen
 const { height, width } = Dimensions.get('window');
 const itemWidth = (width - 35);
 const itemHeight = height / 20 + 9
+
+//*
+// Check iPhone version
+// Used to center icons
+// If iPhoneX : react native does center icons automaticly : returns null
+// If iPhone version older than iPhoneX : return itemHeight/1.2 : center icons
+//*
+const centerIcons = isIphoneX() ? null : itemHeight / 1.2
 
 //
 // Custom components for navigation
@@ -118,7 +127,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
-                    //iconStyle={{ paddingBottom: itemHeight / 1.2 }}
+                    iconStyle={{ paddingBottom: centerIcons }}
                 />
             }
         },
@@ -144,7 +153,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='entypo'
                     size={25}
                     color='#3a485c'
-                    iconStyle={{ /*paddingBottom: itemHeight ,*/ color: 'grey' }}
+                    iconStyle={{ paddingBottom: centerIcons , color: 'grey' }}
                 />
             },
         },
@@ -169,7 +178,7 @@ const MainStackNavigator = createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             title: 'eBlink',
             headerTitleStyle: {
-                marginLeft: 0,
+                //marginLeft: 0,
             },
             headerStyle: {
                 backgroundColor: '#3a485c',
