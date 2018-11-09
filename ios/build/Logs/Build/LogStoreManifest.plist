@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>2F149D11-4F29-4409-AFD8-7E4EA559D799</key>
+		<key>13735BB4-D3B2-46D1-93F0-D58609DB8FCE</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>2F149D11-4F29-4409-AFD8-7E4EA559D799.xcactivitylog</string>
+			<string>13735BB4-D3B2-46D1-93F0-D58609DB8FCE.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>W</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,15 +27,15 @@
 			<key>signature</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>563396521.56771302</real>
+			<real>563406670.64859796</real>
 			<key>timeStoppedRecording</key>
-			<real>563396561.70987403</real>
+			<real>563406714.18012595</real>
 			<key>title</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>2F149D11-4F29-4409-AFD8-7E4EA559D799</string>
+			<string>13735BB4-D3B2-46D1-93F0-D58609DB8FCE</string>
 		</dict>
-		<key>9FB72AAE-9AFB-4B26-8971-32FD714FF2D6</key>
+		<key>BFB634C7-904C-4F34-B7A2-63AEF11E0DCA</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -44,7 +44,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>9FB72AAE-9AFB-4B26-8971-32FD714FF2D6.xcactivitylog</string>
+			<string>BFB634C7-904C-4F34-B7A2-63AEF11E0DCA.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>W</string>
 			<key>schemeIdentifier-containerName</key>
@@ -56,13 +56,13 @@
 			<key>signature</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>563395984.14176297</real>
+			<real>563407040.80612898</real>
 			<key>timeStoppedRecording</key>
-			<real>563396047.66248</real>
+			<real>563407069.49546802</real>
 			<key>title</key>
 			<string>Building workspace eBlink with scheme eBlink and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>9FB72AAE-9AFB-4B26-8971-32FD714FF2D6</string>
+			<string>BFB634C7-904C-4F34-B7A2-63AEF11E0DCA</string>
 		</dict>
 	</dict>
 </dict>

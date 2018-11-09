@@ -6,6 +6,7 @@ import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import firebase from 'react-native-firebase'
 import Dimensions from 'Dimensions'
+import { SafeAreaView } from 'react-navigation'
 
 const { height, width } = Dimensions.get('window');
 const heightString = Math.trunc(height).toString()
@@ -20,15 +21,17 @@ export default class App extends React.Component {
     return (
       <Provider store={Store}>
         <PersistGate persistor={persistor}>
-          <Navigation />
-          <Banner
-            unitId={"ca-app-pub-3940256099942544/6300978111"}
-            size={"FULL_BANNER"}
-            request={request.build()}
-            onAdFailedToLoad={(e) => {
-              console.error('Advert error : ' + e);
-            }}
-          />
+          <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }} forceInset={{ top: 'never' }}>
+            <Navigation />
+            <Banner
+              unitId={"ca-app-pub-3940256099942544/6300978111"}
+              size={"FULL_BANNER"}
+              request={request.build()}
+              onAdFailedToLoad={(e) => {
+                console.error('Advert error : ' + e);
+              }}
+            />
+          </SafeAreaView>
         </PersistGate>
       </Provider>
     );
