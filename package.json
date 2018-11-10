@@ -1,6 +1,6 @@
 {
   "name": "eBlink",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@babel/preset-env": "^7.0.0",
