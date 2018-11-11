@@ -17,7 +17,7 @@ class ProfilScreen extends React.Component {
     render() {
         return (
             <View
-                style={{ flex: 1 }}
+                style={{ flex: 1, backgroundColor: 'white' }}
             >
                 <LinearGradient
                     style={styles.header_container}

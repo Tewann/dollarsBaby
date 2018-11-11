@@ -124,6 +124,7 @@
 		86C47CB02156C2220092FA00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86C47C862156C2210092FA00 /* GoogleService-Info.plist */; };
 		86CDEDC52185BD5F003B8FF7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CDED962185BD5F003B8FF7 /* UserNotifications.framework */; };
 		86EC4DDA21612BCB004E45F7 /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EC4DD721612BA4004E45F7 /* libRNI18n.a */; };
+		86FA22BA2197505500CEB204 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 86FA22B92197505500CEB204 /* main.jsbundle */; };
 		9023D510CCC54CCCB72FC230 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BBD62A3719F4A4F859FB50F /* FontAwesome.ttf */; };
 		9A3E4BBC6AF5466883CB0EAE /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5497F821BBE84CDEBC335E16 /* MaterialIcons.ttf */; };
 		A1D90DFBCB984C95AB29F20A /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC0FFEE9D4F64840B50BDED6 /* EvilIcons.ttf */; };
@@ -475,7 +476,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -540,6 +540,7 @@
 		86C47C862156C2210092FA00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "eBlink/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		86CDED962185BD5F003B8FF7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		86EC4DA621612BA3004E45F7 /* RNI18n.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/ios/RNI18n.xcodeproj"; sourceTree = "<group>"; };
+		86FA22B92197505500CEB204 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = eBlink/main.jsbundle; sourceTree = "<group>"; };
 		931D8635C0E44B9157FA1EB6 /* libPods-eBlink.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eBlink.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5842B219B2C4C74E47CEE6 /* Pods-eBlink-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eBlink-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eBlink-tvOSTests/Pods-eBlink-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0C9B9F522F04FE09A9DBBB8 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
@@ -711,8 +712,8 @@
 				8681E428218CCC0A00D237ED /* s5Jarrive.aiff */,
 				8681E427218CCBF900D237ED /* s6Cestfait.aiff */,
 				864F7E13216A0FF7005FB1BB /* eBlink.entitlements */,
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				86C47C862156C2210092FA00 /* GoogleService-Info.plist */,
+				86FA22B92197505500CEB204 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -1551,6 +1552,7 @@
 				26CF82E783F44FF0B219703E /* Ionicons.ttf in Resources */,
 				816EFAC343CE4C56B21698A4 /* MaterialCommunityIcons.ttf in Resources */,
 				8681E420218CB09200D237ED /* s1Blink.aiff in Resources */,
+				86FA22BA2197505500CEB204 /* main.jsbundle in Resources */,
 				86A57D3321614C14003D010A /* Octicons.ttf in Resources */,
 				9A3E4BBC6AF5466883CB0EAE /* MaterialIcons.ttf in Resources */,
 				22D91719A26C4516BF04A7FC /* Octicons.ttf in Resources */,
