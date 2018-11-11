@@ -29,7 +29,7 @@ class Loading extends React.Component {
 
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
-                                // user is authentificated
+                // user is authentificated
                 const username = user.displayName
                 const checkingPermission = await this.checkingNotificationsPermissions(user)
                 const checkingCurrentToken = await this.checkingCurrentRegistrationToken(username)
@@ -56,8 +56,8 @@ class Loading extends React.Component {
             const action2 = { type: "SET_CURRENT_USER_EMAIL", value: userInformations.userEmail }
             this.props.dispatch(action2)
         }
-        const channel = new firebase.notifications.Android.Channel('test-channel', 'Test Channel', firebase.notifications.Android.Importance.Max)
-            .setDescription('My apps test channel');
+        const channel = new firebase.notifications.Android.Channel('eBlink-channel', 'Test Channel', firebase.notifications.Android.Importance.Max)
+            .setDescription('eBlink channel');
         // Create the channel for android
         firebase.notifications().android.createChannel(channel);
 
@@ -84,7 +84,7 @@ class Loading extends React.Component {
                         .setTitle(notification.title)
                         .setBody(notification.body)
                         .setSound(iOSSound)
-                    
+
                     // display notification
                     firebase.notifications().displayNotification(notif)
 
@@ -234,7 +234,7 @@ class Loading extends React.Component {
     checkingNotificationsPermissions = async (user) => {
         // checking if user has granted permission for notifications
         const enabled = await firebase.messaging().hasPermission()
-        if (enabled) {
+        if (enabled || this.props.currentUser.notificationspermissionsdeclined == true) {
             //user has permissions
             // navigates to main screen
             return
@@ -257,14 +257,19 @@ class Loading extends React.Component {
             // display Alert
             Alert.alert(
                 strings('loading.error_title'),
-                strings('loading.error_message')
+                strings('loading.error_message'),
                 [
-                {
-                    text: strings('loading.close_button_1'), onPress: () => this.requestingPermission()
-                },
-                {
-                    text: strings('loading.close_button_2'), onPress: () => this.goToMainScreen(user)
-                }
+                    {
+                        text: strings('loading.close_button_1'), onPress: () => this.requestingPermission()
+                    },
+                    {
+                        text: strings('loading.close_button_2'), onPress: () => {
+                            // calls reducers, current user permissions declined -> true
+                            const permissionsdeclinedaction = { type: 'NOTIFICATIONS_DECLINED' }
+                            this.props.dispatch(permissionsdeclinedaction)
+                            this.goToMainScreen(user)
+                        }
+                    }
                 ]
             )
 

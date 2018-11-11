@@ -16,7 +16,7 @@
             "predefined_message_contact_request": "Contact request",
             "contact_request_send": "Contact request sent",
             "error_message2": "You did not enter a contact name",
-            "placeholder": "Add contact"
+            "placeholder": "Add contact (username)"
         },
         "message_item": {},
         "messages_list_screen": {
@@ -57,8 +57,8 @@
         }
     },
     "loading": {
-        "error_title": "Permissions denied",
-        "error_message": "To take full advantage of the application, we recommend that you accept notifications",
+        "error_title": "Notifications - Permissions denied",
+        "error_message": "To take full advantage of the application, receive and hear the specific notification sounds of each predefined message, we strongly recommend that you accept notifications.",
         "close_button_1": "Allow notifications",
         "close_button_2": "Continue without notifications"
     },

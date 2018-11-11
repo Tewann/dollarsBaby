@@ -25,7 +25,6 @@ class Login extends React.Component {
             .auth()
             .signInWithEmailAndPassword(this.state.email, this.state.password)
             .then(() => {
-                this.props.dispatch(fetchContacts(user.displayName))
                 this.props.navigation.navigate('MainStackNavigator')
             })
             .catch(error => {
