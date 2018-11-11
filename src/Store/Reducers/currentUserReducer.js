@@ -6,6 +6,7 @@ const initialState = {
     name: null,
     email: null,
     termsOfServiceStatus: 'declined',
+    notificationspermissionsdeclined: false,
 }
 
 function getCurrentUserInformations(state = initialState, action) {
@@ -42,7 +43,7 @@ function getCurrentUserInformations(state = initialState, action) {
 
         case "RESET_USER":
             return initialState;
-        
+
         case "TOS_ACCEPTED":
             nextState = {
                 ...state,
@@ -50,13 +51,19 @@ function getCurrentUserInformations(state = initialState, action) {
             }
             return nextState || state
 
+        case "NOTIFICATIONS_DECLINED":
+            nextState = {
+                ...state,
+                notificationspermissionsdeclined: true
+            }
+            return nextState || state
         case "RESET_TOS":
             nextState = {
                 ...state,
                 termsOfServiceStatus: 'declined'
             }
             return nextState || state
-            
+
         default:
             return state
     }

@@ -16,7 +16,7 @@
             "predefined_message_contact_request": "Demande de contact",
             "contact_request_send": "Demande de contact envoyée",
             "error_message2": "Vous n'avez pas saisi de nom de contact",
-            "placeholder": "Ajouter un contact"
+            "placeholder": "Ajouter un contact (nom d'utilisateur)"
         },
         "message_item": {},
         "messages_list_screen": {
@@ -58,7 +58,7 @@
     },
     "loading": {
         "error_title": "Permissions refusées",
-        "error_message": "Pour profiter pleinement de l'application, nous vous recommandons d'accepter les notifications",
+        "error_message": "Pour profiter pleinement de l'application, recevoir  et entendre les sons spécifiques de notification de chaque message predefini, nous vous recommandons d'accepter les notifications",
         "close_button_1": "Autoriser les notifications",
         "close_button_2": "Continuer sans notifications"
     },
