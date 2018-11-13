@@ -1,2 +1,2 @@
-# Referenced at C:\Users\Tewann\Desktop\Prog\theWay\dollarsBaby\android\app\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:56
+# Referenced at C:\Users\Tewann\Desktop\Prog\dollarsBaby\android\app\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:56
 -keep class com.eblink.MainApplication { <init>(...); }

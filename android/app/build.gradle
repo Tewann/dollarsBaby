@@ -139,6 +139,7 @@ android {
 }
 
 dependencies {
+    compile project(':rn-fetch-blob')
     implementation project(':react-native-linear-gradient')
     implementation project(':react-native-code-push')
     implementation project(':react-native-i18n')

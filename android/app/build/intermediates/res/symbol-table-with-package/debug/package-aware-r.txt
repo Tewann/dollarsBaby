@@ -880,11 +880,6 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 raw s1blink
-raw s2tesou
-raw s3urgent
-raw s4oubliepas
-raw s5jarrive
-raw s6cestfait
 raw urgent
 string CODE_PUSH_APK_BUILD_TIME
 string abc_action_bar_home_description

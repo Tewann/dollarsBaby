@@ -2988,12 +2988,7 @@ public final class R {
   }
   public static final class raw {
     public static final int s1blink=0x7f0b0000;
-    public static final int s2tesou=0x7f0b0001;
-    public static final int s3urgent=0x7f0b0002;
-    public static final int s4oubliepas=0x7f0b0003;
-    public static final int s5jarrive=0x7f0b0004;
-    public static final int s6cestfait=0x7f0b0005;
-    public static final int urgent=0x7f0b0006;
+    public static final int urgent=0x7f0b0001;
   }
   public static final class string {
     public static final int CODE_PUSH_APK_BUILD_TIME=0x7f0c0000;
