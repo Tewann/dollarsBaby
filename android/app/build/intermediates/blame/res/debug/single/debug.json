@@ -336,6 +336,10 @@
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\20af3d27792ccf4f443d8899e14a51f8\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
+        "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_s4oubliepas.wav.flat",
+        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\s4oubliepas.wav"
+    },
+    {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\825986aeb92940d8e69e49addf9dad0e\\res\\layout\\abc_select_dialog_material.xml"
     },
@@ -1160,6 +1164,10 @@
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\825986aeb92940d8e69e49addf9dad0e\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_s2tesou.wav.flat",
+        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\s2tesou.wav"
+    },
+    {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\825986aeb92940d8e69e49addf9dad0e\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
@@ -1206,10 +1214,6 @@
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\20af3d27792ccf4f443d8899e14a51f8\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_urgent.wav.flat",
-        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\urgent.wav"
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_redbox_item_title.xml.flat",
@@ -1456,6 +1460,10 @@
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\364e85dcf6aa9251b1205b1cf1285878\\res\\layout\\notification_template_lines_media.xml"
     },
     {
+        "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_s6cestfait.wav.flat",
+        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\s6cestfait.wav"
+    },
+    {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_default_mtrl_shape.xml.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\825986aeb92940d8e69e49addf9dad0e\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
@@ -1586,6 +1594,10 @@
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\825986aeb92940d8e69e49addf9dad0e\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_s3urgent.wav.flat",
+        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\s3urgent.wav"
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_layout.xml.flat",
@@ -1778,6 +1790,10 @@
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Tewann\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\825986aeb92940d8e69e49addf9dad0e\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\raw_s5jarrive.wav.flat",
+        "source": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\src\\main\\res\\raw\\s5jarrive.wav"
     },
     {
         "merged": "C:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",

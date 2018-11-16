@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Nov 13 21:56:17 CET 2018
+#Fri Nov 16 23:56:47 CET 2018
 5.base=C\:\\Users\\Tewann\\Desktop\\Prog\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 22.path=classes3.dex
 32.set=ASSET
