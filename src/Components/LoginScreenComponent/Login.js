@@ -25,7 +25,7 @@ class Login extends React.Component {
             .auth()
             .signInWithEmailAndPassword(this.state.email, this.state.password)
             .then(() => {
-                this.props.navigation.navigate('MainStackNavigator')
+                this.props.navigation.navigate('Loading')
             })
             .catch(error => {
                 this.setState({ errorMessage: error.message })           

@@ -31,9 +31,12 @@ ios/s4Oubliepas.aiff
 ios/s5Jarrive.aiff
 ios/s6Cestfait.aiff
 
-android/app/src/main/res/raw/s1Blink.wav
-android/app/src/main/res/raw/s2Tesou.wav
-android/app/src/main/res/raw/s3Urgent.wav
-android/app/src/main/res/raw/s4Oubliepas.wav
-android/app/src/main/res/raw/s5Jarrive.wav
-android/app/src/main/res/raw/s6Cestfait.wav
+android/app/src/main/res/raw/s1blink.wav
+android/app/src/main/res/raw/s2tesou.wav
+android/app/src/main/res/raw/s3urgent.wav
+android/app/src/main/res/raw/s4oubliepas.wav
+android/app/src/main/res/raw/s5jarrive.wav
+android/app/src/main/res/raw/s6cestfait.wav
+
+# Android build
+./android/app/build/
