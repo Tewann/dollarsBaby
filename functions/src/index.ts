@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+import { user } from 'firebase-functions/lib/providers/auth';
 
 
 admin.initializeApp()
@@ -306,7 +307,7 @@ export const addTokenInformationsWhenNewContact =
 //          USERS
 // -------------------------------
 
-export const sendPushNotificationsForNewMessages =
+/*export const sendPushNotificationsForNewMessages =
     functions.firestore
         .document(`Users/{user}/messagesReceived/{message}`)
         .onCreate(async (snapshot, context) => {
@@ -332,7 +333,8 @@ export const sendPushNotificationsForNewMessages =
                     body: data.body,
                 },
                 data: {
-                    predefined_message: predefined_message
+                    predefined_message: predefined_message,
+                    android_channel_id: 'eBlink-channel'
                 },
                 apns: {
                     payload: {
@@ -343,7 +345,7 @@ export const sendPushNotificationsForNewMessages =
                 },
                 android: {
                     notification: {
-                        sound: androidSound
+                        sound: androidSound,
                     }
                 },
                 token: fcmToken,
@@ -353,4 +355,75 @@ export const sendPushNotificationsForNewMessages =
 
             // sends notification to user's phone
             return admin.messaging().send(message)
+        })
+        */
+export const sendPushNotificationsForNewMessages =
+    functions.firestore
+        .document(`Users/{user}/messagesReceived/{message}`)
+        .onCreate(async (snapshot, context) => {
+            // User database reference
+            const parent = snapshot.ref.parent.parent
+
+            // User's token for cloud messaging
+            const fcmToken = await parent.get().then(doc => {
+                const Token = doc.data().fcmToken
+                return Token
+            })
+
+            // User platform (Android / iOS)
+            const userPlatform = await parent.get().then(doc => {
+                const platform = doc.data().userPlatform
+                return platform
+            })
+
+            // Building message
+            // Message data
+            const data = snapshot.data()
+
+            // Predefined message (sended as data in case notification sound is not received)
+            const predefined_message = data.predefined_message
+
+            // Payload
+            let payload = null
+            // If Platorm is Android, builds Android payload
+            if (userPlatform === 'android') {
+                const androidSound = data.sound + '.wav'
+                payload = {
+                    notification: {
+                        title: data.title,
+                        body: data.body,
+                        sound: androidSound,
+                        // Android channel id necessary for > 26 (OREO 8.0 +)
+                        android_channel_id: data.sound
+                    },
+                    data: {
+                        predefined_message: predefined_message,
+                    },
+                }
+            } else {
+                // If platform is iOS
+                const iOSSound = data.sound + '.aiff'
+                payload = {
+                    notification: {
+                        title: data.title,
+                        body: data.body,
+                        sound: iOSSound
+                    },
+                    data: {
+                        predefined_message: predefined_message,
+                    },
+                }
+            }
+
+            console.log('notification')
+            console.log(payload)
+
+            // sends notification to user's phone
+            return admin.messaging().sendToDevice(fcmToken, payload)
+                .then((response) => {
+                    console.log('Successfully sent message', response);
+                })
+                .catch((error) => {
+                    console.log('Error sending message', error)
+                })
         })

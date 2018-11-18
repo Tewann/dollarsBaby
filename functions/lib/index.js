@@ -271,50 +271,117 @@ exports.addTokenInformationsWhenNewContact = functions.firestore
 // -------------------------------
 //          USERS
 // -------------------------------
+/*export const sendPushNotificationsForNewMessages =
+    functions.firestore
+        .document(`Users/{user}/messagesReceived/{message}`)
+        .onCreate(async (snapshot, context) => {
+            // grabs user reference
+            const parent = snapshot.ref.parent.parent
+            // grabs user's token for cloud messaging
+            const fcmToken = await parent.get().then(doc => {
+                const Token = doc.data().fcmToken
+                return Token
+            })
+            // building message
+            // data
+            const data = snapshot.data()
+            // sound
+            const androidSound = data.sound + '.wav'
+            const iOSSound = data.sound + '.aiff'
+            // sends predefined message as data if notification sound is not received
+            const predefined_message = data.predefined_message
+            // message
+            const message = {
+                notification: {
+                    title: data.title,
+                    body: data.body,
+                },
+                data: {
+                    predefined_message: predefined_message,
+                    android_channel_id: 'eBlink-channel'
+                },
+                apns: {
+                    payload: {
+                        aps: {
+                            sound: iOSSound
+                        }
+                    }
+                },
+                android: {
+                    notification: {
+                        sound: androidSound,
+                    }
+                },
+                token: fcmToken,
+            }
+            console.log('notification')
+            console.log(message)
+
+            // sends notification to user's phone
+            return admin.messaging().send(message)
+        })
+        */
 exports.sendPushNotificationsForNewMessages = functions.firestore
     .document(`Users/{user}/messagesReceived/{message}`)
     .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {
-    // grabs user reference
+    // User database reference
     const parent = snapshot.ref.parent.parent;
-    // grabs user's token for cloud messaging
+    // User's token for cloud messaging
     const fcmToken = yield parent.get().then(doc => {
         const Token = doc.data().fcmToken;
         return Token;
     });
-    // building message
-    // data
+    // User platform (Android / iOS)
+    const userPlatform = yield parent.get().then(doc => {
+        const platform = doc.data().userPlatform;
+        return platform;
+    });
+    // Building message
+    // Message data
     const data = snapshot.data();
-    // sound
-    const androidSound = data.sound + '.wav';
-    const iOSSound = data.sound + '.aiff';
-    // sends predefined message as data if notification sound is not received
+    // Predefined message (sended as data in case notification sound is not received)
     const predefined_message = data.predefined_message;
-    // message
-    const message = {
-        notification: {
-            title: data.title,
-            body: data.body,
-        },
-        data: {
-            predefined_message: predefined_message
-        },
-        apns: {
-            payload: {
-                aps: {
-                    sound: iOSSound
-                }
-            }
-        },
-        android: {
+    // Payload
+    let payload = null;
+    // If Platorm is Android, builds Android payload
+    if (userPlatform === 'android') {
+        const androidSound = data.sound + '.wav';
+        payload = {
             notification: {
-                sound: androidSound
-            }
-        },
-        token: fcmToken,
-    };
+                title: data.title,
+                body: data.body,
+                sound: androidSound,
+                // Android channel id necessary for > 26 (OREO 8.0 +)
+                android_channel_id: data.sound
+            },
+            data: {
+                predefined_message: predefined_message,
+            },
+        };
+    }
+    else {
+        // If platform is iOS
+        const iOSSound = data.sound + '.aiff';
+        payload = {
+            notification: {
+                title: data.title,
+                body: data.body,
+                sound: iOSSound
+            },
+            data: {
+                predefined_message: predefined_message,
+            },
+        };
+    }
     console.log('notification');
-    console.log(message);
+    console.log(payload);
     // sends notification to user's phone
-    return admin.messaging().send(message);
+    return admin.messaging().sendToDevice(fcmToken, payload)
+        .then((response) => {
+        console.log('Successfully sent message', response);
+    })
+        .catch((error) => {
+        console.log('Error sending message', error);
+    });
 }));
 //# sourceMappingURL=index.js.map

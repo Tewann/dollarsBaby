@@ -11,7 +11,7 @@
     "jest": "23.6.0",
     "jest-react-native": "^18.0.0",
     "metro-react-native-babel-preset": "0.45.0",
-    "react-test-renderer": "16.5.0"
+    "react-test-renderer": "16.6.1"
   },
   "scripts": {
     "start": "react-native start",
@@ -24,12 +24,12 @@
   },
   "dependencies": {
     "create-react-native-app": "^1.0.0",
-    "react": "16.5.0",
-    "react-native": "0.57.0",
+    "react": "16.6.1",
+    "react-native": "0.57.5",
     "react-native-cached-image": "github:fungilation/react-native-cached-image",
     "react-native-code-push": "^5.4.2",
     "react-native-elements": "^0.19.1",
-    "react-native-firebase": "^5.0.0",
+    "react-native-firebase": "^5.1.0",
     "react-native-i18n": "^2.0.15",
     "react-native-image-picker": "^0.26.10",
     "react-native-linear-gradient": "^2.4.2",

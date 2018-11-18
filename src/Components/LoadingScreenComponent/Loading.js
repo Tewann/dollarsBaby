@@ -56,10 +56,50 @@ class Loading extends React.Component {
             const action2 = { type: "SET_CURRENT_USER_EMAIL", value: userInformations.userEmail }
             this.props.dispatch(action2)
         }
-        const channel = new firebase.notifications.Android.Channel('eBlink-channel', 'Test Channel', firebase.notifications.Android.Importance.Max)
-            .setDescription('eBlink channel');
-        // Create the channel for android
-        firebase.notifications().android.createChannel(channel);
+
+        //*
+        // Create android notification channels
+        // One channel for each sound
+        //*
+        if (Platform.OS === 'android') {
+            // Blink channel
+            const s1blink = new firebase.notifications.Android.Channel('s1blink', 'Blink Sound Channel', firebase.notifications.Android.Importance.Max)
+                .setDescription('Blink Sound Channel')
+                .setSound('s1blink.wav');
+            firebase.notifications().android.createChannel(s1blink);
+
+            // Where channel
+            const s2tesou = new firebase.notifications.Android.Channel('s2tesou', 'Where Sound Channel', firebase.notifications.Android.Importance.Max)
+                .setDescription('Where Sound Channel')
+                .setSound('s2tesou.wav');
+            firebase.notifications().android.createChannel(s2tesou);
+
+            // Urgent channel
+            const s3urgent = new firebase.notifications.Android.Channel('s3urgent', 'Urgent Sound Channel', firebase.notifications.Android.Importance.Max)
+                .setDescription('Urgent Sound Channel')
+                .setSound('s3urgent.wav');
+            firebase.notifications().android.createChannel(s3urgent);
+
+            // Don't forget channel
+            const s4oubliepas = new firebase.notifications.Android.Channel('s4oubliepas', "Don't forget Sound Channel", firebase.notifications.Android.Importance.Max)
+                .setDescription("Don't forget Sound Channel")
+                .setSound('s4oubliepas.wav');
+            firebase.notifications().android.createChannel(s4oubliepas);
+
+            // Coming channel
+            const s5jarrive = new firebase.notifications.Android.Channel('s5jarrive', "I'm comming Sound Channel", firebase.notifications.Android.Importance.Max)
+                .setDescription("I'm comming Sound Channel")
+                .setSound('s5jarrive.wav');
+            firebase.notifications().android.createChannel(s5jarrive);
+
+            // Done channel
+            const s6cestfait = new firebase.notifications.Android.Channel('s6cestfait', "Done Sound Channel", firebase.notifications.Android.Importance.Max)
+                .setDescription("Done Sound Channel")
+                .setSound('s6cestfait.wav');
+            firebase.notifications().android.createChannel(s6cestfait);
+        }
+
+
 
         //*
         // Listener for notifications when app is in foreground
@@ -103,7 +143,7 @@ class Loading extends React.Component {
                         .setBody(notification.body)
                         .setSound(androidSound)
 
-                    notif.android.setChannelId(channel)
+                    notif.android.setChannelId('s1blink')
                     notif.android.setAutoCancel(true);
 
                     // display notification
@@ -111,18 +151,23 @@ class Loading extends React.Component {
                 }
                 // if notification sound is correctly received
             } else {
+
+                // Set sound depending on OS
                 const sound = Platform.OS === 'android' ? notification.sound + '.waw' : notification.sound + '.aiff'
-                // Process your notification as required
+
+                // Create notification
                 const notif = new firebase.notifications.Notification()
                     .setNotificationId(notification.notificationId)
                     .setTitle(notification.title)
                     .setBody(notification.body)
                     .setSound(sound)
 
-                notif.android.setChannelId(channel)
+                // Set channel for android > 26
+
+                notif.android.setChannelId(notification.sound)
                 notif.android.setAutoCancel(true);
 
-                // display notification
+                // Display notification
                 firebase.notifications().displayNotification(notif)
             }
         });
@@ -130,6 +175,7 @@ class Loading extends React.Component {
         //*
         // Listener for data message only
         //*
+        /*
         this.messageListener = firebase.messaging().onMessage((message) => {
             // If FCM data.type is group photo updated
             // Calls GROUP_PHOTO_UPDATED reducer
@@ -213,6 +259,7 @@ class Loading extends React.Component {
                 this.props.dispatch(action_FCM_onMessage)
             }
         })
+        */
     }
 
     goToMainScreen(user) {

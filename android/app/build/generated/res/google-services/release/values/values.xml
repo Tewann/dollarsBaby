@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">309077847108-ceb5a07u52bohrs0er8pfeiv31g5v2n7.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://eblink-d7c9a.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">309077847108</string>
+    <string name="google_api_key" translatable="false">AIzaSyCs6LG-I4KnNHLNePI6r6S7NgQz8oYJg2o</string>
+    <string name="google_app_id" translatable="false">1:309077847108:android:7bd6bf47dedbffbd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCs6LG-I4KnNHLNePI6r6S7NgQz8oYJg2o</string>
+    <string name="google_storage_bucket" translatable="false">eblink-d7c9a.appspot.com</string>
+    <string name="project_id" translatable="false">eblink-d7c9a</string>
+</resources>

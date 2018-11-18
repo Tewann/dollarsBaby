@@ -7,7 +7,7 @@ import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
 import { strings } from '../../i18n'
-import { fetchContacts } from '../../Services/firebaseFunctions'
+import { fetchContacts, setPlatformUsed } from '../../Services/firebaseFunctions'
 
 
 class Login extends React.Component {
@@ -24,11 +24,14 @@ class Login extends React.Component {
         firebase
             .auth()
             .signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() => {
+            .then(async () => {
+                // Set current user platform used to firestore profile
+                const setPlatform = await setPlatformUsed()
                 this.props.navigation.navigate('Loading')
             })
             .catch(error => {
-                this.setState({ errorMessage: error.message })           
+                this.setState({ errorMessage: error.message })       
+                console.log('err', error)    
             })
     }
 
