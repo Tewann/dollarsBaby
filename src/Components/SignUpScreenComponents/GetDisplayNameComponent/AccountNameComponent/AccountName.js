@@ -6,7 +6,7 @@ import { View, TextInput, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import { createUserInDatabase, loginToFirebase, setUpRegistrationTokenToFirebase } from '../../../../Services/firebaseFunctions'
+import { createUserInDatabase, loginToFirebase, setUpRegistrationTokenToFirebase, setPlatformUsed } from '../../../../Services/firebaseFunctions'
 import firebase from 'react-native-firebase';
 import Store from '../../../../Store/configureStore'
 
@@ -60,8 +60,9 @@ class AccountName extends React.Component {
             this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_matching') })
         } else {
             createUserInDatabase(this.state.nameInput)
-                .then(() => {
+                .then(async () => {
                     this.getToken(this.state.nameInput)
+                    const setPlatform = await setPlatformUsed()
                     // getting props GetDisplayName Component
                     this.props.goToProfilPicture()
                 })

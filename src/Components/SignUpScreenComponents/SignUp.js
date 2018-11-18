@@ -33,7 +33,7 @@ class SignUp extends React.Component {
             this.setState({ errorMessage: strings('sign_up_screen.sign_up.psswd_not_filled') })
         } else {
             signUpToFirebase(this.state.email, this.state.password)
-                .then(() => {
+                .then(async () => {
                     this.props.navigation.navigate('GetDisplayName')
                 })
                 .catch((error) => {

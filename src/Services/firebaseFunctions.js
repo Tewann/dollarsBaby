@@ -200,6 +200,28 @@ export const setUpRegistrationTokenToFirebase = async (fcmToken, username) => {
     })
 }
 
+//*
+// Check/Add current platform used (ios/Android) to the user database profil
+// Used at logging and account created
+// - userName from getUserData()
+//*
+
+export const setPlatformUsedToFirestore = async (userName) => {
+    new Promise((resolve, reject) => {
+        const userPlatform = Platform.OS === 'android' ? 'android' : 'ios'
+        firebase.firestore()
+            .collection('Users')
+            .doc(userName)
+            .set({
+                userPlatform: userPlatform
+            }, { merge: true })
+            .then(() => {
+                resolve()
+            })
+            .catch(err => reject(err))
+    })
+}
+
 // send message to the contact's firestore message list
 export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type, sound) => {
     new Promise((resolve, reject) => {
@@ -269,6 +291,16 @@ export const createUserInDatabase = async (username) => {
     const { userUid, userEmail, userName } = await getUserData();
     const setDisplayName = await setDiplayNameToFirebaseAccount(username);
     const createUser = await createUserInCloudFirestore(username, userUid, userEmail);
+}
+
+//*
+// Check/Add current platform used (ios/Android) to the user database profil
+// Used at logging and account created
+// - userName from getUserData()
+//*
+export const setPlatformUsed = async () => {
+    const { userUid, userEmail, userName } = await getUserData();
+    const setPlatform = await setPlatformUsedToFirestore(userName);
 }
 
 // function exported to ProfilPhoto component (after sign up screen)

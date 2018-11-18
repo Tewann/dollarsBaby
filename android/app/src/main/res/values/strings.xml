@@ -1,4 +1,4 @@
 <resources>
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">uV0yGeYh0X5ocuIzks7UBS6sQ6bRfe162df9-9e78-4916-9361-3a8813409be9</string>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">_fJwNPHUZGe6G20N_CMbqodym8Ipfe162df9-9e78-4916-9361-3a8813409be9</string>
     <string name="app_name">eBlink</string>
 </resources>
