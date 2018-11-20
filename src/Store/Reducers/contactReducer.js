@@ -34,6 +34,7 @@ export const contactManagment = (state = initialState, action) => {
                     // Contact is added
                 }
             } else if (databaseContactName == undefined) {
+                // fix to first call to reducer is undefined
                 nextState = state
             } else {
                 // if no contacts
