@@ -56,6 +56,8 @@ class ContactsScreen extends React.Component {
 
     // Render for contact list screen
     _displayContactList() {
+        console.log('contact screen')
+        console.log(this.props.contactList)
         if (this.state.displayContactList) {
             return (
                 <FlatList
