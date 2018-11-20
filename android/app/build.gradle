@@ -150,6 +150,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-splash-screen')
     implementation project(':react-native-firebase')
     implementation project(':rn-fetch-blob')
     implementation project(':react-native-linear-gradient')
