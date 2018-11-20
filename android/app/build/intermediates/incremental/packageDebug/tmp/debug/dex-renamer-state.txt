@@ -1,4 +1,4 @@
-#Sun Nov 18 20:14:50 CET 2018
+#Tue Nov 20 21:22:16 CET 2018
 base.2=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 base.1=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
 base.0=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
@@ -20,13 +20,19 @@ renamed.3=classes4.dex
 path.1=classes.dex
 renamed.2=classes3.dex
 path.0=classes.dex
+renamed.17=classes18.dex
 renamed.1=classes2.dex
+renamed.16=classes17.dex
 renamed.0=classes.dex
 renamed.15=classes16.dex
 renamed.14=classes15.dex
 renamed.13=classes14.dex
 renamed.12=classes13.dex
+path.17=classes.dex
+base.17=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\17
 renamed.11=classes12.dex
+path.16=classes.dex
+base.16=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\16
 renamed.10=classes11.dex
 path.15=classes2.dex
 base.15=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1

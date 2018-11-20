@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 18 20:57:58 CET 2018
+#Tue Nov 20 21:29:42 CET 2018
 5.base=C\:\\Users\\Tewann\\Desktop\\Prog\\theWay\\dollarsBaby\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\release\\0
 22.path=lib/x86/libicu_common.so
 32.set=ASSET

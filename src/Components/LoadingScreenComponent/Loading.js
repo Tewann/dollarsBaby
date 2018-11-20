@@ -12,7 +12,6 @@ import Store from '../../Store/configureStore'
 import { strings } from '../../i18n'
 
 class Loading extends React.Component {
-
     componentDidMount = async () => {
         //const resetTOS = { type: 'RESET_TOS'}
         //this.props.dispatch(resetTOS)
@@ -356,7 +355,6 @@ class Loading extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>eBlink</Text>
                 <ActivityIndicator size="large" />
             </View>
         )

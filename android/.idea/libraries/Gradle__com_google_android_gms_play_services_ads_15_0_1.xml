@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.gms:play-services-ads-15.0.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-ads-15.0.1.aar/f3e518dc97f3b945db0db1d6a60ccd15/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-ads-15.0.1.aar/f3e518dc97f3b945db0db1d6a60ccd15/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-ads-15.0.1.aar/c7f51aaf248b7d82d6ff9c56a93e0347/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-ads-15.0.1.aar/c7f51aaf248b7d82d6ff9c56a93e0347/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
