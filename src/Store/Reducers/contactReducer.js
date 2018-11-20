@@ -11,6 +11,8 @@ export const contactManagment = (state = initialState, action) => {
     switch (action.type) {     
 
         case 'CONTACT_LIST_UPDATED':
+        console.log('contact list updated start')
+        console.log(state.contactList)
             const databaseContactName = action.value.get('UserName')
             const databasephotoName = action.value.get('photoName')
             const databasephotoUrl = action.value.get('photoUrl')
@@ -31,6 +33,8 @@ export const contactManagment = (state = initialState, action) => {
                     // Contact is not in the contact list
                     // Contact is added
                 }
+            } else if (databaseContactName == undefined) {
+                nextState = state
             } else {
                 // if no contacts
                 if (state.contactList.length === 0) {
@@ -60,6 +64,8 @@ export const contactManagment = (state = initialState, action) => {
                     }
                 }
             }
+            console.log('contact list updated end')
+        console.log(nextState)
             return nextState || state
 
         case "RESET_CONTACT":
