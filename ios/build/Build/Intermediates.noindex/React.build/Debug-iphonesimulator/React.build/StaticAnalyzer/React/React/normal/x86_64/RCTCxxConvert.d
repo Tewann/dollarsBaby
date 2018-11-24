@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTCxxConvert.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTCxxConvert.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTCxxConvert.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTCxxConvert.h

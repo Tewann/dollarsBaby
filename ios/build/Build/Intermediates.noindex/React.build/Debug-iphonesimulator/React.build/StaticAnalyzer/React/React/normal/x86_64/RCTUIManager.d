@@ -1,49 +1,49 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Modules/RCTUIManager.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Modules/RCTUIManager.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTRootView.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTViewManager.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTConvert.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTAnimationType.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/UIView+React.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTComponent.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Modules/RCTAccessibilityManager.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTBridge+Private.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTComponentData.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Modules/RCTLayoutAnimation.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Modules/RCTLayoutAnimationGroup.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTModuleData.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTModuleMethod.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTBridgeMethod.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTNullability.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Profiler/RCTProfile.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTRootContentView.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTView.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTRootShadowView.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTShadowView.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTLayout.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTRootViewInternal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Views/RCTShadowView+Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowView.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowViewDelegate.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Modules/RCTUIManagerObserverCoordinator.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Modules/RCTUIManagerUtils.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Modules/RCTUIManager.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Modules/RCTUIManager.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTRootView.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTViewManager.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Modules/RCTAccessibilityManager.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTComponentData.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Modules/RCTLayoutAnimation.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Modules/RCTLayoutAnimationGroup.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTModuleData.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTModuleMethod.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTBridgeMethod.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTNullability.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTRootContentView.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTView.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTRootShadowView.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTShadowView.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTLayout.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTRootViewInternal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Views/RCTShadowView+Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowView.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowViewDelegate.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Modules/RCTUIManagerObserverCoordinator.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Modules/RCTUIManagerUtils.h

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FirebaseAuthVersion.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FirebaseAuthVersion.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FirebaseAuthVersion.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FirebaseAuthVersion.h

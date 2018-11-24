@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/eBlink/main.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Firebase/CoreOnly/Sources/module.modulemap \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/eBlink/AppDelegate.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/eBlink/main.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Firebase/CoreOnly/Sources/module.modulemap \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/eBlink/AppDelegate.h

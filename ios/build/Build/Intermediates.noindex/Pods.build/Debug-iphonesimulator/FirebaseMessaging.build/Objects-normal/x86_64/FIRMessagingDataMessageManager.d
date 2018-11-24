@@ -1,44 +1,44 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/Protos/GtalkCore.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBProtocolBuffers.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBBootstrap.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBArray.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBRuntimeTypes.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBCodedInputStream.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBCodedOutputStream.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBWireFormat.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBDescriptor.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBDictionary.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBExtensionRegistry.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBMessage.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBRootObject.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBUnknownField.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBUnknownFieldSet.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBUtilities.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBWellKnownTypes.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Any.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Duration.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Timestamp.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Api.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Empty.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/FieldMask.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/SourceContext.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Struct.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Type.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Wrappers.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConnection.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDelayedMessageQueue.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmqManager.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingSyncMessageManager.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/Protos/GtalkCore.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBProtocolBuffers.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBBootstrap.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBArray.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBRuntimeTypes.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBCodedInputStream.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBCodedOutputStream.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBWireFormat.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBDescriptor.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBDictionary.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBExtensionRegistry.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBMessage.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBRootObject.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBUnknownField.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBUnknownFieldSet.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBUtilities.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBWellKnownTypes.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Any.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Duration.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Timestamp.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Api.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Empty.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/FieldMask.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/SourceContext.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Struct.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Type.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Wrappers.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConnection.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDelayedMessageQueue.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmqManager.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingSyncMessageManager.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h

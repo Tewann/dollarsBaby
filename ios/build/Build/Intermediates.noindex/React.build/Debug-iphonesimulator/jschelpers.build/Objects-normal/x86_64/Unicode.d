@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/ReactCommon/jschelpers/Unicode.h

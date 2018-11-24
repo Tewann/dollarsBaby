@@ -1,19 +1,19 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/pool/pool.c \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Target\ Support\ Files/BoringSSL/BoringSSL-prefix.pch \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/pool.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/base.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/is_boringssl.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/opensslconf.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/stack.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/type_check.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/buf.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/bytestring.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/span.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/mem.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/thread.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/pool/../internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/ex_data.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/BoringSSL/crypto/pool/internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/lhash.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/BoringSSL/openssl/lhash_macros.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/BoringSSL/crypto/pool/pool.c \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Target\ Support\ Files/BoringSSL/BoringSSL-prefix.pch \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/pool.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/base.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/is_boringssl.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/opensslconf.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/stack.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/type_check.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/buf.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/bytestring.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/span.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/mem.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/thread.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/BoringSSL/crypto/pool/../internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/ex_data.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/BoringSSL/crypto/pool/internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/lhash.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/BoringSSL/openssl/lhash_macros.h

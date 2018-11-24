@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/third_party/Immutable/FSTImmutableSortedSet.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/third_party/Immutable/FSTImmutableSortedSet.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/third_party/Immutable/FSTImmutableSortedDictionary.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/third_party/Immutable/FSTImmutableSortedSet.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/third_party/Immutable/FSTImmutableSortedSet.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/third_party/Immutable/FSTImmutableSortedDictionary.h

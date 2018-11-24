@@ -40,3 +40,5 @@ android/app/src/main/res/raw/s6cestfait.wav
 
 # Android build
 ./android/app/build/
+
+build/

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTMultipartStreamReader.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/node_modules/react-native/React/Base/RCTMultipartStreamReader.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTMultipartStreamReader.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/node_modules/react-native/React/Base/RCTMultipartStreamReader.h

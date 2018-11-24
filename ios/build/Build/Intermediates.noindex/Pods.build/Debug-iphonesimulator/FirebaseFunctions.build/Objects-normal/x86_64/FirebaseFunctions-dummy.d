@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Target\ Support\ Files/FirebaseFunctions/FirebaseFunctions-dummy.m
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Target\ Support\ Files/FirebaseFunctions/FirebaseFunctions-dummy.m

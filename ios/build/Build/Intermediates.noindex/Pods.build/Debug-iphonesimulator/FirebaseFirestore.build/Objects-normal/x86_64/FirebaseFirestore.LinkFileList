@@ -1,189 +1,189 @@
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/annotations.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Annotations.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/any.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ascii.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/async_queue.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/autoid.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/bad_optional_access.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/bits.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/common.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Common.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/comparison.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/credentials_provider.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/database_id.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/database_info.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/datastore.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/document.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/document.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Document.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/document_key.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/dynamic_annotations.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/empty.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/empty_credentials_provider.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/escaping.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/executor_libdispatch.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/executor_std.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/exponential_backoff.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/field_path.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/field_value.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filesystem_apple.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filesystem_common.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filesystem_posix.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filter.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRCollectionReference.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRDocumentChange.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRDocumentReference.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRDocumentSnapshot.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/firebase_credentials_provider_apple.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FirebaseFirestore-dummy.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/firestore.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Firestore.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Firestore.pbrpc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFieldPath.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFieldValue.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFirestore.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFirestoreSettings.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFirestoreVersion.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRGeoPoint.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRListenerRegistration.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRQuery.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRQuerySnapshot.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRSnapshotMetadata.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRTimestamp.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRTransaction.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRWriteBatch.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTArraySortedDictionary.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTArraySortedDictionaryEnumerator.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTAsyncQueryListener.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTBufferedWriter.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDatastore.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDispatchQueue.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocument.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentDictionary.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentKey.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentReference.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentSet.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTEventManager.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTExistenceFilter.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTExponentialBackoff.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTFieldValue.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTFirestoreClient.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTFirestoreComponent.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTImmutableSortedDictionary.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTImmutableSortedSet.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDB.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDBMutationQueue.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDBQueryCache.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDBRemoteDocumentCache.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTListenSequence.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLLRBEmptyNode.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLLRBValueNode.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalDocumentsView.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalSerializer.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalStore.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalViewChanges.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalWriteResult.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLRUGarbageCollector.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryMutationQueue.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryPersistence.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryQueryCache.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryRemoteDocumentCache.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMutation.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMutationBatch.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTOnlineStateTracker.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTQuery.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTQueryData.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTReferenceSet.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTRemoteEvent.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTRemoteStore.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTSerializerBeta.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTStream.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTSyncEngine.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTTransaction.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTTreeSortedDictionary.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTTreeSortedDictionaryEnumerator.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTUsageValidation.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTUserDataConverter.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTView.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTViewSnapshot.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTWatchChange.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/geo_point.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/grpc_completion.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/grpc_connection.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/grpc_stream.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/hard_assert_apple.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/http.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/HTTP.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/inline_variable_test_a.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/inline_variable_test_b.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/int128.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/latlng.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Latlng.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_key.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_migrations.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_transaction.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_util.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/local_serializer.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/log_apple.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/match.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/maybe_document.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/maybe_document.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/MaybeDocument.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/memutil.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/mutation.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Mutation.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/no_document.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/numbers.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/optional.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ordered_code.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ostringstream.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/path.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/precondition.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/query.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/query.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Query.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/query_data.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/raw_logging.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/reader.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/relation_filter.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/resource_path.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/secure_random_arc4random.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/serializer.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/snapshot_version.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/sorted_map_base.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Status.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status_apple.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status_posix.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status_win.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/statusor.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/str_cat.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/str_replace.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/str_split.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/stream.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/stream_objc_bridge.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/strerror.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_apple.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_format.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_util.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_view.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_win.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/struct.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/substitute.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/target.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Target.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/target_id_generator.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/throw_delegate.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/timestamp.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/timestamp.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/token.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/user.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/user_data.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/utf8.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/watch_stream.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/wrappers.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/write.nanopb.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Write.pbobjc.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/write_stream.o
-/Users/rolandinho/Desktop/Prog/dollarsBaby/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/writer.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/annotations.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Annotations.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/any.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ascii.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/async_queue.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/autoid.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/bad_optional_access.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/bits.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/common.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Common.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/comparison.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/credentials_provider.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/database_id.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/database_info.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/datastore.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/document.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/document.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Document.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/document_key.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/dynamic_annotations.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/empty.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/empty_credentials_provider.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/escaping.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/executor_libdispatch.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/executor_std.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/exponential_backoff.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/field_path.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/field_value.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filesystem_apple.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filesystem_common.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filesystem_posix.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/filter.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRCollectionReference.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRDocumentChange.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRDocumentReference.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRDocumentSnapshot.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/firebase_credentials_provider_apple.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FirebaseFirestore-dummy.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/firestore.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Firestore.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Firestore.pbrpc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFieldPath.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFieldValue.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFirestore.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFirestoreSettings.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRFirestoreVersion.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRGeoPoint.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRListenerRegistration.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRQuery.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRQuerySnapshot.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRSnapshotMetadata.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRTimestamp.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRTransaction.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FIRWriteBatch.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTArraySortedDictionary.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTArraySortedDictionaryEnumerator.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTAsyncQueryListener.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTBufferedWriter.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDatastore.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDispatchQueue.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocument.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentDictionary.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentKey.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentReference.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTDocumentSet.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTEventManager.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTExistenceFilter.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTExponentialBackoff.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTFieldValue.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTFirestoreClient.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTFirestoreComponent.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTImmutableSortedDictionary.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTImmutableSortedSet.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDB.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDBMutationQueue.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDBQueryCache.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLevelDBRemoteDocumentCache.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTListenSequence.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLLRBEmptyNode.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLLRBValueNode.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalDocumentsView.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalSerializer.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalStore.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalViewChanges.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLocalWriteResult.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTLRUGarbageCollector.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryMutationQueue.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryPersistence.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryQueryCache.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMemoryRemoteDocumentCache.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMutation.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTMutationBatch.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTOnlineStateTracker.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTQuery.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTQueryData.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTReferenceSet.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTRemoteEvent.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTRemoteStore.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTSerializerBeta.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTStream.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTSyncEngine.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTTransaction.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTTreeSortedDictionary.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTTreeSortedDictionaryEnumerator.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTUsageValidation.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTUserDataConverter.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTView.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTViewSnapshot.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/FSTWatchChange.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/geo_point.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/grpc_completion.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/grpc_connection.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/grpc_stream.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/hard_assert_apple.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/http.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/HTTP.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/inline_variable_test_a.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/inline_variable_test_b.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/int128.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/latlng.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Latlng.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_key.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_migrations.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_transaction.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/leveldb_util.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/local_serializer.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/log_apple.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/match.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/maybe_document.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/maybe_document.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/MaybeDocument.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/memutil.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/mutation.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Mutation.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/no_document.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/numbers.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/optional.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ordered_code.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/ostringstream.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/path.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/precondition.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/query.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/query.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Query.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/query_data.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/raw_logging.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/reader.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/relation_filter.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/resource_path.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/secure_random_arc4random.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/serializer.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/snapshot_version.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/sorted_map_base.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Status.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status_apple.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status_posix.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/status_win.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/statusor.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/str_cat.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/str_replace.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/str_split.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/stream.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/stream_objc_bridge.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/strerror.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_apple.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_format.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_util.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_view.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/string_win.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/struct.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/substitute.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/target.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Target.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/target_id_generator.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/throw_delegate.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/timestamp.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/timestamp.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/token.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/user.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/user_data.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/utf8.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/watch_stream.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/wrappers.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/write.nanopb.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/Write.pbobjc.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/write_stream.o
+/Users/rolandinho 1/Desktop/Prog/dollarsBaby - currently working version/ios/build/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/FirebaseFirestore.build/Objects-normal/x86_64/writer.o

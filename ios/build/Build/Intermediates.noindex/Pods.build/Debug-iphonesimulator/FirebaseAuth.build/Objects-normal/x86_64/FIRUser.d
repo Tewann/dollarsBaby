@@ -1,53 +1,53 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUser.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUser_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRUser.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuth.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthErrors.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthAPNSTokenType.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthDataResult.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRUserInfo.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAdditionalUserInfo_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAdditionalUserInfo.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthCredential_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthCredential.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthDataResult_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthErrorUtils.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthGlobalWorkQueue.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthSerialTaskQueue.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthOperationType.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuth_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthBackend.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRequestConfiguration.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthTokenResult_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthTokenResult.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRDeleteAccountRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRIdentityToolkitRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRDeleteAccountResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIREmailAuthProvider.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/EmailPassword/FIREmailPasswordAuthCredential.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetAccountInfoRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetAccountInfoResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetOOBConfirmationCodeRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetOOBConfirmationCodeResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/FirebaseCore/FIRLogger.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/FirebaseCore/FIRLoggerLevel.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRSecureTokenService.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSetAccountInfoRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSetAccountInfoResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUserInfoImpl.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUserMetadata_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRUserMetadata.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyAssertionRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyAssertionResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyCustomTokenRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyCustomTokenResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPasswordRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPasswordResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPhoneNumberRequest.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPhoneNumberResponse.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthProvider.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/Phone/FIRPhoneAuthCredential_Internal.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthCredential.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUser.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUser_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRUser.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuth.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthErrors.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthAPNSTokenType.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthDataResult.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRUserInfo.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAdditionalUserInfo_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAdditionalUserInfo.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthCredential_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthCredential.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthDataResult_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthErrorUtils.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthGlobalWorkQueue.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthSerialTaskQueue.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthOperationType.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuth_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthBackend.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRequestConfiguration.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthTokenResult_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRAuthTokenResult.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRDeleteAccountRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRIdentityToolkitRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRDeleteAccountResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRAuthRPCResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIREmailAuthProvider.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/EmailPassword/FIREmailPasswordAuthCredential.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetAccountInfoRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetAccountInfoResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetOOBConfirmationCodeRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRGetOOBConfirmationCodeResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/FirebaseCore/FIRLogger.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/FirebaseCore/FIRLoggerLevel.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRSecureTokenService.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSetAccountInfoRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRSetAccountInfoResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUserInfoImpl.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRUserMetadata_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRUserMetadata.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyAssertionRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyAssertionResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyCustomTokenRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyCustomTokenResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPasswordRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPasswordResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPhoneNumberRequest.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/RPCs/FIRVerifyPhoneNumberResponse.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthProvider.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/AuthProviders/Phone/FIRPhoneAuthCredential_Internal.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/Public/FIRPhoneAuthCredential.h

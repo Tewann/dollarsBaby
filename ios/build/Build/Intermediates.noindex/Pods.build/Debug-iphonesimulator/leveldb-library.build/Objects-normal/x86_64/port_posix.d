@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/leveldb-library/port/port_posix.cc \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Target\ Support\ Files/leveldb-library/leveldb-library-prefix.pch \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/leveldb-library/port/port_posix.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/leveldb-library/port/atomic_pointer.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/leveldb-library/port/port_posix.cc \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Target\ Support\ Files/leveldb-library/leveldb-library-prefix.pch \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/leveldb-library/port/port_posix.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/leveldb-library/port/atomic_pointer.h

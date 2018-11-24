@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Source/API/FIRFirestoreSettings.mm \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFirestoreSettings.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Source/Util/FSTUsageValidation.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Source/API/FIRFirestoreSettings.mm \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Source/Public/FIRFirestoreSettings.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Source/Util/FSTUsageValidation.h

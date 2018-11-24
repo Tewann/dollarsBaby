@@ -1,43 +1,43 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Firestore.pbrpc.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Firestore.pbrpc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Firestore.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBProtocolBuffers.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBBootstrap.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBArray.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBRuntimeTypes.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBCodedInputStream.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBCodedOutputStream.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBWireFormat.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBDescriptor.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBDictionary.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBExtensionRegistry.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBMessage.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBRootObject.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBUnknownField.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBUnknownFieldSet.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBUtilities.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/GPBWellKnownTypes.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Any.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Duration.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Timestamp.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Api.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Empty.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/FieldMask.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/SourceContext.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Struct.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Type.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Private/Protobuf/Wrappers.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Public/gRPC-ProtoRPC/ProtoRPC/ProtoService.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Public/gRPC-ProtoRPC/ProtoRPC/ProtoRPC.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Public/gRPC/GRPCClient/GRPCCall.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Public/gRPC-RxLibrary/RxLibrary/GRXWriter.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Public/gRPC-RxLibrary/RxLibrary/GRXWriteable.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Public/gRPC-ProtoRPC/ProtoRPC/ProtoMethod.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/api/Annotations.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Common.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Document.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Query.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Write.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/rpc/Status.pbobjc.h \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/Headers/Public/gRPC-RxLibrary/RxLibrary/GRXWriter+Immediate.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Firestore.pbrpc.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Firestore.pbrpc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Firestore.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBProtocolBuffers.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBBootstrap.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBArray.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBRuntimeTypes.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBCodedInputStream.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBCodedOutputStream.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBWireFormat.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBDescriptor.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBDictionary.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBExtensionRegistry.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBMessage.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBRootObject.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBUnknownField.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBUnknownFieldSet.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBUtilities.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/GPBWellKnownTypes.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Any.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Duration.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Timestamp.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Api.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Empty.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/FieldMask.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/SourceContext.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Struct.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Type.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Private/Protobuf/Wrappers.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Public/gRPC-ProtoRPC/ProtoRPC/ProtoService.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Public/gRPC-ProtoRPC/ProtoRPC/ProtoRPC.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Public/gRPC/GRPCClient/GRPCCall.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Public/gRPC-RxLibrary/RxLibrary/GRXWriter.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Public/gRPC-RxLibrary/RxLibrary/GRXWriteable.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Public/gRPC-ProtoRPC/ProtoRPC/ProtoMethod.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/api/Annotations.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Common.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Document.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Query.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/firestore/v1beta1/Write.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseFirestore/Firestore/Protos/objc/google/rpc/Status.pbobjc.h \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/Headers/Public/gRPC-RxLibrary/RxLibrary/GRXWriter+Immediate.h

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthWebView.m \
-  /Users/rolandinho/Desktop/Prog/dollarsBaby/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthWebView.h
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthWebView.m \
+  /Users/rolandinho\ 1/Desktop/Prog/dollarsBaby\ -\ currently\ working\ version/ios/Pods/FirebaseAuth/Firebase/Auth/Source/FIRAuthWebView.h
