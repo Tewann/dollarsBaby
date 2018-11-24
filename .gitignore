@@ -17,7 +17,7 @@ yarn-debug.log*
 yarn-error.log*
 
 #android keystore
-./android/app/my-release-key.keystore
+android/app/my-release-key.keystore
 
 # Firebase
 ios/eBlink/GoogleService-Info.plist
