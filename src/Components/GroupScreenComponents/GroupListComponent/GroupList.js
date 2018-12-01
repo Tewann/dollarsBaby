@@ -7,8 +7,10 @@ import styles from './styles'
 import GroupItem from './GroupItem/GroupItem'
 import Modal from 'react-native-modal'
 import { connect } from 'react-redux'
-import { createPublicGroupInFirestore, joinPublicGroupInFirestore,
-        createPrivateGroupInFirestore, addContactToPrivateGroup } from '../../../Services/firebaseGroupFunctions'
+import {
+    createPublicGroupInFirestore, joinPublicGroupInFirestore,
+    createPrivateGroupInFirestore, addContactToPrivateGroup
+} from '../../../Services/firebaseGroupFunctions'
 import { Icon } from '../../../../node_modules/react-native-elements';
 import { strings } from '../../../i18n'
 
@@ -38,6 +40,11 @@ class GroupList extends React.Component {
     // displays default buttons (only text input for joining or creating groups)
     _displayTextInput() {
         this.setState({ textInput: true, groupButtons: false, publicGroupButtons: false, group: "" })
+        setTimeout(() => {
+            this.setState({ errorMessage: null })
+        },
+            2000
+        )
     }
 
     _displayPublicGroupButtons() {
@@ -112,7 +119,7 @@ class GroupList extends React.Component {
                     // if private group successfully created
                     // add creator to contact group list in firebase
                     const addContactToGroup = await addContactToPrivateGroup(this.state.group, this.props.currentUser.name)
-                        .catch(err => {this.setState({errorMessage: err})})
+                        .catch(err => { this.setState({ errorMessage: err }) })
                     /*const action = { type: 'CREATE_PRIVATE_GROUP', value: [this.state.group, this.props.currentUser.name] }
                     this.props.dispatch(action)*/
                     this._displayTextInput()
@@ -122,7 +129,7 @@ class GroupList extends React.Component {
                     if (error => 'Group name taken') {
                         // if group already exists
                         // displays public group buttons (cancel and join group buttons)
-                        this.setState({ errorMessage: strings('groups_screen.group_list.error_message2')})
+                        this.setState({ errorMessage: strings('groups_screen.group_list.error_message2') })
                         this._displayTextInput()
                     } else {
                         Alert.alert(
