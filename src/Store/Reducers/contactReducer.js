@@ -8,11 +8,9 @@ const initialState = {
 
 export const contactManagment = (state = initialState, action) => {
     let nextState
-    switch (action.type) {     
+    switch (action.type) {
 
         case 'CONTACT_LIST_UPDATED':
-        console.log('contact list updated start')
-        console.log(state.contactList)
             const databaseContactName = action.value.get('UserName')
             const databasephotoName = action.value.get('photoName')
             const databasephotoUrl = action.value.get('photoUrl')
@@ -65,8 +63,6 @@ export const contactManagment = (state = initialState, action) => {
                     }
                 }
             }
-            console.log('contact list updated end')
-        console.log(nextState)
             return nextState || state
 
         case "RESET_CONTACT":

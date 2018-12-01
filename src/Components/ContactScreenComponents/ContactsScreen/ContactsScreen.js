@@ -56,8 +56,6 @@ class ContactsScreen extends React.Component {
 
     // Render for contact list screen
     _displayContactList() {
-        console.log('contact screen')
-        console.log(this.props.contactList)
         if (this.state.displayContactList) {
             return (
                 <FlatList
@@ -79,7 +77,7 @@ class ContactsScreen extends React.Component {
     _displayMessageList() {
         if (this.state.displayMessagesList) {
             return (
-                <MessagesListScreen 
+                <MessagesListScreen
                     contact={this.state.contact}
                     returnToContactScreen={() => this._returnToContactScreen()}
                 />

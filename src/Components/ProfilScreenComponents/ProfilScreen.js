@@ -2,7 +2,7 @@
 // Profil screen view
 
 import React from 'react'
-import { View, Text, Image, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { View, Text, Image, KeyboardAvoidingView, ScrollView, SafeAreaView } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
@@ -12,13 +12,34 @@ import ChangeProfilImageBlock from './ChangeProfilImageBlockComponent/ChangeProf
 import DeleteAccountBlock from './DeleteAccountBlockComponent/DeleteAccountBlock'
 import { connect } from 'react-redux'
 import { strings } from '../../i18n'
+import { isIphoneX } from '../../Services/is-iphone-x'
 
 class ProfilScreen extends React.Component {
-    render() {
-        return (
-            <View
-                style={{ flex: 1, backgroundColor: 'white' }}
-            >
+    //*
+    // If iPhone used is iPhoneX display top component as normal view
+    // If iPhone used is not iPhoneX, displays top component as LinearGradient
+    //*
+    _displayTopComponent() {
+        const iPhoneX = isIphoneX() ? true : false
+        // If iPhone used is iPhoneX
+        if (iPhoneX) {
+            return (
+                <View style={[styles.header_container, { backgroundColor: '#3a485c' }]}>
+                    <Icon
+                        name='chevron-left'
+                        color='white'
+                        size={35}
+                        style={{ padding: 20 }}
+                        underlayColor='transparent'
+                        onPress={() => this.props.navigation.navigate('MainStackNavigator')}
+                    />
+                    <Text style={styles.title}>{strings('profil_screen.profil')}</Text>
+                    <View></View>
+                </View>
+            )
+        } else {
+            // If iPhone used is not iPhoneX
+            return (
                 <LinearGradient
                     style={styles.header_container}
                     start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
@@ -34,32 +55,44 @@ class ProfilScreen extends React.Component {
                     <Text style={styles.title}>{strings('profil_screen.profil')}</Text>
                     <View></View>
                 </LinearGradient>
-                <ScrollView
-                    keyboardShouldPersistTaps='always'
+            )
+        }
+    }
+    render() {
+        this._displayTopComponent()
+        return (
+            <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }}>
+                <View
+                    style={{ flex: 1, backgroundColor: 'white' }}
                 >
-                    <KeyboardAvoidingView
-                        behavior='position'
-                        keyboardVerticalOffset={-96}
+                    {this._displayTopComponent()}
+                    <ScrollView
+                        keyboardShouldPersistTaps='always'
                     >
-                        <View style={styles.avatar_container}>
+                        <KeyboardAvoidingView
+                            behavior='position'
+                            keyboardVerticalOffset={-96}
+                        >
+                            <View style={styles.avatar_container}>
                                 <Image
                                     style={styles.avatar_image}
                                     source={this.props.currentUser.userProfilPicture}
                                 />
-                            <Text style={styles.username}>
-                            {this.props.currentUser.name}
-                            </Text>
-                            <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.props.currentUser.email}</Text>
-                        </View>
-                        <View style={styles.profil_item_containers}>
-                            <MailAdressBlock />
-                            <PasswordBlock />
-                            <ChangeProfilImageBlock />
-                            <DeleteAccountBlock />
-                        </View>
-                    </KeyboardAvoidingView>
-                </ScrollView>
-            </View>
+                                <Text style={styles.username}>
+                                    {this.props.currentUser.name}
+                                </Text>
+                                <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.props.currentUser.email}</Text>
+                            </View>
+                            <View style={styles.profil_item_containers}>
+                                <MailAdressBlock />
+                                <PasswordBlock />
+                                <ChangeProfilImageBlock />
+                                <DeleteAccountBlock />
+                            </View>
+                        </KeyboardAvoidingView>
+                    </ScrollView>
+                </View>
+            </SafeAreaView>
         )
     }
 }

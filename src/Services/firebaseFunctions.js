@@ -132,7 +132,7 @@ export const uploadImageToFirebase = (uri, userName) => {
                         .catch(error => console.log('erreur lors suppression', error))
                 }
             })
-        // upload new image to firebase storage    
+        // upload new image to firebase storage
         firebase
             .storage()
             .ref(imageName)
@@ -323,7 +323,7 @@ export const getUserDataForLoginScreen = async () => {
     return ({ userEmail, userName })
 }
 
-//function exported to AcceptOrDecline 
+//function exported to AcceptOrDecline
 // (component for message history)
 export const addContactToFirestore = async (currentUser, contactToAdd) => {
 
@@ -395,6 +395,30 @@ export const fetchMessages = (userName) => {
                 snapshot.forEach(doc => {
                     const action = { type: 'MESSAGE_RECEIVED', value: doc }
                     dispatch(action)
+                })
+            })
+    }
+}
+
+// fetch groups
+export const fetchGroups = (userName) => {
+    return function (dispatch) {
+        const userPath = userName.toString()
+        firebase.firestore()
+            .collection('Users')
+            .doc(userPath)
+            .collection('Groups')
+            .onSnapshot((snapshot) => {
+                snapshot.forEach(doc => {
+                    const groupType = doc.get('type') == 'public' ? 'Public_Groups' : 'Private_Groups'
+                    firebase.firestore()
+                        .collection(groupType)
+                        .doc(doc.get('name'))
+                        .onSnapshot((doc) => {
+                            const actionType = doc.get('type') == 'public' ? 'PUBLIC_GROUP_UPDATE' : 'PRIVATE_GROUP_UPDATE'
+                            const action = { type: actionType, value: doc }
+                            dispatch(action)
+                        })
                 })
             })
     }

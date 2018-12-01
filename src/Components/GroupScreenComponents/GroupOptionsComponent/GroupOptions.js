@@ -17,8 +17,8 @@ import HeaderGroupContactList from './HeaderGroupContactList/HeaderGroupContactL
 import MessagesList from './MessagesListComponent/MessagesList'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import ImagePicker from 'react-native-image-picker'
-import { uploadGroupImage, addContactToPrivateGroup } from '../../../Services/firebaseGroupFunctions'
-import { strings} from '../../../i18n'
+import { uploadGroupImage, addContactToPrivateGroup, retrivingContacts } from '../../../Services/firebaseGroupFunctions'
+import { strings } from '../../../i18n'
 
 // variable to avoid "Can't find variable: options" when trying to open image picker or camera
 var options = { quality: 0.1 };
@@ -31,9 +31,20 @@ class GroupOptions extends React.Component {
             errorMessage: null,
         }
     }
+    componentDidMount = async () => {
+        // Each time a group is open, check data base and get contacts
+        const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.currentGroup)
+
+        const groupType = this.props.groupList[groupNameIndex].type
+
+        if (groupType == 'private') {
+            retrivingContacts(this.props.currentGroup)
+        }
+    }
 
     //*
-    // Switch GroupScreen screen 
+    // Switch between GroupScreen screens and goes back to the group list
     // Calls reducer / dispatch action
     //*
     displayGroup = () => {
@@ -47,7 +58,9 @@ class GroupOptions extends React.Component {
     _addContactToGroup = async (contactId, contactName) => {
         // Adding contact to firebase
         const addContactToGroup = await addContactToPrivateGroup(this.props.currentGroup, contactName)
-            .catch(err => { this.setState({ errorMessage: err }) })
+            .catch(err => {
+                this.setState({ errorMessage: err })
+            })
     }
 
 

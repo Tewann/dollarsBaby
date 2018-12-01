@@ -21,7 +21,13 @@ class Loading extends React.Component {
         //this.props.dispatch(resetCurrentUser)
         //const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
         //this.props.dispatch(resetMessageHistory)
-        // reset screen to show for group screen (set group list)
+        //const resetGroups = { type: 'RESET_GROUP_LIST'}
+        //this.props.dispatch(resetGroups)
+        
+        //*
+        // Calls reducer, reset currentDisplayedGroup value to GroupList
+        // so group list screen displays the group list and not one specific group options
+        //*
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
 
@@ -106,7 +112,7 @@ class Loading extends React.Component {
         // Deals with notification sound not correctly received
         //*
         this.notificationListener = firebase.notifications().onNotification((notification) => {
-            // if notification sound is null or undefined 
+            // if notification sound is null or undefined
             if (notification.sound === null || notification.sound === undefined) {
                 // if platform === iOS
                 if (Platform.OS === 'ios') {
@@ -267,7 +273,7 @@ class Loading extends React.Component {
         if (this.props.currentUser.termsOfServiceStatus === 'declined') {
             this.props.navigation.navigate('TermsOfService')
         } else if (user.displayName === null) {
-            // deals with user is null error 
+            // deals with user is null error
             // (example : app crashes when setting display name)
             this.props.navigation.navigate('GetDisplayName')
         } else {

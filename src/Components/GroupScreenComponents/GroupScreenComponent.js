@@ -7,10 +7,13 @@ import styles from './styles'
 import { connect } from 'react-redux'
 import GroupList from './GroupListComponent/GroupList'
 import GroupOptions from './GroupOptionsComponent/GroupOptions'
-
+import { fetchGroups } from '../../Services/firebaseFunctions'
 
 
 class GroupScreen extends React.Component {
+    componentDidMount() {
+      this.props.dispatch(fetchGroups(this.props.currentUser.name))
+    }
 
     // checks redux store
     // if sets to Group List displays group list component
@@ -30,7 +33,7 @@ class GroupScreen extends React.Component {
                 <GroupOptions />
             )
         }
-    }   
+    }
 
     render() {
         return (
@@ -45,7 +48,8 @@ class GroupScreen extends React.Component {
 const mapStateToProps = (state) => {
     return {
         groupList: state.groupManagment.groupList,
-        display: state.groupManagment.currentDisplayedGroup[0]
+        display: state.groupManagment.currentDisplayedGroup[0],
+        currentUser: state.getCurrentUserInformations,
     }
 }
 
