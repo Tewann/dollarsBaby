@@ -225,6 +225,7 @@ const DrawerStack = createDrawerNavigator(
     drawerCloseRoute: "DrawerClose",
     drawerToggleRoute: "DrawerToggle",
     drawerWidth: 175,
+    drawerLockMode: 'locked-closed'
   },
 );
 
