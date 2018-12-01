@@ -18,15 +18,17 @@ class GroupContactItem extends React.Component {
     _renderImage = () => {
         const contactNameIndex = this.props.contactList.findIndex(item =>
             item.name === this.props.contact.name)
+        console.log('before render image')
         let uri = this.props.contactList[contactNameIndex] ? this.props.contactList[contactNameIndex].photoUrl : null
-        if (uri === null || uri === undefined) {
+        console.log('after render image, uri is : ', uri)
+        //if (uri === null || uri === undefined) {
             return (
                 <Image
                     source={this.state.defaultPicture}
                     style={styles.rounds}
                 />
             )
-        } else {
+        /*} else {
             return (
                 <ImageCacheProvider
                     ImageCacheManagerOptions={{ ttl: 100 }}>
@@ -36,7 +38,7 @@ class GroupContactItem extends React.Component {
                     />
                 </ImageCacheProvider>
             )
-        }
+        }*/
     }
     render() {
         const contact = this.props.contact

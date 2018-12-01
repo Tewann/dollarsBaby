@@ -200,7 +200,7 @@ class GroupOptions extends React.Component {
             return <HeaderGroupContactList
                 addContactToGroup={this._addContactToGroup} />
         } else {
-            return
+            return <View></View>
         }
     }
 
