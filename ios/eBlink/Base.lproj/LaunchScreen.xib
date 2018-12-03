@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ntm" translatesAutoresizingMaskIntoConstraints="NO" id="VAi-vn-uRO">
-                    <rect key="frame" x="94" y="282" width="187" height="103"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sans titre" translatesAutoresizingMaskIntoConstraints="NO" id="EoM-6y-t6Y">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -27,6 +27,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ntm" width="410" height="410"/>
+        <image name="Sans titre" width="750" height="1334"/>
     </resources>
 </document>
