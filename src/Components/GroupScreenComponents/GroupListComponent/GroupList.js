@@ -166,7 +166,7 @@ class GroupList extends React.Component {
                     <View style={styles.top_container}>
                         <TextInput
                             placeholder={strings('groups_screen.group_list.placeholder')}
-                            placeholderTextColor={'lightgrey'}
+                            //placeholderTextColor={'lightgrey'}
                             onChangeText={(text) => this._groupInputChanged(text)}
                             onSubmitEditing={() => this._displayButtons()}
                             autoFocus={false}

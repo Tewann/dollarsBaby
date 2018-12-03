@@ -104,7 +104,7 @@ class HeaderContactList extends React.Component {
                 <View style={styles.add_contact_container}>
                     <TextInput
                         placeholder={strings('contacts_screen.header_contact_list.placeholder')}
-                        placeholderTextColor={'lightgrey'}
+                        //placeholderTextColor={'black'}
                         onChangeText={(text) => this._contactNameInputChanged(text)}
                         onSubmitEditing={() => this._checkIfContactAlreadyInUserContactListThenAddContact()}
                         autoFocus={false}
