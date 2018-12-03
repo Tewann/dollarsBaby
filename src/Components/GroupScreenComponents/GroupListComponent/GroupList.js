@@ -153,6 +153,14 @@ class GroupList extends React.Component {
         }
     }
 
+    renderListEmpty = () => {
+        return (
+            <View style={{ flex: 1 }}>
+                <Text style={styles.list_empty}>{strings('groups_screen.group_list.list_empty')}</Text>
+            </View>
+        )
+    }
+
 
     render() {
         return (
@@ -241,6 +249,7 @@ class GroupList extends React.Component {
                     numColumns={3}
                     style={{ marginBottom: 80 }}
                     keyboardShouldPersistTaps={'always'}
+                    ListEmptyComponent={() => this.renderListEmpty()}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <GroupItem

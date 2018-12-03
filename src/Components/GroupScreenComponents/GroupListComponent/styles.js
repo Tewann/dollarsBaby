@@ -18,6 +18,13 @@ const styles = StyleSheet.create({
         paddingLeft: 2,
         backgroundColor: 'lightgrey'
     },
+    list_empty: {
+        textAlign: 'center',
+        color: 'grey',
+        //fontWeight: 'bold',
+        fontSize: 20,
+        paddingTop: 80
+    },
     button_container: {
         margin: 10,
         paddingTop: 5,

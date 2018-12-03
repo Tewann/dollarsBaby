@@ -8,7 +8,9 @@
     },
     "contacts_screen": {
         "contact_item": {},
-        "contacts_screen": {},
+        "contacts_screen": {
+            "list_empty": "You do not have any contacts yet"
+        },
         "header_contact_list": {
             "error_title": "Error",
             "error_message": "Contact already in your contact list",
@@ -39,7 +41,8 @@
             "group_item": {
                 "public": "public",
                 "private": "private"
-            }
+            },
+            "list_empty": "You have not joined a group yet"
         },
         "group_options": {
             "group_contact_item": {},
@@ -74,6 +77,7 @@
         }
     },
     "message_history_screen": {
+        "list_empty": "You have not received messages yet",
         "display_message": {
             "contact_request": "sent you a contact request",
             "contact_added": "has been added to your contacts",

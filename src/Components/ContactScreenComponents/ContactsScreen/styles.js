@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white'
     },
+    list_empty: {
+        textAlign: 'center',
+        color: 'grey',
+        //fontWeight: 'bold',
+        fontSize: 20,
+        paddingTop: 80
+    },
     messagelist_main_container: {
         flex: 1,
     },

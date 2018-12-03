@@ -96,6 +96,28 @@ class DisplayMessage extends React.Component {
         }
     }
 
+    _renderSendPredefinedMessage() {
+        if (this.props.message.type === 'contact_request' &&
+            this.props.message.status !== 'accepted' && this.props.message.status !== 'declined') {
+            // if message is contact request received displays customize predefined message
+            return (
+                <Text style={styles.predefined_message}>
+                    {this.props.message.contact} {strings('message_history_screen.display_message.contact_request')}
+                </Text>
+            )
+        } else if (this.props.message.type !== 'contact_request') {
+            return (
+                <View style={{ flexDirection: 'row-reverse' }}>
+                    <Text style={styles.predefined_message}>
+                        {this.props.message.predefined_message}
+                    </Text>
+                    <Text style={styles.additionnal_message}>
+                        {this.props.message.additionnal_message}
+                    </Text>
+                </View>
+            )
+        }
+    }
     // buttons to accept or decline contact request invite
     _renderResponseToContactRequest() {
         // if message is type contact request and
@@ -152,10 +174,28 @@ class DisplayMessage extends React.Component {
         )
     }
 
-    render() {
-        const { message } = this.props
-         return (
-            <View style={styles.main_container}>
+    _renderMessage = (message) => {
+        if (this.props.message.type === 'send' || this.props.message.type === 'send_contact_request') {
+            return (
+                <View style={styles.function_container}>
+                    {this._renderTime()}
+                    <View style={styles.send_messages_container}>
+                        <View style={styles.send_predefined_message_and_arrow_container}>
+                            {this._renderIcon()}
+                            <Text style={styles.send_contact_name}>
+                                {message.contact}
+                            </Text>
+                        </View>
+                        {this._renderSendPredefinedMessage()}
+                        {this._renderResponseToContactRequest()}
+                    </View>
+                    <View>
+                        {this._renderImage()}
+                    </View>
+                </View>
+            )
+        } else {
+            return (
                 <View style={styles.function_container}>
                     <View>
                         {this._renderImage()}
@@ -166,7 +206,6 @@ class DisplayMessage extends React.Component {
                             <Text style={styles.contact_name}>
                                 {message.contact}
                             </Text>
-
                         </View>
                         {this._renderPredefinedMessage()}
                         {this._renderResponseToContactRequest()}
@@ -174,6 +213,16 @@ class DisplayMessage extends React.Component {
                     </View>
                     {this._renderTime()}
                 </View>
+            )
+        }
+
+    }
+
+    render() {
+        const { message } = this.props
+        return (
+            <View style={styles.main_container}>
+                {this._renderMessage(message)}
             </View>
         )
     }

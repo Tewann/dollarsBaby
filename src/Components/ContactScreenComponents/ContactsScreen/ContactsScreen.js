@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import styles from './styles'
 import HeaderContactList from '../HeaderContactList/HeaderContactList'
 import MessagesListScreen from '../MessagesListScreen/MessagesListScreen'
-
+import { strings } from '../../../i18n'
 
 class ContactsScreen extends React.Component {
     constructor(props) {
@@ -54,6 +54,14 @@ class ContactsScreen extends React.Component {
         return <HeaderContactList />
     }
 
+    renderListEmpty = () => {
+        return (
+            <View style={{ flex: 1 }}>
+                <Text style={styles.list_empty}>{strings('contacts_screen.contacts_screen.list_empty')}</Text>
+            </View>
+        )
+    }
+
     // Render for contact list screen
     _displayContactList() {
         if (this.state.displayContactList) {
@@ -62,6 +70,7 @@ class ContactsScreen extends React.Component {
                     data={this.props.contactList}
                     numColumns={3}
                     ListHeaderComponent={() => this.renderHeader()}
+                    ListEmptyComponent={() => this.renderListEmpty()}
                     keyboardShouldPersistTaps={'always'}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id}

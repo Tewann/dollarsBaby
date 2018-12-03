@@ -25,12 +25,25 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         marginLeft: 10,
+        marginRight: 10,
+        flex: 2,
+        borderBottomWidth: 1,
+        borderColor: 'lightgrey',
+    },
+    send_messages_container: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        marginRight: 10,
+        marginLeft: 10,
         flex: 2,
         borderBottomWidth: 1,
         borderColor: 'lightgrey',
     },
     predefined_message_and_arrow_container: {
         flexDirection: 'row'
+    },
+    send_predefined_message_and_arrow_container: {
+        flexDirection: 'row-reverse'
     },
     contact_name: {
         fontWeight: 'bold',
@@ -39,6 +52,14 @@ const styles = StyleSheet.create({
         textShadowOffset: { width: -1, height: 1 },
         textAlign: 'center', 
         marginLeft: 5
+    },
+    send_contact_name: {
+        fontWeight: 'bold',
+        textShadowRadius: 5,
+        textShadowColor: 'lightgrey',
+        textShadowOffset: { width: -1, height: 1 },
+        textAlign: 'center', 
+        marginRight: 5
     },
     rounds: {
         width: roundWidth,
@@ -55,8 +76,10 @@ const styles = StyleSheet.create({
         paddingLeft: 5
     },
     time: {
-        borderBottomWidth: 1,
-        borderColor: 'lightgrey',
+        //borderBottomWidth: 1,
+        //borderColor: 'lightgrey',
+        //justifyContent: 'center',
+        paddingTop: 3
     }
 })
 
