@@ -16,8 +16,10 @@ const adSize = heightString + 'x50'
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
 const request = new AdRequest();
-const unitID = Platform.OS === 'ios' ? 'ca-app-pub-4868408770331668/3443399374' : "ca-app-pub-4868408770331668/3370784165"
-
+// correct unit ID
+const unitID = "ca-app-pub-4868408770331668/3370784165"
+// Test unitID
+//const unitID = 'ca-app-pub-3940256099942544/6300978111'
 export default class App extends React.Component {
   componentDidMount() {
     SplashScreen.hide()
