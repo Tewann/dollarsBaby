@@ -34,7 +34,6 @@
     "react-native-image-picker": "^0.26.10",
     "react-native-linear-gradient": "^2.4.2",
     "react-native-modal": "^6.5.0",
-    "react-native-splash-screen": "^3.0.6",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.3.1",
     "react-redux": "^5.0.7",

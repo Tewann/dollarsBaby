@@ -5,13 +5,9 @@ import Store from './src/Store/configureStore'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import firebase from 'react-native-firebase'
-import Dimensions from 'Dimensions'
 import { SafeAreaView } from 'react-navigation'
 import { Platform } from 'react-native'
 
-const { height, width } = Dimensions.get('window');
-const heightString = Math.trunc(height).toString()
-const adSize = heightString + 'x50'
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
 const request = new AdRequest();
