@@ -56,8 +56,6 @@ class AccountName extends React.Component {
     _defineAccountName = () => {
         if (this.state.nameInput === "") {
             this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_missing') })
-        } else if (this.state.nameInput !== this.state.confirmNameInput) {
-            this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_matching') })
         } else {
             createUserInDatabase(this.state.nameInput)
                 .then(async () => {
@@ -76,7 +74,6 @@ class AccountName extends React.Component {
                             errorMessage: strings('sign_up_screen.get_display_name.account_name.error_reconnect'),
                             button: 'reconnect',
                             placeholder1: strings('sign_up_screen.get_display_name.account_name.placeholder_1bis'),
-                            placeholder2: strings('sign_up_screen.get_display_name.account_name.placeholder_2bis'),
                             secureTextEntry: true,
                             nameInput: "",
                             confirmNameInput: "",
@@ -180,6 +177,24 @@ class AccountName extends React.Component {
             )
         }
     }
+    placeholderForReconnecting() {
+        // if the user need to reconnect
+        // displays second placeholder
+        if (this.state.button === 'reconnect') {
+            return (
+                <TextInput
+                placeholder={this.state.placeholder2}
+                onChangeText={(text) => this._verifyNameInputChanged(text)}
+                autoFocus={false}
+                style={styles.text_input}
+                autoCapitalize={this.state.autoCapitalize}
+                secureTextEntry={this.state.secureTextEntry}
+                value={this.state.confirmNameInput}
+            />
+    )
+        }
+    }
+
     render() {
         return (
             <View>
@@ -197,15 +212,7 @@ class AccountName extends React.Component {
                         autoCapitalize={this.state.autoCapitalize}
                         value={this.state.nameInput}
                     />
-                    <TextInput
-                        placeholder={this.state.placeholder2}
-                        onChangeText={(text) => this._verifyNameInputChanged(text)}
-                        autoFocus={false}
-                        style={styles.text_input}
-                        autoCapitalize={this.state.autoCapitalize}
-                        secureTextEntry={this.state.secureTextEntry}
-                        value={this.state.confirmNameInput}
-                    />
+                    {this.placeholderForReconnecting()}
                     {this.SubmitOrConnectButton()}
                 </View>
             </View>
