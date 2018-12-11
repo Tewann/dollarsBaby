@@ -5,18 +5,20 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
     main_container: {
         flexDirection: 'row',
-        paddingLeft: 15,
-        paddingRight: 15,
+        flex: 1
     },
     sub_container: {
         flex: 1,
-        marginLeft: 5,
-        marginRight: 5
+    },
+    border_top_lign_container: {
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        flex: 0.5,
     },
     top_lign_container: {
         borderBottomWidth: 0.5,
         borderColor: '#b3b3b3',
-        flex: 1
+        flex: 5,
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
     },
     bottom_lign_container: {
         flex: 1,
@@ -26,10 +28,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontStyle: 'italic',
         color: '#b3b3b3',
-        marginTop: 5,
+        paddingTop: 5,
         marginBottom: 5,
         paddingLeft: 5,
-        paddingRight: 5
+        paddingRight: 5,
+        backgroundColor: 'rgba(255, 255, 255, 1)'
     }
 })
 

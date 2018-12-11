@@ -34,7 +34,7 @@ class SectionHeaderComponent extends React.Component {
             strings('month.september'),
             strings('month.october'),
             strings('month.november'),
-            strings('month.december'),            
+            strings('month.december'),
         ];
         const month = monthNames[monthNumber]
         this.setState({
@@ -47,12 +47,20 @@ class SectionHeaderComponent extends React.Component {
         return (
             <View style={styles.main_container}>
                 <View style={styles.sub_container}>
-                    <View style={styles.top_lign_container}></View>
+                    <View style={{ flex: 1, flexDirection: 'row' }}>
+                        <View style={styles.border_top_lign_container} />
+                        <View style={styles.top_lign_container}></View>
+                        <View style={styles.border_top_lign_container} />
+                    </View>
                     <View style={styles.bottom_lign_container}></View>
                 </View>
                 <Text style={styles.date}>{this.state.day} {this.state.month} {this.state.year}</Text>
                 <View style={styles.sub_container}>
-                    <View style={styles.top_lign_container}></View>
+                    <View style={{ flex: 1, flexDirection: 'row' }}>
+                        <View style={styles.border_top_lign_container} />
+                        <View style={styles.top_lign_container}></View>
+                        <View style={styles.border_top_lign_container} />
+                    </View>
                     <View style={styles.bottom_lign_container}></View>
                 </View>
             </View>

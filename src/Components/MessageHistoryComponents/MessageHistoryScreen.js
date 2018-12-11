@@ -7,6 +7,7 @@ import styles from './styles'
 import { connect } from 'react-redux'
 import DisplayMessage from './DisplayMessage/DisplayMessage'
 import SectionHeaderComponent from './SectionHeader/SectionHeaderComponent'
+import CleanHistoryComponent from './CleanHistory/CleanHistoryComponent'
 import { fetchMessages } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
 
@@ -29,9 +30,11 @@ class MessageHistory extends React.Component {
                 <SectionList
                     sections={this.props.messagesHistory}
                     keyExtractor={(item) => item.id.toString()}
-                    renderSectionFooter={({ section }) => <SectionHeaderComponent section={section}/>}
+                    renderSectionHeader={({ section }) => <SectionHeaderComponent section={section}/>}
                     renderItem={({ item }) => <DisplayMessage message={item} />}
                     ListEmptyComponent={() => this.renderListEmpty()}
+                    stickySectionHeadersEnabled={true}
+                    ListHeaderComponent={<CleanHistoryComponent />}
                 />
             </View>
         )
