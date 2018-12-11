@@ -46,55 +46,100 @@ function displayMessagesList(state = initialState, action) {
         // message is added to messages history list 
         case 'MESSAGE_SENDED':
             let newIdSend = null
-            // if there is no messages
-            if (state.messagesHistory.length === 0) {
-                newIdSend = 1
-                // if there is messages
-            } else {
-                newIdSend = state.messagesHistory[0].id + 1
-            }
+            let newMessageSend = null
+            // grabs timestamp of the message and converts it in YY/MM//DD
+            const sendTimeStamp = new Date(action.value.timeStamp)
+            const sendMonth = sendTimeStamp.getUTCMonth() + 1; //months from 1-12
+            const sendDay = sendTimeStamp.getUTCDate();
+            const sendYear = sendTimeStamp.getUTCFullYear();
+            const sendDate = sendYear + "/" + sendMonth + "/" + sendDay;
 
-            const newMessageSend = {
-                id: newIdSend,
-                type: action.value.type,
-                contact: action.value.contact,
-                predefined_message: action.value.predefined_message,
-                additionnal_message: action.value.additionnal_message,
-                timeStamp: action.value.timeStamp,
-            }
-            nextState = {
-                ...state,
-                messagesHistory: [newMessageSend, ...state.messagesHistory]
+            // Checks index of the day in the message history
+            const sendDateIndexInMessageList = state.messagesHistory.findIndex(item => item.title == sendDate)
+
+            // If the day doesn't exist
+            if (sendDateIndexInMessageList == -1) {
+                // Sets new message id to 1
+                newIdSend = 1
+                // create new message
+                newMessageSend = {
+                    id: newIdSend,
+                    type: action.value.type,
+                    contact: action.value.contact,
+                    predefined_message: action.value.predefined_message,
+                    additionnal_message: action.value.additionnal_message,
+                    timeStamp: action.value.timeStamp,
+                }
+                // Create new day
+                const newDay = {
+                    title: sendDate,
+                    data: [
+                        newMessageSend
+                    ]
+                }
+                // Update nextState
+                nextState = {
+                    ...state,
+                    messagesHistory: [
+                        newDay,
+                        ...state.messagesHistory
+                    ]
+                }
+            } else {
+                // If the day exist in the message history
+                // add message
+                newIdSend = state.messagesHistory[sendDateIndexInMessageList].data[0].id + 1
+                console.log('id send : ', newIdSend)
+                // create new message
+                newMessageSend = {
+                    id: newIdSend,
+                    type: action.value.type,
+                    contact: action.value.contact,
+                    predefined_message: action.value.predefined_message,
+                    additionnal_message: action.value.additionnal_message,
+                    timeStamp: action.value.timeStamp,
+                }
+                console.log('message send : ', newMessageSend)
+                nextState = {
+                    ...state,
+                    messagesHistory: state.messagesHistory.map((content, i) => i === sendDateIndexInMessageList ? {
+                        title: sendDate,
+                        data: [
+                            newMessageSend,
+                            ...state.messagesHistory[sendDateIndexInMessageList].data
+                        ]
+                    } :
+                        content)
+                }
+                console.log('nextstate : ', nextState)
             }
             return nextState || state
 
         case 'MESSAGE_RECEIVED':
-            // check if message is already in message history
+            // get message values from firestore doc
+            const contact = action.value.get('title')
             const messageReceivedId = action.value.get('messageId')
-            const messageIndex = state.messagesHistory
-                .findIndex(item => item.messageReceivedId === messageReceivedId)
+            const predefined_message = action.value.get('predefined_message')
+            const additionnal_message = action.value.get('additional_message')
+            const timeStampForDate = action.value.get('timeStamp')
+            const type = action.value.get('type')
+            let newId = null
             let newMessage = null
 
-            // if message is not in history
-            // add message
-            if (messageIndex === -1) {
-                // get message values from firestore doc
-                const contact = action.value.get('title')
-                const predefined_message = action.value.get('predefined_message')
-                const additionnal_message = action.value.get('additional_message')
-                const timeStamp = action.value.get('timeStamp')
-                const type = action.value.get('type')
-                let newId = null
+            // grabs timestamp of the message and converts it in YY/MM//DD
+            const timeStamp = new Date(timeStampForDate)
+            const month = timeStamp.getUTCMonth() + 1; //months from 1-12
+            const day = timeStamp.getUTCDate();
+            const year = timeStamp.getUTCFullYear();
+            const date = year + "/" + month + "/" + day;
 
-                // sets newId
-                // if there is no messages in history
-                if (state.messagesHistory.length === 0) {
-                    newId = 1
-                    // if there is messages
-                } else {
-                    newId = state.messagesHistory[0].id + 1
+            // Checks index of the day in the message history
+            const dateIndexInMessageList = state.messagesHistory.findIndex(item => item.title == date)
+            // If the day doesn't exist
+            if (dateIndexInMessageList == -1) {
+                // Sets new message id to 1
+                newId = 1
 
-                }
                 // create new message
                 newMessage = {
                     id: newId,
@@ -106,62 +151,107 @@ function displayMessagesList(state = initialState, action) {
                     messageReceivedId: messageReceivedId
                 }
 
+                // Create new day
+                const newDay = {
+                    title: date,
+                    data: [
+                        newMessage
+                    ]
+                }
+
+                // Update nextState
                 nextState = {
                     ...state,
-                    messagesHistory: [newMessage, ...state.messagesHistory]
+                    messagesHistory: [
+                        newDay,
+                        ...state.messagesHistory
+                    ]
+                }
+            } else {
+                // If the day exist in the message history
+
+                // check if message is already in message history
+                const messageIndex = state.messagesHistory[dateIndexInMessageList].data
+                    .findIndex(item => item.messageReceivedId === messageReceivedId)
+
+                // if message is not in history
+                // add message
+                if (messageIndex === -1) {
+                    newId = state.messagesHistory[dateIndexInMessageList].data[0].id + 1
+                    // create new message
+                    newMessage = {
+                        id: newId,
+                        type: type,
+                        contact: contact,
+                        predefined_message: predefined_message,
+                        additionnal_message: additionnal_message,
+                        timeStamp: timeStamp,
+                        messageReceivedId: messageReceivedId
+                    }
+                    nextState = {
+                        ...state,
+                        messagesHistory: state.messagesHistory.map((content, i) => i === dateIndexInMessageList ? {
+                            title: date,
+                            data: [
+                                newMessage,
+                                ...state.messagesHistory[dateIndexInMessageList].data
+                            ]
+                        } :
+                            content)
+                    }
                 }
             }
             return nextState || state
-
-            //*
-            // For now, two message received needed
-            // Group messages are  received by fcm messaging
-            //*
-            case 'MESSAGE_RECEIVED_FROM_FCM':
-            // check if message is already in message history
-            const messageId = action.value.messageId
-            const FCMDataMessageIndex = state.messagesHistory
-                .findIndex(item => item.messageReceivedId === messageId)
-            let newFCMDataMessage = null
-
-            // if message is not in history
-            // add message
-            if (FCMDataMessageIndex === -1) {
-                // get message values from firestore doc
-                const contact = action.value.contact
-                const predefined_message = action.value.predefined_message
-                const additional_message = action.value.additional_message
-                const timeStamp = action.value.timeStamp
-                const type = action.value.messageStatus
-                let newId = null
-
-                // sets newId
-                // if there is no messages in history
-                if (state.messagesHistory.length === 0) {
-                    newId = 1
-                    // if there is messages
-                } else {
-                    newId = state.messagesHistory[0].id + 1
-
-                }
-                // create new message
-                newFCMDataMessage = {
-                    id: newId,
-                    type: type,
-                    contact: contact,
-                    predefined_message: predefined_message,
-                    additionnal_message: additional_message,
-                    timeStamp: timeStamp,
-                    messageReceivedId: messageId
-                }
-
-                nextState = {
-                    ...state,
-                    messagesHistory: [newFCMDataMessage, ...state.messagesHistory]
-                }
-            }
-            return nextState || state
-
+        /*
+                    //*
+                    // For now, two message received needed
+                    // Group messages are  received by fcm messaging
+                    //*
+                    case 'MESSAGE_RECEIVED_FROM_FCM':
+                    // check if message is already in message history
+                    const messageId = action.value.messageId
+                    const FCMDataMessageIndex = state.messagesHistory
+                        .findIndex(item => item.messageReceivedId === messageId)
+                    let newFCMDataMessage = null
+        
+                    // if message is not in history
+                    // add message
+                    if (FCMDataMessageIndex === -1) {
+                        // get message values from firestore doc
+                        const contact = action.value.contact
+                        const predefined_message = action.value.predefined_message
+                        const additional_message = action.value.additional_message
+                        const timeStamp = action.value.timeStamp
+                        const type = action.value.messageStatus
+                        let newId = null
+        
+                        // sets newId
+                        // if there is no messages in history
+                        if (state.messagesHistory.length === 0) {
+                            newId = 1
+                            // if there is messages
+                        } else {
+                            newId = state.messagesHistory[0].id + 1
+        
+                        }
+                        // create new message
+                        newFCMDataMessage = {
+                            id: newId,
+                            type: type,
+                            contact: contact,
+                            predefined_message: predefined_message,
+                            additionnal_message: additional_message,
+                            timeStamp: timeStamp,
+                            messageReceivedId: messageId
+                        }
+        
+                        nextState = {
+                            ...state,
+                            messagesHistory: [newFCMDataMessage, ...state.messagesHistory]
+                        }
+                    }
+                    return nextState || state
+        */
         case 'CONTACT_REQUEST_ACCEPTED':
             // called when contact request has been accepted
             // create new message with status accepted
@@ -176,18 +266,37 @@ function displayMessagesList(state = initialState, action) {
                 messageReceivedId: action.value.messageReceivedId,
                 status: 'accepted'
             }
-            
-            const updatedMessageHistoryWhenAccepted = state.messagesHistory.map(item => {
-                if(item.id === action.value.id) {
-                    return contactRequestAcceptedMessage
-                }
-                return item
-            })
-            
+            // grabs timestamp of the message and converts it in YY/MM//DD
+            const acceptedTimeStamp = new Date(action.value.timeStamp)
+            const acceptedMonth = acceptedTimeStamp.getUTCMonth() + 1; //months from 1-12
+            const acceptedDay = acceptedTimeStamp.getDate();
+            const acceptedYear = acceptedTimeStamp.getUTCFullYear();
+            const acceptedDate = acceptedYear + "/" + acceptedMonth + "/" + acceptedDay;
+
+            // Checks index of the day in the message history
+            const acceptedDateIndexInMessageList = state.messagesHistory.findIndex(item => item.title == acceptedDate)
             nextState = {
                 ...state,
-                messagesHistory: updatedMessageHistoryWhenAccepted
+                messagesHistory: state.messagesHistory.map((content, i) => {
+                    if (i === acceptedDateIndexInMessageList) {
+                        let data = content.data.map((item, i) => {
+                            if (item.id == action.value.id) {
+                                return contactRequestAcceptedMessage
+                            } else {
+                                return item
+                            }
+                        })
+                        const dayWithAccepted = {
+                            title: acceptedDate,
+                            data
+                        }
+                        return dayWithAccepted
+                    } else {
+                        return content
+                    }
+                }),
             }
+            console.log('next state : ', nextState)
             return nextState || state
 
         case 'CONTACT_REQUEST_DECLINED':
@@ -205,16 +314,35 @@ function displayMessagesList(state = initialState, action) {
                 status: 'declined'
             }
 
-            const updatedMessageHistoryWhenDeclined = state.messagesHistory.map(item => {
-                if(item.id === action.value.id) {
-                    return contactRequestDeclinedMessage
-                }
-                return item
-            })
+            // grabs timestamp of the message and converts it in YY/MM//DD
+            const declinedTimeStamp = new Date(action.value.timeStamp)
+            const declinedMonth = declinedTimeStamp.getUTCMonth() + 1; //months from 1-12
+            const declinedDay = declinedTimeStamp.getDate();
+            const declinedYear = declinedTimeStamp.getUTCFullYear();
+            const declinedDate = declinedYear + "/" + declinedMonth + "/" + declinedDay;
 
+            // Checks index of the day in the message history
+            const declinedDateIndexInMessageList = state.messagesHistory.findIndex(item => item.title == declinedDate)
             nextState = {
                 ...state,
-                messagesHistory: updatedMessageHistoryWhenDeclined
+                messagesHistory: state.messagesHistory.map((content, i) => {
+                    if (i === declinedDateIndexInMessageList) {
+                        let data = content.data.map((item, i) => {
+                            if (item.id == action.value.id) {
+                                return contactRequestDeclinedMessage
+                            } else {
+                                return item
+                            }
+                        })
+                        const dayWithDeclined = {
+                            title: declinedDate,
+                            data
+                        }
+                        return dayWithDeclined
+                    } else {
+                        return content
+                    }
+                }),
             }
             return nextState || state
 

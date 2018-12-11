@@ -11,8 +11,6 @@ import { strings } from '../../../../i18n'
 class AcceptOrDecline extends React.Component {
 
     _acceptContactRequest = async () => {
-        console.log('accept or decline')
-        console.log(this.props.message.contact)
         // adds contact to both users contact lists
         const addContactToDatabase = await addContactToFirestore(this.props.currentUser.name, this.props.message.contact)
 
@@ -25,7 +23,7 @@ class AcceptOrDecline extends React.Component {
         const timeStamp = new Date().getTime();
         const currentUser = this.props.currentUser.name
         const contact = this.props.message.contact
-        const predefined_message = `${currentUser}` + strings('message_history_screen.display_message.accept_or_decline.accepted') 
+        const predefined_message = `${currentUser}` + strings('message_history_screen.display_message.accept_or_decline.accepted')
         const additionnal_message = ""
         const id = `${currentUser}_${timeStamp}`
         const type = 'received'
@@ -41,18 +39,20 @@ class AcceptOrDecline extends React.Component {
         return (
             <View style={styles.main_container}>
                 <TouchableOpacity
+                    style={styles.button_container}
                     onPress={() => this._acceptContactRequest()}
                 >
-                    <Text>
-                    {strings('message_history_screen.display_message.accept_or_decline.accept')} 
+                    <Text style={styles.button_text}>
+                        {strings('message_history_screen.display_message.accept_or_decline.accept')}
                     </Text>
                 </TouchableOpacity>
                 <View style={styles.middle_bar} />
                 <TouchableOpacity
+                    style={styles.button_container}
                     onPress={() => this._declineContactRequest()}
                 >
-                    <Text>
-                        {strings('message_history_screen.display_message.accept_or_decline.refuse') }
+                    <Text style={styles.button_text}>
+                        {strings('message_history_screen.display_message.accept_or_decline.refuse')}
                     </Text>
                 </TouchableOpacity>
             </View>

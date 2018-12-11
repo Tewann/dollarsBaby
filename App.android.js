@@ -27,7 +27,7 @@ export default class App extends React.Component {
               size={"FULL_BANNER"}
               request={request.build()}
               onAdFailedToLoad={(e) => {
-                console.error('Advert error : ' + e);
+                console.log('Advert error : ' + e);
               }}
             />
         </PersistGate>

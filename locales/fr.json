@@ -1,4 +1,19 @@
 {
+    "month": {
+        "january": "Janvier",
+        "february": "Février", 
+        "march": "Mars", 
+        "april": "Avril", 
+        "may": "Mai", 
+        "june": "Juin",
+        "july": "Juillet", 
+        "august": "Août", 
+        "september": "Septembre", 
+        "october": "Octobre", 
+        "november": "Novembre", 
+        "december": "Décembre"
+    },
+
     "navigation": {
         "contacts_screen": "Contacts",
         "group_screen": "Groupes",
@@ -181,7 +196,7 @@
     "reducers": {
         "where": "T'es où ?",
         "urgent": "Urgent",
-        "forget": "Oublie pas",
+        "forget": "N'oublie pas",
         "coming": "J'arrive",
         "done": "C'est fait"
     },

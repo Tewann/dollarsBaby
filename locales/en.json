@@ -1,4 +1,18 @@
 {
+    "month": {
+        "january": "January",
+        "february": "February", 
+        "march": "March", 
+        "april": "April", 
+        "may": "May", 
+        "june": "June",
+        "july": "July", 
+        "august": "August", 
+        "september": "September", 
+        "october": "October", 
+        "november": "November", 
+        "december": "December"
+    },
     "navigation": {
         "contacts_screen": "Contacts",
         "group_screen": "Groups",
@@ -80,8 +94,8 @@
         "list_empty": "You have not received messages yet",
         "display_message": {
             "contact_request": "sent you a contact request",
-            "contact_added": "has been added to your contacts",
-            "contact_denied": "has not been added to your contacts",
+            "contact_added": "has been added to your contact list",
+            "contact_denied": "has not been added to your contact list",
             "accept_or_decline": {
                 "accepted": "accepted your contact request",
                 "accept": "Accept",

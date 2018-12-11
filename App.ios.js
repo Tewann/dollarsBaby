@@ -12,9 +12,9 @@ const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
 const request = new AdRequest();
 // Correct release unitID
-const unitID = 'ca-app-pub-4868408770331668/3443399374'
+//const unitID = 'ca-app-pub-4868408770331668/3443399374'
 // Test unitID
-//const unitID = 'ca-app-pub-3940256099942544/6300978111'
+const unitID = 'ca-app-pub-3940256099942544/6300978111'
 
 export default class App extends React.Component {
 
@@ -30,7 +30,7 @@ export default class App extends React.Component {
               size={"FULL_BANNER"}
               request={request.build()}
               onAdFailedToLoad={(e) => {
-                console.error('Advert error : ' + e);
+                console.log('Advert error : ' + e);
               }}
             />
           </SafeAreaView>
