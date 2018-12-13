@@ -1,5 +1,6 @@
 import firebase from 'react-native-firebase'
 import { Platform } from 'react-native'
+import Store from '../Store/configureStore'
 
 
 // --------------------------------
@@ -352,6 +353,45 @@ export const addContactToFirestore = async (currentUser, contactToAdd) => {
             })
             .then(resolve())
             .catch(error => reject(error))
+    })
+}
+
+// --------------------
+// --------------------
+//  CLEAN MESSAGE HISTORY
+// --------------------
+// --------------------
+
+//*
+// Cleaning message history
+//*
+export const cleaningMessageHistory = async () => {
+    new Promise((resolve, reject) => {
+        const user = Store.getState().getCurrentUserInformations.name
+        const httpsCallable = firebase.functions().httpsCallable('deleteAllUserHistory')
+        httpsCallable({
+            user: user
+        })
+            .then((res) => {
+                // after function called
+                // updated redux store
+                console.log('succes')
+                const action = {
+                    type: 'RESET_MESSAGE_HISTORY',
+                }
+                Store.dispatch(action)
+                resolve('success')
+
+            })
+            .catch(httpsError => {
+                console.log('httpsCallable err' + httpsError)
+                const action = {
+                    type: 'RESET_MESSAGE_HISTORY',
+                }
+                Store.dispatch(action)
+                console.log('error when executing cleaningMessageHistory, err : ', httpsError)
+                reject('error when deleting', httpsError )
+            })
     })
 }
 

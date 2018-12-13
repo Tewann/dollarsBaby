@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+
 import { user } from 'firebase-functions/lib/providers/auth';
 
 
@@ -45,6 +46,92 @@ export const messageSendToGroup = functions.https.onCall(data => {
             return err
         })
 })
+
+/**
+ * Initiate a recursive delete of documents at a given path.
+ * 
+ * The calling user must be authenticated and have the custom "admin" attribute
+ * set to true on the auth token.
+ * 
+ * This delete is NOT an atomic operation and it's possible
+ * that it may fail after only deleting some documents.
+ * 
+ * @param {string} data.path the document or collection path to delete.
+ */
+export const deleteAllUserHistory = functions
+    .runWith({
+        timeoutSeconds: 540,
+        memory: '2GB'
+    })
+    .https.onCall((data, context) => {
+        var user = data.user
+        var collectionRef = admin.firestore()
+            .collection('Users')
+            .doc(user)
+            .collection('messagesReceived')
+        var query = collectionRef.orderBy('title').limit(3);
+
+        return new Promise((resolve, reject) => {
+            deleteQueryBatch(query, resolve, reject);
+        });
+    });
+
+function deleteQueryBatch(query, resolve, reject) {
+    query.get()
+        .then((snapshot) => {
+            // When there are no documents left, we are done
+            if (snapshot.size == 0) {
+                return 0;
+            }
+
+            // Delete documents in a batch
+            var batch = admin.firestore().batch();
+            snapshot.docs.forEach((doc) => {
+                console.log('delete?')
+                batch.delete(doc.ref);
+            });
+
+            return batch.commit().then(() => {
+                return snapshot.size;
+            });
+        }).then((numDeleted) => {
+            if (numDeleted === 0) {
+                resolve();
+                return;
+            }
+            // Recurse on the next process tick, to avoid
+            // exploding the stack.
+            process.nextTick(() => {
+                deleteQueryBatch(query, resolve, reject);
+            });
+        })
+        .catch(reject);
+}
+/*
+        return admin.firestore()
+            .collection('Users')
+            .doc('God')
+            .collection('messagesReceived')
+            .get()
+            .then(data => {
+                console.log('function called')
+                data.forEach(doc => {
+                    doc.get().then()
+                    console.log('document is : ', doc)
+                })
+            })
+        /*.delete(path, {
+          project: process.env.GCLOUD_PROJECT,
+          recursive: true,
+          yes: true,
+          token: functions.config().fb.token
+        })
+        .then(() => {
+          return {
+            path: path 
+          };
+        });*/
+
 
 // -------------------------------
 //          PUBLICS GROUPS
@@ -94,7 +181,7 @@ export const addPublicGroupMessageToAllMembers =
                     .catch(err => console.log('error : ', err))
 
             })
-            return 
+            return
         })
 
 
@@ -146,7 +233,7 @@ export const addPrivateGroupMessageToAllMembers =
                     .catch(err => console.log('error : ', err))
 
             })
-            return 
+            return
         })
 
 // -------------------------------

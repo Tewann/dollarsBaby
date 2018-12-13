@@ -34,7 +34,7 @@ class MessageHistory extends React.Component {
                     renderItem={({ item }) => <DisplayMessage message={item} />}
                     ListEmptyComponent={() => this.renderListEmpty()}
                     stickySectionHeadersEnabled={true}
-                    ListHeaderComponent={<CleanHistoryComponent />}
+                    //ListHeaderComponent={<CleanHistoryComponent />}
                 />
             </View>
         )
