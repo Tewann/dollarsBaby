@@ -8,39 +8,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white'
     },
-    list_empty: {
-        textAlign: 'center',
-        color: 'grey',
-        //fontWeight: 'bold',
-        fontSize: 20,
-        paddingTop: 80
-    },
-    messagelist_main_container: {
-        flex: 1,
-    },
-    back_to_contacts: {
-        marginTop: 10,
-        marginLeft: 10,
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    retour: {
-        marginLeft: 0,
-        color: '#889eb0'
-    },
-    flatlist: {
-        marginTop: 10,
-        flex: 1,
-    },
-    text_input: {
-        marginLeft: 7,
-        marginRight: 7,
-        borderBottomWidth: 1,
-        paddingLeft: 5,
-        marginTop: 10,
-        marginBottom: 10,
-        height: 40
-    },
 })
 
 

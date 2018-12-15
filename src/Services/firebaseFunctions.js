@@ -226,13 +226,16 @@ export const setPlatformUsedToFirestore = async (userName) => {
 // send message to the contact's firestore message list
 export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type, sound) => {
     new Promise((resolve, reject) => {
+        // if there is no additionnal message body = predefined message
+        // else body = predefined message : additionnal message
+        const body = additionalMessage == "" ? `${predefined_message}` : `${predefined_message} : ${additionalMessage}`
         firebase.firestore()
             .collection('Users')
             .doc(contact)
             .collection('messagesReceived')
             .add({
                 title: currentUser,
-                body: `${predefined_message} : ${additionalMessage}`,
+                body: body,
                 sound: sound,
                 timeStamp: timeStamp,
                 messageId: id,

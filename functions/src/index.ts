@@ -24,6 +24,7 @@ admin.initializeApp()
 // Push message to firestore group collection
 //*
 export const messageSendToGroup = functions.https.onCall(data => {
+    const body = data.additionalMessage == "" ? `${data.predefined_message}` : `${data.predefined_message} : ${data.additionalMessage}`
     return admin.firestore()
         .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
         .doc(data.groupName)
@@ -31,7 +32,7 @@ export const messageSendToGroup = functions.https.onCall(data => {
         .add({
             groupName: data.groupName,
             sendBy: data.sendBy,
-            body: `${data.predefined_message} : ${data.additionalMessage}`,
+            body: body,
             timeStamp: data.timeStamp,
             messageId: data.id,
             predefined_message: data.predefined_message,

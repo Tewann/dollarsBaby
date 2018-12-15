@@ -89,7 +89,6 @@ function displayMessagesList(state = initialState, action) {
                 // If the day exist in the message history
                 // add message
                 newIdSend = state.messagesHistory[sendDateIndexInMessageList].data[0].id + 1
-                console.log('id send : ', newIdSend)
                 // create new message
                 newMessageSend = {
                     id: newIdSend,
@@ -99,7 +98,6 @@ function displayMessagesList(state = initialState, action) {
                     additionnal_message: action.value.additionnal_message,
                     timeStamp: action.value.timeStamp,
                 }
-                console.log('message send : ', newMessageSend)
                 nextState = {
                     ...state,
                     messagesHistory: state.messagesHistory.map((content, i) => i === sendDateIndexInMessageList ? {
@@ -111,7 +109,6 @@ function displayMessagesList(state = initialState, action) {
                     } :
                         content)
                 }
-                console.log('nextstate : ', nextState)
             }
             return nextState || state
 
@@ -296,7 +293,6 @@ function displayMessagesList(state = initialState, action) {
                     }
                 }),
             }
-            console.log('next state : ', nextState)
             return nextState || state
 
         case 'CONTACT_REQUEST_DECLINED':

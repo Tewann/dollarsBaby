@@ -2,7 +2,7 @@
 // Grab profil picture and uploads it on firebase
 
 import React from 'react'
-import { View, TextInput, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
 import { Icon } from 'react-native-elements'
 import Ionicons from 'react-native-vector-icons/Ionicons'

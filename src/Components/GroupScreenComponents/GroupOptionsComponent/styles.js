@@ -49,15 +49,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         flex: 1,
     },
-    text_input: {
-        marginLeft: 7,
-        marginRight: 7,
-        borderBottomWidth: 1,
-        paddingLeft: 5,
-        marginTop: 0,
-        marginBottom: 10,
-        height: 40
-    },
     rounds: {
         width: roundWidth,
         height: roundWidth,

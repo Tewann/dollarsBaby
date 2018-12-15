@@ -2,7 +2,7 @@
 //Component: main View for contact screen
 
 import React from 'react'
-import { View, FlatList, TextInput, TouchableOpacity, Text, BackHandler } from 'react-native'
+import { View } from 'react-native'
 //import { Icon } from 'react-native-elements'
 import ContactsList from './ContactsList/ContactsList'
 import { connect } from 'react-redux'

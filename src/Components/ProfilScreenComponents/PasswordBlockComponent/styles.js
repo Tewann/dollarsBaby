@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#cecfcf',
         borderRadius: 5,
-        marginBottom: 5
+        marginBottom: 5,
+        paddingBottom: 0,
     },
     button: {
         alignItems: 'center',

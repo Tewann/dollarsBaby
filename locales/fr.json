@@ -24,7 +24,7 @@
     "contacts_screen": {
         "contact_item": {},
         "contacts_screen": {
-            "list_empty": "Vous n'avez pas encore de contacts"
+            "list_empty": "Vous n'avez pas encore de contacts, si c'est la première fois que vous lancez l'application, nous vous recommandons de redémarrer l'application pour bénéficier des notifications."
         },
         "header_contact_list": {
             "error_title": "Erreur",

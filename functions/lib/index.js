@@ -23,6 +23,7 @@ admin.initializeApp();
 // Push message to firestore group collection
 //*
 exports.messageSendToGroup = functions.https.onCall(data => {
+    const body = data.additionalMessage == "" ? `${data.predefined_message}` : `${data.predefined_message} : ${data.additionalMessage}`;
     return admin.firestore()
         .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
         .doc(data.groupName)
@@ -30,7 +31,7 @@ exports.messageSendToGroup = functions.https.onCall(data => {
         .add({
         groupName: data.groupName,
         sendBy: data.sendBy,
-        body: `${data.predefined_message} : ${data.additionalMessage}`,
+        body: body,
         timeStamp: data.timeStamp,
         messageId: data.id,
         predefined_message: data.predefined_message,
@@ -69,15 +70,12 @@ exports.deleteAllUserHistory = functions
         .collection('messagesReceived');
     var query = collectionRef.orderBy('title').limit(3);
     return new Promise((resolve, reject) => {
-        console.log('function called 1 :');
-        console.log('query : ', query);
         deleteQueryBatch(query, resolve, reject);
     });
 });
 function deleteQueryBatch(query, resolve, reject) {
     query.get()
         .then((snapshot) => {
-        console.log('snapshot from scd function : ', snapshot);
         // When there are no documents left, we are done
         if (snapshot.size == 0) {
             return 0;
@@ -93,11 +91,9 @@ function deleteQueryBatch(query, resolve, reject) {
         });
     }).then((numDeleted) => {
         if (numDeleted === 0) {
-            console.log('end');
             resolve();
             return;
         }
-        console.log('next tick');
         // Recurse on the next process tick, to avoid
         // exploding the stack.
         process.nextTick(() => {
