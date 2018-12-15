@@ -2,10 +2,8 @@
 // Component : display each iteration of messages received
 
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import styles from './styles'
-import { Icon } from 'react-native-elements'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import { connect } from 'react-redux'
 import AcceptOrDecline from './AcceptOrDeclineComponent/AcceptOrDecline'
@@ -18,6 +16,21 @@ class DisplayMessage extends React.Component {
             defaultPicture: require('../../../../images/ic_tag_faces.png')
         }
     }
+
+    /**
+     * Navigate to the contact scree when pressing the image
+     * If the contact does not exist in the contact list, doesn't do anything
+     */
+    _navigateToContact() {
+        const contactNameIndex = this.props.contactList.findIndex(item =>
+            item.name === this.props.message.contact)
+        if (contactNameIndex !== -1) {
+            const action = { type: 'SWITCH_CONTACT_SCREEN', value: this.props.message.contact }
+            this.props.dispatch(action)
+            this.props.navigate('ContactsScreen')
+        }
+    }
+
     _renderImage = () => {
         const contactNameIndex = this.props.contactList.findIndex(item =>
             item.name === this.props.message.contact)
@@ -42,33 +55,6 @@ class DisplayMessage extends React.Component {
                         style={styles.rounds}
                     />
                 </ImageCacheProvider>
-            )
-        }
-    }
-
-    // display different icons if message is send or received
-    _renderIcon() {
-        if (this.props.message.type === 'send' || this.props.message.type === 'send_contact_request') {
-            // orange icon if message or contact request have been send
-            return (
-                <MaterialCommunityIcons
-                    name='message-text'
-                    type='MaterialCommunityIcons'
-                    size={15}
-                    color='orange'
-                    style={{ paddingTop: 2 }}
-                />
-            )
-        } else {
-            // green icon if message or contact request received
-            return (
-                <MaterialCommunityIcons
-                    name='message-text'
-                    type='MaterialCommunityIcons'
-                    size={15}
-                    color='green'
-                    style={{ paddingTop: 2 }}
-                />
             )
         }
     }
@@ -134,12 +120,12 @@ class DisplayMessage extends React.Component {
         // displays accept or decline buttons
         // else returns nothing
 
-        /*if (this.props.message.type === 'contact_request' &&
+        if (this.props.message.type === 'contact_request' &&
             this.props.message.status !== 'accepted' && this.props.message.status !== 'declined') {
             return (
                 <AcceptOrDecline message={this.props.message} />
             )
-            } else */if (this.props.message.status === 'accepted') {
+        } else if (this.props.message.status === 'accepted') {
             return (
                 <View style={styles.both_messages_container}>
                     <Text style={styles.send_additionnal_message}>{this.props.message.contact} {strings('message_history_screen.display_message.contact_added')}</Text>
@@ -189,9 +175,12 @@ class DisplayMessage extends React.Component {
                     <View style={styles.renderMessage_send_main_container}>
                         {this._renderSendPredefinedMessage()}
                         {this._renderResponseToContactRequest()}
-                        <View style={styles.image_container}>
+                        <TouchableOpacity
+                            style={styles.image_container}
+                            onPress={() => this._navigateToContact()}
+                        >
                             {this._renderImage()}
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
             )
@@ -206,9 +195,12 @@ class DisplayMessage extends React.Component {
                         </Text>
                     </View>
                     <View style={styles.renderMessage_main_container}>
-                        <View style={styles.image_container}>
+                        <TouchableOpacity
+                            style={styles.image_container}
+                            onPress={() => this._navigateToContact()}
+                        >
                             {this._renderImage()}
-                        </View>
+                        </TouchableOpacity>
                         {this._renderReceivedMessage()}
                         {this._renderResponseToContactRequest()}
                     </View>
