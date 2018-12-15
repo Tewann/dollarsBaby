@@ -3,12 +3,19 @@ import { Alert } from 'react-native'
 
 
 const initialState = {
+    currentDisplayedContact: ['ContactsList'],
     contactList: []
 }
 
 export const contactManagment = (state = initialState, action) => {
     let nextState
     switch (action.type) {
+        case 'SWITCH_CONTACT_SCREEN':
+            nextState = {
+                ...state,
+                currentDisplayedContact: [action.value]
+            }
+            return nextState || state
 
         case 'CONTACT_LIST_UPDATED':
             const databaseContactName = action.value.get('UserName')

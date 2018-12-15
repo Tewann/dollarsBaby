@@ -5,8 +5,8 @@ import React from 'react'
 import { TouchableOpacity, TextInput, View, Text, Alert } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
-import { doesContactExists, sendMessageToFirestore } from '../../../Services/firebaseFunctions'
-import { strings } from '../../../i18n'
+import { doesContactExists, sendMessageToFirestore } from '../../../../Services/firebaseFunctions'
+import { strings } from '../../../../i18n'
 import { Icon } from 'react-native-elements'
 
 class HeaderContactList extends React.Component {

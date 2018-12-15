@@ -4,25 +4,15 @@
 import React from 'react'
 import { View, FlatList, TextInput, TouchableOpacity, Text, BackHandler } from 'react-native'
 //import { Icon } from 'react-native-elements'
-import ContactItem from '../ContactItem/ContactItem'
-//import MessageItem from '../MessageItem/MessageItem'
+import ContactsList from './ContactsList/ContactsList'
 import { connect } from 'react-redux'
 import styles from './styles'
-import HeaderContactList from '../HeaderContactList/HeaderContactList'
-import MessagesListScreen from '../MessagesListScreen/MessagesListScreen'
-import { strings } from '../../../i18n'
+import ContactScreen from './ContactScreen/ContactScreen'
+import { strings } from '../../i18n'
 
 class ContactsScreen extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            displayMessagesList: false,
-            displayContactList: true,
-            contact: null
-        }
-    }
 
-
+/*
 
     //Closing contact screen list + displaying message list screen
     _showMessagesList = (contact) => {
@@ -61,7 +51,23 @@ class ContactsScreen extends React.Component {
             </View>
         )
     }
+*/
+    _displayContactsList() {
+        if (this.props.display === 'ContactsList') {
+            return (
+                <ContactsList />
+            )
+        }
+    }
 
+    _displayContact() {
+        if (this.props.display !== 'ContactsList') {
+            return (
+                <ContactScreen />
+            )
+        }
+    }
+/*
     // Render for contact list screen
     _displayContactList() {
         if (this.state.displayContactList) {
@@ -93,11 +99,13 @@ class ContactsScreen extends React.Component {
             )
         }
     }
+    
+    */
     render() {
         return (
             <View style={styles.main_container}>
-                {this._displayContactList()}
-                {this._displayMessageList()}
+                {this._displayContactsList()}
+                {this._displayContact()}
             </View>
         )
     }
@@ -106,6 +114,7 @@ class ContactsScreen extends React.Component {
 const mapStateToProps = (state) => {
     return {
         contactList: state.contactManagment.contactList,
+        display: state.contactManagment.currentDisplayedContact[0]
     }
 }
 

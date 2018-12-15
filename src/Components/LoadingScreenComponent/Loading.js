@@ -24,12 +24,17 @@ class Loading extends React.Component {
         //const resetGroups = { type: 'RESET_GROUP_LIST'}
         //this.props.dispatch(resetGroups)
         
-        //*
-        // Calls reducer, reset currentDisplayedGroup value to GroupList
-        // so group list screen displays the group list and not one specific group options
-        //*
+        /**
+         * On launch, sets both contact and group screens to default values (lists)
+         * Calls reducer to :
+         *  => reset currentDisplayedGroup value to GroupList,
+         *  => reset currentDisplayedContact value to ContactsList
+         */
+
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
+        const contactScreenToList = { type : 'SWITCH_CONTACT_SCREEN', value: 'ContactsList'}
+        this.props.dispatch(contactScreenToList)
 
 
         firebase.auth().onAuthStateChanged(async (user) => {

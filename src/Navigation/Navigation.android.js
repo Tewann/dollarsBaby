@@ -2,7 +2,7 @@
 
 import { DrawerItems, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
 
-import ContactsScreen from '../Components/ContactScreenComponents/ContactsScreen/ContactsScreen'
+import ContactsScreen from "../Components/ContactScreenComponents/ContactsScreen";
 import MessageHistory from '../Components/MessageHistoryComponents/MessageHistoryScreen';
 import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent'
 import Loading from '../Components/LoadingScreenComponent/Loading'

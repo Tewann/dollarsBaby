@@ -2,7 +2,7 @@
 // Component: display each iteration of contact list
 
 import React from 'react'
-import { Text, TouchableOpacity, Image } from 'react-native'
+import { Text, TouchableOpacity, Image, BackHandler } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
@@ -13,15 +13,33 @@ class ContactItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            defaultPicture: require('../../../../images/ic_tag_faces.png')
+            defaultPicture: require('../../../../../images/ic_tag_faces.png')
         }
+    }
+
+    /**
+    * Grabs group name, calls reducer to change state and to display the contact screen
+    */
+
+    _displayContactScreen = (contact) => {
+        const action = { type: 'SWITCH_CONTACT_SCREEN', value: contact}
+        this.props.dispatch(action)
+
+        // listener on android, when back button press
+        BackHandler.addEventListener('hardwareBackPress', this._backHandler)
+    }
+
+    // on android function to return to contact screen list
+    _backHandler = () => {
+        this._displayContactScreen()
+        return true
     }
 
     _renderImage = () => {
         const contactNameIndex = this.props.contactList.findIndex(item =>
             item.name === this.props.contact.name)
         let uri = this.props.contactList[contactNameIndex].photoUrl
-        const backUpUri = '../../../../images/ic_tag_faces.png'
+        const backUpUri = '../../../../../images/ic_tag_faces.png'
         if (uri === null || uri === undefined) {
             return (
                 <Image
@@ -32,7 +50,7 @@ class ContactItem extends React.Component {
         } else {
             return (
                 <ImageCacheProvider
-                ImageCacheManagerOptions={{ttl: 100}}>
+                    ImageCacheManagerOptions={{ ttl: 100 }}>
                     <CachedImage
                         source={{ uri: uri }}
                         style={styles.rounds}
@@ -43,10 +61,10 @@ class ContactItem extends React.Component {
     }
 
     render() {
-        const { contact, showMessages } = this.props
+        const { contact } = this.props
         return (
             <TouchableOpacity
-                onPress={() => showMessages(contact.name)}
+                onPress={() => this._displayContactScreen(contact.name)}
                 style={styles.main_container}>
                 {this._renderImage()}
                 <Text style={styles.contact_text}>

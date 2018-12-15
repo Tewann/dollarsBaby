@@ -9,7 +9,7 @@ import {
   createDrawerNavigator
 } from "react-navigation";
 
-import ContactsScreen from "../Components/ContactScreenComponents/ContactsScreen/ContactsScreen";
+import ContactsScreen from "../Components/ContactScreenComponents/ContactsScreen";
 import MessageHistory from "../Components/MessageHistoryComponents/MessageHistoryScreen";
 import GroupScreen from "../Components/GroupScreenComponents/GroupScreenComponent";
 import Loading from "../Components/LoadingScreenComponent/Loading";
@@ -130,21 +130,6 @@ const CustomDrawerContentComponent = props => {
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
   {
-    MessageHistory: {
-      screen: MessageHistory,
-      navigationOptions: {
-        title: strings("navigation.message_history"),
-        tabBarIcon: (
-          <Icon
-            name="chat"
-            type="entypo"
-            size={25}
-            color="#3a485c"
-            iconStyle={{ paddingBottom: centerIcons, color: "grey" }}
-          />
-        )
-      }
-    },
     ContactsScreen: {
       screen: ContactsScreen,
       navigationOptions: {
@@ -176,7 +161,21 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
         )
       }
     },
-
+    MessageHistory: {
+      screen: MessageHistory,
+      navigationOptions: {
+        title: strings("navigation.message_history"),
+        tabBarIcon: (
+          <Icon
+            name="chat"
+            type="entypo"
+            size={25}
+            color="#3a485c"
+            iconStyle={{ paddingBottom: centerIcons, color: "grey" }}
+          />
+        )
+      }
+    },
   },
   {
     tabBarOptions: {
