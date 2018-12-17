@@ -17,7 +17,28 @@ const request = new AdRequest();
 const unitID = 'ca-app-pub-3940256099942544/6300978111'
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showAds: true
+    }
+  }
+  componentDidMount = () => {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
+      this._keyboardDidShow()
+    });
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
+      this._keyboardDidHide()
+    });
+  }
 
+  _keyboardDidShow = () => {
+    this.setState({ showAds: false })
+  }
+
+  _keyboardDidHide = () => {
+    this.setState({ showAds: true })
+  }
   render() {
     let persistor = persistStore(Store)
     return (
@@ -25,14 +46,16 @@ export default class App extends React.Component {
         <PersistGate persistor={persistor}>
           <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }} forceInset={{ top: 'never' }}>
             <Navigation />
-            <Banner
-              unitId={unitID}
-              size={"FULL_BANNER"}
-              request={request.build()}
-              onAdFailedToLoad={(e) => {
-                console.log('Advert error : ' + e);
-              }}
-            />
+            {this.state.showAds &&
+              <Banner
+                unitId={unitID}
+                size={"FULL_BANNER"}
+                request={request.build()}
+                onAdFailedToLoad={(e) => {
+                  console.log('Advert error : ' + e);
+                }}
+              />
+            }
           </SafeAreaView>
         </PersistGate>
       </Provider>
