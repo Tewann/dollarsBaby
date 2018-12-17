@@ -88,7 +88,7 @@ class MessagesList extends React.Component {
                         onChangeText={(text) => this._additionnalMessageChanged(text)}
                         style={styles.text_input}
                         underlineColorAndroid={'white'}
-                        autoCorrect={false}
+                        autoCorrect={true}
                         ref={component => this.messageInput = component}
                     />
                 </View>

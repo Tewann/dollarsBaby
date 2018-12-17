@@ -35,19 +35,19 @@ class AccountName extends React.Component {
         this.setState({ confirmNameInput: text })
     }
 
-    getToken = async(username) => {
+    getToken = async (username) => {
         console.log('token')
         const fcmToken = await firebase.messaging().getToken()
-            if (fcmToken) {
-                // calls firebase service function
-                // store token in database
-                // store token in redux store
-                setUpRegistrationTokenToFirebase(fcmToken, username)
-                const action = { type: 'TOKEN_MODIFICATION', value: fcmToken }
-                Store.props.dispatch(action)
-            } else {
-                console.log('user doesnt have a token yet')
-            }
+        if (fcmToken) {
+            // calls firebase service function
+            // store token in database
+            // store token in redux store
+            setUpRegistrationTokenToFirebase(fcmToken, username)
+            const action = { type: 'TOKEN_MODIFICATION', value: fcmToken }
+            Store.props.dispatch(action)
+        } else {
+            console.log('user doesnt have a token yet')
+        }
     }
 
     // Check if empty text input
@@ -79,13 +79,13 @@ class AccountName extends React.Component {
                             confirmNameInput: "",
                             autoCapitalize: 'none'
                         })
-                    // if a user name is already set up for this mail adresse
-                    // => redirect to next screen
+                        // if a user name is already set up for this mail adresse
+                        // => redirect to next screen
                     } else if (error === "Already a user name for this mail adress") {
-                        this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_already')})
-                        setTimeout(() => { this.props.goToProfilPicture()}, 2000)
+                        this.setState({ errorMessage: strings('sign_up_screen.get_display_name.account_name.error_already') })
+                        setTimeout(() => { this.props.goToProfilPicture() }, 2000)
 
-                    }else {
+                    } else {
                         this.setState({ errorMessage: error })
                     }
                 })
@@ -183,15 +183,16 @@ class AccountName extends React.Component {
         if (this.state.button === 'reconnect') {
             return (
                 <TextInput
-                placeholder={this.state.placeholder2}
-                onChangeText={(text) => this._verifyNameInputChanged(text)}
-                autoFocus={false}
-                style={styles.text_input}
-                autoCapitalize={this.state.autoCapitalize}
-                secureTextEntry={this.state.secureTextEntry}
-                value={this.state.confirmNameInput}
-            />
-    )
+                    placeholder={this.state.placeholder2}
+                    onChangeText={(text) => this._verifyNameInputChanged(text)}
+                    autoFocus={false}
+                    style={styles.text_input}
+                    autoCapitalize={this.state.autoCapitalize}
+                    secureTextEntry={this.state.secureTextEntry}
+                    value={this.state.confirmNameInput}
+                    autoCorrect={true}
+                />
+            )
         }
     }
 
@@ -201,7 +202,7 @@ class AccountName extends React.Component {
                 <View style={styles.profil_item}>
                     <Text style={styles.title}>{strings('sign_up_screen.get_display_name.account_name.username')}</Text>
                     {this.state.errorMessage &&
-                        <Text style={{ color: 'red',  fontStyle: 'italic', }}>
+                        <Text style={{ color: 'red', fontStyle: 'italic', }}>
                             {this.state.errorMessage}
                         </Text>}
                     <TextInput
@@ -211,6 +212,7 @@ class AccountName extends React.Component {
                         style={styles.text_input}
                         autoCapitalize={this.state.autoCapitalize}
                         value={this.state.nameInput}
+                        autoCorrect={true}
                     />
                     {this.placeholderForReconnecting()}
                     {this.SubmitOrConnectButton()}

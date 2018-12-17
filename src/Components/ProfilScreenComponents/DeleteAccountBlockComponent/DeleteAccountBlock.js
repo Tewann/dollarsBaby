@@ -105,7 +105,7 @@ class DeleteAccountBlock extends React.Component {
                         onChangeText={(text) => this._confirmMailInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
-                        autoCorrect={false}
+                        autoCorrect={true}
                         autoCapitalize='none'
                     />
                     <TextInput
@@ -113,7 +113,7 @@ class DeleteAccountBlock extends React.Component {
                         onChangeText={(text) => this._currentPasswordChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
-                        autoCorrect={false}
+                        autoCorrect={true}
                         secureTextEntry={true}
                         autoCapitalize='none'
                     />

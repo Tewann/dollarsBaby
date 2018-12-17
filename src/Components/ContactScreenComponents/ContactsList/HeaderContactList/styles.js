@@ -2,6 +2,7 @@
 
 import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
+import { colors } from 'react-native-elements';
 
 const { height, width } = Dimensions.get('window');
 const itemWidth = (width - 40);
@@ -29,8 +30,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f2f2f2',
         borderRadius: 10,
         height: itemHeight,
-        flex: 10,
-        paddingBottom: 0
+//        paddingBottom: 0,
     },
     cross: {
         flex: 1,

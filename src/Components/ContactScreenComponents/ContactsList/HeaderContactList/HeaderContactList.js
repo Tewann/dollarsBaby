@@ -110,7 +110,7 @@ class HeaderContactList extends React.Component {
                         autoFocus={false}
                         style={styles.text_input}
                         underlineColorAndroid={'transparent'}
-                        autoCorrect={false}
+                        autoCorrect={true}
                         ref={component => this.messageInput = component}
                     />
                     <TouchableOpacity

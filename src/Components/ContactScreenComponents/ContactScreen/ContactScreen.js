@@ -119,7 +119,7 @@ class MessagesListScreen extends React.Component {
                                 //onSubmitEditing={() => {}}
                                 style={styles.text_input}
                                 underlineColorAndroid={'white'}
-                                autoCorrect={false}
+                                autoCorrect={true}
                                 ref={component => this.messageInput = component}
                             />
                         </View>

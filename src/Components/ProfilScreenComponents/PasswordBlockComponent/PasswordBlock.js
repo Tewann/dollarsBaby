@@ -114,7 +114,7 @@ class PasswordBlock extends React.Component {
                         onChangeText={(text) => this._currentPasswordChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
-                        autoCorrect={false}
+                        autoCorrect={true}
                         secureTextEntry={true}
                         autoCapitalize='none'
                     />
@@ -123,7 +123,7 @@ class PasswordBlock extends React.Component {
                         onChangeText={(text) => this._newPasswordInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
-                        autoCorrect={false}
+                        autoCorrect={true}
                         secureTextEntry={true}
                         autoCapitalize='none'
                     />
@@ -132,7 +132,7 @@ class PasswordBlock extends React.Component {
                         onChangeText={(text) => this._confirmPasswordInputChanged(text)}
                         autoFocus={false}
                         style={styles.text_input}
-                        autoCorrect={false}
+                        autoCorrect={true}
                         secureTextEntry={true}
                         autoCapitalize='none'
                     />
