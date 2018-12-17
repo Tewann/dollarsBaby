@@ -23,7 +23,7 @@ class Loading extends React.Component {
         //this.props.dispatch(resetMessageHistory)
         //const resetGroups = { type: 'RESET_GROUP_LIST'}
         //this.props.dispatch(resetGroups)
-        
+
         /**
          * On launch, sets both contact and group screens to default values (lists)
          * Calls reducer to :
@@ -33,7 +33,7 @@ class Loading extends React.Component {
 
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
-        const contactScreenToList = { type : 'SWITCH_CONTACT_SCREEN', value: 'ContactsList'}
+        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
         this.props.dispatch(contactScreenToList)
 
 
@@ -107,6 +107,32 @@ class Loading extends React.Component {
                 .setDescription("Done Sound Channel")
                 .setSound('s6cestfait.wav');
             firebase.notifications().android.createChannel(s6cestfait);
+
+            /**
+             * Notification cliked / tapped / opened when app in foreground or background
+             */
+            this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
+                // Get the action triggered by the notification being opened
+                //const action = notificationOpen.action;
+                // Get information about the notification that was opened
+                //const notification = notificationOpen.notification;
+                this.props.navigation.navigate('MessageHistory')
+            });
+
+            /**
+             * Notification cliked / tapped / opened when app in foreground or background
+             */
+            firebase.notifications().getInitialNotification()
+                .then((notificationOpen) => {
+                    if (notificationOpen) {
+                        // App was opened by a notification
+                        // Get the action triggered by the notification being opened
+                        //const action = notificationOpen.action;
+                        // Get information about the notification that was opened
+                        //const notification = notificationOpen.notification;
+                        this.props.navigation.navigate('MessageHistory')
+                    }
+                });
         }
 
 
@@ -334,32 +360,34 @@ class Loading extends React.Component {
     }
 
     checkingCurrentRegistrationToken = async (username) => {
-        if (this.props.currentUser.registrationToken != null) {
-            // a registration token is in redux store
-            // set up listener to token modifications
-            this.onTokenRefreshListener = firebase.messaging()
-                .onTokenRefresh(fcmToken => {
-                    // if token changes
+        if (this.props.currentUser.name != null) {
+            if (this.props.currentUser.registrationToken != null) {
+                // a registration token is in redux store
+                // set up listener to token modifications
+                this.onTokenRefreshListener = firebase.messaging()
+                    .onTokenRefresh(fcmToken => {
+                        // if token changes
+                        // store token in database
+                        // store token in redux store
+                        setUpRegistrationTokenToFirebase(fcmToken, username)
+                        const action = { type: 'TOKEN_MODIFICATION', value: fcmToken }
+                        this.props.dispatch(action)
+                    })
+            } else {
+                // there is no registration token in redux store
+                const fcmToken = await firebase.messaging().getToken()
+                if (fcmToken) {
+                    // calls firebase service function
                     // store token in database
                     // store token in redux store
                     setUpRegistrationTokenToFirebase(fcmToken, username)
                     const action = { type: 'TOKEN_MODIFICATION', value: fcmToken }
                     this.props.dispatch(action)
-                })
-        } else {
-            // there is no registration token in redux store
-            const fcmToken = await firebase.messaging().getToken()
-            if (fcmToken) {
-                // calls firebase service function
-                // store token in database
-                // store token in redux store
-                setUpRegistrationTokenToFirebase(fcmToken, username)
-                const action = { type: 'TOKEN_MODIFICATION', value: fcmToken }
-                this.props.dispatch(action)
-            } else {
-                console.log('user doesnt have a token yet')
-            }
+                } else {
+                    console.log('user doesnt have a token yet')
+                }
 
+            }
         }
     }
 

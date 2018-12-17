@@ -1,19 +1,18 @@
 {
     "month": {
         "january": "Janvier",
-        "february": "Février", 
-        "march": "Mars", 
-        "april": "Avril", 
-        "may": "Mai", 
+        "february": "Février",
+        "march": "Mars",
+        "april": "Avril",
+        "may": "Mai",
         "june": "Juin",
-        "july": "Juillet", 
-        "august": "Août", 
-        "september": "Septembre", 
-        "october": "Octobre", 
-        "november": "Novembre", 
+        "july": "Juillet",
+        "august": "Août",
+        "september": "Septembre",
+        "october": "Octobre",
+        "november": "Novembre",
         "december": "Décembre"
     },
-
     "navigation": {
         "contacts_screen": "Contacts",
         "group_screen": "Groupes",
@@ -24,7 +23,7 @@
     "contacts_screen": {
         "contact_item": {},
         "contacts_screen": {
-            "list_empty": "Vous n'avez pas encore de contacts, si c'est la première fois que vous lancez l'application, nous vous recommandons de redémarrer l'application pour bénéficier des notifications."
+            "list_empty": "Vous n'avez pas encore de contacts"
         },
         "header_contact_list": {
             "error_title": "Erreur",
@@ -57,7 +56,7 @@
                 "public": "publique",
                 "private": "privé"
             },
-            "list_empty": "Vous n'avez pas encore rejoins de groupe"
+            "list_empty": "Vous n'avez pas encore rejoint de groupe"
         },
         "group_options": {
             "group_contact_item": {},

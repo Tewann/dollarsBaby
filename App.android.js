@@ -23,6 +23,9 @@ export default class App extends React.Component {
     }
   }
   componentDidMount = () => {
+    /**
+     * Keyboard oppener listener
+     */
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
       this._keyboardDidShow()
     });

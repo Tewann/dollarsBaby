@@ -23,7 +23,7 @@
     "contacts_screen": {
         "contact_item": {},
         "contacts_screen": {
-            "list_empty": "You do not have any contacts yet. If this is the first time you launched the application, we recommand that you restart the application to have notifications."
+            "list_empty": "You do not have any contacts yet."
         },
         "header_contact_list": {
             "error_title": "Error",

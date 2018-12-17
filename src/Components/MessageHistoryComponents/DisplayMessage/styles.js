@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     additionnal_message: {
-        fontStyle: 'italic',
+        //fontStyle: 'italic',
         textAlign: 'left',
     },
     send_additionnal_message: {
-        fontStyle: 'italic',
+        //fontStyle: 'italic',
         textAlign: 'right',
     },
     renderMessage_send_main_container: {
