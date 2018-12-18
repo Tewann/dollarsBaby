@@ -2,7 +2,7 @@
 // Component: display each iteration of contact list
 
 import React from 'react'
-import { Text, TouchableOpacity, Image, BackHandler } from 'react-native'
+import { Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'

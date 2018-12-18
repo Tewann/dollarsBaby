@@ -6,7 +6,7 @@ import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import firebase from 'react-native-firebase'
 import { SafeAreaView } from 'react-navigation'
-import { Keyboard } from 'react-native'
+import { Keyboard, BackHandler } from 'react-native'
 
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
@@ -22,6 +22,11 @@ export default class App extends React.Component {
       showAds: true
     }
   }
+
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', () => {return true});
+ } 
+
   componentDidMount = () => {
     /**
      * Keyboard oppener listener
@@ -32,6 +37,7 @@ export default class App extends React.Component {
     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
       this._keyboardDidHide()
     });
+
   }
 
   _keyboardDidShow = () => {
