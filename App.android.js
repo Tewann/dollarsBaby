@@ -6,7 +6,7 @@ import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import firebase from 'react-native-firebase'
 import { SafeAreaView } from 'react-navigation'
-import { Keyboard, BackHandler } from 'react-native'
+import { Keyboard, BackHandler, AppState } from 'react-native'
 
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
@@ -19,13 +19,25 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showAds: true
+      showAds: true,
     }
   }
 
   componentWillMount() {
-    BackHandler.addEventListener('hardwareBackPress', () => {return true});
- } 
+    BackHandler.addEventListener('hardwareBackPress', () => { return true });
+    AppState.addEventListener('change', this._handleAppStateChange);
+  }
+
+  _handleAppStateChange = () => {
+    if (AppState.currentState === 'active') {
+      /**
+       * Remove all notifications from the tray
+       * (and therefore sets the current badge number on the app icon to 0)
+       */
+      firebase.notifications().removeAllDeliveredNotifications()
+      firebase.notifications().cancelAllNotifications()
+    }
+  }
 
   componentDidMount = () => {
     /**
@@ -37,7 +49,6 @@ export default class App extends React.Component {
     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
       this._keyboardDidHide()
     });
-
   }
 
   _keyboardDidShow = () => {

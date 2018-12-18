@@ -7,6 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import firebase from 'react-native-firebase'
 import { SafeAreaView } from 'react-navigation'
 import { Platform } from 'react-native'
+import { Keyboard, AppState } from 'react-native'
 
 const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
@@ -23,7 +24,26 @@ export default class App extends React.Component {
       showAds: true
     }
   }
+
+  componentWillMount() {
+    AppState.addEventListener('change', this._handleAppStateChange);
+  }
+
+  _handleAppStateChange = () => {
+    if (AppState.currentState === 'active') {
+      /**
+       * Remove all notifications from the tray
+       * (and therefore sets the current badge number on the app icon to 0)
+       */
+      firebase.notifications().removeAllDeliveredNotifications()
+      firebase.notifications().cancelAllNotifications()
+    }
+  }
+
   componentDidMount = () => {
+    /**
+     * Keyboard oppener listener
+     */
     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
       this._keyboardDidShow()
     });
@@ -39,6 +59,7 @@ export default class App extends React.Component {
   _keyboardDidHide = () => {
     this.setState({ showAds: true })
   }
+
   render() {
     let persistor = persistStore(Store)
     return (
