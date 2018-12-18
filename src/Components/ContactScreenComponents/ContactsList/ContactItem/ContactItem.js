@@ -24,15 +24,6 @@ class ContactItem extends React.Component {
     _displayContactScreen = (contact) => {
         const action = { type: 'SWITCH_CONTACT_SCREEN', value: contact}
         this.props.dispatch(action)
-
-        // listener on android, when back button press
-        BackHandler.addEventListener('hardwareBackPress', this._backHandler)
-    }
-
-    // on android function to return to contact screen list
-    _backHandler = () => {
-        this._displayContactScreen()
-        return true
     }
 
     _renderImage = () => {

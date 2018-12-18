@@ -4,7 +4,7 @@
  */
 
 import React from 'react'
-import { View, Text, TouchableOpacity, FlatList, TextInput, Image, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { View, BackHandler, Text, TouchableOpacity, FlatList, TextInput, Image, KeyboardAvoidingView, ScrollView } from 'react-native'
 import styles from './styles'
 import MessageItem from './MessageItem/MessageItem'
 import { Icon } from 'react-native-elements'
@@ -23,9 +23,22 @@ class MessagesListScreen extends React.Component {
             errorMessage: null
         }
     }
+    
+    componentDidMount() {
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    }
+
+    handleBackPress = () => {
+        this._displayContactsList(); // works best when the goBack is async
+        return true;
+    }
 
     _displayContactsList = () => {
-        const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList'}
+        const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
         this.props.dispatch(action)
     }
 
