@@ -12,9 +12,9 @@ const Banner = firebase.admob.Banner;
 const AdRequest = firebase.admob.AdRequest;
 const request = new AdRequest();
 // correct unit ID
-//const unitID = "ca-app-pub-4868408770331668/3370784165"
+const unitID = "ca-app-pub-4868408770331668/3370784165"
 // Test unitID
-const unitID = 'ca-app-pub-3940256099942544/6300978111'
+//const unitID = 'ca-app-pub-3940256099942544/6300978111'
 export default class App extends React.Component {
   constructor(props) {
     super(props)

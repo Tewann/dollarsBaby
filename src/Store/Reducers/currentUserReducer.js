@@ -1,17 +1,24 @@
 // Store/Reducers/currentUserReducer.js
 
 const initialState = {
-    userProfilPicture: require('../../../images/ic_tag_faces.png'),
+    userProfilPicture: null,
     registrationToken: null,
     name: null,
     email: null,
     termsOfServiceStatus: 'declined',
     notificationspermissionsdeclined: false,
+    appVersion: '1.2.0'
 }
 
 function getCurrentUserInformations(state = initialState, action) {
     let nextState
     switch (action.type) {
+        case 'UPDATE_VERSION':
+            nextState = {
+                ...state,
+                appVersion: action.value
+            }
+            return nextState || state
 
         case 'UPDATE_PROFIL_PICTURE':
             nextState = {

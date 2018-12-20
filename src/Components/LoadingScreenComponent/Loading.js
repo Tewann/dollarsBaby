@@ -36,6 +36,7 @@ class Loading extends React.Component {
         const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
         this.props.dispatch(contactScreenToList)
 
+        this._checkCurrentAppVersion()
 
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
@@ -390,6 +391,22 @@ class Loading extends React.Component {
             }
         }
     }
+
+    _checkCurrentAppVersion = () => {
+        const currentVersion = this.props.currentUser.appVersion
+        if (currentVersion == undefined || currentVersion == null) {
+            console.log('uptading version')
+            const appversionresetuserpicture = { type: 'UPDATE_PROFIL_PICTURE', value: null }
+            this.props.dispatch(appversionresetuserpicture)
+            const appversionresetContacts = { type: 'RESET_CONTACT' }
+            this.props.dispatch(appversionresetContacts)
+            const appversionresetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
+            this.props.dispatch(appversionresetMessageHistory)
+            const updateVersion = { type: 'UPDATE_VERSION', value: '1.2.0' }
+            this.props.dispatch(updateVersion)
+        }
+    }
+
 
     render() {
         return (
