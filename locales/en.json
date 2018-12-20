@@ -105,9 +105,13 @@
     },
     "profil_screen": {
         "profil": "PROFILE     ",
+        "image_picker_title": "Select a Photo",
+        "take_photo_button": "Take a Photo...",
+        "open_library_button": "Choose from Library...",
+        "cancel": "Cancel",
         "change_profil_image": {
             "save": "Save",
-            "cancel": "Cancel",
+            "back": "Back",
             "load_image": "Add a profile picture",
             "error": "Error",
             "image_shared": "Image has been shared",

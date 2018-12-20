@@ -316,6 +316,7 @@ export const uploadImage = async (uri) => {
     const { downloadURL, imageName } = await uploadImageToFirebase(uri, userName);
     const setDlLinkToProfil = await setImgDlLinkToFirebaseAccount(downloadURL);
     const setDlLinkToCloud = await setDlLinkToCloudFirestore(downloadURL, userName, imageName)
+    return downloadURL
 }
 
 

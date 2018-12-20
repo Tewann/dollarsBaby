@@ -9,15 +9,13 @@ const itemWidth = (width - 35);
 const styles = StyleSheet.create({
     header_container: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingTop: 15,
-        paddingBottom: 15
+        paddingTop: 10,
+        paddingBottom: 10
     },
     title: {
         color: 'white',
-        textAlign: 'center',
         fontSize: 17,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     avatar_container: {
         alignItems: 'center',

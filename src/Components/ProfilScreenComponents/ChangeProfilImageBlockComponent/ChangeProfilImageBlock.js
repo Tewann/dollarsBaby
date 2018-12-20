@@ -21,7 +21,6 @@ class ChangeProfilImageBlock extends React.Component {
         this.state = {
             displayImagePicker: 'text',
             errorMessage: null,
-            imageLocalUri: null,
             isLoading: false,
             imageUploaded: false
         }
@@ -45,13 +44,11 @@ class ChangeProfilImageBlock extends React.Component {
             }
             else if (response.error) {
                 this.setState({ errorMessage: response.error })
+                return
             }
             else {
                 let requireSource = { uri: response.uri }
-                this.setState({ imageLocalUri: requireSource })
-                // update redux store, image is changed on profil screen component
-                const action = { type: 'UPDATE_PROFIL_PICTURE', value: requireSource }
-                this.props.dispatch(action)
+                this._uploadImageToFirebase(requireSource)
             }
         });
     }
@@ -63,55 +60,32 @@ class ChangeProfilImageBlock extends React.Component {
             }
             else if (response.error) {
                 this.setState({ errorMessage: response.error })
+                return
             }
             else {
                 let requireSource = { uri: response.uri }
-                this.setState({ imageLocalUri: requireSource })
-                // update redux store, image is changed on profil screen component
-                const action = { type: 'UPDATE_PROFIL_PICTURE', value: requireSource }
-                this.props.dispatch(action)
+                this._uploadImageToFirebase(requireSource)
             }
         });
     }
 
-    // function passed to image picker block
-    // get avatar.uri and modify profil state
-    _uploadImageToFirebase = async () => {
+
+    _uploadImageToFirebase = async (requireSource) => {
         this.setState({ isLoading: true })
-        const requireSource = this.state.imageLocalUri
-        const uploadToFirebase = await uploadImage(requireSource)
-        const action = { type: 'UPDATE_PROFIL_PICTURE', value: requireSource }
+        const uploadURL = await uploadImage(requireSource)
+        const action = { type: 'UPDATE_PROFIL_PICTURE', value: uploadURL }
         this.props.dispatch(action)
         this.setState({ isLoading: false, imageUploaded: true })
         setTimeout(() => {
             this.setState({ imageUploaded: false })
             this._switchBetweenImagePickerTextandInput('text')
-        }, 1000)
+        }, 2000)
     }
 
     _displayUploadToFirebaseButton() {
         if (this.state.isLoading === true) {
             return (
                 <ActivityIndicator size='large' />
-            )
-        } else if (this.state.imageLocalUri !== null) {
-            return (
-                <TouchableOpacity
-                    style={{ alignItems: 'center' }}
-                    onPress={() => this._uploadImageToFirebase()}
-                >
-                    <LinearGradient
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                        colors={['#88b097', '#889eb0']}
-                        style={styles.button}
-                    >
-                        <Icon
-                            name='arrow-back'
-                            color='white'
-                        />
-                        <Text style={styles.button_text}>{strings('profil_screen.change_profil_image.save')}</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
             )
         } else {
             return (
@@ -128,7 +102,7 @@ class ChangeProfilImageBlock extends React.Component {
                             name='arrow-back'
                             color='white'
                         />
-                        <Text style={styles.button_text}>{strings('profil_screen.change_profil_image.cancel')}</Text>
+                        <Text style={styles.button_text}>{strings('profil_screen.change_profil_image.back')}</Text>
                     </LinearGradient>
                 </TouchableOpacity>
             )
