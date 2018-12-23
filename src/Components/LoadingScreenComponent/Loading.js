@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
 import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
 import Store from '../../Store/configureStore'
 import { strings } from '../../i18n'
+import SplashScreen from 'react-native-splash-screen'
 
 class Loading extends React.Component {
     componentDidMount = async () => {
@@ -134,6 +135,7 @@ class Loading extends React.Component {
                         this.props.navigation.navigate('MessageHistory')
                     }
                 });
+                SplashScreen.hide();
         }
 
 
