@@ -114,7 +114,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
-                    //iconStyle={{ paddingBottom: itemHeight }}
+                //iconStyle={{ paddingBottom: itemHeight }}
                 />
             }
         },
@@ -127,7 +127,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                     type='feather'
                     size={25}
                     color='#3a485c'
-                    //iconStyle={{ paddingBottom: itemHeight }}
+                //iconStyle={{ paddingBottom: itemHeight }}
                 />
             }
         },
@@ -157,29 +157,23 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
         },
     })
 
-
-
 const MainStackNavigator = createStackNavigator({
     Mainscreen: {
         screen: topTabBarNavigation,
         navigationOptions: ({ navigation }) => ({
-            title: 'eBlink',
-            headerTitleStyle: {
-                marginLeft: 0,
-            },
-            /*headerStyle: {
-                backgroundColor: '#3a485c',
-                //backgroundColor: '#0066ff'
-            }, */
-            headerBackground: (
+            header:
                 <LinearGradient
-                    colors={['#3a485c', '#3a485c']}
+                    colors={[ '#88b097', '#3a485c']}
+                    start={{ x: 0, y: 1}}
+                    end={{ x: 1, y: 0}}
+                    style={styles.CustomNavigationHeaderContainer}
+                >
+                    <DrawerButton 
+                    navigation={navigation} 
                     style={{ flex: 1 }}
-
-                />
-            ),
-            headerTintColor: '#f0e5dc',
-            headerLeft: <DrawerButton navigation={navigation} />
+                    />
+                    <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
+                </LinearGradient>
         })
     },
 });

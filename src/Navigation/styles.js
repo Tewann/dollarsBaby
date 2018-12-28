@@ -27,6 +27,19 @@ const styles = StyleSheet.create({
         fontSize: 15, 
         fontWeight: 'bold',
         paddingTop: 1
+    },
+    CustomNavigationHeaderContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingTop: 10,
+        paddingBottom: 10
+    },
+    CustomNavigationHeaderText: {
+        color: 'white', 
+        flex: 10, 
+        fontWeight: 'bold',
+        fontSize: 20,
+        paddingLeft: 20
     }
 })
 

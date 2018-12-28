@@ -191,26 +191,23 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
 
 const MainStackNavigator = createStackNavigator({
   Mainscreen: {
-    screen: topTabBarNavigation,
-    navigationOptions: ({ navigation }) => ({
-      title: "eBlink",
-      headerTitleStyle: {
-        //marginLeft: 0,
-      },
-      headerStyle: {
-        backgroundColor: "#3a485c"
-      },
-      /*headerBackground: (
-                <LinearGradient
-                    colors={['#3a485c', '#3a485c']}
-                    style={{ flex: 1 }}
-
-                />
-            ),*/
-      headerTintColor: "#f0e5dc",
-      headerLeft: <DrawerButton navigation={navigation} />
-    })
-  }
+      screen: topTabBarNavigation,
+      navigationOptions: ({ navigation }) => ({
+          header:
+              <LinearGradient
+                  colors={[ '#88b097', '#3a485c']}
+                  start={{ x: 0, y: 1}}
+                  end={{ x: 1, y: 0}}
+                  style={styles.CustomNavigationHeaderContainer}
+              >
+                  <DrawerButton 
+                  navigation={navigation} 
+                  style={{ flex: 1 }}
+                  />
+                  <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
+              </LinearGradient>
+      })
+  },
 });
 
 const DrawerStack = createDrawerNavigator(
