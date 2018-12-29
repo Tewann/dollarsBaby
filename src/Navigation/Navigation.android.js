@@ -1,6 +1,6 @@
 //Navigation/Navigation.js
 
-import { DrawerItems, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
+import { DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
 
 import ContactsScreen from "../Components/ContactScreenComponents/ContactsScreen";
 import MessageHistory from '../Components/MessageHistoryComponents/MessageHistoryScreen';
@@ -17,12 +17,8 @@ import TermsOfService from '../Components/TermsOfServiceScreen/TermsOfService'
 import React from 'react'
 import { Icon } from 'react-native-elements'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-
 import Octicons from 'react-native-vector-icons/Octicons'
+
 import { View, Text, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 

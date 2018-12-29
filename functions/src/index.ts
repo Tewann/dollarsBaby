@@ -108,31 +108,6 @@ function deleteQueryBatch(query, resolve, reject) {
         })
         .catch(reject);
 }
-/*
-        return admin.firestore()
-            .collection('Users')
-            .doc('God')
-            .collection('messagesReceived')
-            .get()
-            .then(data => {
-                console.log('function called')
-                data.forEach(doc => {
-                    doc.get().then()
-                    console.log('document is : ', doc)
-                })
-            })
-        /*.delete(path, {
-          project: process.env.GCLOUD_PROJECT,
-          recursive: true,
-          yes: true,
-          token: functions.config().fb.token
-        })
-        .then(() => {
-          return {
-            path: path 
-          };
-        });*/
-
 
 // -------------------------------
 //          PUBLICS GROUPS
@@ -265,7 +240,7 @@ export const sendPushNotificationsForNewMessages =
             const data = snapshot.data()
 
             // Predefined message (sended as data in case notification sound is not received)
-            const predefined_message = data.predefined_message
+            const predefined_message = data.predefined_message == null || undefined ? 'Blink' : data.predefined_message
 
             // Payload
             let payload = null

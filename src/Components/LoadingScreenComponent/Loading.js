@@ -34,7 +34,7 @@ class Loading extends React.Component {
 
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
-        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
+        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
         this.props.dispatch(contactScreenToList)
 
         this._checkCurrentAppVersion()

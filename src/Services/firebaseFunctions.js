@@ -227,8 +227,16 @@ export const setPlatformUsedToFirestore = async (userName) => {
 export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type, sound) => {
     new Promise((resolve, reject) => {
         // if there is no additionnal message body = predefined message
+        // elif only additionnal message body = additionnal message
         // else body = predefined message : additionnal message
-        const body = additionalMessage == "" ? `${predefined_message}` : `${predefined_message} : ${additionalMessage}`
+        let body = null
+        if (additionalMessage == "") {
+            body = `${predefined_message}`
+        } else if (predefined_message == null || undefined) {
+            body = `${additionalMessage}`
+        } else {
+            body = `${predefined_message} : ${additionalMessage}`
+        }
         firebase.firestore()
             .collection('Users')
             .doc(contact)

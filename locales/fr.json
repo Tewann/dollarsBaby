@@ -36,7 +36,6 @@
         },
         "message_item": {},
         "messages_list_screen": {
-            "back": "Retour",
             "placeholder": "Message"
         }
     },

@@ -74,9 +74,12 @@ class DisplayMessage extends React.Component {
         } else if (this.props.message.type !== 'contact_request') {
             return (
                 <View style={styles.both_messages_container}>
-                    <Text style={styles.predefined_message}>
-                        {this.props.message.predefined_message}
-                    </Text>
+                    {
+                        this.props.message.predefined_message != (null || undefined) &&
+                        <Text style={styles.predefined_message}>
+                            {this.props.message.predefined_message}
+                        </Text>
+                    }
                     {
                         this.props.message.additionnal_message != "" &&
                         <Text style={styles.additionnal_message}>
@@ -100,9 +103,12 @@ class DisplayMessage extends React.Component {
         } else if (this.props.message.type !== 'contact_request') {
             return (
                 <View style={styles.send_both_messages_container}>
-                    <Text style={styles.predefined_message}>
-                        {this.props.message.predefined_message}
-                    </Text>
+                    {
+                        this.props.message.predefined_message != (null || undefined) &&
+                        <Text style={styles.predefined_message}>
+                            {this.props.message.predefined_message}
+                        </Text>
+                    }
                     {
                         this.props.message.additionnal_message != "" &&
                         <Text style={styles.send_additionnal_message}>

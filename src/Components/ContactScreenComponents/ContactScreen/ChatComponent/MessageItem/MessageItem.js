@@ -11,18 +11,26 @@ import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
+import LinearGradient from 'react-native-linear-gradient'
+
+
 class MessageItem extends React.Component {
     render() {
         const message = this.props.message.title
         const sound = this.props.message.sound
         return (
             <TouchableOpacity
-                style={styles.main_container}
-                onPress={() => this.props.sendMessage(message,sound)}
+                onPress={() => this.props.sendMessage(message, sound)}
+                style={{ flex: 1 }}
             >
-                <Text style={styles.text}>
-                    {message}
-                </Text>
+                <LinearGradient
+                    colors={[ 'lightgrey', 'lightgrey']}
+                    style={styles.main_container}
+                >
+                    <Text style={styles.text}>
+                        {message}
+                    </Text>
+                </LinearGradient>
             </TouchableOpacity>
         )
     }

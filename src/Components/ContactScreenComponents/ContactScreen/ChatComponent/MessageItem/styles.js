@@ -4,23 +4,24 @@ import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window')
-const itemHeight = (height / 12)
-
+// const itemHeight = (height / 12)
+const itemHeight = (height / 20)
 
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-        margin: 5,
+        margin: 2,
         height: itemHeight,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#889eb0',
+        //backgroundColor: '#889eb0',
         borderRadius: 12,
 
     },
     text: {
-        color: 'white',
-        textAlign: 'center'
+        color: 'black',
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 })
 
