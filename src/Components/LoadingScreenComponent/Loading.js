@@ -34,7 +34,7 @@ class Loading extends React.Component {
 
         const action = { type: 'SWITCH_GROUP_SCREEN', value: 'GroupList' }
         this.props.dispatch(action)
-        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
+        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
         this.props.dispatch(contactScreenToList)
 
         this._checkCurrentAppVersion()
@@ -115,10 +115,30 @@ class Loading extends React.Component {
              */
             this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
                 // Get the action triggered by the notification being opened
-                //const action = notificationOpen.action;
+                // const action = notificationOpen.action;
                 // Get information about the notification that was opened
                 //const notification = notificationOpen.notification;
-                this.props.navigation.navigate('MessageHistory')
+                const notificationTitle = notificationOpen.notification.title
+                let contactName = notificationTitle
+                const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
+                if (contactName == undefined || null) {
+                    const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
+                    this.props.dispatch(contactScreenToList)
+                    this.props.navigation.navigate('ContactsScreen')
+                } else if (contactIndex !== -1) {
+                    const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                    this.props.dispatch(contactScreenToList)
+                    this.props.navigation.navigate('ContactsScreen')
+                } else if (contactIndex === -1) {
+                    const nicknameIndex = this.props.contactList.findIndex(item => String(item.nickname) == notificationTitle)
+                    contactName = this.props.contactList[nicknameIndex].name
+                    const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                    this.props.dispatch(contactScreenToList)
+                    this.props.navigation.navigate('ContactsScreen')
+                } else {
+                    this.props.navigation.navigate('MessageHistory')
+                }
+
             });
 
             /**
@@ -132,10 +152,29 @@ class Loading extends React.Component {
                         //const action = notificationOpen.action;
                         // Get information about the notification that was opened
                         //const notification = notificationOpen.notification;
-                        this.props.navigation.navigate('MessageHistory')
+                        const notificationTitle = notificationOpen.notification.data.contactName
+                        let contactName = notificationTitle
+                        const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
+                        if (contactName == undefined || null) {
+                            const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
+                            this.props.dispatch(contactScreenToList)
+                            this.props.navigation.navigate('ContactsScreen')
+                        } else if (contactIndex !== -1) {
+                            const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                            this.props.dispatch(contactScreenToList)
+                            this.props.navigation.navigate('ContactsScreen')
+                        } else if (contactIndex === -1) {
+                            const nicknameIndex = this.props.contactList.findIndex(item => item.nickname == notificationTitle)
+                            contactName = this.props.contactList[nicknameIndex].name
+                            const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                            this.props.dispatch(contactScreenToList)
+                            this.props.navigation.navigate('ContactsScreen')
+                        } else {
+                            this.props.navigation.navigate('MessageHistory')
+                        }
                     }
                 });
-                SplashScreen.hide();
+            SplashScreen.hide();
         }
 
 
@@ -422,7 +461,8 @@ class Loading extends React.Component {
 const mapStateToProps = (state) => {
     return {
         currentUser: state.getCurrentUserInformations,
-        predefined_message_list: state.displayMessagesList.predefinedMessagesList
+        predefined_message_list: state.displayMessagesList.predefinedMessagesList,
+        contactList: state.contactManagment.contactList,
     }
 }
 export default connect(mapStateToProps)(Loading)

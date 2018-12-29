@@ -37,6 +37,10 @@
         "message_item": {},
         "messages_list_screen": {
             "placeholder": "Message"
+        },
+        "options": {
+            "rename": "Renommer le contact",
+            "placeholder": "Nouveau nom"
         }
     },
     "groups_screen": {
@@ -90,6 +94,7 @@
         }
     },
     "message_history_screen": {
+        "click_on_avatar": "Cliquez sur la photo de votre contact pour modifier son nom",
         "list_empty": "Vous n'avez pas encore reçu de messages",
         "display_message": {
             "contact_request": "vous a envoyé une demande de contact",

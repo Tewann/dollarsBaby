@@ -131,7 +131,7 @@ class ChatComponent extends React.Component {
                 <View>
                     <FlatList
                         data={this.props.predefinedMessagesList}
-                        numColumns={6}
+                        numColumns={3}
                         columnWrapperStyle={styles.flatlist}
                         keyboardShouldPersistTaps={'always'}
                         keyExtractor={(item) => item.id.toString()}
@@ -151,7 +151,7 @@ const mapStateToProps = (state) => {
     return {
         predefinedMessagesList: state.displayMessagesList.predefinedMessagesList,
         currentUser: state.getCurrentUserInformations,
-        contact: state.contactManagment.currentDisplayedContact[0]
+        contact: state.contactManagment.currentDisplayedContact[0],
     }
 }
 

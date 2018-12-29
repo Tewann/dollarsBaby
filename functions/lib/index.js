@@ -83,7 +83,6 @@ function deleteQueryBatch(query, resolve, reject) {
         // Delete documents in a batch
         var batch = admin.firestore().batch();
         snapshot.docs.forEach((doc) => {
-            console.log('delete?');
             batch.delete(doc.ref);
         });
         return batch.commit().then(() => {
@@ -213,6 +212,14 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     // Building message
     // Message data
     const data = snapshot.data();
+    // Name or nickname eventually
+    const contactName = yield parent.collection('contactList')
+        .where('name', "==", data.title)
+        .get()
+        .then(doc => {
+        const contactName = doc.docs[0].data().nickname != undefined || null ? doc.docs[0].data().nickname : data.title;
+        return contactName;
+    });
     // Predefined message (sended as data in case notification sound is not received)
     const predefined_message = data.predefined_message == null || undefined ? 'Blink' : data.predefined_message;
     // Payload
@@ -222,7 +229,7 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
         const androidSound = data.sound + '.wav';
         payload = {
             notification: {
-                title: data.title,
+                title: contactName,
                 body: data.body,
                 sound: androidSound,
                 // Android channel id necessary for > 26 (OREO 8.0 +)
@@ -230,6 +237,7 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
             },
             data: {
                 predefined_message: predefined_message,
+                contactName: contactName
             },
         };
     }
@@ -238,7 +246,7 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
         const iOSSound = data.sound + '.aiff';
         payload = {
             notification: {
-                title: data.title,
+                title: contactName,
                 body: data.body,
                 sound: iOSSound
             },

@@ -5,7 +5,7 @@ import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window')
 // const itemHeight = (height / 12)
-const itemHeight = (height / 20)
+const itemHeight = (height / 24)
 
 const styles = StyleSheet.create({
     main_container: {

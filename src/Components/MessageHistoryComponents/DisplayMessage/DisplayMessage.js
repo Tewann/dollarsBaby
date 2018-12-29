@@ -13,7 +13,17 @@ class DisplayMessage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            defaultPicture: require('../../../../images/ic_tag_faces.png')
+            defaultPicture: require('../../../../images/ic_tag_faces.png'),
+            displayName: this.props.message.contact
+        }
+    }
+    
+    componentWillMount = () => {
+        const contactNameIndex = this.props.contactList.findIndex(item =>
+            item.name === this.props.message.contact)
+        const nickname = this.props.contactList[contactNameIndex].nickname
+        if (nickname != undefined || null) {
+            this.setState({ displayName: nickname})
         }
     }
 
@@ -175,7 +185,7 @@ class DisplayMessage extends React.Component {
                         {this._renderTime()}
                         <Text>envoyé à </Text>
                         <Text style={styles.contact_name}>
-                            {message.contact}
+                            {this.state.displayName}
                         </Text>
                     </View>
                     <View style={styles.renderMessage_send_main_container}>
@@ -197,7 +207,7 @@ class DisplayMessage extends React.Component {
                     <View style={styles.name_and_time}>
                         {this._renderTime()}
                         <Text style={styles.contact_name}>
-                            {message.contact}
+                            {this.state.displayName}
                         </Text>
                     </View>
                     <View style={styles.renderMessage_main_container}>

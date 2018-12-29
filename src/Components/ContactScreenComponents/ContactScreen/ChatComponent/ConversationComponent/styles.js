@@ -13,6 +13,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         paddingTop: 80
     },
+    list_empty2: {
+        textAlign: 'center',
+        color: 'grey',
+        fontSize: 20,
+        paddingTop: 20
+    },
 })
 
 export default styles

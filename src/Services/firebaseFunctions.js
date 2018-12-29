@@ -342,7 +342,6 @@ export const addContactToFirestore = async (currentUser, contactToAdd) => {
 
     // add contact to current user contact list in database
     new Promise((resolve, reject) => {
-        console.log(contactToAdd)
         firebase.firestore()
             .collection('Users')
             .doc(currentUser)
@@ -402,7 +401,7 @@ export const cleaningMessageHistory = async () => {
                 }
                 Store.dispatch(action)
                 console.log('error when executing cleaningMessageHistory, err : ', httpsError)
-                reject('error when deleting', httpsError )
+                reject('error when deleting', httpsError)
             })
     })
 }
@@ -429,6 +428,22 @@ export const fetchContacts = (userName) => {
                         .onSnapshot((doc) => {
                             const action = { type: 'CONTACT_LIST_UPDATED', value: doc }
                             dispatch(action)
+                        })
+
+                    // grabbing eventual nickname
+                    const ref = firebase.firestore().collection('Users').doc(userPath).collection('contactList')
+                    const contactName = doc.get('name')
+                    ref.where('name', "==", contactName)
+                        .get()
+                        .then((doc) => {
+                            const contactNickname = doc.docs[0]._data.nickname != undefined || null ? doc.docs[0]._data.nickname : null
+                            if (contactNickname != null) {
+                                const action = { type: 'MODIFY_CONTACT_NICKNAME', value: [contactName, contactNickname] }
+                                dispatch(action)
+                            }
+                        })
+                        .catch(error => {
+                            reject(error)
                         })
                 })
             })
@@ -474,4 +489,29 @@ export const fetchGroups = (userName) => {
                 })
             })
     }
+}
+
+// -----------------------------
+// -----------------------------
+//  ADD/MODIFY CONTACT NICKNAME
+// -----------------------------
+// -----------------------------
+
+export const modifyNicknameToDatabase = async (currentUser, contactToModify, nickname) => {
+    new Promise((resolve, reject) => {
+        const ref = firebase.firestore().collection('Users').doc(currentUser).collection('contactList')
+        ref.where('name', "==", contactToModify)
+            .get()
+            .then((doc) => {
+                const contactDocumentName = doc.docs[0].ref._documentPath._parts[3]
+                ref.doc(contactDocumentName)
+                    .set({
+                        nickname: nickname
+                    }, { merge: true })
+                    .then(resolve())
+            })
+            .catch(error => {
+                reject(error)
+            })
+    })
 }

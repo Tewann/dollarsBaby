@@ -15,6 +15,7 @@ import LinearGradient from 'react-native-linear-gradient'
 
 
 class MessageItem extends React.Component {
+
     render() {
         const message = this.props.message.title
         const sound = this.props.message.sound

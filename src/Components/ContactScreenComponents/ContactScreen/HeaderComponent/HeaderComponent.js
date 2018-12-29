@@ -23,7 +23,16 @@ class HeaderComponent extends React.Component {
         this.state = {
             defaultPicture: require('../../../../../images/ic_tag_faces.png'),
             additionnalMessage: "",
-            errorMessage: null
+            errorMessage: null,
+            displayName: this.props.contact
+        }
+    }
+
+    componentWillMount = () => {
+        const contactIndex = this.props.contactList.findIndex(item => item.name === this.props.contact)
+        const nickname = this.props.contactList[contactIndex].nickname
+        if (nickname != undefined || null) {
+            this.setState({ displayName: nickname})
         }
     }
 
@@ -40,30 +49,38 @@ class HeaderComponent extends React.Component {
         return true;
     }
 
+    _navigateToOptions = () => {
+        // If the screen is showing the option menu, pressing the arrow icon on the header will 
+        // go back to the screen of the contact (with the conversation)
+        if (this.props.currentDisplayedContactScreen == 'conversation') {
+            const action = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'options' }
+            this.props.dispatch(action)
+        } else {
+            const action = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'conversation' }
+            this.props.dispatch(action)
+        }
+    }
+
     _renderImage = () => {
         const contactNameIndex = this.props.contactList.findIndex(item =>
             item.name === this.props.contact)
         let uri = this.props.contactList[contactNameIndex].photoUrl
         if (uri === null) {
             return (
-                <TouchableOpacity styles={styles.avatar_container}>
-                    <Image
-                        source={this.state.defaultPicture}
-                        style={styles.rounds}
-                    />
-                </TouchableOpacity>
+                <Image
+                    source={this.state.defaultPicture}
+                    style={styles.rounds}
+                />
             )
         } else {
             return (
-                <TouchableOpacity style={styles.avatar_container}>
-                    <ImageCacheProvider
-                        ImageCacheManagerOptions={{ ttl: 100 }}>
-                        <CachedImage
-                            source={{ uri: uri }}
-                            style={styles.rounds}
-                        />
-                    </ImageCacheProvider>
-                </TouchableOpacity>
+                <ImageCacheProvider
+                    ImageCacheManagerOptions={{ ttl: 100 }}>
+                    <CachedImage
+                        source={{ uri: uri }}
+                        style={styles.rounds}
+                    />
+                </ImageCacheProvider>
             )
         }
     }
@@ -79,11 +96,14 @@ class HeaderComponent extends React.Component {
                         color='#889eb0'
                     />
                 </TouchableOpacity>
-                <View style= {styles.picture_and_name_container}>
+                <TouchableOpacity
+                    style={styles.picture_and_name_container}
+                    onPress={() => this._navigateToOptions()}
+                >
                     {this._renderImage()}
-                    <Text style={styles.username}>{this.props.contact}</Text>
-                </View>
-            </View>
+                    <Text style={styles.username}>{this.state.displayName}</Text>
+                </TouchableOpacity>
+            </View >
         )
     }
 }
@@ -91,7 +111,8 @@ class HeaderComponent extends React.Component {
 const mapStateToProps = (state) => {
     return {
         contactList: state.contactManagment.contactList,
-        contact: state.contactManagment.currentDisplayedContact[0]
+        contact: state.contactManagment.currentDisplayedContact[0],
+        currentDisplayedContactScreen: state.contactManagment.currentDisplayedContactScreen
     }
 }
 

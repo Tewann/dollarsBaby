@@ -5,6 +5,7 @@ import React from 'react'
 import { Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
+
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 
 
@@ -13,7 +14,14 @@ class ContactItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            defaultPicture: require('../../../../../images/ic_tag_faces.png')
+            defaultPicture: require('../../../../../images/ic_tag_faces.png'),
+            displayName: this.props.contact.name
+        }
+    }
+
+    componentWillMount = () => {
+        if (this.props.contact.nickname != undefined || null) {
+            this.setState({ displayName: this.props.contact.nickname})
         }
     }
 
@@ -27,10 +35,7 @@ class ContactItem extends React.Component {
     }
 
     _renderImage = () => {
-        const contactNameIndex = this.props.contactList.findIndex(item =>
-            item.name === this.props.contact.name)
-        let uri = this.props.contactList[contactNameIndex].photoUrl
-        const backUpUri = '../../../../../images/ic_tag_faces.png'
+        let uri = this.props.contact.photoUrl
         if (uri === null || uri === undefined) {
             return (
                 <Image
@@ -59,7 +64,7 @@ class ContactItem extends React.Component {
                 style={styles.main_container}>
                 {this._renderImage()}
                 <Text style={styles.contact_text}>
-                    {contact.name}
+                    {this.state.displayName}
                 </Text>
 
             </TouchableOpacity >
@@ -68,10 +73,4 @@ class ContactItem extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        contactList: state.contactManagment.contactList,
-    }
-}
-
-export default connect(mapStateToProps)(ContactItem)
+export default connect()(ContactItem)

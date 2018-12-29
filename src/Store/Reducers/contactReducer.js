@@ -4,17 +4,37 @@ import { Alert } from 'react-native'
 
 const initialState = {
     currentDisplayedContact: ['ContactsList'],
+    currentDisplayedContactScreen: 'conversation',
     contactList: []
 }
 
 export const contactManagment = (state = initialState, action) => {
     let nextState
     switch (action.type) {
+        case 'SWITCH_CONTACT_SCREEN_OPTIONS':
+            nextState = {
+                ...state,
+                currentDisplayedContactScreen: [action.value]
+            }
+            return nextState || state
+
         case 'SWITCH_CONTACT_SCREEN':
             nextState = {
                 ...state,
                 currentDisplayedContact: [action.value]
             }
+            return nextState || state
+
+        case 'MODIFY_CONTACT_NICKNAME':
+            const contactIndex = state.contactList.findIndex(item => item.name === action.value[0])
+            nextState = {
+                ...state,
+                contactList: state.contactList.map((content, i) => i === contactIndex ? {
+                    ...content,
+                    nickname: action.value[1]
+                } :
+                    content)
+            }  
             return nextState || state
 
         case 'CONTACT_LIST_UPDATED':

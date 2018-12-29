@@ -28,20 +28,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 2
     },
-    avatar_container: {
-        paddingLeft: 10,
-        paddingRight: 10
-    },
     rounds: {
         width: roundWidth,
         height: roundWidth,
         borderRadius: roundWidth / 2,
         padding: 10,
-
     },
     username: {
         fontSize: 20,
         fontWeight: 'bold',
+        paddingLeft: 10,
+        paddingRight: 10
     },
 })
 

@@ -34,6 +34,7 @@ class ConversationComponent extends React.Component {
         return (
             <View style={{ flex: 1 }}>
                 <Text style={styles.list_empty}>{strings('message_history_screen.list_empty')}</Text>
+                <Text style={styles.list_empty2}>{strings('message_history_screen.click_on_avatar')}</Text>
             </View>
         )
     }
