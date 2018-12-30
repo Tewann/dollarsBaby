@@ -1,6 +1,6 @@
 //Navigation/Navigation.js
 
-import { DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
+import { createAppContainer, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
 
 import ContactsScreen from "../Components/ContactScreenComponents/ContactsScreen";
 import MessageHistory from '../Components/MessageHistoryComponents/MessageHistoryScreen';
@@ -142,14 +142,15 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
         },
     },
     {
+        lazy: true,
         tabBarOptions: {
             style: { backgroundColor: 'lightgrey', height: itemHeight },
             indicatorStyle: { backgroundColor: 'white' },
             activeTintColor: '#3a485c',
             inactiveTintColor: '#3a485c',
             showIcon: true,
-            showLabel: false
-
+            showLabel: false,
+            
         },
     })
 
@@ -207,6 +208,4 @@ const MainSwitchNavigator = createSwitchNavigator(
     }
 )
 
-
-
-export default MainSwitchNavigator
+export default createAppContainer(MainSwitchNavigator)

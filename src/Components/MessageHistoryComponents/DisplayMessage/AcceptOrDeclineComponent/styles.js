@@ -15,10 +15,6 @@ const styles = StyleSheet.create({
     button_text: {
         textAlign: 'center'
     },
-    middle_bar: {
-        borderRightWidth: 1
-    }
-
 })
 
 export default styles

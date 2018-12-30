@@ -178,7 +178,7 @@ class GroupOptions extends React.Component {
                     <FlatList
                         data={this.props.groupList[groupNameIndex].contacts}
                         ListHeaderComponent={() => this._renderHeader()}
-                        keyboardShouldPersistTaps={'always'}
+                        keyboardShouldPersistTaps={'handled'}
                         horizontal={true}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => <GroupContactItem contact={item} />}

@@ -169,7 +169,7 @@ class ProfilScreen extends React.Component {
                 >
                     {this._displayTopComponent()}
                     <ScrollView
-                        keyboardShouldPersistTaps='always'
+                        keyboardShouldPersistTaps='handled'
                     >
                         <KeyboardAvoidingView
                             behavior='position'

@@ -156,6 +156,7 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':react-native-gesture-handler')
     compile project(':react-native-splash-screen')
     implementation project(':react-native-firebase')
     implementation project(':rn-fetch-blob')

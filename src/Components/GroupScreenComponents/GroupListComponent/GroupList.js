@@ -248,7 +248,7 @@ class GroupList extends React.Component {
                     data={this.props.groupList}
                     numColumns={3}
                     style={{ marginBottom: 80 }}
-                    keyboardShouldPersistTaps={'always'}
+                    keyboardShouldPersistTaps={'handled'}
                     ListEmptyComponent={() => this.renderListEmpty()}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id.toString()}

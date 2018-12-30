@@ -78,6 +78,7 @@ class ConversationComponent extends React.Component {
                     renderItem={({ item }) => <DisplayMessage message={item} />}
                     ListEmptyComponent={() => this.renderListEmpty()}
                     stickySectionHeadersEnabled={true}
+                    initialNumToRender={2}
                 //ListHeaderComponent={<CleanHistoryComponent />}
                 />
             </View>

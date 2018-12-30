@@ -98,7 +98,7 @@ class MessagesList extends React.Component {
                     data={this.props.predefinedMessagesList}
                     numColumns={2}
                     columnWrapperStyle={styles.message_flatlist}
-                    keyboardShouldPersistTaps={'always'}
+                    keyboardShouldPersistTaps={'handled'}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => <MessageItem
                         message={item}

@@ -133,7 +133,7 @@ class ChatComponent extends React.Component {
                         data={this.props.predefinedMessagesList}
                         numColumns={3}
                         columnWrapperStyle={styles.flatlist}
-                        keyboardShouldPersistTaps={'always'}
+                        keyboardShouldPersistTaps={'handled'}
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => <MessageItem message={item}
                             sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}

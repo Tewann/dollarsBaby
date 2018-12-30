@@ -17,14 +17,25 @@ class DisplayMessage extends React.Component {
             displayName: this.props.message.contact
         }
     }
-    
-    componentWillMount = () => {
+
+    componentDidMount = () => {
+        this._getDisplayName()
+    }
+
+    _getDisplayName = () => {
         const contactNameIndex = this.props.contactList.findIndex(item =>
             item.name === this.props.message.contact)
-        const nickname = this.props.contactList[contactNameIndex].nickname
-        if (nickname != undefined || null) {
-            this.setState({ displayName: nickname})
+        if (contactNameIndex == -1) {
+            // If contact list is empty (because app has just loaded for the first time and not downloaded contact list and informations yet)
+            // Return to avoid app crash
+            return
+        } else {
+            const nickname = this.props.contactList[contactNameIndex].nickname
+            if (nickname != undefined || null) {
+                this.setState({ displayName: nickname })
+            }
         }
+
     }
 
     /**
@@ -227,6 +238,7 @@ class DisplayMessage extends React.Component {
     }
 
     render() {
+        //console.log('rendering')
         const { message } = this.props
         return (
             <View style={styles.main_container}>

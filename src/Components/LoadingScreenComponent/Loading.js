@@ -5,10 +5,8 @@ import React from 'react'
 import { View, Text, ActivityIndicator, Alert, Platform } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
-import { Notification } from 'react-native-firebase'
 import { connect } from 'react-redux'
 import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
-import Store from '../../Store/configureStore'
 import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
 
@@ -57,6 +55,7 @@ class Loading extends React.Component {
                 // there no user connected
                 // going to login screen
                 this.props.navigation.navigate('Login')
+                SplashScreen.hide();
             }
         })
 
@@ -220,7 +219,6 @@ class Loading extends React.Component {
                         .setTitle(notification.title)
                         .setBody(notification.body)
                         .setSound(androidSound)
-
                     notif.android.setChannelId('s1blink')
                     notif.android.setAutoCancel(true);
 

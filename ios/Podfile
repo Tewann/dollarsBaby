@@ -29,6 +29,8 @@ target 'eBlink' do
 
   # pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'eBlinkTests' do
     inherit! :search_paths
     # Pods for testing

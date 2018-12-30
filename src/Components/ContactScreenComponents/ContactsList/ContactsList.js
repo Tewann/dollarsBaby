@@ -33,7 +33,7 @@ class ContactsScreen extends React.Component {
                     numColumns={3}
                     ListHeaderComponent={() => this.renderHeader()}
                     ListEmptyComponent={() => this.renderListEmpty()}
-                    keyboardShouldPersistTaps={'always'}
+                    keyboardShouldPersistTaps={'handled'}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => <ContactItem contact={item} />}

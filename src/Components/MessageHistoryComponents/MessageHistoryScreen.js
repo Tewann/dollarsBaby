@@ -30,11 +30,12 @@ class MessageHistory extends React.Component {
                 <SectionList
                     sections={this.props.messagesHistory}
                     keyExtractor={(item) => item.id.toString()}
-                    renderSectionHeader={({ section }) => <SectionHeaderComponent section={section}/>}
+                    renderSectionHeader={({ section }) => <SectionHeaderComponent section={section} />}
                     renderItem={({ item }) => <DisplayMessage message={item} navigate={this.props.navigation.navigate} />}
                     ListEmptyComponent={() => this.renderListEmpty()}
                     stickySectionHeadersEnabled={true}
-                    //ListHeaderComponent={<CleanHistoryComponent />}
+                    initialNumToRender={2}
+                //ListHeaderComponent={<CleanHistoryComponent />}
                 />
             </View>
         )

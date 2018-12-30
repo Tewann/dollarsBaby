@@ -1,13 +1,6 @@
 //Navigation/Navigation.js
 
-import {
-  DrawerItems,
-  DrawerActions,
-  createStackNavigator,
-  createMaterialTopTabNavigator,
-  createSwitchNavigator,
-  createDrawerNavigator
-} from "react-navigation";
+import { createAppContainer, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from "react-navigation";
 
 import ContactsScreen from "../Components/ContactScreenComponents/ContactsScreen";
 import MessageHistory from "../Components/MessageHistoryComponents/MessageHistoryScreen";
@@ -21,14 +14,12 @@ import GetDisplayName from "../Components/SignUpScreenComponents/GetDisplayNameC
 import TermsOfService from "../Components/TermsOfServiceScreen/TermsOfService";
 
 import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+
 import { Icon } from "react-native-elements";
 import EvilIcons from "react-native-vector-icons/EvilIcons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Ionicons from "react-native-vector-icons/Ionicons";
-
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
 import Octicons from "react-native-vector-icons/Octicons";
+
 import { View, Text, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
@@ -178,6 +169,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
     },
   },
   {
+    lazy: true,
     tabBarOptions: {
       style: { backgroundColor: "lightgrey", height: itemHeight },
       indicatorStyle: { backgroundColor: "white" },
@@ -191,22 +183,22 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
 
 const MainStackNavigator = createStackNavigator({
   Mainscreen: {
-      screen: topTabBarNavigation,
-      navigationOptions: ({ navigation }) => ({
-          header:
-              <LinearGradient
-                  colors={[ '#88b097', '#3a485c']}
-                  start={{ x: 0, y: 1}}
-                  end={{ x: 1, y: 0}}
-                  style={styles.CustomNavigationHeaderContainer}
-              >
-                  <DrawerButton 
-                  navigation={navigation} 
-                  style={{ flex: 1 }}
-                  />
-                  <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
-              </LinearGradient>
-      })
+    screen: topTabBarNavigation,
+    navigationOptions: ({ navigation }) => ({
+      header:
+        <LinearGradient
+          colors={['#88b097', '#3a485c']}
+          start={{ x: 0, y: 1 }}
+          end={{ x: 1, y: 0 }}
+          style={styles.CustomNavigationHeaderContainer}
+        >
+          <DrawerButton
+            navigation={navigation}
+            style={{ flex: 1 }}
+          />
+          <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
+        </LinearGradient>
+    })
   },
 });
 
@@ -243,4 +235,4 @@ const MainSwitchNavigator = createSwitchNavigator(
   }
 );
 
-export default MainSwitchNavigator;
+export default createAppContainer(MainSwitchNavigator);

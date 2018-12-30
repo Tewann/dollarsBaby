@@ -69,7 +69,7 @@ class GetDisplayName extends React.Component {
                     <Text style={styles.title}>{strings('sign_up_screen.get_display_name.welcome')}</Text>
                 </LinearGradient>
                 <ScrollView
-                    keyboardShouldPersistTaps='always'
+                    keyboardShouldPersistTaps='handled'
                 >
                     <KeyboardAvoidingView
                         behavior='position'

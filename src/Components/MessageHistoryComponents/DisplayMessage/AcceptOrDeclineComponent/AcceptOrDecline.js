@@ -46,7 +46,6 @@ class AcceptOrDecline extends React.Component {
                         {strings('message_history_screen.display_message.accept_or_decline.accept')}
                     </Text>
                 </TouchableOpacity>
-                <View style={styles.middle_bar} />
                 <TouchableOpacity
                     style={styles.button_container}
                     onPress={() => this._declineContactRequest()}
