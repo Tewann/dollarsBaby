@@ -23,7 +23,6 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
 import firebase from 'react-native-firebase'
-
 import styles from './styles'
 
 import { strings } from '../i18n'

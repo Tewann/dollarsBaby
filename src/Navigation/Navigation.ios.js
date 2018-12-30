@@ -14,8 +14,6 @@ import GetDisplayName from "../Components/SignUpScreenComponents/GetDisplayNameC
 import TermsOfService from "../Components/TermsOfServiceScreen/TermsOfService";
 
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-
 import { Icon } from "react-native-elements";
 import EvilIcons from "react-native-vector-icons/EvilIcons";
 import Octicons from "react-native-vector-icons/Octicons";
@@ -26,7 +24,6 @@ import LinearGradient from "react-native-linear-gradient";
 import firebase from "react-native-firebase";
 
 import styles from "./styles";
-
 import { strings } from "../i18n";
 
 import { SafeAreaView } from "react-navigation";

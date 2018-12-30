@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     CustomNavigationHeaderContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingTop: 10,
+        paddingTop: 20,
         paddingBottom: 10
     },
     CustomNavigationHeaderText: {

@@ -1,6 +1,11 @@
 // Style - Chat component
 
 import { StyleSheet } from 'react-native'
+import Dimensions from 'Dimensions'
+
+const { height, width } = Dimensions.get('window')
+// const itemHeight = (height / 12)
+const itemHeight = (height / 22)
 
 const styles = StyleSheet.create({
     flatlist: {
@@ -17,7 +22,7 @@ const styles = StyleSheet.create({
         borderColor: 'lightgrey',
         borderWidth: 1,
         borderRadius: 10,
-        minHeight: 40
+        minHeight: itemHeight
     },
     TextInput_container: {
         flexDirection: 'row',

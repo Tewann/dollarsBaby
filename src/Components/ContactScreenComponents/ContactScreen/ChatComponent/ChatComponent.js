@@ -21,6 +21,11 @@ import { sendMessageToFirestore } from '../../../../Services/firebaseFunctions'
 import { strings } from '../../../../i18n'
 import { Icon } from 'react-native-elements';
 
+import Dimensions from 'Dimensions'
+
+const { height, width } = Dimensions.get('window')
+// const itemHeight = (height / 12)
+const itemHeight = (height / 24)
 
 class ChatComponent extends React.Component {
     constructor(props) {
