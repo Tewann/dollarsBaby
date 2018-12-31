@@ -9,6 +9,8 @@ import { connect } from 'react-redux'
 import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
+import LinearGradient from 'react-native-linear-gradient'
+
 
 class Loading extends React.Component {
     componentDidMount = async () => {
@@ -449,9 +451,12 @@ class Loading extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <ActivityIndicator size="large" />
-            </View>
+            <LinearGradient
+                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                style={styles.container}
+                colors={['#88b097', '#889eb0']}>
+                <ActivityIndicator size="large" color="white" />
+            </LinearGradient>
         )
     }
 }

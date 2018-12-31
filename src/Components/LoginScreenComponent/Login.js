@@ -30,8 +30,8 @@ class Login extends React.Component {
                 this.props.navigation.navigate('Loading')
             })
             .catch(error => {
-                this.setState({ errorMessage: error.message })       
-                console.log('err', error)    
+                this.setState({ errorMessage: error.message })
+                console.log('err', error)
             })
     }
 
@@ -41,7 +41,11 @@ class Login extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <LinearGradient
+                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                style={styles.container}
+                colors={['#88b097', '#889eb0']}>
+
                 <Text style={styles.title}>eBlink</Text>
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red' }}>
@@ -65,12 +69,13 @@ class Login extends React.Component {
                     underlineColorAndroid='transparent'
                 />
                 <TouchableOpacity onPress={this.handleLogin} >
-                    <LinearGradient
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                    <View
+                        //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                         style={styles.LoginButton}
-                        colors={['#88b097', '#889eb0']}>
+                    //colors={['#88b097', '#889eb0']}>
+                    >
                         <Text style={styles.loginText}>{strings('login_screen.connect_button')}</Text>
-                    </LinearGradient>
+                    </View>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('SignUp')}
@@ -82,7 +87,7 @@ class Login extends React.Component {
                 >
                     <Text style={styles.noAccount}>{strings('login_screen.forgotten_psswd')}</Text>
                 </TouchableOpacity>
-            </View>
+            </LinearGradient>
         )
     }
 }

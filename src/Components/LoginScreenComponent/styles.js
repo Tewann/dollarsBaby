@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#40495a'
+    //backgroundColor: '#40495a'
   },
   title: {
     color: 'white',
@@ -23,10 +23,12 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     marginBottom: 20,
+    //backgroundColor: 'white'
   },
   loginText: {
     color: 'white',
-    fontSize: 15,
+    fontSize: 20,
+    fontWeight: 'bold'
   },
   noAccount: {
     color: 'white',

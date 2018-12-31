@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#40495a'
+        //backgroundColor: '#40495a'
     },
     title: {
         color: 'white',
@@ -24,10 +24,18 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         marginBottom: 20,
     },
-    Text: {
+    Text1: {
         color: 'white',
-        fontSize: 15
-      },
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    Text2: {
+        color: 'white',
+        fontSize: 15,
+        //fontWeight: 'bold',
+        textAlign: 'center'
+    },
     textInput: {
         height: 40,
         width: '90%',

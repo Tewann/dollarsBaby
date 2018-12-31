@@ -52,9 +52,12 @@ class SignUp extends React.Component {
         this.setState({ confirmPassword: text })
     }
 
-        render() {
+    render() {
         return (
-            <View style={styles.container}>
+            <LinearGradient
+                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                style={styles.container}
+                colors={['#88b097', '#889eb0']}>
                 <Text style={styles.title}>{strings('sign_up_screen.sign_up.create_account')}</Text>
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red' }}>
@@ -87,19 +90,20 @@ class SignUp extends React.Component {
                     value={this.state.confirmPassword}
                 />
                 <TouchableOpacity onPress={this.handleSignUp}>
-                    <LinearGradient
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                    <View
+                        //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                         style={styles.SignUpButton}
-                        colors={['#88b097', '#889eb0']}>
-                        <Text style={styles.Text}>{strings('sign_up_screen.sign_up.sign_up')}</Text>
-                    </LinearGradient>
+                    //colors={['#88b097', '#889eb0']}>
+                    >
+                        <Text style={styles.Text1}>{strings('sign_up_screen.sign_up.sign_up')}</Text>
+                    </View>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Login')}
                 >
-                    <Text style={styles.Text}>{strings('sign_up_screen.sign_up.connect')}</Text>
+                    <Text style={styles.Text2}>{strings('sign_up_screen.sign_up.connect')}</Text>
                 </TouchableOpacity>
-            </View>
+            </LinearGradient>
         )
     }
 }

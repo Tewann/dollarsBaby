@@ -30,7 +30,10 @@ class ForgottenPsswrd extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <LinearGradient
+                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                        style={styles.container}
+                        colors={['#88b097', '#889eb0']}>
                 <Text style={styles.title}>{strings('login_screen.forgotten_password.psswd_forgot')}</Text>
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red' }}>
@@ -45,19 +48,20 @@ class ForgottenPsswrd extends React.Component {
                     underlineColorAndroid='transparent'
                 />
                 <TouchableOpacity onPress={this._resetPassword}>
-                    <LinearGradient
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                    <View
+                        //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                         style={styles.SignUpButton}
-                        colors={['#88b097', '#889eb0']}>
-                        <Text style={styles.Text}>{strings('login_screen.forgotten_password.send_psswd')}</Text>
-                    </LinearGradient>
+                        //colors={['#88b097', '#889eb0']}>
+                        >
+                        <Text style={styles.Text1}>{strings('login_screen.forgotten_password.send_psswd')}</Text>
+                    </View>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Login')}
                 >
-                    <Text style={styles.Text}>{strings('login_screen.forgotten_password.connect')}</Text>
+                    <Text style={styles.Text2}>{strings('login_screen.forgotten_password.connect')}</Text>
                 </TouchableOpacity>
-            </View>
+            </LinearGradient>
         )
     }
 }
