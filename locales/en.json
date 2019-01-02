@@ -18,21 +18,15 @@
         "group_screen": "Groups",
         "message_history": "Messages",
         "profil": "Profile",
-        "disconnect": "Sign out"
+        "disconnect": "Sign out",
+        "add_contact_screen": "Add a contact"
     },
     "contacts_screen": {
         "contact_item": {},
         "contacts_screen": {
-            "list_empty": "You do not have any contacts yet."
-        },
-        "header_contact_list": {
-            "error_title": "Error",
-            "error_message": "Contact already in your contact list",
-            "close_button": "Close",
-            "predefined_message_contact_request": "Contact request",
-            "contact_request_send": "Contact request sent",
-            "error_message2": "You did not enter a contact name",
-            "placeholder": "Add contact (username)"
+            "list_empty": "You do not have any contacts yet.",
+            "list_empty2": "Add contacts by clicking the ",
+            "list_empty3": "button (top left of your screen)."
         },
         "message_item": {},
         "messages_list_screen": {
@@ -153,6 +147,17 @@
             "placeholder_2": "New password",
             "placeholder_3": "Confirm new password",
             "cancel": "Cancel"
+        }
+    },
+    "add_contact_screen": {
+        "title": "Ajouter un contact",
+        "placeholder": "Add contact (username)",
+        "header_contact_list": {
+            "error_title": "Error",
+            "error_message": "Contact already in your contact list",
+            "close_button": "Close",
+            "predefined_message_contact_request": "Contact request",
+            "send_request": "Send a contact request to :"      
         }
     },
     "sign_up_screen": {

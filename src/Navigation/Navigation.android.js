@@ -12,6 +12,7 @@ import ForgottenPsswrd from '../Components/LoginScreenComponent/ForgottenPsswrd/
 import ProfilScreen from '../Components/ProfilScreenComponents/ProfilScreen'
 import GetDisplayName from '../Components/SignUpScreenComponents/GetDisplayNameComponent/GetDisplayName'
 import TermsOfService from '../Components/TermsOfServiceScreen/TermsOfService'
+import AddContactScreen from '../Components/AddContactScreen/AddContactScreen'
 
 
 import React from 'react'
@@ -54,23 +55,42 @@ const DrawerButton = ({ navigation }) => {
 
 const CustomDrawerContentComponent = (props) => {
     return (
-        <LinearGradient
-            colors={['#3a485c', '#88b097', 'white']}
-            style={{ flex: 1 }}
-        >
-            <Text style={styles.CustomDrawerTitle}>eBlink</Text>
+        <View style={{ flex: 1 }}>
+            <LinearGradient
+                colors={['#3a485c', '#88b097']}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.CustomDrawerLinearGradient}
+            >
+                <Text style={styles.CustomDrawerTitle}>eBlink</Text>
+            </LinearGradient >
             <TouchableOpacity
                 onPress={() => props.navigation.navigate('ProfilScreen')}
                 style={styles.CustomDrawerItemContainer}
             >
-                <EvilIcons
-                    name='user'
-                    type='EvilIcons'
-                    size={30}
-                    color='white'
-                    style={styles.CustomDrawerIcon}
-                />
+                <View style={styles.CustomDrawerIcon}>
+                    <EvilIcons
+                        name='user'
+                        type='EvilIcons'
+                        size={30}
+                        color="white"
+                        style={styles.CustomDrawerIcon}
+                    />
+                </View>
                 <Text style={styles.CustomDrawerText}>{strings('navigation.profil')}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => props.navigation.navigate('AddContactScreen')}
+                style={styles.CustomDrawerItemContainer}
+            >
+                <View style={styles.CustomDrawerIcon}>
+                    <Icon
+                        name='person-add'
+                        type='materialicons'
+                        color='black'
+                    />
+                </View>
+                <Text style={styles.CustomDrawerText}>{strings('navigation.add_contact_screen')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => firebase.auth().signOut().catch(error => {
@@ -79,16 +99,18 @@ const CustomDrawerContentComponent = (props) => {
                 })}
                 style={styles.CustomDrawerItemContainer}
             >
-                <Octicons
-                    name='sign-out'
-                    type='Octicons'
-                    size={25}
-                    color='white'
-                    style={{ marginLeft: 10 }}
-                />
+                <View style={styles.CustomDrawerIcon}>
+                    <Octicons
+                        name='sign-out'
+                        type='Octicons'
+                        size={25}
+                        color='black'
+                        style={{ marginLeft: 10 }}
+                    />
+                </View>
                 <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>{strings('navigation.disconnect')}</Text>
             </TouchableOpacity>
-        </LinearGradient>
+        </View>
     )
 }
 
@@ -149,7 +171,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             inactiveTintColor: '#3a485c',
             showIcon: true,
             showLabel: false,
-            
+
         },
     })
 
@@ -159,14 +181,14 @@ const MainStackNavigator = createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             header:
                 <LinearGradient
-                    colors={[ '#88b097', '#3a485c']}
-                    start={{ x: 0, y: 1}}
-                    end={{ x: 1, y: 0}}
+                    colors={['#3a485c', '#88b097']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 1 }}
                     style={styles.CustomNavigationHeaderContainer}
                 >
-                    <DrawerButton 
-                    navigation={navigation} 
-                    style={{ flex: 1 }}
+                    <DrawerButton
+                        navigation={navigation}
+                        style={{ flex: 1 }}
                     />
                     <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
                 </LinearGradient>
@@ -176,6 +198,7 @@ const MainStackNavigator = createStackNavigator({
 
 const DrawerStack = createDrawerNavigator(
     {
+        AddContactScreen: { screen: AddContactScreen },
         ProfilScreen: { screen: ProfilScreen },
         MainStackNavigator: { screen: MainStackNavigator }
     },
@@ -185,7 +208,7 @@ const DrawerStack = createDrawerNavigator(
         drawerOpenRoute: 'DrawerOpen',
         drawerCloseRoute: 'DrawerClose',
         drawerToggleRoute: 'DrawerToggle',
-        drawerWidth: 175,
+        drawerWidth: 250,
         //drawerLockMode: 'locked-closed'
     }
 )

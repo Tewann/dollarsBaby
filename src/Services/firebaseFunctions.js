@@ -386,7 +386,6 @@ export const cleaningMessageHistory = async () => {
             .then((res) => {
                 // after function called
                 // updated redux store
-                console.log('succes')
                 const action = {
                     type: 'RESET_MESSAGE_HISTORY',
                 }
@@ -395,12 +394,10 @@ export const cleaningMessageHistory = async () => {
 
             })
             .catch(httpsError => {
-                console.log('httpsCallable err' + httpsError)
                 const action = {
                     type: 'RESET_MESSAGE_HISTORY',
                 }
                 Store.dispatch(action)
-                console.log('error when executing cleaningMessageHistory, err : ', httpsError)
                 reject('error when deleting', httpsError)
             })
     })
@@ -515,3 +512,67 @@ export const modifyNicknameToDatabase = async (currentUser, contactToModify, nic
             })
     })
 }
+
+
+/**
+ * Search contact names for the add contact screen
+ * If search == a contact name in the firebase firestore database return search
+ * else return the next contacts name starting with the string(search)
+ * 
+ * Function to move to a server or maybe optimized ??
+ */
+export const searchContactFirebaseRequest = async (search) => {
+    const ref = firebase.firestore().collection('Users')
+    let results = []
+    // Query for exact match bewteen 'search' and a username
+    await ref
+        .where('UserName', '==', search)
+        .get()
+        .then(querySnapshot => {
+            if (!querySnapshot.empty) {
+                // if successful, return search
+                results = [{id: 0, name: search}]
+                return
+            } else {
+                return
+            }
+        })
+        .catch(err => {
+            return 'searchContactFirebaseRequest error : ', err
+        })
+
+    // If previous query successful, return results, end the function
+    if (results.length != 0) {
+        return results
+    } else if (search.length > 2) {
+        // if search length > 2 chars (avoid query for one, two or three letters), 
+        // Query for contact's names starting with the search
+        await ref
+            .orderBy('UserName')
+            .startAfter(search)
+            .limit(10)
+            .get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    const name = doc.get('UserName')
+                    if (name.charAt(0) === search.charAt(0)) {
+                        // if first letter of the username == first letter of the search
+                        // push the name to the result array
+                        // (so the results are not polluted with the next letters of the alphabet)
+                        // to whom might read the comments, i'm sorry i'm tired i'm having a hard time 
+                        // formulating my thoughts i know thoses comments are worst than the other comments (who are also super bad)
+                        const newId = results.length + 1 
+                        const newPotentialContact = { id: newId, name: name}
+                        results = [...results, newPotentialContact]
+                    }
+                    return
+                })
+            })
+            .catch(err => {
+                return 'searchContactFirebaseRequest error : ', err
+            })
+        return results
+    }
+}
+
+

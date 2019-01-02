@@ -12,6 +12,7 @@ import ForgottenPsswrd from "../Components/LoginScreenComponent/ForgottenPsswrd/
 import ProfilScreen from "../Components/ProfilScreenComponents/ProfilScreen";
 import GetDisplayName from "../Components/SignUpScreenComponents/GetDisplayNameComponent/GetDisplayName";
 import TermsOfService from "../Components/TermsOfServiceScreen/TermsOfService";
+import AddContactScreen from '../Components/AddContactScreen/AddContactScreen'
 
 import React from "react";
 import { Icon } from "react-native-elements";
@@ -65,50 +66,58 @@ const CustomDrawerContentComponent = props => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }}>
       <LinearGradient
-        colors={["#3a485c", "#88b097", "white"]}
-        style={{ flex: 1 }}
+        colors={['#3a485c', '#88b097']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.CustomDrawerLinearGradient}
       >
         <Text style={styles.CustomDrawerTitle}>eBlink</Text>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("ProfilScreen")}
-          style={styles.CustomDrawerItemContainer}
-        >
-          <EvilIcons
-            name="user"
-            type="EvilIcons"
-            size={30}
-            color="white"
-            style={styles.CustomDrawerIcon}
+      </LinearGradient >
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate("ProfilScreen")}
+        style={styles.CustomDrawerItemContainer}
+      >
+        <EvilIcons
+          name="user"
+          type="EvilIcons"
+          size={30}
+          color="white"
+          style={styles.CustomDrawerIcon}
+        />
+        <Text style={styles.CustomDrawerText}>{strings("navigation.profil")}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate('AddContactScreen')}
+        style={styles.CustomDrawerItemContainer}
+      >
+        <View style={styles.CustomDrawerIcon}>
+          <Icon
+            name='person-add'
+            type='materialicons'
+            color='black'
           />
-          <Text style={styles.CustomDrawerText}>
-            {strings("navigation.profil")}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() =>
-            firebase
-              .auth()
-              .signOut()
-              .catch(error => {
-                console.log(error);
-                this.props.navigation.navigate("Login");
-              })
-          }
-          style={styles.CustomDrawerItemContainer}
-        >
+        </View>
+        <Text style={styles.CustomDrawerText}>{strings('navigation.add_contact_screen')}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => firebase.auth().signOut().catch(error => {
+          console.log(error)
+          this.props.navigation.navigate('Login')
+        })}
+        style={styles.CustomDrawerItemContainer}
+      >
+        <View style={styles.CustomDrawerIcon}>
           <Octicons
-            name="sign-out"
-            type="Octicons"
+            name='sign-out'
+            type='Octicons'
             size={25}
-            color="white"
+            color='black'
             style={{ marginLeft: 10 }}
           />
-          <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>
-            {strings("navigation.disconnect")}
-          </Text>
-        </TouchableOpacity>
-      </LinearGradient>
-    </SafeAreaView>
+        </View>
+        <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>{strings('navigation.disconnect')}</Text>
+      </TouchableOpacity>
+    </SafeAreaView >
   );
 };
 
@@ -184,9 +193,9 @@ const MainStackNavigator = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       header:
         <LinearGradient
-          colors={['#88b097', '#3a485c']}
-          start={{ x: 0, y: 1 }}
-          end={{ x: 1, y: 0 }}
+          colors={['#3a485c', '#88b097']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
           style={styles.CustomNavigationHeaderContainer}
         >
           <DrawerButton
@@ -201,6 +210,7 @@ const MainStackNavigator = createStackNavigator({
 
 const DrawerStack = createDrawerNavigator(
   {
+    AddContactScreen: { screen: AddContactScreen },
     ProfilScreen: { screen: ProfilScreen },
     MainStackNavigator: { screen: MainStackNavigator }
   },
@@ -210,7 +220,7 @@ const DrawerStack = createDrawerNavigator(
     drawerOpenRoute: "DrawerOpen",
     drawerCloseRoute: "DrawerClose",
     drawerToggleRoute: "DrawerToggle",
-    drawerWidth: 175,
+    drawerWidth: 250,
     //drawerLockMode: 'locked-closed'
   },
 );

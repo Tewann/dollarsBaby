@@ -73,8 +73,10 @@ class ProfilScreen extends React.Component {
             return (
                 <LinearGradient
                     style={styles.header_container}
-                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                    colors={['#88b097', '#3a485c', '#3a485c',]}>
+                    colors={['#3a485c', '#88b097']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 1 }}
+                    >
                     <TouchableOpacity
                         style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 10 }}
                         onPress={() => this.props.navigation.navigate('MainStackNavigator')}

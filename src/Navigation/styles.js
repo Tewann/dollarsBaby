@@ -1,32 +1,40 @@
 // Style for Navigations custom components
 
 import { StyleSheet } from 'react-native'
+import Dimensions from 'Dimensions'
+
+const { height, width } = Dimensions.get('window');
+const itemHeight = height / 8;
 
 const styles = StyleSheet.create({
+    CustomDrawerLinearGradient: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: itemHeight
+    },  
     CustomDrawerTitle: {
         color: 'white',
         fontSize: 20,
         fontWeight: 'bold',
-        paddingBottom: 20,
-        marginBottom: 20,
-        marginTop: 20,
-        textAlign: 'center',
-        //borderBottomWidth: 2,
         borderColor: 'white'
     },
     CustomDrawerItemContainer: {
         flexDirection: 'row',
-        marginBottom: 20
+        marginTop: 20,
     },
     CustomDrawerIcon: {
-        marginLeft: 5
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     CustomDrawerText: {
-        color: 'white', 
-        paddingLeft: 10, 
-        fontSize: 15, 
+        color: 'black',
+        paddingLeft: 10,
+        fontSize: 15,
         fontWeight: 'bold',
-        paddingTop: 1
+        paddingTop: 1,
+        flex: 3,
+        textAlign: 'left',
     },
     CustomNavigationHeaderContainer: {
         flexDirection: 'row',
@@ -35,8 +43,8 @@ const styles = StyleSheet.create({
         paddingBottom: 10
     },
     CustomNavigationHeaderText: {
-        color: 'white', 
-        flex: 10, 
+        color: 'white',
+        flex: 10,
         fontWeight: 'bold',
         fontSize: 20,
         paddingLeft: 20

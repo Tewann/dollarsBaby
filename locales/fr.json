@@ -18,21 +18,15 @@
         "group_screen": "Groupes",
         "message_history": "Messages",
         "profil": "Profil",
-        "disconnect": "Se déconnecter"
+        "disconnect": "Se déconnecter",
+        "add_contact_screen": "Ajouter un contact"
     },
     "contacts_screen": {
         "contact_item": {},
         "contacts_screen": {
-            "list_empty": "Vous n'avez pas encore de contacts"
-        },
-        "header_contact_list": {
-            "error_title": "Erreur",
-            "error_message": "Ce contact est déjà dans votre liste de contacts",
-            "close_button": "Fermer",
-            "predefined_message_contact_request": "Demande de contact",
-            "contact_request_send": "Demande de contact envoyée",
-            "error_message2": "Vous n'avez pas saisi de nom de contact",
-            "placeholder": "Ajouter un contact (nom d'utilisateur)"
+            "list_empty": "Vous n'avez pas encore de contacts",
+            "list_empty2": "Ajoutez des contacts en cliquant sur le boutton ",
+            "list_empty3": "en haut à gauche de votre écran."
         },
         "message_item": {},
         "messages_list_screen": {
@@ -153,6 +147,17 @@
             "placeholder_2": "Nouveau mot de passe",
             "placeholder_3": "Confirmer votre nouveau mot de passe",
             "cancel": "Annuler"
+        }
+    },
+    "add_contact_screen": {
+        "title": "Ajouter un contact",
+        "placeholder": "Ajouter un contact (nom d'utilisateur)",
+        "item": {
+            "error_title": "Erreur",
+            "error_message": "Ce contact est déjà dans votre liste de contacts",
+            "close_button": "Fermer",
+            "predefined_message_contact_request": "Demande de contact",
+            "send_request": "Envoyer une demande de contact à :"
         }
     },
     "sign_up_screen": {

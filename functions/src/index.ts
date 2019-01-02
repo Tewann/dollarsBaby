@@ -1,10 +1,9 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 
-import { user } from 'firebase-functions/lib/providers/auth';
-
-
 admin.initializeApp()
+
+
 
 
 // -------------------------------
@@ -24,7 +23,7 @@ admin.initializeApp()
 // Push message to firestore group collection
 //*
 export const messageSendToGroup = functions.https.onCall(data => {
-    const body = data.additionalMessage == "" ? `${data.predefined_message}` : `${data.predefined_message} : ${data.additionalMessage}`
+    const body = data.additionalMessage === "" ? `${data.predefined_message}` : `${data.predefined_message} : ${data.additionalMessage}`
     return admin.firestore()
         .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
         .doc(data.groupName)
@@ -65,12 +64,12 @@ export const deleteAllUserHistory = functions
         memory: '2GB'
     })
     .https.onCall((data, context) => {
-        var user = data.user
-        var collectionRef = admin.firestore()
+        const user = data.user
+        const collectionRef = admin.firestore()
             .collection('Users')
             .doc(user)
             .collection('messagesReceived')
-        var query = collectionRef.orderBy('title').limit(3);
+        const query = collectionRef.orderBy('title').limit(3);
 
         return new Promise((resolve, reject) => {
             deleteQueryBatch(query, resolve, reject);
@@ -81,12 +80,12 @@ function deleteQueryBatch(query, resolve, reject) {
     query.get()
         .then((snapshot) => {
             // When there are no documents left, we are done
-            if (snapshot.size == 0) {
+            if (snapshot.size === 0) {
                 return 0;
             }
 
             // Delete documents in a batch
-            var batch = admin.firestore().batch();
+            const batch = admin.firestore().batch();
             snapshot.docs.forEach((doc) => {
                 batch.delete(doc.ref);
             });
@@ -243,13 +242,13 @@ export const sendPushNotificationsForNewMessages =
                 .where('name', "==", data.title)
                 .get()
                 .then(doc => {
-                    const contactName = doc.docs[0].data().nickname != undefined || null ? doc.docs[0].data().nickname : data.title
-                    return contactName
+                    const contactNameOrNickname = doc.docs[0].data().nickname !== undefined || null ? doc.docs[0].data().nickname : data.title
+                    return contactNameOrNickname
                 })
 
 
             // Predefined message (sended as data in case notification sound is not received)
-            const predefined_message = data.predefined_message == null || undefined ? 'Blink' : data.predefined_message
+            const predefined_message = data.predefined_message === null || undefined ? 'Blink' : data.predefined_message
 
             // Payload
             let payload = null
@@ -293,3 +292,52 @@ export const sendPushNotificationsForNewMessages =
                     console.log('Error sending message', error)
                 })
         })
+
+/**
+ * Search contact query
+ *//* 
+export const searchContactQuery = functions.https.onCall(data => {
+    console.log('start')
+    console.log(data.search)
+    let results = []
+    return admin.firestore().collection('Users')
+        .where('UserName', '==', data.search).get()
+        .then(res => {
+            if (res.empty) {
+                console.log('no match')
+                return 'no match'
+            } else {
+                console.log('res : ')
+                console.log(res.docs[0])
+                const test = 'res'
+                return res.docs[0]
+            }
+        })
+        .catch(err => {
+            console.log('err')
+            return err
+        }) */
+
+
+    /* return admin.firestore()
+        .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
+        .doc(data.groupName)
+        .collection('Messages')
+        .add({
+            groupName: data.groupName,
+            sendBy: data.sendBy,
+            body: body,
+            timeStamp: data.timeStamp,
+            messageId: data.id,
+            predefined_message: data.predefined_message,
+            additional_message: data.additionalMessage,
+            sound: data.sound
+        })
+        .then(() => {
+            return { message: 'success' }
+        })
+        .catch(err => {
+            console.log("'MessageSendToGroup' function error : ", err)
+            return err
+        }) */
+//})
