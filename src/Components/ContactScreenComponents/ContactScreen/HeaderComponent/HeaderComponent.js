@@ -93,7 +93,7 @@ class HeaderComponent extends React.Component {
                     onPressIn={() => this.props.displayContactsList()}>
                     <Icon name='arrow-left'
                         type='feather'
-                        color='#889eb0'
+                        color='#07416b'
                     />
                 </TouchableOpacity>
                 <TouchableOpacity

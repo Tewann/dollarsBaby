@@ -64,9 +64,9 @@ const DrawerButton = ({ navigation }) => {
 
 const CustomDrawerContentComponent = props => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#07416b' }}>
       <LinearGradient
-        colors={['#3a485c', '#88b097']}
+        colors={['#07416b', '#88b097', '#88b097', '#07416b']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={styles.CustomDrawerLinearGradient}
@@ -81,7 +81,7 @@ const CustomDrawerContentComponent = props => {
           name="user"
           type="EvilIcons"
           size={30}
-          color="white"
+          color="black"
           style={styles.CustomDrawerIcon}
         />
         <Text style={styles.CustomDrawerText}>{strings("navigation.profil")}</Text>
@@ -137,7 +137,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             name="user"
             type="feather"
             size={25}
-            color="#3a485c"
+            color="#07416b"
             iconStyle={{ paddingBottom: centerIcons }}
           />
         )
@@ -152,7 +152,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             name="users"
             type="feather"
             size={25}
-            color="#3a485c"
+            color="#07416b"
             iconStyle={{ paddingBottom: centerIcons }}
           />
         )
@@ -167,7 +167,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             name="chat"
             type="entypo"
             size={25}
-            color="#3a485c"
+            color="#07416b"
             iconStyle={{ paddingBottom: centerIcons, color: "grey" }}
           />
         )
@@ -179,8 +179,8 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
     tabBarOptions: {
       style: { backgroundColor: "lightgrey", height: itemHeight },
       indicatorStyle: { backgroundColor: "white" },
-      activeTintColor: "#3a485c",
-      inactiveTintColor: "#3a485c",
+      activeTintColor: "#07416b",
+      inactiveTintColor: "#07416b",
       showIcon: true,
       showLabel: false
     }
@@ -193,7 +193,7 @@ const MainStackNavigator = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       header:
         <LinearGradient
-          colors={['#3a485c', '#88b097']}
+          colors={['#07416b', '#88b097', '#88b097', '#07416b']}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.CustomNavigationHeaderContainer}

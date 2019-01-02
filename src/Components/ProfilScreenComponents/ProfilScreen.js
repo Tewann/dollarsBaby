@@ -45,7 +45,7 @@ class ProfilScreen extends React.Component {
         // If iPhone used is iPhoneX
         if (iPhoneX) {
             return (
-                <View style={[styles.header_container, { backgroundColor: '#3a485c' }]}>
+                <View style={[styles.header_container, { backgroundColor: '#07416b' }]}>
                     <TouchableOpacity
                         style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 10 }}
                         onPress={() => this.props.navigation.navigate('MainStackNavigator')}
@@ -73,7 +73,7 @@ class ProfilScreen extends React.Component {
             return (
                 <LinearGradient
                     style={styles.header_container}
-                    colors={['#3a485c', '#88b097']}
+                    colors={['#07416b', '#88b097', '#88b097', '#07416b']}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
                     >
@@ -165,7 +165,7 @@ class ProfilScreen extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }}>
+            <SafeAreaView style={{ flex: 1, backgroundColor: '#07416b' }}>
                 <View
                     style={{ flex: 1, backgroundColor: 'white' }}
                 >

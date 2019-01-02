@@ -454,7 +454,7 @@ class Loading extends React.Component {
             <LinearGradient
                 start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                 style={styles.container}
-                colors={['#88b097', '#889eb0']}>
+                colors={['#88b097', '#07416b']}>
                 <ActivityIndicator size="large" color="white" />
             </LinearGradient>
         )

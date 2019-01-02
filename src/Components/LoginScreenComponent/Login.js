@@ -44,7 +44,7 @@ class Login extends React.Component {
             <LinearGradient
                 start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                 style={styles.container}
-                colors={['#88b097', '#889eb0']}>
+                colors={['#88b097', '#07416b']}>
 
                 <Text style={styles.title}>eBlink</Text>
                 {this.state.errorMessage &&
@@ -72,7 +72,7 @@ class Login extends React.Component {
                     <View
                         //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                         style={styles.LoginButton}
-                    //colors={['#88b097', '#889eb0']}>
+                    //colors={['#88b097', '#07416b']}>
                     >
                         <Text style={styles.loginText}>{strings('login_screen.connect_button')}</Text>
                     </View>
@@ -94,4 +94,4 @@ class Login extends React.Component {
 
 export default Login
 
-//colors={['#88b097', '#889eb0', '#88b097']}
+//colors={['#88b097', '#07416b', '#88b097', '#88b097', '#07416b']}

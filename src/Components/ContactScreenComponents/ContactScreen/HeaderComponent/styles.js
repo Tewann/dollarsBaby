@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
     retour: {
         marginLeft: 0,
-        color: '#889eb0'
+        color: '#07416b'
     },
     picture_and_name_container: {
         flexDirection: 'row',

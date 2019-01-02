@@ -57,7 +57,7 @@ class SignUp extends React.Component {
             <LinearGradient
                 start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                 style={styles.container}
-                colors={['#88b097', '#889eb0']}>
+                colors={['#88b097', '#07416b']}>
                 <Text style={styles.title}>{strings('sign_up_screen.sign_up.create_account')}</Text>
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red' }}>
@@ -93,7 +93,7 @@ class SignUp extends React.Component {
                     <View
                         //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
                         style={styles.SignUpButton}
-                    //colors={['#88b097', '#889eb0']}>
+                    //colors={['#88b097', '#07416b']}>
                     >
                         <Text style={styles.Text1}>{strings('sign_up_screen.sign_up.sign_up')}</Text>
                     </View>

@@ -211,7 +211,7 @@ class GroupOptions extends React.Component {
                 <TouchableOpacity
                     style={styles.back_to_contacts}
                     onPressIn={() => this.displayGroup()}>
-                    <Icon name='chevron-left' color='#889eb0' />
+                    <Icon name='chevron-left' color='#07416b' />
                     <Text style={styles.retour}>{strings('groups_screen.group_options.back')}</Text>
                 </TouchableOpacity>
                 <ScrollView >

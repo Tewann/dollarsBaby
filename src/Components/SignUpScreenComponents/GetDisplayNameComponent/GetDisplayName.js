@@ -65,7 +65,7 @@ class GetDisplayName extends React.Component {
                 <LinearGradient
                     style={styles.header_container}
                     start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                    colors={['#88b097', '#3a485c', '#3a485c',]}>
+                    colors={['#88b097', '#07416b', '#07416b',]}>
                     <Text style={styles.title}>{strings('sign_up_screen.get_display_name.welcome')}</Text>
                 </LinearGradient>
                 <ScrollView
