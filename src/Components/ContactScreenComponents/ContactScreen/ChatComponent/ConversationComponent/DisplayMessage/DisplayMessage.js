@@ -86,7 +86,7 @@ class DisplayMessage extends React.Component {
                         this.props.message.predefined_message != (null || undefined) &&
                         <Text
                             style={styles.predefined_message}
-                        //style={[this.props.message.type === 'send' ? { textAlign: 'left', fontWeight: 'bold' } : { textAlign: 'left', fontWeight: 'bold' }]}
+                        //style={this.props.message.type === 'send' ? [styles.predefined_message, { color: 'white'}] : [styles.predefined_message]}
                         >
                             {this.props.message.predefined_message}
                         </Text>
@@ -95,8 +95,8 @@ class DisplayMessage extends React.Component {
                         this.props.message.additionnal_message != "" &&
                         <Text
                             style={styles.additional_message}
-                        //style={[this.props.message.type === 'send' ? { textAlign: 'left' } : { textAlign: 'left' }]}
-                        >
+                            //style={this.props.message.type === 'send' ? [styles.additional_message, { color: 'white'}] : [styles.additional_message]}
+                            >
                             {this.props.message.additionnal_message}
                         </Text>
                     }

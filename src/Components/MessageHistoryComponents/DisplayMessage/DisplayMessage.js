@@ -48,7 +48,7 @@ class DisplayMessage extends React.Component {
         if (contactNameIndex !== -1) {
             const action = { type: 'SWITCH_CONTACT_SCREEN', value: this.props.message.contact }
             this.props.dispatch(action)
-            this.props.navigate('ContactsScreen')
+            this.props.navigate('ContactScreen')
         }
     }
 

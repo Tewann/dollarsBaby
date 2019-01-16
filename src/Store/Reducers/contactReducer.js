@@ -1,6 +1,4 @@
 //Store/Reducers/contactReducer.js
-import { Alert } from 'react-native'
-
 
 const initialState = {
     currentDisplayedContact: ['ContactsList'],

@@ -11,7 +11,6 @@ import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
 import LinearGradient from 'react-native-linear-gradient'
 
-
 class Loading extends React.Component {
     componentDidMount = async () => {
         //const resetTOS = { type: 'RESET_TOS'}
@@ -110,77 +109,78 @@ class Loading extends React.Component {
                 .setDescription("Done Sound Channel")
                 .setSound('s6cestfait.wav');
             firebase.notifications().android.createChannel(s6cestfait);
-
-            /**
-             * Notification cliked / tapped / opened when app in foreground or background
-             */
-            this.notificationOpenedListener = firebase.notifications().onNotificationOpened((notificationOpen) => {
-                // Get the action triggered by the notification being opened
-                // const action = notificationOpen.action;
-                // Get information about the notification that was opened
-                //const notification = notificationOpen.notification;
-                const notificationTitle = notificationOpen.notification.title
-                let contactName = notificationTitle
-                const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
-                if (contactName == undefined || null) {
-                    const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
-                    this.props.dispatch(contactScreenToList)
-                    this.props.navigation.navigate('ContactsScreen')
-                } else if (contactIndex !== -1) {
-                    const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
-                    this.props.dispatch(contactScreenToList)
-                    this.props.navigation.navigate('ContactsScreen')
-                } else if (contactIndex === -1) {
-                    const nicknameIndex = this.props.contactList.findIndex(item => String(item.nickname) == notificationTitle)
-                    contactName = this.props.contactList[nicknameIndex].name
-                    const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
-                    this.props.dispatch(contactScreenToList)
-                    this.props.navigation.navigate('ContactsScreen')
-                } else {
-                    this.props.navigation.navigate('MessageHistory')
-                }
-
-            });
-
-            /**
-             * Notification cliked / tapped / opened when app in foreground or background
-             */
-            firebase.notifications().getInitialNotification()
-                .then((notificationOpen) => {
-                    if (notificationOpen) {
-                        // App was opened by a notification
-                        // Get the action triggered by the notification being opened
-                        //const action = notificationOpen.action;
-                        // Get information about the notification that was opened
-                        //const notification = notificationOpen.notification;
-                        const notificationTitle = notificationOpen.notification.data.contactName
-                        let contactName = notificationTitle
-                        const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
-                        if (contactName == undefined || null) {
-                            const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
-                            this.props.dispatch(contactScreenToList)
-                            this.props.navigation.navigate('ContactsScreen')
-                        } else if (contactIndex !== -1) {
-                            const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
-                            this.props.dispatch(contactScreenToList)
-                            this.props.navigation.navigate('ContactsScreen')
-                        } else if (contactIndex === -1) {
-                            const nicknameIndex = this.props.contactList.findIndex(item => item.nickname == notificationTitle)
-                            contactName = this.props.contactList[nicknameIndex].name
-                            const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
-                            this.props.dispatch(contactScreenToList)
-                            this.props.navigation.navigate('ContactsScreen')
-                        } else {
-                            this.props.navigation.navigate('MessageHistory')
-                        }
-                    }
-                });
-            SplashScreen.hide();
         }
 
+        /**
+         * DEALS WITH NOTIFICATION CLICKED WHEN APP IN FOREGROUND OR BACKGORUND
+         * Notification cliked / tapped / opened when app in foreground or background
+         */
+        firebase.notifications().onNotificationOpened((notificationOpen) => {
+            // Get the action triggered by the notification being opened
+            // const action = notificationOpen.action;
+            // Get information about the notification that was opened
+            //const notification = notificationOpen.notification;
+            const notificationTitle = notificationOpen.notification.title || notificationOpen.notification.data.contactName
+            let contactName = notificationTitle
+            const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
+            if (contactName == undefined || null) {
+                const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
+                this.props.dispatch(contactScreenToList)
+                this.props.navigation.navigate('Mainscreen')
+            } else if (contactIndex !== -1) {
+                const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                this.props.dispatch(contactScreenToList)
+                this.props.navigation.navigate('ContactScreen')
+            } else if (contactIndex === -1) {
+                const nicknameIndex = this.props.contactList.findIndex(item => String(item.nickname) == notificationTitle)
+                contactName = this.props.contactList[nicknameIndex].name
+                const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                this.props.dispatch(contactScreenToList)
+                this.props.navigation.navigate('ContactScreen')
+            } else {
+                this.props.navigation.navigate('MessageHistory')
+            }
 
+        });
+
+        /**
+         * DEALS WITH NOTIFICATION CLICKED WHEN APP IS CLOSED
+         * Notification cliked / tapped / opened when app is closed
+         */
+        firebase.notifications().getInitialNotification()
+            .then((notificationOpen) => {
+                if (notificationOpen) {
+                    // App was opened by a notification
+                    // Get the action triggered by the notification being opened
+                    //const action = notificationOpen.action;
+                    // Get information about the notification that was opened
+                    //const notification = notificationOpen.notification;
+                    const notificationTitle = notificationOpen.notification.data.contactName
+                    let contactName = notificationTitle
+                    const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
+                    if (contactName == undefined || null) {
+                        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
+                        this.props.dispatch(contactScreenToList)
+                        this.props.navigation.navigate('Mainscreen')
+                    } else if (contactIndex !== -1) {
+                        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                        this.props.dispatch(contactScreenToList)
+                        this.props.navigation.navigate('ContactScreen')
+                    } else if (contactIndex === -1) {
+                        const nicknameIndex = this.props.contactList.findIndex(item => item.nickname == notificationTitle)
+                        contactName = this.props.contactList[nicknameIndex].name
+                        const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
+                        this.props.dispatch(contactScreenToList)
+                        this.props.navigation.navigate('ContactScreen')
+                    } else {
+                        this.props.navigation.navigate('MessageHistory')
+                    }
+                }
+            });
+        SplashScreen.hide();
 
         //*
+        // DISPLAYS NOTIFICATION WHEN APP IN FOREGROUND
         // Listener for notifications when app is in foreground
         // When new notification received, displays it
         // Deals with notification sound not correctly received
@@ -352,7 +352,7 @@ class Loading extends React.Component {
         } else {
             // navigate to main screen and start listening to database
             this.props.dispatch(fetchContacts(user.displayName))
-            this.props.navigation.navigate('DrawerStack')
+            this.props.navigation.navigate('ContactsList')
         }
     }
 
@@ -466,6 +466,7 @@ const mapStateToProps = (state) => {
         currentUser: state.getCurrentUserInformations,
         predefined_message_list: state.displayMessagesList.predefinedMessagesList,
         contactList: state.contactManagment.contactList,
+        test: state.contactManagment.currentDisplayedContact
     }
 }
 export default connect(mapStateToProps)(Loading)

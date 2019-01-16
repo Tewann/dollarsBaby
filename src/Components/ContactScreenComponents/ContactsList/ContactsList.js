@@ -12,7 +12,7 @@ import { Icon } from 'react-native-elements'
 import ContactItem from './ContactItem/ContactItem'
 
 
-class ContactsScreen extends React.Component {
+class ContactsList extends React.Component {
     renderListEmpty = () => {
         return (
             <View style={{ flex: 1 }}>
@@ -53,4 +53,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(ContactsScreen)
+export default connect(mapStateToProps)(ContactsList)

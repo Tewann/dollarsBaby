@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 
+import { withNavigation } from 'react-navigation'
 
 
 class ContactItem extends React.Component {
@@ -21,7 +22,7 @@ class ContactItem extends React.Component {
 
     componentWillMount = () => {
         if (this.props.contact.nickname != undefined || null) {
-            this.setState({ displayName: this.props.contact.nickname})
+            this.setState({ displayName: this.props.contact.nickname })
         }
     }
 
@@ -30,8 +31,9 @@ class ContactItem extends React.Component {
     */
 
     _displayContactScreen = (contact) => {
-        const action = { type: 'SWITCH_CONTACT_SCREEN', value: contact}
+        const action = { type: 'SWITCH_CONTACT_SCREEN', value: contact }
         this.props.dispatch(action)
+        this.props.navigation.navigate('ContactScreen')
     }
 
     _renderImage = () => {
@@ -73,4 +75,4 @@ class ContactItem extends React.Component {
     }
 }
 
-export default connect()(ContactItem)
+export default connect()(withNavigation(ContactItem))

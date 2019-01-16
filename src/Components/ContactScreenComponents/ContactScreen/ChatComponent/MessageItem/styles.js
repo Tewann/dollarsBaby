@@ -4,8 +4,8 @@ import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window')
-// const itemHeight = (height / 12)
-const itemHeight = (height / 24)
+ const itemHeight = (height / 16)
+//const itemHeight = (height / 24)
 
 const styles = StyleSheet.create({
     main_container: {

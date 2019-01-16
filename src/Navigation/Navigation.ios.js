@@ -2,7 +2,7 @@
 
 import { createAppContainer, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from "react-navigation";
 
-import ContactsScreen from "../Components/ContactScreenComponents/ContactsScreen";
+import ContactsList from '../Components/ContactScreenComponents/ContactsList/ContactsList'
 import MessageHistory from "../Components/MessageHistoryComponents/MessageHistoryScreen";
 import GroupScreen from "../Components/GroupScreenComponents/GroupScreenComponent";
 import Loading from "../Components/LoadingScreenComponent/Loading";
@@ -13,6 +13,8 @@ import ProfilScreen from "../Components/ProfilScreenComponents/ProfilScreen";
 import GetDisplayName from "../Components/SignUpScreenComponents/GetDisplayNameComponent/GetDisplayName";
 import TermsOfService from "../Components/TermsOfServiceScreen/TermsOfService";
 import AddContactScreen from '../Components/AddContactScreen/AddContactScreen'
+import ContactScreen from '../Components/ContactScreenComponents/ContactScreen/ContactScreen'
+import HeaderComponent from '../Components/ContactScreenComponents/ContactScreen/HeaderComponent/HeaderComponent'
 
 import React from "react";
 import { Icon } from "react-native-elements";
@@ -23,7 +25,6 @@ import { View, Text, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 import firebase from "react-native-firebase";
-
 import styles from "./styles";
 import { strings } from "../i18n";
 
@@ -127,8 +128,8 @@ const CustomDrawerContentComponent = props => {
 
 const topTabBarNavigation = createMaterialTopTabNavigator(
   {
-    ContactsScreen: {
-      screen: ContactsScreen,
+    ContactsList: {
+      screen: ContactsList,
       navigationOptions: {
         title: strings("navigation.contacts_screen"),
         tabBarOnPress: null,
@@ -187,26 +188,40 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
   }
 );
 
-const MainStackNavigator = createStackNavigator({
-  Mainscreen: {
-    screen: topTabBarNavigation,
-    navigationOptions: ({ navigation }) => ({
-      header:
-        <LinearGradient
-          colors={['#07416b', '#88b097', '#88b097', '#07416b']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.CustomNavigationHeaderContainer}
-        >
-          <DrawerButton
-            navigation={navigation}
-            style={{ flex: 1 }}
-          />
-          <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
-        </LinearGradient>
-    })
+const MainStackNavigator = createStackNavigator(
+  {
+    Mainscreen: {
+      screen: topTabBarNavigation,
+      navigationOptions: ({ navigation }) => ({
+        header:
+          <LinearGradient
+            colors={['#07416b', '#88b097', '#88b097', '#07416b']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.CustomNavigationHeaderContainer}
+          >
+            <DrawerButton
+              navigation={navigation}
+              style={{ flex: 1 }}
+            />
+            <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
+          </LinearGradient>
+      })
+    },
+    ContactScreen: {
+      screen: ContactScreen,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle:
+          <HeaderComponent />,
+
+
+      })
+    },
   },
-});
+  {
+    headerLayoutPreset: 'center',
+  }
+);
 
 const DrawerStack = createDrawerNavigator(
   {
@@ -235,7 +250,7 @@ const MainSwitchNavigator = createSwitchNavigator(
     Login,
     ForgottenPsswrd,
     GetDisplayName,
-    TermsOfService
+    TermsOfService,
   },
   {
     initialRouteName: "Loading"

@@ -8,6 +8,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
 import { strings } from '../../i18n'
 import { fetchContacts, setPlatformUsed } from '../../Services/firebaseFunctions'
+import SplashScreen from 'react-native-splash-screen'
 
 
 class Login extends React.Component {
@@ -18,6 +19,10 @@ class Login extends React.Component {
             password: '',
             errorMessage: null
         }
+    }
+
+    componentDidMount() {
+        SplashScreen.hide();
     }
 
     handleLogin = () => {

@@ -10,9 +10,8 @@
  */
 
 import React from 'react'
-import { View, Text, TouchableOpacity, Image, BackHandler } from 'react-native'
+import { Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
-import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 
@@ -34,19 +33,6 @@ class HeaderComponent extends React.Component {
         if (nickname != undefined || null) {
             this.setState({ displayName: nickname})
         }
-    }
-
-    componentDidMount() {
-        BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
-    }
-
-    componentWillUnmount() {
-        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
-    }
-
-    handleBackPress = () => {
-        this.props.displayContactsList(); // works best when the goBack is async
-        return true;
     }
 
     _navigateToOptions = () => {
@@ -87,15 +73,8 @@ class HeaderComponent extends React.Component {
 
     render() {
         return (
-            <View style={styles.main_container}>
-                <TouchableOpacity
-                    style={styles.back_to_contacts}
-                    onPressIn={() => this.props.displayContactsList()}>
-                    <Icon name='arrow-left'
-                        type='feather'
-                        color='#07416b'
-                    />
-                </TouchableOpacity>
+           
+
                 <TouchableOpacity
                     style={styles.picture_and_name_container}
                     onPress={() => this._navigateToOptions()}
@@ -103,7 +82,7 @@ class HeaderComponent extends React.Component {
                     {this._renderImage()}
                     <Text style={styles.username}>{this.state.displayName}</Text>
                 </TouchableOpacity>
-            </View >
+           
         )
     }
 }

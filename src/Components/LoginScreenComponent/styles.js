@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     marginBottom: 50,
-    textShadowOffset: { width: 2, height: 2 }
+    textShadowOffset: { width: 2, height: 2 },
   },
   LoginButton: {
     borderRadius: 75,
@@ -23,6 +23,11 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     marginBottom: 20,
+    elevation: 4,
+    shadowOffset: { width: 5, height: 5 },
+    shadowColor: "grey",
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
     //backgroundColor: 'white'
   },
   loginText: {
@@ -46,6 +51,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginBottom: 20,
     paddingBottom: 0,
+    elevation: 4,
+    shadowOffset: { width: 5, height: 5 },
+    shadowColor: "grey",
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
   }
 })
 

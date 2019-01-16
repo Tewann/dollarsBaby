@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         paddingRight: 5,
         paddingTop: 2,
         paddingBottom: 2,
-        backgroundColor: 'rgba(217, 217, 217, 0.7)',
+        //backgroundColor: 'rgba(217, 217, 217, 0.7)',
         borderRadius: 8,
         borderWidth: 1,
         borderColor: 'lightgrey',

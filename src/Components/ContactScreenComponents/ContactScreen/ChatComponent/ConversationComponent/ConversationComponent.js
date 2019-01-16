@@ -26,7 +26,8 @@ class ConversationComponent extends React.Component {
             conversationHistory: []
         }
     }
-    componentWillMount = () => {
+
+     componentWillMount = () => {
         this._grabbingConversationHistory()
     }
 
