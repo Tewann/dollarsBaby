@@ -24,7 +24,7 @@ export default class App extends React.Component {
   }
 
   componentWillMount() {
-    BackHandler.addEventListener('hardwareBackPress', () => { return true });
+    //BackHandler.addEventListener('hardwareBackPress', () => { return true });
     AppState.addEventListener('change', this._handleAppStateChange);
   }
 

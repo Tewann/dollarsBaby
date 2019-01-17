@@ -26,6 +26,12 @@ public class MainActivity extends ReactActivity {
         return "eBlink";
     }
 
+    @Override
+    public void invokeDefaultOnBackPressed() {
+        // do not call super. invokeDefaultOnBackPressed() as it will close the app.  Instead lets just put it in the background.
+        moveTaskToBack(true);
+    }
+
  @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new ReactActivityDelegate(this, getMainComponentName()) {
