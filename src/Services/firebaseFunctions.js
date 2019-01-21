@@ -531,7 +531,7 @@ export const searchContactFirebaseRequest = async (search) => {
         .then(querySnapshot => {
             if (!querySnapshot.empty) {
                 // if successful, return search
-                results = [{id: 0, name: search}]
+                results = [{ id: 0, name: search }]
                 return
             } else {
                 return
@@ -561,8 +561,8 @@ export const searchContactFirebaseRequest = async (search) => {
                         // (so the results are not polluted with the next letters of the alphabet)
                         // to whom might read the comments, i'm sorry i'm tired i'm having a hard time 
                         // formulating my thoughts i know thoses comments are worst than the other comments (who are also super bad)
-                        const newId = results.length + 1 
-                        const newPotentialContact = { id: newId, name: name}
+                        const newId = results.length + 1
+                        const newPotentialContact = { id: newId, name: name }
                         results = [...results, newPotentialContact]
                     }
                     return
@@ -575,4 +575,51 @@ export const searchContactFirebaseRequest = async (search) => {
     }
 }
 
+/**
+ * Get uploaded sounds by the user
+ */
+export const getUploadedSoundsByUser = async (userName) => {
+    let uploadedSounds = []
+    await firebase
+        .firestore()
+        .collection('Users')
+        .doc(userName)
+        .collection('SoundsUploaded')
+        .get()
+        .then(async (querySnapshot) => {
+            await querySnapshot.docs.forEach(doc => {
+                const soundData = doc.data()
+                uploadedSounds.push(soundData)
+            })
+        })
+        .catch(err => {
+            return err
+        })
+    return uploadedSounds
+}
 
+/**
+ * When the user create a new custom message with an uploaded sound
+ * Sets to the sound database reference for who the message (and the sound) is for 
+ * Groups / contacts / both
+ * Avoid (or tries to avoid) the case where someone who set up a new custom message for his contact only, but everyone (contacts and groups members) who dl the sound
+ */
+export const setUploadedSoundDestination = async (userName, soundName, useSoundFor) => {
+    new Promise((resolve, reject) => {
+        firebase
+            .firestore()
+            .collection('Users')
+            .doc(userName)
+            .collection('SoundsUploaded')
+            .doc(soundName)
+            .set({
+                useSoundFor: useSoundFor
+            }, { merge: true })
+            .then(() => {
+                resolve('success')
+            })
+            .catch(err => {
+                reject(err)
+            })
+    })
+}

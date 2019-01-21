@@ -19,7 +19,8 @@
         "message_history": "Messages",
         "profil": "Profile",
         "disconnect": "Sign out",
-        "add_contact_screen": "Add a contact"
+        "add_contact_screen": "Add a contact",
+        "create_message": "Create a custom message"
     },
     "contacts_screen": {
         "contact_item": {},
@@ -159,6 +160,22 @@
             "predefined_message_contact_request": "Contact request",
             "send_request": "Send a contact request to :"      
         }
+    },
+    "create_custom_message_screen": {
+        "title": "Personalized messages",
+        "create_message": "Create a message",
+        "message(s)": "Message(s)",
+        "name": "Name",
+        "soundName": "Sound",
+        "messageFor": "For",
+        "add_custom_message": "Add a custom message",
+        "message": "Message",
+        "next": "Next",
+        "add_sound": "Add a sound",
+        "update_sound": "Refresh sounds",
+        "delete_message": "Delete",
+        "add_your_sounds": "Add your own sounds on 'https://eblink-d7c9a.firebaseapp.com/'",
+        "click_me": "Click to open the browser"
     },
     "sign_up_screen": {
         "sign_up": {

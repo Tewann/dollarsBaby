@@ -352,7 +352,7 @@ class Loading extends React.Component {
         } else {
             // navigate to main screen and start listening to database
             this.props.dispatch(fetchContacts(user.displayName))
-            this.props.navigation.navigate('ContactsList')
+            this.props.navigation.navigate('DrawerStack')
         }
     }
 

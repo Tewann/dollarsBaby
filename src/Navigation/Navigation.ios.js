@@ -15,6 +15,7 @@ import TermsOfService from "../Components/TermsOfServiceScreen/TermsOfService";
 import AddContactScreen from '../Components/AddContactScreen/AddContactScreen'
 import ContactScreen from '../Components/ContactScreenComponents/ContactScreen/ContactScreen'
 import HeaderComponent from '../Components/ContactScreenComponents/ContactScreen/HeaderComponent/HeaderComponent'
+import CreateCustomMessageScreen from '../Components/CreateCustomMessageScreen/CreateCustomMessageScreen'
 
 import React from "react";
 import { Icon } from "react-native-elements";
@@ -100,6 +101,19 @@ const CustomDrawerContentComponent = props => {
         </View>
         <Text style={styles.CustomDrawerText}>{strings('navigation.add_contact_screen')}</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+                onPress={() => props.navigation.navigate('CreateCustomMessageScreen')}
+                style={styles.CustomDrawerItemContainer}
+            >
+                <View style={styles.CustomDrawerIcon}>
+                    <Icon
+                        name='new-message'
+                        type='entypo'
+                        color='black'
+                    />
+                </View>
+                <Text style={styles.CustomDrawerText}>{strings('navigation.create_message')}</Text>
+            </TouchableOpacity>
       <TouchableOpacity
         onPress={() => firebase.auth().signOut().catch(error => {
           console.log(error)
@@ -225,6 +239,7 @@ const MainStackNavigator = createStackNavigator(
 
 const DrawerStack = createDrawerNavigator(
   {
+    CreateCustomMessageScreen: { screen: CreateCustomMessageScreen },
     AddContactScreen: { screen: AddContactScreen },
     ProfilScreen: { screen: ProfilScreen },
     MainStackNavigator: { screen: MainStackNavigator }
