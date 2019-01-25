@@ -175,6 +175,7 @@
         "update_sound": "Actualiser les sons",
         "delete_message": "Supprimer",
         "add_your_sounds": "Ajoutez vos propres sons sur 'https://eblink-d7c9a.firebaseapp.com/'",
+        "only_groups": "(Fonctionnalité en beta : UNIQUEMENT POUR LES GROUPES)",
         "click_me": "Cliquez pour ouvrir le navigateur"
     },
     "sign_up_screen": {

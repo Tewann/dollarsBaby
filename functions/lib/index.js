@@ -226,14 +226,15 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     let payload = null;
     // If Platorm is Android, builds Android payload
     if (userPlatform === 'android') {
+        const notifSound = yield setNotificationSound(data.sound, 'android', parent);
         const androidSound = data.sound + '.wav';
         payload = {
             notification: {
                 title: contactName,
                 body: data.body,
-                sound: androidSound,
+                sound: notifSound,
                 // Android channel id necessary for > 26 (OREO 8.0 +)
-                android_channel_id: data.sound
+                android_channel_id: notifSound
             },
             data: {
                 predefined_message: predefined_message,
@@ -264,45 +265,44 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
         console.log('Error sending message', error);
     });
 }));
-/**
- * Search contact query
- */
-exports.searchContactQuery = functions.https.onCall(data => {
-    console.log('start');
-    console.log(data.search);
-    let results = [];
-    return admin.firestore().collection('Users')
-        .where('UserName', '==', data.search).get()
-        .then(res => {
-        console.log('res : ');
-        console.log(res.docs[0]);
-        const test = 'res';
-        return res.docs[0];
-    })
-        .catch(err => {
-        console.log('err');
-        return err;
+function setNotificationSound(sound, platform, userRef) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const predefindSoundsList = [
+            's1blink',
+            's2tesou',
+            's3urgent',
+            's4oubliepas',
+            's5jarrive',
+            's6cestfait'
+        ];
+        let soundToReturn = null;
+        const defaultSound = platform === 'android' ? 's1blink.wav' : 's1blink.aiff';
+        // If the notification sounds is one of the predefined return the sound  with the correct extension for the platform
+        if (predefindSoundsList.includes(sound)) {
+            const soundToPlatform = platform === 'android' ? sound + '.wav' : sound + '.aiff';
+            soundToReturn = soundToPlatform;
+        }
+        else {
+            // Verifies that the custom sound has been downloaded by the user
+            yield userRef.collection('SoundsDownloaded')
+                .doc(sound)
+                .get()
+                .then((docSnapshot) => {
+                if (docSnapshot.exists) {
+                    const customSound = platform === 'android' ? sound : sound + 'wav';
+                    // If the sound name is a doc name in the downloaded sound collection of the user
+                    // Return the sound so it can be played
+                    soundToReturn = customSound;
+                }
+                else {
+                    // The sound has not been downloaded by the user yet
+                    // Return the sound as s1blink
+                    soundToReturn = defaultSound;
+                }
+            })
+                .catch(err => console.log(err));
+        }
+        return soundToReturn;
     });
-    /* return admin.firestore()
-        .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
-        .doc(data.groupName)
-        .collection('Messages')
-        .add({
-            groupName: data.groupName,
-            sendBy: data.sendBy,
-            body: body,
-            timeStamp: data.timeStamp,
-            messageId: data.id,
-            predefined_message: data.predefined_message,
-            additional_message: data.additionalMessage,
-            sound: data.sound
-        })
-        .then(() => {
-            return { message: 'success' }
-        })
-        .catch(err => {
-            console.log("'MessageSendToGroup' function error : ", err)
-            return err
-        }) */
-});
+}
 //# sourceMappingURL=index.js.map

@@ -138,7 +138,7 @@ class CreateCustomMessageComponent extends React.Component {
                             createPredefinedMessage={(sound) => this.createPredefinedMessage(sound)}
                         />}
                     />
-                    <FlatList
+                    { this.state.messageType === 'Groups' && <FlatList
                         data={this.state.soundsUploadedByUser}
                         numColumns={3}
                         columnWrapperStyle={styles.flatlist}
@@ -148,7 +148,7 @@ class CreateCustomMessageComponent extends React.Component {
                             sound={item}
                             createPredefinedMessage={(sound) => this.createPredefinedMessage(sound)}
                         />}
-                    />
+                    />}
                     <View style={{ alignItems: 'center' }}>
                         <Button
                             buttonStyle={{ maxWidth: 150, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}

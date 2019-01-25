@@ -2,7 +2,7 @@
 // Loading Screen
 
 import React from 'react'
-import { View, Text, ActivityIndicator, Alert, Platform } from 'react-native'
+import { ActivityIndicator, Alert, Platform } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import { connect } from 'react-redux'
@@ -10,6 +10,7 @@ import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScr
 import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
 import LinearGradient from 'react-native-linear-gradient'
+import { setUpSoundsForAndroid } from '../../Services/setUpCustomDownloadedSounds'
 
 class Loading extends React.Component {
     componentDidMount = async () => {
@@ -23,6 +24,8 @@ class Loading extends React.Component {
         //this.props.dispatch(resetMessageHistory)
         //const resetGroups = { type: 'RESET_GROUP_LIST'}
         //this.props.dispatch(resetGroups)
+        //const resetSounds = { type: 'RESET_SOUNDS'}
+        //this.props.dispatch(resetSounds)
 
         /**
          * On launch, sets both contact and group screens to default values (lists)
@@ -74,6 +77,9 @@ class Loading extends React.Component {
         // One channel for each sound
         //*
         if (Platform.OS === 'android') {
+            // Checks customs sounds from the contacts and groups of the user and create the channels if not done already
+            setUpSoundsForAndroid(this.props.currentUser.name)
+
             // Blink channel
             const s1blink = new firebase.notifications.Android.Channel('s1blink', 'Blink Sound Channel', firebase.notifications.Android.Importance.Max)
                 .setDescription('Blink Sound Channel')
@@ -229,21 +235,39 @@ class Loading extends React.Component {
                 }
                 // if notification sound is correctly received
             } else {
+                let notif
+                if (Platform.OS === 'android') {
+                    // Set sound depending on the sound type (custom or predefined)
+                    let notificationSound = notification.sound
+                    // Checks if sound is already in the current redux state
+                    const existsInCurrentReduxState = this.props.currentSoundsSetUp.some((element) => {
+                        return element.sound === notification.sound
+                    })
 
-                // Set sound depending on OS
-                const sound = Platform.OS === 'android' ? notification.sound + '.waw' : notification.sound + '.aiff'
+                    if (existsInCurrentReduxState) {
+                        const soundObject = this.props.currentSoundsSetUp.find(element => {
+                            return element.sound === notification.sound
+                        })
+                        notificationSound = soundObject.downloadUrl
+                    }
+                    // Create notification
+                    notif = new firebase.notifications.Notification()
+                        .setNotificationId(notification.notificationId)
+                        .setTitle(notification.title)
+                        .setBody(notification.body)
+                        .setSound(notificationSound)
 
-                // Create notification
-                const notif = new firebase.notifications.Notification()
-                    .setNotificationId(notification.notificationId)
-                    .setTitle(notification.title)
-                    .setBody(notification.body)
-                    .setSound(sound)
-
-                // Set channel for android > 26
-
-                notif.android.setChannelId(notification.sound)
-                notif.android.setAutoCancel(true);
+                    // Set channel for android > 26
+                    notif.android.setChannelId(notification.sound)
+                    notif.android.setAutoCancel(true);
+                } else {
+                    // Create notification
+                    notif = new firebase.notifications.Notification()
+                        .setNotificationId(notification.notificationId)
+                        .setTitle(notification.title)
+                        .setBody(notification.body)
+                        .setSound(notification.sound)
+                }
 
                 // Display notification
                 firebase.notifications().displayNotification(notif)
@@ -466,7 +490,8 @@ const mapStateToProps = (state) => {
         currentUser: state.getCurrentUserInformations,
         predefined_message_list: state.displayMessagesList.predefinedMessagesList,
         contactList: state.contactManagment.contactList,
-        test: state.contactManagment.currentDisplayedContact
+        test: state.contactManagment.currentDisplayedContact,
+        currentSoundsSetUp: state.soundsDownloadedReducer.soundsDownloaded
     }
 }
 export default connect(mapStateToProps)(Loading)

@@ -250,18 +250,20 @@ export const sendPushNotificationsForNewMessages =
             // Predefined message (sended as data in case notification sound is not received)
             const predefined_message = data.predefined_message === null || undefined ? 'Blink' : data.predefined_message
 
+
             // Payload
             let payload = null
             // If Platorm is Android, builds Android payload
             if (userPlatform === 'android') {
+                const notifSound = await setNotificationSound(data.sound, 'android', parent)
                 const androidSound = data.sound + '.wav'
                 payload = {
                     notification: {
                         title: contactName,
                         body: data.body,
-                        sound: androidSound,
+                        sound: notifSound,
                         // Android channel id necessary for > 26 (OREO 8.0 +)
-                        android_channel_id: data.sound
+                        android_channel_id: notifSound
                     },
                     data: {
                         predefined_message: predefined_message,
@@ -293,51 +295,39 @@ export const sendPushNotificationsForNewMessages =
                 })
         })
 
-/**
- * Search contact query
- *//* 
-export const searchContactQuery = functions.https.onCall(data => {
-    console.log('start')
-    console.log(data.search)
-    let results = []
-    return admin.firestore().collection('Users')
-        .where('UserName', '==', data.search).get()
-        .then(res => {
-            if (res.empty) {
-                console.log('no match')
-                return 'no match'
-            } else {
-                console.log('res : ')
-                console.log(res.docs[0])
-                const test = 'res'
-                return res.docs[0]
-            }
-        })
-        .catch(err => {
-            console.log('err')
-            return err
-        }) */
-
-
-    /* return admin.firestore()
-        .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
-        .doc(data.groupName)
-        .collection('Messages')
-        .add({
-            groupName: data.groupName,
-            sendBy: data.sendBy,
-            body: body,
-            timeStamp: data.timeStamp,
-            messageId: data.id,
-            predefined_message: data.predefined_message,
-            additional_message: data.additionalMessage,
-            sound: data.sound
-        })
-        .then(() => {
-            return { message: 'success' }
-        })
-        .catch(err => {
-            console.log("'MessageSendToGroup' function error : ", err)
-            return err
-        }) */
-//})
+async function setNotificationSound(sound, platform, userRef) {
+    const predefindSoundsList: Array<string> = [
+        's1blink',
+        's2tesou',
+        's3urgent',
+        's4oubliepas',
+        's5jarrive',
+        's6cestfait'
+    ]
+    let soundToReturn = null
+    const defaultSound = platform === 'android' ? 's1blink.wav' : 's1blink.aiff'
+    // If the notification sounds is one of the predefined return the sound  with the correct extension for the platform
+    if (predefindSoundsList.includes(sound)) {
+        const soundToPlatform = platform === 'android' ? sound + '.wav' : sound + '.aiff'
+        soundToReturn = soundToPlatform
+    } else {
+        // Verifies that the custom sound has been downloaded by the user
+        await userRef.collection('SoundsDownloaded')
+            .doc(sound)
+            .get()
+            .then((docSnapshot) => {
+                if (docSnapshot.exists) {
+                    const customSound = platform === 'android' ? sound : sound + 'wav'
+                    // If the sound name is a doc name in the downloaded sound collection of the user
+                    // Return the sound so it can be played
+                   soundToReturn = customSound
+                } else {
+                    // The sound has not been downloaded by the user yet
+                    // Return the sound as s1blink
+                    soundToReturn = defaultSound
+                }
+            })
+            .catch(err => console.log(err))
+    }
+    return soundToReturn
+}

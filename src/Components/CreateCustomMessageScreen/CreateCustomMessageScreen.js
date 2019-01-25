@@ -89,7 +89,7 @@ class CreateCustomMessageScreen extends React.Component {
                     style={{ flexGrow: 1, backgroundColor: 'white' }}
                 >
                     {this._displayTopComponent()}
-                    <ScrollView style={{ flex: 1, marginBottom: 10}}>
+                    <ScrollView style={{ flex: 1, marginBottom: 10 }}>
                         {this.props.predefinedSoundList.length < 9 && <View >
                             <Text style={styles.list_title}>{strings('create_custom_message_screen.create_message')}</Text>
                             <CreateCustomMessageComponent />
@@ -107,6 +107,7 @@ class CreateCustomMessageScreen extends React.Component {
                                         onPress={() => this._openEblinkWebsite()}
                                         style={styles.button_container}
                                     >
+                                        <Text style={styles.text_information}>{strings('create_custom_message_screen.only_groups')}</Text>
                                         <Text style={styles.text_information}>{strings('create_custom_message_screen.add_your_sounds')}</Text>
                                         <Text style={styles.text_information}>{strings('create_custom_message_screen.click_me')}</Text>
                                     </TouchableOpacity>

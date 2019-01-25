@@ -300,10 +300,11 @@ function displayMessagesList(state = initialState, action) {
             const newCustomMessage = {
                 id: newCustomMessageId,
                 title: action.value.title,
-                sound: action.value.sound,
+                sound: action.value.soundName,
                 soundName: action.value.soundName,
                 messageFor: action.value.messageFor
             }
+            console.log(newCustomMessage)
             nextState = {
                 ...state,
                 predefinedMessagesList: [
