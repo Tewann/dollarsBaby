@@ -20,6 +20,7 @@
         "profil": "Profil",
         "disconnect": "Se déconnecter",
         "add_contact_screen": "Ajouter un contact",
+        "add_groups_screen": "Ajouter/Créer un groupe",
         "create_message": "Créer un message personnalisé"
     },
     "contacts_screen": {
@@ -39,29 +40,18 @@
         }
     },
     "groups_screen": {
+        "groups_screen": {
+            "list_empty": "Vous n'avez pas encore rejoint de groupes",
+            "list_empty2": "Crééz ou rejoignez des groupes en cliquant sur le boutton ",
+            "list_empty3": "en haut à gauche de votre écran."
+        },
         "group_list": {
-            "error_title": "Erreur",
-            "error_message": "Vous n'avez pas saisi de valeur",
-            "error_message2": "Ce nom de groupe est déjà pris",
-            "close_button": "Fermer",
-            "placeholder": "Ajouter un groupe",
-            "private_group": "Groupe privé",
-            "public_group": "Groupe publique",
-            "existing_group": "Groupe existant",
-            "join_group": "Le rejoindre",
-            "cancel": "Annuler",
             "group_item": {
                 "public": "publique",
                 "private": "privé"
-            },
-            "list_empty": "Vous n'avez pas encore rejoint de groupe"
+            }
         },
         "group_options": {
-            "group_contact_item": {},
-            "header_group_contact_list": {
-                "group_options_modal_contact_item": {}
-            },
-            "message_item": {},
             "messages_list": {
                 "placeholder": "Message"
             },
@@ -159,6 +149,22 @@
             "close_button": "Fermer",
             "predefined_message_contact_request": "Demande de contact",
             "send_request": "Envoyer une demande de contact à :"
+        }
+    },
+    "add_groups_screen": {
+        "title": "Ajouter/Créer un groupe",
+        "public_group": "Groupe public",
+        "private_group": "Groupe privé",
+        "create": "Créer",
+        "join": "Rejoindre",
+        "name_of_the_group": "Nom du groupe",
+        "input_length_is_O": "Vous n'avez pas saisi de nom de groupe",
+        "group_created": "Groupe créé!",
+        "existing_group": "Groupe existant",
+        "item": {
+            "error_title": "Erreur",
+            "error_already_in_list": "Vous êtes déjà membre de ce groupe",
+            "close_button": "Fermer"
         }
     },
     "create_custom_message_screen": {

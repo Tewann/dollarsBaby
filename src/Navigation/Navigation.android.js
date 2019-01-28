@@ -16,6 +16,7 @@ import AddContactScreen from '../Components/AddContactScreen/AddContactScreen'
 import ContactScreen from '../Components/ContactScreenComponents/ContactScreen/ContactScreen'
 import HeaderComponent from '../Components/ContactScreenComponents/ContactScreen/HeaderComponent/HeaderComponent'
 import CreateCustomMessageScreen from '../Components/CreateCustomMessageScreen/CreateCustomMessageScreen'
+import AddGroupsScreen from '../Components/AddGroupsScreen/AddGroupsScreen'
 
 import React from 'react'
 import { Icon } from 'react-native-elements'
@@ -94,6 +95,19 @@ const CustomDrawerContentComponent = (props) => {
                     />
                 </View>
                 <Text style={styles.CustomDrawerText}>{strings('navigation.add_contact_screen')}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => props.navigation.navigate('AddGroupsScreen')}
+                style={styles.CustomDrawerItemContainer}
+            >
+                <View style={styles.CustomDrawerIcon}>
+                    <Icon
+                        name='group-add'
+                        type='materialicons'
+                        color='black'
+                    />
+                </View>
+                <Text style={styles.CustomDrawerText}>{strings('navigation.add_groups_screen')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => props.navigation.navigate('CreateCustomMessageScreen')}
@@ -258,6 +272,7 @@ const DrawerStack = createDrawerNavigator(
     {
         CreateCustomMessageScreen: { screen: CreateCustomMessageScreen },
         AddContactScreen: { screen: AddContactScreen },
+        AddGroupsScreen: { screen: AddGroupsScreen },
         ProfilScreen: { screen: ProfilScreen },
         MainStackNavigator: { screen: MainStackNavigator }
     },

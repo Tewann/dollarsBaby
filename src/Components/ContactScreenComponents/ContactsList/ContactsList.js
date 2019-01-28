@@ -34,7 +34,6 @@ class ContactsList extends React.Component {
                 <FlatList
                     data={this.props.contactList}
                     numColumns={3}
-                    //ListHeaderComponent={() => this.renderHeader()}
                     ListEmptyComponent={() => this.renderListEmpty()}
                     keyboardShouldPersistTaps={'handled'}
                     columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}

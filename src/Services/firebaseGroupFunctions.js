@@ -3,12 +3,12 @@ import { Platform } from "react-native";
 import Store from '../Store/configureStore'
 
 // create public group in Firestore
-export const createPublicGroupInFirestore = (groupName, username) =>
+export const createGroupInFirestore = (groupName, username, groupType) =>
   new Promise((resolve, reject) => {
-    const ref = firebase.firestore().collection("Public_Groups");
+    const groupCollection = groupType === 'public' ? 'Public_Groups' : 'Private_Groups'
+    const ref = firebase.firestore().collection(groupCollection);
     // create group
-    const createGroup = ref
-      .doc(groupName)
+    ref.doc(groupName)
       .get()
       .then(doc => {
         //if group name available create group's doc
@@ -17,7 +17,7 @@ export const createPublicGroupInFirestore = (groupName, username) =>
             .doc(groupName)
             .set({
               GroupName: groupName,
-              type: "public",
+              type: groupType,
               creator: username,
               photoURL: null,
               photoName: null
@@ -67,19 +67,7 @@ export const joinPublicGroupInFirestore = (groupName, username) =>
             .add({
               name: username
             })
-            .then(() => {
-              // grab group Creator name and Photo Url of the group and returns it
-              ref
-                .doc(groupName)
-                .get()
-                .then(res => {
-                  creator = res.data().creator;
-                  photoURL = res.data().photoURL;
-
-                  resolve(creator, photoURL);
-                })
-                .catch(err => reject(err));
-            })
+            .then(() => {})
             .catch(err => reject(err));
 
           // 2 - Adding group name and type to user's profil's group collection
@@ -89,6 +77,7 @@ export const joinPublicGroupInFirestore = (groupName, username) =>
               name: groupName,
               type: "public"
             })
+            .then(() => resolve())
             .catch(err =>
               reject("error when adding group to user profil : ", err)
             );
@@ -97,42 +86,6 @@ export const joinPublicGroupInFirestore = (groupName, username) =>
       .catch(err => reject(err));
   });
 
-//*
-// Create a private group in firestore
-//*
-export const createPrivateGroupInFirestore = (groupName, username) =>
-  new Promise((resolve, reject) => {
-    // Group reference in database
-    const ref = firebase.firestore().collection("Private_Groups");
-    // Checks if group name is already taken, if not create group
-    const createGroup = ref
-      .doc(groupName)
-      .get()
-      .then(doc => {
-        //if group name available create group's doc
-        if (!doc.exists) {
-          ref
-            .doc(groupName)
-            .set({
-              GroupName: groupName,
-              type: "private",
-              creator: username,
-              photoURL: null,
-              photoName: null
-            })
-            .then(resolve())
-            .catch(error => {
-              reject(error);
-            });
-          // if user name already taken return error
-        } else {
-          reject("Group name taken");
-        }
-      })
-      .catch(error => {
-        reject(error);
-      });
-  });
 
 //*
 // Add contact to private group
@@ -316,3 +269,61 @@ export const retrivingContacts = async (currentGroup) => {
 
   return contacts
 } 
+
+/**
+ * Search names of the groups for the add group screen
+ * If search == name of a group in the firebase firestore database return search
+ * else return the next contacts name starting with the string(search)
+ * 
+ * Function to move to a server or maybe optimized ??
+ */
+export const searchPublicGroupInDatabase = async(search) => {
+  const ref = firebase.firestore().collection('Public_Groups')
+  let results = []
+  // Query for exact match bewteen 'search' and name of a group
+  await ref
+      .where('GroupName', '==', search)
+      .get()
+      .then(querySnapshot => {
+          if (!querySnapshot.empty) {
+              // if successful, return search
+              results = [{ id: 0, name: search }]
+              return
+          } else {
+              return
+          }
+      })
+      .catch(err => {
+          return 'searchPublicGroupInDatabase error : ', err
+      })
+
+  // If previous query successful, return results, end the function
+  if (results.length != 0) {
+      return results
+  } else if (search.length > 2) {
+      // if search length > 2 chars (avoid query for one, two or three letters), 
+      // Query for names of groups starting with the search
+      await ref
+          .orderBy('GroupName')
+          .startAfter(search)
+          .limit(10)
+          .get()
+          .then(querySnapshot => {
+              querySnapshot.forEach(doc => {
+                  const groupName = doc.get('GroupName')
+                  if (groupName.charAt(0) === search.charAt(0)) {
+                      // if first letter of the username == first letter of the search
+                      // push the name to the result array
+                      const newId = results.length + 1
+                      const newPotentialGroup = { id: newId, name: groupName }
+                      results = [...results, newPotentialGroup]
+                  }
+                  return
+              })
+          })
+          .catch(err => {
+              return 'searchPublicGroupInDatabase error : ', err
+          })
+      return results
+  }
+}

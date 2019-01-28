@@ -20,6 +20,7 @@
         "profil": "Profile",
         "disconnect": "Sign out",
         "add_contact_screen": "Add a contact",
+        "add_groups_screen": "Add/Create a group",
         "create_message": "Create a custom message"
     },
     "contacts_screen": {
@@ -39,29 +40,18 @@
         }
     },
     "groups_screen": {
+        "groups_screen": {
+            "list_empty": "You have not joined a group yet",
+            "list_empty2": "Create or join groups by clicking the ",
+            "list_empty3": "button (top left of your screen)."
+        },
         "group_list": {
-            "error_title": "Error",
-            "error_message": "You have not entered a value",
-            "error_message2": "Group name already taken",
-            "close_button": "Close",
-            "placeholder": "Add group",
-            "private_group": "Private group",
-            "public_group": "Public group",
-            "existing_group": "Existing group",
-            "join_group": "Join",
-            "cancel": "Cancel",
             "group_item": {
                 "public": "public",
                 "private": "private"
-            },
-            "list_empty": "You have not joined a group yet"
+            }
         },
         "group_options": {
-            "group_contact_item": {},
-            "header_group_contact_list": {
-                "group_options_modal_contact_item": {}
-            },
-            "message_item": {},
             "messages_list": {
                 "placeholder": "100 characters maximum"
             },
@@ -159,6 +149,22 @@
             "close_button": "Close",
             "predefined_message_contact_request": "Contact request",
             "send_request": "Send a contact request to :"      
+        }
+    },
+    "add_groups_screen": {
+        "title": "Add/Create a group",
+        "public_group": "Public group",
+        "private_group": "Private group",
+        "create": "Create",
+        "join": "Join",
+        "name_of_the_group": "Name of the group",
+        "input_length_is_O": "You did not enter a group name",
+        "group_created": "Groupe created!",
+        "existing_group": "Group name taken",
+        "item": {
+            "error_title": "Error",
+            "error_already_in_list": "You are already a member of this group",
+            "close_button": "Close"
         }
     },
     "create_custom_message_screen": {
