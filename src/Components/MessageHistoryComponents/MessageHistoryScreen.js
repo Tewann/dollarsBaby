@@ -8,14 +8,9 @@ import { connect } from 'react-redux'
 import DisplayMessage from './DisplayMessage/DisplayMessage'
 import SectionHeaderComponent from './SectionHeader/SectionHeaderComponent'
 import CleanHistoryComponent from './CleanHistory/CleanHistoryComponent'
-import { fetchMessages } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
 
 class MessageHistory extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(fetchMessages(this.props.currentUser.name))
-    }
-
     renderListEmpty = () => {
         return (
             <View style={{ flex: 1 }}>

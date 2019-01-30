@@ -6,11 +6,12 @@ import { ActivityIndicator, Alert, Platform } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import { connect } from 'react-redux'
-import { fetchContacts, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
+import { fetchContacts, fetchMessages, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
 import LinearGradient from 'react-native-linear-gradient'
 import { setUpSoundsForAndroid } from '../../Services/setUpCustomDownloadedSounds'
+import App from '../../../App.ios';
 
 class Loading extends React.Component {
     componentDidMount = async () => {
@@ -376,6 +377,7 @@ class Loading extends React.Component {
         } else {
             // navigate to main screen and start listening to database
             this.props.dispatch(fetchContacts(user.displayName))
+            this.props.dispatch(fetchMessages(this.props.currentUser.name))
             this.props.navigation.navigate('DrawerStack')
         }
     }

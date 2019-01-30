@@ -1,5 +1,5 @@
 import firebase from 'react-native-firebase'
-import { Platform } from 'react-native'
+import { Platform, AppState } from 'react-native'
 import Store from '../Store/configureStore'
 
 
@@ -411,9 +411,9 @@ export const cleaningMessageHistory = async () => {
 
 // fetch contacts
 export const fetchContacts = (userName) => {
-    return function (dispatch) {
+    return function fetching(dispatch) {
         const userPath = userName.toString()
-        firebase.firestore()
+        unsubscribe = firebase.firestore()
             .collection('Users')
             .doc(userPath)
             .collection('contactList')
@@ -444,14 +444,24 @@ export const fetchContacts = (userName) => {
                         })
                 })
             })
+
+        // Listener for AppState : when app is in background or killed => unsubscribe from onSnapshot
+        // Else calls again fetching()
+        AppState.addEventListener('change', () => {
+            if (AppState.currentState !== 'active') {
+                unsubscribe()
+            } else {
+                fetching(dispatch)
+            }
+        })
     }
 }
 
 // fetch messages
 export const fetchMessages = (userName) => {
-    return function (dispatch) {
+    return function fetching(dispatch) {
         const userPath = userName.toString()
-        firebase.firestore()
+        const unsubscribe = firebase.firestore()
             .collection('Users')
             .doc(userPath)
             .collection('messagesReceived')
@@ -459,16 +469,30 @@ export const fetchMessages = (userName) => {
                 snapshot.forEach(doc => {
                     const action = { type: 'MESSAGE_RECEIVED', value: doc }
                     dispatch(action)
+
+                    // Delete doc
+                    const ref = doc.ref._documentPath._parts.join('/').toString()
+                    firebase.firestore().doc(ref).delete()
                 })
             })
+
+        // Listener for AppState : when app is in background or killed => unsubscribe from onSnapshot
+        // Else calls again fetching()
+        AppState.addEventListener('change', () => {
+            if (AppState.currentState !== 'active') {
+                unsubscribe()
+            } else {
+                fetching(dispatch)
+            }
+        })
     }
 }
 
 // fetch groups
 export const fetchGroups = (userName) => {
-    return function (dispatch) {
+    return function fetching(dispatch) {
         const userPath = userName.toString()
-        firebase.firestore()
+        unsubscribe = firebase.firestore()
             .collection('Users')
             .doc(userPath)
             .collection('Groups')
@@ -485,6 +509,15 @@ export const fetchGroups = (userName) => {
                         })
                 })
             })
+        // Listener for AppState : when app is in background or killed => unsubscribe from onSnapshot
+        // Else calls again fetching()
+        AppState.addEventListener('change', () => {
+            if (AppState.currentState !== 'active') {
+                unsubscribe()
+            } else {
+                fetching(dispatch)
+            }
+        })
     }
 }
 
