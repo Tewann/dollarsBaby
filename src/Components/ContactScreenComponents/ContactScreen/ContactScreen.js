@@ -8,7 +8,6 @@ import { View } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 
-import HeaderComponent from './HeaderComponent/HeaderComponent'
 import ChatComponent from './ChatComponent/ChatComponent'
 import OptionsComponent from './OptionsComponent/OptionsComponent'
 
@@ -18,6 +17,13 @@ class ContactScreen extends React.Component {
     componentWillMount = () => {
         const action = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'conversation' }
         this.props.dispatch(action)
+        const hideAdsAction = { type: 'AD_BANNER', value: false}
+        this.props.dispatch(hideAdsAction)
+    }
+
+    componentWillUnmount = () => {
+        const displaysAdsAction = { type: 'AD_BANNER', value: true}
+        this.props.dispatch(displaysAdsAction)
     }
     _displayContactsList = () => {
         this.props.navigation.navigate('Mainscreen')

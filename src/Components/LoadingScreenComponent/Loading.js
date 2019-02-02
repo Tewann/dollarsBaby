@@ -11,7 +11,6 @@ import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
 import LinearGradient from 'react-native-linear-gradient'
 import { setUpSoundsForAndroid } from '../../Services/setUpCustomDownloadedSounds'
-import App from '../../../App.ios';
 
 class Loading extends React.Component {
     componentDidMount = async () => {
@@ -378,7 +377,10 @@ class Loading extends React.Component {
             // navigate to main screen and start listening to database
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
-            this.props.navigation.navigate('DrawerStack')
+            //this.props.navigation.navigate('DrawerStack')
+            const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
+            this.props.dispatch(action)
+            this.props.navigation.navigate('ContactScreen')
         }
     }
 

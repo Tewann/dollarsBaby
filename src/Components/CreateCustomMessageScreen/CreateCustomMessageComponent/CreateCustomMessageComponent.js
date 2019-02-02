@@ -75,19 +75,19 @@ class CreateCustomMessageComponent extends React.Component {
         return (
             <View style={{ alignItems: 'center' }}>
                 <Button
-                    title="Contacts and Groups"
+                    title={strings('create_custom_message_screen.contacts_and_groups')}
                     rounded
                     buttonStyle={{ width: 300, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}
                     onPress={() => this.defineType('All')}
                 />
                 <Button
-                    title="Contacts only"
+                    title={strings('create_custom_message_screen.contacts')}
                     rounded
                     buttonStyle={{ width: 300, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}
                     onPress={() => this.defineType('Contacts')}
                 />
                 <Button
-                    title="Groups only"
+                    title={strings('create_custom_message_screen.groups')}
                     rounded
                     buttonStyle={{ width: 300, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}
                     onPress={() => this.defineType('Groups')}

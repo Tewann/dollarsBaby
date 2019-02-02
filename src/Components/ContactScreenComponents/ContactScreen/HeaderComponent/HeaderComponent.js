@@ -1,5 +1,5 @@
 /**
- * Called from Contact Screen
+ * Called from Navigation
  * Displays the Header Component :
  *  - back button to return to the contact screen
  *  - contact photo
@@ -31,7 +31,7 @@ class HeaderComponent extends React.Component {
         const contactIndex = this.props.contactList.findIndex(item => item.name === this.props.contact)
         const nickname = this.props.contactList[contactIndex].nickname
         if (nickname != undefined || null) {
-            this.setState({ displayName: nickname})
+            this.setState({ displayName: nickname })
         }
     }
 
@@ -73,16 +73,14 @@ class HeaderComponent extends React.Component {
 
     render() {
         return (
-           
+            <TouchableOpacity
+                style={styles.picture_and_name_container}
+                onPress={() => this._navigateToOptions()}
+            >
+                {this._renderImage()}
+                <Text style={styles.username}>{this.state.displayName}</Text>
+            </TouchableOpacity>
 
-                <TouchableOpacity
-                    style={styles.picture_and_name_container}
-                    onPress={() => this._navigateToOptions()}
-                >
-                    {this._renderImage()}
-                    <Text style={styles.username}>{this.state.displayName}</Text>
-                </TouchableOpacity>
-           
         )
     }
 }

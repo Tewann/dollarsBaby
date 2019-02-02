@@ -7,23 +7,14 @@ import firebase from 'react-native-firebase'
 import { SafeAreaView } from 'react-navigation'
 import { Keyboard, AppState } from 'react-native'
 import AppContainer from './src/Navigation/Navigation'
+import BannerComponent from './src/Components/BannerComponent/BannerComponent'
 
-const Banner = firebase.admob.Banner;
-const AdRequest = firebase.admob.AdRequest;
-const request = new AdRequest();
 // Correct release unitID
 //const unitID = 'ca-app-pub-4868408770331668/3443399374'
 // Test unitID
 const unitID = 'ca-app-pub-3940256099942544/6300978111'
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showAds: true
-    }
-  }
-
   componentWillMount() {
     AppState.addEventListener('change', this._handleAppStateChange);
   }
@@ -52,11 +43,13 @@ export default class App extends React.Component {
   }
 
   _keyboardDidShow = () => {
-    this.setState({ showAds: false })
+    const action = { type: 'AD_BANNER', value: false }
+    Store.dispatch(action)
   }
 
   _keyboardDidHide = () => {
-    this.setState({ showAds: true })
+    const action = { type: 'AD_BANNER', value: true }
+    Store.dispatch(action)
   }
 
   render() {
@@ -66,16 +59,7 @@ export default class App extends React.Component {
         <PersistGate persistor={persistor}>
           <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }} forceInset={{ top: 'never' }}>
             <AppContainer />
-            {this.state.showAds &&
-              <Banner
-                unitId={unitID}
-                size={"FULL_BANNER"}
-                request={request.build()}
-                onAdFailedToLoad={(e) => {
-                  console.log('Advert error : ' + e);
-                }}
-              />
-            }
+            <BannerComponent unitID={unitID}/>
           </SafeAreaView>
         </PersistGate>
       </Provider>

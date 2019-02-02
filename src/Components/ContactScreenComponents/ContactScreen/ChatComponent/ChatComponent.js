@@ -42,9 +42,7 @@ class ChatComponent extends React.Component {
         this.setState({ displayConversation: true })
     }
 
-    componentWillUnmount = () => {
-        this.setState({ displayConversation: false})
-    }
+
 
     //*
     // Update state when text input for additionnal message is modified
@@ -74,7 +72,8 @@ class ChatComponent extends React.Component {
                 const type = 'send'
                 const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
                 this.props.dispatch(action)
-                setTimeout(() => this.props.displayContactsList(), 500)
+                this.messageInput.clear()
+                this.setState({ additionnalMessage: "" })
             })
             .catch(err => this.setState({ errorMessage: err }))
     }
@@ -114,6 +113,7 @@ class ChatComponent extends React.Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
+                {this._displayConversation()}
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red', marginLeft: 7 }}>
                         {this.state.errorMessage}
@@ -133,7 +133,7 @@ class ChatComponent extends React.Component {
                     />
                     {this._renderIcon()}
                 </View>
-                <View>
+                <View style={{ paddingBottom: 5 }}>
                     <FlatList
                         data={this.props.predefinedMessagesList}
                         numColumns={3}
@@ -146,7 +146,7 @@ class ChatComponent extends React.Component {
                         />}
                     />
                 </View>
-                {this._displayConversation()}
+
             </View>
         )
     }

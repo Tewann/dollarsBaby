@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 7,
+        marginTop: 5
     },
     send_icon_container: {
         paddingRight: 7,

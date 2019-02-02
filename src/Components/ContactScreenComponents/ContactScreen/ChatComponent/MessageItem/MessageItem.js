@@ -19,21 +19,27 @@ class MessageItem extends React.Component {
     render() {
         const message = this.props.message.title
         const sound = this.props.message.sound
-        return (
-            <TouchableOpacity
-                onPress={() => this.props.sendMessage(message, sound)}
-                style={{ flex: 1 }}
-            >
-                <LinearGradient
-                    colors={[ 'lightgrey', 'lightgrey']}
-                    style={styles.main_container}
+        console.log(this.props.message)
+        if (this.props.message.messageFor === 'All' || this.props.message.messageFor === 'Contacts') {
+            return (
+                <TouchableOpacity
+                    onPress={() => this.props.sendMessage(message, sound)}
+                    style={{ flex: 1 }}
                 >
-                    <Text style={styles.text}>
-                        {message}
-                    </Text>
-                </LinearGradient>
-            </TouchableOpacity>
-        )
+                    <LinearGradient
+                        colors={[ '#07416b', '#07416b']}
+                        style={styles.main_container}
+                    >
+                        <Text style={styles.text}>
+                            {message}
+                        </Text>
+                    </LinearGradient>
+                </TouchableOpacity>
+            )
+        } else {
+            return null
+        }
+
     }
 }
 

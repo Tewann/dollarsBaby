@@ -170,6 +170,9 @@
     "create_custom_message_screen": {
         "title": "Personalized messages",
         "create_message": "Create a message",
+        "contacts_and_groups": "Contacts and groups",
+        "contacts": "Contacts only",
+        "groups": "Groups only",
         "message(s)": "Message(s)",
         "name": "Name",
         "soundName": "Sound",

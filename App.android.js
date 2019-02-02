@@ -4,25 +4,20 @@ import Store from './src/Store/configureStore'
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import firebase from 'react-native-firebase'
-import { Keyboard, BackHandler, AppState } from 'react-native'
+import { Keyboard, AppState } from 'react-native'
 import AppContainer from './src/Navigation/Navigation'
+import BannerComponent from './src/Components/BannerComponent/BannerComponent'
 
-const Banner = firebase.admob.Banner;
-const AdRequest = firebase.admob.AdRequest;
-const request = new AdRequest();
-// correct unit ID
+
+
+// production unit ID
 //const unitID = "ca-app-pub-4868408770331668/3370784165"
 // Test unitID
 const unitID = 'ca-app-pub-3940256099942544/6300978111'
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showAds: true,
-    }
-  }
 
+
+export default class App extends React.Component {
   componentWillMount() {
     //BackHandler.addEventListener('hardwareBackPress', () => { return true });
     AppState.addEventListener('change', this._handleAppStateChange);
@@ -52,11 +47,13 @@ export default class App extends React.Component {
   }
 
   _keyboardDidShow = () => {
-    this.setState({ showAds: false })
+    const action = { type: 'AD_BANNER', value: false }
+    Store.dispatch(action)
   }
 
   _keyboardDidHide = () => {
-    this.setState({ showAds: true })
+    const action = { type: 'AD_BANNER', value: true }
+    Store.dispatch(action)
   }
 
   render() {
@@ -65,16 +62,7 @@ export default class App extends React.Component {
       <Provider store={Store}>
         <PersistGate persistor={persistor}>
           <AppContainer />
-          {this.state.showAds &&
-            <Banner
-              unitId={unitID}
-              size={"FULL_BANNER"}
-              request={request.build()}
-              onAdFailedToLoad={(e) => {
-                console.log('Advert error : ' + e);
-              }}
-            />
-          }
+          <BannerComponent unitID={unitID} />
         </PersistGate>
       </Provider>
     );

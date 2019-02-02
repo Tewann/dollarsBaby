@@ -6,6 +6,7 @@ import displayMessagesList from './Reducers/messageReducer'
 import groupManagment from './Reducers/groupReducer'
 import getCurrentUserInformations from './Reducers/currentUserReducer'
 import soundsDownloadedReducer from './Reducers/soundsDownloadedReducer'
+import options from './Reducers/optionsReducer'
 import thunk from 'redux-thunk';
 import { persistCombineReducers} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
@@ -20,7 +21,8 @@ export default createStore(persistCombineReducers(rootPersistConfig, {
     displayMessagesList,
     groupManagment,
     getCurrentUserInformations,
-    soundsDownloadedReducer
+    soundsDownloadedReducer,
+    options
 }),
     applyMiddleware(thunk)
 )

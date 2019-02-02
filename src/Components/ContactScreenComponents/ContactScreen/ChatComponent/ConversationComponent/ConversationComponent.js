@@ -9,11 +9,10 @@
 */
 
 import React from 'react'
-import { View, SectionList, Text } from 'react-native'
+import { View, FlatList, Text } from 'react-native'
 import styles from './styles'
 
 import DisplayMessage from './DisplayMessage/DisplayMessage'
-import SectionHeaderComponent from '../../../../MessageHistoryComponents/SectionHeader/SectionHeaderComponent'
 //import CleanHistoryComponent from './CleanHistory/CleanHistoryComponent'
 
 import { connect } from 'react-redux'
@@ -23,12 +22,22 @@ class ConversationComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            conversationHistory: []
+            contactIndexInMessageHistory: null,
+            stoploop: false,
         }
     }
 
-     componentWillMount = () => {
-        this._grabbingConversationHistory()
+    componentWillMount = () => {
+        // Gets the contact index in the message history, so flatlist data displays only messages related to the contact       
+        const contactIndex = this.props.messagesHistory.findIndex(item => item.title === this.props.contactDisplayed)
+        this.setState({ contactIndexInMessageHistory: contactIndex })
+    }
+
+    componentWillUpdate() {
+        if (!this.state.stoploop) {
+            const contactIndex = this.props.messagesHistory.findIndex(item => item.title === this.props.contactDisplayed)
+            this.setState({ contactIndexInMessageHistory: contactIndex, stoploop: true })
+        }
     }
 
     renderListEmpty = () => {
@@ -40,48 +49,35 @@ class ConversationComponent extends React.Component {
         )
     }
 
-    /**
-     * Called on componentWillMount
-     * Sorts current redux state of message history
-     * Grabs only messages that concerns the current displayed contact
-     * Modify current state with only the messages of the displayed contact
-     * Flatlist uses the list defined in this state
-     * 
-     * Because message history in redux state is organized by [{ title(date), data: [ messages] }, { title(date), data: [ messages] }, etc], the function iterates over each object 
-     * to grab the date then over each data(messages) array to grab messages from that day
-     */
-    _grabbingConversationHistory = () => {
-        let contactConversation = []
-        this.props.messagesHistory.forEach(day => {
-            const title = day.title
-            let data = []
-            day.data.forEach(message => {
-                if (this.props.contactDisplayed == message.contact) {
-                    data.push(message)
-                }
-            })
-            // if there is no message that day, returns doesn't push anything to the data array
-            if (data.length > 0) {
-                let newDay = { title, data }
-                contactConversation.push(newDay)
-            }
-        })
-        this.setState({ conversationHistory: contactConversation })
+    _renderFlatList = () => {
+        return (
+            <FlatList
+                inverted={true}
+                data={this.props.messagesHistory[this.state.contactIndexInMessageHistory].data}
+                keyExtractor={(item, id) => item.id.toString()}
+                renderItem={({ item, index }) => <DisplayMessage message={item} id={index} contactIndex={this.state.contactIndexInMessageHistory} />}
+                //                ListEmptyComponent={() => this.renderListEmpty()}
+                initialNumToRender={15}
+                maxToRenderPerBatch={10}
+                windowSize={5}
+            />
+        )
+
     }
 
     render() {
         return (
             <View style={styles.main_container}>
-                <SectionList
-                    sections={this.state.conversationHistory}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderSectionHeader={({ section }) => <SectionHeaderComponent section={section} />}
-                    renderItem={({ item }) => <DisplayMessage message={item} />}
-                    ListEmptyComponent={() => this.renderListEmpty()}
-                    stickySectionHeadersEnabled={true}
-                    initialNumToRender={2}
-                //ListHeaderComponent={<CleanHistoryComponent />}
-                />
+                {
+                    this.props.messagesHistory[this.state.contactIndexInMessageHistory] !== undefined &&
+                    this._renderFlatList()
+                }
+                {
+                    this.props.messagesHistory[this.state.contactIndexInMessageHistory] === undefined &&
+                    this.renderListEmpty()
+                }
+
+
             </View>
         )
     }

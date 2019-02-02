@@ -6,32 +6,38 @@ const initialState = {
         {
             id: 1,
             title: 'Blink',
-            sound: 's1blink'
+            sound: 's1blink',
+            messageFor: 'All'
         },
         {
             id: 2,
             title: strings('reducers.where'),
-            sound: "s2tesou"
+            sound: "s2tesou",
+            messageFor: 'All'
         },
         {
             id: 3,
             title: strings('reducers.urgent'),
-            sound: "s3urgent"
+            sound: "s3urgent",
+            messageFor: 'All'
         },
         {
             id: 4,
             title: strings('reducers.forget'),
-            sound: "s4oubliepas"
+            sound: "s4oubliepas",
+            messageFor: 'All'
         },
         {
             id: 5,
             title: strings('reducers.coming'),
-            sound: "s5jarrive"
+            sound: "s5jarrive",
+            messageFor: 'All'
         },
         {
             id: 6,
             title: strings('reducers.done'),
-            sound: "s6cestfait"
+            sound: "s6cestfait",
+            messageFor: 'All'
         },
     ],
 
@@ -101,7 +107,7 @@ function displayMessagesList(state = initialState, action) {
                     timeStamp: action.value.timeStamp,
                 }
                 let newData = state.messagesHistory[sendcontactOrGroupIndexInMessageList].data
-                newData.push(newMessageSend)
+                newData.unshift(newMessageSend)
                 nextState = {
                     ...state,
                     messagesHistory: state.messagesHistory.map((content, i) => i === sendcontactOrGroupIndexInMessageList ? {
@@ -210,7 +216,7 @@ function displayMessagesList(state = initialState, action) {
                         console.log('called')
                         newData.sort(compare)
                     } */
-                    newData.push(newMessage)
+                    newData.unshift(newMessage)
                     state.messagesReceived.push(newMessage)
                     nextState = {
                         ...state,

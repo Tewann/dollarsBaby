@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
         marginRight: 10,
         paddingBottom: 1,
         marginTop: 5,
-        //marginBottom: 5
     },
     renderMessage_main_container: {
         flexDirection: 'row',
@@ -39,36 +38,78 @@ const styles = StyleSheet.create({
     },
     time: {
         paddingBottom: 2,
-        padding: 5
+        padding: 5,
+        fontSize: 10
+    },
+    main_date_container: {
+        flexDirection: 'row',
+        flex: 1
+    },
+    sub_container: {
+        flex: 1,
+    },
+    border_top_lign_container: {
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        flex: 0.5,
+    },
+    top_lign_container: {
+        borderBottomWidth: 0.5,
+        borderColor: '#b3b3b3',
+        flex: 5,
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    },
+    bottom_lign_container: {
+        flex: 1,
+    },
+    date: {
+        flexWrap: 'nowrap',
+        textAlign: 'center',
+        fontStyle: 'italic',
+        //color: '#b3b3b3',
+        paddingTop: 5,
+        marginBottom: 5,
+        paddingLeft: 5,
+        paddingRight: 5,
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        fontSize: 10
     },
     image_container: {
         justifyContent: 'flex-end',
+        width: roundWidth
     },
     rounds: {
         width: roundWidth,
         height: roundWidth,
         borderRadius: roundWidth / 2,
     },
+    rounds_empty: {
+        minWidth: roundWidth,
+        height: roundWidth,
+        backgroundColor: 'red'
+    },
     both_messages_container: {
         //alignItems: 'flex-start',
         justifyContent: 'center',
-        marginLeft: 10,
-        paddingLeft: 5,
-        paddingRight: 5,
-        paddingTop: 2,
-        paddingBottom: 2,
+        marginLeft: 15,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 5,
+        paddingBottom: 5, 
         //backgroundColor: 'rgba(217, 217, 217, 0.7)',
         borderRadius: 8,
         borderWidth: 1,
         borderColor: 'lightgrey',
         maxWidth: width / 1.7,
+       // minHeight: roundWidth
     },
     predefined_message: {
         fontWeight: 'bold',
-        textAlign: 'left'
+        textAlign: 'left',
+        fontSize: 15,
     },
     additional_message: {
-        textAlign: 'left'
+        textAlign: 'left',
+        fontSize: 15,
     },
     renderMessage_send_main_container: {
         flexDirection: 'row',
@@ -78,16 +119,14 @@ const styles = StyleSheet.create({
     send_both_messages_container: {
         justifyContent: 'center',
         alignItems: 'flex-end',
-        marginRight: 10,
-        paddingLeft: 5,
-        paddingRight: 5,
-        paddingTop: 2,
-        paddingBottom: 2,
-        backgroundColor: 'rgba(179, 255, 179, 0.7)',
+        marginRight: 15,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 5,
+        paddingBottom: 5, 
+                backgroundColor: 'rgba(179, 255, 179, 0.7)',
         borderRadius: 8,
-        borderWidth: 1,
-        borderColor: 'lightgrey',
-        maxWidth: width / 1.7
+        maxWidth: width / 1.7,
     },
 })
 
