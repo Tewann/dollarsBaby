@@ -21,12 +21,6 @@ import { sendMessageToFirestore } from '../../../../Services/firebaseFunctions'
 import { strings } from '../../../../i18n'
 import { Icon } from 'react-native-elements';
 
-import Dimensions from 'Dimensions'
-
-const { height, width } = Dimensions.get('window')
-// const itemHeight = (height / 12)
-const itemHeight = (height / 24)
-
 class ChatComponent extends React.Component {
     constructor(props) {
         super(props)
@@ -142,7 +136,6 @@ class ChatComponent extends React.Component {
                         keyExtractor={(item) => item.id.toString()}
                         renderItem={({ item }) => <MessageItem message={item}
                             sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
-                            contact={this.props.contact}
                         />}
                     />
                 </View>

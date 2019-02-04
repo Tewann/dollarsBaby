@@ -151,9 +151,12 @@ export const addPublicGroupMessageToAllMembers =
                         additional_message: data.additional_message,
                         type: 'received'
                     })
-                    .then()
+                    .then(() => {
+                        snapshot.ref.delete()
+                            .then()
+                            .catch(err => console.log('error : ', err))
+                    })
                     .catch(err => console.log('error : ', err))
-
             })
             return
         })
@@ -171,6 +174,8 @@ export const addPrivateGroupMessageToAllMembers =
     functions.firestore
         .document(`Private_Groups/{groups}/Messages/{messages}`)
         .onCreate(async (snapshot, context) => {
+            /*  console.log()
+             console.log(snapshot.ref.parent.get()) */
             const data = snapshot.data()
             const parent = snapshot
                 .ref
@@ -203,9 +208,12 @@ export const addPrivateGroupMessageToAllMembers =
                         additional_message: data.additional_message,
                         type: 'received'
                     })
-                    .then(() => console.log('indivudal message sended'))
+                    .then(() => {
+                        snapshot.ref.delete()
+                            .then()
+                            .catch(err => console.log('error : ', err))
+                    })
                     .catch(err => console.log('error : ', err))
-
             })
             return
         })
@@ -218,15 +226,14 @@ export const sendPushNotificationsForNewMessages =
     functions.firestore
         .document(`Users/{user}/messagesReceived/{message}`)
         .onCreate(async (snapshot, context) => {
+
             // User database reference
             const parent = snapshot.ref.parent.parent
-
             // User's token for cloud messaging
             const fcmToken = await parent.get().then(doc => {
                 const Token = doc.data().fcmToken
                 return Token
             })
-
             // User platform (Android / iOS)
             const userPlatform = await parent.get().then(doc => {
                 const platform = doc.data().userPlatform
@@ -238,18 +245,26 @@ export const sendPushNotificationsForNewMessages =
             const data = snapshot.data()
 
             // Name or nickname eventually
-            const contactName = await parent.collection('contactList')
-                .where('name', "==", data.title)
-                .get()
-                .then(doc => {
-                    const contactNameOrNickname = doc.docs[0].data().nickname !== undefined || null ? doc.docs[0].data().nickname : data.title
-                    return contactNameOrNickname
-                })
-
+            let contactName
+            if (data.sendBy !== undefined) {
+                // Sendby is for groups messages
+                contactName = `${data.sendBy} @ ${data.title}`
+            } else {
+                contactName = await parent.collection('contactList')
+                    .where('name', "==", data.title)
+                    .get()
+                    .then(doc => {
+                        if (doc) {
+                            const contactNameOrNickname = doc.docs[0].data().nickname !== undefined || null ? doc.docs[0].data().nickname : data.title
+                            return contactNameOrNickname
+                        } else {
+                            return
+                        }
+                    })
+            }
 
             // Predefined message (sended as data in case notification sound is not received)
             const predefined_message = data.predefined_message === null || undefined ? 'Blink' : data.predefined_message
-
 
             // Payload
             let payload = null
@@ -263,7 +278,8 @@ export const sendPushNotificationsForNewMessages =
                         body: data.body,
                         sound: notifSound,
                         // Android channel id necessary for > 26 (OREO 8.0 +)
-                        android_channel_id: notifSound
+                        android_channel_id: notifSound,
+                        tag: '1'
                     },
                     data: {
                         predefined_message: predefined_message,
@@ -287,9 +303,7 @@ export const sendPushNotificationsForNewMessages =
 
             // sends notification to user's phone
             return admin.messaging().sendToDevice(fcmToken, payload)
-                .then((response) => {
-                    console.log('Successfully sent message', response);
-                })
+                .then()
                 .catch((error) => {
                     console.log('Error sending message', error)
                 })
@@ -320,7 +334,7 @@ async function setNotificationSound(sound, platform, userRef) {
                     const customSound = platform === 'android' ? sound : sound + 'wav'
                     // If the sound name is a doc name in the downloaded sound collection of the user
                     // Return the sound so it can be played
-                   soundToReturn = customSound
+                    soundToReturn = customSound
                 } else {
                     // The sound has not been downloaded by the user yet
                     // Return the sound as s1blink

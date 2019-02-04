@@ -1,4 +1,3 @@
-// src/Components/ContactScreenComponents/ContactScreenComponents/ContactItem/ContactItem.js
 // Component: display each iteration of contact list
 
 import React from 'react'
@@ -27,7 +26,7 @@ class ContactItem extends React.Component {
     }
 
     /**
-    * Grabs group name, calls reducer to change state and to display the contact screen
+    * Grabs contact name, calls reducer to change state and navigate to the contact screen
     */
 
     _displayContactScreen = (contact) => {
@@ -68,7 +67,6 @@ class ContactItem extends React.Component {
                 <Text style={styles.contact_text}>
                     {this.state.displayName}
                 </Text>
-
             </TouchableOpacity >
 
         )

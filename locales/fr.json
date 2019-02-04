@@ -58,7 +58,13 @@
             "not_creator": "Vous n'êtes pas le créateur du groupe",
             "created_by": "créé par",
             "back": "Retour",
-            "error_title": "Erreur"
+            "error_title": "Erreur",
+            "members_of_group": "Membres du groupe",
+            "change_group_image": "Modifier la photo du groupe"
+        },
+        "group_screen": {
+            "list_empty": "Vous n'avez pas encore reçu de messages",
+            "click_on_avatar": "Accédez aux options en cliquant sur l'avatar"
         }
     },
     "loading": {

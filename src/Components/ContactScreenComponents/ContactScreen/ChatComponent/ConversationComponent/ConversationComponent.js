@@ -40,41 +40,38 @@ class ConversationComponent extends React.Component {
         }
     }
 
-    renderListEmpty = () => {
-        return (
-            <View style={{ flex: 1 }}>
-                <Text style={styles.list_empty}>{strings('message_history_screen.list_empty')}</Text>
-                <Text style={styles.list_empty2}>{strings('message_history_screen.click_on_avatar')}</Text>
-            </View>
-        )
-    }
 
-    _renderFlatList = () => {
-        return (
-            <FlatList
-                inverted={true}
-                data={this.props.messagesHistory[this.state.contactIndexInMessageHistory].data}
-                keyExtractor={(item, id) => item.id.toString()}
-                renderItem={({ item, index }) => <DisplayMessage message={item} id={index} contactIndex={this.state.contactIndexInMessageHistory} />}
-                //                ListEmptyComponent={() => this.renderListEmpty()}
-                initialNumToRender={15}
-                maxToRenderPerBatch={10}
-                windowSize={5}
-            />
-        )
-
-    }
 
     render() {
+/*         console.log(this.state.contactIndexInMessageHistory)
+        if (this.props.messagesHistory[this.state.contactIndexInMessageHistory] === undefined) {
+            console.log(this.props.messagesHistory)
+        } else {
+        console.log(this.props.messagesHistory[this.state.contactIndexInMessageHistory].data)
+        } */
         return (
             <View style={styles.main_container}>
                 {
-                    this.props.messagesHistory[this.state.contactIndexInMessageHistory] !== undefined &&
-                    this._renderFlatList()
+                    this.state.contactIndexInMessageHistory !== -1 &&
+                    //this.props.messagesHistory[this.state.contactIndexInMessageHistory] !== undefined &&
+                    <FlatList
+                    inverted={true}
+                    data={this.props.messagesHistory[this.state.contactIndexInMessageHistory].data}
+                    keyExtractor={(item, id) => item.id.toString()}
+                    renderItem={({ item, index }) => <DisplayMessage message={item} id={index} contactIndex={this.state.contactIndexInMessageHistory} />}
+                    //                ListEmptyComponent={() => this.renderListEmpty()}
+                    initialNumToRender={15}
+                    maxToRenderPerBatch={10}
+                    windowSize={5}
+                />
                 }
                 {
-                    this.props.messagesHistory[this.state.contactIndexInMessageHistory] === undefined &&
-                    this.renderListEmpty()
+                    this.state.contactIndexInMessageHistory === -1 &&
+                    //this.props.messagesHistory[this.state.contactIndexInMessageHistory] === undefined &&
+                    <View style={{ flex: 1 }}>
+                <Text style={styles.list_empty}>{strings('message_history_screen.list_empty')}</Text>
+                <Text style={styles.list_empty2}>{strings('message_history_screen.click_on_avatar')}</Text>
+            </View>
                 }
 
 

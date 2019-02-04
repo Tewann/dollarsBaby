@@ -2,7 +2,7 @@
 
 const initialState = {
     currentDisplayedContact: ['ContactsList'],
-    currentDisplayedContactScreen: 'conversation',
+    currentDisplayedContactScreen: ['conversation'],
     contactList: []
 }
 

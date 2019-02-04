@@ -1,16 +1,16 @@
 {
     "month": {
         "january": "January",
-        "february": "February", 
-        "march": "March", 
-        "april": "April", 
-        "may": "May", 
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
         "june": "June",
-        "july": "July", 
-        "august": "August", 
-        "september": "September", 
-        "october": "October", 
-        "november": "November", 
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
         "december": "December"
     },
     "navigation": {
@@ -58,7 +58,13 @@
             "not_creator": "You are not the creator of the group",
             "created_by": "created by",
             "back": "Back",
-            "error_title": "Error"
+            "error_title": "Error",
+            "members_of_group": "Membres du groupe",
+            "change_group_image": "Modifier la photo du groupe"
+        },
+        "group_screen": {
+            "list_empty": "You have not received any messages yet",
+            "click_on_avatar": "Access the options by clicking on the avatar"
         }
     },
     "loading": {
@@ -148,7 +154,7 @@
             "error_message": "Contact already in your contact list",
             "close_button": "Close",
             "predefined_message_contact_request": "Contact request",
-            "send_request": "Send a contact request to :"      
+            "send_request": "Send a contact request to :"
         }
     },
     "add_groups_screen": {

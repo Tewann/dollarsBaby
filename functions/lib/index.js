@@ -156,6 +156,8 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
 exports.addPrivateGroupMessageToAllMembers = functions.firestore
     .document(`Private_Groups/{groups}/Messages/{messages}`)
     .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {
+    /*  console.log()
+     console.log(snapshot.ref.parent.get()) */
     const data = snapshot.data();
     const parent = snapshot
         .ref
@@ -186,7 +188,11 @@ exports.addPrivateGroupMessageToAllMembers = functions.firestore
             additional_message: data.additional_message,
             type: 'received'
         })
-            .then(() => console.log('indivudal message sended'))
+            .then(() => {
+            snapshot.ref.delete()
+                .then()
+                .catch(err => console.log('error : ', err));
+        })
             .catch(err => console.log('error : ', err));
     });
     return;
@@ -213,13 +219,25 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     // Message data
     const data = snapshot.data();
     // Name or nickname eventually
-    const contactName = yield parent.collection('contactList')
-        .where('name', "==", data.title)
-        .get()
-        .then(doc => {
-        const contactNameOrNickname = doc.docs[0].data().nickname !== undefined || null ? doc.docs[0].data().nickname : data.title;
-        return contactNameOrNickname;
-    });
+    let contactName;
+    if (data.sendBy !== undefined) {
+        // Sendby is for groups messages
+        contactName = `${data.title} / ${data.sendBy}`;
+    }
+    else {
+        contactName = yield parent.collection('contactList')
+            .where('name', "==", data.title)
+            .get()
+            .then(doc => {
+            if (doc) {
+                const contactNameOrNickname = doc.docs[0].data().nickname !== undefined || null ? doc.docs[0].data().nickname : data.title;
+                return contactNameOrNickname;
+            }
+            else {
+                return;
+            }
+        });
+    }
     // Predefined message (sended as data in case notification sound is not received)
     const predefined_message = data.predefined_message === null || undefined ? 'Blink' : data.predefined_message;
     // Payload
@@ -234,7 +252,8 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
                 body: data.body,
                 sound: notifSound,
                 // Android channel id necessary for > 26 (OREO 8.0 +)
-                android_channel_id: notifSound
+                android_channel_id: notifSound,
+                tag: '1'
             },
             data: {
                 predefined_message: predefined_message,
@@ -258,9 +277,7 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     }
     // sends notification to user's phone
     return admin.messaging().sendToDevice(fcmToken, payload)
-        .then((response) => {
-        console.log('Successfully sent message', response);
-    })
+        .then()
         .catch((error) => {
         console.log('Error sending message', error);
     });

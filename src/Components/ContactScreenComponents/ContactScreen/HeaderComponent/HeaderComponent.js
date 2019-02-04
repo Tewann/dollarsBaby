@@ -4,9 +4,6 @@
  *  - back button to return to the contact screen
  *  - contact photo
  *  - contact name
- * Starts backhandler listener for android
- * Props : 
- *  - displayContactsList : _displayContactsList() => function to navigate back to the contact screen
  */
 
 import React from 'react'
@@ -21,8 +18,6 @@ class HeaderComponent extends React.Component {
         super(props)
         this.state = {
             defaultPicture: require('../../../../../images/ic_tag_faces.png'),
-            additionnalMessage: "",
-            errorMessage: null,
             displayName: this.props.contact
         }
     }
@@ -89,7 +84,7 @@ const mapStateToProps = (state) => {
     return {
         contactList: state.contactManagment.contactList,
         contact: state.contactManagment.currentDisplayedContact[0],
-        currentDisplayedContactScreen: state.contactManagment.currentDisplayedContactScreen
+        currentDisplayedContactScreen: state.contactManagment.currentDisplayedContactScreen[0]
     }
 }
 

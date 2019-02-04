@@ -1,9 +1,9 @@
 // Store/Reducers/groupReducer.js
-import { Alert } from 'react-native'
 import { strings } from '../../i18n'
 
 const initialState = {
     currentDisplayedGroup: ['GroupList'],
+    currentDisplayedGroupScreen: 'conversation',
     predefinedGroupMessagesList: [
         {
             id: 1,
@@ -42,6 +42,15 @@ const initialState = {
 function groupManagment(state = initialState, action) {
     let nextState
     switch (action.type) {
+        case 'SWITCH_GROUP_SCREEN_OPTIONS':
+            nextState = {
+                ...state,
+                currentDisplayedGroupScreen: [action.value]
+            }
+            //console.log(nextState)
+            //console.log(action.value)
+            return nextState || state
+
         case 'SWITCH_GROUP_SCREEN':
             nextState = {
                 ...state,

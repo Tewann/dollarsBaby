@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     predefined_message: {
         fontWeight: 'bold',
         textAlign: 'left',
-        fontSize: 15,
+        fontSize: 15
     },
     additional_message: {
         textAlign: 'left',

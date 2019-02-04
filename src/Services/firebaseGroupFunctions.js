@@ -112,8 +112,6 @@ export const addContactToPrivateGroup = (groupName, username) =>
           reject("User already in group");
         } else {
           // if user is not already a member of the requested group
-          // user is added to the private group members collection
-          // the group is added to the user's group collection
           // 1 - Add contact to private group members collection
           ref
             .doc(groupName)

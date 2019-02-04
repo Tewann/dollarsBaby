@@ -106,8 +106,10 @@ function displayMessagesList(state = initialState, action) {
                     additionnal_message: action.value.additionnal_message,
                     timeStamp: action.value.timeStamp,
                 }
-                let newData = state.messagesHistory[sendcontactOrGroupIndexInMessageList].data
-                newData.unshift(newMessageSend)
+                let newData = [
+                    newMessageSend,  
+                    ...state.messagesHistory[sendcontactOrGroupIndexInMessageList].data
+                ]
                 nextState = {
                     ...state,
                     messagesHistory: state.messagesHistory.map((content, i) => i === sendcontactOrGroupIndexInMessageList ? {
@@ -128,6 +130,7 @@ function displayMessagesList(state = initialState, action) {
             const additionnal_message = action.value.get('additional_message')
             const timeStamp = action.value.get('timeStamp')
             const type = action.value.get('type')
+            const sendBy = action.value.get('sendBy')
             let newId = null
             let newMessage = null
 
@@ -154,7 +157,8 @@ function displayMessagesList(state = initialState, action) {
                     predefined_message: predefined_message,
                     additionnal_message: additionnal_message,
                     timeStamp: timeStamp,
-                    messageReceivedId: messageReceivedId
+                    messageReceivedId: messageReceivedId,
+                    sendBy: sendBy
                 }
 
                 // Create new contact/group
@@ -195,11 +199,12 @@ function displayMessagesList(state = initialState, action) {
                         predefined_message: predefined_message,
                         additionnal_message: additionnal_message,
                         timeStamp: timeStamp,
-                        messageReceivedId: messageReceivedId
+                        messageReceivedId: messageReceivedId,
+                        sendBy: sendBy
                     }
 
                     //const data = state.messagesHistory[contactOrGroupIndexInMessageList].data
-                    let newData = state.messagesHistory[contactOrGroupIndexInMessageList].data
+                    //let newData = state.messagesHistory[contactOrGroupIndexInMessageList].data
 /*                     const messageTimeStamp = data.length.timeStamp
                     if (messageTimeStamp > timeStamp) {
                         compare = (a, b) => {
@@ -216,7 +221,11 @@ function displayMessagesList(state = initialState, action) {
                         console.log('called')
                         newData.sort(compare)
                     } */
-                    newData.unshift(newMessage)
+                    //newData.unshift(newMessage)
+                    let newData = [
+                        newMessage,  
+                        ...state.messagesHistory[contactOrGroupIndexInMessageList].data
+                    ]
                     state.messagesReceived.push(newMessage)
                     nextState = {
                         ...state,

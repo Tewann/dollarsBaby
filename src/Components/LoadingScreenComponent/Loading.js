@@ -6,7 +6,7 @@ import { ActivityIndicator, Alert, Platform } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import { connect } from 'react-redux'
-import { fetchContacts, fetchMessages, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
+import { fetchContacts, fetchMessages, fetchGroups, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
 import LinearGradient from 'react-native-linear-gradient'
@@ -128,7 +128,10 @@ class Loading extends React.Component {
             //const notification = notificationOpen.notification;
             const notificationTitle = notificationOpen.notification.title || notificationOpen.notification.data.contactName
             let contactName = notificationTitle
+            let groupName = notificationTitle.split(" / ")[0]
             const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
+            const groupIndex = this.props.groupList.findIndex(item => item.name == groupName)
+
             if (contactName == undefined || null) {
                 const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
                 this.props.dispatch(contactScreenToList)
@@ -137,6 +140,10 @@ class Loading extends React.Component {
                 const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
                 this.props.dispatch(contactScreenToList)
                 this.props.navigation.navigate('ContactScreen')
+            } else if (groupIndex !== -1) {
+                const action = { type: 'SWITCH_GROUP_SCREEN', value: groupName }
+                this.props.dispatch(action)
+                this.props.navigation.navigate('GroupScreen')
             } else if (contactIndex === -1) {
                 const nicknameIndex = this.props.contactList.findIndex(item => String(item.nickname) == notificationTitle)
                 contactName = this.props.contactList[nicknameIndex].name
@@ -146,7 +153,6 @@ class Loading extends React.Component {
             } else {
                 this.props.navigation.navigate('MessageHistory')
             }
-
         });
 
         /**
@@ -164,6 +170,9 @@ class Loading extends React.Component {
                     const notificationTitle = notificationOpen.notification.data.contactName
                     let contactName = notificationTitle
                     const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
+                    let groupName = notificationTitle.split(" / ")[0]
+                    const groupIndex = this.props.groupList.findIndex(item => item.name == groupName)
+
                     if (contactName == undefined || null) {
                         const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
                         this.props.dispatch(contactScreenToList)
@@ -172,6 +181,10 @@ class Loading extends React.Component {
                         const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: contactName }
                         this.props.dispatch(contactScreenToList)
                         this.props.navigation.navigate('ContactScreen')
+                    } else if (groupIndex !== -1) {
+                        const action = { type: 'SWITCH_GROUP_SCREEN', value: groupName }
+                        this.props.dispatch(action)
+                        this.props.navigation.navigate('GroupScreen')
                     } else if (contactIndex === -1) {
                         const nicknameIndex = this.props.contactList.findIndex(item => item.nickname == notificationTitle)
                         contactName = this.props.contactList[nicknameIndex].name
@@ -259,7 +272,11 @@ class Loading extends React.Component {
 
                     // Set channel for android > 26
                     notif.android.setChannelId(notification.sound)
-                    notif.android.setAutoCancel(true);
+                    notif.android.setAutoCancel(true)
+                    /* .android.setGroup('1')
+                    .android.setTag('1')
+                    .android.setGroupSummary(false)
+*/
                 } else {
                     // Create notification
                     notif = new firebase.notifications.Notification()
@@ -377,10 +394,14 @@ class Loading extends React.Component {
             // navigate to main screen and start listening to database
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
+            this.props.dispatch(fetchGroups(this.props.currentUser.name))
             //this.props.navigation.navigate('DrawerStack')
-            const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
+            const action = { type: 'SWITCH_GROUP_SCREEN', value: 'Privat' }
             this.props.dispatch(action)
-            this.props.navigation.navigate('ContactScreen')
+            this.props.navigation.navigate('GroupScreen')
+            /* const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
+            this.props.dispatch(action)
+            this.props.navigation.navigate('ContactScreen') */
         }
     }
 
@@ -495,7 +516,8 @@ const mapStateToProps = (state) => {
         predefined_message_list: state.displayMessagesList.predefinedMessagesList,
         contactList: state.contactManagment.contactList,
         test: state.contactManagment.currentDisplayedContact,
-        currentSoundsSetUp: state.soundsDownloadedReducer.soundsDownloaded
+        currentSoundsSetUp: state.soundsDownloadedReducer.soundsDownloaded,
+        groupList: state.groupManagment.groupList,
     }
 }
 export default connect(mapStateToProps)(Loading)

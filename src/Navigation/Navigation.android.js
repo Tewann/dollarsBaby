@@ -1,10 +1,11 @@
 //Navigation/Navigation.js
 
-import { createAppContainer, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
+import { HeaderBackButton, createAppContainer, DrawerActions, createStackNavigator, createMaterialTopTabNavigator, createSwitchNavigator, createDrawerNavigator } from 'react-navigation'
 
 import ContactsList from '../Components/ContactScreenComponents/ContactsList/ContactsList'
 import MessageHistory from '../Components/MessageHistoryComponents/MessageHistoryScreen';
-import GroupScreen from '../Components/GroupScreenComponents/GroupScreenComponent'
+import GroupsList from '../Components/GroupsScreen/GroupsListScreen/GroupsListScreen'
+import GroupScreen from '../Components/GroupsScreen/GroupScreen/GroupScreen'
 import Loading from '../Components/LoadingScreenComponent/Loading'
 import SignUp from '../Components/SignUpScreenComponents/SignUp'
 import Login from '../Components/LoginScreenComponent/Login'
@@ -15,6 +16,7 @@ import TermsOfService from '../Components/TermsOfServiceScreen/TermsOfService'
 import AddContactScreen from '../Components/AddContactScreen/AddContactScreen'
 import ContactScreen from '../Components/ContactScreenComponents/ContactScreen/ContactScreen'
 import HeaderComponent from '../Components/ContactScreenComponents/ContactScreen/HeaderComponent/HeaderComponent'
+import HeaderForGroupScreen from '../Components/GroupsScreen/GroupScreen/HeaderForGroupScreen/HeaderForGroupScreen'
 import CreateCustomMessageScreen from '../Components/CreateCustomMessageScreen/CreateCustomMessageScreen'
 import AddGroupsScreen from '../Components/AddGroupsScreen/AddGroupsScreen'
 
@@ -165,8 +167,8 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
                 />
             }
         },
-        GroupScreen: {
-            screen: GroupScreen,
+        GroupsList: {
+            screen: GroupsList,
             navigationOptions: {
                 title: strings('navigation.group_screen'),
                 tabBarIcon: <Icon
@@ -231,10 +233,16 @@ const MainStackNavigator = createStackNavigator(
             navigationOptions: ({ navigation }) => ({
                 headerTitle:
                     <HeaderComponent />,
-
-
             })
         },
+        GroupScreen: {
+            screen: GroupScreen,
+            navigationOptions: ({ navigation }) => ({
+                headerLeft: <HeaderBackButton onPress={() => navigation.navigate('GroupsList')} />,
+                headerTitle:
+                    <HeaderForGroupScreen />,
+            })
+        }
     },
     {
         headerLayoutPreset: 'center',
