@@ -60,7 +60,8 @@
             "back": "Retour",
             "error_title": "Erreur",
             "members_of_group": "Membres du groupe",
-            "change_group_image": "Modifier la photo du groupe"
+            "change_group_image": "Modifier la photo du groupe",
+            "delete_history": "Supprimer l'historique"
         },
         "group_screen": {
             "list_empty": "Vous n'avez pas encore reçu de messages",

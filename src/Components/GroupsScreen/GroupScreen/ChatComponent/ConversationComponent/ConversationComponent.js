@@ -40,8 +40,6 @@ class ConversationComponent extends React.Component {
         }
     }
 
-
-
     render() {
         return (
             <View style={styles.main_container}>
@@ -52,7 +50,7 @@ class ConversationComponent extends React.Component {
                         data={this.props.messagesHistory[this.state.groupIndexInMessageHistory].data}
                         keyExtractor={(item, id) => item.id.toString()}
                         renderItem={({ item, index }) => <DisplayMessage message={item} id={index} groupIndex={this.state.groupIndexInMessageHistory} />}
-                        //                ListEmptyComponent={() => this.renderListEmpty()}
+                        //ListEmptyComponent={() => this.renderListEmpty()}
                         initialNumToRender={15}
                         maxToRenderPerBatch={10}
                         windowSize={5}

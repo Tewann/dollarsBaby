@@ -152,13 +152,13 @@ class AddGroupsScreen extends React.Component {
             return (
                 <View style={styles.button_container}>
                     <Button
-                        title={strings('groups_screen.group_list.private_group')}
+                        title={strings('add_groups_screen.private_group')}
                         rounded
                         buttonStyle={styles.button}
                         onPress={() => this.setState({ groupType: 'private', createOrJoin: 'create' })}
                     />
                     <Button
-                        title={strings('groups_screen.group_list.public_group')}
+                        title={strings('add_groups_screen.public_group')}
                         rounded
                         buttonStyle={styles.button}
                         onPress={() => this.setState({ groupType: 'public' })}

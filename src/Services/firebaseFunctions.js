@@ -376,7 +376,7 @@ export const addContactToFirestore = async (currentUser, contactToAdd) => {
 //*
 // Cleaning message history
 //*
-export const cleaningMessageHistory = async () => {
+/* export const cleaningMessageHistory = async () => {
     new Promise((resolve, reject) => {
         const user = Store.getState().getCurrentUserInformations.name
         const httpsCallable = firebase.functions().httpsCallable('deleteAllUserHistory')
@@ -401,7 +401,7 @@ export const cleaningMessageHistory = async () => {
                 reject('error when deleting', httpsError)
             })
     })
-}
+} */
 
 // --------------------
 // --------------------

@@ -2,7 +2,7 @@
 // main screen for messages received
 
 import React from 'react'
-import { View, SectionList, Text } from 'react-native'
+import { View, FlatList, Text } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import DisplayMessage from './DisplayMessage/DisplayMessage'
@@ -22,7 +22,7 @@ class MessageHistory extends React.Component {
     render() {
         return (
             <View style={styles.main_container}>
-                <SectionList
+{/*                 <SectionList
                     sections={this.props.messagesHistory}
                     keyExtractor={(item) => item.id.toString()}
                     renderSectionHeader={({ section }) => <SectionHeaderComponent section={section} />}
@@ -30,7 +30,17 @@ class MessageHistory extends React.Component {
                     ListEmptyComponent={() => this.renderListEmpty()}
                     stickySectionHeadersEnabled={true}
                     initialNumToRender={2}
-                //ListHeaderComponent={<CleanHistoryComponent />}
+                    ListHeaderComponent={<CleanHistoryComponent />}
+                /> */}
+                <FlatList
+                    data={this.props.messagesReceived}
+                    keyExtractor={(item) => item.id.toString()}
+                    //renderSectionHeader={({ section }) => <SectionHeaderComponent section={section} />}
+                    renderItem={({ item }) => <DisplayMessage message={item} navigate={this.props.navigation.navigate} />}
+                    ListEmptyComponent={() => this.renderListEmpty()}
+                    stickySectionHeadersEnabled={true}
+                    initialNumToRender={2}
+                    ListHeaderComponent={() => <CleanHistoryComponent />}
                 />
             </View>
         )
@@ -39,7 +49,7 @@ class MessageHistory extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        messagesHistory: state.displayMessagesList.messagesHistory,
+        messagesReceived: state.displayMessagesList.messagesReceived,
         currentUser: state.getCurrentUserInformations,
     }
 }

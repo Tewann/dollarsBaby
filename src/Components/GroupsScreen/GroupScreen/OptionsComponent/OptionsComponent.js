@@ -32,6 +32,8 @@ class MessagesListScreen extends React.Component {
             groupType: null,
             groupNameIndex: null,
             groupCreatorIsCurrentUser: false,
+            deleteIcon: true,
+            deleteSuccessful: false
         }
     }
 
@@ -164,6 +166,41 @@ class MessagesListScreen extends React.Component {
         }
     }
 
+    deleteHistory = async () => {
+        this.setState({ deleteIcon: false, deleteSuccessful: true })
+        const action = { type: 'DELETE_MESSAGE_HISTORY', value: this.props.currentGroup }
+        this.props.dispatch(action)
+        setTimeout(() => {
+            this.setState({ deleteSuccessful: false, deleteIcon: true })
+        }, 1000)
+
+    }
+
+    renderDeleteHistory = () => {
+        return (
+            <View style={styles.profil_item}>
+                <Text style={[styles.title, { marginBottom: 10 }]}>{strings('groups_screen.group_options.delete_history')}</Text>
+                {this.state.deleteSuccessful &&
+                    <Icon
+                        name='check'
+                        type='feather'
+                        size={30}
+                        color='green'
+                    />
+                }
+                {this.state.deleteIcon &&
+                    <Icon
+                        name='trash'
+                        type='evilicon'
+                        color='#517fa4'
+                        size={50}
+                        onPress={() => this.deleteHistory()}
+                    />
+                }
+            </View>
+        )
+    }
+
     render() {
         return (
             <View style={styles.profil_item_containers}>
@@ -173,6 +210,7 @@ class MessagesListScreen extends React.Component {
                     </Text>}
                 {this.state.groupCreatorIsCurrentUser && this._modifyGroupPicture()}
                 {this.renderContactList()}
+                {this.renderDeleteHistory()}
             </View>
         )
     }

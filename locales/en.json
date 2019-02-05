@@ -53,14 +53,15 @@
         },
         "group_options": {
             "messages_list": {
-                "placeholder": "100 characters maximum"
+                "placeholder": "Message"
             },
             "not_creator": "You are not the creator of the group",
             "created_by": "created by",
             "back": "Back",
             "error_title": "Error",
-            "members_of_group": "Membres du groupe",
-            "change_group_image": "Modifier la photo du groupe"
+            "members_of_group": "Members",
+            "change_group_image": "Edit group photo",
+            "delete_history": "Delete history"
         },
         "group_screen": {
             "list_empty": "You have not received any messages yet",

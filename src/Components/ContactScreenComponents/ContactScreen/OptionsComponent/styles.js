@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginRight: 15,
     },
-    nickname: {
+    title: {
         fontWeight: 'bold',
-        paddingLeft: 2
+        textAlign: 'center'
     },
     text_input: {
         flex: 1,

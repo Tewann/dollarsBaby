@@ -107,7 +107,7 @@ function displayMessagesList(state = initialState, action) {
                     timeStamp: action.value.timeStamp,
                 }
                 let newData = [
-                    newMessageSend,  
+                    newMessageSend,
                     ...state.messagesHistory[sendcontactOrGroupIndexInMessageList].data
                 ]
                 nextState = {
@@ -205,25 +205,25 @@ function displayMessagesList(state = initialState, action) {
 
                     //const data = state.messagesHistory[contactOrGroupIndexInMessageList].data
                     //let newData = state.messagesHistory[contactOrGroupIndexInMessageList].data
-/*                     const messageTimeStamp = data.length.timeStamp
-                    if (messageTimeStamp > timeStamp) {
-                        compare = (a, b) => {
-                            const timeStampA = a.timeStamp;
-                            const timeStampB = b.timeStamp;
-                            let comparaison = 0;
-                            if (timeStampA > timeStampB) {
-                                comparaison = 1;
-                            } else if (timeStampA < timeStampB) {
-                                comparaison = -1;
-                            }
-                            return comparaison;
-                        }
-                        console.log('called')
-                        newData.sort(compare)
-                    } */
+                    /*                     const messageTimeStamp = data.length.timeStamp
+                                        if (messageTimeStamp > timeStamp) {
+                                            compare = (a, b) => {
+                                                const timeStampA = a.timeStamp;
+                                                const timeStampB = b.timeStamp;
+                                                let comparaison = 0;
+                                                if (timeStampA > timeStampB) {
+                                                    comparaison = 1;
+                                                } else if (timeStampA < timeStampB) {
+                                                    comparaison = -1;
+                                                }
+                                                return comparaison;
+                                            }
+                                            console.log('called')
+                                            newData.sort(compare)
+                                        } */
                     //newData.unshift(newMessage)
                     let newData = [
-                        newMessage,  
+                        newMessage,
                         ...state.messagesHistory[contactOrGroupIndexInMessageList].data
                     ]
                     state.messagesReceived.push(newMessage)
@@ -261,36 +261,36 @@ function displayMessagesList(state = initialState, action) {
                     contactRequestAcceptedMessage
                 ]
             }
-/*             // grabs timestamp of the message and converts it in YY/MM//DD
-            const acceptedTimeStamp = new Date(action.value.timeStamp)
-            const acceptedMonth = acceptedTimeStamp.getUTCMonth() + 1; //months from 1-12
-            const acceptedDay = acceptedTimeStamp.getDate();
-            const acceptedYear = acceptedTimeStamp.getUTCFullYear();
-            const acceptedDate = acceptedYear + "/" + acceptedMonth + "/" + acceptedDay;
-
-            // Checks index of the day in the message history
-            const acceptedDateIndexInMessageList = state.messagesHistory.findIndex(item => item.title == acceptedDate)
-            nextState = {
-                ...state,
-                messagesHistory: state.messagesHistory.map((content, i) => {
-                    if (i === acceptedDateIndexInMessageList) {
-                        let data = content.data.map((item, i) => {
-                            if (item.id == action.value.id) {
-                                return contactRequestAcceptedMessage
-                            } else {
-                                return item
-                            }
-                        })
-                        const dayWithAccepted = {
-                            title: acceptedDate,
-                            data
-                        }
-                        return dayWithAccepted
-                    } else {
-                        return content
-                    }
-                }),
-            } */
+            /*             // grabs timestamp of the message and converts it in YY/MM//DD
+                        const acceptedTimeStamp = new Date(action.value.timeStamp)
+                        const acceptedMonth = acceptedTimeStamp.getUTCMonth() + 1; //months from 1-12
+                        const acceptedDay = acceptedTimeStamp.getDate();
+                        const acceptedYear = acceptedTimeStamp.getUTCFullYear();
+                        const acceptedDate = acceptedYear + "/" + acceptedMonth + "/" + acceptedDay;
+            
+                        // Checks index of the day in the message history
+                        const acceptedDateIndexInMessageList = state.messagesHistory.findIndex(item => item.title == acceptedDate)
+                        nextState = {
+                            ...state,
+                            messagesHistory: state.messagesHistory.map((content, i) => {
+                                if (i === acceptedDateIndexInMessageList) {
+                                    let data = content.data.map((item, i) => {
+                                        if (item.id == action.value.id) {
+                                            return contactRequestAcceptedMessage
+                                        } else {
+                                            return item
+                                        }
+                                    })
+                                    const dayWithAccepted = {
+                                        title: acceptedDate,
+                                        data
+                                    }
+                                    return dayWithAccepted
+                                } else {
+                                    return content
+                                }
+                            }),
+                        } */
             return nextState || state
 
         case 'CONTACT_REQUEST_DECLINED':
@@ -345,6 +345,26 @@ function displayMessagesList(state = initialState, action) {
                     }
                 }),
             } */
+            return nextState || state
+
+        case 'DELETE_MESSAGE_HISTORY':
+            const contactOrGroupName = action.value
+            if (contactOrGroupName === 'messagesReceived') {
+                nextState = {
+                    ...state,
+                    messagesReceived: []
+                }
+            } else {
+                const contactOrGroupIndex = state.messagesHistory.findIndex(item => item.title === contactOrGroupName)
+                nextState = {
+                    ...state,
+                    messagesHistory: state.messagesHistory.map((content, i) => i === contactOrGroupIndex ? {
+                        title: contactOrGroupName,
+                        data: []
+                    } :
+                        content)
+                }
+            }
             return nextState || state
 
         case 'ADD_CUSTOM_PREDEFINED_MESSAGE':
