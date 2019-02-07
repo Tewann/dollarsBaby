@@ -61,7 +61,9 @@
             "error_title": "Error",
             "members_of_group": "Members",
             "change_group_image": "Edit group photo",
-            "delete_history": "Delete history"
+            "delete_history": "Delete history",
+            "delete_contact": "Supprimer le contact",
+            "delete_contact_confirmation": "Confirmer la suppression du contact"
         },
         "group_screen": {
             "list_empty": "You have not received any messages yet",
@@ -238,6 +240,9 @@
                 "continue_without": "Continue without a profile picture"
             }
         }
+    },
+    "functions": {
+        "contact_deleted_alert_title": "Contact deleted"
     },
     "reducers": {
         "where": "Where are you ?",

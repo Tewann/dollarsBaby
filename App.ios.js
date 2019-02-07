@@ -8,6 +8,7 @@ import { SafeAreaView } from 'react-navigation'
 import { Keyboard, AppState } from 'react-native'
 import AppContainer from './src/Navigation/Navigation'
 import BannerComponent from './src/Components/BannerComponent/BannerComponent'
+import NavigatorService from './src/Services/navigator'
 
 // Correct release unitID
 //const unitID = 'ca-app-pub-4868408770331668/3443399374'
@@ -58,8 +59,12 @@ export default class App extends React.Component {
       <Provider store={Store}>
         <PersistGate persistor={persistor}>
           <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }} forceInset={{ top: 'never' }}>
-            <AppContainer />
-            <BannerComponent unitID={unitID}/>
+            <AppContainer
+              ref={navigatorRef => {
+                NavigatorService.setContainer(navigatorRef);
+              }}
+            />
+            <BannerComponent unitID={unitID} />
           </SafeAreaView>
         </PersistGate>
       </Provider>

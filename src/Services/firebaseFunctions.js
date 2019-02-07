@@ -1,7 +1,8 @@
 import firebase from 'react-native-firebase'
-import { Platform, AppState } from 'react-native'
+import { Platform, AppState, Alert } from 'react-native'
 import Store from '../Store/configureStore'
-
+import NavigationService from '../Services/navigator'
+import { strings } from '../i18n'
 
 // --------------------------------
 // ---------USER Functions---------
@@ -418,30 +419,46 @@ export const fetchContacts = (userName) => {
             .doc(userPath)
             .collection('contactList')
             .onSnapshot((snapshot) => {
-                snapshot.forEach(doc => {
-                    firebase.firestore()
-                        .collection('Users')
-                        .doc(doc.get('name'))
-                        .onSnapshot((doc) => {
-                            const action = { type: 'CONTACT_LIST_UPDATED', value: doc }
-                            dispatch(action)
-                        })
-
-                    // grabbing eventual nickname
-                    const ref = firebase.firestore().collection('Users').doc(userPath).collection('contactList')
-                    const contactName = doc.get('name')
-                    ref.where('name', "==", contactName)
-                        .get()
-                        .then((doc) => {
-                            const contactNickname = doc.docs[0]._data.nickname != undefined || null ? doc.docs[0]._data.nickname : null
-                            if (contactNickname != null) {
-                                const action = { type: 'MODIFY_CONTACT_NICKNAME', value: [contactName, contactNickname] }
+                snapshot.forEach(async doc => {
+                    if (doc.get('delete') === true) {
+                        NavigationService.navigate('ContactsList')
+                        Alert.alert(
+                            strings('functions.contact_deleted_alert_title'),
+                            `${doc.get('name')}`
+                        )
+                        // Set timeout to let time for the app to navigate to contact list screen, otherwise app crashes because can't find photo in contact screen header
+                        setTimeout(() => {
+                            const deleteContactAction = { type: 'DELETE_CONTACT', value: doc }
+                            dispatch(deleteContactAction)
+                            const deleteContactMessagesAction = { type: 'DELETE_MESSAGE_HISTORY', value: doc.get('name') }
+                            dispatch(deleteContactMessagesAction)
+                            firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).delete()
+                        }, 1000)
+                    } else {
+                        firebase.firestore()
+                            .collection('Users')
+                            .doc(doc.get('name'))
+                            .onSnapshot((doc) => {
+                                const action = { type: 'CONTACT_LIST_UPDATED', value: doc }
                                 dispatch(action)
-                            }
-                        })
-                        .catch(error => {
-                            reject(error)
-                        })
+                            })
+
+                        // grabbing eventual nickname
+                        const ref = firebase.firestore().collection('Users').doc(userPath).collection('contactList')
+                        const contactName = doc.get('name')
+                        ref.where('name', "==", contactName)
+                            .get()
+                            .then((doc) => {
+                                const contactNickname = doc.docs[0]._data.nickname != undefined || null ? doc.docs[0]._data.nickname : null
+                                if (contactNickname != null) {
+                                    const action = { type: 'MODIFY_CONTACT_NICKNAME', value: [contactName, contactNickname] }
+                                    dispatch(action)
+                                }
+                            })
+                            .catch(error => {
+                                reject(error)
+                            })
+                    }
                 })
             })
 
@@ -654,5 +671,43 @@ export const setUploadedSoundDestination = async (userName, soundName, useSoundF
             .catch(err => {
                 reject(err)
             })
+    })
+}
+
+/**
+ * Delete Contact
+ */
+export const deleteContact = async (currentUser, contactName) => {
+    new Promise(async (resolve, reject) => {
+        await firebase
+            .firestore()
+            .collection('Users')
+            .doc(currentUser)
+            .collection('contactList')
+            .where('name', '==', contactName)
+            .get()
+            .then(docs => {
+                firebase.firestore().doc(docs.docs[0].ref._documentPath._parts.join('/').toString()).set({
+                    delete: true
+                }, { merge: true })
+            })
+            .catch(err => reject(err))
+        if (currentUser !== contactName) {
+            await firebase
+                .firestore()
+                .collection('Users')
+                .doc(contactName)
+                .collection('contactList')
+                .where('name', '==', currentUser)
+                .get()
+                .then(docs => {
+                    firebase.firestore().doc(docs.docs[0].ref._documentPath._parts.join('/').toString()).set({
+                        delete: true
+                    }, { merge: true })
+
+                })
+                .catch(err => reject(err))
+        }
+        resolve()
     })
 }

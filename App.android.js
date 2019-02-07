@@ -7,7 +7,7 @@ import firebase from 'react-native-firebase'
 import { Keyboard, AppState } from 'react-native'
 import AppContainer from './src/Navigation/Navigation'
 import BannerComponent from './src/Components/BannerComponent/BannerComponent'
-
+import NavigatorService from './src/Services/navigator'
 
 
 // production unit ID
@@ -61,7 +61,11 @@ export default class App extends React.Component {
     return (
       <Provider store={Store}>
         <PersistGate persistor={persistor}>
-          <AppContainer />
+          <AppContainer
+            ref={navigatorRef => {
+              NavigatorService.setContainer(navigatorRef);
+            }}
+          />
           <BannerComponent unitID={unitID} />
         </PersistGate>
       </Provider>

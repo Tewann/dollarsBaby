@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import { strings } from '../../../../i18n'
 
 import { Icon } from 'react-native-elements'
-import { modifyNicknameToDatabase } from '../../../../Services/firebaseFunctions'
+import { modifyNicknameToDatabase, deleteContact } from '../../../../Services/firebaseFunctions'
 
 
 class MessagesListScreen extends React.Component {
@@ -25,7 +25,10 @@ class MessagesListScreen extends React.Component {
             loading: false,
             validate: false,
             deleteIcon: true,
-            deleteSuccessful: false
+            deleteSuccessful: false,
+            deleteContactIcon: true,
+            deleteContactConfirmation: false,
+            deleteContactLoading: false
         }
     }
 
@@ -130,6 +133,41 @@ class MessagesListScreen extends React.Component {
             </View>
         )
     }
+
+    renderDeleteContact = () => {
+        return (
+            <View style={styles.profil_item}>
+                {this.state.deleteContactLoading && <ActivityIndicator />}
+                {this.state.deleteContactConfirmation &&
+                    <View>
+                        <Text style={[styles.title, { marginBottom: 10 }]}>{strings('groups_screen.group_options.delete_contact_confirmation')}</Text>
+                        <Icon
+                            name='trash'
+                            type='evilicon'
+                            color='#517fa4'
+                            size={50}
+                            onPress={() => {
+                                this.setState({ deleteContactConfirmation: false, deleteContactLoading: true})
+                                deleteContact(this.props.currentUser, this.props.currentDisplayedContact)
+                            }}
+                        />
+                    </View>
+                }
+                {this.state.deleteContactIcon &&
+                    <View>
+                        <Text style={[styles.title, { marginBottom: 10 }]}>{strings('groups_screen.group_options.delete_contact')}</Text>
+                        <Icon
+                            name='trash'
+                            type='evilicon'
+                            color='#517fa4'
+                            size={50}
+                            onPress={() => this.setState({ deleteContactIcon: false, deleteContactConfirmation: true })}
+                        />
+                    </View>
+                }
+            </View>
+        )
+    }
     render() {
         return (
             <View style={styles.profil_item_containers}>
@@ -145,6 +183,7 @@ class MessagesListScreen extends React.Component {
                     </View>
                 </View>
                 {this.renderDeleteHistory()}
+                {this.renderDeleteContact()}
             </View>
         )
     }

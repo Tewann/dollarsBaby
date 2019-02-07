@@ -141,7 +141,11 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
             additional_message: data.additional_message,
             type: 'received'
         })
-            .then()
+            .then(() => {
+            snapshot.ref.delete()
+                .then()
+                .catch(err => console.log('error : ', err));
+        })
             .catch(err => console.log('error : ', err));
     });
     return;
@@ -222,7 +226,7 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     let contactName;
     if (data.sendBy !== undefined) {
         // Sendby is for groups messages
-        contactName = `${data.title} / ${data.sendBy}`;
+        contactName = `${data.sendBy} @ ${data.title}`;
     }
     else {
         contactName = yield parent.collection('contactList')

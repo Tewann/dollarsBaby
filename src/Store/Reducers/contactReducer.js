@@ -32,7 +32,19 @@ export const contactManagment = (state = initialState, action) => {
                     nickname: action.value[1]
                 } :
                     content)
-            }  
+            }
+            return nextState || state
+
+        case 'DELETE_CONTACT':
+            const dbContactName = action.value.get('name')
+            const deletedContactIndex = state.contactList.findIndex(item => item.name === dbContactName)
+            const deleteContactList = state.contactList.filter((value, index, arr) => {
+                return index !== deletedContactIndex;
+            });
+            nextState = {
+                ...state,
+                contactList: deleteContactList
+            }
             return nextState || state
 
         case 'CONTACT_LIST_UPDATED':
