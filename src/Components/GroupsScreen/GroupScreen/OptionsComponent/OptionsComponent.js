@@ -18,7 +18,7 @@ import GroupContactItem from './GroupContactItem/GroupContactItem'
 import HeaderGroupContactList from './HeaderGroupContactList/HeaderGroupContactList'
 
 import { Icon } from 'react-native-elements'
-import { uploadGroupImage, addContactToPrivateGroup } from '../../../../Services/firebaseGroupFunctions'
+import { uploadGroupImage, addContactToPrivateGroup, leaveGroup } from '../../../../Services/firebaseGroupFunctions'
 
 const options = { quality: 0.1 };
 
@@ -33,7 +33,10 @@ class MessagesListScreen extends React.Component {
             groupNameIndex: null,
             groupCreatorIsCurrentUser: false,
             deleteIcon: true,
-            deleteSuccessful: false
+            deleteSuccessful: false,
+            leaveGroupConfirmation: false,
+            leaveGroupIcon: true,
+            leaveGroupLoading: false,
         }
     }
 
@@ -201,6 +204,44 @@ class MessagesListScreen extends React.Component {
         )
     }
 
+    renderLeaveGroup = () => {
+        return (
+            <View style={styles.profil_item}>
+                {this.state.leaveGroupLoading && <ActivityIndicator />}
+                {this.state.leaveGroupConfirmation &&
+                    <View>
+                        <Text style={[styles.title, { marginBottom: 10 }]}>{strings('groups_screen.group_options.leave_group_confirmation')}</Text>
+                        <Icon
+                            name='exit-to-app'
+                            type='materialcommunity'
+                            color='#517fa4'
+                            size={35}
+                            onPress={() => {
+                                this.setState({ leaveGroupConfirmation: false, leaveGroupLoading: true })
+                                console.log(this.props.currentGroup)
+                                console.log(this.props.currentUser)
+                                console.log(this.state.groupType)
+                                leaveGroup(this.props.currentUser, this.props.currentGroup, this.state.groupType)
+                            }}
+                        />
+                    </View>
+                }
+                {this.state.leaveGroupIcon &&
+                    <View>
+                        <Text style={[styles.title, { marginBottom: 10 }]}>{strings('groups_screen.group_options.leave_group')}</Text>
+                        <Icon
+                            name='exit-to-app'
+                            type='materialcommunity'
+                            color='#517fa4'
+                            size={35}
+                            onPress={() => this.setState({ leaveGroupIcon: false, leaveGroupConfirmation: true })}
+                        />
+                    </View>
+                }
+            </View>
+        )
+    }
+
     render() {
         return (
             <View style={styles.profil_item_containers}>
@@ -211,6 +252,7 @@ class MessagesListScreen extends React.Component {
                 {this.state.groupCreatorIsCurrentUser && this._modifyGroupPicture()}
                 {this.renderContactList()}
                 {this.renderDeleteHistory()}
+                {this.renderLeaveGroup()}
             </View>
         )
     }

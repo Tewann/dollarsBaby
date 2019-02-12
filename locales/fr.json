@@ -63,7 +63,9 @@
             "change_group_image": "Modifier la photo du groupe",
             "delete_history": "Supprimer l'historique",
             "delete_contact": "Supprimer le contact",
-            "delete_contact_confirmation": "Confirmer la suppression du contact"
+            "delete_contact_confirmation": "Confirmer la suppression du contact",
+            "leave_group_confirmation": "Confirmer la sortie du groupe",
+            "leave_group": "Quitter le groupe"
         },
         "group_screen": {
             "list_empty": "Vous n'avez pas encore reçu de messages",
@@ -242,7 +244,8 @@
         }
     },
     "functions": {
-        "contact_deleted_alert_title": "Contact supprimé"
+        "contact_deleted_alert_title": "Contact supprimé",
+        "group_left_alert_title": "Groupe quitté"
     },
     "reducers": {
         "where": "T'es où ?",

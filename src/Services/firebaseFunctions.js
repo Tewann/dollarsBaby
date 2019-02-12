@@ -515,15 +515,31 @@ export const fetchGroups = (userName) => {
             .collection('Groups')
             .onSnapshot((snapshot) => {
                 snapshot.forEach(doc => {
-                    const groupType = doc.get('type') == 'public' ? 'Public_Groups' : 'Private_Groups'
-                    firebase.firestore()
-                        .collection(groupType)
-                        .doc(doc.get('name'))
-                        .onSnapshot((doc) => {
-                            const actionType = doc.get('type') == 'public' ? 'PUBLIC_GROUP_UPDATE' : 'PRIVATE_GROUP_UPDATE'
-                            const action = { type: actionType, value: doc }
-                            dispatch(action)
-                        })
+                    if (doc.get('delete') === true) {
+                        NavigationService.navigate('GroupsList')
+                        Alert.alert(
+                            strings('functions.group_left_alert_title'),
+                            `${doc.get('name')}`
+                        )
+                        // Set timeout to let time for the app to navigate to group list screen, otherwise app crashes because can't find photo in contact screen header
+                        setTimeout(() => {
+                            const deleteGroupAction = { type: 'DELETE_GROUP', value: doc }
+                            dispatch(deleteGroupAction)
+                            const deleteContactMessagesAction = { type: 'DELETE_MESSAGE_HISTORY', value: doc.get('name') }
+                            dispatch(deleteContactMessagesAction)
+                            firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).delete()
+                        }, 1000)
+                    } else {
+                        const groupType = doc.get('type') == 'public' ? 'Public_Groups' : 'Private_Groups'
+                        firebase.firestore()
+                            .collection(groupType)
+                            .doc(doc.get('name'))
+                            .onSnapshot((doc) => {
+                                const actionType = doc.get('type') == 'public' ? 'PUBLIC_GROUP_UPDATE' : 'PRIVATE_GROUP_UPDATE'
+                                const action = { type: actionType, value: doc }
+                                dispatch(action)
+                            })
+                    }
                 })
             })
         // Listener for AppState : when app is in background or killed => unsubscribe from onSnapshot

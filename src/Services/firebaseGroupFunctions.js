@@ -67,7 +67,7 @@ export const joinPublicGroupInFirestore = (groupName, username) =>
             .add({
               name: username
             })
-            .then(() => {})
+            .then(() => { })
             .catch(err => reject(err));
 
           // 2 - Adding group name and type to user's profil's group collection
@@ -244,7 +244,7 @@ export const retrivingContacts = async (currentGroup) => {
   let contacts = []
   let newId = 1
 
-  const grabbingContacts = await firebase
+  await firebase
     .firestore()
     .collection('Private_Groups')
     .doc(currentGroup)
@@ -260,13 +260,11 @@ export const retrivingContacts = async (currentGroup) => {
       })
     })
   const action = {
-    type: 'GROUP_CONTACTS_LIST',
+    type: 'PRIVATE_GROUP_CONTACTS_LIST',
     value: { currentGroup, contacts }
   }
   Store.dispatch(action)
-
-  return contacts
-} 
+}
 
 /**
  * Search names of the groups for the add group screen
@@ -275,53 +273,127 @@ export const retrivingContacts = async (currentGroup) => {
  * 
  * Function to move to a server or maybe optimized ??
  */
-export const searchPublicGroupInDatabase = async(search) => {
+export const searchPublicGroupInDatabase = async (search) => {
   const ref = firebase.firestore().collection('Public_Groups')
   let results = []
   // Query for exact match bewteen 'search' and name of a group
   await ref
-      .where('GroupName', '==', search)
-      .get()
-      .then(querySnapshot => {
-          if (!querySnapshot.empty) {
-              // if successful, return search
-              results = [{ id: 0, name: search }]
-              return
-          } else {
-              return
-          }
-      })
-      .catch(err => {
-          return 'searchPublicGroupInDatabase error : ', err
-      })
+    .where('GroupName', '==', search)
+    .get()
+    .then(querySnapshot => {
+      if (!querySnapshot.empty) {
+        // if successful, return search
+        results = [{ id: 0, name: search }]
+        return
+      } else {
+        return
+      }
+    })
+    .catch(err => {
+      return 'searchPublicGroupInDatabase error : ', err
+    })
 
   // If previous query successful, return results, end the function
   if (results.length != 0) {
-      return results
+    return results
   } else if (search.length > 2) {
-      // if search length > 2 chars (avoid query for one, two or three letters), 
-      // Query for names of groups starting with the search
-      await ref
-          .orderBy('GroupName')
-          .startAfter(search)
-          .limit(10)
-          .get()
-          .then(querySnapshot => {
-              querySnapshot.forEach(doc => {
-                  const groupName = doc.get('GroupName')
-                  if (groupName.charAt(0) === search.charAt(0)) {
-                      // if first letter of the username == first letter of the search
-                      // push the name to the result array
-                      const newId = results.length + 1
-                      const newPotentialGroup = { id: newId, name: groupName }
-                      results = [...results, newPotentialGroup]
-                  }
-                  return
-              })
-          })
-          .catch(err => {
-              return 'searchPublicGroupInDatabase error : ', err
-          })
-      return results
+    // if search length > 2 chars (avoid query for one, two or three letters), 
+    // Query for names of groups starting with the search
+    await ref
+      .orderBy('GroupName')
+      .startAfter(search)
+      .limit(10)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          const groupName = doc.get('GroupName')
+          if (groupName.charAt(0) === search.charAt(0)) {
+            // if first letter of the username == first letter of the search
+            // push the name to the result array
+            const newId = results.length + 1
+            const newPotentialGroup = { id: newId, name: groupName }
+            results = [...results, newPotentialGroup]
+          }
+          return
+        })
+      })
+      .catch(err => {
+        return 'searchPublicGroupInDatabase error : ', err
+      })
+    return results
   }
+}
+
+/**
+ * Leave group
+ */
+export const leaveGroup = async (currentUser, groupName, groupType) => {
+  new Promise(async (resolve, reject) => {
+    const groupCollection = groupType === 'public' ? 'Public_Groups' : 'Private_Groups'
+    // Remove user from the members of the group
+    await firebase
+      .firestore()
+      .collection(groupCollection)
+      .doc(groupName)
+      .collection('Members')
+      .where('name', '==', currentUser)
+      .get()
+      .then(docs => {
+        firebase.firestore().doc(docs.docs[0].ref._documentPath._parts.join('/').toString()).delete()
+      })
+      .catch(err => reject(err))
+    // Remove group from the user list
+    await firebase
+      .firestore()
+      .collection('Users')
+      .doc(currentUser)
+      .collection('Groups')
+      .where('name', '==', groupName)
+      .get()
+      .then(docs => {
+        docs.forEach(doc => {
+          if (doc.get('type') === groupType) {
+            firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).set({
+              delete: true
+            }, { merge: true })
+          }
+        })
+      })
+      .catch(err => reject(err))
+
+    // Grabs first member of the group list for next await
+    const firstMember = await firebase.firestore().collection(groupCollection).doc(groupName).collection('Members').get()
+      .then(docs => {
+        if (!docs.empty) {
+          return docs.docs[0].get('name')
+        } else {
+          return null
+        }
+      })
+
+    // If the group is empty delete the group
+    if (firstMember === null) {
+      firebase
+        .firestore()
+        .collection(groupCollection)
+        .doc(groupName)
+        .delete()
+    } else {
+      // Else checks if the user is the creator of the group, if yes change creator
+      firebase
+        .firestore()
+        .collection(groupCollection)
+        .doc(groupName)
+        .get()
+        .then(doc => {
+          if (doc.get('creator') === currentUser) {
+            firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).set({
+              creator: firstMember
+            }, { merge: true })
+          }
+        })
+        .catch(err => reject(err))
+    }
+    resolve()
+  })
 }

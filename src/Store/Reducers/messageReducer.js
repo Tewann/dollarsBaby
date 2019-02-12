@@ -349,6 +349,7 @@ function displayMessagesList(state = initialState, action) {
 
         case 'DELETE_MESSAGE_HISTORY':
             const contactOrGroupName = action.value
+            // messagesReceived = delete all history
             if (contactOrGroupName === 'messagesReceived') {
                 nextState = {
                     ...state,

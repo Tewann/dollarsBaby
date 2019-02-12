@@ -62,8 +62,10 @@
             "members_of_group": "Members",
             "change_group_image": "Edit group photo",
             "delete_history": "Delete history",
-            "delete_contact": "Supprimer le contact",
-            "delete_contact_confirmation": "Confirmer la suppression du contact"
+            "delete_contact": "Delete contact",
+            "delete_contact_confirmation": "Confirm",
+            "leave_group_confirmation": "Confirm",
+            "leave_group": "Leave group"
         },
         "group_screen": {
             "list_empty": "You have not received any messages yet",
@@ -242,7 +244,8 @@
         }
     },
     "functions": {
-        "contact_deleted_alert_title": "Contact deleted"
+        "contact_deleted_alert_title": "Contact deleted",
+        "group_left_alert_title": "Group left"
     },
     "reducers": {
         "where": "Where are you ?",
