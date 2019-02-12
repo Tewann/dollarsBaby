@@ -2,7 +2,7 @@
 // Login Screen
 
 import React from 'react'
-import { Text, TextInput, View, TouchableOpacity } from 'react-native'
+import { Text, TextInput, View, TouchableOpacity, Platform } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
@@ -22,7 +22,9 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
-        SplashScreen.hide();
+        if (Platform.OS === 'android') {
+             SplashScreen.hide();
+        }
     }
 
     handleLogin = () => {

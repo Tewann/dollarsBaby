@@ -70,7 +70,8 @@ const DrawerButton = ({ navigation }) => {
 
 const CustomDrawerContentComponent = props => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#07416b' }}>
+    /*<SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>*/
+    <View>
       <LinearGradient
         colors={['#07416b', '#88b097', '#88b097', '#07416b']}
         start={{ x: 0, y: 0 }}
@@ -83,13 +84,15 @@ const CustomDrawerContentComponent = props => {
         onPress={() => props.navigation.navigate("ProfilScreen")}
         style={styles.CustomDrawerItemContainer}
       >
-        <EvilIcons
-          name="user"
-          type="EvilIcons"
-          size={30}
-          color="black"
-          style={styles.CustomDrawerIcon}
-        />
+        <View style={styles.CustomDrawerIcon}>
+          <EvilIcons
+            name="user"
+            type="EvilIcons"
+            size={30}
+            color="black"
+          //style={styles.CustomDrawerIcon}
+          />
+        </View>
         <Text style={styles.CustomDrawerText}>{strings("navigation.profil")}</Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -149,7 +152,8 @@ const CustomDrawerContentComponent = props => {
         </View>
         <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>{strings('navigation.disconnect')}</Text>
       </TouchableOpacity>
-    </SafeAreaView >
+    </View>
+    /* </SafeAreaView >*/
   );
 };
 
@@ -242,7 +246,6 @@ const MainStackNavigator = createStackNavigator(
     ContactScreen: {
       screen: ContactScreen,
       navigationOptions: ({ navigation }) => ({
-        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('GroupsList')} />,
         headerTitle:
           <HeaderComponent />,
       })
@@ -250,6 +253,7 @@ const MainStackNavigator = createStackNavigator(
     GroupScreen: {
       screen: GroupScreen,
       navigationOptions: ({ navigation }) => ({
+        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('GroupsList')} />,
         headerTitle:
           <HeaderForGroupScreen />,
       })
