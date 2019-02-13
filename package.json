@@ -5,8 +5,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
-    "babel-core": "7.0.0-bridge.0",
     "@expo/vector-icons": "^6.3.1",
+    "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "jest": "23.6.0",
     "jest-react-native": "^18.0.0",
@@ -29,7 +29,7 @@
     "react-native": "0.57.5",
     "react-native-cached-image": "github:fungilation/react-native-cached-image",
     "react-native-code-push": "^5.4.2",
-    "react-native-elements": "^0.19.1",
+    "react-native-elements": "^1.0.0",
     "react-native-firebase": "^5.1.0",
     "react-native-gesture-handler": "^1.0.12",
     "react-native-i18n": "^2.0.15",

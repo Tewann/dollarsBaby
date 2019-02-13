@@ -152,7 +152,7 @@ class MessagesListScreen extends React.Component {
     }
 
     renderContactList = () => {
-        if (this.state.groupType === 'private') {
+        if (this.state.groupType === 'private' ) {
             return (
                 <View style={styles.profil_item}>
                     <Text style={styles.title}>{strings('groups_screen.group_options.members_of_group')}</Text>
@@ -162,7 +162,7 @@ class MessagesListScreen extends React.Component {
                         keyboardShouldPersistTaps={'handled'}
                         horizontal={true}
                         keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) => <GroupContactItem contact={item} />}
+                        renderItem={({ item }) => <GroupContactItem contact={item} group={this.props.currentGroup} type={this.state.groupType} />}
                     />
                 </View>
             )
@@ -218,9 +218,6 @@ class MessagesListScreen extends React.Component {
                             size={35}
                             onPress={() => {
                                 this.setState({ leaveGroupConfirmation: false, leaveGroupLoading: true })
-                                console.log(this.props.currentGroup)
-                                console.log(this.props.currentUser)
-                                console.log(this.state.groupType)
                                 leaveGroup(this.props.currentUser, this.props.currentGroup, this.state.groupType)
                             }}
                         />

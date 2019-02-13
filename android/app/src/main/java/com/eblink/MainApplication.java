@@ -3,6 +3,7 @@ package com.eblink;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
@@ -10,7 +11,6 @@ import com.BV.LinearGradient.LinearGradientPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.imagepicker.ImagePickerPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.storage.RNFirebaseStoragePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;

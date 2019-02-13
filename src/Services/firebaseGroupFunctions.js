@@ -264,6 +264,7 @@ export const retrivingContacts = async (currentGroup) => {
     value: { currentGroup, contacts }
   }
   Store.dispatch(action)
+  return
 }
 
 /**
