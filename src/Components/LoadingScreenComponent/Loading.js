@@ -41,6 +41,8 @@ class Loading extends React.Component {
         this.props.dispatch(action)
         const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
         this.props.dispatch(contactScreenToList)
+        const displaysAdsAction = { type: 'AD_BANNER', value: { value: true, event: 'reset' } }
+        this.props.dispatch(displaysAdsAction)
 
         this._checkCurrentAppVersion()
 

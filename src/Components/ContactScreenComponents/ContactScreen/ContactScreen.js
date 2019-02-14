@@ -17,12 +17,12 @@ class ContactScreen extends React.Component {
     componentWillMount = () => {
         const action = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'conversation' }
         this.props.dispatch(action)
-        const hideAdsAction = { type: 'AD_BANNER', value: false}
+        const hideAdsAction = { type: 'AD_BANNER', value: { value: false, event: 'screen' } }
         this.props.dispatch(hideAdsAction)
     }
 
     componentWillUnmount = () => {
-        const displaysAdsAction = { type: 'AD_BANNER', value: true}
+        const displaysAdsAction = { type: 'AD_BANNER', value: { value: true, event: null } }
         this.props.dispatch(displaysAdsAction)
     }
     _displayContactsList = () => {

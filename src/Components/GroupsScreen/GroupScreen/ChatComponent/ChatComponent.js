@@ -37,13 +37,13 @@ class ChatComponent extends React.Component {
         const groupCreatorIsCurrentUser = this.props.groupList[groupNameIndex].creator === this.props.currentUser.name
         this.setState({ groupType: groupType, groupNameIndex: groupNameIndex, groupCreatorIsCurrentUser: groupCreatorIsCurrentUser })
         if (groupType === 'private' || groupCreatorIsCurrentUser) {
-            const hideAdsAction = { type: 'AD_BANNER', value: false}
+            const hideAdsAction = { type: 'AD_BANNER', value: { value: false, event: 'screen' } }
             this.props.dispatch(hideAdsAction)
         }
     }
 
     componentWillUnmount = () => {
-        const displaysAdsAction = { type: 'AD_BANNER', value: true}
+        const displaysAdsAction = { type: 'AD_BANNER', value: { value: true, event: null } }
         this.props.dispatch(displaysAdsAction)
     }
 

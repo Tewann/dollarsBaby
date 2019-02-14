@@ -44,12 +44,12 @@ export default class App extends React.Component {
   }
 
   _keyboardDidShow = () => {
-    const action = { type: 'AD_BANNER', value: false }
+    const action = { type: 'AD_BANNER', value: { value: false, event: 'keyboard' } }
     Store.dispatch(action)
   }
 
   _keyboardDidHide = () => {
-    const action = { type: 'AD_BANNER', value: true }
+    const action = { type: 'AD_BANNER', value: { value: true, event: 'keyboard' } }
     Store.dispatch(action)
   }
 

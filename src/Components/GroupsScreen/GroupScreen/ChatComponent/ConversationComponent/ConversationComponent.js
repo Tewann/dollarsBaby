@@ -9,11 +9,10 @@
 */
 
 import React from 'react'
-import { View, FlatList, Text } from 'react-native'
+import { View, FlatList, Text, ScrollView } from 'react-native'
 import styles from './styles'
 
 import DisplayMessage from './DisplayMessage/DisplayMessage'
-//import CleanHistoryComponent from './CleanHistory/CleanHistoryComponent'
 
 import { connect } from 'react-redux'
 import { strings } from '../../../../../i18n'
@@ -58,10 +57,10 @@ class ConversationComponent extends React.Component {
                 }
                 {
                     this.state.groupIndexInMessageHistory === -1 &&
-                    <View style={{ flex: 1 }}>
+                    <ScrollView >
                         <Text style={styles.list_empty}>{strings('groups_screen.group_screen.list_empty')}</Text>
                         <Text style={styles.list_empty2}>{strings('groups_screen.group_screen.click_on_avatar')}</Text>
-                    </View>
+                    </ScrollView>
                 }
             </View>
         )
