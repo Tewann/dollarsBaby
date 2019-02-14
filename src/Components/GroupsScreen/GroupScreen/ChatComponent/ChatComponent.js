@@ -24,19 +24,19 @@ class ChatComponent extends React.Component {
         this.state = {
             additionnalMessage: "",
             errorMessage: null,
-            groupType: null,
-            groupNameIndex: null,
+            //groupType: null,
+           // groupNameIndex: null,
             groupCreatorIsCurrentUser: false,
         }
     }
 
     componentWillMount = () => {
-        const groupNameIndex = this.props.groupList.findIndex(item =>
+/*         const groupNameIndex = this.props.groupList.findIndex(item =>
             item.name === this.props.currentGroup)
-        const groupType = this.props.groupList[groupNameIndex].type
-        const groupCreatorIsCurrentUser = this.props.groupList[groupNameIndex].creator === this.props.currentUser.name
-        this.setState({ groupType: groupType, groupNameIndex: groupNameIndex, groupCreatorIsCurrentUser: groupCreatorIsCurrentUser })
-        if (groupType === 'private' || groupCreatorIsCurrentUser) {
+        const groupType = this.props.groupList[this.props.].type */
+        const groupCreatorIsCurrentUser = this.props.groupList[this.props.currentDisplayedGroupIndex].creator === this.props.currentUser.name
+        this.setState({ /* groupType: groupType, groupNameIndex: groupNameIndex,  */groupCreatorIsCurrentUser: groupCreatorIsCurrentUser })
+        if (this.props.currentDisplayedGroupType === 'private' || groupCreatorIsCurrentUser) {
             const hideAdsAction = { type: 'AD_BANNER', value: { value: false, event: 'screen' } }
             this.props.dispatch(hideAdsAction)
         }
@@ -70,10 +70,13 @@ class ChatComponent extends React.Component {
         const additionnal_message = this.state.additionnalMessage
         const id = `${currentUser}_${timeStamp}`
         const type = 'send'
+        const groupType = this.props.currentDisplayedGroupType
         // invok function
+        console.log(predefined_message)
+        console.log(sound)
         const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
         httpsCallable({
-            groupType: this.props.type,
+            groupType: groupType,
             groupName: this.props.currentGroup,
             sendBy: this.props.currentUser.name,
             predefined_message: predefined_message,
@@ -87,7 +90,7 @@ class ChatComponent extends React.Component {
                 // updated redux store
                 const type = 'send'
                 const contact = this.props.currentGroup
-                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
+                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type, senderType: groupType } }
                 this.props.dispatch(action)
             })
             .catch(httpsError => console.log('httpsCallable err' + httpsError))
@@ -111,7 +114,7 @@ class ChatComponent extends React.Component {
     }
 
     displayPredefinedMessageList = () => {
-        if (this.state.groupType === 'private' || this.state.groupCreatorIsCurrentUser) {
+        if (this.props.currentDisplayedGroupType === 'private' || this.state.groupCreatorIsCurrentUser) {
             return (
                 <View>
                     {/* ------ Error messages ------*/}
@@ -178,7 +181,9 @@ const mapStateToProps = (state) => {
         currentGroup: state.groupManagment.currentDisplayedGroup[0],
         currentUser: state.getCurrentUserInformations,
         groupList: state.groupManagment.groupList,
-        currentDisplayedGroupScreen: state.groupManagment.currentDisplayedGroupScreen
+        currentDisplayedGroupScreen: state.groupManagment.currentDisplayedGroupScreen,
+        currentDisplayedGroupType: state.groupManagment.currentDisplayedGroupType,
+        currentDisplayedGroupIndex: state.groupManagment.currentDisplayedGroupIndex,
     }
 }
 

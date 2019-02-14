@@ -15,6 +15,7 @@ class MessageItem extends React.Component {
     render() {
         const message = this.props.message.title
         const sound = this.props.message.sound
+        console.log(this.props.message)
         if (this.props.message.messageFor === 'All' || this.props.message.messageFor === 'Groups') {
             return (
                 <TouchableOpacity

@@ -23,7 +23,13 @@ class GroupItem extends React.Component {
     * Grabs gorup name, calls reducer to change state and navigate to the contact screen
     */
     displayGroupScreen = (groupName) => {
-        const action = { type: 'SWITCH_GROUP_SCREEN', value: groupName }
+        const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.group.name && item.type === this.props.group.type)
+        const action = { type: 'SWITCH_GROUP_SCREEN', value: {
+            groupName: this.props.group.name, 
+            groupType: this.props.group.type,
+            groupNameIndex: groupNameIndex
+        }}
         this.props.dispatch(action)
         this.props.navigation.navigate('GroupScreen')
     }
@@ -73,4 +79,10 @@ class GroupItem extends React.Component {
     }
 }
 
-export default connect()(withNavigation(GroupItem))
+const mapStateToProps = (state) => {
+    return {
+        groupList: state.groupManagment.groupList,
+    }
+}
+
+export default connect(mapStateToProps)(withNavigation(GroupItem))

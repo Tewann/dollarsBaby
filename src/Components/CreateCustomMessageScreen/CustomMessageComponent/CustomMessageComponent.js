@@ -48,7 +48,7 @@ class CustomMessageComponent extends React.Component {
                         fontSize={12}
                         rounded
                         onPress={() => this.deleteMessage()}
-                        icon={{ name: 'delete' }}
+                        icon={{ name: 'delete', color: 'white' }}
                         title={strings('create_custom_message_screen.delete_message')}/>
                 </View>
             </View>

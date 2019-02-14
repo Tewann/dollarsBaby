@@ -29,6 +29,7 @@ export const messageSendToGroup = functions.https.onCall(data => {
         .doc(data.groupName)
         .collection('Messages')
         .add({
+            senderType: data.groupType,
             groupName: data.groupName,
             sendBy: data.sendBy,
             body: body,
@@ -149,7 +150,8 @@ export const addPublicGroupMessageToAllMembers =
                         messageId: data.messageId,
                         predefined_message: data.predefined_message,
                         additional_message: data.additional_message,
-                        type: 'received'
+                        type: 'received',
+                        senderType: data.senderType
                     })
                     .then(() => {
                         snapshot.ref.delete()
@@ -169,6 +171,8 @@ export const addPublicGroupMessageToAllMembers =
 //*
 // When a message is added to a private group 
 // Add message to the message list of each contact of the group
+// Same function as for public group execpt for ''functions.firestore.document()''
+// Can't have only one functions because .document({1}/{groups}/...) {1} can be public group, private group or users
 //*
 export const addPrivateGroupMessageToAllMembers =
     functions.firestore
@@ -206,7 +210,8 @@ export const addPrivateGroupMessageToAllMembers =
                         messageId: data.messageId,
                         predefined_message: data.predefined_message,
                         additional_message: data.additional_message,
-                        type: 'received'
+                        type: 'received',
+                        senderType: data.senderType
                     })
                     .then(() => {
                         snapshot.ref.delete()

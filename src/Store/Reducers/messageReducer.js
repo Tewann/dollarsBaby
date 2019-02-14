@@ -63,7 +63,7 @@ function displayMessagesList(state = initialState, action) {
             const sendDate = sendYear + "/" + sendMonth + "/" + sendDay;
 
             // Checks if the contact or group has already messages
-            const sendcontactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title === action.value.contact)
+            const sendcontactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title === action.value.contact && item.type === action.value.senderType)
 
             // If the conversation doesn't exist
             if (sendcontactOrGroupIndexInMessageList == -1) {
@@ -81,6 +81,7 @@ function displayMessagesList(state = initialState, action) {
                 // Create new contact/group
                 const newConversation = {
                     title: action.value.contact,
+                    type: action.value.senderType,
                     data: [
                         newMessageSend
                     ]
@@ -114,6 +115,7 @@ function displayMessagesList(state = initialState, action) {
                     ...state,
                     messagesHistory: state.messagesHistory.map((content, i) => i === sendcontactOrGroupIndexInMessageList ? {
                         title: action.value.contact,
+                        type: action.value.senderType,
                         data: newData
                     } :
                         content)
@@ -122,7 +124,7 @@ function displayMessagesList(state = initialState, action) {
             return nextState || state
 
         case 'MESSAGE_RECEIVED':
-
+            console.log('message received')
             // get message values from firestore doc
             const contactOrGroup = action.value.get('title')
             const messageReceivedId = action.value.get('messageId')
@@ -131,9 +133,10 @@ function displayMessagesList(state = initialState, action) {
             const timeStamp = action.value.get('timeStamp')
             const type = action.value.get('type')
             const sendBy = action.value.get('sendBy')
+            const senderType = action.value.get('senderType')
             let newId = null
             let newMessage = null
-
+            console.log(action.value)
             // grabs timestamp of the message and converts it in YY/MM//DD
             //const timeStamp = new Date(timeStampForDate)
             /*             const month = timeStamp.getUTCMonth() + 1; //months from 1-12
@@ -143,7 +146,7 @@ function displayMessagesList(state = initialState, action) {
 
 
             // Checks if the contact or group has already messages
-            const contactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title == contactOrGroup)
+            const contactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title == contactOrGroup && item.type == senderType)
             // If the conversation doesn't exist
             if (contactOrGroupIndexInMessageList === -1) {
                 // Sets new message id to 0
@@ -164,6 +167,7 @@ function displayMessagesList(state = initialState, action) {
                 // Create new contact/group
                 const newConversation = {
                     title: contactOrGroup,
+                    type: senderType,
                     data: [
                         newMessage
                     ]
@@ -231,6 +235,7 @@ function displayMessagesList(state = initialState, action) {
                         ...state,
                         messagesHistory: state.messagesHistory.map((content, i) => i === contactOrGroupIndexInMessageList ? {
                             title: contactOrGroup,
+                            type: senderType,
                             data: newData
                         } :
                             content)

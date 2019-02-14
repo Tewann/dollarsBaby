@@ -27,8 +27,7 @@ class HeaderForGroupScreen extends React.Component {
     }
 
     componentWillMount = () => {
-        const groupIndex = this.props.groupList.findIndex(item => item.name === this.props.group)
-        const nickname = this.props.groupList[groupIndex].nickname
+        const nickname = this.props.groupList[this.props.currentDisplayedGroupIndex].nickname
         if (nickname != undefined || null) {
             this.setState({ displayName: nickname })
         }
@@ -45,9 +44,7 @@ class HeaderForGroupScreen extends React.Component {
     }
 
     _renderImage = () => {
-        const groupNameIndex = this.props.groupList.findIndex(item =>
-            item.name === this.props.group)
-        let uri = this.props.groupList[groupNameIndex].photoURL
+        let uri = this.props.groupList[this.props.currentDisplayedGroupIndex].photoURL
         if (uri === null) {
             return (
                 <Image
@@ -69,9 +66,7 @@ class HeaderForGroupScreen extends React.Component {
     }
 
     _renderGroupNameCreator = () => {
-        const groupNameIndex = this.props.groupList.findIndex(item =>
-            item.name === this.props.group)
-        const groupNameCreator = this.props.groupList[groupNameIndex].creator
+        const groupNameCreator = this.props.groupList[this.props.currentDisplayedGroupIndex].creator
         return (
             <Text style={styles.group_name_creator}>{strings('groups_screen.group_options.created_by')} {groupNameCreator}</Text>
         )
@@ -97,7 +92,8 @@ const mapStateToProps = (state) => {
     return {
         groupList: state.groupManagment.groupList,
         group: state.groupManagment.currentDisplayedGroup[0],
-        currentDisplayedGroupScreen: state.groupManagment.currentDisplayedGroupScreen[0]
+        currentDisplayedGroupScreen: state.groupManagment.currentDisplayedGroupScreen[0],
+        currentDisplayedGroupIndex: state.groupManagment.currentDisplayedGroupIndex,
     }
 }
 

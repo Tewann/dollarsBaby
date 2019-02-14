@@ -3,6 +3,8 @@ import { strings } from '../../i18n'
 
 const initialState = {
     currentDisplayedGroup: ['GroupList'],
+    currentDisplayedGroupType: null,
+    currentDisplayedGroupIndex: null,
     currentDisplayedGroupScreen: 'conversation',
     predefinedGroupMessagesList: [
         {
@@ -47,14 +49,14 @@ function groupManagment(state = initialState, action) {
                 ...state,
                 currentDisplayedGroupScreen: [action.value]
             }
-            //console.log(nextState)
-            //console.log(action.value)
             return nextState || state
 
         case 'SWITCH_GROUP_SCREEN':
             nextState = {
                 ...state,
-                currentDisplayedGroup: [action.value]
+                currentDisplayedGroup: [action.value.groupName],
+                currentDisplayedGroupType: action.value.groupType,
+                currentDisplayedGroupIndex: action.value.groupNameIndex
             }
             return nextState || state
 
@@ -71,6 +73,9 @@ function groupManagment(state = initialState, action) {
             }
             return nextState || state
 
+        case 'CHAT_ACTIVATED_CHANGED':
+            
+            return nextState || state
         // ---------------------------
         // ---- PUBLIC GROUPS --------
         // ---------------------------

@@ -26,16 +26,13 @@ class GroupScreen extends React.Component {
 
     // Before component mount, set screen on conversation
     componentWillMount = () => {
-        const action = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'conversation' }
+        const action = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'options' }
         this.props.dispatch(action)
     }
 
     componentDidMount = async () => {
         // Each time a private group is open, check data base and get contacts
-        const groupNameIndex = this.props.groupList.findIndex(item =>
-            item.name === this.props.currentGroup)
-        const groupType = this.props.groupList[groupNameIndex].type
-        if (groupType == 'private') {
+        if (this.props.currentDisplayedGroupType == 'private') {
             retrivingContacts(this.props.currentGroup)
         }
     }
@@ -62,7 +59,8 @@ const mapStateToProps = (state) => {
     return {
         currentGroup: state.groupManagment.currentDisplayedGroup[0],
         groupList: state.groupManagment.groupList,
-        currentDisplayedGroupScreen: state.groupManagment.currentDisplayedGroupScreen
+        currentDisplayedGroupScreen: state.groupManagment.currentDisplayedGroupScreen,
+        currentDisplayedGroupType: state.groupManagment.currentDisplayedGroupType,
     }
 }
 

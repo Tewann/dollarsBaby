@@ -29,6 +29,7 @@ exports.messageSendToGroup = functions.https.onCall(data => {
         .doc(data.groupName)
         .collection('Messages')
         .add({
+        senderType: data.groupType,
         groupName: data.groupName,
         sendBy: data.sendBy,
         body: body,
@@ -139,7 +140,8 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
             messageId: data.messageId,
             predefined_message: data.predefined_message,
             additional_message: data.additional_message,
-            type: 'received'
+            type: 'received',
+            senderType: data.senderType
         })
             .then(() => {
             snapshot.ref.delete()
@@ -190,7 +192,8 @@ exports.addPrivateGroupMessageToAllMembers = functions.firestore
             messageId: data.messageId,
             predefined_message: data.predefined_message,
             additional_message: data.additional_message,
-            type: 'received'
+            type: 'received',
+            senderType: data.senderType
         })
             .then(() => {
             snapshot.ref.delete()

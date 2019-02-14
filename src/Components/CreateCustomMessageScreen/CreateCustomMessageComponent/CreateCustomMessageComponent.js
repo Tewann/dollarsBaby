@@ -49,9 +49,9 @@ class CreateCustomMessageComponent extends React.Component {
         // Sound is a predefined sound of the app
         if (customSound.title !== undefined) {
             const title = this.state.predefinedMessage
-            const sound = customSound.sound
+            const soundName = customSound.sound
             const messageFor = this.state.messageType
-            const action = { type: 'ADD_CUSTOM_PREDEFINED_MESSAGE', value: { title: title, sound: sound, messageFor: messageFor } }
+            const action = { type: 'ADD_CUSTOM_PREDEFINED_MESSAGE', value: { title: title, soundName: soundName, messageFor: messageFor } }
             this.props.dispatch(action)
             // Sound is one that the user has uploaded 
         } else {

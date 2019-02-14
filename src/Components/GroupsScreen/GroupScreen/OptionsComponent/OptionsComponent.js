@@ -7,7 +7,7 @@
 */
 
 import React from 'react'
-import { View, Text, TouchableOpacity, ActivityIndicator, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator, FlatList, Switch } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { strings } from '../../../../i18n'
@@ -29,8 +29,8 @@ class MessagesListScreen extends React.Component {
             errorMessage: null,
             loading: false,
             imageUploaded: false,
-            groupType: null,
-            groupNameIndex: null,
+            //groupType: null,
+            //groupNameIndex: null,
             groupCreatorIsCurrentUser: false,
             deleteIcon: true,
             deleteSuccessful: false,
@@ -41,11 +41,10 @@ class MessagesListScreen extends React.Component {
     }
 
     componentWillMount = () => {
-        const groupNameIndex = this.props.groupList.findIndex(item =>
-            item.name === this.props.currentGroup)
-        const groupType = this.props.groupList[groupNameIndex].type
-        const groupCreatorIsCurrentUser = this.props.groupList[groupNameIndex].creator === this.props.currentUser
-        this.setState({ groupType: groupType, groupNameIndex: groupNameIndex, groupCreatorIsCurrentUser: groupCreatorIsCurrentUser })
+/*         const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.currentGroup && item.type === this.props.currentDisplayedGroupType)
+ */        const groupCreatorIsCurrentUser = this.props.groupList[this.props.currentDisplayedGroupIndex].creator === this.props.currentUser
+        this.setState({ /* groupType: this.props.currentDisplayedGroupType, groupNameIndex: groupNameIndex, */ groupCreatorIsCurrentUser: groupCreatorIsCurrentUser })
     }
 
     _openImageLibrary = () => {
@@ -70,7 +69,7 @@ class MessagesListScreen extends React.Component {
         else {
             this.setState({ loading: true })
             let requireSource = { uri: response.uri }
-            uploadGroupImage(requireSource, this.props.currentGroup, this.state.groupType)
+            uploadGroupImage(requireSource, this.props.currentGroup, this.props.currentDisplayedGroupType)
                 .then((dlLink, PhotoName) => {
                     this.setState({ loading: false, imageUploaded: true })
                     setTimeout(() => {
@@ -152,21 +151,39 @@ class MessagesListScreen extends React.Component {
     }
 
     renderContactList = () => {
-        if (this.state.groupType === 'private' ) {
+        if (this.props.currentDisplayedGroupType === 'private') {
             return (
                 <View style={styles.profil_item}>
                     <Text style={styles.title}>{strings('groups_screen.group_options.members_of_group')}</Text>
                     <FlatList
-                        data={this.props.groupList[this.state.groupNameIndex].contacts}
+                        data={this.props.groupList[this.props.currentDisplayedGroupIndex].contacts}
                         ListHeaderComponent={() => this._renderHeaderForFlatList()}
                         keyboardShouldPersistTaps={'handled'}
                         horizontal={true}
                         keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) => <GroupContactItem contact={item} group={this.props.currentGroup} type={this.state.groupType} />}
+                        renderItem={({ item }) => <GroupContactItem contact={item} group={this.props.currentGroup} type={this.props.currentDisplayedGroupType} />}
                     />
                 </View>
             )
         }
+    }
+
+    toggleSwitch = (value) => {
+        console.log('Switch 1 is: ' + value)
+        const action = { type: 'CHAT_ACTIVATED_CHANGED', value: this.props.currentGroup }
+        this.props.dispatch(action)
+    }
+
+    renderSwitchForChat = () => {
+        console.log()
+        return (
+            <View style={styles.profil_item}>
+                <Switch
+                    onValueChange={(value) => this.toggleSwitch(value)}
+                    value={this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated}
+                />
+            </View>
+        )
     }
 
     deleteHistory = async () => {
@@ -218,7 +235,7 @@ class MessagesListScreen extends React.Component {
                             size={35}
                             onPress={() => {
                                 this.setState({ leaveGroupConfirmation: false, leaveGroupLoading: true })
-                                leaveGroup(this.props.currentUser, this.props.currentGroup, this.state.groupType)
+                                leaveGroup(this.props.currentUser, this.props.currentGroup, this.props.currentDisplayedGroupType)
                             }}
                         />
                     </View>
@@ -247,6 +264,8 @@ class MessagesListScreen extends React.Component {
                         {strings('profil_screen.change_profil_image.error')} : {this.state.errorMessage}
                     </Text>}
                 {this.state.groupCreatorIsCurrentUser && this._modifyGroupPicture()}
+                {(this.state.groupCreatorIsCurrentUser && this.props.currentDisplayedGroupType === 'public')
+                    && this.renderSwitchForChat()}
                 {this.renderContactList()}
                 {this.renderDeleteHistory()}
                 {this.renderLeaveGroup()}
@@ -259,6 +278,8 @@ const mapStateToProps = (state) => {
     return {
         groupList: state.groupManagment.groupList,
         currentGroup: state.groupManagment.currentDisplayedGroup[0],
+        currentDisplayedGroupType: state.groupManagment.currentDisplayedGroupType,
+        currentDisplayedGroupIndex: state.groupManagment.currentDisplayedGroupIndex,
         currentUser: state.getCurrentUserInformations.name,
     }
 }

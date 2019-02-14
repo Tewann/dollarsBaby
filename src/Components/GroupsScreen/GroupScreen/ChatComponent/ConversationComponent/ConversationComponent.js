@@ -28,13 +28,13 @@ class ConversationComponent extends React.Component {
 
     componentWillMount = () => {
         // Gets the contact index in the message history, so flatlist data displays only messages related to the contact       
-        const groupIndex = this.props.messagesHistory.findIndex(item => item.title === this.props.currentGroup)
+        const groupIndex = this.props.messagesHistory.findIndex(item => item.title === this.props.currentGroup && item.type === this.props.currentDisplayedGroupType)
         this.setState({ groupIndexInMessageHistory: groupIndex })
     }
 
     componentWillUpdate() {
         if (!this.state.stoploop) {
-            const groupIndex = this.props.messagesHistory.findIndex(item => item.title === this.props.currentGroup)
+            const groupIndex = this.props.messagesHistory.findIndex(item => item.title === this.props.currentGroup && item.type === this.props.currentDisplayedGroupType)
             this.setState({ groupIndexInMessageHistory: groupIndex, stoploop: true })
         }
     }
@@ -71,6 +71,7 @@ const mapStateToProps = (state) => {
     return {
         messagesHistory: state.displayMessagesList.messagesHistory,
         currentGroup: state.groupManagment.currentDisplayedGroup[0],
+        currentDisplayedGroupType: state.groupManagment.currentDisplayedGroupType,
     }
 }
 
