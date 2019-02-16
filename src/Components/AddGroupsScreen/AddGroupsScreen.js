@@ -63,11 +63,11 @@ class AddGroupsScreen extends React.Component {
         if (this.state.groupName.length > 0) {
             // firebase function : checks if name avaible then create group
             await createGroupInFirestore(this.state.groupName, this.props.currentUser, this.state.groupType)
-                .then(async () => {
+                .then(async (groupNameForDatabase) => {
                     if (this.state.groupType === 'private') {
                         // if private group successfully created
                         // add creator to contact of the group
-                        await addContactToPrivateGroup(this.state.groupName, this.props.currentUser)
+                         await addContactToPrivateGroup(groupNameForDatabase, this.props.currentUser)
                             .catch(err => { this.setState({ errorMessage: err }) })
                     } else if (this.state.groupType === 'public') {
                         await joinPublicGroupInFirestore(this.state.groupName, this.props.currentUser)

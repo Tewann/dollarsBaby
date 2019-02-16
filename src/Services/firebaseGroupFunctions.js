@@ -6,24 +6,29 @@ import Store from '../Store/configureStore'
 export const createGroupInFirestore = (groupName, username, groupType) =>
   new Promise((resolve, reject) => {
     const groupCollection = groupType === 'public' ? 'Public_Groups' : 'Private_Groups'
+    const timeStamp = new Date().getTime();
+    const groupNameForDatabase = groupType === 'private' ? `${groupName}_${username}_${timeStamp}` : groupName
     const ref = firebase.firestore().collection(groupCollection);
     // create group
-    ref.doc(groupName)
+    ref.doc(groupNameForDatabase)
       .get()
       .then(doc => {
         //if group name available create group's doc
         if (!doc.exists) {
           ref
-            .doc(groupName)
+            .doc(groupNameForDatabase)
             .set({
-              GroupName: groupName,
+              GroupName: groupNameForDatabase,
+              displayName: groupName,
               type: groupType,
               creator: username,
               photoURL: null,
               photoName: null,
               chatActivated: false
             })
-            .then(resolve())
+            .then(() => {
+              resolve(groupNameForDatabase)
+            })
             .catch(error => {
               reject(error);
             });
@@ -171,8 +176,7 @@ export const uploadImageToFirebase = (uri, groupName, groupType) => {
       Platform.OS === "ios" ? imgUri.replace("file://", "") : imgUri;
     const sessionId = new Date().getTime();
     const imageName = `Groups Pictures/${groupName}_${sessionId}.jpg`;
-    const collectionType =
-      groupType === "public" ? "Public_Groups" : "Private_Groups";
+    const collectionType = groupType === "public" ? "Public_Groups" : "Private_Groups";
 
     // grab photo name from CloudFirebase group
     firebase
@@ -211,14 +215,9 @@ export const uploadImageToFirebase = (uri, groupName, groupType) => {
 //*
 // Sets up photo url dl link to group's document
 //*
-export const setGroupDlLinkToFirestoreGroup = (
-  downloadURL,
-  groupName,
-  imageName
-) =>
+export const setGroupDlLinkToFirestoreGroup = (downloadURL, groupName, imageName, groupType) =>
   new Promise((resolve, reject) => {
-    const collectionType =
-      groupType === "public" ? "Public_Groups" : "Private_Groups";
+    const collectionType = groupType === "public" ? "Public_Groups" : "Private_Groups";
     const ref = firebase
       .firestore()
       .collection(collectionType)

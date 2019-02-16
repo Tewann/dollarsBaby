@@ -70,11 +70,14 @@ class ChatComponent extends React.Component {
         const additionnal_message = this.state.additionnalMessage
         const id = `${currentUser}_${timeStamp}`
         const type = 'send'
+        const displayGroupName = this.props.groupList[this.props.currentDisplayedGroupIndex].displayName
+        console.log(displayGroupName)
         const groupType = this.props.currentDisplayedGroupType
         // invok function
         const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
         httpsCallable({
             groupType: groupType,
+            displayName: displayGroupName,
             groupName: this.props.currentGroup,
             sendBy: this.props.currentUser.name,
             predefined_message: predefined_message,
@@ -112,8 +115,7 @@ class ChatComponent extends React.Component {
     }
 
     displayPredefinedMessageList = () => {
-        console.log(this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated)
-        if (this.props.currentDisplayedGroupType === 'private' || this.state.groupCreatorIsCurrentUser || this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated) {
+        if (this.props.currentDisplayedGroupType === 'private' || this.state.groupCreatorIsCurrentUser  || this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated ) {
             return (
                 <View>
                     {/* ------ Error messages ------*/}

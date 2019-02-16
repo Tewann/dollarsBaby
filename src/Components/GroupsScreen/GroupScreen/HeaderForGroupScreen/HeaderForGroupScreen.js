@@ -27,7 +27,7 @@ class HeaderForGroupScreen extends React.Component {
     }
 
     componentWillMount = () => {
-        const nickname = this.props.groupList[this.props.currentDisplayedGroupIndex].nickname
+        const nickname = this.props.groupList[this.props.currentDisplayedGroupIndex].displayName
         if (nickname != undefined || null) {
             this.setState({ displayName: nickname })
         }

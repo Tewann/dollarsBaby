@@ -69,8 +69,10 @@ class MessagesListScreen extends React.Component {
         else {
             this.setState({ loading: true })
             let requireSource = { uri: response.uri }
+            console.log(this.props.currentDisplayedGroupType)
             uploadGroupImage(requireSource, this.props.currentGroup, this.props.currentDisplayedGroupType)
                 .then((dlLink, PhotoName) => {
+                    console.log('image uploaded')
                     this.setState({ loading: false, imageUploaded: true })
                     setTimeout(() => {
                         this.setState({ imageUploaded: false })

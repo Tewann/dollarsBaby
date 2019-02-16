@@ -31,6 +31,7 @@ exports.messageSendToGroup = functions.https.onCall(data => {
         .add({
         senderType: data.groupType,
         groupName: data.groupName,
+        displayName: data.displayName,
         sendBy: data.sendBy,
         body: body,
         timeStamp: data.timeStamp,
@@ -158,6 +159,8 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
 //*
 // When a message is added to a private group 
 // Add message to the message list of each contact of the group
+// Same function as for public group execpt for ''functions.firestore.document()''
+// Two separate functions are needed because .document({1}/{groups}/...) {1} can be public group, private group or users
 //*
 exports.addPrivateGroupMessageToAllMembers = functions.firestore
     .document(`Private_Groups/{groups}/Messages/{messages}`)
@@ -185,6 +188,7 @@ exports.addPrivateGroupMessageToAllMembers = functions.firestore
             .collection('messagesReceived')
             .add({
             title: data.groupName,
+            displayName: data.displayName,
             sendBy: data.sendBy,
             body: data.body,
             sound: data.sound,
@@ -227,8 +231,14 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     const data = snapshot.data();
     // Name or nickname eventually
     let contactName;
-    if (data.sendBy !== undefined) {
-        // Sendby is for groups messages
+    /*  if (data.sendBy !== undefined) {
+         // Sendby is for groups messages
+         contactName = `${data.sendBy} @ ${data.title}`
+     } */
+    if (data.senderType === 'private') {
+        contactName = `${data.sendBy} @ ${data.displayName}`;
+    }
+    else if (data.senderType === 'public') {
         contactName = `${data.sendBy} @ ${data.title}`;
     }
     else {
@@ -251,15 +261,15 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
     let payload = null;
     // If Platorm is Android, builds Android payload
     if (userPlatform === 'android') {
-        const notifSound = yield setNotificationSound(data.sound, 'android', parent);
+        //const notifSound = await setNotificationSound(data.sound, 'android', parent)
         const androidSound = data.sound + '.wav';
         payload = {
             notification: {
                 title: contactName,
                 body: data.body,
-                sound: notifSound,
+                sound: androidSound,
                 // Android channel id necessary for > 26 (OREO 8.0 +)
-                android_channel_id: notifSound,
+                android_channel_id: androidSound,
                 tag: '1'
             },
             data: {

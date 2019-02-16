@@ -124,7 +124,6 @@ function displayMessagesList(state = initialState, action) {
             return nextState || state
 
         case 'MESSAGE_RECEIVED':
-            console.log('message received')
             // get message values from firestore doc
             const contactOrGroup = action.value.get('title')
             const messageReceivedId = action.value.get('messageId')
@@ -136,7 +135,6 @@ function displayMessagesList(state = initialState, action) {
             const senderType = action.value.get('senderType')
             let newId = null
             let newMessage = null
-            console.log(action.value)
             // grabs timestamp of the message and converts it in YY/MM//DD
             //const timeStamp = new Date(timeStampForDate)
             /*             const month = timeStamp.getUTCMonth() + 1; //months from 1-12

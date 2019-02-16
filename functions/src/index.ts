@@ -31,6 +31,7 @@ export const messageSendToGroup = functions.https.onCall(data => {
         .add({
             senderType: data.groupType,
             groupName: data.groupName,
+            displayName: data.displayName,
             sendBy: data.sendBy,
             body: body,
             timeStamp: data.timeStamp,
@@ -172,7 +173,7 @@ export const addPublicGroupMessageToAllMembers =
 // When a message is added to a private group 
 // Add message to the message list of each contact of the group
 // Same function as for public group execpt for ''functions.firestore.document()''
-// Can't have only one functions because .document({1}/{groups}/...) {1} can be public group, private group or users
+// Two separate functions are needed because .document({1}/{groups}/...) {1} can be public group, private group or users
 //*
 export const addPrivateGroupMessageToAllMembers =
     functions.firestore
@@ -203,6 +204,7 @@ export const addPrivateGroupMessageToAllMembers =
                     .collection('messagesReceived')
                     .add({
                         title: data.groupName,
+                        displayName: data.displayName,
                         sendBy: data.sendBy,
                         body: data.body,
                         sound: data.sound,
@@ -251,8 +253,13 @@ export const sendPushNotificationsForNewMessages =
 
             // Name or nickname eventually
             let contactName
-            if (data.sendBy !== undefined) {
-                // Sendby is for groups messages
+            /*  if (data.sendBy !== undefined) {
+                 // Sendby is for groups messages
+                 contactName = `${data.sendBy} @ ${data.title}`
+             } */
+            if (data.senderType === 'private') {
+                contactName = `${data.sendBy} @ ${data.displayName}`
+            } else if (data.senderType === 'public') {
                 contactName = `${data.sendBy} @ ${data.title}`
             } else {
                 contactName = await parent.collection('contactList')
@@ -275,15 +282,15 @@ export const sendPushNotificationsForNewMessages =
             let payload = null
             // If Platorm is Android, builds Android payload
             if (userPlatform === 'android') {
-                const notifSound = await setNotificationSound(data.sound, 'android', parent)
+                //const notifSound = await setNotificationSound(data.sound, 'android', parent)
                 const androidSound = data.sound + '.wav'
                 payload = {
                     notification: {
                         title: contactName,
                         body: data.body,
-                        sound: notifSound,
+                        sound: androidSound,
                         // Android channel id necessary for > 26 (OREO 8.0 +)
-                        android_channel_id: notifSound,
+                        android_channel_id: androidSound,
                         tag: '1'
                     },
                     data: {

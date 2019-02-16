@@ -517,6 +517,7 @@ export const fetchGroups = (userName) => {
                 snapshot.forEach(doc => {
                     // if the user has deleted the group / have been kicked / group has been deleted
                     if (doc.get('delete') === true) {
+                        NavigationService.reset('Mainscreen')
                         NavigationService.navigate('GroupsList')
                         Alert.alert(
                             strings('functions.group_left_alert_title'),

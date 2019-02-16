@@ -65,7 +65,7 @@ class GroupItem extends React.Component {
                 {this._renderImage()}
                 <View style={styles.text_container}>
                     <Text style={styles.contact_text}>
-                        {group.name}
+                        {group.displayName}
                     </Text>
                     <Text style={styles.type_text}>
                         ({group.type === 'public' ?

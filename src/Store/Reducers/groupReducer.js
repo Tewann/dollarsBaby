@@ -89,43 +89,42 @@ function groupManagment(state = initialState, action) {
         // ---- PUBLIC GROUPS --------
         // ---------------------------
 
-        case 'CREATE_PUBLIC_GROUP':
-            // Reducer called when a new public group is created by the user
-            // Add the group to the current state 
-
-            // sets newId
-            // if there is no group
-            if (state.groupList.length === 0) {
-                newId = 1
-                // if there is groups
-            } else {
-                newId = state.groupList[state.groupList.length - 1].id + 1
-            }
-            // create new group    
-            const newPublicGroup = {
-                id: newId,
-                name: action.value[0],
-                photoURL: null,
-                type: 'public',
-                creator: action.value[1],
-                chatActivated: false
-            }
-            nextState = {
-                ...state,
-                groupList: [...state.groupList, newPublicGroup]
-            }
-
-            return nextState || state
+        /*         case 'CREATE_PUBLIC_GROUP':
+                    // Reducer called when a new public group is created by the user
+                    // Add the group to the current state 
+        
+                    // sets newId
+                    // if there is no group
+                    if (state.groupList.length === 0) {
+                        newId = 1
+                        // if there is groups
+                    } else {
+                        newId = state.groupList[state.groupList.length - 1].id + 1
+                    }
+                    // create new group    
+                    const newPublicGroup = {
+                        id: newId,
+                        name: action.value[0],
+                        photoURL: null,
+                        type: 'public',
+                        creator: action.value[1],
+                        chatActivated: false
+                    }
+                    nextState = {
+                        ...state,
+                        groupList: [...state.groupList, newPublicGroup]
+                    }
+        
+                    return nextState || state */
 
         case "PUBLIC_GROUP_UPDATE":
-            let nextState = null
+            //let nextState = null
 
             // Checks if the group already exist
             // If it does, value = index of the group
             // If it doesn't, value = -1
             const publicGroupNameIndex = state.groupList.findIndex(item =>
                 (item.name === action.value.get('GroupName')) && (item.type === 'public'))
-
             // If the group doesn't exist => add group
             if (publicGroupNameIndex == -1) {
                 // Sets group Id, if group list is empty, sets new id to 1
@@ -139,7 +138,8 @@ function groupManagment(state = initialState, action) {
                     photoURL: action.value.get('photoURL'),
                     type: action.value.get('type'),
                     creator: action.value.get('creator'),
-                    chatActivated: action.value.get('chatActivated')
+                    chatActivated: action.value.get('chatActivated'),
+                    displayName: action.value.get('displayName')
                 }
                 nextState = {
                     ...state,
@@ -154,7 +154,7 @@ function groupManagment(state = initialState, action) {
                         photoName: action.value.get('photoName'),
                         photoURL: action.value.get('photoURL'),
                         creator: action.value.get('creator'),
-                        chatActivated: action.value.get('chatActivated')
+                        chatActivated: action.value.get('chatActivated'),
                     } :
                         content)
                 }
@@ -214,7 +214,8 @@ function groupManagment(state = initialState, action) {
                         ...content,
                         photoName: action.value.get('photoName'),
                         photoURL: action.value.get('photoURL'),
-                        creator: action.value.get('creator')
+                        creator: action.value.get('creator'),
+                        displayName: action.value.get('displayName')
                     } :
                         content)
                 }
