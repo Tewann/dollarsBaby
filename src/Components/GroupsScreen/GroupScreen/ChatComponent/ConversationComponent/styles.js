@@ -5,7 +5,8 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-        paddingTop: 5
+        paddingTop: 5,
+        paddingBottom: 5
     },
     list_empty: {
         textAlign: 'center',

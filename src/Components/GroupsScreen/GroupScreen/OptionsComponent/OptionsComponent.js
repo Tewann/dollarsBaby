@@ -18,7 +18,7 @@ import GroupContactItem from './GroupContactItem/GroupContactItem'
 import HeaderGroupContactList from './HeaderGroupContactList/HeaderGroupContactList'
 
 import { Icon } from 'react-native-elements'
-import { uploadGroupImage, addContactToPrivateGroup, leaveGroup } from '../../../../Services/firebaseGroupFunctions'
+import { uploadGroupImage, addContactToPrivateGroup, leaveGroup, activateChatForPublicGroups } from '../../../../Services/firebaseGroupFunctions'
 
 const options = { quality: 0.1 };
 
@@ -169,16 +169,22 @@ class MessagesListScreen extends React.Component {
     }
 
     toggleSwitch = (value) => {
-        console.log('Switch 1 is: ' + value)
-        const action = { type: 'CHAT_ACTIVATED_CHANGED', value: this.props.currentGroup }
+        const action = { type: 'CHAT_ACTIVATED_CHANGED', value: { groupName: this.props.currentGroup, chatActivated: value } }
         this.props.dispatch(action)
+        activateChatForPublicGroups(this.props.currentGroup, value)
+            .catch(() => {
+                const errValueToAction = value ? false : true
+                const action = { type: 'CHAT_ACTIVATED_CHANGED', value: { groupName: this.props.currentGroup, chatActivated: errValueToAction } }
+                this.props.dispatch(action)
+            })
     }
 
     renderSwitchForChat = () => {
-        console.log()
         return (
-            <View style={styles.profil_item}>
+            <View style={[styles.profil_item, { alignItems: 'center' }]}>
+                <Text style={styles.title}>{strings('groups_screen.group_options.activate_chat')}</Text>
                 <Switch
+                    style={{ marginTop: 10 }}
                     onValueChange={(value) => this.toggleSwitch(value)}
                     value={this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated}
                 />

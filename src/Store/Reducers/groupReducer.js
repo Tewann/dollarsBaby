@@ -66,7 +66,7 @@ function groupManagment(state = initialState, action) {
             const deleteGroupList = state.groupList.filter((value, index, arr) => {
                 return index !== deletedGroupIndex;
             });
-            
+
             nextState = {
                 ...state,
                 groupList: deleteGroupList
@@ -74,7 +74,16 @@ function groupManagment(state = initialState, action) {
             return nextState || state
 
         case 'CHAT_ACTIVATED_CHANGED':
-            
+            const publicGroupIndex = state.groupList.findIndex(item =>
+                item.name === action.value.groupName && item.type === 'public')
+            nextState = {
+                ...state,
+                groupList: state.groupList.map((content, i) => ((i === publicGroupIndex) && (content.type === 'public')) ? {
+                    ...content,
+                    chatActivated: action.value.chatActivated
+                } :
+                    content)
+            }
             return nextState || state
         // ---------------------------
         // ---- PUBLIC GROUPS --------
@@ -98,7 +107,8 @@ function groupManagment(state = initialState, action) {
                 name: action.value[0],
                 photoURL: null,
                 type: 'public',
-                creator: action.value[1]
+                creator: action.value[1],
+                chatActivated: false
             }
             nextState = {
                 ...state,
@@ -128,21 +138,23 @@ function groupManagment(state = initialState, action) {
                     photoName: action.value.get('photoName'),
                     photoURL: action.value.get('photoURL'),
                     type: action.value.get('type'),
-                    creator: action.value.get('creator')
+                    creator: action.value.get('creator'),
+                    chatActivated: action.value.get('chatActivated')
                 }
                 nextState = {
                     ...state,
                     groupList: [...state.groupList, newPublicGroup]
                 }
             } else {
-                // If group already exists => update photo of the group
+                // If group already exists => update either photo, creator or chatactivated
                 nextState = {
                     ...state,
                     groupList: state.groupList.map((content, i) => ((i === publicGroupNameIndex) && (content.type === 'public')) ? {
                         ...content,
                         photoName: action.value.get('photoName'),
                         photoURL: action.value.get('photoURL'),
-                        creator: action.value.get('creator')
+                        creator: action.value.get('creator'),
+                        chatActivated: action.value.get('chatActivated')
                     } :
                         content)
                 }

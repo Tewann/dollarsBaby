@@ -26,7 +26,7 @@ class GroupScreen extends React.Component {
 
     // Before component mount, set screen on conversation
     componentWillMount = () => {
-        const action = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'options' }
+        const action = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'conversation' }
         this.props.dispatch(action)
     }
 

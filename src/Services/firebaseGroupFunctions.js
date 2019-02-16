@@ -20,7 +20,8 @@ export const createGroupInFirestore = (groupName, username, groupType) =>
               type: groupType,
               creator: username,
               photoURL: null,
-              photoName: null
+              photoName: null,
+              chatActivated: false
             })
             .then(resolve())
             .catch(error => {
@@ -398,3 +399,25 @@ export const leaveGroup = async (currentUser, groupName, groupType) => {
     resolve()
   })
 }
+
+/**
+ * Allows member to send messages in a public group
+ * chatActivated: boolean
+ */
+export const activateChatForPublicGroups = (groupName, chatActivated) =>
+  new Promise((resolve, reject) => {
+    firebase
+      .firestore()
+      .collection("Public_Groups")
+      .doc(groupName)
+      .set(
+        {
+          chatActivated: chatActivated
+        },
+        { merge: true }
+      )
+      .then(resolve())
+      .catch(error => {
+        reject(error);
+      });
+  });
