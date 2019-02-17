@@ -133,10 +133,9 @@ class Loading extends React.Component {
             //const notification = notificationOpen.notification;
             const notificationTitle = notificationOpen.notification.title || notificationOpen.notification.data.contactName
             let contactName = notificationTitle
-            let groupName = notificationTitle.split(" / ")[0]
+            let groupName = notificationTitle.split(" @ ")[1]
             const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
-            const groupIndex = this.props.groupList.findIndex(item => item.name == groupName)
-
+            const groupIndex = this.props.groupList.findIndex(item => item.displayName == groupName)
             if (contactName == undefined || null) {
                 const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
                 this.props.dispatch(contactScreenToList)
@@ -146,9 +145,17 @@ class Loading extends React.Component {
                 this.props.dispatch(contactScreenToList)
                 this.props.navigation.navigate('ContactScreen')
             } else if (groupIndex !== -1) {
-                const action = { type: 'SWITCH_GROUP_SCREEN', value: groupName }
-                this.props.dispatch(action)
-                this.props.navigation.navigate('GroupScreen')
+                /*                 const action = {
+                                    type: 'SWITCH_GROUP_SCREEN',
+                                    value: {
+                                        groupName: this.props.groupList[groupIndex].displayName,
+                                        groupType: this.props.groupList[groupIndex].type,
+                                        groupNameIndex: groupIndex
+                                    }
+                                }
+                                this.props.dispatch(action)
+                                this.props.navigation.navigate('GroupScreen') */
+                this.props.navigation.navigate('GroupsList')
             } else if (contactIndex === -1) {
                 const nicknameIndex = this.props.contactList.findIndex(item => String(item.nickname) == notificationTitle)
                 contactName = this.props.contactList[nicknameIndex].name
@@ -172,11 +179,11 @@ class Loading extends React.Component {
                     //const action = notificationOpen.action;
                     // Get information about the notification that was opened
                     //const notification = notificationOpen.notification;
-                    const notificationTitle = notificationOpen.notification.data.contactName
+                    const notificationTitle = notificationOpen.notification.title || notificationOpen.notification.data.contactName
                     let contactName = notificationTitle
                     const contactIndex = this.props.contactList.findIndex(item => item.name == notificationTitle)
-                    let groupName = notificationTitle.split(" / ")[0]
-                    const groupIndex = this.props.groupList.findIndex(item => item.name == groupName)
+                    let groupName = notificationTitle.split(" @ ")[1]
+                    const groupIndex = this.props.groupList.findIndex(item => item.displayName == groupName)
 
                     if (contactName == undefined || null) {
                         const contactScreenToList = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }
@@ -187,9 +194,17 @@ class Loading extends React.Component {
                         this.props.dispatch(contactScreenToList)
                         this.props.navigation.navigate('ContactScreen')
                     } else if (groupIndex !== -1) {
-                        const action = { type: 'SWITCH_GROUP_SCREEN', value: groupName }
-                        this.props.dispatch(action)
-                        this.props.navigation.navigate('GroupScreen')
+                        /*                 const action = {
+                                            type: 'SWITCH_GROUP_SCREEN',
+                                            value: {
+                                                groupName: this.props.groupList[groupIndex].displayName,
+                                                groupType: this.props.groupList[groupIndex].type,
+                                                groupNameIndex: groupIndex
+                                            }
+                                        }
+                                        this.props.dispatch(action)
+                                        this.props.navigation.navigate('GroupScreen') */
+                        this.props.navigation.navigate('GroupsList')
                     } else if (contactIndex === -1) {
                         const nicknameIndex = this.props.contactList.findIndex(item => item.nickname == notificationTitle)
                         contactName = this.props.contactList[nicknameIndex].name
@@ -400,11 +415,20 @@ class Loading extends React.Component {
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
             this.props.dispatch(fetchGroups(this.props.currentUser.name))
-            this.props.navigation.navigate('GroupsList')
-            //this.props.navigation.navigate('DrawerStack')
-/*                const action = { type: 'SWITCH_GROUP_SCREEN', value: {groupName: 'Testpublic', groupType: 'private'} }
-             this.props.dispatch(action) 
-             this.props.navigation.navigate('GroupScreen')  */
+            //this.props.navigation.navigate('GroupsList')
+            this.props.navigation.navigate('DrawerStack')
+            /*             const groupNameIndex = this.props.groupList.findIndex(item =>
+                            item.displayName === "Hge" && item.type === "private")
+                        const action = {
+                            type: 'SWITCH_GROUP_SCREEN',
+                            value: {
+                                groupName: "Hge",
+                                groupType: "private",
+                                groupNameIndex: groupNameIndex
+                            }
+                        }
+                        this.props.dispatch(action)
+                        this.props.navigation.navigate('GroupScreen') */
             /*                         const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
                                   this.props.dispatch(action)
                                   this.props.navigation.navigate('ContactScreen')   */
@@ -521,7 +545,6 @@ const mapStateToProps = (state) => {
         currentUser: state.getCurrentUserInformations,
         predefined_message_list: state.displayMessagesList.predefinedMessagesList,
         contactList: state.contactManagment.contactList,
-        test: state.contactManagment.currentDisplayedContact,
         currentSoundsSetUp: state.soundsDownloadedReducer.soundsDownloaded,
         groupList: state.groupManagment.groupList,
     }

@@ -67,7 +67,9 @@
             "leave_group_confirmation": "Confirm",
             "leave_group": "Leave group",
             "remove_member": "Remove member",
-            "activate_chat": "Allow members to send messages"
+            "activate_chat": "Allow members to send messages",
+            "delete_group": "Delete group",
+            "delete_group_confirmation": "Confirm"
         },
         "group_screen": {
             "list_empty": "You have not received any messages yet",

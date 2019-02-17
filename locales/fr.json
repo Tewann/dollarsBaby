@@ -67,7 +67,9 @@
             "leave_group_confirmation": "Confirmer la sortie du groupe",
             "leave_group": "Quitter le groupe",
             "remove_member": "Exclure le membre",
-            "activate_chat": "Autoriser les membres à envoyer des messages"
+            "activate_chat": "Autoriser les membres à envoyer des messages",
+            "delete_group": "Supprimer le groupe",
+            "delete_group_confirmation": "Confirmer la suppression"
         },
         "group_screen": {
             "list_empty": "Vous n'avez pas encore reçu de messages",

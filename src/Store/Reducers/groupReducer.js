@@ -71,6 +71,7 @@ function groupManagment(state = initialState, action) {
                 ...state,
                 groupList: deleteGroupList
             }
+            console.log('delete : ', nextState)
             return nextState || state
 
         case 'CHAT_ACTIVATED_CHANGED':
@@ -189,22 +190,27 @@ function groupManagment(state = initialState, action) {
 
             // If the group doesn't exist => add group
             if (privateGroupNameIndex == -1) {
-                // Sets group Id, if group list is empty, sets new id to 1
-                // If group list is not empty, newID = group list length + 1
-                const newID = state.groupList.length === 0 ? 1 : state.groupList[state.groupList.length - 1].id + 1
-                // Creating new group
-                const newPrivateGroup = {
-                    id: newID,
-                    name: action.value.get('GroupName'),
-                    photoName: action.value.get('photoName'),
-                    photoURL: action.value.get('photoURL'),
-                    type: 'private',
-                    creator: action.value.get('creator'),
-                    contacts: []
-                }
-                nextState = {
-                    ...state,
-                    groupList: [...state.groupList, newPrivateGroup]
+                // Check if value is undefined (when a group is deleted and there is no other groups in the list, the reducer is call but all the values are undefined)
+                // So avoid that case by creating a group if the name is not undefined
+                if (action.value.get('GroupName') !== undefined) {
+                    // Sets group Id, if group list is empty, sets new id to 1
+                    // If group list is not empty, newID = group list length + 1
+                    const newID = state.groupList.length === 0 ? 1 : state.groupList[state.groupList.length - 1].id + 1
+                    // Creating new group
+                    const newPrivateGroup = {
+                        id: newID,
+                        name: action.value.get('GroupName'),
+                        photoName: action.value.get('photoName'),
+                        photoURL: action.value.get('photoURL'),
+                        type: 'private',
+                        creator: action.value.get('creator'),
+                        contacts: []
+                    }
+                    nextState = {
+                        ...state,
+                        groupList: [...state.groupList, newPrivateGroup]
+                    }
+                    console.log('private update : ', nextState)
                 }
             } else {
                 // If group already exists => update photo of the group

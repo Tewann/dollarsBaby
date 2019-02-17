@@ -76,8 +76,8 @@ class AddGroupsScreen extends React.Component {
                     const confirmationMsg = strings('add_groups_screen.group_created')
                     this.setState({ groupType: null, createOrJoin: null, groupName: "", errorMessage: null, loading: false, confirmationMessage: confirmationMsg })
                     setTimeout(() => {
-                        this.setState({ confirmationMessage: null })
-                    }, 2000)
+                        this.props.navigation.navigate('GroupsList')
+                    }, 1000)
                 })
                 .catch((error) => {
                     if (error => 'Group name taken') {

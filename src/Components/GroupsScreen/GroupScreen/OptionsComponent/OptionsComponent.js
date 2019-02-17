@@ -18,7 +18,7 @@ import GroupContactItem from './GroupContactItem/GroupContactItem'
 import HeaderGroupContactList from './HeaderGroupContactList/HeaderGroupContactList'
 
 import { Icon } from 'react-native-elements'
-import { uploadGroupImage, addContactToPrivateGroup, leaveGroup, activateChatForPublicGroups } from '../../../../Services/firebaseGroupFunctions'
+import { uploadGroupImage, addContactToPrivateGroup, leaveGroup, activateChatForPublicGroups, deleteGroup } from '../../../../Services/firebaseGroupFunctions'
 
 const options = { quality: 0.1 };
 
@@ -37,6 +37,9 @@ class MessagesListScreen extends React.Component {
             leaveGroupConfirmation: false,
             leaveGroupIcon: true,
             leaveGroupLoading: false,
+            deleteGroupConfirmation: false,
+            deleteGroupIcon: true,
+            deleteGroupLoading: false,
         }
     }
 
@@ -264,6 +267,48 @@ class MessagesListScreen extends React.Component {
         )
     }
 
+    renderDeleteGroup = () => {
+        if (this.state.groupCreatorIsCurrentUser) {
+            return (
+                <View style={styles.profil_item}>
+                    {this.state.deleteGroupLoading && <ActivityIndicator />}
+                    {this.state.deleteGroupConfirmation &&
+                        <View>
+                            <Text style={[styles.title, { marginBottom: 10 }]}>{strings('groups_screen.group_options.delete_group_confirmation')}</Text>
+                            <Icon
+                                name='delete-forever'
+                                type='materialcommunity'
+                                color='#517fa4'
+                                size={35}
+                                onPress={() => {
+                                    this.setState({ deleteGroupConfirmation: false, deleteGroupLoading: true })
+                                    deleteGroup(this.props.currentUser, this.props.currentGroup, this.props.currentDisplayedGroupType)
+                                        .catch(err => {
+                                            this.setState({ errorMessage: err, deleteGroupLoading: false, deleteGroupIcon: true })
+                                        })
+                                }}
+                            />
+                        </View>
+                    }
+                    {this.state.deleteGroupIcon &&
+                        <View>
+                            <Text style={[styles.title, { marginBottom: 10 }]}>{strings('groups_screen.group_options.delete_group')}</Text>
+                            <Icon
+                                name='delete-forever'
+                                type='materialcommunity'
+                                color='#517fa4'
+                                size={35}
+                                onPress={() => this.setState({ deleteGroupIcon: false, deleteGroupConfirmation: true })}
+                            />
+                        </View>
+                    }
+                </View>
+            )
+        } else {
+            return null
+        }
+    }
+
     render() {
         return (
             <View style={styles.profil_item_containers}>
@@ -277,6 +322,7 @@ class MessagesListScreen extends React.Component {
                 {this.renderContactList()}
                 {this.renderDeleteHistory()}
                 {this.renderLeaveGroup()}
+                {this.renderDeleteGroup()}
             </View>
         )
     }

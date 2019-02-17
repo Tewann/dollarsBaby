@@ -71,7 +71,6 @@ class ChatComponent extends React.Component {
         const id = `${currentUser}_${timeStamp}`
         const type = 'send'
         const displayGroupName = this.props.groupList[this.props.currentDisplayedGroupIndex].displayName
-        console.log(displayGroupName)
         const groupType = this.props.currentDisplayedGroupType
         // invok function
         const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')

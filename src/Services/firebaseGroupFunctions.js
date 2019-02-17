@@ -374,6 +374,15 @@ export const leaveGroup = async (currentUser, groupName, groupType) => {
 
     // If the group is empty delete the group
     if (firstMember === null) {
+      const photoName = await firebase.firestore().collection(groupCollection).doc(groupName).get().then(doc => {
+        return doc.get('photoName')
+      })
+      if (photoName) {
+        firebase.storage()
+          .ref(photoName)
+          .delete()
+          .catch(err => reject(err))
+      }
       firebase
         .firestore()
         .collection(groupCollection)
@@ -420,3 +429,61 @@ export const activateChatForPublicGroups = (groupName, chatActivated) =>
         reject(error);
       });
   });
+
+/**
+ * Delete the group
+ */
+export const deleteGroup = async (currentUser, groupName, groupType) => {
+  new Promise(async (resolve, reject) => {
+    const groupCollection = groupType === 'public' ? 'Public_Groups' : 'Private_Groups'
+    const groupRef = await firebase.firestore().collection(groupCollection).doc(groupName)
+    const groupCreator = await groupRef.get().then((doc) => {
+      return doc.get('creator')
+    })
+    if (currentUser !== groupCreator) {
+      reject('You are not the creator of the group')
+    } else {
+      const photoName = await groupRef.get().then(doc => {
+        return doc.get('photoName')
+      })
+      // If a photo has been uploaded for the group, deletes it
+      if (photoName) {
+        firebase.storage()
+          .ref(photoName)
+          .delete()
+          .catch(err => reject(err))
+      }
+
+      // Deals with members
+      await groupRef.collection('Members')
+        .get()
+        .then(docs => {
+          docs.forEach(doc => {
+            const memberName = doc.data().name
+            // Delete member from the group 
+            firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).delete()
+            // Delete group from member's grouplist
+            firebase.firestore().collection('Users').doc(memberName).collection('Groups').where('name', '==', groupName).get()
+              .then(docs => {
+                docs.forEach(doc => {
+                  if (doc.get('type') === groupType) {
+                    firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).set({
+                      delete: true
+                    }, { merge: true })
+                  }
+                })
+              })
+              .catch(err => reject(err))
+          })
+        })
+        .catch(err => reject(err))
+
+      // Delete group
+      firebase
+        .firestore()
+        .collection(groupCollection)
+        .doc(groupName)
+        .delete()
+    }
+  })
+}
