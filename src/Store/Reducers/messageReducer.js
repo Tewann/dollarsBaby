@@ -133,6 +133,7 @@ function displayMessagesList(state = initialState, action) {
             const type = action.value.get('type')
             const sendBy = action.value.get('sendBy')
             const senderType = action.value.get('senderType')
+            const sendToGroup = action.value.get('displayName')
             let newId = null
             let newMessage = null
             // grabs timestamp of the message and converts it in YY/MM//DD
@@ -141,7 +142,6 @@ function displayMessagesList(state = initialState, action) {
                         const day = timeStamp.getUTCDate();
                         const year = timeStamp.getUTCFullYear();
                         const date = year + "/" + month + "/" + day; */
-
 
             // Checks if the contact or group has already messages
             const contactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title == contactOrGroup && item.type == senderType)
@@ -159,7 +159,8 @@ function displayMessagesList(state = initialState, action) {
                     additionnal_message: additionnal_message,
                     timeStamp: timeStamp,
                     messageReceivedId: messageReceivedId,
-                    sendBy: sendBy
+                    sendBy: sendBy,
+                    toGroup: sendToGroup
                 }
 
                 // Create new contact/group
@@ -171,7 +172,7 @@ function displayMessagesList(state = initialState, action) {
                     ]
                 }
 
-                state.messagesReceived.push(newMessage)
+                //state.messagesReceived.push(newMessage)
 
                 // Update nextState
                 nextState = {
@@ -179,6 +180,10 @@ function displayMessagesList(state = initialState, action) {
                     messagesHistory: [
                         newConversation,
                         ...state.messagesHistory
+                    ],
+                    messagesReceived: [
+                        newMessage,
+                        ...state.messagesReceived
                     ]
                 }
             } else {
@@ -202,7 +207,8 @@ function displayMessagesList(state = initialState, action) {
                         additionnal_message: additionnal_message,
                         timeStamp: timeStamp,
                         messageReceivedId: messageReceivedId,
-                        sendBy: sendBy
+                        sendBy: sendBy,
+                        toGroup: sendToGroup
                     }
 
                     //const data = state.messagesHistory[contactOrGroupIndexInMessageList].data
@@ -228,7 +234,7 @@ function displayMessagesList(state = initialState, action) {
                         newMessage,
                         ...state.messagesHistory[contactOrGroupIndexInMessageList].data
                     ]
-                    state.messagesReceived.push(newMessage)
+                    //state.messagesReceived.push(newMessage)
                     nextState = {
                         ...state,
                         messagesHistory: state.messagesHistory.map((content, i) => i === contactOrGroupIndexInMessageList ? {
@@ -236,7 +242,11 @@ function displayMessagesList(state = initialState, action) {
                             type: senderType,
                             data: newData
                         } :
-                            content)
+                            content),
+                        messagesReceived: [
+                            newMessage,
+                            ...state.messagesReceived
+                        ]
                     }
                 }
             }
@@ -260,8 +270,8 @@ function displayMessagesList(state = initialState, action) {
             nextState = {
                 ...state,
                 messagesReceived: [
-                    ...state.messagesReceived,
-                    contactRequestAcceptedMessage
+                    contactRequestAcceptedMessage,
+                    ...state.messagesReceived                    
                 ]
             }
             /*             // grabs timestamp of the message and converts it in YY/MM//DD
@@ -313,8 +323,8 @@ function displayMessagesList(state = initialState, action) {
             nextState = {
                 ...state,
                 messagesReceived: [
-                    ...state.messagesReceived,
-                    contactRequestDeclinedMessage
+                    contactRequestDeclinedMessage,
+                    ...state.messagesReceived                    
                 ]
             }
 

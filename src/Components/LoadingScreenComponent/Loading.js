@@ -415,9 +415,10 @@ class Loading extends React.Component {
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
             this.props.dispatch(fetchGroups(this.props.currentUser.name))
+           // this.props.navigation.navigate('MessageHistory')
             //this.props.navigation.navigate('GroupsList')
             this.props.navigation.navigate('DrawerStack')
-            /*             const groupNameIndex = this.props.groupList.findIndex(item =>
+ /*                         const groupNameIndex = this.props.groupList.findIndex(item =>
                             item.displayName === "Hge" && item.type === "private")
                         const action = {
                             type: 'SWITCH_GROUP_SCREEN',
@@ -428,8 +429,8 @@ class Loading extends React.Component {
                             }
                         }
                         this.props.dispatch(action)
-                        this.props.navigation.navigate('GroupScreen') */
-            /*                         const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
+                        this.props.navigation.navigate('GroupScreen')  */
+             /*                        const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
                                   this.props.dispatch(action)
                                   this.props.navigation.navigate('ContactScreen')   */
         }

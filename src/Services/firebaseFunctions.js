@@ -250,7 +250,8 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
                 messageId: id,
                 predefined_message: predefined_message,
                 additional_message: additionalMessage,
-                type: type
+                type: type,
+                sendBy: currentUser
             })
             .then(resolve())
             .catch(error => reject(error))

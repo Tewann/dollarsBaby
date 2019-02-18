@@ -5,8 +5,9 @@ import React from 'react'
 import { View, FlatList, Text } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
-import DisplayMessage from './DisplayMessage/DisplayMessage'
-import SectionHeaderComponent from './SectionHeader/SectionHeaderComponent'
+
+import MessageComponent from '../MessageComponent/MessageComponent'
+
 import CleanHistoryComponent from './CleanHistory/CleanHistoryComponent'
 import { strings } from '../../i18n'
 
@@ -22,24 +23,12 @@ class MessageHistory extends React.Component {
     render() {
         return (
             <View style={styles.main_container}>
-{/*                 <SectionList
-                    sections={this.props.messagesHistory}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderSectionHeader={({ section }) => <SectionHeaderComponent section={section} />}
-                    renderItem={({ item }) => <DisplayMessage message={item} navigate={this.props.navigation.navigate} />}
-                    ListEmptyComponent={() => this.renderListEmpty()}
-                    stickySectionHeadersEnabled={true}
-                    initialNumToRender={2}
-                    ListHeaderComponent={<CleanHistoryComponent />}
-                /> */}
                 <FlatList
                     data={this.props.messagesReceived}
                     keyExtractor={(item) => item.id.toString()}
-                    //renderSectionHeader={({ section }) => <SectionHeaderComponent section={section} />}
-                    renderItem={({ item }) => <DisplayMessage message={item} navigate={this.props.navigation.navigate} />}
+                    renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={0} navigate={this.props.navigation.navigate} type={'messagesHistory'} />}
                     ListEmptyComponent={() => this.renderListEmpty()}
-                    stickySectionHeadersEnabled={true}
-                    initialNumToRender={2}
+                    initialNumToRender={15}
                     ListHeaderComponent={() => <CleanHistoryComponent />}
                 />
             </View>
@@ -50,7 +39,6 @@ class MessageHistory extends React.Component {
 const mapStateToProps = (state) => {
     return {
         messagesReceived: state.displayMessagesList.messagesReceived,
-        currentUser: state.getCurrentUserInformations,
     }
 }
 

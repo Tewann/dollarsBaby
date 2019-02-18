@@ -12,7 +12,7 @@ import React from 'react'
 import { View, FlatList, Text, ScrollView } from 'react-native'
 import styles from './styles'
 
-import DisplayMessage from './DisplayMessage/DisplayMessage'
+import MessageComponent from '../../../../MessageComponent/MessageComponent'
 
 import { connect } from 'react-redux'
 import { strings } from '../../../../../i18n'
@@ -48,7 +48,7 @@ class ConversationComponent extends React.Component {
                         inverted={true}
                         data={this.props.messagesHistory[this.state.groupIndexInMessageHistory].data}
                         keyExtractor={(item, id) => item.id.toString()}
-                        renderItem={({ item, index }) => <DisplayMessage message={item} id={index} groupIndex={this.state.groupIndexInMessageHistory} />}
+                        renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={this.state.groupIndexInMessageHistory} type={'group'} />}
                         //ListEmptyComponent={() => this.renderListEmpty()}
                         initialNumToRender={15}
                         maxToRenderPerBatch={10}
