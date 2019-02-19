@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         height: roundWidth,
         backgroundColor: 'red'
     },
-    both_messages_container: {
+    received_container: {
         //alignItems: 'flex-start',
         justifyContent: 'center',
         marginLeft: 15,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end'
     },
-    send_both_messages_container: {
+    send_container: {
         justifyContent: 'center',
         alignItems: 'flex-end',
         marginRight: 15,

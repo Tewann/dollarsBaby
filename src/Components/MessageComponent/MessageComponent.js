@@ -18,6 +18,7 @@ import { strings } from '../../i18n'
 import { connect } from 'react-redux'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import AcceptOrDecline from './AcceptOrDeclineComponent/AcceptOrDecline'
+import Autolink from 'react-native-autolink';
 
 class MessageComponent extends React.Component {
     constructor(props) {
@@ -198,7 +199,7 @@ class MessageComponent extends React.Component {
             this.props.message.status !== 'accepted' && this.props.message.status !== 'declined') {
             // if message is contact request received displays customize predefined message
             return (
-                <View style={styles.both_messages_container}>
+                <View style={styles.received_container}>
                     <Text style={styles.predefined_message}>
                         {this.props.message.contact} {strings('message_history_screen.display_message.contact_request')}
                     </Text>
@@ -218,11 +219,16 @@ class MessageComponent extends React.Component {
                     }
                     {
                         this.props.message.additionnal_message != "" &&
-                        <Text
+                        <Autolink 
+                            text={this.props.message.additionnal_message}
+                            truncate={0}
+                            hashtag="twitter"
+                        />
+                        /* <Text
                             style={styles.additional_message}
                         >
                             {this.props.message.additionnal_message}
-                        </Text>
+                        </Text> */
                     }
                 </View>
             )
@@ -235,7 +241,7 @@ class MessageComponent extends React.Component {
             return (
                 <View style={styles.renderMessage_send_main_container}>
                     {this._renderTime()}
-                    <View style={styles.send_both_messages_container}>
+                    <View style={styles.send_container}>
                         {this._renderMessages()}
                     </View>
                     {this.props.type === 'group' && <View style={styles.image_container}>
@@ -251,7 +257,7 @@ class MessageComponent extends React.Component {
                     {(this.props.type === 'group' /* || this.props.type === 'messagesHistory' */) && <View style={styles.image_container}>
                         {this._renderImage()}
                     </View>}
-                    <View style={styles.both_messages_container}>
+                    <View style={styles.received_container}>
                         {(this.props.type === 'group' || this.props.type === 'messagesHistory') &&
                             this._renderSenderName()
                             // <Text style={styles.sender_name}>{this.props.message.sendBy}</Text>
