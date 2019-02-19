@@ -17,7 +17,7 @@ import styles from './styles'
 import { connect } from 'react-redux'
 import { strings } from '../../../i18n'
 
-import { doesContactExists, sendMessageToFirestore } from '../../../Services/firebaseFunctions'
+import { doesContactExistsAndWantToReceivedRequests, sendMessageToFirestore } from '../../../Services/firebaseFunctions'
 import { Icon } from 'react-native-elements'
 
 class SearchedContactItem extends React.Component {
@@ -57,7 +57,7 @@ class SearchedContactItem extends React.Component {
         } else {
             // call firebase function
             // checks if user exists
-            var contactRequest = await doesContactExists(this.props.contact.name)
+            var contactRequest = await doesContactExistsAndWantToReceivedRequests(this.props.contact.name)
                 .then(async () => {
                     // if user exists, calls firebase function
                     // send message
@@ -78,11 +78,13 @@ class SearchedContactItem extends React.Component {
                             this.setState({ contactRequestSended: true, confirmationContainer: false })
                             setTimeout(() => {
                                 this.props.navigateToMainStackNavigator()
+                                this.setState({ defaultContainer: true, confirmationContainer: false })
                             }, 2000)
                         })
                         .catch(err => this.props.setErrorMessage(err))
                 })
                 .catch(err => {
+                    this.setState({ defaultContainer: true, confirmationContainer: false })
                     // user doesn't exist
                     Alert.alert(
                         strings('add_contact_screen.item.error_title'),

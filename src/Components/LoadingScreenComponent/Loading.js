@@ -26,7 +26,8 @@ class Loading extends React.Component {
         //this.props.dispatch(resetGroups)
         //const resetSounds = { type: 'RESET_SOUNDS'}
         //this.props.dispatch(resetSounds)
-
+        //const resetOptions = { type: 'RESET_OPTIONS' }
+        //this.props.dispatch(resetOptions)
         /**
          * On launch, sets both contact and group screens to default values (lists)
          * Calls reducer to :
@@ -415,24 +416,25 @@ class Loading extends React.Component {
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
             this.props.dispatch(fetchGroups(this.props.currentUser.name))
-           // this.props.navigation.navigate('MessageHistory')
+            //this.props.navigation.navigate('AddContactScreen')
+             this.props.navigation.navigate('MessageHistory')
             //this.props.navigation.navigate('GroupsList')
-           // this.props.navigation.navigate('DrawerStack')
- /*                         const groupNameIndex = this.props.groupList.findIndex(item =>
-                            item.displayName === "Hge" && item.type === "private")
-                        const action = {
-                            type: 'SWITCH_GROUP_SCREEN',
-                            value: {
-                                groupName: "Hge",
-                                groupType: "private",
-                                groupNameIndex: groupNameIndex
-                            }
-                        }
-                        this.props.dispatch(action)
-                        this.props.navigation.navigate('GroupScreen')  */
-                                     const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
-                                  this.props.dispatch(action)
-                                  this.props.navigation.navigate('ContactScreen')   
+            // this.props.navigation.navigate('DrawerStack')
+            /*                         const groupNameIndex = this.props.groupList.findIndex(item =>
+                                       item.displayName === "Hge" && item.type === "private")
+                                   const action = {
+                                       type: 'SWITCH_GROUP_SCREEN',
+                                       value: {
+                                           groupName: "Hge",
+                                           groupType: "private",
+                                           groupNameIndex: groupNameIndex
+                                       }
+                                   }
+                                   this.props.dispatch(action)
+                                   this.props.navigation.navigate('GroupScreen')  */
+            /*                              const action = { type: 'SWITCH_CONTACT_SCREEN', value: 'God' }
+                                      this.props.dispatch(action)
+                                      this.props.navigation.navigate('ContactScreen')    */
         }
     }
 

@@ -233,7 +233,6 @@ export const sendPushNotificationsForNewMessages =
     functions.firestore
         .document(`Users/{user}/messagesReceived/{message}`)
         .onCreate(async (snapshot, context) => {
-
             // User database reference
             const parent = snapshot.ref.parent.parent
             // User's token for cloud messaging
@@ -250,7 +249,6 @@ export const sendPushNotificationsForNewMessages =
             // Building message
             // Message data
             const data = snapshot.data()
-
             // Name or nickname eventually
             let contactName
             /*  if (data.sendBy !== undefined) {
@@ -270,11 +268,14 @@ export const sendPushNotificationsForNewMessages =
                             const contactNameOrNickname = doc.docs[0].data().nickname !== undefined || null ? doc.docs[0].data().nickname : data.title
                             return contactNameOrNickname
                         } else {
-                            return
+                            return data.title
                         }
                     })
+                    .catch(() => {
+                        // if contact request : sender will not be in the contact list of the user, so return the name of the user
+                        return data.title
+                    })
             }
-
             // Predefined message (sended as data in case notification sound is not received)
             const predefined_message = data.predefined_message === null || undefined ? 'Blink' : data.predefined_message
 

@@ -21,7 +21,12 @@
         "disconnect": "Se déconnecter",
         "add_contact_screen": "Ajouter un contact",
         "add_groups_screen": "Ajouter/Créer un groupe",
-        "create_message": "Créer un message personnalisé"
+        "create_message": "Créer un message personnalisé",
+        "options": "Options"
+    },
+    "options": {
+        "title": "Options",
+        "hide_contact_requests": "Masquer les demandes de contact"
     },
     "contacts_screen": {
         "contact_item": {},
@@ -97,7 +102,7 @@
         "click_on_avatar": "Cliquez sur la photo de votre contact pour modifier son nom",
         "list_empty": "Vous n'avez pas encore reçu de messages",
         "display_message": {
-            "contact_request": "vous a envoyé une demande de contact",
+            "contact_request": "Demande de contact",
             "contact_added": "a été ajouté à vos contacts",
             "contact_denied": "n'a pas été ajouté à vos contacts",
             "accept_or_decline": {
@@ -249,7 +254,8 @@
     },
     "functions": {
         "contact_deleted_alert_title": "Contact supprimé",
-        "group_left_alert_title": "Groupe quitté"
+        "group_left_alert_title": "Groupe quitté",
+        "user_no_contact_requests": "Cette personne n'accepte pas les demandes de contact"
     },
     "reducers": {
         "where": "T'es où ?",

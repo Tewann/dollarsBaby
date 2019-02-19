@@ -21,7 +21,12 @@
         "disconnect": "Sign out",
         "add_contact_screen": "Add a contact",
         "add_groups_screen": "Add/Create a group",
-        "create_message": "Create a custom message"
+        "create_message": "Create a custom message",
+        "options": "Options"
+    },
+    "options": {
+        "title": "Options",
+        "hide_contact_requests": "Hide contact requests"
     },
     "contacts_screen": {
         "contact_item": {},
@@ -97,7 +102,7 @@
         "click_on_avatar": "Click on the picture of your contact to change his name",
         "list_empty": "You have not received messages yet",
         "display_message": {
-            "contact_request": "sent you a contact request",
+            "contact_request": "Contact request",
             "contact_added": "has been added to your contact list",
             "contact_denied": "has not been added to your contact list",
             "accept_or_decline": {
@@ -249,7 +254,8 @@
     },
     "functions": {
         "contact_deleted_alert_title": "Contact deleted",
-        "group_left_alert_title": "Group left"
+        "group_left_alert_title": "Group left",
+        "user_no_contact_requests": "This person does not accept contact requests"
     },
     "reducers": {
         "where": "Where are you ?",

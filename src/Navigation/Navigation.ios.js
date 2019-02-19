@@ -20,6 +20,7 @@ import HeaderForGroupScreen from '../Components/GroupsScreen/GroupScreen/HeaderF
 
 import CreateCustomMessageScreen from '../Components/CreateCustomMessageScreen/CreateCustomMessageScreen'
 import AddGroupsScreen from '../Components/AddGroupsScreen/AddGroupsScreen'
+import OptionsScreen from '../Components/OptionsScreen/OptionsScreen'
 
 import React from "react";
 import { Icon } from "react-native-elements";
@@ -133,6 +134,19 @@ const CustomDrawerContentComponent = props => {
           />
         </View>
         <Text style={styles.CustomDrawerText}>{strings('navigation.create_message')}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate('OptionsScreen')}
+        style={styles.CustomDrawerItemContainer}
+      >
+        <View style={styles.CustomDrawerIcon}>
+          <Icon
+            name='ios-options'
+            type='ionicon'
+            color='black'
+          />
+        </View>
+        <Text style={styles.CustomDrawerText}>{strings('navigation.options')}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => firebase.auth().signOut().catch(error => {
@@ -266,6 +280,7 @@ const MainStackNavigator = createStackNavigator(
 
 const DrawerStack = createDrawerNavigator(
   {
+    OptionsScreen: { screen: OptionsScreen },
     CreateCustomMessageScreen: { screen: CreateCustomMessageScreen },
     AddContactScreen: { screen: AddContactScreen },
     AddGroupsScreen: { screen: AddGroupsScreen },

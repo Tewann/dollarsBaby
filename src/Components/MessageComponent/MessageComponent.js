@@ -199,9 +199,9 @@ class MessageComponent extends React.Component {
             this.props.message.status !== 'accepted' && this.props.message.status !== 'declined') {
             // if message is contact request received displays customize predefined message
             return (
-                <View style={styles.received_container}>
+                <View >
                     <Text style={styles.predefined_message}>
-                        {this.props.message.contact} {strings('message_history_screen.display_message.contact_request')}
+                        {strings('message_history_screen.display_message.contact_request')}
                     </Text>
                     <AcceptOrDecline message={this.props.message} />
                 </View>

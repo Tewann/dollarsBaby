@@ -260,14 +260,18 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
 
 
 // Checks if contact exists in firestore
-export const doesContactExists = async (contact) => {
+export const doesContactExistsAndWantToReceivedRequests = async (contact) => {
     return new Promise((resolve, reject) => {
         firebase.firestore().collection('Users').doc(contact).get()
             .then(doc => {
                 if (doc.exists) {
-                    resolve()
+                    if (doc.get('hideContactRequests')) {
+                        reject(strings('functions.user_no_contact_requests'))
+                    } else {
+                        resolve()
+                    }
                 } else {
-                    reject("Cet utilisateur n'existe pas")
+                    reject("The user does not exists")
                 }
             })
             .catch(err => reject(err))
@@ -422,6 +426,7 @@ export const fetchContacts = (userName) => {
             .onSnapshot((snapshot) => {
                 snapshot.forEach(async doc => {
                     if (doc.get('delete') === true) {
+                        NavigationService.reset('Mainscreen')
                         NavigationService.navigate('ContactsList')
                         Alert.alert(
                             strings('functions.contact_deleted_alert_title'),
@@ -730,3 +735,22 @@ export const deleteContact = async (currentUser, contactName) => {
         resolve()
     })
 }
+
+/**
+ * Change value to the user profile, show or hide contact requests
+ * hideContactRequests: boolean
+ */
+export const showContactRequests = (currentUser, hideContactRequests) =>
+    new Promise((resolve, reject) => {
+        firebase.firestore()
+            .collection('Users')
+            .doc(currentUser)
+            .set({
+                hideContactRequests: hideContactRequests
+            }, { merge: true }
+            )
+            .then(resolve())
+            .catch(error => {
+                reject(error);
+            });
+    });

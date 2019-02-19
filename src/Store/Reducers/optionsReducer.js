@@ -1,7 +1,8 @@
 
 const initialState = {
     displaysAdBanner: true,
-    adBannerEvent: 'keyboard'
+    adBannerEvent: 'keyboard',
+    hideContactRequests: false
 }
 
 function options(state = initialState, action) {
@@ -30,6 +31,16 @@ function options(state = initialState, action) {
                 }
             }
             return nextState || state
+
+        case 'HIDE_CONTACT_REQUESTS_SWITCH':
+            nextState = {
+                ...state,
+                hideContactRequests: action.value
+            }
+            return nextState || state
+
+        case 'RESET_OPTIONS':
+            return initialState
 
         default:
             return state

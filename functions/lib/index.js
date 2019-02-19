@@ -251,8 +251,12 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
                 return contactNameOrNickname;
             }
             else {
-                return;
+                return data.title;
             }
+        })
+            .catch(() => {
+            // if contact request : sender will not be in the contact list of the user, so return the name of the user
+            return data.title;
         });
     }
     // Predefined message (sended as data in case notification sound is not received)
