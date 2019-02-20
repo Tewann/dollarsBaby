@@ -102,7 +102,6 @@ class AddContact extends React.Component {
         }
     }
 
-
     render() {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: '#07416b' }}>

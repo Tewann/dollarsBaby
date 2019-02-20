@@ -23,11 +23,12 @@ class AcceptOrDecline extends React.Component {
         const timeStamp = new Date().getTime();
         const currentUser = this.props.currentUser.name
         const contact = this.props.message.contact
-        const predefined_message = `${currentUser}` + strings('message_history_screen.display_message.accept_or_decline.accepted')
+        const predefined_message = `${currentUser} ` + strings('message_history_screen.display_message.accept_or_decline.accepted')
         const additionnal_message = ""
         const id = `${currentUser}_${timeStamp}`
         const type = 'received'
-        const sendAcceptedMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type)
+        const sound = 's1blink'
+        const sendAcceptedMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound)
     }
 
     _declineContactRequest = () => {

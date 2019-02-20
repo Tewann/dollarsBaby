@@ -72,14 +72,14 @@ class SearchedContactItem extends React.Component {
                     const sendingRequest = await sendMessageToFirestore(currentUser, contact, predefined_message, additional_message, timeStamp, id, type, sound)
                         .then(() => {
                             // if firebase function worked, update redux store
-                            const type = 'send_contact_request'
+/*                             const type = 'send_contact_request'
                             const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additional_message, timeStamp, id, type } }
-                            this.props.dispatch(action)
+                            this.props.dispatch(action)*/
                             this.setState({ contactRequestSended: true, confirmationContainer: false })
                             setTimeout(() => {
                                 this.props.navigateToMainStackNavigator()
                                 this.setState({ defaultContainer: true, confirmationContainer: false })
-                            }, 2000)
+                            }, 2000) 
                         })
                         .catch(err => this.props.setErrorMessage(err))
                 })

@@ -49,11 +49,7 @@ const initialState = {
 function displayMessagesList(state = initialState, action) {
     let nextState
     switch (action.type) {
-
-        //  When a message has been send by current user
-        // message is added to messages history list 
         case 'MESSAGE_SENDED':
-            let newIdSend = null
             let newMessageSend = null
             // grabs timestamp of the message and converts it in YY/MM//DD
             const sendTimeStamp = new Date(action.value.timeStamp)
@@ -61,23 +57,21 @@ function displayMessagesList(state = initialState, action) {
             const sendDay = sendTimeStamp.getUTCDate();
             const sendYear = sendTimeStamp.getUTCFullYear();
             const sendDate = sendYear + "/" + sendMonth + "/" + sendDay;
+            const idSend = action.value.contact + sendTimeStamp
 
             // Checks if the contact or group has already messages
             const sendcontactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title === action.value.contact && item.type === action.value.senderType)
 
+            newMessageSend = {
+                id: idSend,
+                type: action.value.type,
+                contact: action.value.contact,
+                predefined_message: action.value.predefined_message,
+                additionnal_message: action.value.additionnal_message,
+                timeStamp: action.value.timeStamp,
+            }
             // If the conversation doesn't exist
             if (sendcontactOrGroupIndexInMessageList == -1) {
-                // Sets new message id to 0
-                newIdSend = 0
-                // create new message
-                newMessageSend = {
-                    id: newIdSend,
-                    type: action.value.type,
-                    contact: action.value.contact,
-                    predefined_message: action.value.predefined_message,
-                    additionnal_message: action.value.additionnal_message,
-                    timeStamp: action.value.timeStamp,
-                }
                 // Create new contact/group
                 const newConversation = {
                     title: action.value.contact,
@@ -95,22 +89,12 @@ function displayMessagesList(state = initialState, action) {
                     ]
                 }
             } else {
-                // If the conversation exists in the history
-                // add message
-                newIdSend = state.messagesHistory[sendcontactOrGroupIndexInMessageList].data.length + 1
-                // create new message
-                newMessageSend = {
-                    id: newIdSend,
-                    type: action.value.type,
-                    contact: action.value.contact,
-                    predefined_message: action.value.predefined_message,
-                    additionnal_message: action.value.additionnal_message,
-                    timeStamp: action.value.timeStamp,
-                }
+                // If the conversation exists in the history : add message
                 let newData = [
                     newMessageSend,
                     ...state.messagesHistory[sendcontactOrGroupIndexInMessageList].data
                 ]
+
                 nextState = {
                     ...state,
                     messagesHistory: state.messagesHistory.map((content, i) => i === sendcontactOrGroupIndexInMessageList ? {
@@ -134,14 +118,9 @@ function displayMessagesList(state = initialState, action) {
             const sendBy = action.value.get('sendBy')
             const senderType = action.value.get('senderType')
             const sendToGroup = action.value.get('displayName')
+            const idReceived = contactOrGroup + timeStamp
             let newId = null
             let newMessage = null
-            // grabs timestamp of the message and converts it in YY/MM//DD
-            //const timeStamp = new Date(timeStampForDate)
-            /*             const month = timeStamp.getUTCMonth() + 1; //months from 1-12
-                        const day = timeStamp.getUTCDate();
-                        const year = timeStamp.getUTCFullYear();
-                        const date = year + "/" + month + "/" + day; */
 
             // Checks if the contact or group has already messages
             const contactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title == contactOrGroup && item.type == senderType)
@@ -152,7 +131,8 @@ function displayMessagesList(state = initialState, action) {
 
                 // create new message
                 newMessage = {
-                    id: newId,
+                    id: idReceived,
+                    //id: newId,
                     type: type,
                     contact: contactOrGroup,
                     predefined_message: predefined_message,
@@ -200,7 +180,8 @@ function displayMessagesList(state = initialState, action) {
 
                     // create new message
                     newMessage = {
-                        id: newId,
+                        id: idReceived,
+                        //id: newId,
                         type: type,
                         contact: contactOrGroup,
                         predefined_message: predefined_message,
@@ -258,22 +239,32 @@ function displayMessagesList(state = initialState, action) {
             // uses same id for the message
             const contactRequestAcceptedMessage = {
                 id: action.value.id,
-                type: action.value.type,
+                type: 'contact_request_response',
                 contact: action.value.contact,
                 predefined_message: action.value.predefined_message,
-                additionnal_message: action.value.additionnal_message,
+                additionnal_message: 'Accepted',
                 timeStamp: action.value.timeStamp,
                 messageReceivedId: action.value.messageReceivedId,
-                status: 'accepted'
+                status: 'accepted',
+                sendBy: action.value.contact
             }
-
             nextState = {
+                ...state,
+                messagesReceived: state.messagesReceived.map((content, i) => {
+                    if (content.id === action.value.id) {
+                        return contactRequestAcceptedMessage
+                    } else {
+                        return content
+                    }
+                })
+            }
+            /* nextState = {
                 ...state,
                 messagesReceived: [
                     contactRequestAcceptedMessage,
                     ...state.messagesReceived                    
                 ]
-            }
+            } */
             /*             // grabs timestamp of the message and converts it in YY/MM//DD
                         const acceptedTimeStamp = new Date(action.value.timeStamp)
                         const acceptedMonth = acceptedTimeStamp.getUTCMonth() + 1; //months from 1-12
@@ -312,20 +303,24 @@ function displayMessagesList(state = initialState, action) {
             // uses same id for the message 
             const contactRequestDeclinedMessage = {
                 id: action.value.id,
-                type: action.value.type,
+                type: 'contact_request_response',
                 contact: action.value.contact,
                 predefined_message: action.value.predefined_message,
-                additionnal_message: action.value.additionnal_message,
+                additionnal_message: 'Declined',
                 timeStamp: action.value.timeStamp,
                 messageReceivedId: action.value.messageReceivedId,
-                status: 'declined'
+                status: 'declined',
+                sendBy: action.value.contact
             }
             nextState = {
                 ...state,
-                messagesReceived: [
-                    contactRequestDeclinedMessage,
-                    ...state.messagesReceived                    
-                ]
+                messagesReceived: state.messagesReceived.map((content, i) => {
+                    if (content.id === action.value.id) {
+                        return contactRequestDeclinedMessage
+                    } else {
+                        return content
+                    }
+                })
             }
 
             /* // grabs timestamp of the message and converts it in YY/MM//DD

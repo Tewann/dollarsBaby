@@ -105,6 +105,7 @@
             "contact_request": "Demande de contact",
             "contact_added": "a été ajouté à vos contacts",
             "contact_denied": "n'a pas été ajouté à vos contacts",
+            "new_conversation": "Nouvelle conversation",
             "accept_or_decline": {
                 "accepted": "a accepté votre demande de contact",
                 "accept": "Accepter",

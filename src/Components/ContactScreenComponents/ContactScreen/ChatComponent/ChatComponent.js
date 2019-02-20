@@ -64,7 +64,7 @@ class ChatComponent extends React.Component {
             .then(() => {
                 // if firebase function worked, update redux store
                 const type = 'send'
-                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type } }
+                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type, senderType: 'contact' } }
                 this.props.dispatch(action)
                 this.messageInput.clear()
                 this.setState({ additionnalMessage: "" })

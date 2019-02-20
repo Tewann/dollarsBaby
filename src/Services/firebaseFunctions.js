@@ -251,7 +251,8 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
                 predefined_message: predefined_message,
                 additional_message: additionalMessage,
                 type: type,
-                sendBy: currentUser
+                sendBy: currentUser,
+                senderType: 'contact'
             })
             .then(resolve())
             .catch(error => reject(error))
@@ -433,7 +434,7 @@ export const fetchContacts = (userName) => {
                             `${doc.get('name')}`
                         )
                         // Set timeout to let time for the app to navigate to contact list screen, otherwise app crashes because can't find photo in contact screen header
-                        setTimeout(() => {
+                        await setTimeout(() => {
                             const deleteContactAction = { type: 'DELETE_CONTACT', value: doc }
                             dispatch(deleteContactAction)
                             const deleteContactMessagesAction = { type: 'DELETE_MESSAGE_HISTORY', value: doc.get('name') }

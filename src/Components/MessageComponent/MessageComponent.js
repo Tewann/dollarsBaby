@@ -51,7 +51,6 @@ class MessageComponent extends React.Component {
     }
 
     _renderImage = () => {
-        // console.log(this.props.message)
         // if last message is the same type: doesn't display image
         if (!this.state.senderSame) {
             let uri = null
@@ -187,7 +186,7 @@ class MessageComponent extends React.Component {
                 <Text style={styles.sender_name}>{this.props.message.sendBy}</Text>
             )
         } else if (this.props.type === 'messagesHistory') {
-            const messageSendToGroupName = this.props.message.toGroup !== undefined ? ` @ ${this.props.message.toGroup}` : null
+            let messageSendToGroupName = this.props.message.toGroup !== undefined ? ` @ ${this.props.message.toGroup}` : null
             return (
                 <Text style={styles.sender_name}>{this.props.message.sendBy}{messageSendToGroupName}</Text>
             )
@@ -211,15 +210,13 @@ class MessageComponent extends React.Component {
                 <View>
                     {
                         this.props.message.predefined_message != (null || undefined) &&
-                        <Text
-                            style={styles.predefined_message}
-                        >
+                        <Text style={styles.predefined_message}>
                             {this.props.message.predefined_message}
                         </Text>
                     }
                     {
                         this.props.message.additionnal_message != "" &&
-                        <Autolink 
+                        <Autolink
                             text={this.props.message.additionnal_message}
                             truncate={0}
                             hashtag="twitter"
@@ -230,6 +227,13 @@ class MessageComponent extends React.Component {
                             {this.props.message.additionnal_message}
                         </Text> */
                     }
+                </View>
+            )
+        } else {
+            return (
+                <View>
+                    {this.props.message.predefined_message != (null || undefined) &&
+                        <Text style={styles.predefined_message}>{strings('message_history_screen.display_message.new_conversation')}</Text>}
                 </View>
             )
         }
@@ -272,6 +276,7 @@ class MessageComponent extends React.Component {
     }
 
     render() {
+        console.log(this.props.message)
         return (
             <View style={styles.main_container}>
                 {(this.props.type === 'group' || this.props.type === 'contact') && this._renderDateContainer()}
