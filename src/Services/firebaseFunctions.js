@@ -225,13 +225,15 @@ export const setPlatformUsedToFirestore = async (userName) => {
 }
 
 // send message to the contact's firestore message list
-export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type, sound) => {
+export const sendMessageToFirestore = async (currentUser, contact, predefined_message, additionalMessage, timeStamp, id, type, sound, imageDownloadUrl) => {
     new Promise((resolve, reject) => {
         // if there is no additionnal message body = predefined message
         // elif only additionnal message body = additionnal message
         // else body = predefined message : additionnal message
         let body = null
-        if (additionalMessage == "") {
+        if ((predefined_message == null || undefined) && additionalMessage == "" ) {
+            body = 'Image'
+        } else if (additionalMessage == "") {
             body = `${predefined_message}`
         } else if (predefined_message == null || undefined) {
             body = `${additionalMessage}`
@@ -250,6 +252,7 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
                 messageId: id,
                 predefined_message: predefined_message,
                 additional_message: additionalMessage,
+                imageDownloadUrl: imageDownloadUrl,
                 type: type,
                 sendBy: currentUser,
                 senderType: 'contact'
@@ -755,3 +758,42 @@ export const showContactRequests = (currentUser, hideContactRequests) =>
                 reject(error);
             });
     });
+
+
+/**
+ * Upload send images to firebase storage
+ * Return downloadUrl which is then send in the message payload
+ */
+
+export const uploadImageForMessagesToFirebase = (currentUser, imageUri, senderType) => {
+    return new Promise((resolve, reject) => {
+        let imgUri = imageUri.uri;
+        const uploadUri = Platform.OS === 'ios' ? imgUri.replace('file://', '') : imgUri;
+        const currentTimeStamp = new Date().getTime()
+        const imageName = `${currentTimeStamp}_${senderType}_${currentUser}.jpg`
+        const imageLocation = `Images_Send_By_Users/${currentTimeStamp}_${senderType}_${currentUser}.jpg`
+
+        firebase
+            .firestore()
+            .collection('Images_Send_By_Users')
+            .doc(imageName)
+            .set({
+                imageName: imageName,
+                imageLocation: imageLocation,
+                imageTimestamp: currentTimeStamp
+            }, { merge: true })
+            .catch(err => reject(err))
+
+        // upload image to firebase storage
+        firebase
+            .storage()
+            .ref(imageLocation)
+            //.child(imageName)
+            .putFile(uploadUri)
+            .then((result) => {
+                const downloadURL = result.downloadURL
+                resolve(downloadURL)
+            })
+            .catch(error => reject(error))
+    })
+}

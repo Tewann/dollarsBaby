@@ -23,7 +23,19 @@ admin.initializeApp();
 // Push message to firestore group collection
 //*
 exports.messageSendToGroup = functions.https.onCall(data => {
-    const body = data.additionalMessage === "" ? `${data.predefined_message}` : `${data.predefined_message} : ${data.additionalMessage}`;
+    let body = null;
+    if ((data.predefined_message == null || undefined) && data.additionalMessage == "") {
+        body = 'Image';
+    }
+    else if (data.additionalMessage == "") {
+        body = `${data.predefined_message}`;
+    }
+    else if (data.predefined_message == null || undefined) {
+        body = `${data.additionalMessage}`;
+    }
+    else {
+        body = `${data.predefined_message} : ${data.additionalMessage}`;
+    }
     return admin.firestore()
         .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
         .doc(data.groupName)
@@ -38,6 +50,7 @@ exports.messageSendToGroup = functions.https.onCall(data => {
         messageId: data.id,
         predefined_message: data.predefined_message,
         additional_message: data.additionalMessage,
+        imageDownloadUrl: data.imageDownloadUrl,
         sound: data.sound
     })
         .then(() => {
@@ -141,6 +154,7 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
             messageId: data.messageId,
             predefined_message: data.predefined_message,
             additional_message: data.additional_message,
+            imageDownloadUrl: data.imageDownloadUrl,
             type: 'received',
             senderType: data.senderType
         })
@@ -196,6 +210,7 @@ exports.addPrivateGroupMessageToAllMembers = functions.firestore
             messageId: data.messageId,
             predefined_message: data.predefined_message,
             additional_message: data.additional_message,
+            imageDownloadUrl: data.imageDownloadUrl,
             type: 'received',
             senderType: data.senderType
         })

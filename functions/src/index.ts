@@ -23,7 +23,16 @@ admin.initializeApp()
 // Push message to firestore group collection
 //*
 export const messageSendToGroup = functions.https.onCall(data => {
-    const body = data.additionalMessage === "" ? `${data.predefined_message}` : `${data.predefined_message} : ${data.additionalMessage}`
+    let body = null
+        if ((data.predefined_message == null || undefined) && data.additionalMessage == "" ) {
+            body = 'Image'
+        } else if (data.additionalMessage == "") {
+            body = `${data.predefined_message}`
+        } else if (data.predefined_message == null || undefined) {
+            body = `${data.additionalMessage}`
+        } else {
+            body = `${data.predefined_message} : ${data.additionalMessage}`
+        }
     return admin.firestore()
         .collection(data.groupType === 'public' ? 'Public_Groups' : 'Private_Groups')
         .doc(data.groupName)
@@ -38,6 +47,7 @@ export const messageSendToGroup = functions.https.onCall(data => {
             messageId: data.id,
             predefined_message: data.predefined_message,
             additional_message: data.additionalMessage,
+            imageDownloadUrl: data.imageDownloadUrl,
             sound: data.sound
         })
         .then(() => {
@@ -151,6 +161,7 @@ export const addPublicGroupMessageToAllMembers =
                         messageId: data.messageId,
                         predefined_message: data.predefined_message,
                         additional_message: data.additional_message,
+                        imageDownloadUrl: data.imageDownloadUrl,
                         type: 'received',
                         senderType: data.senderType
                     })
@@ -212,6 +223,7 @@ export const addPrivateGroupMessageToAllMembers =
                         messageId: data.messageId,
                         predefined_message: data.predefined_message,
                         additional_message: data.additional_message,
+                        imageDownloadUrl: data.imageDownloadUrl,
                         type: 'received',
                         senderType: data.senderType
                     })

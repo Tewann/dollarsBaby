@@ -10,16 +10,19 @@
 
 
 import React from 'react'
-import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator, Image } from 'react-native'
 import styles from './styles'
 
 import MessageItem from './MessageItem/MessageItem'
 import ConversationComponent from './ConversationComponent/ConversationComponent'
 
 import { connect } from 'react-redux'
-import { sendMessageToFirestore } from '../../../../Services/firebaseFunctions'
+import { sendMessageToFirestore, uploadImageForMessagesToFirebase } from '../../../../Services/firebaseFunctions'
 import { strings } from '../../../../i18n'
 import { Icon } from 'react-native-elements';
+import ImagePicker from 'react-native-image-picker'
+
+var options = { quality: 0.1 };
 
 class ChatComponent extends React.Component {
     constructor(props) {
@@ -28,7 +31,10 @@ class ChatComponent extends React.Component {
             additionnalMessage: "",
             errorMessage: null,
             textInputHeight: 40,
-            displayConversation: false
+            displayConversation: false,
+            displayAttachement: true,
+            displayCameraLibraryButtons: false,
+            imageUri: null
         }
     }
 
@@ -47,8 +53,6 @@ class ChatComponent extends React.Component {
 
     //*
     // Send message by calling firebase function
-    // Checks if additionnal message length is under 100 caracters
-    // Then calls firebase function
     //*
     _sendMessage = async (predefined_message, sound) => {
         // reset error message
@@ -60,20 +64,31 @@ class ChatComponent extends React.Component {
         const additionnal_message = this.state.additionnalMessage
         const id = `${currentUser}_${timeStamp}`
         const type = 'received'
-        const sendMessage = await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound)
-            .then(() => {
-                // if firebase function worked, update redux store
-                const type = 'send'
-                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type, senderType: 'contact' } }
-                this.props.dispatch(action)
-                this.messageInput.clear()
-                this.setState({ additionnalMessage: "" })
-            })
+        const imageUri = this.state.imageUri
+        let imageDownloadUrl = null
+
+        // Update redux store
+        const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type: 'send', senderType: 'contact', imageUri } }
+        this.props.dispatch(action)
+        this.messageInput.clear()
+        this.setState({ additionnalMessage: "", imageUri: null, displayAttachement: true, displayCameraLibraryButtons: false })
+
+        // If an image has been selected to be send, upload it to firebase, grabs download url and sends it to the contact
+        if (imageUri != (null || undefined)) {
+            const senderType = 'contact'
+            const downloadUrl = await uploadImageForMessagesToFirebase(currentUser, imageUri, senderType)
+                .then()
+                .catch(err => this.setState({ errorMessage: err }))
+            imageDownloadUrl = { uri: downloadUrl }
+        }
+
+        // Send message
+        await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound, imageDownloadUrl)
             .catch(err => this.setState({ errorMessage: err }))
     }
 
     _renderIcon = () => {
-        if (this.state.additionnalMessage !== "") {
+        if (this.state.additionnalMessage !== "" || this.state.imageUri !== null) {
             return (
                 <TouchableOpacity
                     style={styles.send_icon_container}
@@ -103,6 +118,91 @@ class ChatComponent extends React.Component {
             )
         }
     }
+    _renderAttachmentButtons = () => {
+        if (this.state.displayAttachement) {
+            return (
+                <TouchableOpacity
+                    onPress={() => this.setState({ displayAttachement: false, displayCameraLibraryButtons: true })}
+                    style={{ paddingLeft: 10, paddingRight: 10 }}
+                >
+                    <Icon
+                        name='ios-attach'
+                        type='ionicon'
+                        size={30}
+                    />
+                </TouchableOpacity >
+            )
+        } else if (this.state.displayCameraLibraryButtons) {
+            return (
+                <View style={{ flexDirection: 'row', paddingLeft: 4, paddingRight: 4 }} >
+                    <TouchableOpacity
+                        onPress={() => this._openImageLibrary()}
+                        style={{ paddingRight: 10 }}
+                    >
+                        <Icon
+                            name='ios-images'
+                            type="ionicon"
+                            size={45}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => this._openCamera()}
+                    >
+                        <Icon
+                            name='ios-camera'
+                            type="ionicon"
+                            size={50}
+                        />
+                    </TouchableOpacity>
+                </View>
+            )
+        }
+    }
+
+    _openImageLibrary = () => {
+        ImagePicker.launchImageLibrary(options, (response) => {
+            if (response.didCancel) {
+                return
+            }
+            else if (response.error) {
+                this.setState({ errorMessage: response.error })
+                return
+            }
+            else {
+                let requireSource = { uri: response.uri }
+                this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+            }
+        });
+    }
+
+    _openCamera = () => {
+        ImagePicker.launchCamera(options, (response) => {
+            if (response.didCancel) {
+                return
+            }
+            else if (response.error) {
+                this.setState({ errorMessage: response.error })
+                return
+            }
+            else {
+                let requireSource = { uri: response.uri }
+                this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+            }
+        });
+    }
+
+    _renderImageToSend = () => {
+        if (this.state.imageUri) {
+            return (
+                <View style={styles.image_container}>
+                    <Image
+                        source={this.state.imageUri}
+                        style={styles.image}
+                    />
+                </View>
+            )
+        }
+    }
 
     render() {
         return (
@@ -112,6 +212,7 @@ class ChatComponent extends React.Component {
                     <Text style={{ color: 'red', marginLeft: 7 }}>
                         {this.state.errorMessage}
                     </Text>}
+                {this._renderImageToSend()}
                 <View style={[styles.TextInput_container, { marginRight: this.state.additionnalMessage == "" ? 7 : 0 }]}>
                     <TextInput
                         placeholder={strings('contacts_screen.messages_list_screen.placeholder')}
@@ -125,6 +226,7 @@ class ChatComponent extends React.Component {
                             this.setState({ textInputHeight: event.nativeEvent.contentSize.height })
                         }}
                     />
+                    {this._renderAttachmentButtons()}
                     {this._renderIcon()}
                 </View>
                 <View style={{ paddingBottom: 5 }}>
@@ -140,7 +242,7 @@ class ChatComponent extends React.Component {
                     />
                 </View>
 
-            </View>
+            </View >
         )
     }
 }

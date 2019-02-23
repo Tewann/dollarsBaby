@@ -7,16 +7,18 @@
 
 
 import React from 'react'
-import { View, TouchableOpacity, Text, FlatList, TextInput } from 'react-native'
+import { View, TouchableOpacity, Text, FlatList, TextInput, Image } from 'react-native'
 import styles from './styles'
 import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
 import MessageItem from './MessageItem/MessageItem'
 import firebase from 'react-native-firebase';
-
+import ImagePicker from 'react-native-image-picker'
 import { strings } from '../../../../i18n'
 import ConversationComponent from './ConversationComponent/ConversationComponent';
+import { uploadImageForMessagesToFirebase } from '../../../../Services/firebaseFunctions'
 
+var options = { quality: 0.1 };
 
 class ChatComponent extends React.Component {
     constructor(props) {
@@ -25,15 +27,19 @@ class ChatComponent extends React.Component {
             additionnalMessage: "",
             errorMessage: null,
             //groupType: null,
-           // groupNameIndex: null,
+            // groupNameIndex: null,
             groupCreatorIsCurrentUser: false,
+            displayConversation: false,
+            displayAttachement: true,
+            displayCameraLibraryButtons: false,
+            imageUri: null
         }
     }
 
     componentWillMount = () => {
-/*         const groupNameIndex = this.props.groupList.findIndex(item =>
-            item.name === this.props.currentGroup)
-        const groupType = this.props.groupList[this.props.].type */
+        /*         const groupNameIndex = this.props.groupList.findIndex(item =>
+                    item.name === this.props.currentGroup)
+                const groupType = this.props.groupList[this.props.].type */
         const groupCreatorIsCurrentUser = this.props.groupList[this.props.currentDisplayedGroupIndex].creator === this.props.currentUser.name
         this.setState({ /* groupType: groupType, groupNameIndex: groupNameIndex,  */groupCreatorIsCurrentUser: groupCreatorIsCurrentUser })
         if (this.props.currentDisplayedGroupType === 'private' || groupCreatorIsCurrentUser) {
@@ -61,7 +67,8 @@ class ChatComponent extends React.Component {
     //*
     _sendMessage = async (predefined_message, sound) => {
         // Reset error message
-        this.setState({ errorMessage: null })
+        this.setState({ errorMessage: null, additionnalMessage: "", imageUri: null, displayAttachement: true, displayCameraLibraryButtons: false})
+        this.messageInput.clear()
         // Calls firebase function
         // prepares payload
         const timeStamp = new Date().getTime();
@@ -72,6 +79,22 @@ class ChatComponent extends React.Component {
         const type = 'send'
         const displayGroupName = this.props.groupList[this.props.currentDisplayedGroupIndex].displayName
         const groupType = this.props.currentDisplayedGroupType
+        const imageUri = this.state.imageUri
+        let imageDownloadUrl = null
+
+        // update redux store
+        const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type, senderType: groupType, imageUri } }
+        this.props.dispatch(action)
+
+        // If an image has been selected to be send, upload it to firebase, grabs download url and sends it to the contact
+        if (imageUri != (null || undefined)) {
+            const senderType = 'group'
+            const downloadUrl = await uploadImageForMessagesToFirebase(currentUser, imageUri, senderType)
+                .then()
+                .catch(err => this.setState({ errorMessage: err }))
+            imageDownloadUrl = { uri: downloadUrl }
+        }
+
         // invok function
         const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
         httpsCallable({
@@ -81,23 +104,16 @@ class ChatComponent extends React.Component {
             sendBy: this.props.currentUser.name,
             predefined_message: predefined_message,
             additionalMessage: this.state.additionnalMessage,
+            imageDownloadUrl: imageDownloadUrl,
             timeStamp: timeStamp,
             id: id,
             sound: sound
         })
-            .then((res) => {
-                // after function called
-                // updated redux store
-                const type = 'send'
-                const contact = this.props.currentGroup
-                const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type, senderType: groupType } }
-                this.props.dispatch(action)
-            })
             .catch(httpsError => console.log('httpsCallable err' + httpsError))
     }
 
     _renderIcon = () => {
-        if (this.state.additionnalMessage !== "") {
+        if (this.state.additionnalMessage !== "" || this.state.imageUri !== null) {
             return (
                 <TouchableOpacity
                     style={styles.send_icon_container}
@@ -113,8 +129,94 @@ class ChatComponent extends React.Component {
         }
     }
 
+    _renderAttachmentButtons = () => {
+        if (this.state.displayAttachement) {
+            return (
+                <TouchableOpacity
+                    onPress={() => this.setState({ displayAttachement: false, displayCameraLibraryButtons: true })}
+                    style={{ paddingLeft: 10, paddingRight: 10 }}
+                >
+                    <Icon
+                        name='ios-attach'
+                        type='ionicon'
+                        size={30}
+                    />
+                </TouchableOpacity >
+            )
+        } else if (this.state.displayCameraLibraryButtons) {
+            return (
+                <View style={{ flexDirection: 'row', paddingLeft: 4, paddingRight: 4 }} >
+                    <TouchableOpacity
+                        onPress={() => this._openImageLibrary()}
+                        style={{ paddingRight: 10 }}
+                    >
+                        <Icon
+                            name='ios-images'
+                            type="ionicon"
+                            size={45}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => this._openCamera()}
+                    >
+                        <Icon
+                            name='ios-camera'
+                            type="ionicon"
+                            size={50}
+                        />
+                    </TouchableOpacity>
+                </View>
+            )
+        }
+    }
+
+    _openImageLibrary = () => {
+        ImagePicker.launchImageLibrary(options, (response) => {
+            if (response.didCancel) {
+                return
+            }
+            else if (response.error) {
+                this.setState({ errorMessage: response.error })
+                return
+            }
+            else {
+                let requireSource = { uri: response.uri }
+                this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+            }
+        });
+    }
+
+    _openCamera = () => {
+        ImagePicker.launchCamera(options, (response) => {
+            if (response.didCancel) {
+                return
+            }
+            else if (response.error) {
+                this.setState({ errorMessage: response.error })
+                return
+            }
+            else {
+                let requireSource = { uri: response.uri }
+                this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+            }
+        });
+    }
+
+    _renderImageToSend = () => {
+        if (this.state.imageUri) {
+            return (
+                <View style={styles.image_container}>
+                    <Image
+                        source={this.state.imageUri}
+                        style={styles.image}
+                    />
+                </View>
+            )
+        }
+    }
+
     displayPredefinedMessageList = () => {
-        if (this.props.currentDisplayedGroupType === 'private' || this.state.groupCreatorIsCurrentUser  || this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated ) {
+        if (this.props.currentDisplayedGroupType === 'private' || this.state.groupCreatorIsCurrentUser || this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated) {
             return (
                 <View>
                     {/* ------ Error messages ------*/}
@@ -122,6 +224,8 @@ class ChatComponent extends React.Component {
                         <Text style={{ color: 'red', marginLeft: 7 }}>
                             {this.state.errorMessage}
                         </Text>}
+
+                    {this._renderImageToSend()}
 
                     {/* ------ Text Input for additionnal message ------*/}
                     <View style={[styles.TextInput_container, { marginRight: this.state.additionnalMessage == "" ? 7 : 0 }]}>
@@ -137,6 +241,7 @@ class ChatComponent extends React.Component {
                                 this.setState({ textInputHeight: event.nativeEvent.contentSize.height })
                             }}
                         />
+                        {this._renderAttachmentButtons()}
                         {this._renderIcon()}
                     </View>
                     {/* ------ Predefined group message list ------*/}

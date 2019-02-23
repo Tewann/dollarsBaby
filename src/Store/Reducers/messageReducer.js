@@ -51,13 +51,13 @@ function displayMessagesList(state = initialState, action) {
     switch (action.type) {
         case 'MESSAGE_SENDED':
             let newMessageSend = null
-            // grabs timestamp of the message and converts it in YY/MM//DD
-            const sendTimeStamp = new Date(action.value.timeStamp)
-            const sendMonth = sendTimeStamp.getUTCMonth() + 1; //months from 1-12
-            const sendDay = sendTimeStamp.getUTCDate();
-            const sendYear = sendTimeStamp.getUTCFullYear();
-            const sendDate = sendYear + "/" + sendMonth + "/" + sendDay;
-            const idSend = action.value.contact + sendTimeStamp
+            /*             // grabs timestamp of the message and converts it in YY/MM//DD
+                        const sendTimeStamp = new Date(action.value.timeStamp)
+                        const sendMonth = sendTimeStamp.getUTCMonth() + 1; //months from 1-12
+                        const sendDay = sendTimeStamp.getUTCDate();
+                        const sendYear = sendTimeStamp.getUTCFullYear();
+                        const sendDate = sendYear + "/" + sendMonth + "/" + sendDay; */
+            const idSend = action.value.contact + action.value.timeStamp + '_sended'
 
             // Checks if the contact or group has already messages
             const sendcontactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title === action.value.contact && item.type === action.value.senderType)
@@ -68,6 +68,7 @@ function displayMessagesList(state = initialState, action) {
                 contact: action.value.contact,
                 predefined_message: action.value.predefined_message,
                 additionnal_message: action.value.additionnal_message,
+                imageUri: action.value.imageUri,
                 timeStamp: action.value.timeStamp,
             }
             // If the conversation doesn't exist
@@ -113,6 +114,7 @@ function displayMessagesList(state = initialState, action) {
             const messageReceivedId = action.value.get('messageId')
             const predefined_message = action.value.get('predefined_message')
             const additionnal_message = action.value.get('additional_message')
+            const imageDownloadURL = action.value.get('imageDownloadUrl')
             const timeStamp = action.value.get('timeStamp')
             const type = action.value.get('type')
             const sendBy = action.value.get('sendBy')
@@ -120,7 +122,21 @@ function displayMessagesList(state = initialState, action) {
             const sendToGroup = action.value.get('displayName')
             const idReceived = contactOrGroup + timeStamp
             let newId = null
-            let newMessage = null
+
+            // Create new message
+            let newMessage = {
+                id: idReceived,
+                //id: newId,
+                type: type,
+                contact: contactOrGroup,
+                predefined_message: predefined_message,
+                additionnal_message: additionnal_message,
+                imageUri: imageDownloadURL,
+                timeStamp: timeStamp,
+                messageReceivedId: messageReceivedId,
+                sendBy: sendBy,
+                toGroup: sendToGroup
+            }
 
             // Checks if the contact or group has already messages
             const contactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title == contactOrGroup && item.type == senderType)
@@ -128,20 +144,21 @@ function displayMessagesList(state = initialState, action) {
             if (contactOrGroupIndexInMessageList === -1) {
                 // Sets new message id to 0
                 newId = 0
-
-                // create new message
-                newMessage = {
-                    id: idReceived,
-                    //id: newId,
-                    type: type,
-                    contact: contactOrGroup,
-                    predefined_message: predefined_message,
-                    additionnal_message: additionnal_message,
-                    timeStamp: timeStamp,
-                    messageReceivedId: messageReceivedId,
-                    sendBy: sendBy,
-                    toGroup: sendToGroup
-                }
+                /* 
+                                // create new message
+                                newMessage = {
+                                    id: idReceived,
+                                    //id: newId,
+                                    type: type,
+                                    contact: contactOrGroup,
+                                    predefined_message: predefined_message,
+                                    additionnal_message: additionnal_message,
+                                    imageUri: imageDownloadURL,
+                                    timeStamp: timeStamp,
+                                    messageReceivedId: messageReceivedId,
+                                    sendBy: sendBy,
+                                    toGroup: sendToGroup
+                                } */
 
                 // Create new contact/group
                 const newConversation = {
@@ -178,19 +195,19 @@ function displayMessagesList(state = initialState, action) {
                 if (messageIndex === -1) {
                     newId = state.messagesHistory[contactOrGroupIndexInMessageList].data.length + 1
 
-                    // create new message
-                    newMessage = {
-                        id: idReceived,
-                        //id: newId,
-                        type: type,
-                        contact: contactOrGroup,
-                        predefined_message: predefined_message,
-                        additionnal_message: additionnal_message,
-                        timeStamp: timeStamp,
-                        messageReceivedId: messageReceivedId,
-                        sendBy: sendBy,
-                        toGroup: sendToGroup
-                    }
+                    /*                     // create new message
+                                        newMessage = {
+                                            id: idReceived,
+                                            //id: newId,
+                                            type: type,
+                                            contact: contactOrGroup,
+                                            predefined_message: predefined_message,
+                                            additionnal_message: additionnal_message,
+                                            timeStamp: timeStamp,
+                                            messageReceivedId: messageReceivedId,
+                                            sendBy: sendBy,
+                                            toGroup: sendToGroup
+                                        } */
 
                     //const data = state.messagesHistory[contactOrGroupIndexInMessageList].data
                     //let newData = state.messagesHistory[contactOrGroupIndexInMessageList].data

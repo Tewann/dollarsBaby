@@ -12,7 +12,6 @@ import { connect } from 'react-redux'
 import { uploadImage } from '../../../Services/firebaseFunctions'
 import { strings } from '../../../i18n'
 
-// variable to avoid "Can't find variable: options" when trying to open image picker or camera
 var options = {quality: 0.1};
 
 class ChangeProfilImageBlock extends React.Component {

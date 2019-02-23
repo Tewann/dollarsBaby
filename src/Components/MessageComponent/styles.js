@@ -86,6 +86,10 @@ const styles = StyleSheet.create({
         height: roundWidth,
         backgroundColor: 'red'
     },
+    image: {
+        width: 150,
+        height: 150
+    },
     received_container: {
         //alignItems: 'flex-start',
         justifyContent: 'center',
@@ -93,13 +97,13 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
         paddingTop: 5,
-        paddingBottom: 5, 
+        paddingBottom: 5,
         //backgroundColor: 'rgba(217, 217, 217, 0.7)',
         borderRadius: 8,
         borderWidth: 1,
         borderColor: 'lightgrey',
         maxWidth: width / 1.7,
-       // minHeight: roundWidth
+        // minHeight: roundWidth
     },
     predefined_message: {
         fontWeight: 'bold',
@@ -122,8 +126,8 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
         paddingTop: 5,
-        paddingBottom: 5, 
-                backgroundColor: 'rgba(179, 255, 179, 0.7)',
+        paddingBottom: 5,
+        backgroundColor: 'rgba(179, 255, 179, 0.7)',
         borderRadius: 8,
         maxWidth: width / 1.7,
     },

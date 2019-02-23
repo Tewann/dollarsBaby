@@ -35,6 +35,15 @@ const styles = StyleSheet.create({
         paddingLeft: 7,
         height: 40,
         justifyContent: 'center'
+    },
+    image: {
+        width: 75,
+        height: 75,
+        borderRadius: 12
+    },
+    image_container: {
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })
 

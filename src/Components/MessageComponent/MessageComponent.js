@@ -63,7 +63,6 @@ class MessageComponent extends React.Component {
                     item.name === this.props.message.sendBy)
                 uri = (contactNameIndex !== -1) ? this.props.contactList[contactNameIndex].photoUrl : null
             }
-
             if (uri === null) {
                 // If the contact/currentUser does not have a specific avatar picture => return default picture
                 return (
@@ -215,17 +214,24 @@ class MessageComponent extends React.Component {
                         </Text>
                     }
                     {
+                        this.props.message.imageUri != (null || undefined) &&
+                        <View style={{ marginTop: 5, marginBottom: 5 }}>
+                            <ImageCacheProvider
+                                ImageCacheManagerOptions={{ ttl: 100 }}>
+                                <CachedImage
+                                    source={this.props.message.imageUri}
+                                    style={styles.image}
+                                />
+                            </ImageCacheProvider>
+                        </View>
+                    }
+                    {
                         this.props.message.additionnal_message != "" &&
                         <Autolink
                             text={this.props.message.additionnal_message}
                             truncate={0}
                             hashtag="twitter"
                         />
-                        /* <Text
-                            style={styles.additional_message}
-                        >
-                            {this.props.message.additionnal_message}
-                        </Text> */
                     }
                 </View>
             )
@@ -276,7 +282,6 @@ class MessageComponent extends React.Component {
     }
 
     render() {
-        console.log(this.props.message)
         return (
             <View style={styles.main_container}>
                 {(this.props.type === 'group' || this.props.type === 'contact') && this._renderDateContainer()}
