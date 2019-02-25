@@ -5,7 +5,8 @@ import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window')
 // const itemHeight = (height / 12)
-const itemHeight = (height / 22)
+const itemHeight1 = (height / 22)
+const itemHeight2 = (height / 16)
 
 const styles = StyleSheet.create({
     flatlist: {
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
         borderColor: 'lightgrey',
         borderWidth: 1,
         borderRadius: 10,
-        minHeight: itemHeight
+        minHeight: itemHeight1
     },
     TextInput_container: {
         flexDirection: 'row',
@@ -44,7 +45,26 @@ const styles = StyleSheet.create({
     image_container: {
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    complements_title: {
+        height: itemHeight2,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    main_container_for_complements: {
+        flex: 1,
+        margin: 2,
+        height: itemHeight2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 12,
+        backgroundColor: '#07416b' 
+    },
+    text: {
+        color: 'white',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
 })
 
 

@@ -37,7 +37,8 @@
         },
         "message_item": {},
         "messages_list_screen": {
-            "placeholder": "Message"
+            "placeholder": "Message",
+            "my_position": "My position : "
         },
         "options": {
             "rename": "Rename contact",
@@ -99,8 +100,9 @@
         }
     },
     "message_history_screen": {
-        "click_on_avatar": "Click on the picture of your contact to change his name",
+        "click_on_avatar": "Click on the picture of your contact to access options",
         "list_empty": "You have not received messages yet",
+        "long_press": "Long press on the predefined messages to see the supplements",
         "display_message": {
             "contact_request": "Contact request",
             "contact_added": "has been added to your contact list",
@@ -263,7 +265,12 @@
         "urgent": "Urgent",
         "forget": "Don't forget",
         "coming": "I'm coming",
-        "done": "Done"
+        "done": "Done",
+        "at_home": "At home",
+        "at_work": "At work",
+        "calling_soon": "Calling you soon",
+        "not_available": "I'm not available",
+        "dealing_with_it": "I'm taking care of it"
     },
     "terms_of_service": {
         "title": "Terms of Service",

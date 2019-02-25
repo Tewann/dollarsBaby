@@ -7,37 +7,80 @@ const initialState = {
             id: 1,
             title: 'Blink',
             sound: 's1blink',
-            messageFor: 'All'
+            messageFor: 'All',
+            responses: [
+                { id: 1, name: 'Blink' }
+            ]
         },
         {
             id: 2,
             title: strings('reducers.where'),
             sound: "s2tesou",
-            messageFor: 'All'
+            messageFor: 'All',
+            complements: [
+                { id: 1, name: 'Critique' },
+                { id: 2, name: 'Medium' },
+                { id: 3, name: 'Low' },
+                { id: 4, name: 'Location' }],
+            responses: [
+                { id: 1, name: strings('reducers.coming') },
+                { id: 2, name: strings('reducers.at_home') },
+                { id: 3, name: strings('reducers.at_work') },
+                { id: 4, name: 'Location' }
+            ]
         },
         {
             id: 3,
             title: strings('reducers.urgent'),
             sound: "s3urgent",
-            messageFor: 'All'
+            messageFor: 'All',
+            complements: [
+                { id: 1, name: 'Critique' },
+                { id: 2, name: 'Medium' },
+                { id: 3, name: 'Low' }],
+            responses: [
+                { id: 1, name: strings('reducers.coming') },
+                { id: 2, name: strings('reducers.calling_soon') },
+                { id: 3, name: strings('reducers.not_available') },
+            ]
         },
         {
             id: 4,
             title: strings('reducers.forget'),
             sound: "s4oubliepas",
-            messageFor: 'All'
+            messageFor: 'All',
+            complements: [
+                { id: 1, name: 'Critique' },
+                { id: 2, name: 'Medium' },
+                { id: 3, name: 'Low' }],
+            responses: [
+                { id: 1, name: strings('reducers.dealing_with_it') },
+                { id: 2, name: strings('reducers.done') },
+            ]
         },
         {
             id: 5,
             title: strings('reducers.coming'),
             sound: "s5jarrive",
-            messageFor: 'All'
+            messageFor: 'All',
+            complements: [
+                { id: 1, name: '>15 min' },
+                { id: 2, name: '>30 min' },
+                { id: 3, name: '>1h' },
+                { id: 4, name: '<1h' },
+                { id: 5, name: 'Location' }],
+            responses: [
+                { id: 1, name: 'Ok' }
+            ]
         },
         {
             id: 6,
             title: strings('reducers.done'),
             sound: "s6cestfait",
-            messageFor: 'All'
+            messageFor: 'All',
+            responses: [
+                { id: 1, name: 'Ok' }
+            ]
         },
     ],
 
@@ -121,12 +164,11 @@ function displayMessagesList(state = initialState, action) {
             const senderType = action.value.get('senderType')
             const sendToGroup = action.value.get('displayName')
             const idReceived = contactOrGroup + timeStamp
-            let newId = null
-
+            const sound = action.value.get('sound')
+            
             // Create new message
             let newMessage = {
                 id: idReceived,
-                //id: newId,
                 type: type,
                 contact: contactOrGroup,
                 predefined_message: predefined_message,
@@ -135,7 +177,8 @@ function displayMessagesList(state = initialState, action) {
                 timeStamp: timeStamp,
                 messageReceivedId: messageReceivedId,
                 sendBy: sendBy,
-                toGroup: sendToGroup
+                toGroup: sendToGroup,
+                sound: sound
             }
 
             // Checks if the contact or group has already messages

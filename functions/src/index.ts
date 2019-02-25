@@ -154,6 +154,7 @@ export const addPublicGroupMessageToAllMembers =
                     .collection('messagesReceived')
                     .add({
                         title: data.groupName,
+                        displayName: data.groupName,
                         sendBy: data.sendBy,
                         body: data.body,
                         sound: data.sound,

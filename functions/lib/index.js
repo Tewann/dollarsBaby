@@ -147,6 +147,7 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
             .collection('messagesReceived')
             .add({
             title: data.groupName,
+            displayName: data.groupName,
             sendBy: data.sendBy,
             body: data.body,
             sound: data.sound,

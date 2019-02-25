@@ -5,6 +5,7 @@ const initialState = {
     currentDisplayedGroup: ['GroupList'],
     currentDisplayedGroupType: null,
     currentDisplayedGroupIndex: null,
+    currentDisplayedGroupName: null,
     currentDisplayedGroupScreen: 'conversation',
     predefinedGroupMessagesList: [
         {
@@ -55,6 +56,7 @@ function groupManagment(state = initialState, action) {
             nextState = {
                 ...state,
                 currentDisplayedGroup: [action.value.groupName],
+                currentDisplayedGroupName: action.value.displayedGroupName,
                 currentDisplayedGroupType: action.value.groupType,
                 currentDisplayedGroupIndex: action.value.groupNameIndex
             }
@@ -71,7 +73,6 @@ function groupManagment(state = initialState, action) {
                 ...state,
                 groupList: deleteGroupList
             }
-            console.log('delete : ', nextState)
             return nextState || state
 
         case 'CHAT_ACTIVATED_CHANGED':
@@ -155,6 +156,7 @@ function groupManagment(state = initialState, action) {
                         photoName: action.value.get('photoName'),
                         photoURL: action.value.get('photoURL'),
                         creator: action.value.get('creator'),
+                        displayName: action.value.get('displayName'),
                         chatActivated: action.value.get('chatActivated'),
                     } :
                         content)
@@ -204,13 +206,13 @@ function groupManagment(state = initialState, action) {
                         photoURL: action.value.get('photoURL'),
                         type: 'private',
                         creator: action.value.get('creator'),
+                        displayName: action.value.get('displayName'),
                         contacts: []
                     }
                     nextState = {
                         ...state,
                         groupList: [...state.groupList, newPrivateGroup]
                     }
-                    console.log('private update : ', nextState)
                 }
             } else {
                 // If group already exists => update photo of the group

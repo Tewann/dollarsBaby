@@ -7,7 +7,7 @@
 
 
 import React from 'react'
-import { View, TouchableOpacity, Text, FlatList, TextInput, Image } from 'react-native'
+import { View, TouchableOpacity, Text, FlatList, TextInput, Image, ActivityIndicator } from 'react-native'
 import styles from './styles'
 import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
@@ -26,22 +26,23 @@ class ChatComponent extends React.Component {
         this.state = {
             additionnalMessage: "",
             errorMessage: null,
-            //groupType: null,
-            // groupNameIndex: null,
             groupCreatorIsCurrentUser: false,
             displayConversation: false,
             displayAttachement: true,
             displayCameraLibraryButtons: false,
-            imageUri: null
+            imageUri: null,
+            displayPredefinedMessagesList: true,
+            displayMessagesComplement: false,
+            complementsAndInitialMessage: [],
+            displayMessagesComplementLoading: false,
+            displayGroupName: null
         }
     }
 
     componentWillMount = () => {
-        /*         const groupNameIndex = this.props.groupList.findIndex(item =>
-                    item.name === this.props.currentGroup)
-                const groupType = this.props.groupList[this.props.].type */
         const groupCreatorIsCurrentUser = this.props.groupList[this.props.currentDisplayedGroupIndex].creator === this.props.currentUser.name
-        this.setState({ /* groupType: groupType, groupNameIndex: groupNameIndex,  */groupCreatorIsCurrentUser: groupCreatorIsCurrentUser })
+        const displayGroupName = this.props.groupList[this.props.currentDisplayedGroupIndex].displayName
+        this.setState({ groupCreatorIsCurrentUser: groupCreatorIsCurrentUser, displayGroupName: displayGroupName })
         if (this.props.currentDisplayedGroupType === 'private' || groupCreatorIsCurrentUser) {
             const hideAdsAction = { type: 'AD_BANNER', value: { value: false, event: 'screen' } }
             this.props.dispatch(hideAdsAction)
@@ -65,19 +66,18 @@ class ChatComponent extends React.Component {
     // Checks if additionnal message length is under 100 caracters
     // Then calls firebase function
     //*
-    _sendMessage = async (predefined_message, sound) => {
+    _sendMessage = async (predefined_message, sound, additionnalMessage) => {
         // Reset error message
-        this.setState({ errorMessage: null, additionnalMessage: "", imageUri: null, displayAttachement: true, displayCameraLibraryButtons: false})
+        this.setState({ errorMessage: null, additionnalMessage: "", imageUri: null, displayAttachement: true, displayCameraLibraryButtons: false })
         this.messageInput.clear()
         // Calls firebase function
         // prepares payload
         const timeStamp = new Date().getTime();
         const currentUser = this.props.currentUser.name
         const contact = this.props.currentGroup
-        const additionnal_message = this.state.additionnalMessage
+        const additionnal_message = additionnalMessage ? additionnalMessage : this.state.additionnalMessage
         const id = `${currentUser}_${timeStamp}`
         const type = 'send'
-        const displayGroupName = this.props.groupList[this.props.currentDisplayedGroupIndex].displayName
         const groupType = this.props.currentDisplayedGroupType
         const imageUri = this.state.imageUri
         let imageDownloadUrl = null
@@ -94,16 +94,27 @@ class ChatComponent extends React.Component {
                 .catch(err => this.setState({ errorMessage: err }))
             imageDownloadUrl = { uri: downloadUrl }
         }
-
+ /*        console.log({
+            groupType: groupType,
+            displayName: this.state.displayGroupName,
+            groupName: this.props.currentGroup,
+            sendBy: this.props.currentUser.name,
+            predefined_message: predefined_message,
+            additionalMessage: additionnal_message,
+            imageDownloadUrl: imageDownloadUrl,
+            timeStamp: timeStamp,
+            id: id,
+            sound: sound
+        }) */
         // invok function
         const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
         httpsCallable({
             groupType: groupType,
-            displayName: displayGroupName,
+            displayName: this.state.displayGroupName,
             groupName: this.props.currentGroup,
             sendBy: this.props.currentUser.name,
             predefined_message: predefined_message,
-            additionalMessage: this.state.additionnalMessage,
+            additionalMessage: additionnal_message,
             imageDownloadUrl: imageDownloadUrl,
             timeStamp: timeStamp,
             id: id,
@@ -215,6 +226,48 @@ class ChatComponent extends React.Component {
         }
     }
 
+    _displayMessagesComplement = (complementsAndInitialMessage) => {
+        if (complementsAndInitialMessage.complements) {
+            this.setState({
+                displayPredefinedMessagesList: false,
+                displayMessagesComplement: true,
+                complementsAndInitialMessage: complementsAndInitialMessage,
+            })
+        }
+    }
+
+    sendMessageWithComplements = (complement) => {
+        // If user wants to send location, calls api 'Opencagedata' and convert lat/long to formatted adress, then send message
+        if (complement === 'Location') {
+            this.setState({ displayMessagesComplementLoading: true, displayMessagesComplement: false })
+            navigator.geolocation.getCurrentPosition((position) => {
+                fetch(`https://api.opencagedata.com/geocode/v1/geojson?q=${position.coords.latitude}+${position.coords.longitude}&key=a7ef5976448c4efd9b2cf2dbc104846e&pretty=1`)
+                    .then((response) => {
+                        response.json()
+                            .then(responseJson => {
+                                const formattedLocation = responseJson.features[0].properties.formatted
+                                const location = strings('contacts_screen.messages_list_screen.my_position') + formattedLocation
+                                this._sendMessage(this.state.complementsAndInitialMessage.title, this.state.complementsAndInitialMessage.sound, location)
+                                this.setState({
+                                    displayPredefinedMessagesList: true,
+                                    displayMessagesComplement: false,
+                                    complementsAndInitialMessage: [],
+                                    displayMessagesComplementLoading: false
+                                })
+                            })
+                    })
+                    .catch(err => this.setState({ errorMessage: err }))
+            })
+        } else {
+            this._sendMessage(this.state.complementsAndInitialMessage.title, this.state.complementsAndInitialMessage.sound, complement)
+            this.setState({
+                displayPredefinedMessagesList: true,
+                displayMessagesComplement: false,
+                complementsAndInitialMessage: [],
+            })
+        }
+    }
+
     displayPredefinedMessageList = () => {
         if (this.props.currentDisplayedGroupType === 'private' || this.state.groupCreatorIsCurrentUser || this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated) {
             return (
@@ -246,16 +299,57 @@ class ChatComponent extends React.Component {
                     </View>
                     {/* ------ Predefined group message list ------*/}
                     <View style={{ paddingBottom: 5 }}>
-                        <FlatList
-                            data={this.props.predefinedMessagesList}
-                            numColumns={3}
-                            columnWrapperStyle={styles.flatlist}
-                            keyboardShouldPersistTaps={'handled'}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) => <MessageItem message={item}
-                                sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
-                            />}
-                        />
+                        {this.state.displayPredefinedMessagesList &&
+                            <FlatList
+                                data={this.props.predefinedMessagesList}
+                                numColumns={3}
+                                columnWrapperStyle={styles.flatlist}
+                                keyboardShouldPersistTaps={'handled'}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) => <MessageItem message={item}
+                                    sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
+                                    displayComplementsOnLongPress={(complementsAndInitialMessage) => this._displayMessagesComplement(complementsAndInitialMessage)}
+                                />}
+                            />
+                        }
+                        {
+                            this.state.displayMessagesComplement && (
+                                <View>
+                                    <TouchableOpacity
+                                        onPress={() => this.setState({
+                                            displayPredefinedMessagesList: true,
+                                            displayMessagesComplement: false,
+                                            complementsAndInitialMessage: []
+                                        })}
+                                        style={styles.complements_title}>
+                                        <Text style={[styles.text, { color: 'black' }]}>{this.state.complementsAndInitialMessage.title}</Text>
+                                    </TouchableOpacity>
+                                    <FlatList
+                                        data={this.state.complementsAndInitialMessage.complements}
+                                        numColumns={3}
+                                        columnWrapperStyle={styles.flatlist}
+                                        keyboardShouldPersistTaps={'handled'}
+                                        keyExtractor={(item) => item.id.toString()}
+                                        renderItem={({ item }) =>
+                                            <TouchableOpacity
+                                                onPress={() => this.sendMessageWithComplements(item.name)}
+                                                style={styles.main_container_for_complements}>
+                                                <Text style={styles.text}>{item.name}</Text>
+                                            </TouchableOpacity>
+                                        }
+                                    />
+                                </View>
+                            )
+                        }
+                        {
+                            this.state.displayMessagesComplementLoading && (
+                                <View style={styles.complements_title}>
+                                    <ActivityIndicator
+                                        style={{ flex: 1 }}
+                                        size='large' />
+                                </View>
+                            )
+                        }
                     </View>
                 </View>
             )

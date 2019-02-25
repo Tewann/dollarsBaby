@@ -1,6 +1,5 @@
 import firebase from 'react-native-firebase'
 import { Platform, AppState, Alert } from 'react-native'
-import Store from '../Store/configureStore'
 import NavigationService from '../Services/navigator'
 import { strings } from '../i18n'
 

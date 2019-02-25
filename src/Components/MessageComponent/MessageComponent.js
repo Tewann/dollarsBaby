@@ -12,13 +12,15 @@
 
 
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
 import styles from './styles'
 import { strings } from '../../i18n'
 import { connect } from 'react-redux'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import AcceptOrDecline from './AcceptOrDeclineComponent/AcceptOrDecline'
 import Autolink from 'react-native-autolink';
+import { sendMessageToFirestore } from '../../Services/firebaseFunctions'
+import firebase from 'react-native-firebase';
 
 class MessageComponent extends React.Component {
     constructor(props) {
@@ -26,7 +28,9 @@ class MessageComponent extends React.Component {
         this.state = {
             defaultPicture: require('../../../images/ic_tag_faces.png'),
             typeSame: null,
-            typeSameForTime: null
+            typeSameForTime: null,
+            displayResponses: null,
+            predefinedResponses: null
         }
         this.prevMessTimeStamp = this.props.messagesHistory[this.props.contactOrGroupIndex].data[this.props.id + 1] !== undefined ? this.props.messagesHistory[this.props.contactOrGroupIndex].data[this.props.id + 1].timeStamp : null
     }
@@ -192,6 +196,110 @@ class MessageComponent extends React.Component {
         }
     }
 
+    _renderPredefinedResponses = () => {
+        return (
+            <View style={styles.flatlist_container}>
+                <FlatList
+                    data={this.state.predefinedResponses}
+                    numColumns={2}
+                    columnWrapperStyle={styles.flatlist}
+                    keyboardShouldPersistTaps={'handled'}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) =>
+                        <TouchableOpacity
+                            onPress={() => this._sendPredefinedResponse(item)}
+                            style={styles.main_container_for_complements}>
+                            <Text style={styles.text}>{item.name}</Text>
+                        </TouchableOpacity>
+                    }
+                />
+            </View>
+        )
+    }
+
+    _getPosition = () => {
+        return new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(async (position) => {
+                fetch(`https://api.opencagedata.com/geocode/v1/geojson?q=${position.coords.latitude}+${position.coords.longitude}&key=a7ef5976448c4efd9b2cf2dbc104846e&pretty=1`)
+                    .then(async (response) => {
+                        response.json()
+                            .then(responseJson => {
+                                const formattedLocation = responseJson.features[0].properties.formatted
+                                const location = strings('contacts_screen.messages_list_screen.my_position') + formattedLocation
+                                resolve(location)
+                            })
+                    })
+                    .catch(err => console.log(err))
+            })
+        })
+    }
+    _sendPredefinedResponse = async (item) => {
+        const timeStamp = new Date().getTime();
+        const currentUser = this.props.currentUserName
+        const contact = this.props.message.contact
+        const predefined_message = this.props.message.predefined_message === 'Blink' ? 'Blink' : null
+        let additionnal_message = this.props.message.predefined_message === 'Blink' ? "" : item.name
+        const id = `${currentUser}_${timeStamp}`
+        const type = 'received'
+        const sound = this.props.message.sound
+        let senderType = null
+
+        if (this.props.message.toGroup) {
+            const groupIndex = this.props.groupList.findIndex(item => item.name === contact)
+            senderType = this.props.groupList[groupIndex].type
+        } else {
+            senderType = 'contact'
+        }
+
+        if (item.name === 'Location') {
+            await this._getPosition()
+                .then(res => additionnal_message = res)
+                .catch((err) => {
+                    console.log(err)
+                    this.setState({ displayResponses: null, predefinedResponses: null })
+                })
+        }
+
+        // Update redux store
+        const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type: 'send', senderType: senderType } }
+        this.props.dispatch(action)
+
+        this.setState({ displayResponses: null, predefinedResponses: null })
+
+        // Message component has been called from contact screen
+        if (senderType === 'contact') {
+            // Send message
+            sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound)
+                .catch(err => console.log(err))
+        } else {
+            const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
+            httpsCallable({
+                groupType: senderType,
+                displayName: this.props.message.toGroup,
+                groupName: contact,
+                sendBy: currentUser,
+                predefined_message: predefined_message,
+                additionalMessage: additionnal_message,
+                imageDownloadUrl: null,
+                timeStamp: timeStamp,
+                id: id,
+                sound: sound
+            })
+                .catch(httpsError => console.log('httpsCallable err' + httpsError))
+        }
+    }
+
+    _grabsPredefinedResponses = () => {
+        if (this.props.message.type === 'received' && this.state.displayResponses === null && this.props.message.predefined_message) {
+            const predefinedMessage = this.props.predefinedMessagesList.find(element => {
+                return element.sound === this.props.message.sound
+            })
+            this.setState({ displayResponses: true, predefinedResponses: predefinedMessage.responses })
+        } else {
+            this.setState({ displayResponses: null, predefinedResponses: null })
+        }
+    }
+
     _renderMessages() {
         if (this.props.type === 'messagesHistory' && this.props.message.type === 'contact_request' &&
             this.props.message.status !== 'accepted' && this.props.message.status !== 'declined') {
@@ -206,7 +314,7 @@ class MessageComponent extends React.Component {
             )
         } else if (this.props.message.type !== 'contact_request') {
             return (
-                <View>
+                <TouchableOpacity onPress={() => this._grabsPredefinedResponses()}>
                     {
                         this.props.message.predefined_message != (null || undefined) &&
                         <Text style={styles.predefined_message}>
@@ -233,7 +341,7 @@ class MessageComponent extends React.Component {
                             hashtag="twitter"
                         />
                     }
-                </View>
+                </TouchableOpacity>
             )
         } else {
             return (
@@ -263,18 +371,21 @@ class MessageComponent extends React.Component {
         } else {
             // Message received
             return (
-                <View style={styles.renderMessage_main_container}>
-                    {(this.props.type === 'group' /* || this.props.type === 'messagesHistory' */) && <View style={styles.image_container}>
-                        {this._renderImage()}
-                    </View>}
-                    <View style={styles.received_container}>
-                        {(this.props.type === 'group' || this.props.type === 'messagesHistory') &&
-                            this._renderSenderName()
-                            // <Text style={styles.sender_name}>{this.props.message.sendBy}</Text>
-                        }
-                        {this._renderMessages()}
+                <View>
+                    <View style={styles.renderMessage_main_container}>
+                        {(this.props.type === 'group' /* || this.props.type === 'messagesHistory' */) && <View style={styles.image_container}>
+                            {this._renderImage()}
+                        </View>}
+                        <View style={styles.received_container}>
+                            {(this.props.type === 'group' || this.props.type === 'messagesHistory') &&
+                                this._renderSenderName()
+                                // <Text style={styles.sender_name}>{this.props.message.sendBy}</Text>
+                            }
+                            {this._renderMessages()}
+                        </View>
+                        {this._renderTime()}
                     </View>
-                    {this._renderTime()}
+                    {this.state.displayResponses && this._renderPredefinedResponses()}
                 </View>
             )
         }
@@ -295,9 +406,13 @@ class MessageComponent extends React.Component {
 const mapStateToProps = (state) => {
     return {
         contactList: state.contactManagment.contactList,
+        currentUserName: state.getCurrentUserInformations.name,
         currentUserProfilPicture: state.getCurrentUserInformations.userProfilPicture,
         messagesHistory: state.displayMessagesList.messagesHistory,
         messagesReceived: state.displayMessagesList.messagesReceived,
+        predefinedMessagesList: state.displayMessagesList.predefinedMessagesList,
+        currentDisplayedGroupName: state.groupManagment.currentDisplayedGroupName,
+        groupList: state.groupManagment.groupList,
     }
 }
 

@@ -23,6 +23,7 @@ class ConversationComponent extends React.Component {
         this.state = {
             groupIndexInMessageHistory: null,
             stoploop: false,
+            displayGroupName: null
         }
     }
 
@@ -48,7 +49,8 @@ class ConversationComponent extends React.Component {
                         inverted={true}
                         data={this.props.messagesHistory[this.state.groupIndexInMessageHistory].data}
                         keyExtractor={(item, id) => item.id.toString()}
-                        renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={this.state.groupIndexInMessageHistory} type={'group'} />}
+                        renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={this.state.groupIndexInMessageHistory}
+                            type={'group'} />}
                         //ListEmptyComponent={() => this.renderListEmpty()}
                         initialNumToRender={15}
                         maxToRenderPerBatch={10}
@@ -60,6 +62,7 @@ class ConversationComponent extends React.Component {
                     <ScrollView >
                         <Text style={styles.list_empty}>{strings('groups_screen.group_screen.list_empty')}</Text>
                         <Text style={styles.list_empty2}>{strings('groups_screen.group_screen.click_on_avatar')}</Text>
+                        <Text style={styles.list_empty2}>{strings('message_history_screen.long_press')}</Text>
                     </ScrollView>
                 }
             </View>
@@ -72,6 +75,7 @@ const mapStateToProps = (state) => {
         messagesHistory: state.displayMessagesList.messagesHistory,
         currentGroup: state.groupManagment.currentDisplayedGroup[0],
         currentDisplayedGroupType: state.groupManagment.currentDisplayedGroupType,
+        //currentDisplayedGroupIndex: state.groupManagment.currentDisplayedGroupIndex,
     }
 }
 

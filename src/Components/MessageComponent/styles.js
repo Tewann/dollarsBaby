@@ -5,7 +5,9 @@ import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window');
 const itemWidth = (width / 3.5) - 10;
+const itemWidth2 = (width / 3) -10
 const roundWidth = itemWidth / 2.75;
+const itemHeight2 = (height / 16)
 
 const styles = StyleSheet.create({
     main_container: {
@@ -134,6 +136,24 @@ const styles = StyleSheet.create({
     sender_name: {
         fontWeight: 'bold',
         color: '#88b0e8'
+    },
+    main_container_for_complements: {
+        //flex: 1,
+        margin: 2,
+        height: itemHeight2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 12,
+        backgroundColor: '#07416b' ,
+        width: itemWidth2
+    },
+    text: {
+        color: 'white',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+    flatlist_container: {
+        marginTop: 3
     }
 })
 

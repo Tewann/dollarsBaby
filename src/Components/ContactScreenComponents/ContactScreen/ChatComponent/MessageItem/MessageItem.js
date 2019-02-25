@@ -5,6 +5,7 @@
 // Props : 
 //  - message item (predefined message)
 //  - sendMessage()
+// - displayComplementsOnLongPress()
 //* 
 
 import React from 'react'
@@ -19,6 +20,7 @@ class MessageItem extends React.Component {
             return (
                 <TouchableOpacity
                     onPress={() => this.props.sendMessage(message, sound)}
+                    onLongPress={() => this.props.displayComplementsOnLongPress(this.props.message)}
                     style={styles.main_container}
                 >
                     <Text style={styles.text}>

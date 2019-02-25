@@ -28,7 +28,8 @@ class GroupItem extends React.Component {
         const action = { type: 'SWITCH_GROUP_SCREEN', value: {
             groupName: this.props.group.name, 
             groupType: this.props.group.type,
-            groupNameIndex: groupNameIndex
+            groupNameIndex: groupNameIndex,
+            displayedGroupName: this.props.group.displayName
         }}
         this.props.dispatch(action)
         this.props.navigation.navigate('GroupScreen')

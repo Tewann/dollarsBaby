@@ -34,15 +34,17 @@ class ChatComponent extends React.Component {
             displayConversation: false,
             displayAttachement: true,
             displayCameraLibraryButtons: false,
-            imageUri: null
+            imageUri: null,
+            displayPredefinedMessagesList: true,
+            displayMessagesComplement: false,
+            complementsAndInitialMessage: [],
+            displayMessagesComplementLoading: false
         }
     }
 
     componentDidMount = () => {
         this.setState({ displayConversation: true })
     }
-
-
 
     //*
     // Update state when text input for additionnal message is modified
@@ -54,14 +56,14 @@ class ChatComponent extends React.Component {
     //*
     // Send message by calling firebase function
     //*
-    _sendMessage = async (predefined_message, sound) => {
+    _sendMessage = async (predefined_message, sound, additionnalMessage) => {
         // reset error message
         this.setState({ errorMessage: null })
         // calls firebase function
         const timeStamp = new Date().getTime();
         const currentUser = this.props.currentUser.name
         const contact = this.props.contact
-        const additionnal_message = this.state.additionnalMessage
+        const additionnal_message = additionnalMessage ? additionnalMessage : this.state.additionnalMessage
         const id = `${currentUser}_${timeStamp}`
         const type = 'received'
         const imageUri = this.state.imageUri
@@ -204,6 +206,48 @@ class ChatComponent extends React.Component {
         }
     }
 
+    _displayMessagesComplement = (complementsAndInitialMessage) => {
+        if (complementsAndInitialMessage.complements) {
+            this.setState({
+                displayPredefinedMessagesList: false,
+                displayMessagesComplement: true,
+                complementsAndInitialMessage: complementsAndInitialMessage,
+            })
+        }
+    }
+
+    sendMessageWithComplements = (complement) => {
+        // If user wants to send location, calls api 'Opencagedata' and convert lat/long to formatted adress, then send message
+        if (complement === 'Location') {
+            this.setState({ displayMessagesComplementLoading: true, displayMessagesComplement: false })
+            navigator.geolocation.getCurrentPosition((position) => {
+                fetch(`https://api.opencagedata.com/geocode/v1/geojson?q=${position.coords.latitude}+${position.coords.longitude}&key=a7ef5976448c4efd9b2cf2dbc104846e&pretty=1`)
+                    .then((response) => {
+                        response.json()
+                            .then(responseJson => {
+                                const formattedLocation = responseJson.features[0].properties.formatted
+                                const location = strings('contacts_screen.messages_list_screen.my_position') + formattedLocation
+                                this._sendMessage(this.state.complementsAndInitialMessage.title, this.state.complementsAndInitialMessage.sound, location)
+                                this.setState({
+                                    displayPredefinedMessagesList: true,
+                                    displayMessagesComplement: false,
+                                    complementsAndInitialMessage: [],
+                                    displayMessagesComplementLoading: false
+                                })
+                            })
+                    })
+                    .catch(err => this.setState({ errorMessage: err }))
+            })
+        } else {
+            this._sendMessage(this.state.complementsAndInitialMessage.title, this.state.complementsAndInitialMessage.sound, complement)
+            this.setState({
+                displayPredefinedMessagesList: true,
+                displayMessagesComplement: false,
+                complementsAndInitialMessage: [],
+            })
+        }
+    }
+
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -230,16 +274,57 @@ class ChatComponent extends React.Component {
                     {this._renderIcon()}
                 </View>
                 <View style={{ paddingBottom: 5 }}>
-                    <FlatList
-                        data={this.props.predefinedMessagesList}
-                        numColumns={3}
-                        columnWrapperStyle={styles.flatlist}
-                        keyboardShouldPersistTaps={'handled'}
-                        keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) => <MessageItem message={item}
-                            sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
-                        />}
-                    />
+                    {this.state.displayPredefinedMessagesList &&
+                        <FlatList
+                            data={this.props.predefinedMessagesList}
+                            numColumns={3}
+                            columnWrapperStyle={styles.flatlist}
+                            keyboardShouldPersistTaps={'handled'}
+                            keyExtractor={(item) => item.id.toString()}
+                            renderItem={({ item }) => <MessageItem message={item}
+                                sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
+                                displayComplementsOnLongPress={(complementsAndInitialMessage) => this._displayMessagesComplement(complementsAndInitialMessage)}
+                            />}
+                        />
+                    }
+                    {
+                        this.state.displayMessagesComplement && (
+                            <View>
+                                <TouchableOpacity
+                                    onPress={() => this.setState({
+                                        displayPredefinedMessagesList: true,
+                                        displayMessagesComplement: false,
+                                        complementsAndInitialMessage: []
+                                    })}
+                                    style={styles.complements_title}>
+                                    <Text style={[styles.text, { color: 'black' }]}>{this.state.complementsAndInitialMessage.title}</Text>
+                                </TouchableOpacity>
+                                <FlatList
+                                    data={this.state.complementsAndInitialMessage.complements}
+                                    numColumns={3}
+                                    columnWrapperStyle={styles.flatlist}
+                                    keyboardShouldPersistTaps={'handled'}
+                                    keyExtractor={(item) => item.id.toString()}
+                                    renderItem={({ item }) =>
+                                        <TouchableOpacity
+                                            onPress={() => this.sendMessageWithComplements(item.name)}
+                                            style={styles.main_container_for_complements}>
+                                            <Text style={styles.text}>{item.name}</Text>
+                                        </TouchableOpacity>
+                                    }
+                                />
+                            </View>
+                        )
+                    }
+                    {
+                        this.state.displayMessagesComplementLoading && (
+                            <View style={styles.complements_title}>
+                                <ActivityIndicator
+                                    style={{ flex: 1 }}
+                                    size='large' />
+                            </View>
+                        )
+                    }
                 </View>
 
             </View >
