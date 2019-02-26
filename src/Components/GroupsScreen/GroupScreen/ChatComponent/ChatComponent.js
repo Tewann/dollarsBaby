@@ -94,18 +94,7 @@ class ChatComponent extends React.Component {
                 .catch(err => this.setState({ errorMessage: err }))
             imageDownloadUrl = { uri: downloadUrl }
         }
-        /*        console.log({
-                   groupType: groupType,
-                   displayName: this.state.displayGroupName,
-                   groupName: this.props.currentGroup,
-                   sendBy: this.props.currentUser.name,
-                   predefined_message: predefined_message,
-                   additionalMessage: additionnal_message,
-                   imageDownloadUrl: imageDownloadUrl,
-                   timeStamp: timeStamp,
-                   id: id,
-                   sound: sound
-               }) */
+
         // invok function
         const httpsCallable = firebase.functions().httpsCallable('messageSendToGroup')
         httpsCallable({

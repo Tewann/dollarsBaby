@@ -136,7 +136,10 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
         const contacts = [];
         snapshotMembers.forEach(doc => {
             const contactName = doc.data().name;
-            contacts.push(contactName);
+            // Push the doc to the contacts if the doc is not the one who sended the message
+            if (contactName !== data.sendBy) {
+                contacts.push(contactName);
+            }
         });
         return contacts;
     });
@@ -180,8 +183,6 @@ exports.addPublicGroupMessageToAllMembers = functions.firestore
 exports.addPrivateGroupMessageToAllMembers = functions.firestore
     .document(`Private_Groups/{groups}/Messages/{messages}`)
     .onCreate((snapshot, context) => __awaiter(this, void 0, void 0, function* () {
-    /*  console.log()
-     console.log(snapshot.ref.parent.get()) */
     const data = snapshot.data();
     const parent = snapshot
         .ref
@@ -192,7 +193,10 @@ exports.addPrivateGroupMessageToAllMembers = functions.firestore
         const contacts = [];
         snapshotMembers.forEach(doc => {
             const contactName = doc.data().name;
-            contacts.push(contactName);
+            // Push the doc to the contacts if the doc is not the one who sended the message
+            if (contactName !== data.sendBy) {
+                contacts.push(contactName);
+            }
         });
         return contacts;
     });
