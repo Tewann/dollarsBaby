@@ -173,10 +173,7 @@ class ProfilScreen extends React.Component {
                     <ScrollView
                         keyboardShouldPersistTaps='handled'
                     >
-                        <KeyboardAvoidingView
-                            behavior='position'
-                            keyboardVerticalOffset={-96}
-                        >
+                       
                             <View style={styles.avatar_container}>
                                 {this._renderImage()}
                                 {this.state.errorMessage &&
@@ -194,7 +191,6 @@ class ProfilScreen extends React.Component {
                                 <ChangeProfilImageBlock />
                                 <DeleteAccountBlock />
                             </View>
-                        </KeyboardAvoidingView>
                     </ScrollView>
                 </View>
             </SafeAreaView>

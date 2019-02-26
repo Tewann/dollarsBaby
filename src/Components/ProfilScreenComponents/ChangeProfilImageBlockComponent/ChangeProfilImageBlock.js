@@ -11,8 +11,9 @@ import ImagePicker from 'react-native-image-picker'
 import { connect } from 'react-redux'
 import { uploadImage } from '../../../Services/firebaseFunctions'
 import { strings } from '../../../i18n'
+import Store from '../../../Store/configureStore'
 
-var options = {quality: 0.1};
+var options = { quality: 0.1 };
 
 class ChangeProfilImageBlock extends React.Component {
     constructor(props) {
@@ -73,7 +74,7 @@ class ChangeProfilImageBlock extends React.Component {
         this.setState({ isLoading: true })
         const uploadURL = await uploadImage(requireSource)
         const action = { type: 'UPDATE_PROFIL_PICTURE', value: uploadURL }
-        this.props.dispatch(action)
+        Store.dispatch(action)
         this.setState({ isLoading: false, imageUploaded: true })
         setTimeout(() => {
             this.setState({ imageUploaded: false })

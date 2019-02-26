@@ -8,6 +8,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
 import firebase from 'react-native-firebase'
 import { strings } from '../../../i18n'
+import Store from '../../../Store/configureStore'
 
 class MailAdressBlock extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class MailAdressBlock extends React.Component {
             confirmMail: "",
             errorMessageMail: null,
             currentPassword: null,
+            mailSucessfullyUpdated: null
         }
     }
 
@@ -75,7 +77,8 @@ class MailAdressBlock extends React.Component {
                 var user = firebase.auth().currentUser;
                 user.updateEmail(this.state.newMail).then(() => {
                     const action = { type: "SET_CURRENT_USER_EMAIL", value: this.state.newMail }
-                    this.props.dispatch(action)
+                    Store.dispatch(action)
+                    this.setState({ mailSucessfullyUpdated: strings('profil_screen.mail_adress.mail_modified') });
                     setTimeout(this._switchBetweenMailTextandInput, 1000, 'text');
                 }).catch((error) => {
                     this.setState({ errorMessageMail: error.message });
@@ -103,6 +106,10 @@ class MailAdressBlock extends React.Component {
                     {this.state.errorMessageMail &&
                         <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10 }}>
                             Erreur : {this.state.errorMessageMail}
+                        </Text>}
+                    {this.state.mailSucessfullyUpdated &&
+                        <Text style={{ color: 'green', fontStyle: 'italic', marginTop: 10 }}>
+                            {this.state.mailSucessfullyUpdated}
                         </Text>}
                     <TextInput
                         placeholder={strings('profil_screen.mail_adress.placeholder_1')}

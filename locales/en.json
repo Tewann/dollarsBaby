@@ -148,7 +148,8 @@
             "placeholder_1": "New e-mail address",
             "placeholder_2": "Confirm e-mail address",
             "placeholder_3": "Password",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "mail_modified": "Mail changed"
         },
         "password": {
             "new_psswd": "Please specify your new password",

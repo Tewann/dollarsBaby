@@ -148,7 +148,8 @@
             "placeholder_1": "Nouvelle adresse mail",
             "placeholder_2": "Confirmer l'adresse mail",
             "placeholder_3": "Mot de passe",
-            "cancel": "Annuler"
+            "cancel": "Annuler",
+            "mail_modified": "Adresse mail modifiée"
         },
         "password": {
             "new_psswd": "Merci de préciser votre nouveau mot de passe",
