@@ -42,6 +42,7 @@ class GroupScreen extends React.Component {
     }
 
     render() {
+        
         return (
             <View style={styles.main_container}>
                 {this.props.currentDisplayedGroupScreen == 'conversation' &&
