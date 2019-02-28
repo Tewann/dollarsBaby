@@ -440,10 +440,10 @@ class Loading extends React.Component {
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
             this.props.dispatch(fetchGroups(this.props.currentUser.name))
-            this.props.navigation.navigate('ProfilScreen')
+           // this.props.navigation.navigate('ProfilScreen')
             //  this.props.navigation.navigate('MessageHistory')
             //this.props.navigation.navigate('GroupsList')
-            // this.props.navigation.navigate('DrawerStack')
+             this.props.navigation.navigate('DrawerStack')
             /*           const groupNameIndex = this.props.groupList.findIndex(item =>
                           item.name === "Yestgc" && item.type === "public")
                       const action = {

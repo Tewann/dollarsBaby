@@ -8,6 +8,9 @@ import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
 import firebase from 'react-native-firebase'
 import { strings } from '../../../i18n'
+import { connect } from 'react-redux'
+import { deleteContact, doesContactExistsAndWantToReceivedRequests } from '../../../Services/firebaseFunctions'
+import { deleteGroup } from '../../../Services/firebaseGroupFunctions'
 
 class DeleteAccountBlock extends React.Component {
     constructor(props) {
@@ -60,15 +63,45 @@ class DeleteAccountBlock extends React.Component {
             this.setState({ errorMessage: strings('profil_screen.delete_account.psswd') })
 
             // delete account
-        }  else {
-            this.setState({ errorMessage: null })
+        } else {
+            this.props.groupList.forEach(item => {
+                deleteGroup(this.props.currentUser.name, item.name, item.type)
+            })
+            this.props.contactList.forEach(item => {
+                deleteContact(this.props.currentUser.name, item.name)
+            })
 
+            firebase.firestore().collection('Users').doc(this.props.currentUser.name).get()
+                .then(doc => {
+                    firebase
+                        .storage()
+                        .ref(doc.get('photoName'))
+                        .delete()
+                })
+            firebase.firestore().collection('Users').doc(this.props.currentUser.name).collection('SoundsDownloaded').get()
+                .then(docs => {
+                    docs.forEach(doc => {
+                        firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).delete()
+                    })
+                })
+            firebase.firestore().collection('Users').doc(this.props.currentUser.name).collection('SoundsUploaded').get()
+                .then(docs => {
+                    docs.forEach(doc => {
+                        const soundStoragePosition = `usersSounds/${this.props.currentUser.name}/${doc.get('name')}`
+                        firebase.storage().ref(soundStoragePosition).delete()
+                        firebase.firestore().doc(doc.ref._documentPath._parts.join('/').toString()).delete()
+                    })
+                })
+
+            this.setState({ errorMessage: null })
+            
+            firebase.firestore().collection('Users').doc(this.props.currentUser.name).delete()
             this.reauthenticate(this.state.currentPassword).then(() => {
                 firebase.auth().currentUser.delete().then(() => {
                     Alert.alert(
                         strings('profil_screen.delete_account.account_deleted')
                     )
-                    
+
                 }).catch((error) => {
                     this.setState({ errorMessage: error.message });
                 })
@@ -159,4 +192,12 @@ class DeleteAccountBlock extends React.Component {
     }
 }
 
-export default DeleteAccountBlock
+const mapStateToProps = (state) => {
+    return {
+        contactList: state.contactManagment.contactList,
+        currentUser: state.getCurrentUserInformations,
+        groupList: state.groupManagment.groupList,
+    }
+}
+
+export default connect(mapStateToProps)(DeleteAccountBlock)
