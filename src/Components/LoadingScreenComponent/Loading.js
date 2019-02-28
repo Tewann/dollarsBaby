@@ -65,7 +65,6 @@ class Loading extends React.Component {
                 // there no user connected
                 // going to login screen
                 this.props.navigation.navigate('Login')
-                SplashScreen.hide();
             }
         })
 
