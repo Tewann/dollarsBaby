@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: 'bold',
         paddingTop: 5,
-        fontSize: 18
+        fontSize: 17
     },
     text: {
         textAlign: 'center',

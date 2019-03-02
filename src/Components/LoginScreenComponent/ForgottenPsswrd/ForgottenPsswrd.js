@@ -17,10 +17,7 @@ class ForgottenPsswrd extends React.Component {
         }
     }
 
-
-
     _resetPassword = () => {
-        console.log('reset')
         firebase
             .auth()
             .sendPasswordResetEmail(this.state.email)

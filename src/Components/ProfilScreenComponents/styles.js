@@ -10,11 +10,17 @@ const styles = StyleSheet.create({
     header_container: {
         flexDirection: 'row',
         paddingTop: 10,
-        paddingBottom: 10
+        paddingBottom: 10,
+        borderBottomWidth: 1,
+        borderColor: '#07416b'
+    },
+    header_subcontainer: {
+        justifyContent: 'center', 
+        alignItems: 'flex-start',
     },
     title: {
-        color: 'white',
-        fontSize: 17,
+        color: 'black',
+        fontSize: 20,
         fontWeight: 'bold',
     },
     avatar_container: {

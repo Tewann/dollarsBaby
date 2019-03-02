@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#cecfcf',
         borderRadius: 5,
+        minHeight: 40
         //paddingBottom: 0,
     },
     button: {

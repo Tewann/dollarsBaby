@@ -211,10 +211,10 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
     {
         lazy: true,
         tabBarOptions: {
-            style: { backgroundColor: 'lightgrey', height: itemHeight },
-            indicatorStyle: { backgroundColor: 'white' },
-            activeTintColor: '#07416b',
-            inactiveTintColor: '#07416b',
+            style: { backgroundColor: "white", height: itemHeight },
+            indicatorStyle: { backgroundColor: "#07416b" },
+            activeTintColor: "blue",
+            inactiveTintColor: "lightgrey",
             showIcon: true,
             showLabel: false,
 

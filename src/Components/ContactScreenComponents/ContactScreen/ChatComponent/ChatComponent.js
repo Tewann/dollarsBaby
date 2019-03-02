@@ -10,7 +10,7 @@
 
 
 import React from 'react'
-import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator, Image } from 'react-native'
+import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator, Image, SafeAreaView } from 'react-native'
 import styles from './styles'
 
 import MessageItem from './MessageItem/MessageItem'
@@ -273,60 +273,61 @@ class ChatComponent extends React.Component {
                     {this._renderAttachmentButtons()}
                     {this._renderIcon()}
                 </View>
-                <View style={{ paddingBottom: 5 }}>
-                    {this.state.displayPredefinedMessagesList &&
-                        <FlatList
-                            data={this.props.predefinedMessagesList}
-                            numColumns={3}
-                            columnWrapperStyle={styles.flatlist}
-                            keyboardShouldPersistTaps={'handled'}
-                            keyExtractor={(item) => item.id.toString()}
-                            renderItem={({ item }) => <MessageItem message={item}
-                                sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
-                                displayComplementsOnLongPress={(complementsAndInitialMessage) => this._displayMessagesComplement(complementsAndInitialMessage)}
-                            />}
-                        />
-                    }
-                    {
-                        this.state.displayMessagesComplement && (
-                            <View>
-                                <TouchableOpacity
-                                    onPress={() => this.setState({
-                                        displayPredefinedMessagesList: true,
-                                        displayMessagesComplement: false,
-                                        complementsAndInitialMessage: []
-                                    })}
-                                    style={styles.complements_title}>
-                                    <Text style={[styles.text, { color: 'black' }]}>{this.state.complementsAndInitialMessage.title}</Text>
-                                </TouchableOpacity>
-                                <FlatList
-                                    data={this.state.complementsAndInitialMessage.complements}
-                                    numColumns={3}
-                                    columnWrapperStyle={styles.flatlist}
-                                    keyboardShouldPersistTaps={'handled'}
-                                    keyExtractor={(item) => item.id.toString()}
-                                    renderItem={({ item }) =>
-                                        <TouchableOpacity
-                                            onPress={() => this.sendMessageWithComplements(item.name)}
-                                            style={styles.main_container_for_complements}>
-                                            <Text style={styles.text}>{item.name}</Text>
-                                        </TouchableOpacity>
-                                    }
-                                />
-                            </View>
-                        )
-                    }
-                    {
-                        this.state.displayMessagesComplementLoading && (
-                            <View style={styles.complements_title}>
-                                <ActivityIndicator
-                                    style={{ flex: 1 }}
-                                    size='large' />
-                            </View>
-                        )
-                    }
-                </View>
-
+                <SafeAreaView>
+                    <View style={{ paddingBottom: 5 }}>
+                        {this.state.displayPredefinedMessagesList &&
+                            <FlatList
+                                data={this.props.predefinedMessagesList}
+                                numColumns={3}
+                                columnWrapperStyle={styles.flatlist}
+                                keyboardShouldPersistTaps={'handled'}
+                                keyExtractor={(item) => item.id.toString()}
+                                renderItem={({ item }) => <MessageItem message={item}
+                                    sendMessage={(predefined_message, sound) => this._sendMessage(predefined_message, sound)}
+                                    displayComplementsOnLongPress={(complementsAndInitialMessage) => this._displayMessagesComplement(complementsAndInitialMessage)}
+                                />}
+                            />
+                        }
+                        {
+                            this.state.displayMessagesComplement && (
+                                <View>
+                                    <TouchableOpacity
+                                        onPress={() => this.setState({
+                                            displayPredefinedMessagesList: true,
+                                            displayMessagesComplement: false,
+                                            complementsAndInitialMessage: []
+                                        })}
+                                        style={styles.complements_title}>
+                                        <Text style={[styles.text, { color: 'black' }]}>{this.state.complementsAndInitialMessage.title}</Text>
+                                    </TouchableOpacity>
+                                    <FlatList
+                                        data={this.state.complementsAndInitialMessage.complements}
+                                        numColumns={3}
+                                        columnWrapperStyle={styles.flatlist}
+                                        keyboardShouldPersistTaps={'handled'}
+                                        keyExtractor={(item) => item.id.toString()}
+                                        renderItem={({ item }) =>
+                                            <TouchableOpacity
+                                                onPress={() => this.sendMessageWithComplements(item.name)}
+                                                style={styles.main_container_for_complements}>
+                                                <Text style={styles.text}>{item.name}</Text>
+                                            </TouchableOpacity>
+                                        }
+                                    />
+                                </View>
+                            )
+                        }
+                        {
+                            this.state.displayMessagesComplementLoading && (
+                                <View style={styles.complements_title}>
+                                    <ActivityIndicator
+                                        style={{ flex: 1 }}
+                                        size='large' />
+                                </View>
+                            )
+                        }
+                    </View>
+                </SafeAreaView>
             </View >
         )
     }

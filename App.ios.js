@@ -58,14 +58,12 @@ export default class App extends React.Component {
     return (
       <Provider store={Store}>
         <PersistGate persistor={persistor}>
-          <SafeAreaView style={{ flex: 1, backgroundColor: '#3a485c' }} forceInset={{ top: 'never' }}>
             <AppContainer
               ref={navigatorRef => {
                 NavigatorService.setContainer(navigatorRef);
               }}
             />
             <BannerComponent unitID={unitID} />
-          </SafeAreaView>
         </PersistGate>
       </Provider>
     );

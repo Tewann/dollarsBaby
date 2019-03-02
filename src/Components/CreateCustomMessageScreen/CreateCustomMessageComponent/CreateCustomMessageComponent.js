@@ -115,6 +115,13 @@ class CreateCustomMessageComponent extends React.Component {
                     rounded
                     onPress={() => this.definePredefinedMessage()}
                 />
+                <Button
+                    buttonStyle={{ maxWidth: 150, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}
+                    title={strings('create_custom_message_screen.cancel')}
+                    fontSize={12}
+                    rounded
+                    onPress={() => this.setState({ displayed: 'chooseType' })}
+                />
             </View>
         )
     }
@@ -138,7 +145,7 @@ class CreateCustomMessageComponent extends React.Component {
                             createPredefinedMessage={(sound) => this.createPredefinedMessage(sound)}
                         />}
                     />
-                    { this.state.messageType === 'Groups' && <FlatList
+                    {this.state.messageType === 'Groups' && <FlatList
                         data={this.state.soundsUploadedByUser}
                         numColumns={3}
                         columnWrapperStyle={styles.flatlist}
@@ -150,13 +157,20 @@ class CreateCustomMessageComponent extends React.Component {
                         />}
                     />}
                     <View style={{ alignItems: 'center' }}>
-                        <Button
+                        {/* <Button
                             buttonStyle={{ maxWidth: 150, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}
                             fontSize={12}
                             rounded
                             onPress={() => this.setSoundsOfUser()}
                             icon={{ name: 'cached' }}
-                            title={strings('create_custom_message_screen.update_sound')} />
+                            title={strings('create_custom_message_screen.update_sound')} /> */}
+                        <Button
+                            buttonStyle={{ maxWidth: 150, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}
+                            title={strings('create_custom_message_screen.cancel')}
+                            fontSize={12}
+                            rounded
+                            onPress={() => this.setState({ displayed: 'chooseType' })}
+                        />
                     </View>
                 </View>
             </View>

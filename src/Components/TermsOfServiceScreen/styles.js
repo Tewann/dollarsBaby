@@ -24,17 +24,21 @@ const styles = StyleSheet.create({
         color: 'red',
     },
     scrollView: {
-        flex: 1,
+        //flex: 1,
         margin: 5,
         borderWidth: 1,
         borderColor: 'lightgrey',
     },
     TOS: {
+        flex: 1,
+       // height: 8000,
         padding: 10,
-        textAlign: 'justify'
+        textAlign: 'justify',
     },
     bottomContainer: {
-
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingBottom: 10
     },
     buttonsView: {
         flexDirection: 'row',

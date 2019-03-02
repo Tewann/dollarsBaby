@@ -2,9 +2,9 @@
 // Profil screen view
 
 import React from 'react'
-import { View, Text, Image, KeyboardAvoidingView, ScrollView, SafeAreaView, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, Image, ScrollView, SafeAreaView, TouchableOpacity, ActivityIndicator } from 'react-native'
 import styles from './styles'
-import LinearGradient from 'react-native-linear-gradient'
+//import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
 import MailAdressBlock from './MailAdressBlockComponent/MailAdressBlock'
 import PasswordBlock from './PasswordBlockComponent/PasswordBlock'
@@ -12,7 +12,7 @@ import ChangeProfilImageBlock from './ChangeProfilImageBlockComponent/ChangeProf
 import DeleteAccountBlock from './DeleteAccountBlockComponent/DeleteAccountBlock'
 import { connect } from 'react-redux'
 import { strings } from '../../i18n'
-import { isIphoneX } from '../../Services/is-iphone-x'
+//import { isIphoneX } from '../../Services/is-iphone-x'
 import { CachedImage, ImageCacheProvider } from 'react-native-cached-image'
 import ImagePicker from 'react-native-image-picker'
 import { uploadImage } from '../../Services/firebaseFunctions'
@@ -40,7 +40,7 @@ class ProfilScreen extends React.Component {
     // If iPhone used is iPhoneX display top component as normal view
     // If iPhone used is not iPhoneX, displays top component as LinearGradient
     //*
-    _displayTopComponent() {
+/*     _displayTopComponent() {
         const iPhoneX = isIphoneX() ? true : false
         // If iPhone used is iPhoneX
         if (iPhoneX) {
@@ -76,7 +76,7 @@ class ProfilScreen extends React.Component {
                     colors={['#07416b', '#88b097', '#88b097', '#07416b']}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
-                    >
+                >
                     <TouchableOpacity
                         style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 10 }}
                         onPress={() => this.props.navigation.navigate('MainStackNavigator')}
@@ -100,7 +100,7 @@ class ProfilScreen extends React.Component {
                 </LinearGradient>
             )
         }
-    }
+    } */
     _renderImage = () => {
         const uri = this.props.currentUser.userProfilPicture
         if (this.state.isLoading === true) {
@@ -165,35 +165,52 @@ class ProfilScreen extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style={{ flex: 1, backgroundColor: '#07416b' }}>
-                <View
-                    style={{ flex: 1, backgroundColor: 'white' }}
-                >
-                    {this._displayTopComponent()}
-                    <ScrollView
-                        keyboardShouldPersistTaps='handled'
-                    >
-                       
-                            <View style={styles.avatar_container}>
-                                {this._renderImage()}
-                                {this.state.errorMessage &&
-                                    <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10 }}>
-                                        {strings('profil_screen.change_profil_image.error')} : {this.state.errorMessage}
-                                    </Text>}
-                                <Text style={styles.username}>
-                                    {this.props.currentUser.name}
-                                </Text>
-                                <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.props.currentUser.email}</Text>
-                            </View>
-                            <View style={styles.profil_item_containers}>
-                                <MailAdressBlock />
-                                <PasswordBlock />
-                                <ChangeProfilImageBlock />
-                                <DeleteAccountBlock />
-                            </View>
-                    </ScrollView>
-                </View>
-            </SafeAreaView>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
+                <SafeAreaView>
+                    <View style={styles.header_container}>
+                        <TouchableOpacity
+                            style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 10 }}
+                            onPress={() => this.props.navigation.navigate('MainStackNavigator')}
+                        >
+                            <Icon
+                                name='chevron-left'
+                                color='#07416b'
+                                size={35}
+                                style={{ padding: 20, }}
+                                underlayColor='transparent'
+                            />
+                        </TouchableOpacity>
+                        <View
+                            style={{ justifyContent: 'center', flex: 1, alignItems: 'center' }}
+                        >
+                            <Text style={styles.title}>{strings('profil_screen.profil')}</Text>
+                        </View>
+                        <View
+                            style={{ justifyContent: 'center', flex: 1, alignItems: 'center' }}
+                        />
+                    </View>
+                </SafeAreaView>
+                <ScrollView keyboardShouldPersistTaps='handled'>
+                    <View style={styles.avatar_container}>
+                        {this._renderImage()}
+                        {this.state.errorMessage &&
+                            <Text style={{ color: 'red', fontStyle: 'italic', marginTop: 10 }}>
+                                {strings('profil_screen.change_profil_image.error')} : {this.state.errorMessage}
+                            </Text>}
+                        <Text style={styles.username}>
+                            {this.props.currentUser.name}
+                        </Text>
+                        <Text style={{ marginTop: 20, fontStyle: 'italic' }}>{this.props.currentUser.email}</Text>
+                    </View>
+                    <View style={styles.profil_item_containers}>
+                        <MailAdressBlock />
+                        <PasswordBlock />
+                        <ChangeProfilImageBlock />
+                        <DeleteAccountBlock />
+                    </View>
+                </ScrollView>
+            </View>
+
         )
     }
 }

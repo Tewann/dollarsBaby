@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'lightgrey',
         margin: 2,
-        height: itemHeight,
+        minHeight: itemHeight,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 12,
@@ -20,7 +20,9 @@ const styles = StyleSheet.create({
     text: {
         color: 'black',
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        paddingTop: 2,
+        paddingBottom: 2
     }
 })
 

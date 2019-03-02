@@ -4,7 +4,7 @@
 //*
 
 import React from 'react'
-import { Text, View, ScrollView } from 'react-native'
+import { Text, View, ScrollView, SafeAreaView } from 'react-native'
 import { Button, CheckBox } from 'react-native-elements'
 import styles from './styles'
 import { strings } from '../../i18n'
@@ -29,7 +29,7 @@ class TermsOfService extends React.Component {
         const action = {
             type: 'TOS_ACCEPTED',
         }
-       Store.dispatch(action)
+        Store.dispatch(action)
         this.props.navigation.navigate('Loading')
     }
 
@@ -39,7 +39,7 @@ class TermsOfService extends React.Component {
     //*
     declined = () => {
         const newDeclineMessage = strings('terms_of_service.decline_message')
-        this.setState({ 
+        this.setState({
             declineMessage: newDeclineMessage,
             buttonDisabled: true,
             checked: false
@@ -53,31 +53,44 @@ class TermsOfService extends React.Component {
     switchCheckState = () => {
         const newCheckedState = this.state.checked === false ? true : false
         const disableState = newCheckedState === false ? true : false
-        this.setState({ 
+        this.setState({
             checked: newCheckedState,
             buttonDisabled: disableState,
             declineMessage: null
-        }) 
+        })
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.topText}>{strings('terms_of_service.title')}</Text>
-                {this.state.declineMessage && 
+                <SafeAreaView>
+                    <Text style={styles.topText}>{strings('terms_of_service.title')}</Text>
+                </SafeAreaView>
+                {this.state.declineMessage &&
                     <Text style={styles.declineMessage}>{this.state.declineMessage}</Text>
                 }
-                <ScrollView elevation={1} style={styles.scrollView}>
-                    <Text style={styles.TOS}>
-                        {strings('terms_of_service.TOS')}
+                <ScrollView 
+                style={styles.scrollView}
+               //contentContainerStyle={{height: 8000}}
+                >
+
+                    <Text style={styles.TOS} >
+                        {strings('terms_of_service.TOS1')}
                     </Text>
+                    <Text style={styles.TOS} >
+                        {strings('terms_of_service.TOS2')}
+                    </Text>
+                    <Text style={styles.TOS} >
+                        {strings('terms_of_service.TOS3')}
+                    </Text>
+                   
                 </ScrollView>
                 <View style={styles.bottomContainer}>
                     <CheckBox
                         title={strings('terms_of_service.checkbox')}
                         checked={this.state.checked}
                         onPress={this.switchCheckState}
-                        containerStyle={{ backgroundColor: 'white', borderWidth: 0}}
+                        //containerStyle={{ marginRight: 15 }}
                     />
                     <View style={styles.buttonsView}>
                         <Button
@@ -87,8 +100,8 @@ class TermsOfService extends React.Component {
                             color='grey'
                             buttonStyle={styles.button}
                             disabled={this.state.buttonDisabled}
-                            disabledTextStyle={{ color: 'white'}}
-                            disabledStyle={{ backgroundColor: 'white'}}
+                            disabledTextStyle={{ color: 'white' }}
+                            disabledStyle={{ backgroundColor: 'white' }}
                         />
                         <View style={{ borderWidth: 0.5 }} />
                         <Button

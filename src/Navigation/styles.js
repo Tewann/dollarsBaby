@@ -10,10 +10,12 @@ const styles = StyleSheet.create({
     CustomDrawerLinearGradient: {
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: itemHeight
+        minHeight: itemHeight,
+        borderBottomWidth: 1,
+        borderColor: '#07416b'
     },  
     CustomDrawerTitle: {
-        color: 'white',
+        color: 'black',
         fontSize: 20,
         fontWeight: 'bold',
         borderColor: 'white'
@@ -42,9 +44,15 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 10
     },
+    CustomNavigationHeaderContainerForIos: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingTop: 10,
+        paddingBottom: 10,
+    },
     CustomNavigationHeaderText: {
-        color: 'white',
-        flex: 10,
+        color: 'black',
+        //flex: 10,
         fontWeight: 'bold',
         fontSize: 20,
         paddingLeft: 20

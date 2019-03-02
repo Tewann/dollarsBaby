@@ -32,6 +32,7 @@ title: {
         borderColor: '#cecfcf',
         borderRadius: 5,
         marginBottom: 5,
+        minHeight: 40
         //paddingBottom: 0,
     },
     button: {

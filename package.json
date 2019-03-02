@@ -27,7 +27,7 @@
     "jsc-android": "236355.x.x",
     "react": "16.6.1",
     "react-native": "0.57.5",
-    "react-native-autolink": "^1.6.0",
+    "react-native-autolink": "^1.7.1",
     "react-native-cached-image": "github:fungilation/react-native-cached-image",
     "react-native-code-push": "^5.4.2",
     "react-native-elements": "^1.0.0",

@@ -58,11 +58,11 @@ const centerIcons = isIphoneX() ? null : itemHeight / 1.2;
 
 const DrawerButton = ({ navigation }) => {
   return (
-    <View style={{ marginLeft: 15, paddingTop: 1 }}>
+    <View style={{ paddingLeft: 15, paddingTop: 1 }}>
       <Icon
         name="menu"
         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-        color="white"
+        color="#07416b"
         underlayColor="transparent"
       />
     </View>
@@ -71,16 +71,17 @@ const DrawerButton = ({ navigation }) => {
 
 const CustomDrawerContentComponent = props => {
   return (
-    /*<SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>*/
-    <View>
-      <LinearGradient
-        colors={['#07416b', '#88b097', '#88b097', '#07416b']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={styles.CustomDrawerLinearGradient}
-      >
-        <Text style={styles.CustomDrawerTitle}>eBlink</Text>
-      </LinearGradient >
+    <View style={{flex: 1}}>
+      <SafeAreaView style={{ backgroundColor: 'white' }}>
+      <View
+          /* colors={['#07416b', '#88b097', '#88b097', '#07416b']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}*/
+          style={styles.CustomDrawerLinearGradient} 
+        >
+          <Text style={styles.CustomDrawerTitle}>eBlink</Text>
+        </View >
+      </SafeAreaView>
       <TouchableOpacity
         onPress={() => props.navigation.navigate("ProfilScreen")}
         style={styles.CustomDrawerItemContainer}
@@ -167,7 +168,6 @@ const CustomDrawerContentComponent = props => {
         <Text style={[styles.CustomDrawerText, { paddingTop: 1 }]}>{strings('navigation.disconnect')}</Text>
       </TouchableOpacity>
     </View>
-    /* </SafeAreaView >*/
   );
 };
 
@@ -227,10 +227,10 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
   {
     lazy: true,
     tabBarOptions: {
-      style: { backgroundColor: "lightgrey", height: itemHeight },
-      indicatorStyle: { backgroundColor: "white" },
-      activeTintColor: "#07416b",
-      inactiveTintColor: "#07416b",
+      style: { backgroundColor: "white", height: itemHeight },
+      indicatorStyle: { backgroundColor: "#07416b" },
+      activeTintColor: "blue",
+      inactiveTintColor: "lightgrey",
       showIcon: true,
       showLabel: false
     }
@@ -243,18 +243,21 @@ const MainStackNavigator = createStackNavigator(
       screen: topTabBarNavigation,
       navigationOptions: ({ navigation }) => ({
         header:
-          <LinearGradient
-            colors={['#07416b', '#88b097', '#88b097', '#07416b']}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.CustomNavigationHeaderContainer}
-          >
-            <DrawerButton
-              navigation={navigation}
-              style={{ flex: 1 }}
-            />
-            <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
-          </LinearGradient>
+          <SafeAreaView style={{ backgroundColor: 'white' }}>
+            <View
+              //colors={['#07416b', '#88b097', '#88b097', '#07416b']}
+              //colors={['white', 'white']}
+              //start={{ x: 0, y: 0 }}
+              //end={{ x: 1, y: 1 }}
+              style={styles.CustomNavigationHeaderContainerForIos}
+            >
+              <DrawerButton
+                navigation={navigation}
+                style={{ flex: 1 }}
+              />
+              <Text style={styles.CustomNavigationHeaderText}>eBlink</Text>
+            </View>
+          </SafeAreaView>
       })
     },
     ContactScreen: {

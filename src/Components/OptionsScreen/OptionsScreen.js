@@ -14,63 +14,35 @@ import { strings } from '../../i18n'
 import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
 
-import LinearGradient from 'react-native-linear-gradient'
+//import LinearGradient from 'react-native-linear-gradient'
 
 import { showContactRequests } from '../../Services/firebaseFunctions'
-import { isIphoneX } from '../../Services/is-iphone-x'
+//import { isIphoneX } from '../../Services/is-iphone-x'
 
 class OptionsScreen extends React.Component {
-    //*
-    // If iPhone used is iPhoneX display top component as normal view
-    // If iPhone used is not iPhoneX, displays top component as LinearGradient
-    //*
     _displayTopComponent() {
-        const iPhoneX = isIphoneX() ? true : false
-        // If iPhone used is iPhoneX
-        if (iPhoneX) {
-            return (
-                <View style={[styles.header_container, { backgroundColor: '#07416b' }]}>
+        return (
+            <SafeAreaView>
+                <View style={styles.header_container}>
                     <TouchableOpacity
-                        style={[styles.header_subcontainer, { paddingLeft: 10 }]}
-                        onPress={() => this._navigateToMainStackNavigator()}
+                        style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 10 }}
+                        onPress={() => this.props.navigation.navigate('MainStackNavigator')}
                     >
                         <Icon
                             name='chevron-left'
-                            color='white'
+                            color='#07416b'
                             size={35}
                             style={{ padding: 20, }}
                             underlayColor='transparent'
                         />
                     </TouchableOpacity>
-                    <View style={[styles.header_subcontainer, { paddingLeft: 20 }]} >
+                    <View style={{ justifyContent: 'center', flex: 4, alignItems: 'center' }}>
                         <Text style={styles.title}>{strings('options.title')}</Text>
                     </View>
+                    <View style={{ flex: 1 }} />
                 </View>
-            )
-        } else {
-            // If iPhone used is not iPhoneX
-            return (
-                <LinearGradient
-                    style={styles.header_container}
-                    colors={['#07416b', '#88b097', '#88b097', '#07416b']}
-                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
-                    <TouchableOpacity
-                        style={[styles.header_subcontainer, { paddingLeft: 10 }]}
-                        onPress={() => this.props.navigation.navigate('MainStackNavigator')}
-                    >
-                        <Icon
-                            name='chevron-left'
-                            color='white'
-                            size={35}
-                            underlayColor='transparent'
-                        />
-                    </TouchableOpacity>
-                    <View style={[styles.header_subcontainer, { paddingLeft: 20 }]} >
-                        <Text style={styles.title}>{strings('options.title')}</Text>
-                    </View>
-                </LinearGradient>
-            )
-        }
+            </SafeAreaView>
+        )
     }
 
     toggleSwitch = (value) => {
@@ -86,21 +58,17 @@ class OptionsScreen extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style={{ flex: 1, backgroundColor: '#07416b' }}>
-                <View
-                    style={{ flex: 1, backgroundColor: 'white' }}
-                >
-                    {this._displayTopComponent()}
-                    <View style={styles.item}>
-                        <Text style={styles.itemTitle}>{strings('options.hide_contact_requests')}</Text>
-                        <Switch
-                            style={{ marginTop: 2, marginLeft: 5 }}
-                            onValueChange={(value) => this.toggleSwitch(value)}
-                            value={this.props.hideContactRequests}
-                        />
-                    </View>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
+                {this._displayTopComponent()}
+                <View style={styles.item}>
+                    <Text style={styles.itemTitle}>{strings('options.hide_contact_requests')}</Text>
+                    <Switch
+                        style={{ marginTop: 2, marginLeft: 5 }}
+                        onValueChange={(value) => this.toggleSwitch(value)}
+                        value={this.props.hideContactRequests}
+                    />
                 </View>
-            </SafeAreaView>
+            </View>
         )
     }
 }

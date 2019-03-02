@@ -16,18 +16,18 @@ class Loading extends React.Component {
     componentDidMount = async () => {
         //const resetTOS = { type: 'RESET_TOS'}
         //this.props.dispatch(resetTOS)
-        //const resetContacts = { type: 'RESET_CONTACT'}
-        //this.props.dispatch(resetContacts)
+        const resetContacts = { type: 'RESET_CONTACT' }
+        this.props.dispatch(resetContacts)
         //const resetCurrentUser = { type: 'RESET_USER'}
         //this.props.dispatch(resetCurrentUser)
-        //const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
-        //this.props.dispatch(resetMessageHistory)
-        //const resetGroups = { type: 'RESET_GROUP_LIST'}
-        //this.props.dispatch(resetGroups)
-        //const resetSounds = { type: 'RESET_SOUNDS'}
-        //this.props.dispatch(resetSounds)
-        //const resetOptions = { type: 'RESET_OPTIONS' }
-        //this.props.dispatch(resetOptions)
+        const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
+        this.props.dispatch(resetMessageHistory)
+        const resetGroups = { type: 'RESET_GROUP_LIST' }
+        this.props.dispatch(resetGroups)
+        const resetSounds = { type: 'RESET_SOUNDS' }
+        this.props.dispatch(resetSounds)
+        const resetOptions = { type: 'RESET_OPTIONS' }
+        this.props.dispatch(resetOptions)
         /**
          * On launch, sets both contact and group screens to default values (lists)
          * Calls reducer to :
@@ -439,10 +439,9 @@ class Loading extends React.Component {
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
             this.props.dispatch(fetchGroups(this.props.currentUser.name))
-           // this.props.navigation.navigate('ProfilScreen')
-            //  this.props.navigation.navigate('MessageHistory')
+            // this.props.navigation.navigate('ProfilScreen')
             //this.props.navigation.navigate('GroupsList')
-             this.props.navigation.navigate('DrawerStack')
+            this.props.navigation.navigate('DrawerStack')
             /*           const groupNameIndex = this.props.groupList.findIndex(item =>
                           item.name === "Yestgc" && item.type === "public")
                       const action = {

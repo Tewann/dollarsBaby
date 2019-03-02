@@ -10,22 +10,18 @@ const styles = StyleSheet.create({
     header_container: {
         flexDirection: 'row',
         paddingTop: 10,
-        paddingBottom: 10
+        paddingBottom: 10,
+        borderBottomWidth: 1,
+        borderColor: '#07416b'
     },
     header_subcontainer: {
         justifyContent: 'center',
         alignItems: 'flex-start',
     },
     title: {
-        color: 'white',
-        fontSize: 17,
+        color: 'black',
+        fontSize: 20,
         fontWeight: 'bold',
-    },
-    text_input: {
-        paddingLeft: 5,
-        backgroundColor: 'white',
-        borderBottomWidth: 1,
-        borderColor: 'lightgrey'
     },
     list_empty: {
         textAlign: 'center',
@@ -59,7 +55,8 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         backgroundColor: '#f2f2f2',
         borderRadius: 10,
-        marginBottom: 20
+        marginBottom: 20,
+        minHeight: 40
     },
     create_button: {
         maxWidth: width / 3,

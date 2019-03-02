@@ -19,10 +19,10 @@ import SearchedGroupItem from './SearchedGroupItem/SearchedGroupItem'
 
 import { Button } from 'react-native-elements'
 import { Icon } from 'react-native-elements'
-import LinearGradient from 'react-native-linear-gradient'
+//import LinearGradient from 'react-native-linear-gradient'
 import { joinPublicGroupInFirestore, createGroupInFirestore, addContactToPrivateGroup, searchPublicGroupInDatabase } from '../../Services/firebaseGroupFunctions'
 
-import { isIphoneX } from '../../Services/is-iphone-x'
+//import { isIphoneX } from '../../Services/is-iphone-x'
 import { TextInput } from 'react-native-gesture-handler';
 
 class AddGroupsScreen extends React.Component {
@@ -44,8 +44,8 @@ class AddGroupsScreen extends React.Component {
         if (this.state.createOrJoin === 'join') {
             this.setState({ loading: true })
             searchPublicGroupInDatabase(text)
-            .then(res => this.setState({ data: res, loading: false }))
-            .catch(err => this.setState({ errorMessage: err }))
+                .then(res => this.setState({ data: res, loading: false }))
+                .catch(err => this.setState({ errorMessage: err }))
         }
     }
 
@@ -67,7 +67,7 @@ class AddGroupsScreen extends React.Component {
                     if (this.state.groupType === 'private') {
                         // if private group successfully created
                         // add creator to contact of the group
-                         await addContactToPrivateGroup(groupNameForDatabase, this.props.currentUser)
+                        await addContactToPrivateGroup(groupNameForDatabase, this.props.currentUser)
                             .catch(err => { this.setState({ errorMessage: err }) })
                     } else if (this.state.groupType === 'public') {
                         await joinPublicGroupInFirestore(this.state.groupName, this.props.currentUser)
@@ -97,7 +97,7 @@ class AddGroupsScreen extends React.Component {
     // If iPhone used is iPhoneX display top component as normal view
     // If iPhone used is not iPhoneX, displays top component as LinearGradient
     //*
-    _displayTopComponent() {
+ /*    _displayTopComponent() {
         const iPhoneX = isIphoneX() ? true : false
         // If iPhone used is iPhoneX
         if (iPhoneX) {
@@ -144,7 +144,7 @@ class AddGroupsScreen extends React.Component {
                 </LinearGradient>
             )
         }
-    }
+    } */
 
     _renderButtonsContainer = () => {
         // If no group type defined: render buttons to choose the group type
@@ -258,27 +258,44 @@ class AddGroupsScreen extends React.Component {
     }
     render() {
         return (
-            <SafeAreaView style={{ flex: 1, backgroundColor: '#07416b' }}>
-                <View
-                    style={{ flex: 1, backgroundColor: 'white' }}
-                >
-                    {this._displayTopComponent()}
-                    {this.state.errorMessage &&
-                        <Text style={{ color: 'red', textAlign: 'center', marginTop: 15 }}>
-                            {this.state.errorMessage}
-                        </Text>
-                    }
-                    {this.state.confirmationMessage &&
-                        <Text style={{ color: 'green', textAlign: 'center', marginTop: 15 }}>
-                            {this.state.confirmationMessage}
-                        </Text>
-                    }
-                    {this._renderButtonsContainer()}
-                    {this._renderCreateOrJoinGroupButtonsForPublicGroups()}
-                    {this._renderTextInput()}
-                    {this._renderJoinOrCreateComponent()}
-                </View>
-            </SafeAreaView>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
+                <SafeAreaView>
+                    <View style={styles.header_container}>
+                        <TouchableOpacity
+                            style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 10 }}
+                            onPress={() => this.props.navigation.navigate('MainStackNavigator')}
+                        >
+                            <Icon
+                                name='chevron-left'
+                                color='#07416b'
+                                size={35}
+                                style={{ padding: 20, }}
+                                underlayColor='transparent'
+                            />
+                        </TouchableOpacity>
+                        <View
+                            style={{ justifyContent: 'center', flex: 4, alignItems: 'center' }}
+                        >
+                        <Text style={styles.title}>{strings('add_groups_screen.title')}</Text>
+                        </View>
+                        <View style={{ flex: 1 }}/>
+                    </View>
+                </SafeAreaView>
+                {this.state.errorMessage &&
+                    <Text style={{ color: 'red', textAlign: 'center', marginTop: 15 }}>
+                        {this.state.errorMessage}
+                    </Text>
+                }
+                {this.state.confirmationMessage &&
+                    <Text style={{ color: 'green', textAlign: 'center', marginTop: 15 }}>
+                        {this.state.confirmationMessage}
+                    </Text>
+                }
+                {this._renderButtonsContainer()}
+                {this._renderCreateOrJoinGroupButtonsForPublicGroups()}
+                {this._renderTextInput()}
+                {this._renderJoinOrCreateComponent()}
+            </View>
         )
     }
 }
