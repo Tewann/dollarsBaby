@@ -11,6 +11,7 @@ import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from 'reac
 import styles from './styles'
 import { connect } from 'react-redux'
 import { strings } from '../../../../i18n'
+import NavigationService from '../../../../Services/navigator'
 
 import { Icon } from 'react-native-elements'
 import { modifyNicknameToDatabase, deleteContact } from '../../../../Services/firebaseFunctions'
@@ -43,8 +44,12 @@ class MessagesListScreen extends React.Component {
                 const action = { type: 'MODIFY_CONTACT_NICKNAME', value: [this.props.currentDisplayedContact, this.state.nickname] }
                 this.props.dispatch(action)
                 this.setState({ nickname: "", errorMessage: null, loading: false, validate: true })
-                //this.textInput.clear()
+
+
+
                 setTimeout(() => {
+                    NavigationService.reset('Mainscreen')
+                    NavigationService.navigate('ContactsList')
                     const action1 = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'conversation' }
                     this.props.dispatch(action1)
                     const action2 = { type: 'SWITCH_CONTACT_SCREEN', value: 'ContactsList' }

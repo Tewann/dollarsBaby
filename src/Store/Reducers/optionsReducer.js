@@ -13,7 +13,7 @@ function options(state = initialState, action) {
                 nextState = {
                     ...state,
                     displaysAdBanner: true,
-                    adBannerEvent: 'keyboard'
+                    adBannerEvent: 'keyboard',
                 }
                 // If called from a screen (meaning ads will not be displayed on this screen)
             } else if (action.value.event === 'screen' || action.value.event === null) {
@@ -30,6 +30,9 @@ function options(state = initialState, action) {
                     adBannerEvent: action.value.event
                 }
             }
+            return nextState || state
+
+        case 'STATUSBAR_COLOR':
             return nextState || state
 
         case 'HIDE_CONTACT_REQUESTS_SWITCH':
