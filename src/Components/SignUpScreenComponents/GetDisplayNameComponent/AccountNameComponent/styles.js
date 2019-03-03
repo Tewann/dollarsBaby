@@ -7,7 +7,7 @@ const { height, width } = Dimensions.get('window');
 const itemWidth = (width - 35);
 
 const styles = StyleSheet.create({
-title: {
+    title: {
         marginTop: 50,
         fontSize: 15,
         fontWeight: 'bold',
@@ -20,9 +20,9 @@ title: {
         marginTop: 10,
     },
     profil_item: {
-        borderTopWidth: 1,
+/*         borderTopWidth: 1,
         borderTopColor: '#cecfcf',
-        paddingBottom: 15,
+ */        paddingBottom: 15,
         marginLeft: 15,
         marginRight: 15,
     },

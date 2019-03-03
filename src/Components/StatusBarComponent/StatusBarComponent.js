@@ -4,12 +4,16 @@
 
 import React from 'react';
 import { connect } from 'react-redux'
-import { StatusBar } from 'react-native'
+import { StatusBar, Platform } from 'react-native'
 
 class StatusBarComponent extends React.Component {
+    constructor(props) {
+        super(props)
+        barStyle = Platform.OS === 'ios' ? 'dark-content' : 'light-content'
+    }
     render() {
         return (
-            <StatusBar backgroundColor="#88b097" barStyle="light-content" />
+            <StatusBar backgroundColor="#88b097" barStyle={this.barStyle} />
         );
     }
 }

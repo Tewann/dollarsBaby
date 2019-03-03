@@ -167,7 +167,7 @@
     "add_contact_screen": {
         "title": "Add a contact",
         "placeholder": "Add contact (username)",
-        "header_contact_list": {
+        "item": {
             "error_title": "Error",
             "error_message": "Contact already in your contact list",
             "close_button": "Close",
@@ -183,7 +183,7 @@
         "join": "Join",
         "name_of_the_group": "Name of the group",
         "input_length_is_O": "You did not enter a group name",
-        "group_created": "Groupe created!",
+        "group_created": "Group created!",
         "existing_group": "Group name taken",
         "item": {
             "error_title": "Error",
@@ -216,7 +216,7 @@
         "sign_up": {
             "mail_not_filled": "Please fill in an email address",
             "psswd_not_filled": "Passwords do not match",
-            "create_account": "Create account",
+            "create_account": "Create an account",
             "placeholder_1": "E-mail",
             "placeholder_2": "Password",
             "placeholder_3": "Confirm password",
@@ -224,7 +224,7 @@
             "connect": "Log in"
         },
         "get_display_name": {
-            "welcome": "WELCOME",
+            "welcome": "Welcome",
             "account_name": {
                 "placeholder_1": "Username",
                 "placeholder_2": "Confirm username",

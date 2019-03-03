@@ -6,10 +6,9 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import LinearGradient from 'react-native-linear-gradient'
-import { signUpToFirebase, fetchContacts } from '../../Services/firebaseFunctions'
+import { signUpToFirebase } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
-
-
+import { Icon } from 'react-native-elements';
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -101,7 +100,11 @@ class SignUp extends React.Component {
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate('Login')}
                 >
-                    <Text style={styles.Text2}>{strings('sign_up_screen.sign_up.connect')}</Text>
+                    <Icon name='ios-arrow-round-back'
+                        type='ionicon'
+                        size={35}
+                        color='white'
+                    />
                 </TouchableOpacity>
             </LinearGradient>
         )

@@ -16,18 +16,19 @@ class Loading extends React.Component {
     componentDidMount = async () => {
         //const resetTOS = { type: 'RESET_TOS'}
         //this.props.dispatch(resetTOS)
-        const resetContacts = { type: 'RESET_CONTACT' }
-        this.props.dispatch(resetContacts)
+        //const resetContacts = { type: 'RESET_CONTACT' }
+        //this.props.dispatch(resetContacts)
         //const resetCurrentUser = { type: 'RESET_USER'}
         //this.props.dispatch(resetCurrentUser)
-        const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
-        this.props.dispatch(resetMessageHistory)
-        const resetGroups = { type: 'RESET_GROUP_LIST' }
-        this.props.dispatch(resetGroups)
-        const resetSounds = { type: 'RESET_SOUNDS' }
-        this.props.dispatch(resetSounds)
-        const resetOptions = { type: 'RESET_OPTIONS' }
-        this.props.dispatch(resetOptions)
+        //const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
+        //this.props.dispatch(resetMessageHistory)
+        //const resetGroups = { type: 'RESET_GROUP_LIST' }
+        //this.props.dispatch(resetGroups)
+        //const resetSounds = { type: 'RESET_SOUNDS' }
+        //this.props.dispatch(resetSounds)
+        //const resetOptions = { type: 'RESET_OPTIONS' }
+        //this.props.dispatch(resetOptions)
+
         /**
          * On launch, sets both contact and group screens to default values (lists)
          * Calls reducer to :
@@ -540,15 +541,20 @@ class Loading extends React.Component {
 
     _checkCurrentAppVersion = () => {
         const currentVersion = this.props.currentUser.appVersion
-        if (currentVersion == undefined || currentVersion == null) {
-            console.log('uptading version')
-            const appversionresetuserpicture = { type: 'UPDATE_PROFIL_PICTURE', value: null }
-            this.props.dispatch(appversionresetuserpicture)
-            const appversionresetContacts = { type: 'RESET_CONTACT' }
-            this.props.dispatch(appversionresetContacts)
-            const appversionresetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
-            this.props.dispatch(appversionresetMessageHistory)
-            const updateVersion = { type: 'UPDATE_VERSION', value: '1.2.0' }
+        if (currentVersion == undefined || currentVersion == null || currentVersion < '1.3.0') {
+            const resetContacts = { type: 'RESET_CONTACT' }
+            this.props.dispatch(resetContacts)
+            const resetCurrentUser = { type: 'RESET_USER' }
+            this.props.dispatch(resetCurrentUser)
+            const resetMessageHistory = { type: 'RESET_MESSAGE_HISTORY' }
+            this.props.dispatch(resetMessageHistory)
+            const resetGroups = { type: 'RESET_GROUP_LIST' }
+            this.props.dispatch(resetGroups)
+            const resetSounds = { type: 'RESET_SOUNDS' }
+            this.props.dispatch(resetSounds)
+            const resetOptions = { type: 'RESET_OPTIONS' }
+            this.props.dispatch(resetOptions)
+            const updateVersion = { type: 'UPDATE_VERSION', value: '1.3.0' }
             this.props.dispatch(updateVersion)
         }
     }

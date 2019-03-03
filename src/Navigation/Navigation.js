@@ -37,7 +37,7 @@ import { strings } from "../i18n";
 import { SafeAreaView } from "react-navigation";
 
 import Dimensions from "Dimensions";
-import { isIphoneX } from "../Services/is-iphone-x";
+//import { isIphoneX } from "../Services/is-iphone-x";
 
 // same height as add contact bar on contact screen / group screen
 const { height, width } = Dimensions.get("window");
@@ -50,7 +50,7 @@ const itemHeight = height / 22;
 // If iPhoneX : react native does center icons automaticly : returns null
 // If iPhone version older than iPhoneX : return itemHeight/1.2 : center icons
 //*
-const centerIcons = isIphoneX() ? null : itemHeight / 1.2;
+//const centerIcons = /* isIphoneX() ? null : */ itemHeight / 0.5;
 
 //
 // Custom components for navigation
@@ -188,7 +188,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             type="feather"
             size={25}
             color="#07416b"
-            iconStyle={{ paddingBottom: centerIcons }}
+           // iconStyle={{ paddingBottom: centerIcons }}
           />
         )
       }
@@ -201,9 +201,9 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
           <Icon
             name="users"
             type="feather"
-            size={25}
+            //size={25}
             color="#07416b"
-            iconStyle={{ paddingBottom: centerIcons }}
+            //iconStyle={{ paddingBottom: centerIcons }}
           />
         )
       }
@@ -218,7 +218,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             type="entypo"
             size={25}
             color="#07416b"
-            iconStyle={{ paddingBottom: centerIcons, color: "grey" }}
+            //iconStyle={{ paddingBottom: centerIcons, color: "grey" }}
           />
         )
       }
@@ -232,7 +232,14 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
       activeTintColor: "blue",
       inactiveTintColor: "lightgrey",
       showIcon: true,
-      showLabel: false
+      showLabel: false,
+      iconStyle: {
+        width: 35,
+        height: 60
+    },
+    tabStyle: {
+        height: 20
+    }
     }
   }
 );

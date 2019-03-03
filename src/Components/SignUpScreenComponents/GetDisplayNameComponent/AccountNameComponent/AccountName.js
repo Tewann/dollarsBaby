@@ -36,7 +36,6 @@ class AccountName extends React.Component {
     }
 
     getToken = async (username) => {
-        console.log('token')
         const fcmToken = await firebase.messaging().getToken()
         if (fcmToken) {
             // calls firebase service function
@@ -177,6 +176,7 @@ class AccountName extends React.Component {
             )
         }
     }
+
     placeholderForReconnecting() {
         // if the user need to reconnect
         // displays second placeholder
@@ -198,7 +198,7 @@ class AccountName extends React.Component {
 
     render() {
         return (
-            <View>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
                 <View style={styles.profil_item}>
                     <Text style={styles.title}>{strings('sign_up_screen.get_display_name.account_name.username')}</Text>
                     {this.state.errorMessage &&

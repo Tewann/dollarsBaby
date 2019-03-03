@@ -224,7 +224,7 @@
             "connect": "Se connecter"
         },
         "get_display_name": {
-            "welcome": "BIENVENUE",
+            "welcome": "Bienvenue",
             "account_name": {
                 "placeholder_1": "Votre nom d'utilisateur",
                 "placeholder_2": "Confirmez votre nom d'utilisateur",

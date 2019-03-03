@@ -2,7 +2,7 @@
 // Get display name screen
 
 import React from 'react'
-import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, KeyboardAvoidingView, ScrollView } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import AccountNameComponent from './AccountNameComponent/AccountName'
@@ -22,6 +22,18 @@ class GetDisplayName extends React.Component {
         }
     }
 
+    _displayTopComponent() {
+        return (
+            <SafeAreaView>
+                <View style={styles.header_container}>
+                    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                        <Text style={styles.title}>{strings('sign_up_screen.get_display_name.welcome')}</Text>
+                    </View>
+                </View>
+            </SafeAreaView>
+        )
+    }
+
     _goToProfilPictureComponent = () => {
         this.setState({ display: 'ProfilPhoto' })
     }
@@ -34,7 +46,6 @@ class GetDisplayName extends React.Component {
     _goToMainScreen = () => {
         this.props.navigation.navigate('Loading')
     }
-
 
     AccountNameAndProfilPhotoDisplay() {
         if (this.state.display === 'AccountName') {
@@ -62,12 +73,7 @@ class GetDisplayName extends React.Component {
             <View
                 style={{ flex: 1, backgroundColor: 'white' }}
             >
-                <LinearGradient
-                    style={styles.header_container}
-                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                    colors={['#88b097', '#07416b', '#07416b',]}>
-                    <Text style={styles.title}>{strings('sign_up_screen.get_display_name.welcome')}</Text>
-                </LinearGradient>
+                {this._displayTopComponent()}
                 <ScrollView
                     keyboardShouldPersistTaps='handled'
                 >
@@ -75,10 +81,7 @@ class GetDisplayName extends React.Component {
                         behavior='position'
                         keyboardVerticalOffset={-64}
                     >
-
                         {this.AccountNameAndProfilPhotoDisplay()}
-
-
                     </KeyboardAvoidingView>
                 </ScrollView>
             </View>

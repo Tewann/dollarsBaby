@@ -8,18 +8,19 @@ const itemWidth = (width - 35);
 
 const styles = StyleSheet.create({
     header_container: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        paddingTop: 15,
-        paddingBottom: 15
+        paddingTop: 10,
+        paddingBottom: 10,
+        borderBottomWidth: 1,
+        borderColor: '#07416b',
+        marginBottom: 20
     },
     sub_container: {
         justifyContent: 'center',
     },
     title: {
-        color: 'white',
+        color: 'black',
         textAlign: 'center',
-        fontSize: 17,
+        fontSize: 20,
         fontWeight: 'bold'
     },
     indications: {

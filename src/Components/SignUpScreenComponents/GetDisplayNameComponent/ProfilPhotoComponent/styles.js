@@ -21,8 +21,8 @@ title: {
         borderRadius: 75,
     },
     profil_item: {
-        borderTopWidth: 1,
-        borderTopColor: '#cecfcf',
+       /*  borderTopWidth: 1,
+        borderTopColor: '#cecfcf', */
         paddingBottom: 15,
         marginLeft: 15,
         marginRight: 15,
