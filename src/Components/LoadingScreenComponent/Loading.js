@@ -287,6 +287,7 @@ class Loading extends React.Component {
                         .setSound(androidSound)
                     notif.android.setChannelId('s1blink')
                     notif.android.setAutoCancel(true);
+                    
 
                     // display notification
                     firebase.notifications().displayNotification(notif)
@@ -318,6 +319,7 @@ class Loading extends React.Component {
                     // Set channel for android > 26
                     notif.android.setChannelId(notification.sound)
                     notif.android.setAutoCancel(true)
+                    notif.android.setSmallIcon('small_icon')
                     /* .android.setGroup('1')
                     .android.setTag('1')
                     .android.setGroupSummary(false)

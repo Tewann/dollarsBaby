@@ -312,7 +312,7 @@ export const sendPushNotificationsForNewMessages =
                         tag: '1'
                     },
                     data: {
-                        predefined_message: predefined_message,
+                       predefined_message: predefined_message,
                         contactName: contactName
                     },
                 }
@@ -327,6 +327,7 @@ export const sendPushNotificationsForNewMessages =
                     },
                     data: {
                         predefined_message: predefined_message,
+                        contactName: contactName
                     },
                 }
             }

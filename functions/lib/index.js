@@ -313,6 +313,7 @@ exports.sendPushNotificationsForNewMessages = functions.firestore
             },
             data: {
                 predefined_message: predefined_message,
+                contactName: contactName
             },
         };
     }
