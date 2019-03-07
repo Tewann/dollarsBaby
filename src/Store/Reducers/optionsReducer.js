@@ -32,9 +32,6 @@ function options(state = initialState, action) {
             }
             return nextState || state
 
-        case 'STATUSBAR_COLOR':
-            return nextState || state
-
         case 'HIDE_CONTACT_REQUESTS_SWITCH':
             nextState = {
                 ...state,

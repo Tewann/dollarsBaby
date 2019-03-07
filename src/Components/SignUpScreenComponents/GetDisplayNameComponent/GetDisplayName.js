@@ -71,19 +71,21 @@ class GetDisplayName extends React.Component {
     render() {
         return (
             <View
-                style={{ flex: 1, backgroundColor: 'white' }}
+                style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}
             >
                 {this._displayTopComponent()}
-                <ScrollView
-                    keyboardShouldPersistTaps='handled'
-                >
-                    <KeyboardAvoidingView
-                        behavior='position'
-                        keyboardVerticalOffset={-64}
+                    <ScrollView
+                        keyboardShouldPersistTaps='handled'
+                        style={{ flex: 1, backgroundColor: 'white'}}
                     >
-                        {this.AccountNameAndProfilPhotoDisplay()}
-                    </KeyboardAvoidingView>
-                </ScrollView>
+                        <KeyboardAvoidingView
+                            behavior='position'
+                            keyboardVerticalOffset={-64}
+                            style={{ flex: 1}}
+                        >
+                            {this.AccountNameAndProfilPhotoDisplay()}
+                        </KeyboardAvoidingView>
+                    </ScrollView>
             </View>
         )
     }

@@ -2,7 +2,7 @@
 // Login Screen
 
 import React from 'react'
-import { Text, TextInput, View, TouchableOpacity, Platform } from 'react-native'
+import { Text, TextInput, View, TouchableOpacity, Platform, KeyboardAvoidingView } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
@@ -23,7 +23,7 @@ class Login extends React.Component {
 
     componentDidMount() {
         if (Platform.OS === 'android') {
-             SplashScreen.hide();
+            SplashScreen.hide();
         }
     }
 
@@ -48,53 +48,57 @@ class Login extends React.Component {
 
     render() {
         return (
-            <LinearGradient
-                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                style={styles.container}
-                colors={['#88b097', '#07416b']}>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === "ios" ? "padding" : null}
+                style={{ flex: 1 }}>
+                <LinearGradient
+                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                    style={styles.container}
+                    colors={['#88b097', '#07416b']}>
 
-                <Text style={styles.title}>eBlink</Text>
-                {this.state.errorMessage &&
-                    <Text style={{ color: 'red' }}>
-                        {this.state.errorMessage}
-                    </Text>}
-                <TextInput
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    placeholder="Email"
-                    onChangeText={email => this.setState({ email })}
-                    value={this.state.email}
-                    underlineColorAndroid='transparent'
-                />
-                <TextInput
-                    secureTextEntry
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    placeholder="******"
-                    onChangeText={password => this.setState({ password })}
-                    value={this.state.password}
-                    underlineColorAndroid='transparent'
-                />
-                <TouchableOpacity onPress={this.handleLogin} >
-                    <View
-                        //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                        style={styles.LoginButton}
-                    //colors={['#88b097', '#07416b']}>
+                    <Text style={styles.title}>eBlink</Text>
+                    {this.state.errorMessage &&
+                        <Text style={{ color: 'red' }}>
+                            {this.state.errorMessage}
+                        </Text>}
+                    <TextInput
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                        placeholder="Email"
+                        onChangeText={email => this.setState({ email })}
+                        value={this.state.email}
+                        underlineColorAndroid='transparent'
+                    />
+                    <TextInput
+                        secureTextEntry
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                        placeholder="******"
+                        onChangeText={password => this.setState({ password })}
+                        value={this.state.password}
+                        underlineColorAndroid='transparent'
+                    />
+                    <TouchableOpacity onPress={this.handleLogin} >
+                        <View
+                            //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                            style={styles.LoginButton}
+                        //colors={['#88b097', '#07416b']}>
+                        >
+                            <Text style={styles.loginText}>{strings('login_screen.connect_button')}</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('SignUp')}
                     >
-                        <Text style={styles.loginText}>{strings('login_screen.connect_button')}</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('SignUp')}
-                >
-                    <Text style={styles.noAccount}>{strings('login_screen.create_account')}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('ForgottenPsswrd')}
-                >
-                    <Text style={styles.noAccount}>{strings('login_screen.forgotten_psswd')}</Text>
-                </TouchableOpacity>
-            </LinearGradient>
+                        <Text style={styles.noAccount}>{strings('login_screen.create_account')}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('ForgottenPsswrd')}
+                    >
+                        <Text style={styles.noAccount}>{strings('login_screen.forgotten_psswd')}</Text>
+                    </TouchableOpacity>
+                </LinearGradient>
+            </KeyboardAvoidingView>
         )
     }
 }

@@ -10,7 +10,7 @@
 
 
 import React from 'react'
-import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator, Image, SafeAreaView } from 'react-native'
+import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator, Image, KeyboardAvoidingView, Platform, SafeAreaView } from 'react-native'
 import styles from './styles'
 
 import MessageItem from './MessageItem/MessageItem'
@@ -21,8 +21,10 @@ import { sendMessageToFirestore, uploadImageForMessagesToFirebase } from '../../
 import { strings } from '../../../../i18n'
 import { Icon } from 'react-native-elements';
 import ImagePicker from 'react-native-image-picker'
+import { isIphoneX } from '../../../../Services/is-iphone-x'
 
 var options = { quality: 0.1 };
+const KEYBOARDVERTICALOFFSET = isIphoneX() ? 96 : 64
 
 class ChatComponent extends React.Component {
     constructor(props) {
@@ -173,6 +175,7 @@ class ChatComponent extends React.Component {
             else {
                 let requireSource = { uri: response.uri }
                 this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+                this._sendMessage(predefined_message = null, sound = 's1blink')
             }
         });
     }
@@ -189,11 +192,12 @@ class ChatComponent extends React.Component {
             else {
                 let requireSource = { uri: response.uri }
                 this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+                this._sendMessage(predefined_message = null, sound = 's1blink')
             }
         });
     }
 
-    _renderImageToSend = () => {
+/*     _renderImageToSend = () => {
         if (this.state.imageUri) {
             return (
                 <View style={styles.image_container}>
@@ -204,7 +208,7 @@ class ChatComponent extends React.Component {
                 </View>
             )
         }
-    }
+    } */
 
     _displayMessagesComplement = (complementsAndInitialMessage) => {
         if (complementsAndInitialMessage.complements) {
@@ -218,7 +222,7 @@ class ChatComponent extends React.Component {
 
     sendMessageWithComplements = (complement) => {
         // If user wants to send location, calls api 'Opencagedata' and convert lat/long to formatted adress, then send message
-        if (complement === 'Location') {
+        if (complement === strings('reducers.position')) {
             this.setState({ displayMessagesComplementLoading: true, displayMessagesComplement: false })
             navigator.geolocation.getCurrentPosition((position) => {
                 fetch(`https://api.opencagedata.com/geocode/v1/geojson?q=${position.coords.latitude}+${position.coords.longitude}&key=a7ef5976448c4efd9b2cf2dbc104846e&pretty=1`)
@@ -250,13 +254,16 @@ class ChatComponent extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1 }}>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === "ios" ? "padding" : null}
+                keyboardVerticalOffset={KEYBOARDVERTICALOFFSET}
+                style={{ flex: 1 }}>
                 {this._displayConversation()}
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red', marginLeft: 7 }}>
                         {this.state.errorMessage}
                     </Text>}
-                {this._renderImageToSend()}
+               {/*  {this._renderImageToSend()} */}
                 <View style={[styles.TextInput_container, { marginRight: this.state.additionnalMessage == "" ? 7 : 0 }]}>
                     <TextInput
                         placeholder={strings('contacts_screen.messages_list_screen.placeholder')}
@@ -328,7 +335,7 @@ class ChatComponent extends React.Component {
                         }
                     </View>
                 </SafeAreaView>
-            </View >
+            </KeyboardAvoidingView >
         )
     }
 }

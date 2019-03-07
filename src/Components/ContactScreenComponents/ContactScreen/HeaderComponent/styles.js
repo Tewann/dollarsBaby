@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 10,
         flex: 1,
-        backgroundColor: 'red'
     },
     back_to_contacts: {
         padding: 10,
@@ -28,7 +27,6 @@ const styles = StyleSheet.create({
     picture_and_name_container: {
         flexDirection: 'row',
         alignItems: 'center',
-        
     },
     rounds: {
         width: roundWidth,
@@ -40,7 +38,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         paddingLeft: 10,
-        paddingRight: 10
+        paddingRight: 10,
+        color: 'white'
     },
 })
 

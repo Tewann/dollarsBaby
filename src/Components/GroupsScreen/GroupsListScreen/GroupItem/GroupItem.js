@@ -32,6 +32,23 @@ class GroupItem extends React.Component {
             displayedGroupName: this.props.group.displayName
         }}
         this.props.dispatch(action)
+        const actionToConversation = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'conversation' }
+        this.props.dispatch(actionToConversation)
+        this.props.navigation.navigate('GroupScreen')
+    }
+
+    displayGroupOptionsScreen= (groupName) => {
+        const groupNameIndex = this.props.groupList.findIndex(item =>
+            item.name === this.props.group.name && item.type === this.props.group.type)
+        const action = { type: 'SWITCH_GROUP_SCREEN', value: {
+            groupName: this.props.group.name, 
+            groupType: this.props.group.type,
+            groupNameIndex: groupNameIndex,
+            displayedGroupName: this.props.group.displayName
+        }}
+        this.props.dispatch(action)
+        const actionToOptions = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'options' }
+        this.props.dispatch(actionToOptions)
         this.props.navigation.navigate('GroupScreen')
     }
 
@@ -62,6 +79,7 @@ class GroupItem extends React.Component {
         return (
             <TouchableOpacity
                 onPress={() => this.displayGroupScreen(group.name)}
+                onLongPress={() => this.displayGroupOptionsScreen(group.name)}
                 style={styles.main_container}>
                 {this._renderImage()}
                 <View style={styles.text_container}>

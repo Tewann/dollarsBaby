@@ -18,15 +18,15 @@ const initialState = {
             sound: "s2tesou",
             messageFor: 'All',
             complements: [
-                { id: 1, name: 'Critique' },
-                { id: 2, name: 'Medium' },
-                { id: 3, name: 'Low' },
-                { id: 4, name: 'Location' }],
+                { id: 1, name: strings('reducers.critic') },
+                { id: 2, name: strings('reducers.medium') },
+                { id: 3, name: strings('reducers.low') },
+                { id: 4, name: strings('reducers.position') }],
             responses: [
                 { id: 1, name: strings('reducers.coming') },
                 { id: 2, name: strings('reducers.at_home') },
                 { id: 3, name: strings('reducers.at_work') },
-                { id: 4, name: 'Location' }
+                { id: 4, name: strings('reducers.position') }
             ]
         },
         {
@@ -35,9 +35,9 @@ const initialState = {
             sound: "s3urgent",
             messageFor: 'All',
             complements: [
-                { id: 1, name: 'Critique' },
-                { id: 2, name: 'Medium' },
-                { id: 3, name: 'Low' }],
+                { id: 1, name: strings('reducers.critic') },
+                { id: 2, name: strings('reducers.medium') },
+                { id: 3, name: strings('reducers.low') }],
             responses: [
                 { id: 1, name: strings('reducers.coming') },
                 { id: 2, name: strings('reducers.calling_soon') },
@@ -50,9 +50,9 @@ const initialState = {
             sound: "s4oubliepas",
             messageFor: 'All',
             complements: [
-                { id: 1, name: 'Critique' },
-                { id: 2, name: 'Medium' },
-                { id: 3, name: 'Low' }],
+                { id: 1, name: strings('reducers.critic') },
+                { id: 2, name: strings('reducers.medium') },
+                { id: 3, name: strings('reducers.low') }],
             responses: [
                 { id: 1, name: strings('reducers.dealing_with_it') },
                 { id: 2, name: strings('reducers.done') },
@@ -68,7 +68,7 @@ const initialState = {
                 { id: 2, name: '>30 min' },
                 { id: 3, name: '>1h' },
                 { id: 4, name: '<1h' },
-                { id: 5, name: 'Location' }],
+                { id: 5, name: strings('reducers.position') }],
             responses: [
                 { id: 1, name: 'Ok' }
             ]
@@ -290,6 +290,11 @@ function displayMessagesList(state = initialState, action) {
                         ]
                     }
                 }
+            }
+            if (state.messagesReceived.length > 40) {
+                setTimeout(() => {
+                    nextState.messagesReceived.pop()
+                }, 1000) 
             }
             return nextState || state
 

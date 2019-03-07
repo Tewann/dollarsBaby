@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
         fontSize: 20,
         paddingTop: 80
     },
+    footerComponent: {
+        padding: 15,
+        textAlign: 'center'
+    }
 })
 
 export default styles

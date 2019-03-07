@@ -3,25 +3,24 @@
  */
 
 import React from 'react';
-import { connect } from 'react-redux'
-import { StatusBar, Platform } from 'react-native'
+import { StatusBar, /* Platform,  View*/ } from 'react-native'
+//import {getStatusBarHeight} from './StatusBarSizeIOS'
+
+//const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 40 : StatusBar.currentHeight;
+//const STATUSBAR_HEIGHT = getStatusBarHeight();
 
 class StatusBarComponent extends React.Component {
-    constructor(props) {
+    /* constructor(props) {
         super(props)
         barStyle = Platform.OS === 'ios' ? 'dark-content' : 'light-content'
-    }
+    } */
     render() {
         return (
-            <StatusBar backgroundColor="#88b097" barStyle={this.barStyle} />
+           /*  <View style={{ height: STATUSBAR_HEIGHT, backgroundColor:"#88b097" }}> */
+                <StatusBar /* translucent */ backgroundColor="#88b097" /* barStyle={this.barStyle} */ />
+            /* </View> */
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        statusBarColor: state.options.statusBarColor
-    }
-}
-
-export default connect(mapStateToProps)(StatusBarComponent)
+export default StatusBarComponent

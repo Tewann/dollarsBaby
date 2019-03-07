@@ -198,7 +198,7 @@ class AccountName extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <View style={{ flex: 1 }}>
                 <View style={styles.profil_item}>
                     <Text style={styles.title}>{strings('sign_up_screen.get_display_name.account_name.username')}</Text>
                     {this.state.errorMessage &&

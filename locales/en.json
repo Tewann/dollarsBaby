@@ -103,6 +103,7 @@
         "click_on_avatar": "Click on the picture of your contact to access options",
         "list_empty": "You have not received messages yet",
         "long_press": "Long press on the predefined messages to see the supplements",
+        "footertext": "Only the last 40 received messages are displayed here",
         "display_message": {
             "contact_request": "Contact request",
             "contact_added": "has been added to your contact list",
@@ -116,7 +117,7 @@
         }
     },
     "profil_screen": {
-        "profil": "PROFILE     ",
+        "profil": "PROFILE",
         "image_picker_title": "Select a Photo",
         "take_photo_button": "Take a Photo...",
         "open_library_button": "Choose from Library...",
@@ -272,7 +273,11 @@
         "at_work": "At work",
         "calling_soon": "Calling you soon",
         "not_available": "I'm not available",
-        "dealing_with_it": "I'm taking care of it"
+        "dealing_with_it": "I'm taking care of it",
+        "critic": "Critic",
+        "medium": "Medium",
+        "low": "Low",
+        "position": "Position"
     },
     "terms_of_service": {
         "title": "Terms of Service",

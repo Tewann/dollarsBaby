@@ -7,7 +7,7 @@
 */
 
 import React from 'react'
-import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, ScrollView, Text, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { strings } from '../../../../i18n'
@@ -15,7 +15,6 @@ import NavigationService from '../../../../Services/navigator'
 
 import { Icon } from 'react-native-elements'
 import { modifyNicknameToDatabase, deleteContact } from '../../../../Services/firebaseFunctions'
-
 
 class MessagesListScreen extends React.Component {
     constructor(props) {
@@ -175,7 +174,7 @@ class MessagesListScreen extends React.Component {
     }
     render() {
         return (
-            <View style={styles.profil_item_containers}>
+            <ScrollView style={styles.profil_item_containers}>
                 <View style={styles.profil_item}>
                     <Text style={styles.title}>{strings('contacts_screen.options.rename')}</Text>
                     {this.state.errorMessage &&
@@ -189,7 +188,7 @@ class MessagesListScreen extends React.Component {
                 </View>
                 {this.renderDeleteHistory()}
                 {this.renderDeleteContact()}
-            </View>
+            </ScrollView>
         )
     }
 }

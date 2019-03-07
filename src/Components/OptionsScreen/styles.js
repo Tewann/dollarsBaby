@@ -7,15 +7,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingTop: 10,
         paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderColor: '#07416b'
+        /* borderBottomWidth: 1,
+        borderColor: '#07416b' */
     },
     header_subcontainer: {
         justifyContent: 'center', 
         alignItems: 'flex-start',
     },
     title: {
-        color: 'black',
+        color: 'white',
         fontSize: 20,
         fontWeight: 'bold',
     },

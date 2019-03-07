@@ -49,9 +49,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 10,
         paddingBottom: 10,
+       // backgroundColor: 'rgba(7, 65, 107, 0.6)'
     },
     CustomNavigationHeaderText: {
-        color: 'black',
+        color: 'white',
         //flex: 10,
         fontWeight: 'bold',
         fontSize: 20,

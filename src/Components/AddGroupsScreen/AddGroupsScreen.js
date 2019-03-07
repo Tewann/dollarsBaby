@@ -97,54 +97,54 @@ class AddGroupsScreen extends React.Component {
     // If iPhone used is iPhoneX display top component as normal view
     // If iPhone used is not iPhoneX, displays top component as LinearGradient
     //*
- /*    _displayTopComponent() {
-        const iPhoneX = isIphoneX() ? true : false
-        // If iPhone used is iPhoneX
-        if (iPhoneX) {
-            return (
-                <View style={[styles.header_container, { backgroundColor: '#07416b' }]}>
-                    <TouchableOpacity
-                        style={[styles.header_subcontainer, { flex: 1, paddingLeft: 10 }]}
-                        onPress={() => this._navigateToMainStackNavigator()}
-                    >
-                        <Icon
-                            name='chevron-left'
-                            color='white'
-                            size={35}
-                            style={{ padding: 20 }}
-                            underlayColor='transparent'
-                        />
-                    </TouchableOpacity>
-                    <View style={[styles.header_subcontainer, { flex: 3 }]} >
-                        <Text style={styles.title}>{strings('add_groups_screen.title')}</Text>
-                    </View>
-                </View>
-            )
-        } else {
-            // If iPhone used is not iPhoneX
-            return (
-                <LinearGradient
-                    style={styles.header_container}
-                    colors={['#07416b', '#88b097', '#88b097', '#07416b']}
-                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
-                    <TouchableOpacity
-                        style={[styles.header_subcontainer, { flex: 1, paddingLeft: 10 }]}
-                        onPress={() => this.props.navigation.navigate('MainStackNavigator')}
-                    >
-                        <Icon
-                            name='chevron-left'
-                            color='white'
-                            size={35}
-                            underlayColor='transparent'
-                        />
-                    </TouchableOpacity>
-                    <View style={[styles.header_subcontainer, { flex: 3 }]} >
-                        <Text style={styles.title}>{strings('add_groups_screen.title')}</Text>
-                    </View>
-                </LinearGradient>
-            )
-        }
-    } */
+    /*    _displayTopComponent() {
+           const iPhoneX = isIphoneX() ? true : false
+           // If iPhone used is iPhoneX
+           if (iPhoneX) {
+               return (
+                   <View style={[styles.header_container, { backgroundColor: '#07416b' }]}>
+                       <TouchableOpacity
+                           style={[styles.header_subcontainer, { flex: 1, paddingLeft: 10 }]}
+                           onPress={() => this._navigateToMainStackNavigator()}
+                       >
+                           <Icon
+                               name='chevron-left'
+                               color='white'
+                               size={35}
+                               style={{ padding: 20 }}
+                               underlayColor='transparent'
+                           />
+                       </TouchableOpacity>
+                       <View style={[styles.header_subcontainer, { flex: 3 }]} >
+                           <Text style={styles.title}>{strings('add_groups_screen.title')}</Text>
+                       </View>
+                   </View>
+               )
+           } else {
+               // If iPhone used is not iPhoneX
+               return (
+                   <LinearGradient
+                       style={styles.header_container}
+                       colors={['#07416b', '#88b097', '#88b097', '#07416b']}
+                       start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+                       <TouchableOpacity
+                           style={[styles.header_subcontainer, { flex: 1, paddingLeft: 10 }]}
+                           onPress={() => this.props.navigation.navigate('MainStackNavigator')}
+                       >
+                           <Icon
+                               name='chevron-left'
+                               color='white'
+                               size={35}
+                               underlayColor='transparent'
+                           />
+                       </TouchableOpacity>
+                       <View style={[styles.header_subcontainer, { flex: 3 }]} >
+                           <Text style={styles.title}>{strings('add_groups_screen.title')}</Text>
+                       </View>
+                   </LinearGradient>
+               )
+           }
+       } */
 
     _renderButtonsContainer = () => {
         // If no group type defined: render buttons to choose the group type
@@ -258,7 +258,7 @@ class AddGroupsScreen extends React.Component {
     }
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <View style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
                 <SafeAreaView>
                     <View style={styles.header_container}>
                         <TouchableOpacity
@@ -267,7 +267,7 @@ class AddGroupsScreen extends React.Component {
                         >
                             <Icon
                                 name='chevron-left'
-                                color='#07416b'
+                                color='white'
                                 size={35}
                                 style={{ padding: 20, }}
                                 underlayColor='transparent'
@@ -276,25 +276,28 @@ class AddGroupsScreen extends React.Component {
                         <View
                             style={{ justifyContent: 'center', flex: 4, alignItems: 'center' }}
                         >
-                        <Text style={styles.title}>{strings('add_groups_screen.title')}</Text>
+                            <Text style={styles.title}>{strings('add_groups_screen.title')}</Text>
                         </View>
-                        <View style={{ flex: 1 }}/>
+                        <View style={{ flex: 1 }} />
                     </View>
                 </SafeAreaView>
-                {this.state.errorMessage &&
-                    <Text style={{ color: 'red', textAlign: 'center', marginTop: 15 }}>
-                        {this.state.errorMessage}
-                    </Text>
-                }
-                {this.state.confirmationMessage &&
-                    <Text style={{ color: 'green', textAlign: 'center', marginTop: 15 }}>
-                        {this.state.confirmationMessage}
-                    </Text>
-                }
-                {this._renderButtonsContainer()}
-                {this._renderCreateOrJoinGroupButtonsForPublicGroups()}
-                {this._renderTextInput()}
-                {this._renderJoinOrCreateComponent()}
+                <View style={{ flex: 1, backgroundColor: 'white' }}>
+
+                    {this.state.errorMessage &&
+                        <Text style={{ color: 'red', textAlign: 'center', marginTop: 15 }}>
+                            {this.state.errorMessage}
+                        </Text>
+                    }
+                    {this.state.confirmationMessage &&
+                        <Text style={{ color: 'green', textAlign: 'center', marginTop: 15 }}>
+                            {this.state.confirmationMessage}
+                        </Text>
+                    }
+                    {this._renderButtonsContainer()}
+                    {this._renderCreateOrJoinGroupButtonsForPublicGroups()}
+                    {this._renderTextInput()}
+                    {this._renderJoinOrCreateComponent()}
+                </View>
             </View>
         )
     }

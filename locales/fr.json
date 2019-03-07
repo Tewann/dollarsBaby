@@ -48,7 +48,7 @@
     "groups_screen": {
         "groups_screen": {
             "list_empty": "Vous n'avez pas encore rejoint de groupes",
-            "list_empty2": "Crééz ou rejoignez des groupes en cliquant sur le boutton ",
+            "list_empty2": "Crééz ou rejoignez des groupes en cliquant sur ",
             "list_empty3": "en haut à gauche de votre écran."
         },
         "group_list": {
@@ -103,6 +103,7 @@
         "click_on_avatar": "Cliquez sur la photo de votre contact pour accéder aux options de la conversation",
         "list_empty": "Vous n'avez pas encore reçu de messages",
         "long_press": "Appuyez longuement sur les messages prédefinis pour voir les suppléments",
+        "footertext": "Seuls les 40 derniers messages reçus sont affichés ici",
         "display_message": {
             "contact_request": "Demande de contact",
             "contact_added": "a été ajouté à vos contacts",
@@ -116,7 +117,7 @@
         }
     },
     "profil_screen": {
-        "profil": "PROFIL     ",
+        "profil": "PROFIL",
         "image_picker_title": "Choisir une Photo",
         "take_photo_button": "Prendre une Photo...",
         "open_library_button": "Ouvrir la Galerie...",
@@ -272,7 +273,11 @@
         "at_work": "Au travail",
         "calling_soon": "Je t'appelle bientôt",
         "not_available": "Je ne suis pas disponible",
-        "dealing_with_it": "Je m'en occupe"
+        "dealing_with_it": "Je m'en occupe",
+        "critic": "Critique",
+        "medium": "Moyenne",
+        "low": "Faible",
+        "position": "Position"
     },
     "terms_of_service": {
         "title": "Conditions Générales d'Utilisation",

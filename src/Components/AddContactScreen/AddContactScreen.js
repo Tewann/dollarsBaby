@@ -104,7 +104,7 @@ class AddContact extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <View style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
                 <SafeAreaView>
                     <View style={styles.header_container}>
                         <TouchableOpacity
@@ -113,7 +113,7 @@ class AddContact extends React.Component {
                         >
                             <Icon
                                 name='chevron-left'
-                                color='#07416b'
+                                color='white'
                                 size={35}
                                 style={{ padding: 20, }}
                                 underlayColor='transparent'
@@ -134,27 +134,29 @@ class AddContact extends React.Component {
                     autoCorrect={false}
                     ref={component => this.messageInput = component}
                 />
-                {this.state.errorMessage &&
-                    <Text style={{ color: 'red', textAlign: 'center', marginTop: 5 }}>
-                        {this.state.errorMessage}
-                    </Text>
-                }
-                {this.state.loading &&
-                    <ActivityIndicator
-                        size={'large'}
-                        style={{ flex: 1, justifyContent: 'center' }}
-                    />
-                }
-                {this.state.loading == false && <FlatList
-                    data={this.state.data}
-                    keyboardShouldPersistTaps={'handled'}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => <SearchedContactItem
-                        contact={item}
-                        setErrorMessage={(error) => this._setErrorMessage(error)}
-                        navigateToMainStackNavigator={() => this._navigateToMainStackNavigator()}
+                <View style={{ flex: 1, backgroundColor: 'white' }}>
+                    {this.state.errorMessage &&
+                        <Text style={{ color: 'red', textAlign: 'center', marginTop: 5 }}>
+                            {this.state.errorMessage}
+                        </Text>
+                    }
+                    {this.state.loading &&
+                        <ActivityIndicator
+                            size={'large'}
+                            style={{ flex: 1, justifyContent: 'center' }}
+                        />
+                    }
+                    {this.state.loading == false && <FlatList
+                        data={this.state.data}
+                        keyboardShouldPersistTaps={'handled'}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) => <SearchedContactItem
+                            contact={item}
+                            setErrorMessage={(error) => this._setErrorMessage(error)}
+                            navigateToMainStackNavigator={() => this._navigateToMainStackNavigator()}
+                        />}
                     />}
-                />}
+                </View>
             </View>
         )
     }

@@ -2,7 +2,7 @@
 // Profil screen view
 
 import React from 'react'
-import { View, Text, Image, ScrollView, SafeAreaView, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, Image, KeyboardAvoidingView, Platform, ScrollView, SafeAreaView, TouchableOpacity, ActivityIndicator } from 'react-native'
 import styles from './styles'
 //import LinearGradient from 'react-native-linear-gradient'
 import { Icon } from 'react-native-elements'
@@ -165,7 +165,10 @@ class ProfilScreen extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <KeyboardAvoidingView 
+            behavior={Platform.OS === "ios" ? "padding" : null}
+            keyboardVerticalOffset={64}
+            style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
                 <SafeAreaView>
                     <View style={styles.header_container}>
                         <TouchableOpacity
@@ -174,7 +177,7 @@ class ProfilScreen extends React.Component {
                         >
                             <Icon
                                 name='chevron-left'
-                                color='#07416b'
+                                color='white'
                                 size={35}
                                 style={{ padding: 20, }}
                                 underlayColor='transparent'
@@ -190,7 +193,7 @@ class ProfilScreen extends React.Component {
                         />
                     </View>
                 </SafeAreaView>
-                <ScrollView keyboardShouldPersistTaps='handled'>
+                <ScrollView keyboardShouldPersistTaps='handled' style={{ backgroundColor: 'white'}}>
                     <View style={styles.avatar_container}>
                         {this._renderImage()}
                         {this.state.errorMessage &&
@@ -209,7 +212,7 @@ class ProfilScreen extends React.Component {
                         <DeleteAccountBlock />
                     </View>
                 </ScrollView>
-            </View>
+            </KeyboardAvoidingView>
 
         )
     }

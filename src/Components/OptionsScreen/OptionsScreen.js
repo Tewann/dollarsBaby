@@ -30,7 +30,7 @@ class OptionsScreen extends React.Component {
                     >
                         <Icon
                             name='chevron-left'
-                            color='#07416b'
+                            color='white'
                             size={35}
                             style={{ padding: 20, }}
                             underlayColor='transparent'
@@ -58,15 +58,17 @@ class OptionsScreen extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <View style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
                 {this._displayTopComponent()}
-                <View style={styles.item}>
-                    <Text style={styles.itemTitle}>{strings('options.hide_contact_requests')}</Text>
-                    <Switch
-                        style={{ marginTop: 2, marginLeft: 5 }}
-                        onValueChange={(value) => this.toggleSwitch(value)}
-                        value={this.props.hideContactRequests}
-                    />
+                <View style={{ flex: 1, backgroundColor: 'white' }}>
+                    <View style={styles.item}>
+                        <Text style={styles.itemTitle}>{strings('options.hide_contact_requests')}</Text>
+                        <Switch
+                            style={{ marginTop: 2, marginLeft: 5 }}
+                            onValueChange={(value) => this.toggleSwitch(value)}
+                            value={this.props.hideContactRequests}
+                        />
+                    </View>
                 </View>
             </View>
         )

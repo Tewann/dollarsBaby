@@ -42,7 +42,7 @@ import Dimensions from "Dimensions";
 // same height as add contact bar on contact screen / group screen
 const { height, width } = Dimensions.get("window");
 const itemWidth = width - 35;
-const itemHeight = height / 22;
+const itemHeight = height / 18;
 
 //*
 // Check iPhone version
@@ -62,7 +62,7 @@ const DrawerButton = ({ navigation }) => {
       <Icon
         name="menu"
         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-        color="#07416b"
+        color="white"
         underlayColor="transparent"
       />
     </View>
@@ -152,7 +152,7 @@ const CustomDrawerContentComponent = props => {
       <TouchableOpacity
         onPress={() => firebase.auth().signOut().catch(error => {
           console.log(error)
-          this.props.navigation.navigate('Login')
+          props.navigation.navigate('Login')
         })}
         style={styles.CustomDrawerItemContainer}
       >
@@ -238,7 +238,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
         height: 60
     },
     tabStyle: {
-        height: 20
+        height: 35
     }
     }
   }
@@ -250,7 +250,7 @@ const MainStackNavigator = createStackNavigator(
       screen: topTabBarNavigation,
       navigationOptions: ({ navigation }) => ({
         header:
-          <SafeAreaView style={{ backgroundColor: 'white' }}>
+          <SafeAreaView style={{ backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
             <View
               //colors={['#07416b', '#88b097', '#88b097', '#07416b']}
               //colors={['white', 'white']}
@@ -270,16 +270,23 @@ const MainStackNavigator = createStackNavigator(
     ContactScreen: {
       screen: ContactScreen,
       navigationOptions: ({ navigation }) => ({
+        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('ContactsList')} tintColor='white'/>,
         headerTitle:
           <HeaderComponent />,
-      })
+          headerStyle: {
+            backgroundColor: 'rgba(7, 65, 107, 0.4)',
+          },      
+        })
     },
     GroupScreen: {
       screen: GroupScreen,
       navigationOptions: ({ navigation }) => ({
-        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('GroupsList')} />,
+        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('GroupsList')} tintColor='white'/>,
         headerTitle:
           <HeaderForGroupScreen />,
+          headerStyle: {
+            backgroundColor: 'rgba(7, 65, 107, 0.4)',
+          },  
       })
     }
   },

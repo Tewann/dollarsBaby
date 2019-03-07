@@ -2,7 +2,7 @@
 // Forgotten Password Screen
 
 import React from 'react'
-import { Text, TextInput, View, TouchableOpacity } from 'react-native'
+import { Text, TextInput, View, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
 import styles from './styles'
 import LinearGradient from 'react-native-linear-gradient'
 import firebase from 'react-native-firebase'
@@ -27,38 +27,42 @@ class ForgottenPsswrd extends React.Component {
 
     render() {
         return (
-            <LinearGradient
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                        style={styles.container}
-                        colors={['#88b097', '#07416b']}>
-                <Text style={styles.title}>{strings('login_screen.forgotten_password.psswd_forgot')}</Text>
-                {this.state.errorMessage &&
-                    <Text style={{ color: 'red' }}>
-                        {this.state.errorMessage}
-                    </Text>}
-                <TextInput
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    placeholder="Email"
-                    onChangeText={email => this.setState({ email })}
-                    value={this.state.email}
-                    underlineColorAndroid='transparent'
-                />
-                <TouchableOpacity onPress={this._resetPassword}>
-                    <View
-                        //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                        style={styles.SignUpButton}
+            <KeyboardAvoidingView
+                behavior={Platform.OS === "ios" ? "padding" : null}
+                style={{ flex: 1 }}>
+                <LinearGradient
+                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                    style={styles.container}
+                    colors={['#88b097', '#07416b']}>
+                    <Text style={styles.title}>{strings('login_screen.forgotten_password.psswd_forgot')}</Text>
+                    {this.state.errorMessage &&
+                        <Text style={{ color: 'red' }}>
+                            {this.state.errorMessage}
+                        </Text>}
+                    <TextInput
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                        placeholder="Email"
+                        onChangeText={email => this.setState({ email })}
+                        value={this.state.email}
+                        underlineColorAndroid='transparent'
+                    />
+                    <TouchableOpacity onPress={this._resetPassword}>
+                        <View
+                            //start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
+                            style={styles.SignUpButton}
                         //colors={['#88b097', '#07416b']}>
                         >
-                        <Text style={styles.Text1}>{strings('login_screen.forgotten_password.send_psswd')}</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Login')}
-                >
-                    <Text style={styles.Text2}>{strings('login_screen.forgotten_password.connect')}</Text>
-                </TouchableOpacity>
-            </LinearGradient>
+                            <Text style={styles.Text1}>{strings('login_screen.forgotten_password.send_psswd')}</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('Login')}
+                    >
+                        <Text style={styles.Text2}>{strings('login_screen.forgotten_password.connect')}</Text>
+                    </TouchableOpacity>
+                </LinearGradient>
+            </KeyboardAvoidingView>
         )
     }
 }

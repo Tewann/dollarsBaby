@@ -25,10 +25,10 @@ class GroupScreen extends React.Component {
     }
 
     // Before component mount, set screen on conversation
-    componentWillMount = () => {
+   /*  componentWillMount = () => {
         const action = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'conversation' }
         this.props.dispatch(action)
-    }
+    } */
 
     componentDidMount = async () => {
         // Each time a private group is open, check data base and get contacts

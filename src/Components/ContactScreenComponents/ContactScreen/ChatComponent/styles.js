@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         height: 40,
-        borderColor: 'lightgrey',
+        borderColor: 'grey',
         borderWidth: 1,
         borderRadius: 10,
         minHeight: itemHeight1

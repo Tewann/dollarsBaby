@@ -7,7 +7,7 @@
 
 
 import React from 'react'
-import { View, TouchableOpacity, Text, FlatList, TextInput, Image, ActivityIndicator, SafeAreaView } from 'react-native'
+import { View, TouchableOpacity, Text, FlatList, TextInput, Image, ActivityIndicator, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native'
 import styles from './styles'
 import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
@@ -17,8 +17,10 @@ import ImagePicker from 'react-native-image-picker'
 import { strings } from '../../../../i18n'
 import ConversationComponent from './ConversationComponent/ConversationComponent';
 import { uploadImageForMessagesToFirebase } from '../../../../Services/firebaseFunctions'
+import { isIphoneX } from '../../../../Services/is-iphone-x'
 
 var options = { quality: 0.1 };
+const KEYBOARDVERTICALOFFSET = isIphoneX() ? 96 : 64
 
 class ChatComponent extends React.Component {
     constructor(props) {
@@ -68,8 +70,7 @@ class ChatComponent extends React.Component {
     //*
     _sendMessage = async (predefined_message, sound, additionnalMessage) => {
         // Reset error message
-        this.setState({ errorMessage: null, additionnalMessage: "", imageUri: null, displayAttachement: true, displayCameraLibraryButtons: false })
-        this.messageInput.clear()
+        this.setState({ errorMessage: null })
         // Calls firebase function
         // prepares payload
         const timeStamp = new Date().getTime();
@@ -81,6 +82,9 @@ class ChatComponent extends React.Component {
         const groupType = this.props.currentDisplayedGroupType
         const imageUri = this.state.imageUri
         let imageDownloadUrl = null
+
+        this.messageInput.clear()
+        this.setState({ additionnalMessage: "", imageUri: null, displayAttachement: true, displayCameraLibraryButtons: false })
 
         // update redux store
         const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type, senderType: groupType, imageUri } }
@@ -182,6 +186,7 @@ class ChatComponent extends React.Component {
             else {
                 let requireSource = { uri: response.uri }
                 this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+                this._sendMessage(predefined_message = null, sound = 's1blink')
             }
         });
     }
@@ -198,11 +203,12 @@ class ChatComponent extends React.Component {
             else {
                 let requireSource = { uri: response.uri }
                 this.setState({ imageUri: requireSource, displayCameraLibraryButtons: false, displayAttachement: true })
+                this._sendMessage(predefined_message = null, sound = 's1blink')
             }
         });
     }
 
-    _renderImageToSend = () => {
+    /* _renderImageToSend = () => {
         if (this.state.imageUri) {
             return (
                 <View style={styles.image_container}>
@@ -213,7 +219,7 @@ class ChatComponent extends React.Component {
                 </View>
             )
         }
-    }
+    } */
 
     _displayMessagesComplement = (complementsAndInitialMessage) => {
         if (complementsAndInitialMessage.complements) {
@@ -267,7 +273,7 @@ class ChatComponent extends React.Component {
                             {this.state.errorMessage}
                         </Text>}
 
-                    {this._renderImageToSend()}
+                   {/* {this._renderImageToSend()} */}
 
                     {/* ------ Text Input for additionnal message ------*/}
                     <View style={[styles.TextInput_container, { marginRight: this.state.additionnalMessage == "" ? 7 : 0 }]}>
@@ -357,10 +363,13 @@ class ChatComponent extends React.Component {
 
     render() {
         return (
-            <View style={styles.main_container}>
+            <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : null}
+            keyboardVerticalOffset={KEYBOARDVERTICALOFFSET}
+            style={styles.main_container}>
                 {this._displayConversation()}
                 {this.displayPredefinedMessageList()}
-            </View>
+            </KeyboardAvoidingView>
         )
     }
 }

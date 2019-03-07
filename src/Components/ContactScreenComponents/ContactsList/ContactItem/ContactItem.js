@@ -32,6 +32,16 @@ class ContactItem extends React.Component {
     _displayContactScreen = (contact) => {
         const action = { type: 'SWITCH_CONTACT_SCREEN', value: contact }
         this.props.dispatch(action)
+        const actionToOptions = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'conversation' }
+        this.props.dispatch(actionToOptions)
+        this.props.navigation.navigate('ContactScreen')
+    }
+
+    _displayContactOptions = (contact) => {
+        const action = { type: 'SWITCH_CONTACT_SCREEN', value: contact }
+        this.props.dispatch(action) 
+        const actionToOptions = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'options' }
+        this.props.dispatch(actionToOptions)
         this.props.navigation.navigate('ContactScreen')
     }
 
@@ -62,6 +72,7 @@ class ContactItem extends React.Component {
         return (
             <TouchableOpacity
                 onPress={() => this._displayContactScreen(contact.name)}
+                onLongPress={() => this._displayContactOptions(contact.name)}
                 style={styles.main_container}>
                 {this._renderImage()}
                 <Text style={styles.contact_text}>

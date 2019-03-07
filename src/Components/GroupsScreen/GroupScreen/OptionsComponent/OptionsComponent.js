@@ -7,7 +7,7 @@
 */
 
 import React from 'react'
-import { View, Text, TouchableOpacity, ActivityIndicator, FlatList, Switch } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator, ScrollView, FlatList, Switch } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 import { strings } from '../../../../i18n'
@@ -311,7 +311,7 @@ class MessagesListScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.profil_item_containers}>
+            <ScrollView style={styles.profil_item_containers}>
                 {this.state.errorMessage &&
                     <Text style={{ color: 'red', fontStyle: 'italic', textAlign: 'center' }}>
                         {strings('profil_screen.change_profil_image.error')} : {this.state.errorMessage}
@@ -323,7 +323,7 @@ class MessagesListScreen extends React.Component {
                 {this.renderDeleteHistory()}
                 {this.renderLeaveGroup()}
                 {this.renderDeleteGroup()}
-            </View>
+            </ScrollView>
         )
     }
 }

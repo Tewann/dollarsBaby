@@ -10,15 +10,15 @@ const styles = StyleSheet.create({
     header_container: {
         paddingTop: 10,
         paddingBottom: 10,
-        borderBottomWidth: 1,
-        borderColor: '#07416b',
-        marginBottom: 20
+        /* borderBottomWidth: 1,
+        borderColor: '#07416b', */
+        //marginBottom: 20
     },
     sub_container: {
         justifyContent: 'center',
     },
     title: {
-        color: 'black',
+        color: 'white',
         textAlign: 'center',
         fontSize: 20,
         fontWeight: 'bold'

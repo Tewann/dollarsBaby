@@ -2,7 +2,7 @@
 // Loading Screen
 
 import React from 'react'
-import { ActivityIndicator, Alert, Platform } from 'react-native'
+import { ActivityIndicator, Alert, Platform, View, SafeAreaView, Text } from 'react-native'
 import styles from './styles'
 import firebase from 'react-native-firebase'
 import { connect } from 'react-redux'
@@ -287,7 +287,7 @@ class Loading extends React.Component {
                         .setSound(androidSound)
                     notif.android.setChannelId('s1blink')
                     notif.android.setAutoCancel(true);
-                    
+
 
                     // display notification
                     firebase.notifications().displayNotification(notif)
@@ -442,7 +442,7 @@ class Loading extends React.Component {
             this.props.dispatch(fetchContacts(user.displayName))
             this.props.dispatch(fetchMessages(this.props.currentUser.name))
             this.props.dispatch(fetchGroups(this.props.currentUser.name))
-            // this.props.navigation.navigate('ProfilScreen')
+             //this.props.navigation.navigate('GetDisplayName')
             //this.props.navigation.navigate('GroupsList')
             this.props.navigation.navigate('DrawerStack')
             /*           const groupNameIndex = this.props.groupList.findIndex(item =>
@@ -564,12 +564,14 @@ class Loading extends React.Component {
 
     render() {
         return (
-            <LinearGradient
-                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                style={styles.container}
-                colors={['#88b097', '#07416b']}>
-                <ActivityIndicator size="large" color="white" />
-            </LinearGradient>
+            <View style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
+                <SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
+                    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20, paddingLeft: 60 }}>eBlink</Text>
+                </SafeAreaView>
+                <View style={{ flex: 12, backgroundColor: 'white', justifyContent: 'center' }}>
+                    <ActivityIndicator size="large" />
+                </View>
+            </View>
         )
     }
 }

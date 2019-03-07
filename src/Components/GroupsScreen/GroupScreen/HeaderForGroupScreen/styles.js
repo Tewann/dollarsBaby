@@ -40,12 +40,14 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         paddingLeft: 10,
-        //paddingRight: 10
+        //paddingRight: 10,
+        color: 'white'
     },
     group_name_creator: {
         fontStyle: 'italic',
         paddingLeft: 10,
-        fontSize: 15
+        fontSize: 15,
+        color: 'white'
     },
 })
 

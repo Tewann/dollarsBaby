@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 
 import MessageComponent from '../MessageComponent/MessageComponent'
 
-import CleanHistoryComponent from './CleanHistory/CleanHistoryComponent'
 import { strings } from '../../i18n'
 
 class MessageHistory extends React.Component {
@@ -28,8 +27,8 @@ class MessageHistory extends React.Component {
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={0} navigate={this.props.navigation.navigate} type={'messagesHistory'} />}
                     ListEmptyComponent={() => this.renderListEmpty()}
+                    ListFooterComponent={() => <Text style={styles.footerComponent}>{strings('message_history_screen.footertext')}</Text>}
                     initialNumToRender={15}
-                    ListHeaderComponent={() => <CleanHistoryComponent />}
                 />
             </View>
         )

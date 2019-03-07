@@ -17,7 +17,7 @@ class GroupList extends React.Component {
             <View style={{ flex: 1 }}>
                 <Text style={styles.list_empty_text1}>{strings('groups_screen.groups_screen.list_empty')}</Text>
                 <View style={styles.list_empty_text2_container}>
-                    <Text >{strings('groups_screen.groups_screen.list_empty2')}</Text>
+                <Text>{strings('groups_screen.groups_screen.list_empty2')}</Text>
                     <Icon
                         name="menu"
                     />
