@@ -250,7 +250,7 @@ const MainStackNavigator = createStackNavigator(
       screen: topTabBarNavigation,
       navigationOptions: ({ navigation }) => ({
         header:
-          <SafeAreaView style={{ backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
+          <SafeAreaView style={{ backgroundColor: '#63869f' }}>
             <View
               //colors={['#07416b', '#88b097', '#88b097', '#07416b']}
               //colors={['white', 'white']}
@@ -274,7 +274,7 @@ const MainStackNavigator = createStackNavigator(
         headerTitle:
           <HeaderComponent />,
           headerStyle: {
-            backgroundColor: 'rgba(7, 65, 107, 0.4)',
+            backgroundColor: '#63869f',
           },      
         })
     },
@@ -285,7 +285,7 @@ const MainStackNavigator = createStackNavigator(
         headerTitle:
           <HeaderForGroupScreen />,
           headerStyle: {
-            backgroundColor: 'rgba(7, 65, 107, 0.4)',
+            backgroundColor: '#63869f',
           },  
       })
     }

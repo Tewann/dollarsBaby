@@ -564,7 +564,7 @@ class Loading extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
+            <View style={{ flex: 1, backgroundColor: '#63869f' }}>
                 <SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
                     <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20, paddingLeft: 60 }}>eBlink</Text>
                 </SafeAreaView>

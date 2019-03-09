@@ -24,7 +24,7 @@ import { connect } from 'react-redux'
 class CreateCustomMessageScreen extends React.Component {
     _displayTopComponent() {
         return (
-            <SafeAreaView style={{ backgroundColor: 'rgba(7, 65, 107, 0.6)'}}>
+            <SafeAreaView style={{ backgroundColor: '#63869f'}}>
                 <View style={styles.header_container}>
                     <TouchableOpacity
                         style={{ flex: 1, alignItems: 'flex-start', paddingLeft: 10 }}

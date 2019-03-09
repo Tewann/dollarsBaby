@@ -22,7 +22,6 @@ export const soundsDownloadedReducer = (state = initialState, action) => {
 
         case "REMOVE_SOUND_TO_STATE":
             const index = state.soundsDownloaded.findIndex(item => item.sound === action.value.sound);
-            console.log(index)
             if (index !== -1) {
                 state.soundsDownloaded.splice(index, 1)
             }

@@ -17,7 +17,7 @@ class StatusBarComponent extends React.Component {
     render() {
         return (
            /*  <View style={{ height: STATUSBAR_HEIGHT, backgroundColor:"#88b097" }}> */
-                <StatusBar /* translucent */ backgroundColor="#88b097" /* barStyle={this.barStyle} */ />
+                <StatusBar /* translucent */ backgroundColor='#63869f' /* barStyle={this.barStyle} */ />
             /* </View> */
         );
     }

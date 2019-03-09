@@ -293,7 +293,7 @@ function displayMessagesList(state = initialState, action) {
             }
             if (state.messagesReceived.length > 40) {
                 setTimeout(() => {
-                    nextState.messagesReceived.pop()
+                    state.messagesReceived.pop()
                 }, 1000) 
             }
             return nextState || state

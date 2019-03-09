@@ -58,7 +58,7 @@ class OptionsScreen extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
+            <View style={{ flex: 1, backgroundColor: '#63869f' }}>
                 {this._displayTopComponent()}
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
                     <View style={styles.item}>

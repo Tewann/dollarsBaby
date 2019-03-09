@@ -102,7 +102,7 @@ android {
         applicationId "com.eblink"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
+        versionCode 5
         versionName "1.2.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"

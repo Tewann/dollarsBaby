@@ -258,7 +258,7 @@ class AddGroupsScreen extends React.Component {
     }
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}>
+            <View style={{ flex: 1, backgroundColor: '#63869f' }}>
                 <SafeAreaView>
                     <View style={styles.header_container}>
                         <TouchableOpacity

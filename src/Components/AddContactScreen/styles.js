@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 10,
        /*  borderBottomWidth: 1, */
-       // backgroundColor: 'rgba(7, 65, 107, 0.2)'
+       // backgroundColor: '#63869f'
     },
     header_subcontainer: {
         justifyContent: 'center', 

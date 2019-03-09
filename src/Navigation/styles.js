@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 10,
         paddingBottom: 10,
-       // backgroundColor: 'rgba(7, 65, 107, 0.6)'
+       // backgroundColor: '#63869f'
     },
     CustomNavigationHeaderText: {
         color: 'white',

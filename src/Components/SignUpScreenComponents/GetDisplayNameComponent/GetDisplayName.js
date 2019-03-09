@@ -71,7 +71,7 @@ class GetDisplayName extends React.Component {
     render() {
         return (
             <View
-                style={{ flex: 1, backgroundColor: 'rgba(7, 65, 107, 0.6)' }}
+                style={{ flex: 1, backgroundColor: '#63869f' }}
             >
                 {this._displayTopComponent()}
                     <ScrollView
