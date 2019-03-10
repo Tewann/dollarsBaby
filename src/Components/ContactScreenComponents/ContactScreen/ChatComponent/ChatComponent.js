@@ -85,9 +85,9 @@ class ChatComponent extends React.Component {
                 .catch(err => this.setState({ errorMessage: err }))
             imageDownloadUrl = { uri: downloadUrl }
         }
-
+       
         // Send message
-        await sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound, imageDownloadUrl)
+        sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound, imageDownloadUrl)
             .catch(err => this.setState({ errorMessage: err }))
     }
 

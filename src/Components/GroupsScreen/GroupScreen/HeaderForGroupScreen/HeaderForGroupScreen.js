@@ -22,7 +22,10 @@ class HeaderForGroupScreen extends React.Component {
             defaultPicture: require('../../../../../images/ic_tag_faces.png'),
             additionnalMessage: "",
             errorMessage: null,
-            displayName: this.props.group
+            displayName: this.props.group,
+            groupList: undefined,
+            group: undefined,
+            currentDisplayedGroupScreen: undefined
         }
     }
 
@@ -31,10 +34,16 @@ class HeaderForGroupScreen extends React.Component {
         if (nickname != undefined || null) {
             this.setState({ displayName: nickname })
         }
+
+        this.setState({
+            groupList: this.props.groupList,
+            group: this.props.group,
+            currentDisplayedGroupScreen: this.props.currentDisplayedGroupScreen
+        })
     }
 
     _navigateToOptions = () => {
-        if (this.props.currentDisplayedGroupScreen === 'conversation') {
+        if (this.state.currentDisplayedGroupScreen === 'conversation') {
             const action = { type: 'SWITCH_GROUP_SCREEN_OPTIONS', value: 'options' }
             this.props.dispatch(action)
         } else {
@@ -44,7 +53,7 @@ class HeaderForGroupScreen extends React.Component {
     }
 
     _renderImage = () => {
-        let uri = this.props.groupList[this.props.currentDisplayedGroupIndex].photoURL
+        let uri = this.state.groupList[this.props.currentDisplayedGroupIndex].photoURL
         if (uri === null) {
             return (
                 <Image
@@ -66,7 +75,7 @@ class HeaderForGroupScreen extends React.Component {
     }
 
     _renderGroupNameCreator = () => {
-        const groupNameCreator = this.props.groupList[this.props.currentDisplayedGroupIndex].creator
+        const groupNameCreator = this.state.groupList[this.props.currentDisplayedGroupIndex].creator
         return (
             <Text style={styles.group_name_creator}>{strings('groups_screen.group_options.created_by')} {groupNameCreator}</Text>
         )

@@ -9,14 +9,13 @@ import { connect } from 'react-redux'
 import { fetchContacts, fetchMessages, fetchGroups, setUpRegistrationTokenToFirebase, getUserDataForLoginScreen } from '../../Services/firebaseFunctions'
 import { strings } from '../../i18n'
 import SplashScreen from 'react-native-splash-screen'
-import LinearGradient from 'react-native-linear-gradient'
 import { setUpSoundsForAndroid } from '../../Services/setUpCustomDownloadedSounds'
 
 class Loading extends React.Component {
     componentDidMount = async () => {
         //const resetTOS = { type: 'RESET_TOS'}
         //this.props.dispatch(resetTOS)
-        //const resetContacts = { type: 'RESET_CONTACT' }
+        //const resetContacts = { type: 'RESET_CONTACT'}
         //this.props.dispatch(resetContacts)
         //const resetCurrentUser = { type: 'RESET_USER'}
         //this.props.dispatch(resetCurrentUser)

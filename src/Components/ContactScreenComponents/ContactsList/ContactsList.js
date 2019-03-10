@@ -33,6 +33,7 @@ class ContactsList extends React.Component {
             <View style={{ marginTop: 10 }}>
                 <FlatList
                     data={this.props.contactList}
+                    extraData={this.props.contactList}
                     numColumns={3}
                     ListEmptyComponent={() => this.renderListEmpty()}
                     keyboardShouldPersistTaps={'handled'}

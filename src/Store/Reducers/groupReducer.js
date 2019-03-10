@@ -230,6 +230,19 @@ function groupManagment(state = initialState, action) {
             }
             return nextState || state
 
+        case "MOVE_GROUP_FIRST":
+            const groupIndexToMoveFirst = state.groupList.findIndex(item =>
+                (item.name === action.value.get('title')) && (item.type === action.value.get('senderType')))
+            if (groupIndexToMoveFirst !== 0) {
+                let clonedGroupList = [].concat(state.groupList)
+                const groupToMoveFirst = clonedGroupList.splice(groupIndexToMoveFirst, 1)
+                clonedGroupList.unshift(groupToMoveFirst[0])
+                nextState = {
+                    ...state,
+                    groupList: clonedGroupList
+                }
+            }
+            return nextState || state
 
         case "RESET_GROUP_LIST":
             return initialState;

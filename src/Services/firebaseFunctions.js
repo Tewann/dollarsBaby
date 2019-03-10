@@ -230,7 +230,7 @@ export const sendMessageToFirestore = async (currentUser, contact, predefined_me
         // elif only additionnal message body = additionnal message
         // else body = predefined message : additionnal message
         let body = null
-        if ((predefined_message == null || undefined) && additionalMessage == "" ) {
+        if ((predefined_message == null || undefined) && additionalMessage == "") {
             body = 'Image'
         } else if (additionalMessage == "") {
             body = `${predefined_message}`
@@ -493,9 +493,17 @@ export const fetchMessages = (userName) => {
             .collection('messagesReceived')
             .onSnapshot((snapshot) => {
                 snapshot.forEach(doc => {
+                    //console.log(doc)
                     const action = { type: 'MESSAGE_RECEIVED', value: doc }
                     dispatch(action)
 
+                    if (doc.get('senderType') === 'contact') {
+                        const moveContactFirstOfTheList = { type: 'MOVE_CONTACT_FIRST', value: doc.get('sendBy') }
+                        dispatch(moveContactFirstOfTheList)
+                    } else {
+                        const moveGroupFirstOfTheList = { type: 'MOVE_GROUP_FIRST', value: doc }
+                        dispatch(moveGroupFirstOfTheList)
+                    }
                     // Delete doc
                     const ref = doc.ref._documentPath._parts.join('/').toString()
                     firebase.firestore().doc(ref).delete()

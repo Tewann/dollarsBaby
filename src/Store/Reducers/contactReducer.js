@@ -102,6 +102,19 @@ export const contactManagment = (state = initialState, action) => {
             }
             return nextState || state
 
+        case "MOVE_CONTACT_FIRST":
+            const contactIndexToMoveFirst = state.contactList.findIndex(item => item.name === action.value)
+            if (contactIndexToMoveFirst !== 0 ) {
+                let clonedContactList = [].concat(state.contactList)
+                const contactToMoveFirst = clonedContactList.splice(contactIndexToMoveFirst, 1)
+                clonedContactList.unshift(contactToMoveFirst[0])
+                nextState = {
+                    ...state,
+                    contactList: clonedContactList
+                }
+            }
+            return nextState || state
+
         case "RESET_CONTACT":
             return initialState;
 
