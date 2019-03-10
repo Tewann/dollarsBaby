@@ -106,7 +106,7 @@ class CreateCustomMessageComponent extends React.Component {
                     onChangeText={text => this.setState({ predefinedMessage: text })}
                     underlineColorAndroid={'transparent'}
                     autoFocus={false}
-                    maxLength={14}
+                    //maxLength={30}
                 />
                 <Button
                     buttonStyle={{ maxWidth: 150, marginBottom: 6, marginTop: 6, backgroundColor: '#0086b3' }}
