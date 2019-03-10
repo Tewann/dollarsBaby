@@ -118,7 +118,7 @@ class ChatComponent extends React.Component {
             )
         } else {
             return (
-                <ConversationComponent />
+                <ConversationComponent closeMessagesComplements={() => this.closeMessagesComplements()}/>
             )
         }
     }
@@ -197,18 +197,18 @@ class ChatComponent extends React.Component {
         });
     }
 
-/*     _renderImageToSend = () => {
-        if (this.state.imageUri) {
-            return (
-                <View style={styles.image_container}>
-                    <Image
-                        source={this.state.imageUri}
-                        style={styles.image}
-                    />
-                </View>
-            )
-        }
-    } */
+    /*     _renderImageToSend = () => {
+            if (this.state.imageUri) {
+                return (
+                    <View style={styles.image_container}>
+                        <Image
+                            source={this.state.imageUri}
+                            style={styles.image}
+                        />
+                    </View>
+                )
+            }
+        } */
 
     _displayMessagesComplement = (complementsAndInitialMessage) => {
         if (complementsAndInitialMessage.complements) {
@@ -252,6 +252,15 @@ class ChatComponent extends React.Component {
         }
     }
 
+    closeMessagesComplements = () => {
+        this.setState({
+            displayPredefinedMessagesList: true,
+            displayMessagesComplement: false,
+            complementsAndInitialMessage: [],
+            displayMessagesComplementLoading: false
+        })
+    }
+
     render() {
         return (
             <KeyboardAvoidingView
@@ -263,7 +272,7 @@ class ChatComponent extends React.Component {
                     <Text style={{ color: 'red', marginLeft: 7 }}>
                         {this.state.errorMessage}
                     </Text>}
-               {/*  {this._renderImageToSend()} */}
+                {/*  {this._renderImageToSend()} */}
                 <View style={[styles.TextInput_container, { marginRight: this.state.additionnalMessage == "" ? 7 : 0 }]}>
                     <TextInput
                         placeholder={strings('contacts_screen.messages_list_screen.placeholder')}

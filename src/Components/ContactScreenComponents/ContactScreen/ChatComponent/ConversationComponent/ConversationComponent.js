@@ -9,7 +9,7 @@
 */
 
 import React from 'react'
-import { View, FlatList, Text, ScrollView } from 'react-native'
+import { View, FlatList, Text, ScrollView, TouchableWithoutFeedback } from 'react-native'
 import styles from './styles'
 
 import MessageComponent from '../../../../MessageComponent/MessageComponent'
@@ -39,30 +39,42 @@ class ConversationComponent extends React.Component {
         }
     }
 
+    closeMessagesComplements = () => {
+        // Close complements displayed below text input
+        // Props passed by chat component
+        this.props.closeMessagesComplements()
+    }
+
     render() {
         return (
-            <View style={styles.main_container}>
-                {
-                    this.state.contactIndexInMessageHistory !== -1 &&
-                    <FlatList
-                        inverted={true}
-                        data={this.props.messagesHistory[this.state.contactIndexInMessageHistory].data}
-                        keyExtractor={(item, id) => item.id.toString()}
-                        renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={this.state.contactIndexInMessageHistory} type={'contact'} />}
-                        initialNumToRender={15}
-                        maxToRenderPerBatch={10}
-                        windowSize={5}
-                    />
-                }
-                {
-                    this.state.contactIndexInMessageHistory === -1 &&
-                    <ScrollView style={{ flex: 1 }}>
-                        <Text style={styles.list_empty}>{strings('message_history_screen.list_empty')}</Text>
-                        <Text style={styles.list_empty2}>{strings('message_history_screen.click_on_avatar')}</Text>
-                        <Text style={styles.list_empty2}>{strings('message_history_screen.long_press')}</Text>
-                    </ScrollView>
-                }
-            </View>
+            <TouchableWithoutFeedback
+                onPress={() => this.closeMessagesComplements()}
+            >
+                <View
+                    style={styles.main_container}
+                >
+                    {
+                        this.state.contactIndexInMessageHistory !== -1 &&
+                        <FlatList
+                            inverted={true}
+                            data={this.props.messagesHistory[this.state.contactIndexInMessageHistory].data}
+                            keyExtractor={(item, id) => item.id.toString()}
+                            renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={this.state.contactIndexInMessageHistory} type={'contact'} />}
+                            initialNumToRender={15}
+                            maxToRenderPerBatch={10}
+                            windowSize={5}
+                        />
+                    }
+                    {
+                        this.state.contactIndexInMessageHistory === -1 &&
+                        <ScrollView style={{ flex: 1 }}>
+                            <Text style={styles.list_empty}>{strings('message_history_screen.list_empty')}</Text>
+                            <Text style={styles.list_empty2}>{strings('message_history_screen.click_on_avatar')}</Text>
+                            <Text style={styles.list_empty2}>{strings('message_history_screen.long_press')}</Text>
+                        </ScrollView>
+                    }
+                </View>
+            </TouchableWithoutFeedback>
         )
     }
 }

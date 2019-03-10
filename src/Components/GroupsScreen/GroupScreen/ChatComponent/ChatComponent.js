@@ -7,7 +7,7 @@
 
 
 import React from 'react'
-import { View, TouchableOpacity, Text, FlatList, TextInput, Image, ActivityIndicator, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, TouchableOpacity, Text, FlatList, TextInput, ActivityIndicator, SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native'
 import styles from './styles'
 import { Icon } from 'react-native-elements'
 import { connect } from 'react-redux'
@@ -263,6 +263,15 @@ class ChatComponent extends React.Component {
         }
     }
 
+    closeMessagesComplements = () => {
+        this.setState({
+            displayPredefinedMessagesList: true,
+            displayMessagesComplement: false,
+            complementsAndInitialMessage: [],
+            displayMessagesComplementLoading: false
+        })
+    }
+
     displayPredefinedMessageList = () => {
         if (this.props.currentDisplayedGroupType === 'private' || this.state.groupCreatorIsCurrentUser || this.props.groupList[this.props.currentDisplayedGroupIndex].chatActivated) {
             return (
@@ -273,7 +282,7 @@ class ChatComponent extends React.Component {
                             {this.state.errorMessage}
                         </Text>}
 
-                   {/* {this._renderImageToSend()} */}
+                    {/* {this._renderImageToSend()} */}
 
                     {/* ------ Text Input for additionnal message ------*/}
                     <View style={[styles.TextInput_container, { marginRight: this.state.additionnalMessage == "" ? 7 : 0 }]}>
@@ -357,16 +366,16 @@ class ChatComponent extends React.Component {
 
     _displayConversation = () => {
         return (
-            <ConversationComponent />
+            <ConversationComponent closeMessagesComplements={() => this.closeMessagesComplements()} />
         )
     }
 
     render() {
         return (
             <KeyboardAvoidingView
-            behavior={Platform.OS === "ios" ? "padding" : null}
-            keyboardVerticalOffset={KEYBOARDVERTICALOFFSET}
-            style={styles.main_container}>
+                behavior={Platform.OS === "ios" ? "padding" : null}
+                keyboardVerticalOffset={KEYBOARDVERTICALOFFSET}
+                style={styles.main_container}>
                 {this._displayConversation()}
                 {this.displayPredefinedMessageList()}
             </KeyboardAvoidingView>

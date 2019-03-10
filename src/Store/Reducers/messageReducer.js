@@ -216,30 +216,11 @@ function displayMessagesList(state = initialState, action) {
                 // if message is not in history
                 // add message
                 if (messageIndex === -1) {
-                    //const data = state.messagesHistory[contactOrGroupIndexInMessageList].data
-                    //let newData = state.messagesHistory[contactOrGroupIndexInMessageList].data
-                    /*                     const messageTimeStamp = data.length.timeStamp
-                                        if (messageTimeStamp > timeStamp) {
-                                            compare = (a, b) => {
-                                                const timeStampA = a.timeStamp;
-                                                const timeStampB = b.timeStamp;
-                                                let comparaison = 0;
-                                                if (timeStampA > timeStampB) {
-                                                    comparaison = 1;
-                                                } else if (timeStampA < timeStampB) {
-                                                    comparaison = -1;
-                                                }
-                                                return comparaison;
-                                            }
-                                            console.log('called')
-                                            newData.sort(compare)
-                                        } */
-                    //newData.unshift(newMessage)
                     let newData = [
                         newMessage,
                         ...state.messagesHistory[contactOrGroupIndexInMessageList].data
                     ]
-                    
+
                     if (timeStamp < state.messagesHistory[contactOrGroupIndexInMessageList].data[0].timeStamp) {
                         newData.sort((a, b) => {
                             return a.timeStamp > b.timeStamp ? -1 : a.timeStamp < b.timeStamp ? 1 : 0;
