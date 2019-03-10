@@ -165,7 +165,7 @@ function displayMessagesList(state = initialState, action) {
             const sendToGroup = action.value.get('displayName')
             const idReceived = contactOrGroup + timeStamp
             const sound = action.value.get('sound')
-            
+
             // Create new message
             let newMessage = {
                 id: idReceived,
@@ -185,24 +185,6 @@ function displayMessagesList(state = initialState, action) {
             const contactOrGroupIndexInMessageList = state.messagesHistory.findIndex(item => item.title == contactOrGroup && item.type == senderType)
             // If the conversation doesn't exist
             if (contactOrGroupIndexInMessageList === -1) {
-                // Sets new message id to 0
-                newId = 0
-                /* 
-                                // create new message
-                                newMessage = {
-                                    id: idReceived,
-                                    //id: newId,
-                                    type: type,
-                                    contact: contactOrGroup,
-                                    predefined_message: predefined_message,
-                                    additionnal_message: additionnal_message,
-                                    imageUri: imageDownloadURL,
-                                    timeStamp: timeStamp,
-                                    messageReceivedId: messageReceivedId,
-                                    sendBy: sendBy,
-                                    toGroup: sendToGroup
-                                } */
-
                 // Create new contact/group
                 const newConversation = {
                     title: contactOrGroup,
@@ -211,8 +193,6 @@ function displayMessagesList(state = initialState, action) {
                         newMessage
                     ]
                 }
-
-                //state.messagesReceived.push(newMessage)
 
                 // Update nextState
                 nextState = {
@@ -236,22 +216,6 @@ function displayMessagesList(state = initialState, action) {
                 // if message is not in history
                 // add message
                 if (messageIndex === -1) {
-                    newId = state.messagesHistory[contactOrGroupIndexInMessageList].data.length + 1
-
-                    /*                     // create new message
-                                        newMessage = {
-                                            id: idReceived,
-                                            //id: newId,
-                                            type: type,
-                                            contact: contactOrGroup,
-                                            predefined_message: predefined_message,
-                                            additionnal_message: additionnal_message,
-                                            timeStamp: timeStamp,
-                                            messageReceivedId: messageReceivedId,
-                                            sendBy: sendBy,
-                                            toGroup: sendToGroup
-                                        } */
-
                     //const data = state.messagesHistory[contactOrGroupIndexInMessageList].data
                     //let newData = state.messagesHistory[contactOrGroupIndexInMessageList].data
                     /*                     const messageTimeStamp = data.length.timeStamp
@@ -275,6 +239,13 @@ function displayMessagesList(state = initialState, action) {
                         newMessage,
                         ...state.messagesHistory[contactOrGroupIndexInMessageList].data
                     ]
+                    
+                    if (timeStamp < state.messagesHistory[contactOrGroupIndexInMessageList].data[0].timeStamp) {
+                        newData.sort((a, b) => {
+                            return a.timeStamp > b.timeStamp ? -1 : a.timeStamp < b.timeStamp ? 1 : 0;
+                        })
+                    }
+
                     //state.messagesReceived.push(newMessage)
                     nextState = {
                         ...state,
@@ -294,7 +265,7 @@ function displayMessagesList(state = initialState, action) {
             if (state.messagesReceived.length > 40) {
                 setTimeout(() => {
                     state.messagesReceived.pop()
-                }, 1000) 
+                }, 1000)
             }
             return nextState || state
 

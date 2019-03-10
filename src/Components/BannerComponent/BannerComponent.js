@@ -33,7 +33,7 @@ class BannerComponent extends React.Component {
             <View>
                 {this.props.displaysAdBanner &&
                     <Banner
-                        unitId={this.state.productionUnitId}
+                        unitId={testingUnitID}
                         size={"FULL_BANNER"}
                         request={request.build()}
                         onAdFailedToLoad={(e) => {
