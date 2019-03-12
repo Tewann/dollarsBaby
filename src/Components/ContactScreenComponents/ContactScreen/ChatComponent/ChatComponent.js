@@ -127,43 +127,45 @@ class ChatComponent extends React.Component {
         }
     }
     _renderAttachmentButtons = () => {
-        if (this.state.displayAttachement) {
-            return (
-                <TouchableOpacity
-                    onPress={() => this.setState({ displayAttachement: false, displayCameraLibraryButtons: true })}
-                    style={{ paddingLeft: 10, paddingRight: 10 }}
-                >
-                    <Icon
-                        name='ios-attach'
-                        type='ionicon'
-                        size={30}
-                    />
-                </TouchableOpacity >
-            )
-        } else if (this.state.displayCameraLibraryButtons) {
-            return (
-                <View style={{ flexDirection: 'row', paddingLeft: 4, paddingRight: 4 }} >
+        if (this.state.additionnalMessage === "") {
+            if (this.state.displayAttachement) {
+                return (
                     <TouchableOpacity
-                        onPress={() => this._openImageLibrary()}
-                        style={{ paddingRight: 10 }}
+                        onPress={() => this.setState({ displayAttachement: false, displayCameraLibraryButtons: true })}
+                        style={{ paddingLeft: 10, paddingRight: 10 }}
                     >
                         <Icon
-                            name='ios-images'
-                            type="ionicon"
-                            size={45}
+                            name='ios-attach'
+                            type='ionicon'
+                            size={30}
                         />
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => this._openCamera()}
-                    >
-                        <Icon
-                            name='ios-camera'
-                            type="ionicon"
-                            size={50}
-                        />
-                    </TouchableOpacity>
-                </View>
-            )
+                    </TouchableOpacity >
+                )
+            } else if (this.state.displayCameraLibraryButtons) {
+                return (
+                    <View style={{ flexDirection: 'row', paddingLeft: 4, paddingRight: 4 }} >
+                        <TouchableOpacity
+                            onPress={() => this._openImageLibrary()}
+                            style={{ paddingRight: 10 }}
+                        >
+                            <Icon
+                                name='ios-images'
+                                type="ionicon"
+                                size={45}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this._openCamera()}
+                        >
+                            <Icon
+                                name='ios-camera'
+                                type="ionicon"
+                                size={50}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                )
+            }
         }
     }
 

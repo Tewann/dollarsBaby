@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     send_icon_container: {
-        paddingRight: 7,
-        paddingLeft: 7,
+        paddingRight: 9,
+        paddingLeft: 9,
         height: 40,
         justifyContent: 'center'
     },
