@@ -9,7 +9,7 @@
 */
 
 import React from 'react'
-import { View, FlatList, Text, ScrollView, TouchableWithoutFeedback } from 'react-native'
+import { View, FlatList, Text, ScrollView } from 'react-native'
 import styles from './styles'
 
 import MessageComponent from '../../../../MessageComponent/MessageComponent'
@@ -40,42 +40,38 @@ class ConversationComponent extends React.Component {
         }
     }
 
-    closeMessagesComplements =() => {
+    closeMessagesComplements = () => {
         // Close complements displayed below text input
         // Props passed by chat component
         this.props.closeMessagesComplements()
     }
-    
+
     render() {
         return (
-            <TouchableWithoutFeedback
-                onPress={() => this.closeMessagesComplements()}
-            >
-                <View style={styles.main_container}>
-                    {
-                        this.state.groupIndexInMessageHistory !== -1 &&
-                        <FlatList
-                            inverted={true}
-                            data={this.props.messagesHistory[this.state.groupIndexInMessageHistory].data}
-                            keyExtractor={(item, id) => item.id.toString()}
-                            renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={this.state.groupIndexInMessageHistory}
-                                type={'group'} />}
-                            //ListEmptyComponent={() => this.renderListEmpty()}
-                            initialNumToRender={15}
-                            maxToRenderPerBatch={10}
-                            windowSize={5}
-                        />
-                    }
-                    {
-                        this.state.groupIndexInMessageHistory === -1 &&
-                        <ScrollView >
-                            <Text style={styles.list_empty}>{strings('groups_screen.group_screen.list_empty')}</Text>
-                            <Text style={styles.list_empty2}>{strings('groups_screen.group_screen.click_on_avatar')}</Text>
-                            <Text style={styles.list_empty2}>{strings('message_history_screen.long_press')}</Text>
-                        </ScrollView>
-                    }
-                </View>
-            </TouchableWithoutFeedback>
+            <View style={styles.main_container}>
+                {
+                    this.state.groupIndexInMessageHistory !== -1 &&
+                    <FlatList
+                        inverted={true}
+                        data={this.props.messagesHistory[this.state.groupIndexInMessageHistory].data}
+                        keyExtractor={(item, id) => item.id.toString()}
+                        renderItem={({ item, index }) => <MessageComponent message={item} id={index} contactOrGroupIndex={this.state.groupIndexInMessageHistory}
+                            type={'group'} />}
+                        //ListEmptyComponent={() => this.renderListEmpty()}
+                        initialNumToRender={15}
+                        maxToRenderPerBatch={10}
+                        windowSize={5}
+                    />
+                }
+                {
+                    this.state.groupIndexInMessageHistory === -1 &&
+                    <ScrollView >
+                        <Text style={styles.list_empty}>{strings('groups_screen.group_screen.list_empty')}</Text>
+                        <Text style={styles.list_empty2}>{strings('groups_screen.group_screen.click_on_avatar')}</Text>
+                        <Text style={styles.list_empty2}>{strings('message_history_screen.long_press')}</Text>
+                    </ScrollView>
+                }
+            </View>
         )
     }
 }

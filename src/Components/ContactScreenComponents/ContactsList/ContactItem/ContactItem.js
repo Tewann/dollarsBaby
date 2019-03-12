@@ -1,7 +1,7 @@
 // Component: display each iteration of contact list
 
 import React from 'react'
-import { Text, TouchableOpacity, Image } from 'react-native'
+import { Text, TouchableOpacity, Image, View } from 'react-native'
 import styles from './styles'
 import { connect } from 'react-redux'
 
@@ -39,7 +39,7 @@ class ContactItem extends React.Component {
 
     _displayContactOptions = (contact) => {
         const action = { type: 'SWITCH_CONTACT_SCREEN', value: contact }
-        this.props.dispatch(action) 
+        this.props.dispatch(action)
         const actionToOptions = { type: 'SWITCH_CONTACT_SCREEN_OPTIONS', value: 'options' }
         this.props.dispatch(actionToOptions)
         this.props.navigation.navigate('ContactScreen')
@@ -67,6 +67,17 @@ class ContactItem extends React.Component {
         }
     }
 
+    _renderUnreadCount = () => {
+        if (this.props.contact.unreadMessages !== undefined ) {
+            const unreadCount = this.props.contact.unreadMessages.length < 100 ? this.props.contact.unreadMessages.length : '99+'
+            return (
+                <View style={styles.unread_messages_container}>
+                    <Text style={styles.unread_messages_number}>{unreadCount}</Text>
+                </View>
+            )
+        }
+    }
+
     render() {
         const { contact } = this.props
         return (
@@ -75,10 +86,11 @@ class ContactItem extends React.Component {
                 onLongPress={() => this._displayContactOptions(contact.name)}
                 style={styles.main_container}>
                 {this._renderImage()}
+                {this._renderUnreadCount()}
                 <Text style={styles.contact_text}>
                     {this.state.displayName}
                 </Text>
-            </TouchableOpacity >
+            </TouchableOpacity>
 
         )
     }

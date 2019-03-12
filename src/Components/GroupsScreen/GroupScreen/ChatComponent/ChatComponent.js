@@ -41,6 +41,11 @@ class ChatComponent extends React.Component {
         }
     }
 
+    componentDidMount = () => {
+        const resetUnreadMessagecount = { type: 'RESET_UNREAD_MESSAGES_FOR_GROUP', value: this.props.currentDisplayedGroupIndex }
+        this.props.dispatch(resetUnreadMessagecount)
+    }
+
     componentWillMount = () => {
         const groupCreatorIsCurrentUser = this.props.groupList[this.props.currentDisplayedGroupIndex].creator === this.props.currentUser.name
         const displayGroupName = this.props.groupList[this.props.currentDisplayedGroupIndex].displayName
@@ -89,6 +94,9 @@ class ChatComponent extends React.Component {
         // update redux store
         const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type, senderType: groupType, imageUri } }
         this.props.dispatch(action)
+
+        const moveGroupFirstOfTheList = { type: 'MOVE_GROUP_FIRST', value: [this.props.currentGroup, groupType] }
+        this.props.dispatch(moveGroupFirstOfTheList)
 
         // If an image has been selected to be send, upload it to firebase, grabs download url and sends it to the contact
         if (imageUri != (null || undefined)) {
@@ -320,15 +328,6 @@ class ChatComponent extends React.Component {
                             {
                                 this.state.displayMessagesComplement && (
                                     <View>
-                                        <TouchableOpacity
-                                            onPress={() => this.setState({
-                                                displayPredefinedMessagesList: true,
-                                                displayMessagesComplement: false,
-                                                complementsAndInitialMessage: []
-                                            })}
-                                            style={styles.complements_title}>
-                                            <Text style={[styles.text, { color: 'black' }]}>{this.state.complementsAndInitialMessage.title}</Text>
-                                        </TouchableOpacity>
                                         <FlatList
                                             data={this.state.complementsAndInitialMessage.complements}
                                             numColumns={3}
@@ -343,6 +342,18 @@ class ChatComponent extends React.Component {
                                                 </TouchableOpacity>
                                             }
                                         />
+                                        <TouchableOpacity
+                                            onPress={() => this.setState({
+                                                displayPredefinedMessagesList: true,
+                                                displayMessagesComplement: false,
+                                                complementsAndInitialMessage: []
+                                            })}
+                                            style={styles.complements_title}>
+                                            <Icon name='ios-arrow-dropleft-circle'
+                                                type='ionicon'
+                                                color='#07416b'
+                                            />
+                                        </TouchableOpacity>
                                     </View>
                                 )
                             }

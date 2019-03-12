@@ -10,7 +10,7 @@
 
 
 import React from 'react'
-import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator, Image, KeyboardAvoidingView, Platform, SafeAreaView } from 'react-native'
+import { View, Text, FlatList, TextInput, TouchableOpacity, ActivityIndicator, KeyboardAvoidingView, Platform, SafeAreaView } from 'react-native'
 import styles from './styles'
 
 import MessageItem from './MessageItem/MessageItem'
@@ -46,6 +46,8 @@ class ChatComponent extends React.Component {
 
     componentDidMount = () => {
         this.setState({ displayConversation: true })
+        const resetUnreadMessagecount = { type: 'RESET_UNREAD_MESSAGES_FOR_CONTACT', value: this.props.contact }
+        this.props.dispatch(resetUnreadMessagecount)
     }
 
     //*
@@ -74,6 +76,8 @@ class ChatComponent extends React.Component {
         // Update redux store
         const action = { type: 'MESSAGE_SENDED', value: { contact, predefined_message, additionnal_message, timeStamp, id, type: 'send', senderType: 'contact', imageUri } }
         this.props.dispatch(action)
+        const moveContactFirstOfTheList = { type: 'MOVE_CONTACT_FIRST', value: contact }
+        this.props.dispatch(moveContactFirstOfTheList)
         this.messageInput.clear()
         this.setState({ additionnalMessage: "", imageUri: null, displayAttachement: true, displayCameraLibraryButtons: false })
 
@@ -85,7 +89,7 @@ class ChatComponent extends React.Component {
                 .catch(err => this.setState({ errorMessage: err }))
             imageDownloadUrl = { uri: downloadUrl }
         }
-       
+
         // Send message
         sendMessageToFirestore(currentUser, contact, predefined_message, additionnal_message, timeStamp, id, type, sound, imageDownloadUrl)
             .catch(err => this.setState({ errorMessage: err }))
@@ -118,7 +122,7 @@ class ChatComponent extends React.Component {
             )
         } else {
             return (
-                <ConversationComponent closeMessagesComplements={() => this.closeMessagesComplements()}/>
+                <ConversationComponent closeMessagesComplements={() => this.closeMessagesComplements()} />
             )
         }
     }
@@ -307,15 +311,6 @@ class ChatComponent extends React.Component {
                         {
                             this.state.displayMessagesComplement && (
                                 <View>
-                                    <TouchableOpacity
-                                        onPress={() => this.setState({
-                                            displayPredefinedMessagesList: true,
-                                            displayMessagesComplement: false,
-                                            complementsAndInitialMessage: []
-                                        })}
-                                        style={styles.complements_title}>
-                                        <Text style={[styles.text, { color: 'black' }]}>{this.state.complementsAndInitialMessage.title}</Text>
-                                    </TouchableOpacity>
                                     <FlatList
                                         data={this.state.complementsAndInitialMessage.complements}
                                         numColumns={3}
@@ -330,6 +325,18 @@ class ChatComponent extends React.Component {
                                             </TouchableOpacity>
                                         }
                                     />
+                                    <TouchableOpacity
+                                        onPress={() => this.setState({
+                                            displayPredefinedMessagesList: true,
+                                            displayMessagesComplement: false,
+                                            complementsAndInitialMessage: []
+                                        })}
+                                        style={styles.complements_title}>
+                                        <Icon name='ios-arrow-dropleft-circle'
+                                            type='ionicon'
+                                            color='#07416b'
+                                        />
+                                    </TouchableOpacity>
                                 </View>
                             )
                         }

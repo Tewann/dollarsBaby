@@ -5,7 +5,7 @@ import Dimensions from 'Dimensions'
 
 const { height, width } = Dimensions.get('window');
 const itemWidth = (width / 3.5) - 10;
-const itemWidth2 = (width / 3) -10
+const itemWidth2 = (width / 3) - 10
 const roundWidth = itemWidth / 2.75;
 const itemHeight2 = (height / 16)
 
@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         paddingBottom: 5,
         backgroundColor: 'rgba(179, 255, 179, 0.7)',
+        //backgroundColor: '#e6f7ff',
         borderRadius: 8,
         maxWidth: width / 1.7,
     },
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 12,
-        backgroundColor: '#07416b' ,
+        backgroundColor: '#07416b',
         width: itemWidth2
     },
     text: {

@@ -26,7 +26,27 @@ const styles = StyleSheet.create({
         height: roundWidth,
         borderRadius: roundWidth / 2,
         marginBottom: 5,
+    },
+    unread_messages_container: {
+        position: 'absolute',
+        right: 10,
+        top: 0,
+        zIndex: 1,
+        backgroundColor: '#63869f',
+        width: roundWidth / 4,
+        height: roundWidth / 4,
+        borderRadius: roundWidth / 4,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    unread_messages_number: {
+        fontWeight: 'bold',
+        color: 'white',
+        paddingBottom: 1
     }
 })
+
+
+
 
 export default styles

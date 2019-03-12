@@ -74,6 +74,17 @@ class GroupItem extends React.Component {
         }
     }
 
+    _renderUnreadCount = () => {
+        if (this.props.group.unreadMessages !== undefined ) {
+            const unreadCount = this.props.group.unreadMessages.length < 100 ? this.props.group.unreadMessages.length : '99+'
+            return (
+                <View style={styles.unread_messages_container}>
+                    <Text style={styles.unread_messages_number}>{unreadCount}</Text>
+                </View>
+            )
+        }
+    }
+
     render() {
         const group = this.props.group
         return (
@@ -82,6 +93,7 @@ class GroupItem extends React.Component {
                 onLongPress={() => this.displayGroupOptionsScreen(group.name)}
                 style={styles.main_container}>
                 {this._renderImage()}
+                {this._renderUnreadCount()}
                 <View style={styles.text_container}>
                     <Text style={styles.contact_text}>
                         {group.displayName}

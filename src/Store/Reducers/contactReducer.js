@@ -104,7 +104,7 @@ export const contactManagment = (state = initialState, action) => {
 
         case "MOVE_CONTACT_FIRST":
             const contactIndexToMoveFirst = state.contactList.findIndex(item => item.name === action.value)
-            if (contactIndexToMoveFirst !== 0 ) {
+            if (contactIndexToMoveFirst !== 0) {
                 let clonedContactList = [].concat(state.contactList)
                 const contactToMoveFirst = clonedContactList.splice(contactIndexToMoveFirst, 1)
                 clonedContactList.unshift(contactToMoveFirst[0])
@@ -112,6 +112,39 @@ export const contactManagment = (state = initialState, action) => {
                     ...state,
                     contactList: clonedContactList
                 }
+            }
+            return nextState || state
+
+        case "INCREMENT_UNREAD_MESSAGES_FOR_CONTACT":
+            if (state.currentDisplayedContact[0] !== action.value[0]) {
+                const contactNameIndexToIncrement = state.contactList.findIndex(item => item.name === action.value[0])
+                const unreadMessages = state.contactList[contactNameIndexToIncrement].unreadMessages
+                const unreadMessageAlreadyExists = unreadMessages === undefined ? undefined : state.contactList[contactNameIndexToIncrement].unreadMessages.find((el) => {
+                    return el == action.value[1]
+                })
+                if (unreadMessageAlreadyExists === undefined) {
+                    const newUnreadMessages = unreadMessages === undefined ? [action.value[1]] : [action.value[1], ...state.contactList[contactNameIndexToIncrement].unreadMessages]
+                    nextState = {
+                        ...state,
+                        contactList: state.contactList.map((content, i) => i === contactNameIndexToIncrement ? {
+                            ...content,
+                            unreadMessages: newUnreadMessages
+                        } :
+                            content)
+                    }
+                }
+            }
+            return nextState || state
+
+        case "RESET_UNREAD_MESSAGES_FOR_CONTACT":
+            const contactNameIndexToReset = state.contactList.findIndex(item => item.name === action.value)
+            nextState = {
+                ...state,
+                contactList: state.contactList.map((content, i) => i === contactNameIndexToReset ? {
+                    ...content,
+                    unreadMessages: undefined
+                } :
+                    content)
             }
             return nextState || state
 

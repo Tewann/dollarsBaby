@@ -42,7 +42,7 @@ import Dimensions from "Dimensions";
 // same height as add contact bar on contact screen / group screen
 const { height, width } = Dimensions.get("window");
 const itemWidth = width - 35;
-const itemHeight = height / 18;
+const itemHeight = height / 17;
 
 //*
 // Check iPhone version
@@ -188,7 +188,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             type="feather"
             size={25}
             color="#07416b"
-           // iconStyle={{ paddingBottom: centerIcons }}
+          // iconStyle={{ paddingBottom: centerIcons }}
           />
         )
       }
@@ -203,7 +203,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             type="feather"
             //size={25}
             color="#07416b"
-            //iconStyle={{ paddingBottom: centerIcons }}
+          //iconStyle={{ paddingBottom: centerIcons }}
           />
         )
       }
@@ -218,7 +218,7 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
             type="entypo"
             size={25}
             color="#07416b"
-            //iconStyle={{ paddingBottom: centerIcons, color: "grey" }}
+          //iconStyle={{ paddingBottom: centerIcons, color: "grey" }}
           />
         )
       }
@@ -227,19 +227,19 @@ const topTabBarNavigation = createMaterialTopTabNavigator(
   {
     lazy: true,
     tabBarOptions: {
-      style: { backgroundColor: "white", height: itemHeight },
+      style: { backgroundColor: "white" },
       indicatorStyle: { backgroundColor: "#07416b" },
       activeTintColor: "blue",
       inactiveTintColor: "lightgrey",
       showIcon: true,
       showLabel: false,
-      iconStyle: {
+     /*  iconStyle: {
         width: 35,
         height: 60
-    },
-    tabStyle: {
-        height: 35
-    }
+      }, */
+      tabStyle: {
+        height: itemHeight
+      }
     }
   }
 );
@@ -270,23 +270,23 @@ const MainStackNavigator = createStackNavigator(
     ContactScreen: {
       screen: ContactScreen,
       navigationOptions: ({ navigation }) => ({
-        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('ContactsList')} tintColor='white'/>,
+        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('ContactsList')} tintColor='white' />,
         headerTitle:
           <HeaderComponent />,
-          headerStyle: {
-            backgroundColor: '#63869f',
-          },      
-        })
+        headerStyle: {
+          backgroundColor: '#63869f',
+        },
+      })
     },
     GroupScreen: {
       screen: GroupScreen,
       navigationOptions: ({ navigation }) => ({
-        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('GroupsList')} tintColor='white'/>,
+        headerLeft: <HeaderBackButton onPress={() => navigation.navigate('GroupsList')} tintColor='white' />,
         headerTitle:
           <HeaderForGroupScreen />,
-          headerStyle: {
-            backgroundColor: '#63869f',
-          },  
+        headerStyle: {
+          backgroundColor: '#63869f',
+        },
       })
     }
   },
@@ -311,7 +311,7 @@ const DrawerStack = createDrawerNavigator(
     drawerCloseRoute: "DrawerClose",
     drawerToggleRoute: "DrawerToggle",
     drawerWidth: 250,
-    //drawerLockMode: 'locked-closed'
+    drawerLockMode: 'locked-closed'
   },
 );
 

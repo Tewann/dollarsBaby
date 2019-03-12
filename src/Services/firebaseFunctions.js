@@ -492,22 +492,33 @@ export const fetchMessages = (userName) => {
             .doc(userPath)
             .collection('messagesReceived')
             .onSnapshot((snapshot) => {
-                snapshot.forEach(doc => {
-                    //console.log(doc)
+                //console.log('snapshottt?')
+                //const data = snapshot.data()
+                if (snapshot.docChanges.length > 0 && snapshot._changes[0]._type === 'added') {
+                    /* console.log(snapshot._changes[0]._document.get('sendBy'))
+                    console.log(snapshot._changes[0]._type) */
+                  //  console.log('11')
+                    const doc = snapshot._changes[0]._document
                     const action = { type: 'MESSAGE_RECEIVED', value: doc }
                     dispatch(action)
-
                     if (doc.get('senderType') === 'contact') {
                         const moveContactFirstOfTheList = { type: 'MOVE_CONTACT_FIRST', value: doc.get('sendBy') }
                         dispatch(moveContactFirstOfTheList)
+                        const incrementUnreadMessagesFortheContact = { type: 'INCREMENT_UNREAD_MESSAGES_FOR_CONTACT', value: [doc.get('sendBy'), doc.get('messageId')] }
+                        dispatch(incrementUnreadMessagesFortheContact)
                     } else {
-                        const moveGroupFirstOfTheList = { type: 'MOVE_GROUP_FIRST', value: doc }
+                        const moveGroupFirstOfTheList = { type: 'MOVE_GROUP_FIRST', value: [doc.get('title'), doc.get('senderType')] }
                         dispatch(moveGroupFirstOfTheList)
+                        const incrementUnreadMessagesFortheGroup = { type: 'INCREMENT_UNREAD_MESSAGES_FOR_GROUP', value: [doc.get('title'), doc.get('senderType'), doc.get('messageId')] }
+                        dispatch(incrementUnreadMessagesFortheGroup)
                     }
                     // Delete doc
                     const ref = doc.ref._documentPath._parts.join('/').toString()
                     firebase.firestore().doc(ref).delete()
-                })
+                }
+                   // snapshot.forEach(doc => {
+                    
+              //  })
             })
 
         // Listener for AppState : when app is in background or killed => unsubscribe from onSnapshot

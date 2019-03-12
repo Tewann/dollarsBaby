@@ -232,7 +232,7 @@ function groupManagment(state = initialState, action) {
 
         case "MOVE_GROUP_FIRST":
             const groupIndexToMoveFirst = state.groupList.findIndex(item =>
-                (item.name === action.value.get('title')) && (item.type === action.value.get('senderType')))
+                (item.name === action.value[0]) && (item.type === action.value[1]))
             if (groupIndexToMoveFirst !== 0) {
                 let clonedGroupList = [].concat(state.groupList)
                 const groupToMoveFirst = clonedGroupList.splice(groupIndexToMoveFirst, 1)
@@ -241,6 +241,41 @@ function groupManagment(state = initialState, action) {
                     ...state,
                     groupList: clonedGroupList
                 }
+            }
+            return nextState || state
+
+        case "INCREMENT_UNREAD_MESSAGES_FOR_GROUP":
+            if (state.currentDisplayedGroup[0] !== action.value[0]) {
+                const groupNameIndexToIncrement = state.groupList.findIndex(item =>
+                    (item.name === action.value[0]) && (item.type === action.value[1]))
+                const unreadMessages = state.groupList[groupNameIndexToIncrement].unreadMessages
+                const unreadMessageAlreadyExists = unreadMessages === undefined ? undefined : state.groupList[groupNameIndexToIncrement].unreadMessages.find((el) => {
+                    return el == action.value[2]
+                })
+                if (unreadMessageAlreadyExists === undefined) {
+
+                    const newUnreadMessages = unreadMessages === undefined ? [action.value[2]] : [action.value[2], ...state.groupList[groupNameIndexToIncrement].unreadMessages]
+                    nextState = {
+                        ...state,
+                        groupList: state.groupList.map((content, i) => i === groupNameIndexToIncrement ? {
+                            ...content,
+                            unreadMessages: newUnreadMessages
+                        } :
+                            content)
+                    }
+                }
+            }
+            return nextState || state
+
+        case "RESET_UNREAD_MESSAGES_FOR_GROUP":
+            //const groupNameIndexToReset = state.groupList.findIndex(item => item.name === action.value)
+            nextState = {
+                ...state,
+                groupList: state.groupList.map((content, i) => i === action.value ? {
+                    ...content,
+                    unreadMessages: undefined
+                } :
+                    content)
             }
             return nextState || state
 

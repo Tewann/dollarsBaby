@@ -47,14 +47,10 @@ class ConversationComponent extends React.Component {
 
     render() {
         return (
-            <TouchableWithoutFeedback
-                onPress={() => this.closeMessagesComplements()}
-            >
-                <View
-                    style={styles.main_container}
-                >
-                    {
-                        this.state.contactIndexInMessageHistory !== -1 &&
+            <View style={styles.main_container}>
+                {
+                    this.state.contactIndexInMessageHistory !== -1 &&
+                    <View >
                         <FlatList
                             inverted={true}
                             data={this.props.messagesHistory[this.state.contactIndexInMessageHistory].data}
@@ -64,17 +60,17 @@ class ConversationComponent extends React.Component {
                             maxToRenderPerBatch={10}
                             windowSize={5}
                         />
-                    }
-                    {
-                        this.state.contactIndexInMessageHistory === -1 &&
-                        <ScrollView style={{ flex: 1 }}>
-                            <Text style={styles.list_empty}>{strings('message_history_screen.list_empty')}</Text>
-                            <Text style={styles.list_empty2}>{strings('message_history_screen.click_on_avatar')}</Text>
-                            <Text style={styles.list_empty2}>{strings('message_history_screen.long_press')}</Text>
-                        </ScrollView>
-                    }
-                </View>
-            </TouchableWithoutFeedback>
+                    </View>
+                }
+                {
+                    this.state.contactIndexInMessageHistory === -1 &&
+                    <ScrollView style={{ flex: 1 }}>
+                        <Text style={styles.list_empty}>{strings('message_history_screen.list_empty')}</Text>
+                        <Text style={styles.list_empty2}>{strings('message_history_screen.click_on_avatar')}</Text>
+                        <Text style={styles.list_empty2}>{strings('message_history_screen.long_press')}</Text>
+                    </ScrollView>
+                }
+            </View>
         )
     }
 }
